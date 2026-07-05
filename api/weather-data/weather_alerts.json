@@ -1,0 +1,1079 @@
+{
+  "id": "weather_agricultural_alert_system",
+  "name_ar": "نظام التحذيرات الزراعية الذكية المبنية على الطقس",
+  "name_en": "Smart Weather-Based Agricultural Alert System",
+  "version": "1.0.0",
+  "description_ar": "قواعد كاملة لتوليد تحذيرات وتوصيات زراعية تلقائية بناءً على بيانات الطقس اللحظية والتوقعات",
+  "weather_inputs": {
+    "current": [
+      "temperature_c",
+      "humidity_pct",
+      "wind_speed_kmh",
+      "wind_direction",
+      "rainfall_mm_last24h",
+      "solar_radiation",
+      "dew_point_c",
+      "cloud_cover_pct",
+      "soil_moisture_pct",
+      "leaf_wetness_hours",
+      "ETo_mm",
+      "visibility_km"
+    ],
+    "forecast_24h": [
+      "max_temp_c",
+      "min_temp_c",
+      "rain_probability_pct",
+      "expected_rainfall_mm",
+      "max_wind_speed_kmh",
+      "avg_humidity_pct"
+    ],
+    "forecast_72h": [
+      "rain_probability_pct",
+      "max_temp_c",
+      "min_temp_c",
+      "frost_risk",
+      "heat_wave_risk"
+    ]
+  },
+  "alert_categories": [
+    {
+      "category_id": "rain_fungal",
+      "category_ar": "المطر والأمراض الفطرية والبكتيرية",
+      "category_en": "Rain & Fungal/Bacterial Disease Risk",
+      "icon": "",
+      "priority": "high",
+      "rules": [
+        {
+          "rule_id": "downy_mildew_risk",
+          "disease_ar": "البياض الزغبي",
+          "disease_en": "Downy Mildew",
+          "pathogen": "Plasmopara viticola / Pseudoperonospora cubensis",
+          "affected_crops": [
+            "عنب",
+            "خيار",
+            "كوسة",
+            "قرعيات",
+            "بطاطس",
+            "بصل",
+            "طماطم"
+          ],
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "humidity_pct",
+                "op": ">=",
+                "value": 80
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 15,
+                "max": 28
+              },
+              {
+                "param": "forecast_24h.rain_probability_pct",
+                "op": ">=",
+                "value": 50
+              },
+              {
+                "param": "leaf_wetness_hours",
+                "op": ">=",
+                "value": 2
+              }
+            ]
+          },
+          "risk_level": "high",
+          "timing": "send_12h_before_rain",
+          "alert_ar": "رطوبة عالية {humidity}% وامطار متوقعة — خطر البياض الزغبي على {crop}",
+          "alert_en": "High humidity {humidity}% & rain expected — Downy Mildew risk on {crop}",
+          "recommendations_ar": [
+            "رش مبيد وقائي (مانكوزيب 2.5 جم/لتر أو نحاسيات) قبل المطر بـ 12–24 ساعة",
+            "لا ترش قبل المطر بأقل من 4 ساعات (لن يجف المبيد)",
+            "في حال بدأ المطر: أضف ديموثيمورف أو سيمانيكسانيل بعد انتهاء الأمطار",
+            "تحسين التهوية وتقليل الكثافة النباتية"
+          ],
+          "urgency_hours": 24
+        },
+        {
+          "rule_id": "late_blight_risk",
+          "disease_ar": "اللفحة المتأخرة",
+          "disease_en": "Late Blight",
+          "pathogen": "Phytophthora infestans",
+          "affected_crops": [
+            "بطاطس",
+            "طماطم"
+          ],
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "humidity_pct",
+                "op": ">=",
+                "value": 85
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 10,
+                "max": 25
+              },
+              {
+                "param": "leaf_wetness_hours",
+                "op": ">=",
+                "value": 4
+              },
+              {
+                "param": "forecast_24h.rain_probability_pct",
+                "op": ">=",
+                "value": 40
+              }
+            ]
+          },
+          "risk_level": "critical",
+          "timing": "send_24h_before_rain",
+          "alert_ar": "خطر اللفحة المتأخرة! رطوبة {humidity}% + بلل أوراق {leaf_wet} ساعة على {crop}",
+          "alert_en": "Late Blight Alert! Humidity {humidity}% + {leaf_wet}h leaf wetness on {crop}",
+          "recommendations_ar": [
+            "رش فوري: سيموكسانيل+مانكوزيب أو فوسيت ألومنيوم قبل المطر",
+            "بعد الأمطار: أعد الرش بميتالاكسيل أو ديموثيمورف",
+            "افحص الحقل يومياً بعد كل أمطار",
+            "أزل الأجزاء المصابة فوراً عند ظهورها"
+          ],
+          "urgency_hours": 12
+        },
+        {
+          "rule_id": "botrytis_risk",
+          "disease_ar": "العفن الرمادي — البوتريتيس",
+          "disease_en": "Grey Mold — Botrytis cinerea",
+          "pathogen": "Botrytis cinerea",
+          "affected_crops": [
+            "فراولة",
+            "عنب",
+            "طماطم",
+            "فلفل",
+            "خيار",
+            "ورد"
+          ],
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "humidity_pct",
+                "op": ">=",
+                "value": 85
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 15,
+                "max": 25
+              },
+              {
+                "param": "leaf_wetness_hours",
+                "op": ">=",
+                "value": 4
+              },
+              {
+                "param": "cloud_cover_pct",
+                "op": ">=",
+                "value": 70
+              }
+            ]
+          },
+          "risk_level": "high",
+          "timing": "immediate",
+          "alert_ar": "جو ملبد وعفن — خطر بوتريتيس على {crop} — رطوبة {humidity}%",
+          "alert_en": "Cloudy humid conditions — Botrytis risk on {crop}",
+          "recommendations_ar": [
+            "رش إيبرودايون أو بوسكاليد أو سيبرودينيل",
+            "تحسين التهوية داخل البيوت المحمية",
+            "تجنب الري بالرش صباحاً — استخدم التنقيط",
+            "أزل الأزهار والثمار المصابة فوراً"
+          ],
+          "urgency_hours": 6
+        },
+        {
+          "rule_id": "rust_risk",
+          "disease_ar": "الصدأ",
+          "disease_en": "Rust diseases",
+          "pathogen": "Puccinia spp.",
+          "affected_crops": [
+            "قمح",
+            "شعير",
+            "ذرة",
+            "فول",
+            "فول السوداني"
+          ],
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "humidity_pct",
+                "op": ">=",
+                "value": 75
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 15,
+                "max": 22
+              },
+              {
+                "param": "leaf_wetness_hours",
+                "op": ">=",
+                "value": 6
+              },
+              {
+                "param": "wind_speed_kmh",
+                "op": "between",
+                "min": 5,
+                "max": 25
+              }
+            ]
+          },
+          "risk_level": "medium",
+          "timing": "send_24h_before_rain",
+          "alert_ar": "ظروف مواتية لانتشار الصدأ على {crop} — رياح {wind} كم/س + رطوبة {humidity}%",
+          "alert_en": "Rust-favorable conditions on {crop}",
+          "recommendations_ar": [
+            "رش تريازول (بروبيكونازول أو تيبوكونازول)",
+            "راقب الحقل لظهور بثرات الصدأ البرتقالية",
+            "العتبة: 1% إصابة على 50 نبات عشوائي"
+          ],
+          "urgency_hours": 48
+        },
+        {
+          "rule_id": "bacterial_spot_risk",
+          "disease_ar": "التبقع البكتيري",
+          "disease_en": "Bacterial Spot",
+          "pathogen": "Xanthomonas spp.",
+          "affected_crops": [
+            "طماطم",
+            "فلفل",
+            "خيار",
+            "خوخ",
+            "مشمش"
+          ],
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "humidity_pct",
+                "op": ">=",
+                "value": 80
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 20,
+                "max": 30
+              },
+              {
+                "param": "wind_speed_kmh",
+                "op": ">=",
+                "value": 15
+              },
+              {
+                "param": "forecast_24h.rain_probability_pct",
+                "op": ">=",
+                "value": 40
+              }
+            ]
+          },
+          "risk_level": "medium",
+          "timing": "send_12h_before_rain",
+          "alert_ar": "رياح + رطوبة + مطر — خطر التبقع البكتيري على {crop}",
+          "alert_en": "Bacterial Spot risk conditions on {crop}",
+          "recommendations_ar": [
+            "رش نحاسيات (نحاس أوكسيكلوريد 3 جم/لتر) قبل الأمطار",
+            "لا ترش أثناء الرياح > 15 كم/س",
+            "بعد الأمطار: رش ستربتوميسين + نحاسيات"
+          ],
+          "urgency_hours": 18
+        },
+        {
+          "rule_id": "fire_blight_risk",
+          "disease_ar": "اللفحة النارية",
+          "disease_en": "Fire Blight",
+          "pathogen": "Erwinia amylovora",
+          "affected_crops": [
+            "تفاح",
+            "كمثرى",
+            "سفرجل"
+          ],
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "temperature_c",
+                "op": ">=",
+                "value": 18
+              },
+              {
+                "param": "humidity_pct",
+                "op": ">=",
+                "value": 70
+              },
+              {
+                "param": "forecast_24h.rain_probability_pct",
+                "op": ">=",
+                "value": 30
+              },
+              {
+                "param": "wind_speed_kmh",
+                "op": ">=",
+                "value": 10
+              }
+            ]
+          },
+          "risk_level": "critical",
+          "timing": "send_24h_before_rain",
+          "alert_ar": "موسم إزهار + حرارة {temp}°م + رطوبة — خطر اللفحة النارية على {crop}",
+          "alert_en": "Fire Blight risk — bloom period + warm humid conditions",
+          "recommendations_ar": [
+            "رش ستربتوميسين + نحاسيات قبل الأمطار وبعدها",
+            "تجنب الري بالرش أثناء التزهير",
+            "استخدم نموذج Maryblyt لحساب EIP (Epiphytic Infection Potential)"
+          ],
+          "urgency_hours": 12
+        }
+      ]
+    },
+    {
+      "category_id": "heat_stress",
+      "category_ar": "الحرارة الشديدة والإجهاد الحراري",
+      "category_en": "Heat Stress & High Temperature Alerts",
+      "icon": "",
+      "priority": "high",
+      "rules": [
+        {
+          "rule_id": "extreme_heat_alert",
+          "alert_ar": "حرارة شديدة متوقعة {max_temp}°م — خطر إجهاد حراري",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "forecast_24h.max_temp_c",
+                "op": ">=",
+                "value": 38
+              },
+              {
+                "param": "humidity_pct",
+                "op": "<=",
+                "value": 40
+              }
+            ]
+          },
+          "risk_level": "high",
+          "timing": "send_evening_before",
+          "recommendations_ar": [
+            "ري مبكراً جداً: 4–6 صباحاً أو بعد غروب الشمس",
+            "زيادة دورات الري بنسبة 20–30% مقارنة بالأيام العادية",
+            "رش كاولين 5% على الأوراق والثمار لتقليل امتصاص الحرارة",
+            "تأجيل أي رش كيميائي — سيحرق الأوراق فوق 35°م",
+            "توفير تظليل مؤقت للمشاتل والثمار الحساسة",
+            "مراقبة الذبول: إذا لم يتعافى النبات عند غروب الشمس → ري فوري"
+          ]
+        },
+        {
+          "rule_id": "sunburn_risk",
+          "alert_ar": "خطر الحرق الشمسي للثمار — إشعاع عالٍ + حرارة {temp}°م",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "temperature_c",
+                "op": ">=",
+                "value": 35
+              },
+              {
+                "param": "solar_radiation",
+                "op": ">=",
+                "value": 800
+              },
+              {
+                "param": "cloud_cover_pct",
+                "op": "<=",
+                "value": 20
+              }
+            ]
+          },
+          "affected_crops": [
+            "تفاح",
+            "عنب",
+            "طماطم",
+            "فلفل",
+            "مشمش"
+          ],
+          "risk_level": "medium",
+          "recommendations_ar": [
+            "رش كاولين أو طلاء ريفليكتيف على الثمار",
+            "بعض العناقيد: اتركها بأوراقها كحماية طبيعية",
+            "ري بالرش خفيف في ذروة الحرارة (12–14) لتبريد الثمار"
+          ]
+        },
+        {
+          "rule_id": "pollination_failure_risk",
+          "alert_ar": "حرارة {temp}°م ستُعطّل التلقيح — ستتساقط الأزهار",
+          "trigger_conditions": {
+            "operator": "OR",
+            "conditions": [
+              {
+                "param": "temperature_c",
+                "op": ">=",
+                "value": 35
+              },
+              {
+                "param": "forecast_24h.max_temp_c",
+                "op": ">=",
+                "value": 38
+              }
+            ]
+          },
+          "affected_crops": [
+            "طماطم",
+            "فلفل",
+            "باذنجان",
+            "كوسة",
+            "خيار"
+          ],
+          "risk_level": "high",
+          "recommendations_ar": [
+            "تلقيح يدوي صباح الباكر (7–9 صباحاً)",
+            "رش بورون + كالسيوم لتقوية حبوب اللقاح",
+            "تقليص التسميد بالنيتروجين مؤقتاً",
+            "في البيوت المحمية: تشغيل التهوية ومراوح التبريد"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "wind_alerts",
+      "category_ar": "الرياح الشديدة",
+      "category_en": "Strong Wind Alerts",
+      "icon": "",
+      "priority": "medium",
+      "rules": [
+        {
+          "rule_id": "spraying_wind_stop",
+          "alert_ar": "رياح {wind} كم/س — أوقف الرش فوراً — خطر انجراف المبيد",
+          "trigger_conditions": {
+            "param": "wind_speed_kmh",
+            "op": ">=",
+            "value": 15
+          },
+          "risk_level": "critical",
+          "timing": "realtime",
+          "recommendations_ar": [
+            "أوقف الرش فوراً — انجراف المبيد يُلوث المحاصيل المجاورة",
+            "الرش المثالي: ريح < 8 كم/س — صباح الباكر أو المساء",
+            "استخدم فوهات مضادة للانجراف (drift reduction nozzles)",
+            "سجّل توقف الرش في سجل العمليات"
+          ]
+        },
+        {
+          "rule_id": "flower_drop_wind",
+          "alert_ar": "رياح {wind} كم/س أثناء التزهير — خطر تساقط أزهار {crop}",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "wind_speed_kmh",
+                "op": ">=",
+                "value": 25
+              },
+              {
+                "param": "crop_stage",
+                "op": "==",
+                "value": "flowering"
+              }
+            ]
+          },
+          "affected_crops": [
+            "زيتون",
+            "عنب",
+            "مانجو",
+            "حمضيات",
+            "تفاح",
+            "كمثرى"
+          ],
+          "risk_level": "high",
+          "recommendations_ar": [
+            "رش مضادات التساقط (NAA أو BA) قبل الريح بـ 6 ساعات",
+            "تجنب أي عمليات ميكانيكية (رش، حرث) أثناء الرياح الشديدة",
+            "استخدام مصدات الرياح أو أشبكة الحماية"
+          ]
+        },
+        {
+          "rule_id": "structure_wind_damage",
+          "alert_ar": "رياح شديدة {wind} كم/س — خطر تضرر البنية التحتية الزراعية",
+          "trigger_conditions": {
+            "param": "forecast_24h.max_wind_speed_kmh",
+            "op": ">=",
+            "value": 40
+          },
+          "risk_level": "high",
+          "timing": "send_evening_before",
+          "recommendations_ar": [
+            "ثبّت أغطية البيوت المحمية وأسقف الأسلاك",
+            "دعّم العيدان المرفوعة والدعائم",
+            "أحكم ربط الأغصان في أشجار الفاكهة الصغيرة",
+            "أخرج المعدات الخفيفة من العراء",
+            "تحقق من مضخات الري ووصلات الأنابيب"
+          ]
+        },
+        {
+          "rule_id": "dust_storm",
+          "alert_ar": "عاصفة رملية — رؤية {visibility} كم — حماية المحاصيل",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "wind_speed_kmh",
+                "op": ">=",
+                "value": 35
+              },
+              {
+                "param": "visibility_km",
+                "op": "<=",
+                "value": 3
+              },
+              {
+                "param": "humidity_pct",
+                "op": "<=",
+                "value": 30
+              }
+            ]
+          },
+          "risk_level": "high",
+          "recommendations_ar": [
+            "أغلق البيوت المحمية فوراً",
+            "رش الأوراق بالماء بعد انتهاء العاصفة لإزالة الغبار",
+            "افحص الفلاتر ومحطات الري بعد العاصفة"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "cold_frost",
+      "category_ar": "البرد والصقيع",
+      "category_en": "Cold & Frost Alerts",
+      "icon": "❄",
+      "priority": "critical",
+      "rules": [
+        {
+          "rule_id": "frost_warning",
+          "alert_ar": "تحذير صقيع! الحرارة ستنخفض لـ {min_temp}°م الليلة",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "forecast_24h.min_temp_c",
+                "op": "<=",
+                "value": 2
+              },
+              {
+                "param": "cloud_cover_pct",
+                "op": "<=",
+                "value": 30
+              },
+              {
+                "param": "humidity_pct",
+                "op": "<=",
+                "value": 60
+              }
+            ]
+          },
+          "risk_level": "critical",
+          "timing": "send_6h_before_sunset",
+          "recommendations_ar": [
+            "ري خفيف مساءً (تبريد بالتبخر يُطلق حرارة كامنة تحمي النبات)",
+            "غطّ المشاتل والنباتات الحساسة بأقمشة غير منسوجة",
+            "شغّل مراوح الصقيع أو أجهزة التسخين",
+            "رش مضادات الصقيع (حمض السلسيليك أو البوتاسيوم)",
+            "أوقف ري التنقيط — الأنابيب ستتجمد",
+            "بعد الصقيع: لا تقلّم الأجزاء المتضررة فوراً — انتظر التعافي"
+          ]
+        },
+        {
+          "rule_id": "cold_stress",
+          "alert_ar": "برودة شديدة {min_temp}°م — خطر تضرر المحاصيل الحساسة",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "forecast_24h.min_temp_c",
+                "op": "<=",
+                "value": 8
+              },
+              {
+                "param": "temperature_c",
+                "op": "<=",
+                "value": 10
+              }
+            ]
+          },
+          "affected_crops": [
+            "موز",
+            "حمضيات",
+            "مانجو",
+            "خيار",
+            "فلفل",
+            "باذنجان"
+          ],
+          "risk_level": "medium",
+          "recommendations_ar": [
+            "غطّ النباتات الاستوائية الحساسة",
+            "رش بوتاسيوم مُذاب لتقوية جدران الخلايا",
+            "تأجيل أي تقليم حتى تستقر الحرارة"
+          ]
+        },
+        {
+          "rule_id": "post_frost_disease",
+          "alert_ar": "بعد الصقيع — خطر دخول الفطريات للأنسجة المتضررة",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "temperature_c",
+                "op": ">=",
+                "value": 10
+              },
+              {
+                "param": "last_event",
+                "op": "==",
+                "value": "frost"
+              },
+              {
+                "param": "humidity_pct",
+                "op": ">=",
+                "value": 70
+              }
+            ]
+          },
+          "risk_level": "high",
+          "timing": "send_morning_after_frost",
+          "recommendations_ar": [
+            "رش فطري وقائي فوراً (نحاسيات أو مانكوزيب)",
+            "لا تقلّم الأجزاء المتضررة — الجرح المفتوح يُسرّع العدوى",
+            "راقب الأنسجة المتضررة لظهور أعراض الفطر خلال 3–5 أيام"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "irrigation",
+      "category_ar": "الري والسقي الذكي",
+      "category_en": "Smart Irrigation Management",
+      "icon": "",
+      "priority": "high",
+      "rules": [
+        {
+          "rule_id": "skip_irrigation_rain",
+          "alert_ar": "مطر {rain_mm} مم متوقع غداً — أوقف دورة الري المجدولة",
+          "trigger_conditions": {
+            "param": "forecast_24h.expected_rainfall_mm",
+            "op": ">=",
+            "value": 10
+          },
+          "risk_level": "medium",
+          "timing": "send_evening_before",
+          "recommendations_ar": [
+            "أوقف دورة الري — المطر سيكفي",
+            "إذا كان المطر > 20 مم: أوقف الري لـ 48 ساعة",
+            "بعد الأمطار: افحص رطوبة التربة قبل استئناف الري",
+            "تأكد من سلامة نظام الصرف لتجنب الغرق"
+          ]
+        },
+        {
+          "rule_id": "increase_irrigation_heat",
+          "alert_ar": "حرارة شديدة {max_temp}°م + ETo عالٍ — زد دورات الري",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "forecast_24h.max_temp_c",
+                "op": ">=",
+                "value": 35
+              },
+              {
+                "param": "ETo_mm",
+                "op": ">=",
+                "value": 8
+              },
+              {
+                "param": "wind_speed_kmh",
+                "op": ">=",
+                "value": 15
+              }
+            ]
+          },
+          "risk_level": "high",
+          "recommendations_ar": [
+            "زد كمية الري 25–40% عن الكمية المعتادة",
+            "قسّم الري على دورتين: 5 صباحاً + 6 مساءً",
+            "أضف تغطية بالمالش لتقليل التبخر من التربة",
+            "راقب أعراض الذبول الشديد"
+          ]
+        },
+        {
+          "rule_id": "optimal_spraying_window",
+          "alert_ar": "نافذة مثالية للرش الكيميائي الليلة {time}–{time2}",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "wind_speed_kmh",
+                "op": "<=",
+                "value": 8
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 18,
+                "max": 30
+              },
+              {
+                "param": "humidity_pct",
+                "op": "between",
+                "min": 50,
+                "max": 80
+              },
+              {
+                "param": "forecast_6h.rain_probability_pct",
+                "op": "<=",
+                "value": 20
+              }
+            ]
+          },
+          "risk_level": "info",
+          "type": "positive_alert",
+          "recommendations_ar": [
+            "الآن هو أفضل وقت للرش الكيميائي",
+            "الظروف: ريح منخفضة + رطوبة متوسطة + درجة حرارة مناسبة",
+            "استفد من هذه النافذة للرش الوقائي أو العلاجي"
+          ]
+        },
+        {
+          "rule_id": "morning_dew_disease",
+          "alert_ar": "ندى ليلي مرتقب — الأوراق ستكون مبللة — خطر فطري",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 15,
+                "max": 25
+              },
+              {
+                "param": "dew_point_c",
+                "op": ">=",
+                "value": 13
+              },
+              {
+                "param": "wind_speed_kmh",
+                "op": "<=",
+                "value": 5
+              },
+              {
+                "param": "cloud_cover_pct",
+                "op": "<=",
+                "value": 20
+              }
+            ]
+          },
+          "risk_level": "medium",
+          "timing": "send_evening",
+          "recommendations_ar": [
+            "ندى الصباح سيُبلل الأوراق 4–6 ساعات — خطر فطري",
+            "خطط لرش وقائي بعد جفاف الندى (9–10 صباحاً)",
+            "تحسين التهوية في البيوت المحمية"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "weather_pests",
+      "category_ar": "الحشرات والآفات المرتبطة بالطقس",
+      "category_en": "Weather-Triggered Pest Alerts",
+      "icon": "烈",
+      "priority": "medium",
+      "rules": [
+        {
+          "rule_id": "spider_mite_risk",
+          "alert_ar": "جو حار جاف {temp}°م + رطوبة {humidity}% — خطر تكاثر العنكبوت الأحمر",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "temperature_c",
+                "op": ">=",
+                "value": 28
+              },
+              {
+                "param": "humidity_pct",
+                "op": "<=",
+                "value": 50
+              },
+              {
+                "param": "consecutive_dry_days",
+                "op": ">=",
+                "value": 5
+              }
+            ]
+          },
+          "affected_crops": [
+            "طماطم",
+            "خيار",
+            "فراولة",
+            "عنب",
+            "حمضيات",
+            "أشجار فاكهة"
+          ],
+          "risk_level": "medium",
+          "recommendations_ar": [
+            "افحص الأوراق يومياً من السطح السفلي",
+            "عتبة التدخل: 5 أكاروس/ورقة",
+            "رش أبامكتين أو بيريداين أو إيتوكسازول",
+            "رفع رطوبة البيوت المحمية يُقلل التكاثر"
+          ]
+        },
+        {
+          "rule_id": "whitefly_thrips_risk",
+          "alert_ar": "حرارة {temp}°م + رطوبة {humidity}% — ظروف مثالية لتكاثر الذبابة البيضاء والتربس",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 25,
+                "max": 35
+              },
+              {
+                "param": "humidity_pct",
+                "op": "between",
+                "min": 50,
+                "max": 75
+              }
+            ]
+          },
+          "affected_crops": [
+            "طماطم",
+            "خيار",
+            "فلفل",
+            "باذنجان",
+            "كوسة"
+          ],
+          "risk_level": "medium",
+          "recommendations_ar": [
+            "ضع مصائد صفراء لمراقبة الكثافة",
+            "عتبة الذبابة البيضاء: 10 حشرة/مصيدة/أسبوع",
+            "رش إيميداكلوبريد أو سبينيتورام أو سايانترانيليبرول"
+          ]
+        },
+        {
+          "rule_id": "locust_warning",
+          "alert_ar": "رياح {wind_dir} + درجة حرارة مناسبة — احتمال تحرك الجراد",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "wind_direction",
+                "op": "in",
+                "values": [
+                  "S",
+                  "SE",
+                  "SW"
+                ]
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 25,
+                "max": 40
+              },
+              {
+                "param": "locust_region_alert",
+                "op": "==",
+                "value": true
+              }
+            ]
+          },
+          "risk_level": "critical",
+          "recommendations_ar": [
+            "تابع تقارير الجراد من FAO ووزارة الزراعة",
+            "جهّز مخزون ديلتامثرين أو فيبرونيل",
+            "نسّق مع الجيران لمكافحة جماعية"
+          ]
+        }
+      ]
+    },
+    {
+      "category_id": "spraying_operations",
+      "category_ar": "العمليات الزراعية والرش",
+      "category_en": "Spraying & Farm Operations",
+      "icon": "",
+      "priority": "medium",
+      "rules": [
+        {
+          "rule_id": "ideal_spray_window",
+          "alert_ar": "نافذة رش مثالية: ريح {wind} كم/س + رطوبة {humidity}% + حرارة {temp}°م",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "wind_speed_kmh",
+                "op": "<=",
+                "value": 8
+              },
+              {
+                "param": "temperature_c",
+                "op": "between",
+                "min": 15,
+                "max": 30
+              },
+              {
+                "param": "humidity_pct",
+                "op": "between",
+                "min": 50,
+                "max": 80
+              },
+              {
+                "param": "rain_probability_pct",
+                "op": "<=",
+                "value": 20
+              },
+              {
+                "param": "time_of_day",
+                "op": "between",
+                "min": "06:00",
+                "max": "10:00"
+              }
+            ]
+          },
+          "type": "positive_alert",
+          "risk_level": "info",
+          "recommendations_ar": [
+            "الآن أفضل وقت للرش — استثمر هذه النافذة",
+            "أولويات الرش: وقائي فطري + أي مبيد علاجي مُخطط له"
+          ]
+        },
+        {
+          "rule_id": "do_not_spray",
+          "alert_ar": "لا تُرش! {reason} — ستفقد المبيد وتتضرر المحاصيل",
+          "conditions_that_trigger": [
+            {
+              "condition": "wind > 15 km/h",
+              "reason": "انجراف المبيد"
+            },
+            {
+              "condition": "temp > 35°C",
+              "reason": "تبخر سريع وحرق أوراق"
+            },
+            {
+              "condition": "rain expected < 4h",
+              "reason": "غسيل المبيد قبل امتصاصه"
+            },
+            {
+              "condition": "humidity < 30%",
+              "reason": "تبخر سريع وانخفاض فاعلية"
+            }
+          ],
+          "risk_level": "warning"
+        },
+        {
+          "rule_id": "harvest_rain_alert",
+          "alert_ar": "مطر قادم — إذا كانت المحاصيل ناضجة: تعجيل الحصاد",
+          "trigger_conditions": {
+            "operator": "AND",
+            "conditions": [
+              {
+                "param": "forecast_24h.expected_rainfall_mm",
+                "op": ">=",
+                "value": 15
+              },
+              {
+                "param": "crop_stage",
+                "op": "==",
+                "value": "harvest_ready"
+              }
+            ]
+          },
+          "risk_level": "high",
+          "recommendations_ar": [
+            "عجّل الحصاد قبل الأمطار لتجنب التشقق والتعفن",
+            "الطماطم والعنب: حساسة جداً للمطر في مرحلة النضج",
+            "الحبوب: المطر بعد النضج يسبب الإنبات والتلوث الفطري"
+          ]
+        }
+      ]
+    }
+  ],
+  "processing_logic": {
+    "evaluation_interval_minutes": 30,
+    "forecast_sources": [
+      "OpenWeatherMap",
+      "Weather.gov",
+      "local_sensor"
+    ],
+    "alert_deduplication": {
+      "description": "لا ترسل نفس التحذير مرتين خلال نفس اليوم",
+      "cooldown_hours": 12
+    },
+    "priority_order": [
+      "critical",
+      "high",
+      "medium",
+      "info"
+    ],
+    "personalization": {
+      "filter_by_crop": true,
+      "filter_by_region": true,
+      "filter_by_crop_stage": true,
+      "farmer_preferences": [
+        "morning_only",
+        "all_day",
+        "critical_only"
+      ]
+    },
+    "alert_channels": [
+      "push_notification",
+      "sms",
+      "whatsapp",
+      "in_app"
+    ],
+    "language": "ar"
+  },
+  "message_template": {
+    "structure": {
+      "header": "{icon} {severity_ar} — {category_ar}",
+      "body": "{alert_ar}",
+      "recommendation_title": "التوصية:",
+      "recommendation": "{top_recommendation}",
+      "action_button": "عرض التفاصيل الكاملة"
+    },
+    "severity_labels": {
+      "critical": "⛔ تحذير عاجل",
+      "high": "⚠️ تنبيه مهم",
+      "medium": "ℹ️ ملاحظة",
+      "info": "✅ فرصة مناسبة"
+    },
+    "example_messages": [
+      {
+        "scenario": "مطر + رطوبة عالية",
+        "message": "⚠️ تنبيه مهم — المطر والأمراض الفطرية\nرطوبة 87% وأمطار متوقعة غداً — خطر البياض الزغبي على الطماطم\nالتوصية: رش مانكوزيب 2.5 جم/لتر اليوم قبل غروب الشمس"
+      },
+      {
+        "scenario": "حرارة شديدة",
+        "message": "⛔ تحذير عاجل — حرارة شديدة\nالحرارة ستصل 42°م غداً — خطر إجهاد حراري وتساقط أزهار\nالتوصية: ري الفجر 5 صباحاً وأوقف الرش الكيميائي"
+      },
+      {
+        "scenario": "نافذة رش مثالية",
+        "message": "✅ فرصة مناسبة للرش\nريح 5 كم/س + رطوبة 65% + حرارة 22°م — نافذة مثالية حتى 10 صباحاً\nاستثمر هذا الوقت لأي رش وقائي أو علاجي"
+      }
+    ]
+  }
+}

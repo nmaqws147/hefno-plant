@@ -1,0 +1,19 @@
+
+/* ===== Scrollbar ===== */
+.fungal-diseases-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.fungal-diseases-page::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+}
+
+.fungal-diseases-page::-webkit-scrollbar-thumb {
+  background: #a855f7;
+  border-radius: 4px;
+}
+
+.fungal-diseases-page::-webkit-scrollbar-thumb:hover {
+  background: #9333ea;
+}

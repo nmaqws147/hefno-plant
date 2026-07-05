@@ -1,0 +1,1255 @@
+{
+  "id": "fertilizers_database",
+  "ar_name": "قاعدة بيانات الأسمدة",
+  "name_en": "Fertilizers Database — Chemical, Organic & Biological",
+  "source": "IFA Fertilizer Manual + FAO + IPNI + Egyptian Ministry of Agriculture Fertilizer Register 2024 + EIFAC",
+  "version": "1.0.0",
+  "total_fertilizers": 52,
+  "groups_count": 5,
+  "groups": [
+    {
+      "id": "fert-grp-N",
+      "ar_name": "الأسمدة النيتروجينية الكيميائية",
+      "name_en": "Nitrogen Fertilizers — Chemical",
+      "ar_description": "الأسمدة الأعلى استهلاكاً في مصر والعالم — تُوفر النيتروجين بأشكاله الثلاثة: نترات وأمونيوم وأميد",
+      "fertilizers_count": 8,
+      "fertilizers": [
+        {
+          "id": "fert-001",
+          "ar_name": "يوريا",
+          "name_en": "Urea",
+          "chemical_formula": "CO(NH₂)₂",
+          "nutrient_content": {"N": 46, "P": 0, "K": 0},
+          "ar_form": "بلورات بيضاء — حبيبات — محلول",
+          "nitrogen_type": "أميد — يتحول لأمونيوم ثم نترات في التربة",
+          "solubility_g_per_100ml": 108,
+          "ar_type": "سريع الذوبان — متاح للنبات بعد تحول في التربة",
+          "application": {
+            "soil_kg_per_feddan": "25-50 كجم/فدان حسب المحصول",
+            "foliar_percent": "0.5-2% — فعّال جداً رشاً ورقياً",
+            "fertigation_kg_per_feddan": "10-20 كجم/فدان عبر نظام الري",
+            "ar_timing": "تقسيم على دفعتين أو ثلاث — تجنب التطبيق على تربة جافة أو قبل أمطار غزيرة",
+            "ar_method": "تحت السطح أفضل — أو بعد الري مباشرة لتقليل فقد الأمونيا",
+            "max_single_dose_ar": "لا تتجاوز 20 كجم/فدان في جرعة واحدة"
+          },
+          "ph_effect_on_soil": "يُحمّض التربة تدريجياً عند الاستخدام المستمر (تحول الأمونيوم لنترات)",
+          "ar_advantages": [
+            "أعلى تركيز نيتروجين (46%) — أرخص تكلفة لوحدة N",
+            "قابلية عالية للذوبان — مناسب للرش الورقي والري التنقيط",
+            "سهل النقل والتخزين",
+            "لا يحتوي Cl — مناسب لجميع المحاصيل"
+          ],
+          "ar_disadvantages": [
+            "فقد عالٍ للأمونيا عند التطبيق السطحي في تربة قلوية",
+            "خطر حرق النباتات عند تركيزات الرش العالية",
+            "يحتاج وقتاً للتحول لنترات في التربة الباردة"
+          ],
+          "storage_ar": "جاف ومحكم الإغلاق — بعيد عن الرطوبة — لا يُخزن مع مواد متفجرة",
+          "compatibility_ar": "لا يُخلط مع الأسمدة عالية القلوية — يُخلط مع MAP وDAP في محلول UAN",
+          "egypt_importance": "الأكثر استخداماً في مصر — الإنتاج المحلي في طلخا والسويس",
+          "price_category": "منخفض — اقتصادي",
+          "target_nutrients": ["N"],
+          "suitable_crops": ["قمح", "ذرة", "أرز", "قطن", "خضروات جميعها", "أشجار فاكهة"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-002",
+          "ar_name": "نترات الأمونيوم",
+          "name_en": "Ammonium Nitrate (AN)",
+          "chemical_formula": "NH₄NO₃",
+          "nutrient_content": {"N": 33.5, "P": 0, "K": 0},
+          "ar_form": "حبيبات — بريلات",
+          "nitrogen_type": "نصفه نترات سريع الامتصاص + نصفه أمونيوم بطيء التحول",
+          "solubility_g_per_100ml": 192,
+          "ar_type": "سريع التأثير — الجزء النتراتي متاح فوراً",
+          "application": {
+            "soil_kg_per_feddan": "30-60 كجم/فدان",
+            "foliar_percent": "غير موصى به — خطر حرق",
+            "fertigation_kg_per_feddan": "10-25 كجم/فدان",
+            "ar_timing": "مقسم على دفعتين — مناسب للتوبدريس في الحبوب",
+            "ar_method": "سطحي أو محقون في التربة"
+          },
+          "ph_effect_on_soil": "تأثير تحميض متوسط — أقل من يوريا",
+          "ar_advantages": [
+            "تأثير سريع ومتواصل (نترات + أمونيوم)",
+            "أقل فقداً للأمونيا من يوريا",
+            "فعّال في التربة الباردة (النترات متاحة فوراً)"
+          ],
+          "ar_disadvantages": [
+            "خطر انفجار عند التخزين الخاطئ — مُقيّد في مصر",
+            "غسيل النترات سريع في التربة الرملية",
+            "مُقيّد الاستخدام في مصر لأسباب أمنية"
+          ],
+          "storage_ar": "شروط أمنية صارمة — بعيد عن المواد القابلة للاشتعال — بتصريح حكومي",
+          "compatibility_ar": "لا يُخلط مع السوبر فوسفات — يُخلط مع KCl في الظروف الجافة",
+          "egypt_importance": "مُقيّد في مصر — يُستخدم بتصاريح خاصة",
+          "price_category": "متوسط",
+          "target_nutrients": ["N"],
+          "suitable_crops": ["قمح", "شعير", "ذرة", "أرز"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-003",
+          "ar_name": "سلفات الأمونيوم",
+          "name_en": "Ammonium Sulfate (AS)",
+          "chemical_formula": "(NH₄)₂SO₄",
+          "nutrient_content": {"N": 21, "S": 24, "P": 0, "K": 0},
+          "ar_form": "بلورات — حبيبات",
+          "nitrogen_type": "أمونيوم — بطيء التحرر نسبياً",
+          "solubility_g_per_100ml": 70,
+          "ar_type": "متوسط السرعة — يُوفر N وS معاً",
+          "application": {
+            "soil_kg_per_feddan": "50-100 كجم/فدان (لتوفير N وS)",
+            "foliar_percent": "0.5-1% — مناسب للرش",
+            "fertigation_kg_per_feddan": "20-40 كجم/فدان",
+            "ar_timing": "قبل الزراعة أو في بداية الموسم",
+            "ar_method": "خلط مع التربة أو إضافة للري"
+          },
+          "ph_effect_on_soil": "يُحمّض التربة — الأعلى تأثيراً على pH بين الأسمدة النيتروجينية",
+          "ar_advantages": [
+            "يُوفر N وS معاً — مثالي للمحاصيل محتاجة الكبريت",
+            "أقل خطراً من نترات الأمونيوم",
+            "مفيد للتربة القلوية — يُحسن pH",
+            "لا يفقد أمونيا بسرعة"
+          ],
+          "ar_disadvantages": [
+            "تركيز N منخفض (21%) — أعلى تكلفة/وحدة N",
+            "يُحمّض التربة بقوة عند الاستخدام المستمر",
+            "ثقيل الوزن — أعلى كمية للفدان"
+          ],
+          "storage_ar": "جاف ومحكم — أمان أعلى من نترات الأمونيوم",
+          "compatibility_ar": "يُخلط مع معظم الأسمدة — لا يُخلط مع الجير أو الدولوميت",
+          "egypt_importance": "مناسب جداً للبصل والثوم والقمح في مصر — يُوفر N+S",
+          "price_category": "متوسط",
+          "target_nutrients": ["N", "S"],
+          "suitable_crops": ["بصل", "ثوم", "قمح", "ملفوف", "فول سوداني", "خضروات جميعها"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-004",
+          "ar_name": "نترات الكالسيوم",
+          "name_en": "Calcium Nitrate (CAN)",
+          "chemical_formula": "Ca(NO₃)₂",
+          "nutrient_content": {"N": 15.5, "Ca": 19, "P": 0, "K": 0},
+          "ar_form": "حبيبات — بلورات — محلول",
+          "nitrogen_type": "نترات — سريع الامتصاص جداً",
+          "solubility_g_per_100ml": 129,
+          "ar_type": "سريع التأثير — يُوفر N+Ca معاً",
+          "application": {
+            "soil_kg_per_feddan": "60-100 كجم/فدان",
+            "foliar_percent": "0.5-1% — ممتاز للرش على الثمار لتفادي تعفن الطرف الزهري",
+            "fertigation_kg_per_feddan": "15-30 كجم/فدان",
+            "ar_timing": "في مرحلة تطور الثمار — الأهم في الطماطم والفلفل",
+            "ar_method": "رش ورقي على الثمار أو عبر الري التنقيط"
+          },
+          "ph_effect_on_soil": "لا يُحمّض التربة — يرفع pH قليلاً",
+          "ar_advantages": [
+            "يُوفر N+Ca في آنٍ واحد — حل مثالي لتعفن الطرف الزهري",
+            "لا يُحمّض التربة — مناسب للتربة الحمضية",
+            "سريع الامتصاص (نترات)",
+            "مناسب لجميع أنظمة الري"
+          ],
+          "ar_disadvantages": [
+            "تركيز N منخفض (15.5%) — أعلى تكلفة",
+            "يمتص الرطوبة بسرعة — صعب التخزين",
+            "ثقيل الوزن للكميات المطلوبة"
+          ],
+          "storage_ar": "في عبوات محكمة ومكان جاف جداً — يمتص الرطوبة بشدة",
+          "compatibility_ar": "لا يُخلط مع الفوسفات أو الكبريتات في نفس المحلول — يُخلط منفرداً",
+          "egypt_importance": "ضروري للطماطم والفلفل والخيار في مصر — يمنع تعفن الطرف الزهري",
+          "price_category": "مرتفع نسبياً",
+          "target_nutrients": ["N", "Ca"],
+          "suitable_crops": ["طماطم", "فلفل", "خيار", "باذنجان", "تفاح", "كمثرى", "خس"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-005",
+          "ar_name": "نترات البوتاسيوم",
+          "name_en": "Potassium Nitrate (KNO₃)",
+          "chemical_formula": "KNO₃",
+          "nutrient_content": {"N": 13, "K": 46, "P": 0},
+          "ar_form": "بلورات — حبيبات",
+          "nitrogen_type": "نترات — سريع الامتصاص",
+          "solubility_g_per_100ml": 37,
+          "ar_type": "يُوفر N+K معاً — ممتاز لمرحلة التثمير",
+          "application": {
+            "soil_kg_per_feddan": "30-60 كجم/فدان",
+            "foliar_percent": "0.5-1% — ممتاز لجودة الثمار",
+            "fertigation_kg_per_feddan": "10-20 كجم/فدان",
+            "ar_timing": "مرحلة تطور الثمار وما قبل الحصاد — يُحسن اللون والمذاق",
+            "ar_method": "الري التنقيط أو الرش الورقي"
+          },
+          "ph_effect_on_soil": "تأثير محايد إلى بسيط",
+          "ar_advantages": [
+            "يُوفر N+K بدون Cl — مثالي للمحاصيل الحساسة للكلور",
+            "يُحسن جودة الثمار ولونها ومحتوى السكر",
+            "لا يُحمّض التربة",
+            "مناسب لمرحلة الحصاد"
+          ],
+          "ar_disadvantages": [
+            "مرتفع الثمن نسبياً",
+            "تركيز N منخفض (13%)",
+            "ذوبان محدود مقارنة باليوريا"
+          ],
+          "storage_ar": "جاف ومحكم — أمان جيد",
+          "compatibility_ar": "يُخلط مع MAP وCa(NO₃)₂ بحذر — لا يُخلط مع الفوسفات في نفس المحلول المركّز",
+          "egypt_importance": "مهم جداً لنضج الطماطم والحمضيات والعنب في مصر",
+          "price_category": "مرتفع",
+          "target_nutrients": ["N", "K"],
+          "suitable_crops": ["طماطم", "عنب", "حمضيات", "فلفل", "خيار", "بطاطس", "فراولة"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-006",
+          "ar_name": "محلول UAN (يوريا + نترات أمونيوم)",
+          "name_en": "UAN Solution (Urea Ammonium Nitrate)",
+          "chemical_formula": "CO(NH₂)₂ + NH₄NO₃ + H₂O",
+          "nutrient_content": {"N": 28, "P": 0, "K": 0},
+          "ar_form": "محلول سائل — UAN 28%",
+          "nitrogen_type": "ثلاثي: أميد + أمونيوم + نترات",
+          "solubility_g_per_100ml": "محلول جاهز",
+          "ar_type": "سريع + متواصل — الثلاثة أشكال من N",
+          "application": {
+            "soil_liters_per_feddan": "50-80 لتر/فدان محلول",
+            "foliar_diluted": "تخفيف 1:10 فقط — خطر حرق بتركيزات أعلى",
+            "fertigation_liters_per_feddan": "20-40 لتر/فدان عبر الري",
+            "ar_timing": "مناسب للتطبيق الموزون على الموسم",
+            "ar_method": "رش سطحي أو حقن في خطوط الري"
+          },
+          "ph_effect_on_soil": "تحميض متوسط",
+          "ar_advantages": [
+            "سائل — سهل الضخ والتوزيع الموحد",
+            "يحتوي الأشكال الثلاثة من N — تأثير متواصل",
+            "مناسب للتطبيق الآلي في الزراعة الكبيرة",
+            "أقل فقداً من اليوريا الصلبة"
+          ],
+          "ar_disadvantages": [
+            "يتطلب خزانات ومعدات خاصة",
+            "خطر حرق الأوراق إذا رُشّ غير مخفف",
+            "أعلى تكلفة لوجستية"
+          ],
+          "storage_ar": "خزانات بلاستيكية أو ستانلس ستيل — بعيد عن الحرارة الشديدة",
+          "compatibility_ar": "متوافق مع معظم الأسمدة السائلة — لا مع الأسمدة القلوية",
+          "egypt_importance": "متزايد الاستخدام في الزراعة الكبيرة — الاستصلاح الصحراوي",
+          "price_category": "متوسط",
+          "target_nutrients": ["N"],
+          "suitable_crops": ["قمح", "ذرة", "قطن", "محاصيل حقلية كبيرة"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-007",
+          "ar_name": "نترات الأمونيوم الكلسية CAN",
+          "name_en": "Calcium Ammonium Nitrate (CAN)",
+          "chemical_formula": "NH₄NO₃ + CaCO₃",
+          "nutrient_content": {"N": 26, "Ca": 8, "P": 0, "K": 0},
+          "ar_form": "حبيبات",
+          "nitrogen_type": "نترات + أمونيوم — مضاف له كلس",
+          "solubility_g_per_100ml": 80,
+          "ar_type": "سريع متوسط — أكثر أماناً من نترات الأمونيوم النقية",
+          "application": {
+            "soil_kg_per_feddan": "40-70 كجم/فدان",
+            "foliar_percent": "غير موصى به",
+            "fertigation_kg_per_feddan": "15-25 كجم/فدان",
+            "ar_timing": "توبدريس الحبوب — مرحلة التفريع في القمح",
+            "ar_method": "سطحي أو خلط مع التربة"
+          },
+          "ph_effect_on_soil": "تأثير محايد نسبياً — الكلس يوازن التحميض",
+          "ar_advantages": [
+            "أكثر أماناً من نترات الأمونيوم النقية",
+            "يُوفر Ca إضافية للتربة",
+            "تأثير سريع ومتواصل",
+            "لا يُحمّض التربة كثيراً"
+          ],
+          "ar_disadvantages": [
+            "تركيز N أقل من نترات الأمونيوم",
+            "أعلى كمية مطلوبة للفدان"
+          ],
+          "storage_ar": "بشروط أمنية معتدلة — أفضل من نترات الأمونيوم النقية",
+          "compatibility_ar": "يُخلط مع معظم الأسمدة",
+          "egypt_importance": "بديل آمن لنترات الأمونيوم — مسموح به بحرية أكبر",
+          "price_category": "متوسط",
+          "target_nutrients": ["N", "Ca"],
+          "suitable_crops": ["قمح", "ذرة", "أرز", "محاصيل حقلية"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-008",
+          "ar_name": "نترات الصوديوم (ملح تشيلي)",
+          "name_en": "Sodium Nitrate (Chile Saltpeter)",
+          "chemical_formula": "NaNO₃",
+          "nutrient_content": {"N": 16, "Na": 26, "P": 0, "K": 0},
+          "ar_form": "بلورات — حبيبات",
+          "nitrogen_type": "نترات — سريع الامتصاص جداً",
+          "solubility_g_per_100ml": 87,
+          "ar_type": "سريع التأثير — مسموح في بعض الزراعة العضوية",
+          "application": {
+            "soil_kg_per_feddan": "30-50 كجم/فدان",
+            "foliar_percent": "غير موصى به",
+            "ar_timing": "رشة أو رشتان خلال الموسم",
+            "ar_method": "سطحي أو خلط مع التربة"
+          },
+          "ph_effect_on_soil": "يرفع pH قليلاً",
+          "ar_advantages": [
+            "مسموح في الزراعة العضوية (معدني طبيعي)",
+            "سريع التأثير",
+            "يرفع pH — مناسب للتربة الحمضية"
+          ],
+          "ar_disadvantages": [
+            "يزيد ملوحة التربة (Na)",
+            "لا يُستخدم في التربة الملحية",
+            "تركيز N منخفض"
+          ],
+          "storage_ar": "جاف ومحكم",
+          "compatibility_ar": "لا يُستخدم في التربة الملحية",
+          "egypt_importance": "محدود الاستخدام في مصر — مسموح في الزراعة العضوية المقيّدة",
+          "price_category": "متوسط-مرتفع",
+          "target_nutrients": ["N"],
+          "suitable_crops": ["محاصيل الزراعة العضوية"],
+          "egypt_registered": true,
+          "organic_certified": true
+        }
+      ]
+    },
+    {
+      "id": "fert-grp-P",
+      "ar_name": "الأسمدة الفوسفاتية",
+      "name_en": "Phosphate Fertilizers",
+      "ar_description": "تُوفر الفوسفور لتطوير الجذور والتزهير والتثمير",
+      "fertilizers_count": 6,
+      "fertilizers": [
+        {
+          "id": "fert-009",
+          "ar_name": "سوبر فوسفات أحادي SSP",
+          "name_en": "Single Super Phosphate (SSP)",
+          "chemical_formula": "Ca(H₂PO₄)₂ + CaSO₄",
+          "nutrient_content": {"P2O5": 18, "P": 7.8, "Ca": 21, "S": 12},
+          "ar_form": "مسحوق — حبيبات",
+          "ar_type": "ذوبان بطيء — يُوفر P+Ca+S",
+          "application": {
+            "soil_kg_per_feddan": "100-150 كجم/فدان",
+            "foliar_percent": "غير مناسب",
+            "ar_timing": "قبل الزراعة — خلط مع التربة",
+            "ar_method": "تحت السطح مع الزراعة"
+          },
+          "ph_effect_on_soil": "يُحمّض قليلاً — مفيد للتربة القلوية",
+          "ar_advantages": [
+            "يُوفر P+Ca+S في آنٍ واحد — اقتصادي",
+            "مناسب للتربة القلوية في مصر",
+            "يُحسن بنية التربة مع Ca",
+            "سعر منخفض"
+          ],
+          "ar_disadvantages": [
+            "تركيز P منخفض — كمية كبيرة للفدان",
+            "قد يثبت P مع Ca في التربة القلوية",
+            "أثر بطيء"
+          ],
+          "storage_ar": "جاف — يمتص الرطوبة",
+          "compatibility_ar": "لا يُخلط مع الأسمدة النيتروجينية القلوية",
+          "egypt_importance": "الأكثر استخداماً من الفوسفات في مصر — إنتاج محلي",
+          "price_category": "منخفض",
+          "target_nutrients": ["P", "Ca", "S"],
+          "suitable_crops": ["قمح", "ذرة", "قطن", "خضروات", "أشجار فاكهة"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-010",
+          "ar_name": "DAP — فوسفات ثنائي الأمونيوم",
+          "name_en": "Diammonium Phosphate (DAP)",
+          "chemical_formula": "(NH₄)₂HPO₄",
+          "nutrient_content": {"N": 18, "P2O5": 46, "P": 20},
+          "ar_form": "حبيبات رمادية-بنية",
+          "ar_type": "سريع الذوبان — يُوفر N+P",
+          "application": {
+            "soil_kg_per_feddan": "50-100 كجم/فدان",
+            "fertigation_kg_per_feddan": "15-30 كجم/فدان",
+            "ar_timing": "مع الزراعة أو قبلها — خلط مع التربة",
+            "ar_method": "تحت سطح التربة مع البذور"
+          },
+          "ph_effect_on_soil": "يرفع pH محلياً حول الحبيبة ثم يحمض التربة تدريجياً",
+          "ar_advantages": [
+            "أعلى تركيز P (46% P₂O₅) بين الأسمدة الصلبة",
+            "يُوفر N+P في آنٍ واحد",
+            "سريع الذوبان",
+            "مناسب للري التنقيط"
+          ],
+          "ar_disadvantages": [
+            "يُثبّت Zn — ضرورة تعويض Zn عند استخدامه",
+            "لا يحتوي S — يُسبب نقص S بالاستخدام المستمر",
+            "مرتفع الثمن نسبياً"
+          ],
+          "storage_ar": "جاف ومحكم — ثابت نسبياً",
+          "compatibility_ar": "لا يُخلط مع الكالسيوم في نفس المحلول — يُثبّت Zn",
+          "egypt_importance": "الثاني في الاستخدام بعد سوبر فوسفات — مستورد",
+          "price_category": "متوسط-مرتفع",
+          "target_nutrients": ["P", "N"],
+          "suitable_crops": ["قمح", "ذرة", "قطن", "بطاطس", "خضروات جميعها"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-011",
+          "ar_name": "MAP — فوسفات أحادي الأمونيوم",
+          "name_en": "Monoammonium Phosphate (MAP)",
+          "chemical_formula": "NH₄H₂PO₄",
+          "nutrient_content": {"N": 12, "P2O5": 61, "P": 26.5},
+          "ar_form": "حبيبات — بلورات",
+          "ar_type": "سريع الذوبان — مناسب للتنقيط",
+          "application": {
+            "soil_kg_per_feddan": "40-80 كجم/فدان",
+            "fertigation_kg_per_feddan": "10-25 كجم/فدان",
+            "ar_timing": "مع الزراعة أو في بداية الموسم",
+            "ar_method": "الري التنقيط — ممتاز لأنه لا يُعيق أنابيب الري"
+          },
+          "ph_effect_on_soil": "يُحمّض التربة — أفضل من DAP للتربة القلوية",
+          "ar_advantages": [
+            "أعلى تركيز P بين الأسمدة القابلة للذوبان (61% P₂O₅)",
+            "يُحمّض التربة — فعّال في التربة القلوية المصرية",
+            "أفضل من DAP في تحريك P في التربة القلوية",
+            "مناسب جداً للتنقيط"
+          ],
+          "ar_disadvantages": [
+            "لا يحتوي S — يُسبب نقص S باستمرار",
+            "أعلى سعراً من DAP",
+            "يُثبّت Zn (أقل من DAP)"
+          ],
+          "storage_ar": "جاف ومحكم",
+          "compatibility_ar": "يُخلط مع K وN في محاليل الري — لا مع الكالسيوم",
+          "egypt_importance": "مناسب جداً للتربة القلوية في مصر — استخدام متزايد في التنقيط",
+          "price_category": "مرتفع",
+          "target_nutrients": ["P", "N"],
+          "suitable_crops": ["طماطم", "خيار", "فراولة", "أشجار فاكهة", "خضروات في التنقيط"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-012",
+          "ar_name": "MKP — فوسفات أحادي البوتاسيوم",
+          "name_en": "Monopotassium Phosphate (MKP)",
+          "chemical_formula": "KH₂PO₄",
+          "nutrient_content": {"P2O5": 52, "P": 22.7, "K2O": 34, "K": 28},
+          "ar_form": "بلورات بيضاء — ذوبان عالٍ",
+          "ar_type": "يُوفر P+K — خالٍ من N — مناسب لمرحلة الثمار",
+          "application": {
+            "soil_kg_per_feddan": "30-50 كجم/فدان",
+            "foliar_percent": "0.5-1% — مناسب للرش الورقي",
+            "fertigation_kg_per_feddan": "10-20 كجم/فدان",
+            "ar_timing": "مرحلة التزهير والإثمار — يُحسن جودة الثمار",
+            "ar_method": "الري التنقيط أو الرش الورقي"
+          },
+          "ph_effect_on_soil": "محايد إلى تحميض طفيف",
+          "ar_advantages": [
+            "يُوفر P+K بدون N — مثالي حين لا يُراد زيادة N",
+            "خالٍ من Cl — للمحاصيل الحساسة للكلور",
+            "ذوبان عالٍ — ممتاز للتنقيط والرش",
+            "يُحسن جودة الثمار ولونها"
+          ],
+          "ar_disadvantages": [
+            "مرتفع الثمن جداً",
+            "كمية P وK محدودة نسبياً"
+          ],
+          "storage_ar": "جاف ومحكم — يمتص رطوبة",
+          "compatibility_ar": "يُخلط مع نترات K وCa — لا مع الكالسيوم المركّز",
+          "egypt_importance": "مهم لتحسين جودة طماطم العصير والعنب والفراولة في مصر",
+          "price_category": "مرتفع جداً",
+          "target_nutrients": ["P", "K"],
+          "suitable_crops": ["طماطم", "عنب", "فراولة", "حمضيات", "خيار", "فلفل"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-013",
+          "ar_name": "سوبر فوسفات ثلاثي TSP",
+          "name_en": "Triple Super Phosphate (TSP)",
+          "chemical_formula": "Ca(H₂PO₄)₂",
+          "nutrient_content": {"P2O5": 46, "P": 20, "Ca": 14},
+          "ar_form": "حبيبات",
+          "ar_type": "تركيز P عالٍ — بدون S (مقارنة بـ SSP)",
+          "application": {
+            "soil_kg_per_feddan": "60-100 كجم/فدان",
+            "ar_timing": "قبل الزراعة — خلط مع التربة",
+            "ar_method": "تحت سطح التربة"
+          },
+          "ph_effect_on_soil": "تحميض طفيف",
+          "ar_advantages": [
+            "أعلى تركيز P من SSP (46% P₂O₅) — كمية أقل للفدان",
+            "يُوفر Ca",
+            "مناسب للري التنقيط"
+          ],
+          "ar_disadvantages": [
+            "لا يحتوي S كـ SSP",
+            "أعلى ثمناً من SSP",
+            "ثبوت P في التربة القلوية"
+          ],
+          "storage_ar": "جاف ومحكم",
+          "compatibility_ar": "لا يُخلط مع الأسمدة القلوية",
+          "egypt_importance": "بديل SSP عند الحاجة لكميات أقل — أقل شيوعاً في مصر",
+          "price_category": "متوسط-مرتفع",
+          "target_nutrients": ["P", "Ca"],
+          "suitable_crops": ["قمح", "ذرة", "قطن", "خضروات"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-014",
+          "ar_name": "فوسفات الصخر Rock Phosphate",
+          "name_en": "Rock Phosphate",
+          "chemical_formula": "Ca₅(PO₄)₃F",
+          "nutrient_content": {"P2O5": "18-35 حسب المصدر", "Ca": "30-35"},
+          "ar_form": "مسحوق — حبيبات خشنة",
+          "ar_type": "بطيء الإطلاق — مناسب للزراعة العضوية",
+          "application": {
+            "soil_kg_per_feddan": "200-400 كجم/فدان (للتصحيح طويل المدى)",
+            "ar_timing": "قبل الزراعة بأسابيع — يحتاج وقتاً لتحرر P",
+            "ar_method": "خلط مع التربة بعمق"
+          },
+          "ph_effect_on_soil": "يرفع pH — مناسب للتربة الحمضية فقط",
+          "ar_advantages": [
+            "مُسمح في الزراعة العضوية",
+            "مصدر طبيعي — استدامة بيئية",
+            "يُوفر Ca أيضاً",
+            "أثر متبقٍّ طويل في التربة"
+          ],
+          "ar_disadvantages": [
+            "يذوب ببطء شديد — لا يصلح للتغذية السريعة",
+            "لا يُجدي في التربة القلوية (مصر غالباً قلوية)",
+            "كمية كبيرة مطلوبة",
+            "توافر متاح فقط من مناجم أبو طرطور"
+          ],
+          "storage_ar": "مفتوح — ثابت",
+          "compatibility_ar": "يُخلط مع الكمبوست والكبريت الحيوي لتحسين ذوبانه",
+          "egypt_importance": "مناجع أبو طرطور — لكن الاستخدام محدود لأن التربة المصرية قلوية والذوبان ضعيف",
+          "price_category": "منخفض",
+          "target_nutrients": ["P", "Ca"],
+          "suitable_crops": ["محاصيل الزراعة العضوية", "تربة حمضية فقط"],
+          "egypt_registered": true,
+          "organic_certified": true
+        }
+      ]
+    },
+    {
+      "id": "fert-grp-K",
+      "ar_name": "الأسمدة البوتاسية",
+      "name_en": "Potassium Fertilizers",
+      "ar_description": "تُوفر البوتاسيوم لتحسين جودة الثمار ومقاومة الإجهاد",
+      "fertilizers_count": 4,
+      "fertilizers": [
+        {
+          "id": "fert-015",
+          "ar_name": "كلوريد البوتاسيوم (بوتاس)",
+          "name_en": "Potassium Chloride (MOP)",
+          "chemical_formula": "KCl",
+          "nutrient_content": {"K2O": 60, "K": 49.8, "Cl": 47},
+          "ar_form": "بلورات حمراء أو بيضاء",
+          "ar_type": "يُوفر K بأقل تكلفة — يحتوي Cl",
+          "application": {
+            "soil_kg_per_feddan": "50-100 كجم/فدان",
+            "fertigation_kg_per_feddan": "15-25 كجم/فدان",
+            "ar_timing": "قبل الزراعة أو مبكراً في الموسم",
+            "ar_method": "خلط مع التربة أو عبر الري"
+          },
+          "ph_effect_on_soil": "لا تأثير كبير",
+          "ar_advantages": [
+            "أعلى تركيز K (60% K₂O) — أرخص مصدر لـ K",
+            "سهل الذوبان",
+            "مناسب للمحاصيل غير الحساسة للكلور"
+          ],
+          "ar_disadvantages": [
+            "يحتوي Cl — ضار للمحاصيل الحساسة",
+            "يزيد ملوحة التربة",
+            "يُسبب نقص Ca وMg عند الإفراط"
+          ],
+          "storage_ar": "جاف ومحكم — يمتص رطوبة",
+          "compatibility_ar": "لا مع المحاصيل الحساسة للكلور — لا في التربة الملحية",
+          "egypt_importance": "الأكثر استخداماً كمصدر K في مصر — مستورد — اقتصادي",
+          "price_category": "منخفض",
+          "target_nutrients": ["K"],
+          "sensitive_crops_avoid": ["طماطم تصنيع", "بطاطس", "فراولة", "تبغ", "حمضيات"],
+          "suitable_crops": ["قمح", "ذرة", "أرز", "قطن", "سكر"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-016",
+          "ar_name": "سلفات البوتاسيوم SOP",
+          "name_en": "Potassium Sulfate (SOP)",
+          "chemical_formula": "K₂SO₄",
+          "nutrient_content": {"K2O": 50, "K": 41.5, "S": 18},
+          "ar_form": "بلورات بيضاء ناعمة",
+          "ar_type": "يُوفر K+S بدون Cl — الخيار الأفضل للمحاصيل الحساسة",
+          "application": {
+            "soil_kg_per_feddan": "60-100 كجم/فدان",
+            "foliar_percent": "0.5-1%",
+            "fertigation_kg_per_feddan": "15-25 كجم/فدان",
+            "ar_timing": "خلال مرحلة تطور الثمار بصفة رئيسية",
+            "ar_method": "خلط مع التربة أو عبر الري التنقيط"
+          },
+          "ph_effect_on_soil": "تحميض بسيط",
+          "ar_advantages": [
+            "يُوفر K+S بدون Cl — مثالي للمحاصيل الحساسة",
+            "يُحسن جودة الثمار والمذاق",
+            "مناسب للتربة الملحية",
+            "مناسب لنظام الري التنقيط"
+          ],
+          "ar_disadvantages": [
+            "أعلى ثمناً من كلوريد البوتاسيوم",
+            "ذوبان أقل من MOP"
+          ],
+          "storage_ar": "جاف ومحكم",
+          "compatibility_ar": "يُخلط مع معظم الأسمدة — لا مع الكالسيوم في محاليل مركّزة",
+          "egypt_importance": "ضروري للطماطم والبطاطس والفراولة والبصل في مصر",
+          "price_category": "مرتفع",
+          "target_nutrients": ["K", "S"],
+          "suitable_crops": ["طماطم", "بطاطس", "فراولة", "بصل", "ثوم", "حمضيات", "عنب", "تبغ"],
+          "egypt_registered": true,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-017",
+          "ar_name": "هيدروكسيد البوتاسيوم KOH",
+          "name_en": "Potassium Hydroxide (Potash Lye)",
+          "chemical_formula": "KOH",
+          "nutrient_content": {"K2O": 83, "K": 70},
+          "ar_form": "محلول أو حبيبات",
+          "ar_type": "قوي القلوية — يُستخدم لتصحيح pH وتوفير K",
+          "application": {
+            "soil_liters_per_feddan": "تخفيف عالٍ — 1-2 لتر/فدان من المحلول المركّز",
+            "ar_timing": "لتصحيح pH الحمضية",
+            "ar_method": "مع الري فقط — بتخفيف عالٍ جداً"
+          },
+          "ph_effect_on_soil": "يرفع pH بقوة — لتصحيح التربة الحمضية",
+          "ar_advantages": [
+            "أعلى تركيز K",
+            "يرفع pH — لتصحيح التربة الحمضية"
+          ],
+          "ar_disadvantages": [
+            "خطر كيميائي — قلوي قوي — يحرق الجلد والعيون",
+            "يتطلب تعاملاً حذراً جداً",
+            "نادر الاستخدام الزراعي المباشر"
+          ],
+          "storage_ar": "عبوات بلاستيكية محكمة — بعيد عن الرطوبة والحرارة",
+          "compatibility_ar": "لا يُخلط مع الأسمدة الحمضية",
+          "egypt_importance": "محدود الاستخدام الزراعي — أكثر استخداماً في الصناعة",
+          "price_category": "مرتفع",
+          "target_nutrients": ["K"],
+          "suitable_crops": ["نادراً — تصحيح pH فقط"],
+          "egypt_registered": false,
+          "organic_certified": false
+        },
+        {
+          "id": "fert-018",
+          "ar_name": "كبريتات البوتاسيوم والمغنيسيوم (KEMAG / Patentkali)",
+          "name_en": "Potassium Magnesium Sulfate (KMAG)",
+          "chemical_formula": "K₂SO₄·2MgSO₄",
+          "nutrient_content": {"K2O": 22, "K": 18, "MgO": 18, "Mg": 11, "S": 22},
+          "ar_form": "حبيبات بيضاء-رمادية",
+          "ar_type": "يُوفر K+Mg+S معاً — ممتاز للتربة الفقيرة بالمغنيسيوم",
+          "application": {
+            "soil_kg_per_feddan": "80-150 كجم/فدان",
+            "ar_timing": "قبل الزراعة أو مبكراً",
+            "ar_method": "خلط مع التربة"
+          },
+          "ph_effect_on_soil": "تحميض بسيط",
+          "ar_advantages": [
+            "يُوفر K+Mg+S في آنٍ واحد",
+            "مناسب للتربة الفقيرة بالمغنيسيوم",
+            "خالٍ من Cl",
+            "مناسب للزراعة العضوية المحدودة"
+          ],
+          "ar_disadvantages": [
+            "تركيز K منخفض (22% K₂O)",
+            "أعلى ثمناً"
+          ],
+          "storage_ar": "جاف ومحكم",
+          "compatibility_ar": "يُخلط مع معظم الأسمدة",
+          "egypt_importance": "متزايد في مزارع الحمضيات والعنب في مصر",
+          "price_category": "مرتفع",
+          "target_nutrients": ["K", "Mg", "S"],
+          "suitable_crops": ["عنب", "حمضيات", "بطاطس", "طماطم", "فراولة"],
+          "egypt_registered": true,
+          "organic_certified": false
+        }
+      ]
+    },
+    {
+      "id": "fert-grp-organic",
+      "ar_name": "الأسمدة العضوية",
+      "name_en": "Organic Fertilizers",
+      "ar_description": "مصادر طبيعية للعناصر الغذائية تُحسن خصوبة التربة وبنيتها وحياتها الميكروبية على المدى البعيد",
+      "fertilizers_count": 8,
+      "fertilizers": [
+        {
+          "id": "fert-019",
+          "ar_name": "السماد البلدي (روث الحيوانات المتخمر)",
+          "name_en": "Farmyard Manure (FYM)",
+          "nutrient_content_approx": {"N": "0.5-1.5%", "P2O5": "0.3-0.8%", "K2O": "0.5-1.2%", "OM": "20-40%"},
+          "ar_form": "صلب — نصف متحلل — متحلل كامل",
+          "ar_type": "بطيء الإطلاق — مُحسّن للتربة",
+          "ar_sources": ["روث الماشية", "روث الجاموس", "روث الأغنام", "فضلات الدواجن"],
+          "application": {
+            "soil_ton_per_feddan": "3-10 طن/فدان حسب المحصول والتربة",
+            "ar_timing": "قبل الزراعة بـ 2-4 أسابيع على الأقل — خلط مع التربة",
+            "ar_method": "توزيع وحرث عميق"
+          },
+          "ar_advantages": [
+            "يُحسن بنية التربة وقدرة احتجاز الماء",
+            "يُغذي الأحياء الدقيقة في التربة",
+            "مصدر جميع العناصر الكبرى والصغرى",
+            "يُحسن CEC ويُقلل الحاجة للأسمدة الكيميائية",
+            "مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "تركيز العناصر منخفض — يحتاج كميات كبيرة",
+            "قد ينقل بذور أعشاب وممرضات إذا لم يتخمر جيداً",
+            "رائحة — مشاكل لوجستية في النقل",
+            "تركيز N متغير — صعوبة في التقدير الدقيق"
+          ],
+          "storage_ar": "تخمير كامل قبل الاستخدام — 60-90 يوم في كومة",
+          "ar_maturity_test": "لا رائحة نفاذة — لون بني داكن — قوام طري — لا يرفع درجة الحرارة",
+          "egypt_importance": "الأكثر استخداماً في الزراعة المصرية منذ آلاف السنين — يتراجع مع التوسع الكيميائي",
+          "price_category": "منخفض جداً — متاح",
+          "target_nutrients": ["N", "P", "K", "جميع العناصر", "مادة عضوية"],
+          "suitable_crops": ["جميع المحاصيل"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-020",
+          "ar_name": "الكمبوست",
+          "name_en": "Compost",
+          "nutrient_content_approx": {"N": "1-3%", "P2O5": "0.5-2%", "K2O": "1-2.5%", "OM": "40-70%"},
+          "ar_form": "مادة داكنة اللون — ناعمة — بدون رائحة سيئة",
+          "ar_type": "بطيء الإطلاق — مُعدِّل ممتاز للتربة",
+          "ar_sources": ["مخلفات المحاصيل", "قش أرز", "حطب ذرة", "مخلفات منزلية عضوية", "مخلفات حيوانية"],
+          "application": {
+            "soil_ton_per_feddan": "2-5 طن/فدان",
+            "ar_timing": "قبل الزراعة — خلط مع التربة",
+            "ar_method": "توزيع وحرث"
+          },
+          "composting_stages_ar": [
+            "مرحلة الحرارة (Thermophilic): 55-70 درجة لمدة 2-4 أسابيع — تقتل الممرضات والبذور",
+            "مرحلة التبريد والنضج: 4-8 أسابيع — تستقر المادة العضوية",
+            "مرحلة الاختبار: لا حرارة — لا رائحة — لون داكن موحد"
+          ],
+          "ar_advantages": [
+            "أفضل من السماد البلدي — متحلل كامل — آمن",
+            "لا يحمل بذور أعشاب أو ممرضات",
+            "يُحسن CEC والبنية الفيزيائية للتربة",
+            "مُسمح في الزراعة العضوية الدولية",
+            "يُمكن إنتاجه من مخلفات المزرعة"
+          ],
+          "ar_disadvantages": [
+            "يحتاج وقتاً للإنتاج (2-6 أشهر)",
+            "تركيز العناصر متغير"
+          ],
+          "storage_ar": "في كومات مغطاة — جاف نسبياً",
+          "egypt_importance": "مشاريع الكمبوست من قش الأرز في الدلتا — حل بيئي واقتصادي",
+          "price_category": "منخفض (إنتاج ذاتي) — متوسط (مُصنَّع)",
+          "target_nutrients": ["N", "P", "K", "جميع العناصر", "مادة عضوية"],
+          "suitable_crops": ["جميع المحاصيل"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-021",
+          "ar_name": "هيوميك أسيد",
+          "name_en": "Humic Acid",
+          "nutrient_content_approx": {"humic_acid_percent": "50-85%", "fulvic_acid_percent": "10-30%"},
+          "ar_form": "مسحوق — سائل — حبيبات",
+          "ar_type": "محسّن للتربة — ليس سماداً بالمعنى الدقيق",
+          "ar_sources": ["ليونارديت (Leonardite)", "فحم بني", "ورميكمبوست"],
+          "application": {
+            "soil_kg_per_feddan": "5-20 كجم/فدان (مسحوق)",
+            "soil_liters_per_feddan": "2-5 لتر/فدان (سائل 12%)",
+            "foliar_liters_per_feddan": "0.5-1 لتر/فدان (1-3 مل/لتر ماء)",
+            "ar_timing": "مع الزراعة وعبر الموسم",
+            "ar_method": "خلط مع التربة أو عبر الري أو الرش الورقي"
+          },
+          "ar_mechanisms": [
+            "يُحسن CEC ويرفع قدرة التربة على احتجاز العناصر",
+            "يُحرر العناصر المثبتة كـ Fe وZn وP",
+            "يُحفز نشاط ميكروبات التربة المفيدة",
+            "يُحسن بنية التربة الرملية والطينية",
+            "يُقلل فقد العناصر بالغسيل"
+          ],
+          "ar_advantages": [
+            "يُقلل الحاجة للأسمدة الكيميائية 15-20%",
+            "يُحرر P وFe وZn المثبتة في التربة القلوية",
+            "يُحسن نمو الجذور ومقاومة الإجهاد",
+            "آمن تماماً — لا فترة انتظار",
+            "مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "تكلفة إضافية — فائدة غير مباشرة",
+            "جودة المنتجات متفاوتة جداً في السوق"
+          ],
+          "egypt_importance": "متزايد الاستخدام في الزراعة المحمية والتصديرية في مصر",
+          "price_category": "متوسط",
+          "target_nutrients": ["تحسين كفاءة جميع العناصر"],
+          "suitable_crops": ["جميع المحاصيل — خاصة في التربة الفقيرة"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-022",
+          "ar_name": "فولفيك أسيد",
+          "name_en": "Fulvic Acid",
+          "nutrient_content_approx": {"fulvic_acid_percent": "60-95%"},
+          "ar_form": "سائل أصفر-بني — مسحوق",
+          "ar_type": "محسّن لكفاءة امتصاص العناصر",
+          "application": {
+            "foliar_ml_per_liter": "1-3 مل/لتر رشاً ورقياً",
+            "fertigation_liters_per_feddan": "0.5-2 لتر/فدان",
+            "ar_timing": "طوال الموسم — يُخلط مع الأسمدة الورقية"
+          },
+          "ar_mechanisms": [
+            "وزن جزيئي منخفض — يدخل لخلايا النبات مباشرة",
+            "يُعزز امتصاص العناصر الصغرى كـ Fe وZn",
+            "يُحسن نفاذية غشاء الخلية",
+            "يُحفز التمثيل الضوئي والنمو"
+          ],
+          "ar_advantages": [
+            "يدخل لأنسجة النبات مباشرة",
+            "يُعزز امتصاص العناصر الصغرى بشكل ملحوظ",
+            "يُحسن إنتاجية المحاصيل",
+            "آمن تماماً"
+          ],
+          "ar_disadvantages": [
+            "أعلى سعراً من هيوميك",
+            "منتجات مقلدة كثيرة في السوق"
+          ],
+          "egypt_importance": "متزايد في الزراعة التصديرية ومزارع الخضروات عالية الجودة",
+          "price_category": "مرتفع",
+          "target_nutrients": ["تعزيز امتصاص جميع العناصر"],
+          "suitable_crops": ["جميع المحاصيل — خاصة الزراعة المحمية"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-023",
+          "ar_name": "مستخلص عشب البحر (Seaweed Extract)",
+          "name_en": "Seaweed Extract",
+          "nutrient_content_approx": {"K2O": "4-13%", "cytokinins": "موجود", "auxins": "موجود", "betaines": "موجود"},
+          "ar_form": "سائل — مسحوق — حبيبات",
+          "ar_type": "منشط نبات — هرمونات طبيعية",
+          "application": {
+            "foliar_ml_per_liter": "2-5 مل/لتر رشاً ورقياً",
+            "fertigation_liters_per_feddan": "1-3 لتر/فدان",
+            "seed_soak_ml_per_liter": "10 مل/لتر لنقع البذور",
+            "ar_timing": "مرحلة الإنبات والتجذر — مرحلة التزهير — مرحلة الإجهاد"
+          },
+          "ar_mechanisms": [
+            "يحتوي سيتوكينين وأوكسين — هرمونات نباتية طبيعية",
+            "يُحفز انقسام الخلايا ونمو الجذور",
+            "يُحسن مقاومة الإجهاد المائي والملحي والحراري",
+            "يُحفز التزهير وعقد الثمار"
+          ],
+          "ar_advantages": [
+            "يُحسن مقاومة الإجهاد البيئي بشكل ملحوظ",
+            "يُحفز نمو الجذور والإنبات",
+            "يُقلل تساقط الأزهار والثمار",
+            "آمن تماماً — مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "ليس سماداً كاملاً — منشط ومحسن فقط",
+            "أعلى تكلفة — فائدة في مواقف بعينها"
+          ],
+          "egypt_importance": "متزايد في مزارع الفراولة والعنب والطماطم التصديرية في مصر",
+          "price_category": "مرتفع",
+          "target_nutrients": ["هرمونات طبيعية — تحسين إنتاجية"],
+          "suitable_crops": ["جميع المحاصيل — خاصة عند الإجهاد"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-024",
+          "ar_name": "عظام مطحونة (Bone Meal)",
+          "name_en": "Bone Meal",
+          "nutrient_content_approx": {"N": "3-5%", "P2O5": "15-22%", "Ca": "22-30%"},
+          "ar_form": "مسحوق خشن",
+          "ar_type": "بطيء الإطلاق — مصدر P+Ca+N عضوي",
+          "application": {
+            "soil_kg_per_feddan": "50-100 كجم/فدان",
+            "ar_timing": "قبل الزراعة — خلط مع التربة",
+            "ar_method": "تحت سطح التربة"
+          },
+          "ar_advantages": [
+            "مصدر عضوي لـ P وCa وN",
+            "مُسمح في الزراعة العضوية",
+            "بطيء الإطلاق — أثر طويل المدى"
+          ],
+          "ar_disadvantages": [
+            "محدود التوافر في مصر",
+            "سعر مرتفع نسبياً",
+            "يحتاج pH حمضي للذوبان الجيد"
+          ],
+          "egypt_importance": "محدود الاستخدام — مزارع عضوية متخصصة",
+          "price_category": "مرتفع",
+          "target_nutrients": ["P", "Ca", "N"],
+          "suitable_crops": ["محاصيل الزراعة العضوية"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-025",
+          "ar_name": "كبريت عضوي حيوي",
+          "name_en": "Elemental Sulfur (Biological)",
+          "chemical_formula": "S",
+          "nutrient_content": {"S": 90},
+          "ar_form": "مسحوق — حبيبات — معلق",
+          "ar_type": "يُوفر S — يُحمّض التربة بيولوجياً",
+          "application": {
+            "soil_kg_per_feddan": "20-50 كجم/فدان لتصحيح pH",
+            "ar_timing": "قبل الزراعة بأسابيع — يحتاج وقتاً للأكسدة",
+            "ar_method": "خلط مع التربة — تُحوّله بكتيريا Thiobacillus لحمض كبريتيك"
+          },
+          "ar_advantages": [
+            "يُحمّض التربة القلوية — يُحرر العناصر المثبتة",
+            "يُوفر S للمحاصيل",
+            "مُسمح في الزراعة العضوية",
+            "رخيص التكلفة"
+          ],
+          "ar_disadvantages": [
+            "بطيء التأثير — يحتاج أسابيع للأكسدة",
+            "يحتاج رطوبة وحرارة ونشاط بكتيري"
+          ],
+          "egypt_importance": "مهم لتصحيح pH التربة القلوية في مصر",
+          "price_category": "منخفض",
+          "target_nutrients": ["S"],
+          "suitable_crops": ["جميع المحاصيل — خاصة في التربة القلوية"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-026",
+          "ar_name": "وِرميكمبوست (سماد الديدان)",
+          "name_en": "Vermicompost",
+          "nutrient_content_approx": {"N": "2-3%", "P2O5": "1.5-2.5%", "K2O": "1.5-2.5%", "OM": "50-70%"},
+          "ar_form": "مادة داكنة ناعمة جداً",
+          "ar_type": "أفضل أنواع الكمبوست — غني بالكائنات الدقيقة",
+          "application": {
+            "soil_ton_per_feddan": "1-3 طن/فدان",
+            "seedling_mix_percent": "20-30% في خلطة تربة الشتلات",
+            "ar_timing": "مع الزراعة أو قبلها",
+            "ar_method": "خلط مع التربة أو وضع في جور الزراعة"
+          },
+          "ar_advantages": [
+            "أعلى نشاط بيولوجي — غني بالإنزيمات والهرمونات الطبيعية",
+            "يُحسن الإنبات والتجذر بشكل ملحوظ",
+            "مُسمح في الزراعة العضوية",
+            "لا رائحة — نظيف الاستخدام"
+          ],
+          "ar_disadvantages": [
+            "أعلى تكلفة من الكمبوست العادي",
+            "إنتاج محلي محدود"
+          ],
+          "egypt_importance": "ناشئ في مصر — مشاريع صغيرة في مزارع عضوية",
+          "price_category": "مرتفع",
+          "target_nutrients": ["N", "P", "K", "جميع العناصر", "كائنات دقيقة"],
+          "suitable_crops": ["شتلات", "محاصيل عضوية", "أشجار فاكهة"],
+          "egypt_registered": true,
+          "organic_certified": true
+        }
+      ]
+    },
+    {
+      "id": "fert-grp-bio",
+      "ar_name": "الأسمدة البيولوجية والمحفزات الحيوية",
+      "name_en": "Biofertilizers & Biostimulants",
+      "ar_description": "كائنات دقيقة مفيدة وإنزيمات حيوية تُحسن توافر العناصر وتُنشط دفاعات النبات",
+      "fertilizers_count": 8,
+      "fertilizers": [
+        {
+          "id": "fert-027",
+          "ar_name": "رايزوبيوم — مثبت النيتروجين للبقوليات",
+          "name_en": "Rhizobium spp.",
+          "ar_type": "بكتيريا تُثبت النيتروجين الجوي في عقد جذور البقوليات",
+          "target_element": "N",
+          "n_fixation_kg_per_feddan": "20-100 كجم N/فدان/موسم",
+          "application": {
+            "seed_inoculation_ar": "تلقيح البذور قبل الزراعة مباشرة بالمعلق البكتيري",
+            "soil_application_ar": "حقن في منطقة الجذور عند الزراعة",
+            "dose_per_feddan_ar": "200-500 مل معلق لكل فدان بذور",
+            "ar_timing": "يوم الزراعة — البذور الملقحة تُزرع فوراً",
+            "ar_method": "خلط المعلق بالبذور في الظل — لا يُعرض للشمس"
+          },
+          "ar_mechanisms": [
+            "يسكن عقد جذور البقوليات ويُثبت N الجوي لصالح النبات",
+            "N المُثبَّت يُغني التربة بعد حصاد المحصول",
+            "يُعظّم فائدة المحصول البقولي في الدورة الزراعية"
+          ],
+          "ar_advantages": [
+            "يُوفر 20-100 كجم N/فدان مجاناً من الهواء",
+            "يُثري التربة بالنيتروجين للمحصول التالي",
+            "آمن تماماً — مُسمح في الزراعة العضوية",
+            "يُقلل الحاجة للأسمدة النيتروجينية 50-70%"
+          ],
+          "ar_disadvantages": [
+            "يعمل فقط مع البقوليات",
+            "يحتاج سلالة مناسبة للمحصول",
+            "يتأثر بالتربة الحمضية والملحية"
+          ],
+          "ar_strains": {
+            "faba_bean": "Rhizobium leguminosarum bv. viciae",
+            "soybean": "Bradyrhizobium japonicum",
+            "chickpea": "Mesorhizobium ciceri",
+            "common_bean": "Rhizobium leguminosarum bv. phaseoli"
+          },
+          "storage_ar": "بارد 4-10 درجات — بعيد عن الشمس — صلاحية 6 أشهر",
+          "egypt_importance": "ضروري لفول الصويا والفول البلدي في مصر — يُوفر أسمدة نيتروجينية كبيرة",
+          "price_category": "منخفض",
+          "suitable_crops": ["فول", "فاصوليا", "عدس", "حمص", "بازلاء", "فول سوداني", "فول صويا"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-028",
+          "ar_name": "أزوسبيريلوم — مُثبت N للحبوب",
+          "name_en": "Azospirillum brasilense",
+          "ar_type": "بكتيريا مُثبتة N ومُحفزة نمو للحبوب والخضروات",
+          "target_element": "N",
+          "n_fixation_kg_per_feddan": "10-30 كجم N/فدان",
+          "application": {
+            "seed_inoculation_ar": "تلقيح البذور قبل الزراعة",
+            "soil_application_ar": "حقن في منطقة الجذور",
+            "ar_timing": "يوم الزراعة",
+            "ar_method": "في الظل — بعيد عن الشمس"
+          },
+          "ar_mechanisms": [
+            "يُثبت N الجوي خارج عقد الجذور (غير تكافلي)",
+            "يُنتج هرمون الأوكسين — يُحسن نمو الجذور",
+            "يُحفز امتصاص العناصر الغذائية"
+          ],
+          "ar_advantages": [
+            "يعمل مع الحبوب والخضروات — غير مقيد بالبقوليات",
+            "يُحسن نمو الجذور بشكل ملحوظ",
+            "آمن — مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "كمية N المُثبَّتة أقل من Rhizobium",
+            "يحتاج ظروف تربة مناسبة"
+          ],
+          "storage_ar": "بارد 4-10 درجات",
+          "egypt_importance": "متزايد الاستخدام في القمح والذرة في مصر",
+          "price_category": "منخفض-متوسط",
+          "suitable_crops": ["قمح", "ذرة", "أرز", "قطن", "خضروات"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-029",
+          "ar_name": "ميكوريزا — الفطر المتكافل مع الجذور",
+          "name_en": "Mycorrhizal Fungi (AMF)",
+          "ar_type": "فطر يُوسّع منظومة الجذور ويُحسن امتصاص P وZn وFe",
+          "target_elements": ["P", "Zn", "Fe", "Mn", "Cu", "ماء"],
+          "application": {
+            "seed_coating_ar": "تغليف البذور بالجراثيم قبل الزراعة",
+            "soil_application_ar": "إضافة للتربة عند الزراعة — 200-500 جم/فدان",
+            "seedling_dip_ar": "غمر جذور الشتلات في معلق الجراثيم",
+            "ar_timing": "عند الزراعة أو الشتل"
+          },
+          "ar_mechanisms": [
+            "يُكوّن شبكة خيطية (هيفاء) تمتد خارج منطقة الجذور بـ 10-20 سم",
+            "يزيد منطقة امتصاص الجذور 100-1000 ضعف",
+            "يُحسن امتصاص P بنسبة 30-80%",
+            "يُحسن مقاومة الجفاف والملوحة"
+          ],
+          "ar_advantages": [
+            "يُقلل الحاجة للأسمدة الفوسفاتية 30-50%",
+            "يُحسن مقاومة الإجهاد المائي والملحي",
+            "مُسمح في الزراعة العضوية",
+            "أثر طويل الأمد في التربة"
+          ],
+          "ar_disadvantages": [
+            "يُثبَّط بالأسمدة الفوسفاتية العالية — لا يُستخدم معها",
+            "يتأثر بالمبيدات الفطرية",
+            "يحتاج عدة أسابيع لاستقرار الاستعمار"
+          ],
+          "storage_ar": "بارد وجاف — بعيد عن الشمس — صلاحية سنة",
+          "egypt_importance": "متزايد في الزراعة العضوية والتصديرية في مصر — خاصة مع محاصيل الفاكهة",
+          "price_category": "متوسط-مرتفع",
+          "suitable_crops": ["أشجار فاكهة", "خضروات", "قمح", "محاصيل حقلية — ما عدا Brassica"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-030",
+          "ar_name": "فوسفوباكتين — محلل الفوسفور العضوي",
+          "name_en": "Phosphate Solubilizing Bacteria (PSB)",
+          "ar_type": "بكتيريا تُحرر P المثبت في التربة",
+          "target_element": "P",
+          "ar_species": ["Bacillus megaterium", "Pseudomonas fluorescens", "Aspergillus niger"],
+          "application": {
+            "seed_inoculation_ar": "تلقيح البذور",
+            "soil_application_ar": "1-2 كجم/فدان خلط مع التربة",
+            "fertigation_ar": "عبر الري",
+            "ar_timing": "مع الزراعة"
+          },
+          "ar_mechanisms": [
+            "تُنتج أحماض عضوية تُذيب Ca-P في التربة القلوية",
+            "تُحرر P من الفوسفات الصخري العضوي والمعدني",
+            "تُنتج فيتازة تُحرر P من الفيتات العضوي"
+          ],
+          "ar_advantages": [
+            "تُحرر P المثبت — تُقلل الحاجة للسماد الفوسفاتي",
+            "مفيد جداً في التربة القلوية المصرية",
+            "مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "تأثير متوسط — ليس بديلاً كاملاً للسماد",
+            "يتأثر بالمبيدات والأسمدة الكيميائية العالية"
+          ],
+          "storage_ar": "بارد 4-10 درجات",
+          "egypt_importance": "يُساعد في تحرير P المثبت في التربة الكلسية المصرية",
+          "price_category": "منخفض-متوسط",
+          "suitable_crops": ["جميع المحاصيل"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-031",
+          "ar_name": "بوتاسيوم سولوبيلايزر",
+          "name_en": "Potassium Solubilizing Bacteria (KSB)",
+          "ar_type": "بكتيريا تُحرر K من المعادن الطينية",
+          "target_element": "K",
+          "ar_species": ["Bacillus mucilaginosus", "Paenibacillus glucanolyticus"],
+          "application": {
+            "seed_inoculation_ar": "تلقيح البذور",
+            "soil_application_ar": "1-2 كجم/فدان",
+            "ar_timing": "مع الزراعة"
+          },
+          "ar_mechanisms": [
+            "تُنتج أحماض وإنزيمات تُحرر K من المعادن الطينية",
+            "تُتيح K الموجود في التربة لكنه غير متاح"
+          ],
+          "ar_advantages": [
+            "تُحرر K الطبيعي الموجود في التربة",
+            "تُقلل الحاجة للسماد البوتاسي",
+            "مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "التأثير معتدل — يعتمد على نوع التربة",
+            "فائدة محدودة في التربة الرملية الفقيرة بالمعادن"
+          ],
+          "storage_ar": "بارد 4-10 درجات",
+          "egypt_importance": "ناشئ في مصر — قد يُقلل الحاجة لاستيراد K",
+          "price_category": "منخفض-متوسط",
+          "suitable_crops": ["جميع المحاصيل"],
+          "egypt_registered": false,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-032",
+          "ar_name": "أزوتوباكتر — مثبت N حر",
+          "name_en": "Azotobacter chroococcum",
+          "ar_type": "بكتيريا حرة تُثبت N الجوي في التربة",
+          "target_element": "N",
+          "n_fixation_kg_per_feddan": "10-25 كجم N/فدان",
+          "application": {
+            "soil_application_ar": "2-3 كجم/فدان خلط مع التربة",
+            "seed_coating_ar": "تغليف البذور",
+            "ar_timing": "قبل الزراعة أو معها"
+          },
+          "ar_mechanisms": [
+            "يُثبت N الجوي في التربة بدون ارتباط بجذور النبات",
+            "يُنتج هرمونات نمو تُحفز نمو الجذور",
+            "يُنتج مضادات حيوية طبيعية تُقلل ممرضات التربة"
+          ],
+          "ar_advantages": [
+            "يعمل مع جميع المحاصيل",
+            "يُنتج هرمونات نمو طبيعية",
+            "مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "يتأثر بالتربة الحمضية (pH < 6)",
+            "كمية N المُثبَّتة محدودة"
+          ],
+          "storage_ar": "بارد 4-10 درجات",
+          "egypt_importance": "يُستخدم في مصر مع القطن والقمح بنتائج إيجابية",
+          "price_category": "منخفض",
+          "suitable_crops": ["قطن", "قمح", "ذرة", "خضروات"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-033",
+          "ar_name": "تريكوديرما — مُحفز نمو وصحة تربة",
+          "name_en": "Trichoderma spp. (biostimulant)",
+          "ar_type": "فطر مُحفز نمو + مُقاوم للأمراض",
+          "target_elements": ["P", "Fe", "Zn"],
+          "application": {
+            "soil_application_ar": "1-2 كجم/فدان خلط مع التربة",
+            "seed_coating_ar": "تغليف البذور",
+            "seedling_dip_ar": "غمر جذور الشتلات",
+            "ar_timing": "مع الزراعة"
+          },
+          "ar_mechanisms": [
+            "يُنتج إنزيمات تُحلل المادة العضوية وتُحرر العناصر",
+            "يُنتج مضادات حيوية طبيعية تُقاوم ممرضات التربة",
+            "يُحفز مناعة النبات الجذرية",
+            "يُحرر P وFe وZn من المركبات غير المتاحة"
+          ],
+          "ar_advantages": [
+            "يجمع بين تحسين التغذية ومقاومة الأمراض",
+            "يُحسن صحة التربة على المدى البعيد",
+            "مُسمح في الزراعة العضوية",
+            "آمن تماماً"
+          ],
+          "ar_disadvantages": [
+            "يتأثر بالمبيدات الفطرية",
+            "يحتاج رطوبة كافية في التربة",
+            "أثر مزدوج (تغذية + مقاومة) يجعل تقييم كل دور بمفرده صعباً"
+          ],
+          "storage_ar": "بارد وجاف — صلاحية 6-12 شهر",
+          "egypt_importance": "متزايد في الزراعة المحمية والعضوية في مصر",
+          "price_category": "متوسط",
+          "suitable_crops": ["جميع المحاصيل"],
+          "egypt_registered": true,
+          "organic_certified": true
+        },
+        {
+          "id": "fert-034",
+          "ar_name": "أحماض أمينية نباتية",
+          "name_en": "Amino Acids (Plant-derived)",
+          "nutrient_content_approx": {"amino_acids_percent": "30-80%", "N_organic": "5-16%"},
+          "ar_form": "سائل — مسحوق",
+          "ar_type": "محفز نمو — مصدر N عضوي سريع الامتصاص",
+          "application": {
+            "foliar_ml_per_liter": "2-5 مل/لتر",
+            "fertigation_liters_per_feddan": "1-2 لتر/فدان",
+            "ar_timing": "مراحل الإجهاد — قبل التزهير — مرحلة النمو السريع"
+          },
+          "ar_mechanisms": [
+            "الأحماض الأمينية تدخل مباشرة لخلايا النبات",
+            "تُستخدم مباشرة في بناء البروتين دون انتظار تحول N",
+            "تُنشط الإنزيمات وتُحسن مقاومة الإجهاد",
+            "تُحفز التمثيل الضوئي"
+          ],
+          "ar_advantages": [
+            "امتصاص مباشر وسريع جداً",
+            "مفيد جداً خلال مواقف الإجهاد (حرارة، جفاف، ملوحة)",
+            "يُحسن جودة المحصول",
+            "مُسمح في الزراعة العضوية"
+          ],
+          "ar_disadvantages": [
+            "مرتفع التكلفة",
+            "منتجات مقلدة كثيرة في السوق"
+          ],
+          "egypt_importance": "متزايد في مزارع التصدير والزراعة المحمية في مصر",
+          "price_category": "مرتفع",
+          "target_nutrients": ["N عضوي", "تحسين كفاءة التغذية"],
+          "suitable_crops": ["جميع المحاصيل — خاصة تحت الإجهاد"],
+          "egypt_registered": true,
+          "organic_certified": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2865 @@
+/* components/knowledge/pesticidesHub.css */
+
+
+/* ===== شريط البحث المتقدم ===== */
+.search-advanced {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.search-input {
+  width: 90%;
+  padding: 0.8rem 2.5rem 0.8rem 1rem;
+  border-radius: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2D6A4F;
+}
+
+.search-icon {
+  position: absolute;
+  left: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4f6b5f;
+}
+
+.search-type {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 40px;
+  padding: 0.2rem;
+}
+
+.type-btn {
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  background: transparent;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.type-btn.active {
+  background: #2D6A4F;
+  color: white;
+}
+
+/* ===== ملخص النتائج ===== */
+.results-summary {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 1rem;
+}
+
+.summary-text {
+  font-size: 0.9rem;
+  color: #4f6b5f;
+}
+
+.result-count {
+  background: #2D6A4F;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* ===== الأقسام ===== */
+.groups-section, .items-section {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a332c;
+  margin-bottom: 1rem;
+  border-right: 3px solid #2D6A4F;
+  padding-right: 0.8rem;
+}
+
+.section-count {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: normal;
+}
+
+/* ===== شبكة المجموعات ===== */
+.groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.group-card, .item-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-glass {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.group-card:hover, .item-card:hover {
+  transform: translateY(-5px);
+}
+
+.group-card:hover .card-glass, .item-card:hover .card-glass {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.group-code {
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.risk-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.group-name, .item-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a332c;
+  margin-bottom: 0.2rem;
+}
+
+.group-name-en, .item-name-en {
+  font-size: 0.7rem;
+  color: #4f6b5f;
+  margin-bottom: 0.8rem;
+}
+
+.group-meta, .item-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.meta-label {
+  font-size: 0.7rem;
+  color: #4f6b5f;
+}
+
+.meta-value {
+  font-size: 0.7rem;
+  color: var(--group-color, #2D6A4F);
+  font-weight: 500;
+}
+
+.group-moa {
+  font-size: 0.75rem;
+  color: #2d4a3f;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.card-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 0.8rem;
+}
+
+.view-link {
+  color: var(--group-color, #2D6A4F);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+/* ===== بطاقات المواد الفعالة ===== */
+.item-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.item-type {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+}
+
+/* ===== حالة عدم وجود نتائج ===== */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 24px;
+  margin: 2rem 0;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.no-results h3 {
+  font-size: 1.2rem;
+  color: #1a332c;
+  margin-bottom: 0.5rem;
+}
+
+.no-results p {
+  color: #4f6b5f;
+  margin-bottom: 1.5rem;
+}
+
+.no-results button {
+  padding: 0.6rem 1.5rem;
+  background: #2D6A4F;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* ===== إحصائيات سريعة ===== */
+.hub-stats {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 60px;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2D6A4F;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #4f6b5f;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Modal Styles ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.group-modal, .item-modal {
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border-radius: 28px;
+  animation: modalIn 0.3s;
+}
+
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.modal-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.modal-title h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.modal-title p {
+  font-size: 0.8rem;
+  color: #4f6b5f;
+}
+
+.modal-close {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.modal-close:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.detail-grid {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  width: 130px;
+  font-weight: 600;
+  color: #1a332c;
+  font-size: 0.85rem;
+}
+
+.detail-value {
+  flex: 1;
+  color: #2d4a3f;
+  font-size: 0.85rem;
+}
+
+.rotation-box, .application-box, .resistance-box, .safety-box, .cross-list {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.rotation-box h4, .application-box h4, .resistance-box h4, .safety-box h4, .cross-list h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #2D6A4F;
+}
+
+.application-box ul {
+  padding-right: 1.5rem;
+  margin: 0;
+}
+
+.application-box li {
+  font-size: 0.85rem;
+  color: #2d4a3f;
+  margin-bottom: 0.3rem;
+}
+
+.timing-note {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #f59e0b;
+}
+
+.resistance-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  font-size: 0.85rem;
+}
+
+.compatible-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.compatible-tag {
+  padding: 0.2rem 0.6rem;
+  background: rgba(45, 106, 79, 0.1);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: #2D6A4F;
+}
+
+.cross-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cross-item {
+  padding: 0.2rem 0.8rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.cross-more {
+  padding: 0.2rem 0.6rem;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.modal-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  padding: 0.6rem 1.5rem;
+  background: #2D6A4F;
+  color: white;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* ===== تحسينات للموبايل ===== */
+@media (max-width: 768px) {
+  .pesticides-hub {
+    padding: 1rem;
+    margin-top: 70px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .header-icon {
+    margin: 0 auto;
+  }
+  
+  .categories-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .cat-tab {
+    white-space: nowrap;
+  }
+  
+  .category-info {
+    flex-wrap: wrap;
+  }
+  
+  .info-stats {
+    margin-right: 0;
+  }
+  
+  .search-advanced {
+    flex-direction: column;
+  }
+  
+  .groups-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .detail-label {
+    width: auto;
+  }
+  
+  .hub-stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .stat-divider {
+    width: 80%;
+    height: 1px;
+  }
+}
+
+/* ===== المواد الفعالة - قسم محسن ===== */
+.items-section {
+  margin-bottom: 3rem;
+}
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: #4f6b5f;
+  margin-top: 0.3rem;
+}
+
+/* شبكة المواد الفعالة */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.8rem;
+}
+
+/* بطاقة المادة الفعالة المحسنة */
+.item-card-enhanced {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-glass-enhanced {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.7) 100%);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.item-card-enhanced:hover {
+  transform: translateY(-8px);
+}
+
+.item-card-enhanced:hover .card-glass-enhanced {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+}
+
+/* شارة المادة */
+.item-badge {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 1rem 0.3rem 1.2rem;
+  background: linear-gradient(135deg, var(--item-color, #2D6A4F) 0%, rgba(0, 0, 0, 0.1) 100%);
+  border-radius: 0 30px 30px 0;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+  font-size: 1rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.badge-text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+/* محتوى البطاقة */
+.item-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.item-name-enhanced {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a332c;
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+}
+
+.item-name-en-enhanced {
+  font-size: 0.75rem;
+  color: #4f6b5f;
+  font-style: italic;
+  margin-bottom: 1rem;
+  border-right: 2px solid var(--item-color, #2D6A4F);
+  padding-right: 0.6rem;
+}
+
+/* تفاصيل المادة */
+.item-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.detail-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 30px;
+  font-size: 0.7rem;
+  color: #2d4a3f;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.detail-chip:hover {
+  transform: scale(1.02);
+}
+
+.chip-icon {
+  font-size: 0.7rem;
+}
+
+.chip-text {
+  font-weight: 500;
+}
+
+.dose-chip {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.risk-chip {
+  border: none;
+}
+
+/* المحاصيل */
+.item-crops, .item-targets {
+  margin-bottom: 0.8rem;
+}
+
+.crops-label, .targets-label {
+  font-size: 0.7rem;
+  color: #4f6b5f;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.crops-tags, .targets-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.crop-tag-enhanced {
+  padding: 0.2rem 0.7rem;
+  background: rgba(45, 106, 79, 0.1);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: #2D6A4F;
+  font-weight: 500;
+}
+
+.crop-tag-enhanced.more {
+  background: rgba(0, 0, 0, 0.05);
+  color: #4f6b5f;
+}
+
+.target-tag {
+  padding: 0.2rem 0.7rem;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 20px;
+  font-size: 0.7rem;
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.target-tag.more {
+  background: rgba(0, 0, 0, 0.05);
+  color: #4f6b5f;
+}
+
+/* تذييل البطاقة */
+.item-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.details-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, var(--btn-color, #2D6A4F) 0%, var(--btn-color, #2D6A4F) 100%);
+  border: none;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-btn:hover {
+  transform: translateX(-3px);
+  filter: brightness(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  color: #4f6b5f;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.item-card-enhanced:hover .item-hint {
+  opacity: 1;
+  gap: 0.5rem;
+}
+
+.hint-arrow {
+  transition: transform 0.3s ease;
+}
+
+.item-card-enhanced:hover .hint-arrow {
+  transform: translateX(-3px);
+}
+
+/* تأثيرات hover */
+.card-hover-effect-enhanced {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    transparent 50%,
+    rgba(255, 255, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+.item-card-enhanced:hover .card-hover-effect-enhanced {
+  opacity: 1;
+}
+
+.card-shine-enhanced {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  transition: transform 0.7s ease;
+  z-index: 4;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+.item-card-enhanced:hover .card-shine-enhanced {
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+/* تحسينات للموبايل */
+@media (max-width: 768px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .item-details {
+    gap: 0.4rem;
+  }
+  
+  .detail-chip {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.65rem;
+  }
+  
+  .item-footer {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+  
+  .action-buttons {
+    width: 100%;
+  }
+  
+  .details-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .item-hint {
+    align-self: flex-end;
+  }
+  
+  .crops-tags, .targets-tags {
+    flex-wrap: wrap;
+  }
+}
+
+/* Loading state for items */
+.items-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+}
+
+.loading-spinner-small {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(45, 106, 79, 0.2);
+  border-top-color: #2D6A4F;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
+/* أضف هذه الـ CSS إلى نهاية ملف pesticidesHub.css */
+
+/* Cards جديدة للمجموعات */
+.groups-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.group-card-new {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.group-card-new:hover {
+  transform: translateY(-8px);
+}
+
+.card-glow-new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--group-color, #2e7d32);
+}
+
+.group-code-new {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.risk-dot-new {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.group-moa-new {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+.ai-count-new {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #2e7d32;
+}
+
+.view-link-new {
+  color: var(--group-color, #2e7d32);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* صفحة المجموعة */
+.group-header-new {
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.group-header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.group-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+}
+
+.group-badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.group-description-new {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.rotation-note {
+  margin-top: 16px;
+  padding: 12px;
+  background: #f0f7ff;
+  border-radius: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+/* بطاقات المواد الفعالة */
+.items-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.item-card-new {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.item-card-new:hover {
+  transform: translateY(-4px);
+}
+
+.item-card-content {
+  padding: 20px;
+}
+
+.item-header h4 {
+  font-size: 18px;
+  color: #1a2a1f;
+  margin-bottom: 4px;
+}
+
+.item-name-en {
+  font-size: 12px;
+  color: #999;
+}
+
+.item-details {
+  margin: 16px 0;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.item-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.detail-label {
+  color: #666;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #1a2a1f;
+}
+
+.item-crops {
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.crops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.crop-tag {
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+
+.crop-tag.more {
+  background: #2e7d32;
+  color: white;
+}
+
+.item-footer {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.view-details {
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.results-count-new {
+  text-align: center;
+  margin: 16px 0;
+  padding: 8px;
+  background: rgba(46, 125, 50, 0.08);
+  border-radius: 40px;
+  display: inline-block;
+  width: auto;
+}
+
+/* components/knowledge/pesticidesHub.css */
+
+/* ========================================
+   Main Container
+   ======================================== */
+.pesticides-hub-new {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 5% 60px;
+  direction: rtl;
+}
+
+/* ========================================
+   Background
+   ======================================== */
+.hub-bg-new {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  overflow: hidden;
+}
+
+.bg-glow-new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(76, 175, 80, 0.1) 0%, transparent 60%);
+}
+
+.bg-particles-new {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 10% 20%, rgba(46, 125, 50, 0.08) 2px, transparent 2px);
+  background-size: 50px 50px;
+  animation: particleMoveNew 40s linear infinite;
+}
+
+@keyframes particleMoveNew {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* ========================================
+   Glass Effect
+   ======================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   Header
+   ======================================== */
+.hub-header-new {
+  margin-bottom: 32px;
+  padding: 24px 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.back-button-new {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(46, 125, 50, 0.1);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.back-button-new:hover {
+  background: #2e7d32;
+  color: white;
+  transform: translateX(-4px);
+}
+
+.header-content-new {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.header-icon-new {
+  font-size: 64px;
+  background: rgba(46, 125, 50, 0.1);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.header-text-new h1 {
+  font-size: 32px;
+  color: #1a2a1f;
+  margin-bottom: 8px;
+}
+
+.header-text-new p {
+  color: #6b7b66;
+  margin-bottom: 0;
+}
+
+/* ========================================
+   Category Tabs
+   ======================================== */
+.categories-tabs-new {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+  justify-content: center;
+}
+
+.cat-tab-new {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a2a1f;
+}
+
+.cat-tab-new:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.cat-tab-new.active {
+  background: var(--cat-color, #2e7d32);
+  color: white;
+  border-color: transparent;
+}
+
+.tab-icon-new {
+  font-size: 18px;
+}
+
+.tab-count-new {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.cat-tab-new.active .tab-count-new {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   Category Info
+   ======================================== */
+.category-info-new {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 30px;
+  border-radius: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.info-icon-new {
+  font-size: 48px;
+}
+
+.info-text-new h2 {
+  font-size: 24px;
+  margin-bottom: 4px;
+  color: #1a2a1f;
+}
+
+.info-text-new p {
+  color: #6b7b66;
+}
+
+.info-stats-new {
+  display: flex;
+  gap: 16px;
+  margin-right: auto;
+}
+
+.info-stats-new span {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* ========================================
+   Search Section
+   ======================================== */
+.search-section-new {
+  margin-bottom: 24px;
+  padding: 16px 24px;
+}
+
+.search-wrapper-new {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 60px;
+  padding: 4px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.search-icon-new {
+  font-size: 20px;
+  margin-left: 12px;
+}
+
+.search-input-new {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 14px 0;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.clear-search-new {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #999;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.clear-search-new:hover {
+  background: #f0f0f0;
+  color: #666;
+}
+
+/* ========================================
+   Results Count
+   ======================================== */
+.results-count-new {
+  text-align: center;
+  margin: 16px 0;
+  padding: 8px 16px;
+  background: rgba(46, 125, 50, 0.08);
+  border-radius: 40px;
+  display: inline-block;
+  width: auto;
+}
+
+/* ========================================
+   Group Header (for group page)
+   ======================================== */
+.group-header-new {
+  margin-bottom: 24px;
+  padding: 24px;
+  position: relative;
+}
+
+.group-header-content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.group-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.group-header-text h1 {
+  font-size: 28px;
+  color: #1a2a1f;
+  margin-bottom: 4px;
+}
+
+.group-header-text p {
+  color: #6b7b66;
+  margin-bottom: 12px;
+}
+
+.group-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 6px 14px;
+  background: rgba(46, 125, 50, 0.1);
+  border-radius: 20px;
+  font-size: 13px;
+  color: #2e7d32;
+}
+
+/* ========================================
+   Group Description
+   ======================================== */
+.group-description-new {
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.group-description-new h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #1a2a1f;
+}
+
+.group-description-new p {
+  color: #4a5b44;
+  line-height: 1.6;
+}
+
+.rotation-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #f0f7ff;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  color: #1565c0;
+}
+
+/* ========================================
+   Groups Grid
+   ======================================== */
+.groups-section-new {
+  margin-bottom: 40px;
+}
+
+.section-header-new {
+  margin-bottom: 20px;
+}
+
+.section-title-new {
+  font-size: 20px;
+  color: #1a2a1f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-count-new {
+  background: #2e7d32;
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.groups-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.group-card-new {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.group-card-new:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-glow-new {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--group-color, #2e7d32);
+}
+
+.card-content-new {
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-header-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.group-code-new {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.risk-dot-new {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.group-name-new {
+  font-size: 18px;
+  color: #1a2a1f;
+  margin-bottom: 4px;
+}
+
+.group-name-en-new {
+  font-size: 12px;
+  color: #6b7b66;
+  margin-bottom: 12px;
+}
+
+.group-meta-new {
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.meta-label-new {
+  color: #6b7b66;
+}
+
+.meta-value-new {
+  color: #1a2a1f;
+  font-weight: 500;
+}
+
+.group-moa-new {
+  color: #4a5b44;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+
+.card-footer-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.ai-count-new {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #2e7d32;
+}
+
+.view-link-new {
+  color: var(--group-color, #2e7d32);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.arrow-new {
+  transition: transform 0.3s;
+}
+
+.group-card-new:hover .arrow-new {
+  transform: translateX(-4px);
+}
+
+/* ========================================
+   Items Grid (Active Ingredients)
+   ======================================== */
+.items-grid-new {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.item-card-new {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.item-card-new:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.item-card-content {
+  padding: 20px;
+}
+
+.item-header {
+  margin-bottom: 12px;
+}
+
+.item-header h4 {
+  font-size: 18px;
+  color: #1a2a1f;
+  margin-bottom: 4px;
+}
+
+.item-name-en {
+  font-size: 11px;
+  color: #6b7b66;
+}
+
+.item-details {
+  margin: 12px 0;
+  padding: 12px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.item-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.detail-label {
+  color: #6b7b66;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #1a2a1f;
+}
+
+.item-crops {
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.item-crops > span {
+  display: block;
+  color: #6b7b66;
+  margin-bottom: 8px;
+}
+
+.crops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.crop-tag {
+  background: rgba(46, 125, 50, 0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  color: #2e7d32;
+}
+
+.crop-tag.more {
+  background: #2e7d32;
+  color: white;
+}
+
+.item-footer {
+  margin-top: 16px;
+  text-align: left;
+}
+
+.view-details {
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.view-details .arrow {
+  transition: transform 0.3s;
+}
+
+.item-card-new:hover .view-details .arrow {
+  transform: translateX(-4px);
+}
+
+/* ========================================
+   No Results
+   ======================================== */
+.no-results-new {
+  text-align: center;
+  padding: 60px 20px;
+  margin: 40px 0;
+}
+
+.no-results-icon-new {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.no-results-new h3 {
+  color: #1a2a1f;
+  margin-bottom: 8px;
+}
+
+.no-results-new p {
+  color: #6b7b66;
+  margin-bottom: 20px;
+}
+
+.no-results-new button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.no-results-new button:hover {
+  background: #1b5e20;
+}
+
+/* ========================================
+   Loading Container
+   ======================================== */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(46, 125, 50, 0.2);
+  border-top-color: #2e7d32;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ========================================
+   Error Container
+   ======================================== */
+.error-container {
+  text-align: center;
+  padding: 60px 40px;
+  max-width: 500px;
+  margin: 60px auto;
+}
+
+.error-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.error-container h2 {
+  color: #1a2a1f;
+  margin-bottom: 8px;
+}
+
+.error-container p {
+  color: #6b7b66;
+  margin-bottom: 24px;
+}
+
+.back-home-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.back-home-btn:hover {
+  background: #1b5e20;
+}
+
+/* ========================================
+   Modal
+   ======================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.item-modal-new {
+  max-width: 700px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background: inherit;
+  backdrop-filter: blur(12px);
+}
+
+.modal-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.modal-title h2 {
+  font-size: 22px;
+  color: #1a2a1f;
+  margin-bottom: 4px;
+}
+
+.modal-title p {
+  color: #6b7b66;
+  font-size: 13px;
+}
+
+.modal-group {
+  font-size: 12px;
+  color: #2e7d32;
+  margin-top: 4px;
+}
+
+.modal-close {
+  margin-right: auto;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: #f0f0f0;
+  color: #d32f2f;
+}
+
+.modal-body {
+  padding: 24px;
+}
+
+.detail-grid {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 500;
+  color: #6b7b66;
+}
+
+.detail-value {
+  color: #1a2a1f;
+}
+
+/* Modal Boxes */
+.application-box,
+.resistance-box,
+.target-pests-box,
+.target-crops-box,
+.special-box,
+.safety-box,
+.regulatory-box {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 16px;
+}
+
+.application-box h4,
+.resistance-box h4,
+.target-pests-box h4,
+.target-crops-box h4,
+.special-box h4,
+.safety-box h4,
+.regulatory-box h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #1a2a1f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.app-row:last-child {
+  border-bottom: none;
+}
+
+.app-row span:first-child {
+  color: #6b7b66;
+}
+
+.app-row strong {
+  color: #2e7d32;
+}
+
+.resistance-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.resistance-row:last-child {
+  border-bottom: none;
+}
+
+.resistance-row span:first-child {
+  color: #6b7b66;
+}
+
+/* Pests and Crops Tags */
+.pests-list,
+.crops-list-modal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.pest-tag,
+.crop-tag-modal {
+  background: rgba(46, 125, 50, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #2e7d32;
+}
+
+.pest-tag.more,
+.crop-tag-modal.more {
+  background: #2e7d32;
+  color: white;
+}
+
+.modal-footer {
+  padding: 20px 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s;
+  width: fit-content;
+}
+
+.close-btn:hover {
+  background: #1b5e20;
+}
+
+/* ========================================
+   Quick Stats Footer
+   ======================================== */
+.hub-stats-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 60px;
+  flex-wrap: wrap;
+}
+
+.stat-card-new {
+  text-align: center;
+}
+
+.stat-value-new {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2e7d32;
+  display: block;
+}
+
+.stat-label-new {
+  font-size: 13px;
+  color: #6b7b66;
+}
+
+.stat-divider-new {
+  width: 1px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 992px) {
+  .pesticides-hub-new {
+    padding: 80px 4% 40px;
+  }
+  
+  .groups-grid-new,
+  .items-grid-new {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .pesticides-hub-new {
+    padding: 70px 3% 30px;
+  }
+  
+  .header-content-new {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .category-info-new {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .info-stats-new {
+    margin-right: 0;
+  }
+  
+  .group-header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .group-badges {
+    justify-content: center;
+  }
+  
+  .groups-grid-new,
+  .items-grid-new {
+    grid-template-columns: 1fr;
+  }
+  
+  .categories-tabs-new {
+    gap: 6px;
+  }
+  
+  .cat-tab-new {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .hub-stats-new {
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .stat-value-new {
+    font-size: 22px;
+  }
+  
+  .modal-header {
+    flex-wrap: wrap;
+  }
+  
+  .detail-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .app-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .resistance-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-icon-new {
+    width: 70px;
+    height: 70px;
+    font-size: 40px;
+  }
+  
+  .header-text-new h1 {
+    font-size: 24px;
+  }
+  
+  .section-title-new {
+    font-size: 18px;
+  }
+  
+  .group-name-new {
+    font-size: 16px;
+  }
+  
+  .item-header h4 {
+    font-size: 16px;
+  }
+  
+  .modal-title h2 {
+    font-size: 18px;
+  }
+  
+  .modal-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+}
+
+/* ========================================
+   Scrollbar Styling
+   ======================================== */
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: #2e7d32;
+  border-radius: 10px;
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+  .pesticides-hub-new {
+    padding: 20px;
+  }
+  
+  .hub-bg-new,
+  .bg-glow-new,
+  .bg-particles-new,
+  .back-button-new,
+  .modal-overlay,
+  .hub-stats-new {
+    display: none;
+  }
+  
+  .glass {
+    background: white;
+    backdrop-filter: none;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* أضف هذه الـ CSS إلى ملف pesticidesHub.css */
+
+/* ========================================
+   Group Card Enhanced Styles
+   ======================================== */
+
+/* آلية العمل */
+.group-moa {
+  margin: 12px 0;
+  padding: 8px 0;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
+}
+
+.moa-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 4px;
+}
+
+.moa-text {
+  font-size: 13px;
+  color: #4a5b44;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* طريقة التطبيق */
+.group-application {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 8px 0;
+  padding: 6px 0;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.app-label {
+  color: #6b7b66;
+  font-weight: 500;
+}
+
+.app-value {
+  color: #1a2a1f;
+  font-weight: 500;
+  text-align: left;
+  max-width: 55%;
+}
+
+/* طيف المكافحة */
+.group-spectrum {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 8px 0;
+  padding: 6px 0;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.spectrum-label {
+  color: #6b7b66;
+  font-weight: 500;
+}
+
+.spectrum-value {
+  color: #1565c0;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* معلومات المقاومة */
+.group-resistance-info {
+  margin: 10px 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+}
+
+.resistance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.resistance-item:last-child {
+  margin-bottom: 0;
+}
+
+.res-label {
+  color: #6b7b66;
+  font-weight: 500;
+}
+
+.res-value {
+  font-weight: 600;
+  text-align: left;
+}
+
+.res-value.small {
+  font-size: 10px;
+  font-weight: normal;
+  color: #666;
+  max-width: 55%;
+}
+
+/* التناوب */
+.group-rotation {
+  margin: 8px 0;
+  padding: 8px;
+  background: rgba(46, 125, 50, 0.05);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+}
+
+.rotation-label {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.rotation-value {
+  color: #1a2a1f;
+  text-align: left;
+  max-width: 55%;
+}
+
+/* معلومات إضافية */
+.group-extra-info {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.extra-item {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.extra-item span:first-child {
+  color: #6b7b66;
+}
+
+.extra-item span:last-child {
+  color: #1a2a1f;
+  font-weight: 500;
+}
+
+.extra-item.safety {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.extra-item.safety .safety-text {
+  color: #dc2626;
+}
+
+/* تحسينات للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .group-application,
+  .group-spectrum,
+  .resistance-item,
+  .group-rotation {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .app-value,
+  .spectrum-value,
+  .res-value.small,
+  .rotation-value {
+    text-align: right;
+    max-width: 100%;
+  }
+  
+  .group-extra-info {
+    gap: 6px;
+  }
+  
+  .extra-item {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moa-text {
+    font-size: 11px;
+  }
+  
+  .group-resistance-info {
+    padding: 6px;
+  }
+  
+  .resistance-item {
+    font-size: 10px;
+  }
+}
+/* أضف إلى نهاية ملف pesticidesHub.css */
+
+/* Public Health Badge */
+.who-badge {
+  display: inline-block;
+  background: #1565c0;
+  color: white;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 6px;
+}
+
+.public-health-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #0d47a1;
+}
+
+.public-health-note .note-icon {
+  font-size: 20px;
+}
+
+.public-health-note .note-text {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.spectrum-note {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: rgba(46, 125, 50, 0.08);
+  border-radius: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+}
+
+/* Item Targets */
+.item-targets {
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.item-targets > span {
+  display: block;
+  color: #6b7b66;
+  margin-bottom: 8px;
+}
+
+.targets-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.target-tag {
+  background: rgba(46, 125, 50, 0.1);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  color: #2e7d32;
+}
+
+.target-tag.more {
+  background: #2e7d32;
+  color: white;
+}
+
+/* WHO Box */
+.who-box {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #e3f2fd;
+  border-radius: 12px;
+  border-right: 3px solid #1565c0;
+}
+
+.who-box h4 {
+  font-size: 14px;
+  color: #1565c0;
+  margin-bottom: 8px;
+}
+
+.who-box p {
+  font-size: 13px;
+  color: #0d47a1;
+}
+
+/* Modal WHO Class */
+.who-class {
+  font-size: 12px;
+  color: #1565c0;
+  margin-top: 4px;
+}
+
+/* أضف إلى نهاية ملف pesticidesHub.css */
+
+/* Public Health Tag */
+.public-health-tag {
+  background: linear-gradient(135deg, #8b5a2b15, #8b5a2b25) !important;
+}
+
+.public-health-tag span:first-child {
+  font-size: 12px;
+}
+
+.public-health-tag span:last-child {
+  color: #8b5a2b;
+  font-weight: 500;
+}
+
+/* Group Meta New */
+.group-meta-new {
+  margin: 12px 0 8px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.meta-label-new {
+  color: #6b7b66;
+  font-weight: 500;
+}
+
+.meta-value-new {
+  color: #1a2a1f;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Group MoA New */
+.group-moa-new {
+  margin: 8px 0;
+  padding: 6px 0;
+}
+
+.moa-label-new {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 4px;
+}
+
+.moa-text-new {
+  font-size: 13px;
+  color: #4a5b44;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Group Application New */
+.group-application-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 8px 0;
+  padding: 6px 0;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.app-label-new {
+  color: #6b7b66;
+  font-weight: 500;
+}
+
+.app-value-new {
+  color: #1a2a1f;
+  font-weight: 500;
+  text-align: left;
+  max-width: 55%;
+}
+
+/* Group Spectrum New */
+.group-spectrum-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 8px 0;
+  padding: 6px 0;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.spectrum-label-new {
+  color: #6b7b66;
+  font-weight: 500;
+}
+
+.spectrum-value-new {
+  color: #1565c0;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Group Resistance Info New */
+.group-resistance-info-new {
+  margin: 10px 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+}
+
+.resistance-item-new {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.resistance-item-new:last-child {
+  margin-bottom: 0;
+}
+
+.res-label-new {
+  color: #6b7b66;
+  font-weight: 500;
+}
+
+.res-value-new {
+  font-weight: 600;
+  text-align: left;
+}
+
+.res-value-new.small {
+  font-size: 10px;
+  font-weight: normal;
+  color: #666;
+  max-width: 55%;
+}
+
+/* Group Rotation New */
+.group-rotation-new {
+  margin: 8px 0;
+  padding: 8px;
+  background: rgba(46, 125, 50, 0.05);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+}
+
+.rotation-label-new {
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.rotation-value-new {
+  color: #1a2a1f;
+  text-align: left;
+  max-width: 55%;
+}
+
+/* Group Extra Info New */
+.group-extra-info-new {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.extra-item-new {
+  background: rgba(0, 0, 0, 0.03);
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.extra-item-new span:first-child {
+  color: #6b7b66;
+}
+
+.extra-item-new span:last-child {
+  color: #1a2a1f;
+  font-weight: 500;
+}
+
+.extra-item-new.safety {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.extra-item-new.safety .safety-text-new {
+  color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .group-application-new,
+  .group-spectrum-new,
+  .resistance-item-new,
+  .group-rotation-new {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .app-value-new,
+  .spectrum-value-new,
+  .res-value-new.small,
+  .rotation-value-new {
+    text-align: right;
+    max-width: 100%;
+  }
+  
+  .group-meta-new {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .group-extra-info-new {
+    gap: 6px;
+  }
+  
+  .extra-item-new {
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+}

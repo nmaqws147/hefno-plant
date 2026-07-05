@@ -1,0 +1,1006 @@
+{
+  "id": "public_health_pesticides",
+  "ar_name": "مبيدات آفات الصحة العامة",
+  "name_en": "Public Health Pesticides — Insecticides, Rodenticides & Disinfectants",
+  "source": "WHO Pesticide Evaluation Scheme (WHOPES) + IRAC 2024 + Egyptian Ministry of Health Register + FAO/WHO Joint Meeting",
+  "version": "1.0.0",
+  "important_note_ar": "مبيدات الصحة العامة تختلف جوهرياً عن المبيدات الزراعية — الهدف حماية الإنسان لا النبات — تستلزم تراخيص خاصة وتطبيقاً بواسطة متخصصين معتمدين في معظم الحالات",
+  "groups_count": 6,
+  "groups": [
+    {
+      "id": "phg-1",
+      "code": "PYR",
+      "irac_code": "3A",
+      "ar_name": "البيريثرويدات الاصطناعية",
+      "name_en": "Synthetic Pyrethroids",
+      "chemical_class_ar": "بيريثرويدات — إسترات حمض الكريزانثيميك",
+      "chemical_class_en": "Type I & II Pyrethroids",
+      "ar_MoA": "تثبيط قنوات الصوديوم في الخلايا العصبية للحشرة — تمنع إغلاق القناة مما يسبب إطالة فتح القناة وشلل عصبي مستمر حتى الموت",
+      "MoA_en": "Voltage-gated sodium channel modulators — prolonged channel opening → paralysis",
+      "MoA_site": "Voltage-gated sodium channel (VGSC)",
+      "ar_method_application": "رش داخلي (IRS) — رش خارجي — ضباب حراري — ضباب بارد (ULV) — مبيد ناموسيات (LLIN)",
+      "target_pests": ["بعوض", "ذباب", "صراصر", "بق الفراش", "حشرات الصحة العامة عامة"],
+      "ar_risk_resistance": "عالي جداً — المقاومة الأوسع انتشاراً في آفات الصحة العامة عالمياً",
+      "resistance_risk_level": 4,
+      "resistance_risk_color": "red",
+      "ar_mechanism_resistance": "طفرة kdr في قناة الصوديوم — أكسدة إنزيمية (P450) — إسترات هيدروليزية — سُمك الكيوتيكل",
+      "max_applications_season": 2,
+      "ar_rule_rotation": "تناوب إلزامي مع مجموعة مختلفة تماماً بعد كل دورة رش — لا تكرر أكثر من مرتين متتاليتين",
+      "rotation_compatible_ids": ["phg-2", "phg-3", "phg-4"],
+      "rotation_incompatible_ids": ["phg-1"],
+      "ar_spectrum": "واسع — معظم الحشرات الطائرة والزاحفة",
+      "egypt_importance": "عالية جداً — العمود الفقري لبرامج مكافحة البعوض والذباب في مصر",
+      "ar_class_safety": "منخفض السمية للثدييات — سام للأسماك والحشرات النافعة — آمن نسبياً للإنسان بالجرعات المعتادة",
+      "ai_count": 8,
+      "active_ingredients": [
+        {
+          "id": "phi-001",
+          "ar_name": "ديلتامثرين",
+          "name_en": "Deltamethrin",
+          "group_id": "phg-1",
+          "group_code": "PYR",
+          "irac_code": "3A",
+          "who_class": "II — معتدل الخطورة",
+          "systemic": false,
+          "ar_type": "ملامسي + استنشاقي — تأثير knock-down سريع",
+          "application": {
+            "indoor_residual_spray": "25 مجم م.ف/م² — يدوم 3-6 أشهر على الجدران",
+            "mosquito_nets_LLIN": "55 مجم/م² معالجة شبكة ناموسية دائمة",
+            "outdoor_spray": "10-25 مجم م.ف/م²",
+            "thermal_fog": "1-2% محلول في زيت",
+            "ULV_cold_fog": "0.5-1 جم م.ف/هكتار",
+            "surface_spray_cockroach": "30-50 مجم م.ف/م²",
+            "ar_timing": "رش IRS مرة واحدة قبل موسم البعوض — رش خارجي عند تجاوز العتبة",
+            "max_applications_season": 2,
+            "interval_weeks": 12,
+            "preharvest_interval_ar": "لا ينطبق — للصحة العامة",
+            "reentry_interval_ar": "إخلاء المنزل ساعتين بعد الرش الداخلي"
+          },
+          "resistance": {
+            "ar_risk": "عالٍ جداً",
+            "risk_level": 4,
+            "risk_color": "red",
+            "ar_mechanism": "طفرة kdr (L1014F/S) — مقاومة استقلابية بإنزيمات P450 — سُمك الكيوتيكل",
+            "resistance_reported_in": ["Anopheles gambiae أفريقيا", "Culex pipiens مصر", "Aedes aegypti", "Musca domestica"],
+            "ar_note_resistance_cross": "مقاومة متبادلة مع جميع البيريثرويدات الأخرى — لا تستخدم نوعاً آخر من نفس المجموعة كبديل"
+          },
+          "rotation": {
+            "group_id": "phg-1",
+            "max_consecutive": 1,
+            "must_rotate_after": 2,
+            "ar_note": "تناوب مع organophosphates (phg-2) أو bendiocarb (phg-3) بعد دورتين كحد أقصى"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض الأنوفيليس — ناقل الملاريا"},
+            {"id": "php-2", "ar_name": "بعوض الكيولكس — ناقل النيل الغربي"},
+            {"id": "php-3", "ar_name": "الذبابة المنزلية"},
+            {"id": "php-5", "ar_name": "الصرصار الأمريكي والألماني"},
+            {"id": "php-4", "ar_name": "ذبابة الرمل"}
+          ],
+          "ar_spectrum": "واسع — بعوض + ذباب + صراصر + عث + حشرات الصحة العامة",
+          "ar_activity": "ملامسي + استنشاقي — knock-down سريع — أثر متبقي طويل على الجدران",
+          "ar_use_special": "الأكثر استخداماً في IRS لمكافحة الملاريا عالمياً — معتمد WHO — ناموسيات LLIN",
+          "who_registration": "معتمد WHO للرش الداخلي IRS وناموسيات LLIN",
+          "ar_regulatory": "مسجل في مصر ومتاح — مستخدم في برامج وزارة الصحة",
+          "ar_notes_safety": "آمن للثدييات — ابتعد عن مصادر المياه — سام للأسماك والنحل — خطر حراري لا يستعمل مع مصادر لهب",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC MoA Classification 2024"
+        },
+        {
+          "id": "phi-002",
+          "ar_name": "ألفاسيبرمثرين",
+          "name_en": "Alpha-cypermethrin",
+          "group_id": "phg-1",
+          "group_code": "PYR",
+          "irac_code": "3A",
+          "who_class": "II — معتدل الخطورة",
+          "systemic": false,
+          "ar_type": "ملامسي + استنشاقي",
+          "application": {
+            "indoor_residual_spray": "20-30 مجم م.ف/م²",
+            "outdoor_spray": "10-20 مجم م.ف/م²",
+            "ULV_cold_fog": "1-2 جم م.ف/هكتار",
+            "surface_spray_cockroach": "25-50 مجم م.ف/م²",
+            "ar_timing": "قبل موسم البعوض أو عند رصد تجاوز العتبة",
+            "max_applications_season": 2,
+            "interval_weeks": 12,
+            "reentry_interval_ar": "ساعتان بعد الرش الداخلي"
+          },
+          "resistance": {
+            "ar_risk": "عالٍ جداً",
+            "risk_level": 4,
+            "risk_color": "red",
+            "ar_mechanism": "kdr + P450",
+            "resistance_reported_in": ["Culex pipiens", "Anopheles spp.", "Blattella germanica"],
+            "ar_note_resistance_cross": "مقاومة متبادلة مع ديلتامثرين وبيرمثرين"
+          },
+          "rotation": {
+            "group_id": "phg-1",
+            "max_consecutive": 1,
+            "must_rotate_after": 2,
+            "ar_note": "تناوب مع مجموعة مختلفة بعد دورتين"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض الأنوفيليس"},
+            {"id": "php-2", "ar_name": "بعوض الكيولكس"},
+            {"id": "php-5", "ar_name": "الصرصار"}
+          ],
+          "ar_spectrum": "واسع — بعوض + ذباب + صراصر",
+          "ar_activity": "ملامسي سريع — knock-down قوي",
+          "ar_use_special": "معتمد WHO للرش الداخلي IRS — بديل ديلتامثرين في بعض البرامج",
+          "who_registration": "معتمد WHO للرش الداخلي IRS",
+          "ar_regulatory": "مسجل في مصر",
+          "ar_notes_safety": "آمن للثدييات — سام للأسماك والنحل",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        },
+        {
+          "id": "phi-003",
+          "ar_name": "لامدا-سيهالوثرين",
+          "name_en": "Lambda-cyhalothrin",
+          "group_id": "phg-1",
+          "group_code": "PYR",
+          "irac_code": "3A",
+          "who_class": "II — معتدل الخطورة",
+          "systemic": false,
+          "ar_type": "ملامسي + استنشاقي",
+          "application": {
+            "indoor_residual_spray": "20-30 مجم م.ف/م²",
+            "outdoor_spray": "15-25 مجم م.ف/م²",
+            "surface_spray_cockroach": "25 مجم م.ف/م²",
+            "scorpion_spider_spray": "25-50 مجم م.ف/م² — رش حواف وشقوق المنازل",
+            "ar_timing": "رش شقوق وزوايا المنازل في المناطق الموبوءة بالعقارب",
+            "max_applications_season": 3,
+            "interval_weeks": 8,
+            "reentry_interval_ar": "ساعتان"
+          },
+          "resistance": {
+            "ar_risk": "عالٍ جداً",
+            "risk_level": 4,
+            "risk_color": "red",
+            "ar_mechanism": "kdr + P450 + إسترات هيدروليزية",
+            "resistance_reported_in": ["Anopheles gambiae", "Culex quinquefasciatus"],
+            "ar_note_resistance_cross": "مقاومة متبادلة مع جميع البيريثرويدات"
+          },
+          "rotation": {
+            "group_id": "phg-1",
+            "max_consecutive": 1,
+            "must_rotate_after": 2,
+            "ar_note": "تناوب مع malathion أو bendiocarb"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض"},
+            {"id": "php-5", "ar_name": "صراصر"},
+            {"id": "php-9", "ar_name": "عقارب وعناكب"}
+          ],
+          "ar_spectrum": "واسع — بعوض + صراصر + عقارب + حشرات الشقوق",
+          "ar_activity": "ملامسي + استنشاقي — أثر طارد قوي",
+          "ar_use_special": "فعّال جداً ضد العقارب في شقوق الجدران — رش محيط المنازل في مناطق العقارب",
+          "who_registration": "معتمد WHO",
+          "ar_regulatory": "مسجل في مصر — متاح",
+          "ar_notes_safety": "آمن للثدييات — خطر على الأسماك والنحل",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        },
+        {
+          "id": "phi-004",
+          "ar_name": "بيرمثرين",
+          "name_en": "Permethrin",
+          "group_id": "phg-1",
+          "group_code": "PYR",
+          "irac_code": "3A",
+          "who_class": "II — معتدل الخطورة",
+          "systemic": false,
+          "ar_type": "ملامسي + استنشاقي",
+          "application": {
+            "mosquito_nets_treatment": "200-500 مجم/م² معالجة ناموسيات",
+            "clothing_treatment": "0.5% رش الملابس — يدوم عدة غسلات",
+            "indoor_residual_spray": "500 مجم م.ف/م²",
+            "rodent_control_surface": "0.5% رش مسارات القوارض",
+            "termite_soil_treatment": "0.5% تشريب التربة",
+            "ar_timing": "قبل الموسم — رش ملابس الحقل والمناطق الموبوءة",
+            "max_applications_season": 999,
+            "interval_weeks": 4,
+            "reentry_interval_ar": "ساعتان"
+          },
+          "resistance": {
+            "ar_risk": "عالٍ جداً",
+            "risk_level": 4,
+            "risk_color": "red",
+            "ar_mechanism": "kdr + P450",
+            "resistance_reported_in": ["Culex pipiens مصر", "Musca domestica", "Blattella germanica"],
+            "ar_note_resistance_cross": "مقاومة متبادلة مع جميع البيريثرويدات"
+          },
+          "rotation": {
+            "group_id": "phg-1",
+            "max_consecutive": 1,
+            "must_rotate_after": 2,
+            "ar_note": "تناوب مع malathion أو chlorpyrifos"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض"},
+            {"id": "php-2", "ar_name": "بعوض الكيولكس"},
+            {"id": "php-3", "ar_name": "ذباب"},
+            {"id": "php-6", "ar_name": "نمل أبيض (أرضة)"}
+          ],
+          "ar_spectrum": "واسع — بعوض + ذباب + أرضة + حشرات الملابس",
+          "ar_activity": "ملامسي — أثر متبقي متوسط — طارد للحشرات أيضاً",
+          "ar_use_special": "الأمثل لمعالجة ناموسيات السرير والملابس — استخدام شخصي واسع — آمن نسبياً",
+          "who_registration": "معتمد WHO للناموسيات المعالجة",
+          "ar_regulatory": "مسجل ومتاح في مصر",
+          "ar_notes_safety": "آمن نسبياً للإنسان — خطر على القطط (تقضبها) — خطر على الأسماك والنحل",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        }
+      ]
+    },
+    {
+      "id": "phg-2",
+      "code": "OP",
+      "irac_code": "1B",
+      "ar_name": "الفوسفورات العضوية",
+      "name_en": "Organophosphates (OPs)",
+      "chemical_class_ar": "فوسفورات عضوية — مثبطات كولينستراز لا عكوسة",
+      "chemical_class_en": "Organophosphate — cholinesterase inhibitors",
+      "ar_MoA": "تثبيط إنزيم أستيل كولين استيراز — يسبب تراكم الناقل العصبي أستيل كولين في التشابكات العصبية مما يؤدي لشلل عصبي مستمر وموت الحشرة",
+      "MoA_en": "Acetylcholinesterase (AChE) inhibition — acetylcholine accumulation → continuous nerve stimulation → death",
+      "MoA_site": "Acetylcholinesterase enzyme (AChE)",
+      "ar_method_application": "رش ULV جوي وأرضي — رش داخلي IRS — رش تربة — طُعم — ضباب حراري",
+      "target_pests": ["بعوض", "ذباب", "صراصر", "جراد", "آفات التخزين"],
+      "ar_risk_resistance": "عالٍ — المقاومة شائعة لكن أقل من البيريثرويدات",
+      "resistance_risk_level": 3,
+      "resistance_risk_color": "orange",
+      "ar_mechanism_resistance": "طفرة في موقع AChE (ace-1R) — إنزيمات استقلابية (إسترات هيدروليزية) — مضخات طرد",
+      "max_applications_season": 3,
+      "ar_rule_rotation": "تناوب مع بيريثرويدات أو كاربامات — لا تستخدم مع مثبطات كولينستراز أخرى",
+      "rotation_compatible_ids": ["phg-1", "phg-3"],
+      "rotation_incompatible_ids": ["phg-2"],
+      "ar_spectrum": "واسع — معظم الحشرات",
+      "egypt_importance": "عالية جداً — ملاثيون هو الأكثر استخداماً في مكافحة الجراد ورش البعوض في مصر",
+      "ar_class_safety": "أعلى سمية للثدييات من البيريثرويدات — حذر عند التطبيق — ارتداء معدات الحماية",
+      "ai_count": 4,
+      "active_ingredients": [
+        {
+          "id": "phi-005",
+          "ar_name": "ملاثيون",
+          "name_en": "Malathion",
+          "group_id": "phg-2",
+          "group_code": "OP",
+          "irac_code": "1B",
+          "who_class": "III — خطورة منخفضة",
+          "systemic": false,
+          "ar_type": "ملامسي + استنشاقي",
+          "application": {
+            "aerial_ULV_locust": "1-1.5 لتر م.ف/هكتار رش جوي للجراد",
+            "ground_ULV_mosquito": "112-605 مجم م.ف/هكتار رش أرضي ULV",
+            "space_spray_thermal_fog": "666 مجم م.ف/هكتار ضباب حراري",
+            "indoor_residual_spray": "2000 مجم م.ف/م²",
+            "fruit_fly_bait": "1% مع بروتين جاذب — رش بقع على الأشجار",
+            "ar_timing": "رش ULV عند رصد أسراب الجراد — رش مساء لمكافحة البعوض",
+            "max_applications_season": 3,
+            "interval_weeks": 4,
+            "reentry_interval_ar": "24 ساعة بعد الرش",
+            "preharvest_interval_ar": "7 أيام في الاستخدام الزراعي"
+          },
+          "resistance": {
+            "ar_risk": "متوسط",
+            "risk_level": 3,
+            "risk_color": "orange",
+            "ar_mechanism": "إسترات كربوكسيلية هيدروليزية — طفرة AChE — P450",
+            "resistance_reported_in": ["Culex quinquefasciatus", "Musca domestica", "Aedes aegypti"],
+            "ar_note_resistance_cross": "مقاومة متبادلة جزئية مع الفوسفورات العضوية الأخرى"
+          },
+          "rotation": {
+            "group_id": "phg-2",
+            "max_consecutive": 1,
+            "must_rotate_after": 3,
+            "ar_note": "تناوب مع ديلتامثرين أو بنديوكارب — بديل ممتاز عند ظهور مقاومة البيريثرويدات"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض الأنوفيليس"},
+            {"id": "php-2", "ar_name": "بعوض الكيولكس"},
+            {"id": "php-3", "ar_name": "الذبابة المنزلية"},
+            {"id": "ort-1", "ar_name": "الجراد الصحراوي — رش جوي"}
+          ],
+          "ar_spectrum": "واسع جداً — بعوض + ذباب + جراد + ذباب الثمار",
+          "ar_activity": "ملامسي + استنشاقي — سريع التأثير — أثر متبقي قصير",
+          "ar_use_special": "المبيد الأول لمكافحة الجراد جواً في مصر وأفريقيا — معتمد WHO للرش ضد البعوض — آمن نسبياً بين الفوسفورات",
+          "who_registration": "معتمد WHO للرش ضد البعوض والجراد",
+          "ar_regulatory": "مسجل ومتاح في مصر — مستخدم رسمياً في برامج مكافحة الجراد والبعوض",
+          "ar_notes_safety": "أقل سمية للثدييات من الفوسفورات الأخرى — مؤقت التأثير — ارتداء معدات حماية عند الرش",
+          "references": "WHO Pesticide Evaluation Scheme + FAO Anti-Locust Manual 2024"
+        },
+        {
+          "id": "phi-006",
+          "ar_name": "كلوربيريفوس",
+          "name_en": "Chlorpyrifos",
+          "group_id": "phg-2",
+          "group_code": "OP",
+          "irac_code": "1B",
+          "who_class": "II — معتدل الخطورة",
+          "systemic": false,
+          "ar_type": "ملامسي + استنشاقي — أثر متبقي طويل",
+          "application": {
+            "indoor_residual_spray": "1000-2000 مجم م.ف/م² — يدوم 3-6 أشهر",
+            "termite_soil_treatment": "تشريب التربة 5 لتر/م² حول الأساسات",
+            "cockroach_spray": "500-1000 مجم م.ف/م² رش شقوق وزوايا",
+            "scorpion_spray": "50 مجم م.ف/م² رش شقوق الجدران",
+            "ar_timing": "رش IRS قبل الموسم — رش الأرضة قبل البناء أو عند الإصابة",
+            "max_applications_season": 2,
+            "interval_weeks": 12,
+            "reentry_interval_ar": "24-48 ساعة — تهوية جيدة قبل الدخول",
+            "preharvest_interval_ar": "لا ينطبق للصحة العامة"
+          },
+          "resistance": {
+            "ar_risk": "متوسط إلى عالٍ",
+            "risk_level": 3,
+            "risk_color": "orange",
+            "ar_mechanism": "طفرة AChE — P450 — إسترات هيدروليزية",
+            "resistance_reported_in": ["Anopheles gambiae", "Blattella germanica", "Musca domestica"],
+            "ar_note_resistance_cross": "مقاومة متبادلة جزئية مع الفوسفورات الأخرى"
+          },
+          "rotation": {
+            "group_id": "phg-2",
+            "max_consecutive": 1,
+            "must_rotate_after": 2,
+            "ar_note": "تناوب مع بيريثرويدات أو كاربامات"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض"},
+            {"id": "php-5", "ar_name": "صراصر"},
+            {"id": "php-6", "ar_name": "أرضة — نمل أبيض"},
+            {"id": "php-9", "ar_name": "عقارب"}
+          ],
+          "ar_spectrum": "واسع — بعوض + صراصر + أرضة + عقارب + حشرات الشقوق",
+          "ar_activity": "ملامسي + استنشاقي — أثر متبقي طويل على الأسطح 3-6 أشهر",
+          "ar_use_special": "معتمد WHO للرش الداخلي IRS — الأفضل لمكافحة الأرضة بتشريب التربة — فعّال ضد العقارب في الشقوق",
+          "who_registration": "معتمد WHO للرش الداخلي IRS",
+          "ar_regulatory": "مسجل في مصر — محظور زراعياً في الاتحاد الأوروبي لكن مسموح للصحة العامة في مصر",
+          "ar_notes_safety": "سمية متوسطة للثدييات — يستلزم معدات حماية كاملة — تهوية جيدة — خطر على الطيور والأسماك",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        },
+        {
+          "id": "phi-007",
+          "ar_name": "تيمفوس",
+          "name_en": "Temephos",
+          "group_id": "phg-2",
+          "group_code": "OP",
+          "irac_code": "1B",
+          "who_class": "U — غير خطر في الاستخدام الاعتيادي",
+          "systemic": false,
+          "ar_type": "ملامسي — مبيد يرقات مائي",
+          "application": {
+            "larval_control_water": "1 مجم م.ف/لتر ماء — رش المسطحات المائية",
+            "slow_release_granules": "حبيبات بطيئة الإطلاق 1-5 جم/م²",
+            "ar_timing": "رش المياه الراكدة كل 7-10 أيام في موسم البعوض",
+            "max_applications_season": 999,
+            "interval_weeks": 1,
+            "reentry_interval_ar": "لا يوجد — آمن في المياه المعالجة",
+            "who_safe_drinking_water": "آمن للاستخدام في مياه الشرب بالجرعة الموصى بها"
+          },
+          "resistance": {
+            "ar_risk": "متوسط",
+            "risk_level": 3,
+            "risk_color": "orange",
+            "ar_mechanism": "إسترات هيدروليزية — P450",
+            "resistance_reported_in": ["Aedes aegypti أمريكا اللاتينية", "Culex quinquefasciatus"],
+            "ar_note_resistance_cross": "مقاومة متبادلة جزئية مع الفوسفورات الأخرى"
+          },
+          "rotation": {
+            "group_id": "phg-2",
+            "max_consecutive": 1,
+            "must_rotate_after": 3,
+            "ar_note": "تناوب مع Bti أو ديفلوبنزورون"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "يرقات بعوض الأنوفيليس في المياه"},
+            {"id": "php-2", "ar_name": "يرقات بعوض الكيولكس في المجاري"}
+          ],
+          "ar_spectrum": "ضيق — يرقات البعوض في المياه حصراً",
+          "ar_activity": "ملامسي — يقتل اليرقات في الماء — لا يؤثر على البالغات",
+          "ar_use_special": "المبيد الوحيد المعتمد من WHO للاستخدام في مياه الشرب — أساسي في مكافحة البعوض مائياً — آمن للأسماك بالجرعة المعتادة",
+          "who_registration": "معتمد WHO لمكافحة اليرقات — آمن في مياه الشرب",
+          "ar_regulatory": "مسجل في مصر — مستخدم في برامج الصحة",
+          "ar_notes_safety": "الأقل سمية في الفوسفورات — آمن في مياه الشرب بالجرعة الموصى بها — آمن للأسماك بالجرعات المنخفضة",
+          "references": "WHO Pesticide Evaluation Scheme + WHO Guidelines for Drinking-water Quality"
+        },
+        {
+          "id": "phi-008",
+          "ar_name": "ديكلورفوس DDVP",
+          "name_en": "Dichlorvos (DDVP)",
+          "group_id": "phg-2",
+          "group_code": "OP",
+          "irac_code": "1B",
+          "who_class": "Ib — خطر شديد",
+          "systemic": false,
+          "ar_type": "ملامسي + استنشاقي + تبخري — سريع التطاير",
+          "application": {
+            "space_spray_closed": "0.5-1 جم م.ف/م³ تطهير مغلق",
+            "resin_strips_hanging": "شرائط راتنجية معلقة في الغرف والمخازن",
+            "stored_product_pest": "شرائط في المخازن المغلقة",
+            "ar_timing": "استخدام قصير المدى — رش الغرف المغلقة ثم الإخلاء — شرائط معلقة دائمة",
+            "max_applications_season": 999,
+            "interval_weeks": 4,
+            "reentry_interval_ar": "ساعتان على الأقل بعد رش الغرف المغلقة",
+            "contraindications_ar": "لا يُستخدم في وجود الإنسان أو الحيوان — خطر على الأطفال والحوامل"
+          },
+          "resistance": {
+            "ar_risk": "متوسط إلى عالٍ",
+            "risk_level": 3,
+            "risk_color": "orange",
+            "ar_mechanism": "P450 — طفرة AChE — إسترات هيدروليزية",
+            "resistance_reported_in": ["Musca domestica", "Blattella germanica"],
+            "ar_note_resistance_cross": "مقاومة متبادلة مع الفوسفورات الأخرى"
+          },
+          "rotation": {
+            "group_id": "phg-2",
+            "max_consecutive": 1,
+            "must_rotate_after": 2,
+            "ar_note": "تناوب مع البيريثرويدات"
+          },
+          "target_pests": [
+            {"id": "php-3", "ar_name": "الذبابة المنزلية"},
+            {"id": "php-5", "ar_name": "الصرصار"},
+            {"id": "php-8", "ar_name": "عثة الطحين والمخازن"}
+          ],
+          "ar_spectrum": "واسع — ذباب + صراصر + آفات المخازن في الأماكن المغلقة",
+          "ar_activity": "تبخري سريع — يملأ الفراغ المغلق — knock-down فوري",
+          "ar_use_special": "شرائط المطابخ والمطاعم — رش الأماكن المغلقة — سريع ولكن أثره قصير",
+          "who_registration": "مقيّد — استخدام محدود",
+          "ar_regulatory": "مسجل في مصر مع قيود — محظور في الاتحاد الأوروبي",
+          "ar_notes_safety": "تحذير: سمية عالية — لا يُستخدم أبداً في حضور الإنسان أو الأطفال أو الحوامل — تهوية إلزامية",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        }
+      ]
+    },
+    {
+      "id": "phg-3",
+      "code": "CAR",
+      "irac_code": "1A",
+      "ar_name": "الكاربامات",
+      "name_en": "Carbamates",
+      "chemical_class_ar": "كاربامات — مثبطات كولينستراز عكوسة",
+      "chemical_class_en": "Carbamates — reversible AChE inhibitors",
+      "ar_MoA": "تثبيط عكوس لإنزيم أستيل كولين استيراز — مشابه للفوسفورات لكن التثبيط عكوس وأقل استمراراً",
+      "MoA_en": "Reversible AChE inhibition — acetylcholine accumulation",
+      "MoA_site": "Acetylcholinesterase enzyme (AChE) — same site as OPs but reversible",
+      "ar_method_application": "رش داخلي IRS — رش الأسطح — مسحوق نفث",
+      "target_pests": ["بعوض", "صراصر", "حشرات الصحة العامة"],
+      "ar_risk_resistance": "متوسط — فعّال عند ظهور مقاومة البيريثرويدات",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "ar_mechanism_resistance": "طفرة AChE — P450 (أقل تأثيراً من البيريثرويدات)",
+      "max_applications_season": 2,
+      "ar_rule_rotation": "بديل ممتاز عند ظهور مقاومة البيريثرويدات — تناوب مع OPs أو بيريثرويدات",
+      "rotation_compatible_ids": ["phg-1", "phg-2"],
+      "rotation_incompatible_ids": ["phg-3"],
+      "ar_spectrum": "واسع",
+      "egypt_importance": "متوسطة — بديل استراتيجي عند ظهور مقاومة البيريثرويدات",
+      "ar_class_safety": "سمية متوسطة للثدييات — ارتداء معدات حماية عند التطبيق",
+      "ai_count": 2,
+      "active_ingredients": [
+        {
+          "id": "phi-009",
+          "ar_name": "بنديوكارب",
+          "name_en": "Bendiocarb",
+          "group_id": "phg-3",
+          "group_code": "CAR",
+          "irac_code": "1A",
+          "who_class": "II — معتدل الخطورة",
+          "systemic": false,
+          "ar_type": "ملامسي — أثر متبقي متوسط",
+          "application": {
+            "indoor_residual_spray": "200-400 مجم م.ف/م² — يدوم 2-3 أشهر",
+            "cockroach_spray": "200 مجم م.ف/م² — رش شقوق وزوايا",
+            "ar_timing": "رش IRS خلال موسم البعوض — بديل البيريثرويدات عند المقاومة",
+            "max_applications_season": 2,
+            "interval_weeks": 8,
+            "reentry_interval_ar": "ساعتان بعد الجفاف"
+          },
+          "resistance": {
+            "ar_risk": "منخفض إلى متوسط",
+            "risk_level": 2,
+            "risk_color": "yellow",
+            "ar_mechanism": "طفرة AChE — P450",
+            "resistance_reported_in": ["Anopheles gambiae (مناطق محدودة)"],
+            "ar_note_resistance_cross": "لا مقاومة متبادلة مع البيريثرويدات — بديل فعّال عند kdr"
+          },
+          "rotation": {
+            "group_id": "phg-3",
+            "max_consecutive": 1,
+            "must_rotate_after": 2,
+            "ar_note": "يُستخدم بدلاً من البيريثرويدات عند ظهور مقاومة kdr"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض الأنوفيليس المقاوم للبيريثرويدات"},
+            {"id": "php-2", "ar_name": "بعوض الكيولكس"},
+            {"id": "php-5", "ar_name": "صراصر"}
+          ],
+          "ar_spectrum": "واسع — بعوض + صراصر",
+          "ar_activity": "ملامسي — أثر متبقي 2-3 أشهر على الجدران",
+          "ar_use_special": "البديل الاستراتيجي الأول للبيريثرويدات عند ظهور مقاومة kdr — معتمد WHO للتناوب",
+          "who_registration": "معتمد WHO للرش الداخلي IRS — مُوصى به في برامج التناوب",
+          "ar_regulatory": "مسجل في مصر",
+          "ar_notes_safety": "سمية متوسطة — معدات حماية كاملة — تهوية بعد الرش",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        }
+      ]
+    },
+    {
+      "id": "phg-4",
+      "code": "IGR",
+      "irac_code": "7C / 18",
+      "ar_name": "منظمات نمو الحشرات (IGR)",
+      "name_en": "Insect Growth Regulators (IGRs)",
+      "chemical_class_ar": "مضادات هرمون الشباب — مثبطو كيتين",
+      "chemical_class_en": "Juvenile Hormone Analogs (JHA) + Chitin Synthesis Inhibitors (CSI)",
+      "ar_MoA": "تقليد هرمون الشباب يمنع التحول الطبيعي للحشرة — تثبيط تكوين الكيتين يمنع تكوين الغطاء الخارجي الصحيح — الحشرة لا تكتمل نمواً ولا تصبح قادرة على التكاثر",
+      "MoA_en": "Juvenile hormone mimics (prevent metamorphosis) + Chitin synthesis inhibition (prevent molting)",
+      "MoA_site": "Hormone receptors + Chitin synthase enzyme",
+      "ar_method_application": "رش المياه الراكدة — رش التربة — طُعم — رش الأسطح",
+      "target_pests": ["يرقات بعوض", "يرقات ذباب", "يرقات صراصر", "بق الفراش"],
+      "ar_risk_resistance": "منخفض — آلية مختلفة تماماً عن المبيدات التقليدية",
+      "resistance_risk_level": 1,
+      "resistance_risk_color": "green",
+      "ar_mechanism_resistance": "لا مقاومة موثقة بشكل واسع — طفرات في مستقبلات هرمون الشباب نادرة",
+      "max_applications_season": 999,
+      "ar_rule_rotation": "لا حاجة للتناوب من ناحية المقاومة — يُستخدم جنباً إلى جنب مع البالغة-قاتلات الأخرى",
+      "rotation_compatible_ids": ["phg-1", "phg-2", "phg-3"],
+      "rotation_incompatible_ids": [],
+      "ar_spectrum": "انتقائي — يرقات الحشرات فقط — آمن للثدييات",
+      "egypt_importance": "متزايدة — خاصة في المناطق السياحية والبيوت المحمية والمستشفيات",
+      "ar_class_safety": "آمن جداً للثدييات والإنسان — انتقائي للحشرات — مسموح في أماكن الطعام والمستشفيات",
+      "ai_count": 3,
+      "active_ingredients": [
+        {
+          "id": "phi-010",
+          "ar_name": "بايريبروكسيفين",
+          "name_en": "Pyriproxyfen",
+          "group_id": "phg-4",
+          "group_code": "IGR",
+          "irac_code": "7C",
+          "who_class": "U — غير خطر",
+          "systemic": false,
+          "ar_type": "منظم نمو — مضاد هرمون الشباب",
+          "application": {
+            "larval_control_water": "0.01 مجم م.ف/لتر رش المياه الراكدة",
+            "slow_release_granules": "حبيبات بطيئة الإطلاق 1 جم/م² في المياه",
+            "surface_spray_cockroach": "0.5% رش أسطح الصراصر",
+            "ar_timing": "رش المياه الراكدة كل 4-8 أسابيع — يدوم طويلاً",
+            "max_applications_season": 999,
+            "interval_weeks": 4,
+            "reentry_interval_ar": "لا يوجد — آمن جداً"
+          },
+          "resistance": {
+            "ar_risk": "منخفض جداً",
+            "risk_level": 1,
+            "risk_color": "green",
+            "ar_mechanism": "لا مقاومة موثقة بشكل واسع",
+            "resistance_reported_in": ["Aedes aegypti (بعض المناطق الاستوائية فقط)"],
+            "ar_note_resistance_cross": "لا مقاومة متبادلة مع البيريثرويدات أو الفوسفورات"
+          },
+          "rotation": {
+            "group_id": "phg-4",
+            "max_consecutive": 999,
+            "must_rotate_after": 999,
+            "ar_note": "يُستخدم بلا قيود — يُكمل المبيدات القاتلة للبالغات"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "يرقات بعوض الأنوفيليس في المياه"},
+            {"id": "php-2", "ar_name": "يرقات بعوض الكيولكس في المجاري"},
+            {"id": "php-5", "ar_name": "يرقات الصرصار الألماني"}
+          ],
+          "ar_spectrum": "انتقائي — يرقات وحوريات الحشرات فقط",
+          "ar_activity": "يمنع اليرقات من التحول لبالغات — لا يقتل البالغات مباشرة — يمنع التكاثر",
+          "ar_use_special": "مثالي للمياه الراكدة — آمن في خزانات المياه — يُكمل ملاثيون أو Bti — فعّال في المجاري ضد كيولكس",
+          "who_registration": "معتمد WHO لمكافحة اليرقات",
+          "ar_regulatory": "مسجل في مصر",
+          "ar_notes_safety": "آمن جداً للإنسان والثدييات — آمن للأسماك بالجرعات المنخفضة — مسموح في مياه الشرب",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        },
+        {
+          "id": "phi-011",
+          "ar_name": "ديفلوبنزورون",
+          "name_en": "Diflubenzuron",
+          "group_id": "phg-4",
+          "group_code": "IGR",
+          "irac_code": "15",
+          "who_class": "U — غير خطر",
+          "systemic": false,
+          "ar_type": "مثبط كيتين — يمنع الانسلاخ",
+          "application": {
+            "larval_control_water": "0.02-0.05 مجم م.ف/لتر رش المياه",
+            "granules_water": "حبيبات بطيئة الإطلاق 2-5 جم/م²",
+            "ar_timing": "رش المياه الراكدة كل 4-6 أسابيع",
+            "max_applications_season": 999,
+            "interval_weeks": 4,
+            "reentry_interval_ar": "لا يوجد — آمن"
+          },
+          "resistance": {
+            "ar_risk": "منخفض جداً",
+            "risk_level": 1,
+            "risk_color": "green",
+            "ar_mechanism": "لا مقاومة موثقة",
+            "resistance_reported_in": [],
+            "ar_note_resistance_cross": "لا مقاومة متبادلة مع أي مجموعة"
+          },
+          "rotation": {
+            "group_id": "phg-4",
+            "max_consecutive": 999,
+            "must_rotate_after": 999,
+            "ar_note": "يُستخدم بلا قيود — يُكمل Bti والتيمفوس"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "يرقات بعوض الأنوفيليس"},
+            {"id": "php-2", "ar_name": "يرقات بعوض الكيولكس"}
+          ],
+          "ar_spectrum": "انتقائي — يرقات حشرات اليرقات المائية",
+          "ar_activity": "يمنع انسلاخ اليرقة — اليرقة تموت عند محاولة الانسلاخ",
+          "ar_use_special": "مثالي للمياه الراكدة الكبيرة والترع — آمن للأسماك والثدييات — يُكمل Bti",
+          "who_registration": "معتمد WHO",
+          "ar_regulatory": "مسجل في مصر",
+          "ar_notes_safety": "آمن جداً للإنسان — خطر على الجمبري وبعض اللافقاريات المائية",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        }
+      ]
+    },
+    {
+      "id": "phg-5",
+      "code": "BIO-PH",
+      "irac_code": "BM",
+      "ar_name": "المبيدات البيولوجية للصحة العامة",
+      "name_en": "Biological Pesticides for Public Health",
+      "chemical_class_ar": "بكتيريا ممرضة — فطريات ممرضة — نيماتودا",
+      "chemical_class_en": "Entomopathogenic bacteria, fungi & nematodes",
+      "ar_MoA": "إنتاج سموم بروتينية تُدمر خلايا الأمعاء (Bti) — عدوى فطرية تخترق الكيوتيكل وتقتل الحشرة — نيماتودا تدخل جسم الحشرة وتطلق بكتيريا قاتلة",
+      "MoA_en": "Protein toxins (Cry proteins) + Fungal entomopathogen + Nematode-bacteria complex",
+      "MoA_site": "Midgut epithelium (Bt) + Cuticle penetration (fungi) + Hemolymph (nematodes)",
+      "ar_method_application": "رش المياه الراكدة — رش التربة — رش ورقي",
+      "target_pests": ["يرقات بعوض", "صراصر", "حشرات التربة"],
+      "ar_risk_resistance": "منخفض جداً — لا مقاومة موثقة في الاستخدام الواسع",
+      "resistance_risk_level": 1,
+      "resistance_risk_color": "green",
+      "ar_mechanism_resistance": "لا مقاومة موثقة — آلية متعددة المواقع ومتجددة",
+      "max_applications_season": 999,
+      "ar_rule_rotation": "لا حاجة للتناوب — يُستخدم في أي مرحلة مع أي مجموعة",
+      "rotation_compatible_ids": ["phg-1", "phg-2", "phg-3", "phg-4"],
+      "rotation_incompatible_ids": [],
+      "ar_spectrum": "انتقائي — آمن تماماً للثدييات والإنسان",
+      "egypt_importance": "متزايدة — مثالي للمناطق السياحية والمستشفيات وبرامج الصحة العضوية",
+      "ar_class_safety": "آمن تماماً — مُسمح في المناطق السياحية والمستشفيات والمدارس",
+      "ai_count": 3,
+      "active_ingredients": [
+        {
+          "id": "phi-012",
+          "ar_name": "باسيلوس ثورينجيينسيس var. israelensis — Bti",
+          "name_en": "Bacillus thuringiensis var. israelensis (Bti)",
+          "group_id": "phg-5",
+          "group_code": "BIO-PH",
+          "irac_code": "BM1",
+          "who_class": "U — غير خطر",
+          "systemic": false,
+          "ar_type": "بيولوجي — بكتيريا ممرضة ليرقات البعوض",
+          "application": {
+            "larval_control_water": "0.1-0.5 كجم/هكتار رش المسطحات المائية",
+            "granules_slow_release": "حبيبات بطيئة الإطلاق 5-10 كجم/هكتار",
+            "slow_release_briquettes": "قوالب بطيئة الإطلاق — قرص واحد/م² — يدوم 30-90 يوم",
+            "ar_timing": "رش كل 5-10 أيام حسب درجة الحرارة — القوالب كل 30-90 يوم",
+            "max_applications_season": 999,
+            "interval_days": 7,
+            "reentry_interval_ar": "لا يوجد — آمن تماماً",
+            "safe_drinking_water": "آمن في مياه الشرب — مُعتمد WHO"
+          },
+          "resistance": {
+            "ar_risk": "منخفض جداً",
+            "risk_level": 1,
+            "risk_color": "green",
+            "ar_mechanism": "لا مقاومة موثقة في الاستخدام الحقلي",
+            "resistance_reported_in": [],
+            "ar_note_resistance_cross": "لا مقاومة متبادلة مع أي مجموعة — يُستخدم مع جميع المجموعات"
+          },
+          "rotation": {
+            "group_id": "phg-5",
+            "max_consecutive": 999,
+            "must_rotate_after": 999,
+            "ar_note": "يُستخدم بلا قيود — يُكمل التيمفوس والبايريبروكسيفين"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "يرقات بعوض الأنوفيليس في المياه"},
+            {"id": "php-2", "ar_name": "يرقات بعوض الكيولكس في المجاري والمياه الراكدة"},
+            {"id": "php-4", "ar_name": "يرقات ذبابة الرمل في بعض التركيبات"}
+          ],
+          "ar_spectrum": "انتقائي — يرقات البعوض والبعوضيات فقط — آمن لكل الكائنات الأخرى",
+          "ar_activity": "بروتينات Cry تُدمر خلايا أمعاء اليرقة فوراً — اليرقة تتوقف عن الأكل وتموت خلال 24-48 ساعة",
+          "ar_use_special": "المبيد البيولوجي الأكثر استخداماً عالمياً لمكافحة البعوض — آمن تماماً — مُسمح في برك السباحة والمناطق السياحية ومياه الشرب",
+          "who_registration": "معتمد WHO — الخيار الأول في البرامج البيولوجية",
+          "ar_regulatory": "مسجل في مصر — متاح بأشكال تجارية متعددة",
+          "ar_notes_safety": "آمن تماماً للإنسان والثدييات والأسماك والطيور والنحل — لا فترة انتظار — لا قيود",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        },
+        {
+          "id": "phi-013",
+          "ar_name": "باسيلوس سفيريكوس — Bsph",
+          "name_en": "Lysinibacillus sphaericus (Bacillus sphaericus)",
+          "group_id": "phg-5",
+          "group_code": "BIO-PH",
+          "irac_code": "BM1",
+          "who_class": "U — غير خطر",
+          "systemic": false,
+          "ar_type": "بيولوجي — بكتيريا ممرضة ليرقات البعوض في المياه الملوثة",
+          "application": {
+            "larval_control_polluted_water": "0.1-1 كجم/هكتار في المجاري والمياه الملوثة",
+            "slow_release_granules": "حبيبات بطيئة الإطلاق 5-10 كجم/هكتار",
+            "ar_timing": "رش كل 2-4 أسابيع — يتضاعف في المياه الملوثة",
+            "max_applications_season": 999,
+            "interval_weeks": 2,
+            "reentry_interval_ar": "لا يوجد — آمن تماماً"
+          },
+          "resistance": {
+            "ar_risk": "منخفض",
+            "risk_level": 1,
+            "risk_color": "green",
+            "ar_mechanism": "مقاومة موثقة في بعض سلالات Culex — يُناوب مع Bti",
+            "resistance_reported_in": ["Culex quinquefasciatus (بعض المناطق)"],
+            "ar_note_resistance_cross": "لا مقاومة متبادلة مع Bti — يُستخدمان بالتناوب"
+          },
+          "rotation": {
+            "group_id": "phg-5",
+            "max_consecutive": 999,
+            "must_rotate_after": 999,
+            "ar_note": "تناوب مع Bti للوقاية من أي مقاومة محتملة في Culex"
+          },
+          "target_pests": [
+            {"id": "php-2", "ar_name": "يرقات بعوض الكيولكس في المجاري والمياه الملوثة"},
+            {"id": "php-1", "ar_name": "يرقات بعوض الأنوفيليس"}
+          ],
+          "ar_spectrum": "انتقائي — يرقات البعوض في المياه الملوثة بالعضوية — أفضل من Bti في المجاري",
+          "ar_activity": "ميزة فريدة: يتضاعف في المياه الملوثة العضوية ويبقى فعّالاً لفترة أطول من Bti",
+          "ar_use_special": "الخيار الأول في المجاري وبالوعات الصرف والمياه الملوثة — يتكاثر ذاتياً في المياه العضوية",
+          "who_registration": "معتمد WHO",
+          "ar_regulatory": "مسجل في مصر",
+          "ar_notes_safety": "آمن تماماً للإنسان والبيئة",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        },
+        {
+          "id": "phi-014",
+          "ar_name": "بيومترين — بيوتيانول (بيريثرين طبيعي)",
+          "name_en": "Pyrethrins (natural) — Pyrethrum extract",
+          "group_id": "phg-5",
+          "group_code": "BIO-PH",
+          "irac_code": "3A",
+          "who_class": "II — معتدل الخطورة",
+          "systemic": false,
+          "ar_type": "نباتي طبيعي — ملامسي + استنشاقي — سريع التحلل",
+          "application": {
+            "space_spray": "0.1-0.2% رش هوائي في الغرف المغلقة",
+            "thermal_fog": "0.2-0.5% في الضباب الحراري",
+            "ULV": "1-5 جم م.ف/هكتار رش خارجي",
+            "ar_timing": "رش مساء لمكافحة البعوض — فعّال ولكن قصير المدى",
+            "max_applications_season": 999,
+            "interval_days": 3,
+            "reentry_interval_ar": "30 دقيقة — يتحلل بسرعة في الضوء"
+          },
+          "resistance": {
+            "ar_risk": "منخفض إلى متوسط",
+            "risk_level": 2,
+            "risk_color": "yellow",
+            "ar_mechanism": "kdr (مقاومة متبادلة جزئية مع البيريثرويدات الاصطناعية)",
+            "resistance_reported_in": ["بعض سلالات Culex"],
+            "ar_note_resistance_cross": "مقاومة متبادلة جزئية مع البيريثرويدات الاصطناعية"
+          },
+          "rotation": {
+            "group_id": "phg-5",
+            "max_consecutive": 999,
+            "must_rotate_after": 999,
+            "ar_note": "يُستخدم بلا قيود — يتحلل سريعاً — آمن للبيئة"
+          },
+          "target_pests": [
+            {"id": "php-1", "ar_name": "بعوض"},
+            {"id": "php-3", "ar_name": "ذباب"},
+            {"id": "php-5", "ar_name": "صراصر"}
+          ],
+          "ar_spectrum": "واسع — معظم الحشرات الطائرة والزاحفة",
+          "ar_activity": "knock-down سريع جداً — لكن التحلل سريع في الضوء — لا أثر متبقي طويل",
+          "ar_use_special": "الأفضل للرش السريع في المطاعم والفنادق لعدم التلوث — مُسمح في الزراعة العضوية — سريع التحلل",
+          "who_registration": "معتمد للاستخدام في الأغذية والمستشفيات",
+          "ar_regulatory": "مسجل في مصر",
+          "ar_notes_safety": "آمن نسبياً — خطر على القطط — يتحلل سريعاً في البيئة — سام للأسماك بتركيزات عالية",
+          "references": "WHO Pesticide Evaluation Scheme + IRAC 2024"
+        }
+      ]
+    },
+    {
+      "id": "phg-6",
+      "code": "ROD",
+      "irac_code": "N/A",
+      "ar_name": "مبيدات القوارض (Rodenticides)",
+      "name_en": "Rodenticides — Anticoagulants & Acute",
+      "chemical_class_ar": "مضادات التخثر الجيل الأول والثاني — سموم حادة",
+      "chemical_class_en": "First & Second Generation Anticoagulants + Acute rodenticides",
+      "ar_MoA": "مضادات التخثر تثبط إنزيم فيتامين K epoxide reductase مما يمنع تكون عوامل التخثر — القارض يموت بنزيف داخلي خلال 3-7 أيام — السموم الحادة تؤثر على الجهاز العصبي أو القلب",
+      "MoA_en": "Vitamin K antagonists (anticoagulants) → internal hemorrhage + Acute toxins (CNS/cardiac)",
+      "MoA_site": "Vitamin K epoxide reductase (VKOR) + CNS/cardiac (acute)",
+      "ar_method_application": "طُعم سام — طُعم جذاب في محطات الطُعم — مسحوق نفث في الجحور",
+      "target_pests": ["فأر المنزل", "الجرذ الأسود", "الجرذ النرويجي"],
+      "ar_risk_resistance": "متوسط إلى عالٍ — المقاومة لمضادات الجيل الأول منتشرة جداً",
+      "resistance_risk_level": 3,
+      "resistance_risk_color": "orange",
+      "ar_mechanism_resistance": "طفرات VKOR تمنع ارتباط مضاد التخثر — استقلاب أسرع للمادة الفعالة",
+      "max_applications_season": 999,
+      "ar_rule_rotation": "انتقل للجيل الثاني عند ظهور مقاومة الجيل الأول — تناوب مع المصائد الميكانيكية",
+      "rotation_compatible_ids": [],
+      "rotation_incompatible_ids": [],
+      "ar_spectrum": "ضيق — القوارض فقط",
+      "egypt_importance": "عالية جداً — القوارض مشكلة مزمنة في مصر في المخازن والمنازل",
+      "ar_class_safety": "خطر على الإنسان والحيوانات الأليفة والطيور الجارحة — وضع في محطات طُعم مغلقة بعيداً عن متناول الأطفال",
+      "ai_count": 4,
+      "active_ingredients": [
+        {
+          "id": "phi-015",
+          "ar_name": "برودفاكوم",
+          "name_en": "Brodifacoum",
+          "group_id": "phg-6",
+          "group_code": "ROD",
+          "irac_code": "N/A",
+          "who_class": "Ia — خطر شديد جداً",
+          "systemic": false,
+          "ar_type": "مضاد تخثر جيل ثانٍ — دفعة واحدة كافية",
+          "application": {
+            "bait_stations": "طُعم 0.005% في محطات طُعم مغلقة",
+            "bait_blocks": "قوالب طُعم 20-50 جم في مسارات القوارض",
+            "ar_timing": "وضع الطُعم في محطات مغلقة — تغيير أو إضافة كل أسبوع حتى توقف الأكل",
+            "max_applications_season": 999,
+            "interval_weeks": 1,
+            "reentry_interval_ar": "لا ينطبق — في محطات مغلقة فقط",
+            "onset_of_death_ar": "3-7 أيام — القارض لا يربط موته بالطُعم فلا يتعلم تجنبه"
+          },
+          "resistance": {
+            "ar_risk": "منخفض",
+            "risk_level": 1,
+            "risk_color": "green",
+            "ar_mechanism": "نادر — بعض طفرات VKOR",
+            "resistance_reported_in": ["Rattus norvegicus في أوروبا (محدود جداً)"],
+            "ar_note_resistance_cross": "فعّال ضد القوارض المقاومة للجيل الأول — الخيار عند فشل الجيل الأول"
+          },
+          "rotation": {
+            "group_id": "phg-6",
+            "max_consecutive": 1,
+            "must_rotate_after": 999,
+            "ar_note": "الخيار الأول عند ظهور مقاومة الجيل الأول — تناوب مع المصائد الميكانيكية"
+          },
+          "target_pests": [
+            {"id": "php-7", "ar_name": "الجرذ الأسود والنرويجي وفأر المنزل"}
+          ],
+          "ar_spectrum": "ضيق — قوارض فقط",
+          "ar_activity": "مضاد تخثر — نزيف داخلي تدريجي — جرعة واحدة كافية للقضاء",
+          "ar_use_special": "الأفضل لمكافحة القوارض المقاومة للجيل الأول — جرعة واحدة فعّالة — لا يتعلم القارض تجنبه",
+          "ar_regulatory": "مسجل في مصر — يُستخدم في محطات طُعم مغلقة فقط",
+          "ar_notes_safety": "خطر شديد على الإنسان والحيوانات الأليفة والطيور الجارحة — في محطات مغلقة فقط — مضاد: فيتامين K1 فوراً",
+          "references": "WHO + Egyptian Pesticide Register 2024"
+        },
+        {
+          "id": "phi-016",
+          "ar_name": "بروماديولون",
+          "name_en": "Bromadiolone",
+          "group_id": "phg-6",
+          "group_code": "ROD",
+          "irac_code": "N/A",
+          "who_class": "Ia — خطر شديد جداً",
+          "systemic": false,
+          "ar_type": "مضاد تخثر جيل ثانٍ",
+          "application": {
+            "bait_stations": "طُعم 0.005% في محطات مغلقة",
+            "bait_blocks": "قوالب طُعم 20-50 جم",
+            "ar_timing": "وضع الطُعم في محطات مغلقة — تغيير أسبوعي",
+            "max_applications_season": 999,
+            "interval_weeks": 1,
+            "reentry_interval_ar": "لا ينطبق",
+            "onset_of_death_ar": "3-5 أيام"
+          },
+          "resistance": {
+            "ar_risk": "منخفض إلى متوسط",
+            "risk_level": 2,
+            "risk_color": "yellow",
+            "ar_mechanism": "بعض طفرات VKOR في مناطق محدودة",
+            "resistance_reported_in": ["Rattus norvegicus أوروبا"],
+            "ar_note_resistance_cross": "فعّال ضد مقاومة الجيل الأول"
+          },
+          "rotation": {
+            "group_id": "phg-6",
+            "max_consecutive": 1,
+            "must_rotate_after": 999,
+            "ar_note": "بديل برودفاكوم — أقل سمية للطيور الجارحة نسبياً"
+          },
+          "target_pests": [
+            {"id": "php-7", "ar_name": "القوارض — الجرذ والفأر"}
+          ],
+          "ar_spectrum": "ضيق — قوارض فقط",
+          "ar_activity": "مضاد تخثر — جرعة واحدة فعّالة",
+          "ar_use_special": "بديل برودفاكوم مع أقل تراكمية في البيئة — فعّال ضد مقاومة الجيل الأول",
+          "ar_regulatory": "مسجل في مصر",
+          "ar_notes_safety": "خطر على الإنسان والحيوانات — في محطات مغلقة فقط — مضاد: فيتامين K1",
+          "references": "WHO + Egyptian Pesticide Register 2024"
+        },
+        {
+          "id": "phi-017",
+          "ar_name": "كلورفاسينون",
+          "name_en": "Chlorophacinone",
+          "group_id": "phg-6",
+          "group_code": "ROD",
+          "irac_code": "N/A",
+          "who_class": "Ib — خطر شديد",
+          "systemic": false,
+          "ar_type": "مضاد تخثر جيل أول — يحتاج عدة جرعات",
+          "application": {
+            "bait_stations": "طُعم 0.005% في محطات مغلقة — 5-7 أيام متواصلة",
+            "ar_timing": "طُعم متواصل لمدة 5-7 أيام على الأقل",
+            "max_applications_season": 999,
+            "interval_days": 1,
+            "onset_of_death_ar": "5-10 أيام مع جرعات متعددة"
+          },
+          "resistance": {
+            "ar_risk": "متوسط إلى عالٍ",
+            "risk_level": 3,
+            "risk_color": "orange",
+            "ar_mechanism": "طفرات VKOR — المقاومة لجيل أول شائعة",
+            "resistance_reported_in": ["Rattus norvegicus", "Rattus rattus", "Mus musculus"],
+            "ar_note_resistance_cross": "مقاومة متبادلة مع مضادات الجيل الأول الأخرى"
+          },
+          "rotation": {
+            "group_id": "phg-6",
+            "max_consecutive": 1,
+            "must_rotate_after": 999,
+            "ar_note": "انتقل للجيل الثاني عند ظهور المقاومة"
+          },
+          "target_pests": [
+            {"id": "php-7", "ar_name": "القوارض — الجرذ والفأر"}
+          ],
+          "ar_spectrum": "ضيق — قوارض فقط",
+          "ar_activity": "مضاد تخثر — يحتاج جرعات متعددة — أبطأ من الجيل الثاني",
+          "ar_use_special": "اقتصادي — أقل خطراً على الطيور الجارحة من الجيل الثاني — يُستخدم أولاً قبل الجيل الثاني",
+          "ar_regulatory": "مسجل في مصر — متاح",
+          "ar_notes_safety": "خطر على الإنسان والحيوانات — في محطات مغلقة فقط — مضاد: فيتامين K1",
+          "references": "WHO + Egyptian Pesticide Register 2024"
+        },
+        {
+          "id": "phi-018",
+          "ar_name": "زنك فوسفيد",
+          "name_en": "Zinc phosphide",
+          "group_id": "phg-6",
+          "group_code": "ROD",
+          "irac_code": "N/A",
+          "who_class": "Ia — خطر شديد جداً",
+          "systemic": false,
+          "ar_type": "سُم حاد — يُنتج فوسفين في المعدة",
+          "application": {
+            "bait_grain": "طُعم حبوب 2-3% — 5-10 جم في الجحور",
+            "burrow_fumigation": "مسحوق في الجحور",
+            "ar_timing": "استخدام مرة واحدة فقط في الموسم — القوارض تتعلم تجنبه بسرعة",
+            "max_applications_season": 1,
+            "interval_weeks": 999,
+            "onset_of_death_ar": "ساعات — فوري جداً"
+          },
+          "resistance": {
+            "ar_risk": "منخفض — لكن القوارض تتعلم تجنبه",
+            "risk_level": 1,
+            "risk_color": "green",
+            "ar_mechanism": "لا مقاومة جينية — لكن اكتساب سلوك تجنب الطُعم سريع",
+            "resistance_reported_in": [],
+            "ar_note_resistance_cross": "لا مقاومة كيميائية — لكن التجنب السلوكي يحدد استخدامه لمرة واحدة"
+          },
+          "rotation": {
+            "group_id": "phg-6",
+            "max_consecutive": 1,
+            "must_rotate_after": 1,
+            "ar_note": "استخدام مرة واحدة فقط — القوارض الناجية تتجنبه — يناوب مع مضادات التخثر"
+          },
+          "target_pests": [
+            {"id": "php-7", "ar_name": "القوارض — الجرذ والفأر"}
+          ],
+          "ar_spectrum": "ضيق — قوارض",
+          "ar_activity": "سريع جداً — القارض يموت خلال ساعات — لكن الناجين يتعلمون التجنب",
+          "ar_use_special": "فعّال لأول استخدام — اقتصادي جداً — يُستخدم في الأراضي الزراعية وحقول الفئران",
+          "ar_regulatory": "مسجل في مصر — استخدام احترافي",
+          "ar_notes_safety": "شديد السمية — خطر في الأماكن الرطبة (يُنتج فوسفين) — بعيداً عن الأطفال والحيوانات الأليفة تماماً",
+          "references": "WHO + Egyptian Pesticide Register 2024"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+
+.hefno-footer {
+  position: relative;
+  background: #0c0c0a;
+  color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  direction: rtl;
+  font-family: 'Cairo', sans-serif;
+}
+
+.hefno-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45, 106, 79, 0.4), transparent);
+}
+
+.hefno-footer-ornament {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0 2rem;
+  color: rgba(45, 106, 79, 0.35);
+  font-size: 1.2rem;
+  letter-spacing: 1rem;
+  user-select: none;
+}
+
+.hefno-footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5% 3rem;
+}
+
+.hefno-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 4rem;
+}
+
+.hefno-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hefno-footer-tagline {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: rgba(45, 106, 79, 0.65);
+  line-height: 1.6;
+  max-width: 380px;
+}
+
+.hefno-footer-description {
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 380px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.hefno-footer-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #2d6a4f;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+.hefno-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.hefno-footer-link {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hefno-footer-link:hover {
+  color: #2d6a4f;
+  transform: translateX(-3px);
+}
+
+.hefno-footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hefno-footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.88rem;
+  transition: color 0.3s ease;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.hefno-footer-contact-item:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.hefno-footer-contact-icon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(45, 106, 79, 0.25);
+  border-radius: 50%;
+  font-size: 0.85rem;
+  color: #2d6a4f;
+  transition: all 0.4s ease;
+}
+
+.hefno-footer-contact-item:hover .hefno-footer-contact-icon {
+  border-color: #2d6a4f;
+  background: rgba(45, 106, 79, 0.1);
+}
+
+.hefno-footer-contact-text {
+  line-height: 1.5;
+}
+
+.hefno-footer-contact-label {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.15rem;
+}
+
+.hefno-footer-social {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.hefno-footer-social-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(45, 106, 79, 0.2);
+  color: rgba(45, 106, 79, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  background: transparent;
+}
+
+.hefno-footer-social-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hefno-footer-social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hefno-footer-social-btn.facebook:hover {
+  background: #1877F2;
+  border-color: #1877F2;
+  color: #fff;
+}
+
+.hefno-footer-social-btn.whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #fff;
+}
+
+.hefno-footer-social-btn.youtube:hover {
+  background: #FF0000;
+  border-color: #FF0000;
+  color: #fff;
+}
+
+.hefno-footer-social-btn.tiktok:hover {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.hefno-footer-divider {
+  height: 1px;
+  margin: 0 5%;
+  background: linear-gradient(90deg, transparent, rgba(45, 106, 79, 0.15), transparent);
+}
+
+.hefno-footer-bottom {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hefno-footer-copyright {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.25);
+  font-family: system-ui, -apple-system, sans-serif;
+  letter-spacing: 0.3px;
+}
+
+.hefno-footer-copyright a {
+  color: rgba(45, 106, 79, 0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.hefno-footer-copyright a:hover {
+  color: #2d6a4f;
+}
+
+.hefno-footer-bottom-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hefno-footer-bottom-link {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.25);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hefno-footer-bottom-link:hover {
+  color: rgba(45, 106, 79, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .hefno-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hefno-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hefno-footer-brand {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hefno-footer-tagline,
+  .hefno-footer-description {
+    max-width: 100%;
+  }
+
+  .hefno-footer-title {
+    text-align: center;
+  }
+
+  .hefno-footer-links {
+    align-items: center;
+  }
+
+  .hefno-footer-link:hover {
+    transform: none;
+  }
+
+  .hefno-footer-contact-list {
+    align-items: center;
+  }
+
+  .hefno-footer-social {
+    justify-content: center;
+  }
+
+  .hefno-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hefno-footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

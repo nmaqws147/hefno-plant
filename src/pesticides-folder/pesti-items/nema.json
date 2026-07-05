@@ -1,0 +1,2181 @@
+{
+  "id": "nematicide_active_ingredients",
+  "name_ar": "المواد الفعالة للمبيدات النيماتودية",
+  "name_en": "Nematicide Active Ingredients — Chemical, Biological & Botanical",
+  "source": "IRAC MoA Classification v10.4 + FAO/WHO + Egyptian Pesticide Register 2024",
+  "version": "1.0.0",
+  "total_count": 26,
+  "items": [
+    {
+      "id": "nai-001",
+      "name_ar": "فوسثيازات",
+      "name_en": "Fosthiazate",
+      "nema_group_id": "nem-grp-op",
+      "group_code": "OP",
+      "chemical_class_ar": "أورجانوفوسفات",
+      "chemical_class_en": "Organophosphate",
+      "systemic": true,
+      "type_ar": "جهازي + تربة",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "0.5–1 لتر م.ف/فدان صب جذري",
+        "dose_feddan_ar": "500–1000 مل م.ف/فدان",
+        "dose_soil_ar": "1–2 لتر/فدان خلط تربة",
+        "methods_ar": [
+          "صب جذري مع ري",
+          "خلط مع التربة",
+          "تقطير مع الري بالتنقيط"
+        ],
+        "timing_ar": "قبل الزراعة أو عند الشتل — رشة واحدة كافية في الموسم",
+        "max_applications_season": 2,
+        "interval_days": 60,
+        "preharvest_interval_ar": "21 يوم",
+        "water_volume_ar": "200–400 لتر/فدان للصب"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في AChE + إنزيمات الاستيراز",
+        "cross_resistance_groups": [
+          {
+            "id": "nem-grp-cb",
+            "name_ar": "مثبطات AChE — كاربامات نيماتودية"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع الكاربامات",
+        "resistance_reported_in": [
+          "Meloidogyne (بعض السلالات)"
+        ]
+      },
+      "rotation": {
+        "group_id": "nem-grp-op",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع أوكسامل أو كاديوسافوس أو بيولوجي — رشة واحدة أو اثنتان كحد"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "بطاطس",
+        "بصل"
+      ],
+      "spectrum_ar": "متوسط — Meloidogyne وPratylenchus والنيماتودا الشبه داخلية",
+      "activity_ar": "جهازي + يتحرك في منطقة الجذور — يؤثر على اليرقات والبالغات",
+      "special_use_ar": "الأكثر استخداماً كمبيد نيماتودي جهازي في مصر والوطن العربي — فترة انتظار معقولة",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية",
+      "safety_notes_ar": "سامة متوسطة للثدييات — ابتعد عن مصادر المياه — ارتدِ معدات وقاية",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-002",
+      "name_ar": "كاديوسافوس",
+      "name_en": "Cadusafos",
+      "nema_group_id": "nem-grp-op",
+      "group_code": "OP",
+      "chemical_class_ar": "أورجانوفوسفات",
+      "chemical_class_en": "Organophosphate",
+      "systemic": false,
+      "type_ar": "ملامسي + تربة",
+      "application": {
+        "dose_pre_plant_ar": "2–4 لتر م.ف/فدان خلط قبل الزراعة",
+        "dose_post_plant_ar": null,
+        "dose_feddan_ar": "2–4 لتر م.ف/فدان",
+        "dose_soil_ar": "3–5 لتر/فدان خلط في التربة",
+        "methods_ar": [
+          "خلط مع التربة قبل الزراعة",
+          "صب في خطوط"
+        ],
+        "timing_ar": "قبل الزراعة بـ 2-3 أسابيع — خلط في منطقة الجذور",
+        "max_applications_season": 1,
+        "interval_days": 90,
+        "preharvest_interval_ar": "30 يوم",
+        "water_volume_ar": "لا ينطبق — خلط تربة"
+      },
+      "resistance": {
+        "risk_ar": "متوسط إلى عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في AChE",
+        "cross_resistance_groups": [
+          {
+            "id": "nem-grp-cb",
+            "name_ar": "مثبطات AChE — كاربامات نيماتودية"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع الكاربامات",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-op",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع فوسثيازات أو أوكسامل في المواسم التالية"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "بطاطس",
+        "طماطم",
+        "موز",
+        "خيار",
+        "قرنبيط",
+        "ملفوف",
+        "جزر"
+      ],
+      "spectrum_ar": "واسع — يستهدف معظم النيماتودا في التربة",
+      "activity_ar": "ملامسي في التربة — يُطلق الغاز في منطقة الجذور",
+      "special_use_ar": "فعّال جداً قبل الزراعة — أرخص بديل للفيومجانت — شائع في مصر على البطاطس والخضروات",
+      "regulatory_ar": "مسجل ومتاح في مصر",
+      "safety_notes_ar": "سامة للثدييات والأسماك — استخدم بحذر — معدات وقاية إلزامية",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-003",
+      "name_ar": "إيتوبروفوس",
+      "name_en": "Ethoprophos (Ethoprop)",
+      "nema_group_id": "nem-grp-op",
+      "group_code": "OP",
+      "chemical_class_ar": "أورجانوفوسفات",
+      "chemical_class_en": "Organophosphate",
+      "systemic": false,
+      "type_ar": "ملامسي + تربة + تنفسي",
+      "application": {
+        "dose_pre_plant_ar": "2–5 لتر م.ف/فدان قبل الزراعة",
+        "dose_post_plant_ar": null,
+        "dose_feddan_ar": "2–5 لتر م.ف/فدان",
+        "dose_soil_ar": "3–6 لتر/فدان خلط تربة",
+        "methods_ar": [
+          "خلط مع التربة",
+          "حقن في التربة",
+          "حبيبات"
+        ],
+        "timing_ar": "قبل الزراعة — يحتاج خلطاً جيداً في منطقة الجذور",
+        "max_applications_season": 1,
+        "interval_days": 90,
+        "preharvest_interval_ar": "30 يوم",
+        "water_volume_ar": "لا ينطبق"
+      },
+      "resistance": {
+        "risk_ar": "متوسط إلى عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في AChE + تضخيم إنزيمات الاستيراز",
+        "cross_resistance_groups": [
+          {
+            "id": "nem-grp-cb",
+            "name_ar": "مثبطات AChE — كاربامات نيماتودية"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع الكاربامات",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-op",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع كاديوسافوس أو أوكسامل في المواسم التالية"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-07",
+          "name_ar": "نيماتودا الإبرة"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        },
+        {
+          "id": "nem-11",
+          "name_ar": "نيماتودا اللثة"
+        }
+      ],
+      "target_crops": [
+        "بطاطس",
+        "الأعشاب الرياضية",
+        "موز",
+        "حمضيات",
+        "أناناس"
+      ],
+      "spectrum_ar": "واسع — يستهدف مجموعة واسعة من نيماتودا التربة",
+      "activity_ar": "ملامسي + تنفسي داخل التربة",
+      "special_use_ar": "شائع في الأراضي الجديدة وملاعب الجولف — فعّال ضد نيماتودا الخراجات",
+      "regulatory_ar": "مسجل في مصر وبعض الدول العربية",
+      "safety_notes_ar": "عالي السمية للثدييات والطيور — قيود صارمة في الاستخدام",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-004",
+      "name_ar": "فينامبوس",
+      "name_en": "Fenamiphos (Phenamiphos)",
+      "nema_group_id": "nem-grp-op",
+      "group_code": "OP",
+      "chemical_class_ar": "أورجانوفوسفات",
+      "chemical_class_en": "Organophosphate",
+      "systemic": true,
+      "type_ar": "جهازي — يُمتص جذرياً",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "1–2 لتر م.ف/فدان صب جذري",
+        "dose_feddan_ar": "1–2 لتر م.ف/فدان",
+        "dose_soil_ar": "2–4 لتر/فدان خلط تربة",
+        "methods_ar": [
+          "صب جذري",
+          "خلط مع التربة",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "عند الزراعة أو بعدها — يُمتص بالجذور ويتحرك نسيجياً",
+        "max_applications_season": 2,
+        "interval_days": 60,
+        "preharvest_interval_ar": "30 يوم",
+        "water_volume_ar": "200–400 لتر/فدان للصب"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في AChE",
+        "cross_resistance_groups": [
+          {
+            "id": "nem-grp-cb",
+            "name_ar": "مثبطات AChE — كاربامات نيماتودية"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع الكاربامات",
+        "resistance_reported_in": [
+          "Meloidogyne incognita (بعض السلالات الأفريقية)"
+        ]
+      },
+      "rotation": {
+        "group_id": "nem-grp-op",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع فوسثيازات أو البيولوجي"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-09",
+          "name_ar": "نيماتودا الخنجر"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        },
+        {
+          "id": "nem-12",
+          "name_ar": "نيماتودا الزيتون"
+        }
+      ],
+      "target_crops": [
+        "موز",
+        "حمضيات",
+        "أناناس",
+        "قهوة",
+        "طماطم",
+        "فلفل",
+        "قطن"
+      ],
+      "spectrum_ar": "واسع — نيماتودا جذور أشجار الفاكهة والخضروات",
+      "activity_ar": "جهازي — يتحرك في النسيج النباتي ويُعطل النيماتودا من الداخل",
+      "special_use_ar": "ممتاز لأشجار الفاكهة المعمرة — جهازي حقيقي — قد يُقيّد في بعض الدول",
+      "regulatory_ar": "مُقيَّد في الاتحاد الأوروبي — مسجل في مصر وبعض الدول العربية",
+      "safety_notes_ar": "شديد السمية للثدييات والطيور والأسماك — مقيد الاستخدام — معدات حماية إلزامية",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-005",
+      "name_ar": "أوكسامل",
+      "name_en": "Oxamyl",
+      "nema_group_id": "nem-grp-cb",
+      "group_code": "CB",
+      "chemical_class_ar": "كاربامات",
+      "chemical_class_en": "Carbamate",
+      "systemic": true,
+      "type_ar": "جهازي عالٍ الحركة",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "1–2 لتر م.ف/فدان",
+        "dose_feddan_ar": "1–2 لتر م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "تقطير مع ري بالتنقيط",
+          "رش ورقي + صب جذري",
+          "ري بالرش"
+        ],
+        "timing_ar": "وقائي وعلاجي — بعد الزراعة مباشرةً أو عند ظهور الإصابة — يتحرك للأعلى والأسفل",
+        "max_applications_season": 3,
+        "interval_days": 21,
+        "preharvest_interval_ar": "7–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في AChE — المقاومة أسرع من OP بسبب الضغط الانتقائي",
+        "cross_resistance_groups": [
+          {
+            "id": "nem-grp-op",
+            "name_ar": "مثبطات AChE — أورجانوفوسفات نيماتودية"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع الأورجانوفوسفات",
+        "resistance_reported_in": [
+          "Meloidogyne incognita (جنوب أفريقيا — بعض الحقول)"
+        ]
+      },
+      "rotation": {
+        "group_id": "nem-grp-cb",
+        "max_consecutive": 1,
+        "must_rotate_after": 3,
+        "note_ar": "تناوب مع فوسثيازات أو بيولوجي — 3 رشات كحد — تقطير مع الري أفضل"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-04",
+          "name_ar": "نيماتودا الأوراق والبراعم"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "كوسة",
+        "بطاطس",
+        "موز",
+        "بصل",
+        "ثوم"
+      ],
+      "spectrum_ar": "واسع جداً — معظم النيماتودا + حشرات ماصة + حفارات",
+      "activity_ar": "جهازي عالٍ الحركة — يُمتص من الجذور والأوراق — يصل للنيماتودا داخل الأنسجة",
+      "special_use_ar": "الأكثر فاعلية بين المبيدات النيماتودية الجهازية — يُقاوم التوتا والنيماتودا معاً — مثالي للتنقيط",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي — محدود في الاتحاد الأوروبي",
+      "safety_notes_ar": "شديد السمية للثدييات والطيور — لا تستخدم بالقرب من مصادر المياه — فترة انتظار 7-14 يوم",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-006",
+      "name_ar": "ألانيكارب",
+      "name_en": "Alanicarb",
+      "nema_group_id": "nem-grp-cb",
+      "group_code": "CB",
+      "chemical_class_ar": "كاربامات",
+      "chemical_class_en": "Carbamate",
+      "systemic": true,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "1–1.5 لتر م.ف/فدان",
+        "dose_feddan_ar": "1–1.5 لتر م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "تقطير مع الري",
+          "صب جذري"
+        ],
+        "timing_ar": "عند الزراعة أو بعدها — جهازي",
+        "max_applications_season": 2,
+        "interval_days": 30,
+        "preharvest_interval_ar": "14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في AChE",
+        "cross_resistance_groups": [
+          {
+            "id": "nem-grp-op",
+            "name_ar": "مثبطات AChE — أورجانوفوسفات نيماتودية"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع OP",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-cb",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع فوسثيازات أو بيولوجي"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة"
+      ],
+      "spectrum_ar": "متوسط — نيماتودا الجذور الرئيسية",
+      "activity_ar": "جهازي — مشابه لأوكسامل لكن أقل حدة",
+      "special_use_ar": "بديل لأوكسامل في بعض المحاصيل — أقل سمية نسبياً",
+      "regulatory_ar": "مسجل في بعض الدول العربية — تحقق من التسجيل المحلي",
+      "safety_notes_ar": "سامة للثدييات — أقل خطراً من أوكسامل — معدات وقاية إلزامية",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-007",
+      "name_ar": "كاربوفيوران",
+      "name_en": "Carbofuran",
+      "nema_group_id": "nem-grp-cb",
+      "group_code": "CB",
+      "chemical_class_ar": "كاربامات",
+      "chemical_class_en": "Carbamate",
+      "systemic": true,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_pre_plant_ar": "2–4 كجم م.ف/فدان حبيبات قبل الزراعة",
+        "dose_post_plant_ar": null,
+        "dose_feddan_ar": "2–4 كجم م.ف/فدان",
+        "dose_soil_ar": "2–4 كجم/فدان حبيبات خلط",
+        "methods_ar": [
+          "حبيبات تربة",
+          "خلط مع التربة"
+        ],
+        "timing_ar": "قبل الزراعة أو عند الزراعة — حبيبات تُخلط في التربة",
+        "max_applications_season": 1,
+        "interval_days": 60,
+        "preharvest_interval_ar": "30 يوم",
+        "water_volume_ar": "لا ينطبق — حبيبات جافة"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في AChE",
+        "cross_resistance_groups": [
+          {
+            "id": "nem-grp-op",
+            "name_ar": "مثبطات AChE — أورجانوفوسفات نيماتودية"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع OP",
+        "resistance_reported_in": [
+          "Meloidogyne spp. (بعض المناطق)"
+        ]
+      },
+      "rotation": {
+        "group_id": "nem-grp-cb",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع فوسثيازات أو كاديوسافوس في المواسم التالية"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "قطن",
+        "أرز",
+        "قصب سكر",
+        "بطاطس",
+        "سورجم",
+        "بقوليات"
+      ],
+      "spectrum_ar": "واسع — نيماتودا التربة + حشرات التربة",
+      "activity_ar": "جهازي — حبيبات جافة تتحلل ببطء في التربة",
+      "special_use_ar": "شائع في الحبوب والقطن وقصب السكر — اقتصادي — حبيبات سهلة التطبيق",
+      "regulatory_ar": "محظور في الاتحاد الأوروبي وأمريكا الشمالية — مسجل في مصر وبعض الدول العربية",
+      "safety_notes_ar": "شديد السمية للطيور والثدييات والأسماك — محظور في كثير من الدول المتقدمة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-008",
+      "name_ar": "ميتيل برومايد",
+      "name_en": "Methyl bromide",
+      "nema_group_id": "nem-grp-fum",
+      "group_code": "FUM",
+      "chemical_class_ar": "هاليد ألكيل",
+      "chemical_class_en": "Alkyl halide",
+      "systemic": false,
+      "type_ar": "غاز — غير انتقائي",
+      "application": {
+        "dose_pre_plant_ar": "200–400 كجم/فدان قبل الزراعة بـ 3-4 أسابيع",
+        "dose_post_plant_ar": null,
+        "dose_feddan_ar": "200–400 كجم/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "حقن في التربة + تغطية بلاستيك",
+          "تعقيم بيوت محمية"
+        ],
+        "timing_ar": "قبل الزراعة بـ 3-4 أسابيع — يحتاج تغطية بلاستيك محكمة لـ 48-72 ساعة",
+        "max_applications_season": 1,
+        "interval_days": 120,
+        "preharvest_interval_ar": "21-28 يوم بعد رفع البلاستيك",
+        "water_volume_ar": "لا ينطبق"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-fum",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "مرة واحدة قبل الزراعة فقط — انتظر 3-4 أسابيع قبل الزراعة"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-04",
+          "name_ar": "نيماتودا الأوراق والبراعم"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-07",
+          "name_ar": "نيماتودا الإبرة"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-09",
+          "name_ar": "نيماتودا الخنجر"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        },
+        {
+          "id": "nem-11",
+          "name_ar": "نيماتودا اللثة"
+        },
+        {
+          "id": "nem-12",
+          "name_ar": "نيماتودا الزيتون"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فراولة",
+        "فلفل",
+        "خيار",
+        "بطاطس",
+        "موز",
+        "حمضيات",
+        "أشجار فاكهة"
+      ],
+      "spectrum_ar": "واسع جداً — نيماتودا + فطريات + بكتيريا + حشرات + أعشاب",
+      "activity_ar": "غاز يتخلل التربة ويقتل كل الكائنات الحية في المنطقة المُعالجة",
+      "special_use_ar": "الأقوى والأشمل تاريخياً — تعقيم كامل للتربة — ممنوع دولياً بموجب بروتوكول مونتريال إلا بإعفاءات",
+      "regulatory_ar": "ممنوع دولياً (بروتوكول مونتريال) — يُستخدم فقط بإعفاءات خاصة للزراعة الحرجة",
+      "safety_notes_ar": "شديد السمية للإنسان والكائنات الحية — مدمر لطبقة الأوزون — يُستخدم فقط بموافقة رسمية",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-009",
+      "name_ar": "1,3-ديكلوروبروبين",
+      "name_en": "1,3-Dichloropropene (Telone II)",
+      "nema_group_id": "nem-grp-fum",
+      "group_code": "FUM",
+      "chemical_class_ar": "هاليد ألكيل",
+      "chemical_class_en": "Chlorinated alkene",
+      "systemic": false,
+      "type_ar": "غاز في التربة",
+      "application": {
+        "dose_pre_plant_ar": "15–25 لتر/فدان قبل الزراعة",
+        "dose_post_plant_ar": null,
+        "dose_feddan_ar": "15–25 لتر/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "حقن في التربة بآلة خاصة",
+          "تغطية بلاستيك اختيارية"
+        ],
+        "timing_ar": "قبل الزراعة بـ 3-4 أسابيع — حقن على عمق 25-30 سم",
+        "max_applications_season": 1,
+        "interval_days": 90,
+        "preharvest_interval_ar": "21 يوم بعد المعاملة",
+        "water_volume_ar": "لا ينطبق"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-fum",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "مرة واحدة قبل الزراعة — يُستخدم بديلاً لميتيل برومايد"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-07",
+          "name_ar": "نيماتودا الإبرة"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        },
+        {
+          "id": "nem-11",
+          "name_ar": "نيماتودا اللثة"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فراولة",
+        "بطاطس",
+        "ذرة",
+        "عباد الشمس",
+        "أشجار فاكهة"
+      ],
+      "spectrum_ar": "واسع — نيماتودا + بعض الفطريات الأرضية",
+      "activity_ar": "غاز يتحلل في التربة ويقتل النيماتودا بالتلامس",
+      "special_use_ar": "أكثر البدائل المتاحة لميتيل برومايد — فعّال جداً ضد Meloidogyne والخراجات",
+      "regulatory_ar": "مسجل في الولايات المتحدة وبعض الدول — محدود في الدول العربية — تحقق من التسجيل",
+      "safety_notes_ar": "سام جداً بالاستنشاق — يحتاج آلة حقن متخصصة — يُحظر استخدامه بالقرب من المناطق السكنية",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-010",
+      "name_ar": "ميتام صوديوم",
+      "name_en": "Metam sodium (Metam-Na)",
+      "nema_group_id": "nem-grp-fum",
+      "group_code": "FUM",
+      "chemical_class_ar": "ثيوكاربامات متطاير",
+      "chemical_class_en": "Dithiocarbamate fumigant",
+      "systemic": false,
+      "type_ar": "يُطلق غاز MITC",
+      "application": {
+        "dose_pre_plant_ar": "100–200 لتر/فدان محلول مائي",
+        "dose_post_plant_ar": null,
+        "dose_feddan_ar": "100–200 لتر/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "حقن مائي في التربة",
+          "تقطير مع الري",
+          "تطبيق على السطح + تغطية"
+        ],
+        "timing_ar": "قبل الزراعة بـ 2-4 أسابيع — رش على التربة المبللة + تغطية فورية",
+        "max_applications_season": 1,
+        "interval_days": 90,
+        "preharvest_interval_ar": "21 يوم",
+        "water_volume_ar": "يُذاب في 500-1000 لتر ماء/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-fum",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "مرة واحدة قبل الزراعة فقط"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فراولة",
+        "بطاطس",
+        "خضروات عموماً",
+        "محاصيل حقلية"
+      ],
+      "spectrum_ar": "واسع — نيماتودا + فطريات + أعشاب",
+      "activity_ar": "يتحلل إلى غاز MITC (methyl isothiocyanate) الذي يقتل النيماتودا",
+      "special_use_ar": "متاح وآمن نسبياً مقارنة بالفيومجانت الأخرى — يُذاب في الماء — سهل التطبيق بنظام الري",
+      "regulatory_ar": "مسجل ومتاح في مصر وكثير من الدول العربية",
+      "safety_notes_ar": "مزعج جداً للأعين والأنف عند التطبيق — معدات وقاية كاملة — تجنب قرب المساكن",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-011",
+      "name_ar": "فلوبيرام (نشاط نيماتودي)",
+      "name_en": "Fluopyram (nematicidal activity)",
+      "nema_group_id": "nem-grp-sdhi",
+      "group_code": "SDHI-N",
+      "chemical_class_ar": "بنزاميد — SDHI",
+      "chemical_class_en": "Benzamide SDHI",
+      "systemic": true,
+      "type_ar": "جهازي — ثنائي الاتجاه",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "0.4–0.6 لتر م.ف/فدان صب جذري",
+        "dose_feddan_ar": "400–600 مل م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب جذري مع الري",
+          "تقطير مع الري بالتنقيط",
+          "معاملة بذور"
+        ],
+        "timing_ar": "عند الزراعة أو بعدها — جهازي يتحرك في كلا الاتجاهين",
+        "max_applications_season": 3,
+        "interval_days": 21,
+        "preharvest_interval_ar": "7–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرات في وحدات SDHB/SDHC — بطيئة الظهور",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع OP أو CB",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-sdhi",
+        "max_consecutive": 1,
+        "must_rotate_after": 3,
+        "note_ar": "تناوب مع فوسثيازات أو أوكسامل أو البيولوجي — الأأمن للاستخدام المتكرر"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "بطاطس",
+        "موز",
+        "قطن",
+        "بصل"
+      ],
+      "spectrum_ar": "متوسط — Meloidogyne وPratylenchus وRotylenchulus",
+      "activity_ar": "جهازي ثنائي الاتجاه — يُثبط تنفس النيماتودا في الميتوكوندريا ويُشلها",
+      "special_use_ar": "الأحدث والأأمن بين المبيدات النيماتودية الكيميائية — يجمع بين فاعلية ضد النيماتودا والفطريات — مثالي في برامج IPM",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية تحت اسم تجاري",
+      "safety_notes_ar": "آمن نسبياً على الثدييات — منخفض السمية — آمن على النحل والأعداء الطبيعية",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-012",
+      "name_ar": "باسيلوس فيرمس — I-217",
+      "name_en": "Bacillus firmus (strain I-217)",
+      "nema_group_id": "nem-grp-bio",
+      "group_code": "BIO-B",
+      "chemical_class_ar": "بكتيريا حيوية",
+      "chemical_class_en": "Beneficial bacterium (Bacillus firmus)",
+      "systemic": false,
+      "type_ar": "ملامسي + إنزيمي",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 كجم م.ف/فدان",
+        "dose_feddan_ar": "5–10 كجم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب جذري مع الري",
+          "تقطير مع الري بالتنقيط",
+          "خلط مع التربة",
+          "معاملة بذور"
+        ],
+        "timing_ar": "عند الزراعة وتُكرر كل 3-4 أسابيع — وقائي وعلاجي خفيف",
+        "max_applications_season": 999,
+        "interval_days": 21,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع أي مجموعة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة — أساس IPM — يُكمل الكيميائيات"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "موز",
+        "عنب",
+        "حمضيات",
+        "بطاطس"
+      ],
+      "spectrum_ar": "متوسط — Meloidogyne بشكل رئيسي",
+      "activity_ar": "يُنتج إنزيمات تُحلل أغلفة البيض + يُحفز مناعة النبات (ISR) + يُنافس النيماتودا على الموارد",
+      "special_use_ar": "تحت الاسم التجاري — الأكثر دراسةً وتوثيقاً من البكتيريا النيماتودية — مُسموح في الزراعة العضوية",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً على الإنسان والحيوان والبيئة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-013",
+      "name_ar": "باسيلوس ثورنجنسيس الجهاز",
+      "name_en": "Bacillus thuringiensis (nematicidal strains)",
+      "nema_group_id": "nem-grp-bio",
+      "group_code": "BIO-B",
+      "chemical_class_ar": "بكتيريا حيوية",
+      "chemical_class_en": "Beneficial bacterium (Bt)",
+      "systemic": false,
+      "type_ar": "معدي + إنزيمي",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "3–5 كجم م.ف/فدان",
+        "dose_feddan_ar": "3–5 كجم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب جذري مع الري",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "وقائي — يُستخدم قبل الزراعة وبعدها",
+        "max_applications_season": 999,
+        "interval_days": 14,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة — مع البيولوجي الأخرى"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "خضروات عموماً"
+      ],
+      "spectrum_ar": "ضيق — تأثير محدود مقارنة بباسيلوس فيرمس",
+      "activity_ar": "بروتينات Cry بعض السلالات لها تأثير على يرقات النيماتودا",
+      "special_use_ar": "له نشاط محدود ضد النيماتودا — يُستخدم أساساً ضد الحشرات",
+      "regulatory_ar": "مسجل ومتاح — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-014",
+      "name_ar": "سيودوموناس فلوريسنس",
+      "name_en": "Pseudomonas fluorescens",
+      "nema_group_id": "nem-grp-bio",
+      "group_code": "BIO-B",
+      "chemical_class_ar": "بكتيريا جذرية مفيدة — PGPR",
+      "chemical_class_en": "Plant Growth Promoting Rhizobacteria (PGPR)",
+      "systemic": false,
+      "type_ar": "ملامسي + جهازي غير مباشر",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 لتر/فدان معلق",
+        "dose_feddan_ar": "5–10 لتر/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "تقطير مع الري",
+          "صب جذري",
+          "معاملة بذور",
+          "رش ورقي"
+        ],
+        "timing_ar": "من الزراعة وطوال الموسم كل 2-3 أسابيع",
+        "max_applications_season": 999,
+        "interval_days": 14,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم بانتظام طوال الموسم — يُعزز فاعلية المبيدات الأخرى"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "فراولة",
+        "بطاطس",
+        "محاصيل حقلية"
+      ],
+      "spectrum_ar": "متوسط — يؤثر على معظم النيماتودا في منطقة الجذور",
+      "activity_ar": "يُنتج مضادات حيوية طبيعية + يُحفز مناعة النبات + يُحسن امتصاص العناصر",
+      "special_use_ar": "يُعزز صحة التربة ونمو النبات بالإضافة لمقاومة النيماتودا — اقتصادي ومتعدد الفوائد",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً على الإنسان والبيئة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-015",
+      "name_ar": "باسيلوس سوبتيليس",
+      "name_en": "Bacillus subtilis (nematicidal)",
+      "nema_group_id": "nem-grp-bio",
+      "group_code": "BIO-B",
+      "chemical_class_ar": "بكتيريا حيوية",
+      "chemical_class_en": "Beneficial bacterium (Bacillus subtilis)",
+      "systemic": false,
+      "type_ar": "إنزيمي + غير مباشر",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 كجم م.ف/فدان",
+        "dose_feddan_ar": "5–10 كجم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب جذري",
+          "تقطير مع الري",
+          "معاملة بذور"
+        ],
+        "timing_ar": "وقائي وعلاجي — من الزراعة وطوال الموسم",
+        "max_applications_season": 999,
+        "interval_days": 14,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة — مع الفطريات والبكتيريا الأخرى"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "فراولة",
+        "محاصيل حقلية"
+      ],
+      "spectrum_ar": "متوسط — Meloidogyne وPratylenchus",
+      "activity_ar": "يُنتج lipopeptides (iturin، surfactin) تُشل النيماتودا + يُحسن صحة التربة",
+      "special_use_ar": "يُستخدم مع باسيلوس فيرمس لتعزيز الفاعلية — مُسموح في الزراعة العضوية",
+      "regulatory_ar": "مسجل ومتاح — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-016",
+      "name_ar": "باسيلوميسيس ليلاسينوس",
+      "name_en": "Pochonia chlamydosporia / Paecilomyces lilacinus",
+      "nema_group_id": "nem-grp-bio2",
+      "group_code": "BIO-F",
+      "chemical_class_ar": "فطر اصطيادي للبيض",
+      "chemical_class_en": "Nematophagous fungus (egg parasite)",
+      "systemic": false,
+      "type_ar": "ملامسي + تطفلي",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 كجم م.ف/فدان",
+        "dose_feddan_ar": "5–10 كجم م.ف/فدان",
+        "dose_soil_ar": "5–10 كجم خلط مع تربة",
+        "methods_ar": [
+          "خلط مع التربة",
+          "صب جذري",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "قبل الزراعة أو عند الشتل — يتضاعف في التربة ويبقى",
+        "max_applications_season": 999,
+        "interval_days": 30,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio2",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم كأساس وقائي في التربة مع كل موسم"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "بصل",
+        "بطاطس",
+        "موز"
+      ],
+      "spectrum_ar": "متوسط — متخصص في تطفل بيض النيماتودا",
+      "activity_ar": "يتطفل على بيض النيماتودا ويُحلل أغلفته بإنزيمات خاصة — يُقلل الجيل التالي",
+      "special_use_ar": "تحت اسم / — من أفضل المبيدات النيماتودية البيولوجية لتعقيم التربة وقائياً",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً — لا خطر على الإنسان أو البيئة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-017",
+      "name_ar": "آرثروبوتريس",
+      "name_en": "Arthrobotrys spp.",
+      "nema_group_id": "nem-grp-bio2",
+      "group_code": "BIO-F",
+      "chemical_class_ar": "فطر اصطيادي بشبكات عقدية",
+      "chemical_class_en": "Nematode-trapping fungus",
+      "systemic": false,
+      "type_ar": "ملامسي + ميكانيكي",
+      "application": {
+        "dose_pre_plant_ar": "10–20 كجم م.ف/فدان خلط",
+        "dose_post_plant_ar": "None",
+        "dose_feddan_ar": "10–20 كجم م.ف/فدان",
+        "dose_soil_ar": "10–20 كجم خلط مع تربة",
+        "methods_ar": [
+          "خلط مع التربة",
+          "إضافة لكومبوست"
+        ],
+        "timing_ar": "قبل الزراعة — يحتاج وقتاً ليتأسس في التربة",
+        "max_applications_season": 999,
+        "interval_days": 30,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "لا ينطبق — خلط جاف"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio2",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم وقائياً قبل الزراعة — يتكامل مع باسيلوميسيس"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "خضروات عموماً",
+        "مشاتل"
+      ],
+      "spectrum_ar": "متوسط — يصطاد النيماتودا الحرة في التربة",
+      "activity_ar": "يُكوّن شبكات عقدية لاصقة وحلقات تُمسك النيماتودا ميكانيكياً",
+      "special_use_ar": "فريد في آلية عمله — يُحسّن تعداده مع الكومبوست والمادة العضوية",
+      "regulatory_ar": "مسجل في بعض الدول — تحقق من التسجيل المحلي — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-018",
+      "name_ar": "تريكوديرما هارزيانوم",
+      "name_en": "Trichoderma harzianum / T. viride (nematicidal)",
+      "nema_group_id": "nem-grp-bio2",
+      "group_code": "BIO-F",
+      "chemical_class_ar": "فطر تريكوديرما",
+      "chemical_class_en": "Trichoderma spp. (nematicidal biocontrol)",
+      "systemic": false,
+      "type_ar": "إنزيمي + غير مباشر",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 كجم م.ف/فدان",
+        "dose_feddan_ar": "5–10 كجم م.ف/فدان",
+        "dose_soil_ar": "5–10 كجم خلط",
+        "methods_ar": [
+          "خلط مع التربة",
+          "صب جذري",
+          "تقطير مع الري",
+          "معاملة بذور"
+        ],
+        "timing_ar": "وقائي — من الزراعة وطوال الموسم كل 3-4 أسابيع",
+        "max_applications_season": 999,
+        "interval_days": 14,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio2",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم — يُعزز فاعلية فلوبيرام والبكتيريا"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "قمح",
+        "ذرة",
+        "قطن",
+        "خضروات عموماً"
+      ],
+      "spectrum_ar": "متوسط — له نشاط مباشر وغير مباشر ضد النيماتودا",
+      "activity_ar": "يُنتج إنزيمات تُحلل أغلفة البيض + يُنافس النيماتودا + يُحسن امتصاص العناصر + يُحفز مناعة النبات",
+      "special_use_ar": "من أوسع المبيدات البيولوجية استخداماً في مصر — يجمع مقاومة النيماتودا مع الفطريات الأرضية",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً — يُحسّن صحة التربة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-019",
+      "name_ar": "ميكوريزا — فطريات جذرية رابطة",
+      "name_en": "Arbuscular Mycorrhizal Fungi (AMF) — Glomus / Rhizophagus",
+      "nema_group_id": "nem-grp-bio2",
+      "group_code": "BIO-F",
+      "chemical_class_ar": "فطر ميكوريزي رابط",
+      "chemical_class_en": "Arbuscular Mycorrhizal Fungi (AMF)",
+      "systemic": false,
+      "type_ar": "غير مباشر — تحمّل وتحفيز",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 كجم م.ف/فدان",
+        "dose_feddan_ar": "5–10 كجم م.ف/فدان",
+        "dose_soil_ar": "5–10 كجم خلط مع التربة أو خث البيت موس",
+        "methods_ar": [
+          "خلط مع التربة أو خث البيت موس",
+          "معاملة جذور الشتلات",
+          "معاملة بذور"
+        ],
+        "timing_ar": "عند الزراعة أو الشتل — فقط — يتأسس ويبقى موسمياً",
+        "max_applications_season": 1,
+        "interval_days": 365,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "لا ينطبق"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio2",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "مرة عند الزراعة — الأثر يستمر طوال الموسم ويتراكم مع المواسم"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-09",
+          "name_ar": "نيماتودا الخنجر"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        },
+        {
+          "id": "nem-12",
+          "name_ar": "نيماتودا الزيتون"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "عنب",
+        "حمضيات",
+        "أشجار زيتون",
+        "قمح",
+        "ذرة",
+        "بطاطا"
+      ],
+      "spectrum_ar": "واسع — تُقاوم كل أنواع النيماتودا بشكل غير مباشر",
+      "activity_ar": "تُحسّن امتصاص الفوسفور والماء + تُقلل تضرر الجذور من النيماتودا + تُحفز مناعة النبات",
+      "special_use_ar": "ليست مبيدة مباشرة — تُضخّم صمود النبات ضد النيماتودا — أساس الزراعة العضوية والمتكاملة",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً — يُحسّن كفاءة الأسمدة بشكل كبير",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-020",
+      "name_ar": "بيومكس — Purpureocillium lilacinum",
+      "name_en": "Purpureocillium lilacinum (Isaria lilacina)",
+      "nema_group_id": "nem-grp-bio2",
+      "group_code": "BIO-F",
+      "chemical_class_ar": "فطر متطفل على بيض النيماتودا",
+      "chemical_class_en": "Egg-pathogenic fungus",
+      "systemic": false,
+      "type_ar": "تطفلي + إنزيمي",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 كجم م.ف/فدان",
+        "dose_feddan_ar": "5–10 كجم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب جذري",
+          "تقطير مع الري",
+          "خلط مع التربة"
+        ],
+        "timing_ar": "وقائي — يُطبّق قبل وبعد الزراعة",
+        "max_applications_season": 999,
+        "interval_days": 21,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio2",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يتكامل مع باسيلوس فيرمس وتريكوديرما"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "بطاطس",
+        "موز"
+      ],
+      "spectrum_ar": "متوسط — متخصص في بيض النيماتودا",
+      "activity_ar": "يتطفل على بيض Meloidogyne ويمنع فقسه — مُتخصص أكثر من Pochonia",
+      "special_use_ar": "فعّال جداً في درجات حرارة عالية — مناسب لمناخ مصر والوطن العربي",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-021",
+      "name_ar": "ستاينيرنيما كاربوكابسا",
+      "name_en": "Steinernema carpocapsae",
+      "nema_group_id": "nem-grp-bio3",
+      "group_code": "BIO-N",
+      "chemical_class_ar": "نيماتودا ممرضة للحشرات",
+      "chemical_class_en": "Entomopathogenic nematode (EPN)",
+      "systemic": false,
+      "type_ar": "ملامسي — تدخل الجسم",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "500 مليون J3/فدان",
+        "dose_feddan_ar": "500 مليون J3/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب في التربة مع ري غزير",
+          "تقطير مع الري — في الظلام"
+        ],
+        "timing_ar": "مساءً أو صباحاً مع ري غزير — يحتاج رطوبة مستمرة",
+        "max_applications_season": 999,
+        "interval_days": 14,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "500–1000 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio3",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة مع رطوبة كافية"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "خضروات عموماً",
+        "ملاعب رياضية"
+      ],
+      "spectrum_ar": "ضيق على النيماتودا — أقوى ضد حشرات التربة",
+      "activity_ar": "يدخل جسم الحشرات ويُطلق بكتيريا Xenorhabdus تُسبب تعفناً وموتاً",
+      "special_use_ar": "تأثيره على النيماتودا غير مباشر — يقتل الحشرات الناقلة ويُحسن بيئة التربة",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية — يحتاج تبريداً في التخزين",
+      "safety_notes_ar": "آمن تماماً — لا خطر على الإنسان أو الحيوانات غير المستهدفة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-022",
+      "name_ar": "هيتيروهابديتيس باكتيريوفورا",
+      "name_en": "Heterorhabditis bacteriophora",
+      "nema_group_id": "nem-grp-bio3",
+      "group_code": "BIO-N",
+      "chemical_class_ar": "نيماتودا ممرضة للحشرات",
+      "chemical_class_en": "Entomopathogenic nematode (EPN)",
+      "systemic": false,
+      "type_ar": "ملامسي — تدخل الجسم",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "500 مليون J3/فدان",
+        "dose_feddan_ar": "500 مليون J3/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب في التربة مع ري غزير",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "مساءً مع ري غزير — تتحرك بنشاط في التربة الرطبة",
+        "max_applications_season": 999,
+        "interval_days": 14,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "500–1000 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bio3",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم مع Steinernema لتغطية أشمل"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "بطاطس",
+        "خضروات عموماً"
+      ],
+      "spectrum_ar": "ضيق على النيماتودا — تأثير غير مباشر",
+      "activity_ar": "تحمل بكتيريا Photorhabdus — أكثر عدوانية في البحث عن العائل",
+      "special_use_ar": "أكثر انتشاراً من Steinernema في الأراضي العميقة — تتبع العائل بنشاط",
+      "regulatory_ar": "مسجل في بعض الدول — يحتاج تبريداً في التخزين",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-023",
+      "name_ar": "مستخلص النيم — أزاديراكتين",
+      "name_en": "Neem extract — Azadirachtin",
+      "nema_group_id": "nem-grp-bot",
+      "group_code": "BOT",
+      "chemical_class_ar": "مستخلص نباتي طبيعي",
+      "chemical_class_en": "Botanical — Azadirachtin (neem)",
+      "systemic": false,
+      "type_ar": "ملامسي + طارد + منظم نمو",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 لتر/فدان مستخلص",
+        "dose_feddan_ar": "5–10 لتر/فدان",
+        "dose_soil_ar": "5–10 لتر خلط مع تربة",
+        "methods_ar": [
+          "صب جذري مع الري",
+          "خلط مع التربة",
+          "رش تربة"
+        ],
+        "timing_ar": "وقائي — كل 2-3 أسابيع — يُذاب في الماء",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم — يُعزز مفعول البيولوجي"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-04",
+          "name_ar": "نيماتودا الأوراق والبراعم"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "بصل",
+        "ثوم",
+        "موز",
+        "خضروات عموماً"
+      ],
+      "spectrum_ar": "واسع — يُقلل تعداد معظم النيماتودا",
+      "activity_ar": "أزاديراكتين يُثبط تكاثر النيماتودا ويُشلّ حركتها + يُحفز مناعة النبات",
+      "special_use_ar": "طبيعي وآمن تماماً — مُسموح في الزراعة العضوية — يُحسّن صحة التربة بشكل عام",
+      "regulatory_ar": "مسجل ومتاح في مصر والدول العربية — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً على الإنسان والبيئة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-024",
+      "name_ar": "مستخلص الخردل",
+      "name_en": "Mustard extract — Allyl isothiocyanate",
+      "nema_group_id": "nem-grp-bot",
+      "group_code": "BOT",
+      "chemical_class_ar": "مستخلص نباتي — ثيوجلوكوزيد",
+      "chemical_class_en": "Botanical — Glucosinolate/AITC",
+      "systemic": false,
+      "type_ar": "ملامسي + تنفسي",
+      "application": {
+        "dose_pre_plant_ar": "5–10 طن/فدان كسب خردل مطمور",
+        "dose_post_plant_ar": "None",
+        "dose_feddan_ar": "5–10 طن/فدان كسب",
+        "dose_soil_ar": "5–10 طن كسب خردل خلط",
+        "methods_ar": [
+          "طمر كسب الخردل الطازج + ري",
+          "إضافة مستخلص مركز"
+        ],
+        "timing_ar": "قبل الزراعة بـ 2-4 أسابيع — طمر الكسب الطازج مع الري",
+        "max_applications_season": 1,
+        "interval_days": 45,
+        "preharvest_interval_ar": "14 يوم",
+        "water_volume_ar": "ري غزير بعد الطمر"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 1,
+        "note_ar": "مرة قبل الزراعة — يُكمله البيولوجي بعد الزراعة"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-05",
+          "name_ar": "نيماتودا الخراجات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-07",
+          "name_ar": "نيماتودا الإبرة"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "بطاطس",
+        "خيار",
+        "فراولة",
+        "بصل",
+        "ثوم",
+        "خضروات عموماً",
+        "محاصيل حقلية"
+      ],
+      "spectrum_ar": "واسع — يُقلل تعداد كثير من أنواع النيماتودا",
+      "activity_ar": "يُطلق أيزوثيوسيانات سامة عند تحلل الكسب في التربة — بديل طبيعي للفيومجانت",
+      "special_use_ar": "بيو-فيومجانت طبيعي — يُستخدم في الزراعة العضوية كبديل لميتال برومايد — اقتصادي جداً",
+      "regulatory_ar": "مسجل ومتاح — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً — يُحسّن خصوبة التربة",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-025",
+      "name_ar": "مستخلص القرنفل والزعتر",
+      "name_en": "Clove/Thyme essential oil — Eugenol/Thymol",
+      "nema_group_id": "nem-grp-bot",
+      "group_code": "BOT",
+      "chemical_class_ar": "زيوت عطرية طبيعية",
+      "chemical_class_en": "Botanical essential oils (eugenol, thymol)",
+      "systemic": false,
+      "type_ar": "ملامسي + تنفسي",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "3–5 لتر/فدان مستخلص",
+        "dose_feddan_ar": "3–5 لتر/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب جذري مع الري",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "كل 2-3 أسابيع — وقائي وعلاجي خفيف",
+        "max_applications_season": 999,
+        "interval_days": 1,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم مع البيولوجي في برامج الزراعة العضوية"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-04",
+          "name_ar": "نيماتودا الأوراق والبراعم"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "زينة",
+        "مشاتل"
+      ],
+      "spectrum_ar": "متوسط — يُقلل تعداد النيماتودا في المشاتل والبيوت المحمية",
+      "activity_ar": "يُوغين وثايمول يُشلان النيماتودا بالتلامس المباشر",
+      "special_use_ar": "مثالي للمشاتل والبيوت المحمية — آمن للاستخدام الأسبوعي — لا فترة انتظار",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً — رائحة حادة أثناء التطبيق فقط",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    },
+    {
+      "id": "nai-026",
+      "name_ar": "مستخلص الثوم",
+      "name_en": "Garlic extract — Allicin/Allyl compounds",
+      "nema_group_id": "nem-grp-bot",
+      "group_code": "BOT",
+      "chemical_class_ar": "مستخلص نباتي — ثيوسلفينات",
+      "chemical_class_en": "Botanical — Allicin/Diallyl sulfide",
+      "systemic": false,
+      "type_ar": "ملامسي + طارد",
+      "application": {
+        "dose_pre_plant_ar": null,
+        "dose_post_plant_ar": "5–10 لتر/فدان مستخلص",
+        "dose_feddan_ar": "5–10 لتر/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "صب جذري مع الري",
+          "رش تربة",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "كل 2-3 أسابيع — وقائي وعلاجي",
+        "max_applications_season": 999,
+        "interval_days": 3,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "nem-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم مع البيولوجي"
+      },
+      "target_nematodes": [
+        {
+          "id": "nem-01",
+          "name_ar": "نيماتودا تعقد الجذور"
+        },
+        {
+          "id": "nem-02",
+          "name_ar": "نيماتودا تقرح الجذور"
+        },
+        {
+          "id": "nem-03",
+          "name_ar": "نيماتودا الساق والبصيلات"
+        },
+        {
+          "id": "nem-06",
+          "name_ar": "نيماتودا اللنف"
+        },
+        {
+          "id": "nem-08",
+          "name_ar": "نيماتودا الحلزون"
+        },
+        {
+          "id": "nem-10",
+          "name_ar": "نيماتودا الدبوس"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "فراولة",
+        "بصل",
+        "ثوم",
+        "خضروات عموماً"
+      ],
+      "spectrum_ar": "متوسط — تأثير مباشر وطارد",
+      "activity_ar": "أليسين وثنائي ألليل كبريتيد تُشل حركة النيماتودا وتطردها من منطقة الجذور",
+      "special_use_ar": "اقتصادي جداً — متاح — يُستخدم في الزراعة العضوية والتقليدية على حد سواء",
+      "regulatory_ar": "مسجل ومتاح — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "IRAC MoA v10.4 + FAO Nematicide Guidelines 2024 + Egyptian Pesticide Registration 2024"
+    }
+  ]
+}

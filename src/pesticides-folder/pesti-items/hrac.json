@@ -1,0 +1,4769 @@
+{
+  "id": "hrac_active_ingredients",
+  "name_ar": "المواد الفعالة لمبيدات الحشائش",
+  "name_en": "Herbicide Active Ingredients — HRAC Classified",
+  "source": "HRAC MoA Classification 2020 | Weed Science",
+  "version": "1.0.0",
+  "total_count": 59,
+  "items": [
+    {
+      "id": "hai-001",
+      "name_ar": "كليثوديم",
+      "name_en": "Clethodim",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "سيكلوهيكساديون (DIM)",
+      "chemical_class_en": "Cyclohexanedione",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي ضد النجيليات فقط",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.1–0.25 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — على النجيليات في طور 2-6 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase (I1781L, W2027C وغيرها)",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع FOPs — DIM يُستخدم حيث فشلت FOPs",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "النجيل",
+          "شوفان بري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K1 أو N — لا تستخدم FOPs وDIMs متتاليين"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-07",
+          "name_ar": "الحلفا — إيمبيراتا"
+        },
+        {
+          "id": "weed-08",
+          "name_ar": "الذرة الجارة"
+        }
+      ],
+      "target_crops": [
+        "فول",
+        "فول السوداني",
+        "بنجر سكري",
+        "عباد الشمس",
+        "خضروات"
+      ],
+      "spectrum_ar": "ضيق — نجيليات فقط",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "انتقائي جداً ضد النجيليات — آمن تماماً على عريضات الأوراق",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً على الثدييات والبيئة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-002",
+      "name_ar": "فلوازيفوب-P-بيوتيل",
+      "name_en": "Fluazifop-P-butyl",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "أريلوكسيفينوكسي بروبيونات (FOP)",
+      "chemical_class_en": "Aryloxyphenoxypropionate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي ضد النجيليات فقط",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.3–0.6 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — نجيليات في طور 2-6 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "14–21 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين FOPs",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "شوفان بري",
+          "نجيل"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع DIM (كليثوديم) أو K1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-07",
+          "name_ar": "الحلفا — إيمبيراتا"
+        },
+        {
+          "id": "weed-08",
+          "name_ar": "الذرة الجارة"
+        },
+        {
+          "id": "weed-25",
+          "name_ar": "العليق الشوكي — الحسك"
+        }
+      ],
+      "target_crops": [
+        "فول",
+        "بطاطا",
+        "بنجر",
+        "خضروات",
+        "قطن"
+      ],
+      "spectrum_ar": "ضيق — نجيليات فقط",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "FOP انتقائي ضد النجيليات — جهازي ممتاز يصل الجذور",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-003",
+      "name_ar": "هاليكسيفوب",
+      "name_en": "Haloxyfop-R",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "أريلوكسيفينوكسي بروبيونات (FOP)",
+      "chemical_class_en": "Aryloxyphenoxypropionate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي ضد النجيليات فقط",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.1–0.2 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — نجيليات في طور 3-6 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "21–28 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين FOPs",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الشوفان البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع DIM أو K1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-07",
+          "name_ar": "الحلفا — إيمبيراتا"
+        },
+        {
+          "id": "weed-08",
+          "name_ar": "الذرة الجارة"
+        },
+        {
+          "id": "weed-25",
+          "name_ar": "العليق الشوكي — الحسك"
+        }
+      ],
+      "target_crops": [
+        "فول",
+        "عباد الشمس",
+        "بنجر سكري",
+        "خضروات",
+        "قطن"
+      ],
+      "spectrum_ar": "ضيق — نجيليات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "فعّال جداً ضد النجيل الثابت والحلفا بجرعات منخفضة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن على الثدييات",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-004",
+      "name_ar": "كيزالوفوب-P-إيثيل",
+      "name_en": "Quizalofop-P-ethyl",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "أريلوكسيفينوكسي بروبيونات (FOP)",
+      "chemical_class_en": "Aryloxyphenoxypropionate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي ضد النجيليات",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.3–0.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "14–21 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين FOPs",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الشوفان البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع DIM أو K1 أو N"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-07",
+          "name_ar": "الحلفا — إيمبيراتا"
+        },
+        {
+          "id": "weed-08",
+          "name_ar": "الذرة الجارة"
+        }
+      ],
+      "target_crops": [
+        "فول السوداني",
+        "بطاطا",
+        "فول",
+        "بنجر",
+        "خضروات"
+      ],
+      "spectrum_ar": "ضيق — نجيليات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "من أشيع FOPs في مصر — رخيص وفعّال",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-005",
+      "name_ar": "سيثوكسيديم",
+      "name_en": "Sethoxydim",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "سيكلوهيكساديون (DIM)",
+      "chemical_class_en": "Cyclohexanedione",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي ضد النجيليات",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.4–0.8 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع FOPs — DIM أفضل حيث توجد مقاومة FOPs",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الشوفان البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع FOPs أو K1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-07",
+          "name_ar": "الحلفا — إيمبيراتا"
+        },
+        {
+          "id": "weed-08",
+          "name_ar": "الذرة الجارة"
+        }
+      ],
+      "target_crops": [
+        "فول",
+        "بنجر سكري",
+        "خضروات",
+        "عباد الشمس"
+      ],
+      "spectrum_ar": "ضيق — نجيليات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "DIM فعّال حيث فشلت FOPs",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-006",
+      "name_ar": "ترالكوكسيديم",
+      "name_en": "Tralkoxydim",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "سيكلوهيكساديون (DIM)",
+      "chemical_class_en": "Cyclohexanedione",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي في الحبوب الشتوية",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.4–0.6 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — فلاريس في طور 2-4 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع FOPs",
+        "resistance_reported_in": [
+          "الفلاريس"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع FOPs أو K1 في القمح"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "ضيق جداً — الفلاريس في الحبوب الشتوية",
+      "activity_type_ar": "ما بعد الإنبات",
+      "special_use_ar": "متخصص ضد الفلاريس في القمح والشعير",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-007",
+      "name_ar": "فلامبروب-إيزوبروبيل",
+      "name_en": "Flamprop-M-isopropyl",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "أريلوكسيفينوكسي بروبيونات (FOP)",
+      "chemical_class_en": "Aryloxyphenoxypropionate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي في الحبوب الشتوية",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.3–0.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين FOPs",
+        "resistance_reported_in": [
+          "الشوفان البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع DIM أو K1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "ضيق — شوفان بري في الحبوب",
+      "activity_type_ar": "ما بعد الإنبات",
+      "special_use_ar": "متخصص ضد الشوفان البري في الحبوب",
+      "regulatory_ar": "مسجل في بعض الدول",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-008",
+      "name_ar": "فينوكسابروب-P-إيثيل",
+      "name_en": "Fenoxaprop-P-ethyl",
+      "hrac_group_id": "hrac-a",
+      "hrac_code": "A",
+      "chemical_class_ar": "أريلوكسيفينوكسي بروبيونات (FOP)",
+      "chemical_class_en": "Aryloxyphenoxypropionate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "انتقائي في الحبوب الشتوية",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.3–0.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — نجيليات طور 2-5 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ACCase",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-a",
+            "name_ar": "مثبطات أسيتيل-CoA كاربوكسيليز — ACCase"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين FOPs — مقاومة شائعة في الفلاريس",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "شوفان بري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-a",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع DIM أو K1 — المقاومة شائعة في مصر"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "أرز"
+      ],
+      "spectrum_ar": "ضيق — نجيليات في الحبوب",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "شائع جداً في مصر ضد الفلاريس في القمح — المقاومة ظهرت في بعض المناطق",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-009",
+      "name_ar": "ميتسلفورون ميثيل",
+      "name_en": "Metsulfuron-methyl",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "4–8 جم م.ف/فدان",
+        "dose_post_emergence_ar": "4–6 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات المبكر",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "60 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS (P197, A205, W574 وغيرها)",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين سلفونيل يوريا — واسعة مع ALS الأخرى",
+        "resistance_reported_in": [
+          "الخردل البري",
+          "البابونج",
+          "الرجلة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع O أو E أو C1 — لا تستخدم ALS متتالياً"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-15",
+          "name_ar": "الخبازة"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        },
+        {
+          "id": "weed-23",
+          "name_ar": "الإسبير — النجم"
+        },
+        {
+          "id": "weed-24",
+          "name_ar": "حشيشة الفجل — النزعة"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "واسع — عريضات الأوراق الشتوية في الحبوب",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "من أشيع سلفونيل يوريا في الحبوب الشتوية — رخيص جداً وفعّال",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا في التربة تضر بالمحاصيل اللاحقة — احذر التناوب المحصولي",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-010",
+      "name_ar": "كلورسلفورون",
+      "name_en": "Chlorsulfuron",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "4–8 جم م.ف/فدان",
+        "dose_post_emergence_ar": "4–8 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "90 يوم",
+        "soil_activity_ar": "نشاط أرضي طويل"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين سلفونيل يوريا",
+        "resistance_reported_in": [
+          "الخردل البري",
+          "البابونج",
+          "الرجلة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع O أو C2 — بقاياه طويلة الأمد تضر بالمحاصيل اللاحقة"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-15",
+          "name_ar": "الخبازة"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "واسع — عريضات الأوراق الشتوية",
+      "activity_type_ar": "ما قبل وما بعد الإنبات — جهازي",
+      "special_use_ar": "بقاياه في التربة تستمر 18+ شهراً — حذر عند التناوب المحصولي",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "خطر بقايا طويلة الأمد — لا تزرع بعده حساسيات كالبنجر والشمس",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-011",
+      "name_ar": "تريبنيورون ميثيل",
+      "name_en": "Tribenuron-methyl",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "3–5 جم م.ف/فدان",
+        "dose_post_emergence_ar": "3–5 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — 3-6 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": "نشاط أرضي قصير"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين سلفونيل يوريا",
+        "resistance_reported_in": [
+          "الخردل البري",
+          "البابونج"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع O أو C2"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-15",
+          "name_ar": "الخبازة"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        },
+        {
+          "id": "weed-23",
+          "name_ar": "الإسبير — النجم"
+        },
+        {
+          "id": "weed-24",
+          "name_ar": "حشيشة الفجل — النزعة"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "واسع — عريضات الأوراق الشتوية",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "بقايا أرضية أقصر من كلورسلفورون — مفضل قبل تناوب محصولي حساس",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا أقصر — أأمن للتناوب المحصولي",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-012",
+      "name_ar": "ثيفنسلفورون ميثيل",
+      "name_en": "Thifensulfuron-methyl",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "4–8 جم م.ف/فدان",
+        "dose_post_emergence_ar": "4–8 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": "نشاط أرضي قصير"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين سلفونيل يوريا",
+        "resistance_reported_in": [
+          "الخردل البري",
+          "الرجلة",
+          "الزبيبة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع O أو C2 أو E"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-15",
+          "name_ar": "الخبازة"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "واسع — عريضات الأوراق في الحبوب",
+      "activity_type_ar": "ما بعد الإنبات",
+      "special_use_ar": "يُستخدم في مخاليط مع تريبنيورون وميتسلفورون",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا قصيرة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-013",
+      "name_ar": "فلوبيرسيم",
+      "name_en": "Flupyrsulfuron-methyl",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "2–4 جم م.ف/فدان",
+        "dose_post_emergence_ar": "2–4 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الشوفان البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع A أو C2"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        }
+      ],
+      "target_crops": [
+        "قمح"
+      ],
+      "spectrum_ar": "متوسط — فلاريس + عريضات في القمح",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "من القلائل في ALS التي تقمع الفلاريس أيضاً",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا متوسطة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-014",
+      "name_ar": "سلفوسلفورون",
+      "name_en": "Sulfosulfuron",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "8–12 جم م.ف/فدان",
+        "dose_post_emergence_ar": "8–12 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "60 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الشوفان البري",
+          "الخردل البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع A أو O — الأفضل للفلاريس المقاومة للـ FOPs"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "متوسط — فلاريس + عريضات",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "من أهم بدائل FOPs ضد الفلاريس حيث انتشرت مقاومة A",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا متوسطة — لا تزرع شمانداً بعده",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-015",
+      "name_ar": "إيدوسلفورون",
+      "name_en": "Iodosulfuron-methyl-sodium",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "3–5 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الخردل البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع A أو C2 أو O"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "متوسط — فلاريس + عريضات في الحبوب",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "فعّال ضد الفلاريس + العريضات في رشة واحدة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا قصيرة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-016",
+      "name_ar": "بنسلفورون ميثيل",
+      "name_en": "Bensulfuron-methyl",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "4–8 جم م.ف/فدان",
+        "dose_post_emergence_ar": "4–8 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش ماء الري"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط مائي ممتاز"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "السمير",
+          "عريش الأرز",
+          "حشائش الأرز"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع E أو بروموكسينيل أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "أرز"
+      ],
+      "spectrum_ar": "متوسط — حشائش الأرز",
+      "activity_type_ar": "ما قبل وما بعد الإنبات — جهازي",
+      "special_use_ar": "الأشيع ضد حشائش الأرز في مصر — يُضاف لماء الري",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن في الأرز — بقايا قصيرة في الماء",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-017",
+      "name_ar": "بيرازوسلفورون ميثيل",
+      "name_en": "Pyrazosulfuron-ethyl",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "سلفونيل يوريا",
+      "chemical_class_en": "Sulfonylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "4–6 جم م.ف/فدان",
+        "dose_post_emergence_ar": "4–6 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش ماء الري"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط مائي ممتاز"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "السمير",
+          "عريش الأرز"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع E (أوكسيفلورفن) أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "أرز"
+      ],
+      "spectrum_ar": "متوسط — حشائش الأرز",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "فعّال ضد السمير والسعدة في الأرز",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً في الأرز",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-018",
+      "name_ar": "إيمازيثابير",
+      "name_en": "Imazethapyr",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "إيميدازولينون (IMI)",
+      "chemical_class_en": "Imidazolinone",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "40–80 جم م.ف/فدان",
+        "dose_post_emergence_ar": "40–80 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي طويل"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS — بطيء عن SU",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الشوفان البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع O أو K3 أو A — بقايا تضر بالمحاصيل"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "فول الصويا",
+        "فول السوداني",
+        "بقوليات"
+      ],
+      "spectrum_ar": "واسع — نجيليات + عريضات",
+      "activity_type_ar": "ما قبل وما بعد الإنبات — جهازي",
+      "special_use_ar": "الأشيع في البقوليات — طيف واسع — لكن بقاياه تستمر 12+ شهر",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا طويلة تضر بالمحاصيل الحساسة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-019",
+      "name_ar": "إيمازاميث",
+      "name_en": "Imazamox",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "إيميدازولينون (IMI)",
+      "chemical_class_en": "Imidazolinone",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "20–40 جم م.ف/فدان",
+        "dose_post_emergence_ar": "20–40 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "الفلاريس"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع A أو O"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "فول",
+        "فول السوداني",
+        "حمص"
+      ],
+      "spectrum_ar": "واسع — نجيليات + عريضات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "بقايا أقصر من إيمازيثابير — مفضل قبل محاصيل حساسة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا متوسطة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-020",
+      "name_ar": "بيريثيوباك صوديوم",
+      "name_en": "Pyribatiobac-sodium",
+      "hrac_group_id": "hrac-b",
+      "hrac_code": "B",
+      "chemical_class_ar": "بيريميدينيل ثيوبنزوات (PTB)",
+      "chemical_class_en": "Pyrimidinylthiobenzoate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "12–16 جم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش ورقي",
+          "رش ماء الري"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط مائي جيد"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرات في ALS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-b",
+            "name_ar": "مثبطات أسيتولاكتات سينثيز — ALS/AHAS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة مع ALS",
+        "resistance_reported_in": [
+          "حشائش الأرز"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-b",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع E أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "أرز",
+        "قطن"
+      ],
+      "spectrum_ar": "متوسط — حشائش الأرز والقطن",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "فعّال ضد طيف واسع من حشائش الأرز والقطن",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا قصيرة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-021",
+      "name_ar": "أترازين",
+      "name_en": "Atrazine",
+      "hrac_group_id": "hrac-c1",
+      "hrac_code": "C1",
+      "chemical_class_ar": "تريازين",
+      "chemical_class_en": "Triazine",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1.5 كجم م.ف/فدان",
+        "dose_post_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات المبكر",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "60 يوم",
+        "soil_activity_ar": "نشاط أرضي طويل"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرة S264G في جين psbA — موجودة في كثير من أنواع الحشائش",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c1",
+            "name_ar": "مثبطات الفوتوسيستم II — تريازينات"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين التريازينات",
+        "resistance_reported_in": [
+          "الزبيبة",
+          "الرجلة",
+          "الحميضة",
+          "حشائش الذرة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K3 أو B أو E — لا تستخدم تريازين وراء تريازين"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "قصب سكر",
+        "كرم"
+      ],
+      "spectrum_ar": "واسع — عريضات + بعض النجيليات",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "الأشيع ضد حشائش الذرة — رخيص جداً — المقاومة منتشرة في الزبيبة والحميضة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا طويلة تضر بالمحاصيل الحساسة — خطر على المياه الجوفية",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-022",
+      "name_ar": "سيمازين",
+      "name_en": "Simazine",
+      "hrac_group_id": "hrac-c1",
+      "hrac_code": "C1",
+      "chemical_class_ar": "تريازين",
+      "chemical_class_en": "Triazine",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1.5 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات فقط",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "90 يوم",
+        "soil_activity_ar": "نشاط أرضي طويل جداً"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرة S264G في psbA",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c1",
+            "name_ar": "مثبطات الفوتوسيستم II — تريازينات"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين التريازينات",
+        "resistance_reported_in": [
+          "حشائش عامة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3 أو E"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "حمضيات",
+        "كرم",
+        "أشجار مثمرة",
+        "مسطحات خضراء"
+      ],
+      "spectrum_ar": "واسع — عريضات الأوراق",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "شائع في بساتين الفاكهة والمسطحات الخضراء",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا طويلة جداً — خطر على المياه الجوفية",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-023",
+      "name_ar": "ميتريبيوزين",
+      "name_en": "Metribuzin",
+      "hrac_group_id": "hrac-c1",
+      "hrac_code": "C1",
+      "chemical_class_ar": "تريازينون",
+      "chemical_class_en": "Triazinone",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.2–0.4 كجم م.ف/فدان",
+        "dose_post_emergence_ar": "0.15–0.3 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرة S264G في psbA",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c1",
+            "name_ar": "مثبطات الفوتوسيستم II — تريازينات"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين التريازينات",
+        "resistance_reported_in": [
+          "الزبيبة",
+          "الرجلة",
+          "الخردل"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو E أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        }
+      ],
+      "target_crops": [
+        "بطاطس",
+        "طماطم",
+        "فول الصويا",
+        "قصب سكر"
+      ],
+      "spectrum_ar": "واسع — عريضات + بعض النجيليات",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "الأشيع في البطاطس والطماطم — يُستخدم قبل وبعد الإنبات",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا متوسطة — احذر على البطاطس الحساسة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-024",
+      "name_ar": "ترياتوكسيديم — ترياذيفامين",
+      "name_en": "Terbuthylazine",
+      "hrac_group_id": "hrac-c1",
+      "hrac_code": "C1",
+      "chemical_class_ar": "تريازين",
+      "chemical_class_en": "Triazine",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "60 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "طفرة S264G في psbA",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c1",
+            "name_ar": "مثبطات الفوتوسيستم II — تريازينات"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين التريازينات",
+        "resistance_reported_in": [
+          "حشائش عامة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "قصب سكر",
+        "كرم"
+      ],
+      "spectrum_ar": "واسع",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "بديل للأترازين في بعض المناطق",
+      "regulatory_ar": "مسجل في بعض الدول",
+      "safety_notes_ar": "بقايا متوسطة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-025",
+      "name_ar": "إيزوبروتيورون",
+      "name_en": "Isoproturon",
+      "hrac_group_id": "hrac-c2",
+      "hrac_code": "C2",
+      "chemical_class_ar": "فينيل يوريا",
+      "chemical_class_en": "Phenylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "60 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "متوسط إلى عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "تضخيم P450 — أكثر شيوعاً من طفرة psbA",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c2",
+            "name_ar": "مثبطات الفوتوسيستم II — يوريا وأميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين الفينيل يوريا",
+        "resistance_reported_in": [
+          "الفلاريس",
+          "الشوفان البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c2",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع A أو B أو O"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير"
+      ],
+      "spectrum_ar": "واسع — فلاريس + عريضات الشتوية",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "الأشيع ضد الفلاريس في القمح كيوريا — أرخص من FOPs",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا متوسطة — الجرعات العالية تضر القمح بالطقس البارد",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-026",
+      "name_ar": "ديورون",
+      "name_en": "Diuron",
+      "hrac_group_id": "hrac-c2",
+      "hrac_code": "C2",
+      "chemical_class_ar": "فينيل يوريا",
+      "chemical_class_en": "Phenylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "1–2 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات فقط",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "90 يوم",
+        "soil_activity_ar": "نشاط أرضي طويل"
+      },
+      "resistance": {
+        "risk_ar": "متوسط إلى عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "تضخيم P450 + طفرة psbA",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c2",
+            "name_ar": "مثبطات الفوتوسيستم II — يوريا وأميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين الفينيل يوريا",
+        "resistance_reported_in": [
+          "حشائش عامة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c2",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو E أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        }
+      ],
+      "target_crops": [
+        "قصب سكر",
+        "قطن",
+        "مسطحات خضراء",
+        "كرم"
+      ],
+      "spectrum_ar": "واسع",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "شائع في قصب السكر والمسطحات الخضراء",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا طويلة — خطر على المياه الجوفية",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-027",
+      "name_ar": "لينورون",
+      "name_en": "Linuron",
+      "hrac_group_id": "hrac-c2",
+      "hrac_code": "C2",
+      "chemical_class_ar": "فينيل يوريا",
+      "chemical_class_en": "Phenylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": "0.3–0.6 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "متوسط إلى عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c2",
+            "name_ar": "مثبطات الفوتوسيستم II — يوريا وأميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين الفينيل يوريا",
+        "resistance_reported_in": [
+          "حشائش الجزر والبصل"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c2",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو E أو K1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        }
+      ],
+      "target_crops": [
+        "جزر",
+        "بصل",
+        "ثوم",
+        "بطاطس",
+        "فول الصويا"
+      ],
+      "spectrum_ar": "واسع",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "شائع في الجزر والبصل وبعض الخضروات",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا متوسطة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-028",
+      "name_ar": "فلوميتورون",
+      "name_en": "Fluometuron",
+      "hrac_group_id": "hrac-c2",
+      "hrac_code": "C2",
+      "chemical_class_ar": "فينيل يوريا",
+      "chemical_class_en": "Phenylurea",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-c2",
+            "name_ar": "مثبطات الفوتوسيستم II — يوريا وأميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع فينيل يوريا",
+        "resistance_reported_in": [
+          "حشائش القطن"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-c2",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K3 أو K1 أو E"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        }
+      ],
+      "target_crops": [
+        "قطن"
+      ],
+      "spectrum_ar": "متوسط — حشائش القطن",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "انتقائي في القطن — يُستخدم مع التريفلورالين",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا قصيرة نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-029",
+      "name_ar": "باراكوات",
+      "name_en": "Paraquat",
+      "hrac_group_id": "hrac-d",
+      "hrac_code": "D",
+      "chemical_class_ar": "ثنائي بيريدينيوم",
+      "chemical_class_en": "Bipyridylium",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.2–0.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — تبييض كامل",
+        "max_applications_season": 2,
+        "preharvest_interval_ar": "لا ينطبق",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تراكم superoxide dismutase — نادر",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع G أو B",
+        "resistance_reported_in": [
+          "بعض بيوتيبات مقاومة في العالم"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-d",
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع G — مفيد في إدارة مقاومة الجلايفوسات"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-07",
+          "name_ar": "الحلفا — إيمبيراتا"
+        },
+        {
+          "id": "weed-08",
+          "name_ar": "الذرة الجارة"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "جميع المحاصيل — تبييض ما قبل الزراعة",
+        "قصب سكر — تجفيف"
+      ],
+      "spectrum_ar": "غير انتقائي — يقتل كل النباتات الخضراء",
+      "activity_type_ar": "ما بعد الإنبات — ملامسي سريع",
+      "special_use_ar": "تبييض الحقل قبل الزراعة — أسرع من جلايفوسات — لا ينشط في التربة",
+      "regulatory_ar": "مسجل ومتاح — محظور في الاتحاد الأوروبي",
+      "safety_notes_ar": "سامة جداً للثدييات — ضار بالرئتين — لا ترياق",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-030",
+      "name_ar": "ديكوات",
+      "name_en": "Diquat",
+      "hrac_group_id": "hrac-d",
+      "hrac_code": "D",
+      "chemical_class_ar": "ثنائي بيريدينيوم",
+      "chemical_class_en": "Bipyridylium",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.3–0.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — تجفيف وتبييض",
+        "max_applications_season": 2,
+        "preharvest_interval_ar": "لا ينطبق",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "منخفض",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "نادر جداً",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع G",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-d",
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع G — بديل باراكوات أو مكمله"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "جميع المحاصيل — تبييض",
+        "بطاطس — تجفيف قبل الحصاد"
+      ],
+      "spectrum_ar": "غير انتقائي",
+      "activity_type_ar": "ما بعد الإنبات — ملامسي سريع",
+      "special_use_ar": "أسرع من باراكوات — شائع لتجفيف البطاطس قبل الحصاد",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "سامة جداً للثدييات والأسماك",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-031",
+      "name_ar": "أكسيفلورفن",
+      "name_en": "Oxyfluorfen",
+      "hrac_group_id": "hrac-e",
+      "hrac_code": "E",
+      "chemical_class_ar": "ثنائي فينيل إيثر",
+      "chemical_class_en": "Diphenylether",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.15–0.3 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات وما بعده المبكر",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "60 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرة في PPO + تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-e",
+            "name_ar": "مثبطات بروتوبورفيرينوجين أوكسيديز — PPO"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين PPO",
+        "resistance_reported_in": [
+          "حشائش الأرز والبصل"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-e",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3 أو C1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        }
+      ],
+      "target_crops": [
+        "أرز",
+        "بصل",
+        "ثوم",
+        "ذرة",
+        "سورجم",
+        "قطن",
+        "فول السوداني"
+      ],
+      "spectrum_ar": "واسع — عريضات + سعدة + بعض نجيليات",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "من أشيع المبيدات في مصر — شائع في الأرز والبصل والذرة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "لا يُستخدم بعد الإنبات في الأرز إلا بعد استقرار الشتلات",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-032",
+      "name_ar": "فوميسافن",
+      "name_en": "Fomesafen",
+      "hrac_group_id": "hrac-e",
+      "hrac_code": "E",
+      "chemical_class_ar": "ثنائي فينيل إيثر",
+      "chemical_class_en": "Diphenylether",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.15–0.25 لتر م.ف/فدان",
+        "dose_post_emergence_ar": "0.15–0.25 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "60 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرة في PPO",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-e",
+            "name_ar": "مثبطات بروتوبورفيرينوجين أوكسيديز — PPO"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين PPO",
+        "resistance_reported_in": [
+          "حشائش البقوليات"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-e",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-21",
+          "name_ar": "حشيشة الزاوية — النفل الحامض"
+        }
+      ],
+      "target_crops": [
+        "فول الصويا",
+        "فول السوداني",
+        "فول"
+      ],
+      "spectrum_ar": "واسع — عريضات في البقوليات",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "انتقائي في البقوليات — بقاياه تستمر 12-18 شهر",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا طويلة تضر بالحبوب اللاحقة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-033",
+      "name_ar": "لاكتوفن",
+      "name_en": "Lactofen",
+      "hrac_group_id": "hrac-e",
+      "hrac_code": "E",
+      "chemical_class_ar": "ثنائي فينيل إيثر",
+      "chemical_class_en": "Diphenylether",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.15–0.2 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — عريضات في طور 1-3 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرة في PPO",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-e",
+            "name_ar": "مثبطات بروتوبورفيرينوجين أوكسيديز — PPO"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين PPO",
+        "resistance_reported_in": [
+          "حشائش البقوليات"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-e",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-21",
+          "name_ar": "حشيشة الزاوية — النفل الحامض"
+        }
+      ],
+      "target_crops": [
+        "فول الصويا",
+        "فول السوداني"
+      ],
+      "spectrum_ar": "متوسط — عريضات في البقوليات",
+      "activity_type_ar": "ما بعد الإنبات — ملامسي",
+      "special_use_ar": "بقايا أقصر من فوميسافن",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا قصيرة نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-034",
+      "name_ar": "بيفينوكس",
+      "name_en": "Bifenox",
+      "hrac_group_id": "hrac-e",
+      "hrac_code": "E",
+      "chemical_class_ar": "ثنائي فينيل إيثر",
+      "chemical_class_en": "Diphenylether",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرة في PPO",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-e",
+            "name_ar": "مثبطات بروتوبورفيرينوجين أوكسيديز — PPO"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين PPO",
+        "resistance_reported_in": [
+          "حشائش الحبوب"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-e",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو C2"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "أرز"
+      ],
+      "spectrum_ar": "متوسط — عريضات في الحبوب",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "شائع في الحبوب الشتوية والأرز",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا قصيرة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-035",
+      "name_ar": "فلوثياسيت ميثيل",
+      "name_en": "Fluthiacet-methyl",
+      "hrac_group_id": "hrac-e",
+      "hrac_code": "E",
+      "chemical_class_ar": "ثيادياذولين",
+      "chemical_class_en": "Thiadiazoline",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "15–20 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات المبكر",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرة في PPO — بطيء",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-e",
+            "name_ar": "مثبطات بروتوبورفيرينوجين أوكسيديز — PPO"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين PPO",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-e",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "فول الصويا"
+      ],
+      "spectrum_ar": "متوسط — عريضات",
+      "activity_type_ar": "ما بعد الإنبات",
+      "special_use_ar": "جرعة منخفضة جداً — فعّال ضد عريضات الذرة",
+      "regulatory_ar": "مسجل في بعض الدول",
+      "safety_notes_ar": "بقايا قصيرة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-036",
+      "name_ar": "جلايفوسات",
+      "name_en": "Glyphosate",
+      "hrac_group_id": "hrac-g",
+      "hrac_code": "G",
+      "chemical_class_ar": "فوسفونوأمينوأسيد",
+      "chemical_class_en": "Phosphonomethlglycine",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.5–2 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — تبييض ما قبل الزراعة",
+        "max_applications_season": 2,
+        "preharvest_interval_ar": "لا ينطبق",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "متوسط إلى عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في EPSPS (P106S/T) + تضخيم جين EPSPS + تضخيم P450",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع أي مجموعة أخرى",
+        "resistance_reported_in": [
+          "النجيل الثابت",
+          "الحلفا",
+          "نجيل ريند (Lolium) — عالمياً"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-g",
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع D أو B — لا تستخدم وحده كل موسم"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-07",
+          "name_ar": "الحلفا — إيمبيراتا"
+        },
+        {
+          "id": "weed-08",
+          "name_ar": "الذرة الجارة"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-18",
+          "name_ar": "الهالوك (الدودر)"
+        }
+      ],
+      "target_crops": [
+        "جميع المحاصيل — تبييض ما قبل الزراعة",
+        "حواف الحقول والمسالك",
+        "المزارع غير المحصولية"
+      ],
+      "spectrum_ar": "غير انتقائي — يقتل كل النباتات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي يصل الجذور",
+      "special_use_ar": "المبيد الأكثر استخداماً في العالم — ممتاز لتبييض الأراضي الموبوءة بالنجيل والحلفا",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً للثدييات — جدل علمي حول السرطان — اتبع التعليمات",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-037",
+      "name_ar": "جلوفوسينات أمونيوم",
+      "name_en": "Glufosinate-ammonium",
+      "hrac_group_id": "hrac-h",
+      "hrac_code": "H",
+      "chemical_class_ar": "فوسفينيك أسيد",
+      "chemical_class_en": "Phosphinic acid",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.5–1.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — تبييض وتجفيف",
+        "max_applications_season": 2,
+        "preharvest_interval_ar": "لا ينطبق",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "منخفض",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا حالات مقاومة حقيقية موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع G أو D",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-h",
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع G — بديل ممتاز للجلايفوسات"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "جميع المحاصيل — تبييض",
+        "محاصيل معدلة وراثياً (Liberty Link)"
+      ],
+      "spectrum_ar": "غير انتقائي — واسع",
+      "activity_type_ar": "ما بعد الإنبات — ملامسي سريع",
+      "special_use_ar": "بديل ممتاز للجلايفوسات حيث ظهرت مقاومته — لا مقاومة موثقة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً — لا يُدار في التربة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-038",
+      "name_ar": "تريفلورالين",
+      "name_en": "Trifluralin",
+      "hrac_group_id": "hrac-k1",
+      "hrac_code": "K1",
+      "chemical_class_ar": "ثنائي نيترو أنيلين",
+      "chemical_class_en": "Dinitroaniline",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.3–0.6 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة — دمج فوري"
+        ],
+        "timing_ar": "ما قبل الإنبات — يجب دمجه بالتربة",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "يحتاج دمجاً بالتربة"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرات في جين tubulin — نادرة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع A أو B أو K3",
+        "resistance_reported_in": [
+          "نجيل الريند (Lolium) عالمياً"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-k1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع A أو K3 أو B"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-25",
+          "name_ar": "العليق الشوكي — الحسك"
+        }
+      ],
+      "target_crops": [
+        "قطن",
+        "فول السوداني",
+        "فول",
+        "طماطم",
+        "فلفل",
+        "خضروات"
+      ],
+      "spectrum_ar": "واسع — نجيليات + بعض عريضات",
+      "activity_type_ar": "ما قبل الإنبات — يجب دمجه",
+      "special_use_ar": "الأشيع ضد حشائش القطن والفول السوداني — رخيص وفعّال",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "متطاير — يجب دمجه فوراً — محظور في بعض الدول",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-039",
+      "name_ar": "بيندامثالين",
+      "name_en": "Pendimethalin",
+      "hrac_group_id": "hrac-k1",
+      "hrac_code": "K1",
+      "chemical_class_ar": "ثنائي نيترو أنيلين",
+      "chemical_class_en": "Dinitroaniline",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات — تربة رطبة",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرات في جين tubulin",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع A أو B",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-k1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع A أو K3 أو B"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-01",
+          "name_ar": "الفلاريس — الشوفان الكاذب"
+        },
+        {
+          "id": "weed-02",
+          "name_ar": "الشوفان البري"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "قطن",
+        "فول",
+        "ذرة",
+        "قمح",
+        "خضروات",
+        "بصل"
+      ],
+      "spectrum_ar": "واسع — نجيليات + عريضات",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "لا يحتاج دمجاً مثل تريفلورالين — أفضل استقراراً",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً — يحتاج رطوبة للتفعيل",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-040",
+      "name_ar": "أوريزالين",
+      "name_en": "Oryzalin",
+      "hrac_group_id": "hrac-k1",
+      "hrac_code": "K1",
+      "chemical_class_ar": "ثنائي نيترو أنيلين",
+      "chemical_class_en": "Dinitroaniline",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "منخفض",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "طفرات في tubulin — نادرة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع A أو B",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-k1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K3 أو A"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "كرم",
+        "مسطحات خضراء",
+        "بساتين فاكهة",
+        "طماطم"
+      ],
+      "spectrum_ar": "متوسط — نجيليات + عريضات",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "شائع في البساتين والمسطحات الخضراء",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-041",
+      "name_ar": "ميتولاكلور-S",
+      "name_en": "S-Metolachlor",
+      "hrac_group_id": "hrac-k3",
+      "hrac_code": "K3",
+      "chemical_class_ar": "كلوروأسيتاميد",
+      "chemical_class_en": "Chloroacetamide",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 لتر م.ف/فدان",
+        "dose_post_emergence_ar": "0.3–0.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش تربة",
+          "رش ورقي"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات المبكر",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450 + GST — بطيء",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-k3",
+            "name_ar": "مثبطات انقسام الخلايا — كلوروأسيتاميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين كلوروأسيتاميد",
+        "resistance_reported_in": [
+          "حشائش متعددة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-k3",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K1 أو B أو A"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-25",
+          "name_ar": "العليق الشوكي — الحسك"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "قطن",
+        "فول الصويا",
+        "سورجم",
+        "بطيخ"
+      ],
+      "spectrum_ar": "واسع — نجيليات حولية + بعض عريضات",
+      "activity_type_ar": "ما قبل وما بعد الإنبات المبكر",
+      "special_use_ar": "من أشيع كلوروأسيتاميدات في مصر — الأقل تطايراً من أسيتوكلور",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً — محتمل مسرطن في جرعات عالية",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-042",
+      "name_ar": "أسيتوكلور",
+      "name_en": "Acetochlor",
+      "hrac_group_id": "hrac-k3",
+      "hrac_code": "K3",
+      "chemical_class_ar": "كلوروأسيتاميد",
+      "chemical_class_en": "Chloroacetamide",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1.5 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450 + GST",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-k3",
+            "name_ar": "مثبطات انقسام الخلايا — كلوروأسيتاميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين كلوروأسيتاميد",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-k3",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K1 أو B"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "قطن",
+        "فول الصويا",
+        "سورجم"
+      ],
+      "spectrum_ar": "واسع — نجيليات حولية + عريضات",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "من أشيع مبيدات الحشائش في الذرة والقطن",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "محتمل مسرطن في جرعات عالية — يحتاج رطوبة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-043",
+      "name_ar": "بريتيلاكلور",
+      "name_en": "Pretilachlor",
+      "hrac_group_id": "hrac-k3",
+      "hrac_code": "K3",
+      "chemical_class_ar": "كلوروأسيتاميد",
+      "chemical_class_en": "Chloroacetamide",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.4–0.6 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش ماء ري",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات في الأرز",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "ممتاز في الأرز المزروع ماءً"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-k3",
+            "name_ar": "مثبطات انقسام الخلايا — كلوروأسيتاميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع كلوروأسيتاميد",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-k3",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو E في الأرز"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "أرز"
+      ],
+      "spectrum_ar": "متوسط — حشائش الأرز",
+      "activity_type_ar": "ما قبل الإنبات في الأرز",
+      "special_use_ar": "انتقائي جداً في الأرز — يُضاف لماء الري",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن في الأرز — يحتاج ماء ثابتاً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-044",
+      "name_ar": "ألاكلور",
+      "name_en": "Alachlor",
+      "hrac_group_id": "hrac-k3",
+      "hrac_code": "K3",
+      "chemical_class_ar": "كلوروأسيتاميد",
+      "chemical_class_en": "Chloroacetamide",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1.5 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-k3",
+            "name_ar": "مثبطات انقسام الخلايا — كلوروأسيتاميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع كلوروأسيتاميد",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-k3",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K1 أو B"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "قطن",
+        "فول الصويا"
+      ],
+      "spectrum_ar": "واسع — نجيليات حولية + عريضات",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "من أقدم الكلوروأسيتاميدات — يُستبدل تدريجياً بأسيتوكلور وميتولاكلور",
+      "regulatory_ar": "محظور في الاتحاد الأوروبي — مسجل في بعض الدول",
+      "safety_notes_ar": "محتمل مسرطن",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-045",
+      "name_ar": "ديميثيناميد-P",
+      "name_en": "Dimethenamid-P",
+      "hrac_group_id": "hrac-k3",
+      "hrac_code": "K3",
+      "chemical_class_ar": "كلوروأسيتاميد",
+      "chemical_class_en": "Chloroacetamide",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–0.8 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-k3",
+            "name_ar": "مثبطات انقسام الخلايا — كلوروأسيتاميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-k3",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K1 أو B"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "فول الصويا",
+        "سورجم",
+        "بنجر سكري"
+      ],
+      "spectrum_ar": "واسع",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "P-إيزومر — جرعة أقل من دايمثيناميد",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-046",
+      "name_ar": "بوتاكلور",
+      "name_en": "Butachlor",
+      "hrac_group_id": "hrac-k3",
+      "hrac_code": "K3",
+      "chemical_class_ar": "كلوروأسيتاميد",
+      "chemical_class_en": "Chloroacetamide",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش ماء ري",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات في الأرز",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "ممتاز في الأرز"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-k3",
+            "name_ar": "مثبطات انقسام الخلايا — كلوروأسيتاميد"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-k3",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو E في الأرز"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "أرز"
+      ],
+      "spectrum_ar": "متوسط — حشائش الأرز",
+      "activity_type_ar": "ما قبل الإنبات في الأرز",
+      "special_use_ar": "من أشيع مبيدات حشائش الأرز في آسيا ومصر",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن في الأرز",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-047",
+      "name_ar": "EPTC — إيبتك",
+      "name_en": "EPTC",
+      "hrac_group_id": "hrac-n",
+      "hrac_code": "N",
+      "chemical_class_ar": "ثيوكاربامات",
+      "chemical_class_en": "Thiocarbamate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "1–2 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة — دمج فوري"
+        ],
+        "timing_ar": "ما قبل الإنبات — يجب دمجه فوراً",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "يحتاج دمجاً بالتربة"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع A أو B",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-n",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K1 أو A"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "بطاطس",
+        "بنجر سكري",
+        "ذرة",
+        "فاصوليا"
+      ],
+      "spectrum_ar": "واسع — نجيليات + سيبيراسيا",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "فعّال ضد السمير والسعدة — يجب دمجه بالتربة فوراً لمنع التطاير",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "متطاير — دمج فوري إلزامي",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-048",
+      "name_ar": "موليناتي",
+      "name_en": "Molinate",
+      "hrac_group_id": "hrac-n",
+      "hrac_code": "N",
+      "chemical_class_ar": "ثيوكاربامات",
+      "chemical_class_en": "Thiocarbamate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "1–2 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش ماء ري",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات في الأرز",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "30 يوم",
+        "soil_activity_ar": "ممتاز في الأرز المغمور"
+      },
+      "resistance": {
+        "risk_ar": "منخفض",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "بطيء جداً",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع A أو B",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-n",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K3 أو B في الأرز"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-06",
+          "name_ar": "العريش وحشيشة الأرز"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        }
+      ],
+      "target_crops": [
+        "أرز"
+      ],
+      "spectrum_ar": "متوسط — حشائش الأرز",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "انتقائي جداً في الأرز — يُضاف لماء الري",
+      "regulatory_ar": "محظور في الاتحاد الأوروبي — مسجل في بعض دول",
+      "safety_notes_ar": "متطاير — احذر من التلوث البيئي",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-049",
+      "name_ar": "بيوتيليت",
+      "name_en": "Butylate",
+      "hrac_group_id": "hrac-n",
+      "hrac_code": "N",
+      "chemical_class_ar": "ثيوكاربامات",
+      "chemical_class_en": "Thiocarbamate",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "1.5–3 لتر م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة — دمج فوري"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "يحتاج دمجاً"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع A أو B",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-n",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع K1 أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        }
+      ],
+      "target_crops": [
+        "ذرة"
+      ],
+      "spectrum_ar": "متوسط — نجيليات + سيبيراسيا في الذرة",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "انتقائي في الذرة — يدمج بالتربة فوراً",
+      "regulatory_ar": "مسجل في بعض الدول",
+      "safety_notes_ar": "متطاير — دمج فوري إلزامي",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-050",
+      "name_ar": "2,4-D",
+      "name_en": "2,4-D",
+      "hrac_group_id": "hrac-o",
+      "hrac_code": "O",
+      "chemical_class_ar": "فينوكسي كاربوكسيليك أسيد",
+      "chemical_class_en": "Phenoxycarboxylic acid",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.5–1.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات — عريضات في طور 2-6 أوراق",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "7–14 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450 — تغيير حركة المبيد — طفرات في TIR1",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-o",
+            "name_ar": "هرمونات الأوكسين الاصطناعية — فينوكسي كاربوكسيليك"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين فينوكسيات",
+        "resistance_reported_in": [
+          "الخردل البري",
+          "الزبيبة"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-o",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو C2 أو E"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-15",
+          "name_ar": "الخبازة"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-21",
+          "name_ar": "حشيشة الزاوية — النفل الحامض"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        },
+        {
+          "id": "weed-23",
+          "name_ar": "الإسبير — النجم"
+        },
+        {
+          "id": "weed-24",
+          "name_ar": "حشيشة الفجل — النزعة"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "أرز",
+        "ذرة",
+        "قصب سكر",
+        "مسطحات خضراء"
+      ],
+      "spectrum_ar": "واسع — عريضات الأوراق فقط",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "الأرخص والأشيع في العالم ضد عريضات الحبوب — موجود منذ 1945",
+      "regulatory_ar": "مسجل ومتاح — رخيص جداً",
+      "safety_notes_ar": "التطاير يضر بالمحاصيل الحساسة المجاورة (طماطم، عنب) — لا تستخدم في الرياح",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-051",
+      "name_ar": "إيمام — MCPA",
+      "name_en": "MCPA",
+      "hrac_group_id": "hrac-o",
+      "hrac_code": "O",
+      "chemical_class_ar": "فينوكسي كاربوكسيليك أسيد",
+      "chemical_class_en": "Phenoxycarboxylic acid",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.5–1.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "7–14 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450 — طفرات في TIR1",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-o",
+            "name_ar": "هرمونات الأوكسين الاصطناعية — فينوكسي كاربوكسيليك"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع 2,4-D",
+        "resistance_reported_in": [
+          "الخردل البري"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-o",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو C2"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-15",
+          "name_ar": "الخبازة"
+        },
+        {
+          "id": "weed-16",
+          "name_ar": "الفصة البرية — البرسيم الحامض"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        },
+        {
+          "id": "weed-23",
+          "name_ar": "الإسبير — النجم"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "شوفان"
+      ],
+      "spectrum_ar": "واسع — عريضات الشتوية في الحبوب",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "أفضل من 2,4-D في الحبوب الشتوية — أقل تطايراً",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "أقل خطراً من 2,4-D على المحاصيل المجاورة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-052",
+      "name_ar": "ديكامبا",
+      "name_en": "Dicamba",
+      "hrac_group_id": "hrac-o",
+      "hrac_code": "O",
+      "chemical_class_ar": "بنزويك أسيد",
+      "chemical_class_en": "Benzoic acid",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.2–0.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "14–21 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450 — طفرات في TIR1",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-o",
+            "name_ar": "هرمونات الأوكسين الاصطناعية — فينوكسي كاربوكسيليك"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع 2,4-D",
+        "resistance_reported_in": [
+          "الخردل البري",
+          "الحنظل"
+        ]
+      },
+      "rotation": {
+        "group_id": "hrac-o",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو C2"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-21",
+          "name_ar": "حشيشة الزاوية — النفل الحامض"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        },
+        {
+          "id": "weed-23",
+          "name_ar": "الإسبير — النجم"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "ذرة",
+        "مسطحات خضراء"
+      ],
+      "spectrum_ar": "واسع — عريضات ومعمريات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "فعّال ضد المعمريات العريضة مثل الحنظل والحشيشة الزرقاء — أكثر قوة من 2,4-D ضد المعمريات",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "التطاير الثانوي يضر بالمحاصيل المجاورة — احذر جداً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-053",
+      "name_ar": "فلوروكسيبير",
+      "name_en": "Fluroxypyr",
+      "hrac_group_id": "hrac-o",
+      "hrac_code": "O",
+      "chemical_class_ar": "بيريدين كاربوكسيليك أسيد",
+      "chemical_class_en": "Pyridine carboxylic acid",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.1–0.2 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "14 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-o",
+            "name_ar": "هرمونات الأوكسين الاصطناعية — فينوكسي كاربوكسيليك"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع 2,4-D",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-o",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو C2"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-10",
+          "name_ar": "الخردل البري"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-15",
+          "name_ar": "الخبازة"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        },
+        {
+          "id": "weed-23",
+          "name_ar": "الإسبير — النجم"
+        },
+        {
+          "id": "weed-24",
+          "name_ar": "حشيشة الفجل — النزعة"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "ذرة",
+        "قصب سكر",
+        "مسطحات خضراء"
+      ],
+      "spectrum_ar": "واسع — عريضات وبعض المعمريات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "فعّال ضد الحنظل والمعمريات — لا تطاير مثل ديكامبا",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-054",
+      "name_ar": "كلوبيراليد",
+      "name_en": "Clopyralid",
+      "hrac_group_id": "hrac-o",
+      "hrac_code": "O",
+      "chemical_class_ar": "بيريدين كاربوكسيليك أسيد",
+      "chemical_class_en": "Pyridine carboxylic acid",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.1–0.3 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "14–21 يوم",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "منخفض",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "بطيء جداً",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-o",
+            "name_ar": "هرمونات الأوكسين الاصطناعية — فينوكسي كاربوكسيليك"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية جداً",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-o",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو C2"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-14",
+          "name_ar": "البابونج"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        },
+        {
+          "id": "weed-19",
+          "name_ar": "الحشيشة الزرقاء — بولي جونوم"
+        },
+        {
+          "id": "weed-21",
+          "name_ar": "حشيشة الزاوية — النفل الحامض"
+        },
+        {
+          "id": "weed-22",
+          "name_ar": "البرهان — الشبث"
+        },
+        {
+          "id": "weed-23",
+          "name_ar": "الإسبير — النجم"
+        },
+        {
+          "id": "weed-24",
+          "name_ar": "حشيشة الفجل — النزعة"
+        }
+      ],
+      "target_crops": [
+        "قمح",
+        "شعير",
+        "ذرة",
+        "بنجر سكري",
+        "مسطحات خضراء"
+      ],
+      "spectrum_ar": "متوسط — عريضات وبعض فصيلة المركبات",
+      "activity_type_ar": "ما بعد الإنبات — جهازي",
+      "special_use_ar": "متخصص ضد فصيلة المركبات والبقوليات البرية — فعّال ضد الحنظل",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا تضر بالطماطم والبطاطس",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-055",
+      "name_ar": "نورفلورازون",
+      "name_en": "Norflurazon",
+      "hrac_group_id": "hrac-f1",
+      "hrac_code": "F1",
+      "chemical_class_ar": "فلوريدازون — بيريدازينون",
+      "chemical_class_en": "Pyridazinone",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "90 يوم",
+        "soil_activity_ar": "نشاط أرضي طويل"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرات في PDS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-f1",
+            "name_ar": "مثبطات تخليق الكاروتينويد — PDS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع PDS الأخرى",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-f1",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو C1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "قطن",
+        "حمضيات",
+        "بساتين فاكهة",
+        "مسطحات خضراء"
+      ],
+      "spectrum_ar": "واسع — نجيليات + عريضات",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "شائع في بساتين الفاكهة والحمضيات — بقايا طويلة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا طويلة الأمد",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-056",
+      "name_ar": "فلوريدون",
+      "name_en": "Fluridone",
+      "hrac_group_id": "hrac-f1",
+      "hrac_code": "F1",
+      "chemical_class_ar": "فلوريدازون",
+      "chemical_class_en": "Fluoridone",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.5–1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "إضافة للماء"
+        ],
+        "timing_ar": "علاج مائي",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط مائي"
+      },
+      "resistance": {
+        "risk_ar": "منخفض",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "طفرات في PDS",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-f1",
+            "name_ar": "مثبطات تخليق الكاروتينويد — PDS"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-f1",
+        "must_rotate_after": 1,
+        "note_ar": "يُستخدم في قنوات الري"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-03",
+          "name_ar": "النجيل الثابت"
+        },
+        {
+          "id": "weed-09",
+          "name_ar": "السمير — الحشيشة الحامضة"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "قنوات الري",
+        "البرك",
+        "المجاري المائية"
+      ],
+      "spectrum_ar": "واسع — حشائش مائية",
+      "activity_type_ar": "علاج مائي",
+      "special_use_ar": "متخصص لمكافحة الحشائش المائية في قنوات الري",
+      "regulatory_ar": "مسجل في بعض الدول",
+      "safety_notes_ar": "لا يُستخدم في قنوات مرتبطة بمياه الشرب",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-057",
+      "name_ar": "ميزوتريون",
+      "name_en": "Mesotrione",
+      "hrac_group_id": "hrac-f2",
+      "hrac_code": "F2",
+      "chemical_class_ar": "تريكيتون",
+      "chemical_class_en": "Triketone",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.1–0.15 كجم م.ف/فدان",
+        "dose_post_emergence_ar": "0.1–0.15 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل وما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي متوسط"
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450 — طفرات في HPPD",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-f2",
+            "name_ar": "مثبطات 4-هيدروكسي فينيل بيروفات ديوكسيجيناز — HPPD"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين HPPD",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-f2",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3 أو C1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "ذرة"
+      ],
+      "spectrum_ar": "واسع — نجيليات + عريضات في الذرة",
+      "activity_type_ar": "ما قبل وما بعد الإنبات",
+      "special_use_ar": "فعّال ضد الأترازين-المقاومة — يُسبب ابيضاض مميز",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-058",
+      "name_ar": "تيمبوتريون",
+      "name_en": "Tembotrione",
+      "hrac_group_id": "hrac-f2",
+      "hrac_code": "F2",
+      "chemical_class_ar": "تريكيتون",
+      "chemical_class_en": "Triketone",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": null,
+        "dose_post_emergence_ar": "0.08–0.1 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "ما بعد الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": null
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم P450",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-f2",
+            "name_ar": "مثبطات 4-هيدروكسي فينيل بيروفات ديوكسيجيناز — HPPD"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين HPPD",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-f2",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        },
+        {
+          "id": "weed-17",
+          "name_ar": "الحنظل — الشيكران"
+        }
+      ],
+      "target_crops": [
+        "ذرة"
+      ],
+      "spectrum_ar": "واسع — حشائش الذرة",
+      "activity_type_ar": "ما بعد الإنبات",
+      "special_use_ar": "جرعة منخفضة — يُسبب ابيضاض — فعّال ضد عريضات الذرة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    },
+    {
+      "id": "hai-059",
+      "name_ar": "إيزوكسافلوتول",
+      "name_en": "Isoxaflutole",
+      "hrac_group_id": "hrac-f2",
+      "hrac_code": "F2",
+      "chemical_class_ar": "إيزوكسازول",
+      "chemical_class_en": "Isoxazole",
+      "contact_systemic": "جهازي",
+      "selectivity_ar": "",
+      "application": {
+        "dose_pre_emergence_ar": "0.06–0.1 كجم م.ف/فدان",
+        "dose_post_emergence_ar": null,
+        "methods_ar": [
+          "رش تربة"
+        ],
+        "timing_ar": "ما قبل الإنبات",
+        "max_applications_season": 1,
+        "preharvest_interval_ar": "--",
+        "soil_activity_ar": "نشاط أرضي ممتاز"
+      },
+      "resistance": {
+        "risk_ar": "متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرات في HPPD",
+        "cross_resistance_groups": [
+          {
+            "id": "hrac-f2",
+            "name_ar": "مثبطات 4-هيدروكسي فينيل بيروفات ديوكسيجيناز — HPPD"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين HPPD",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "hrac-f2",
+        "must_rotate_after": 1,
+        "note_ar": "تناوب مع B أو K3 أو C1"
+      },
+      "target_weeds": [
+        {
+          "id": "weed-04",
+          "name_ar": "حشيشة الحمار — نجيل الريح"
+        },
+        {
+          "id": "weed-05",
+          "name_ar": "الذيل الثعلبي — سيتاريا"
+        },
+        {
+          "id": "weed-11",
+          "name_ar": "الزبيبة — الهندباء"
+        },
+        {
+          "id": "weed-12",
+          "name_ar": "الرجلة"
+        },
+        {
+          "id": "weed-13",
+          "name_ar": "الحميضة — حشيشة الشين"
+        }
+      ],
+      "target_crops": [
+        "ذرة",
+        "قصب سكر"
+      ],
+      "spectrum_ar": "واسع — نجيليات + عريضات",
+      "activity_type_ar": "ما قبل الإنبات",
+      "special_use_ar": "ممتاز للمكافحة ما قبل الإنبات في الذرة — يُحوَّل للمادة الفعّالة داخل التربة",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "بقايا متوسطة",
+      "references": "HRAC MoA Classification 2020 | Weed Science Society of America"
+    }
+  ]
+}

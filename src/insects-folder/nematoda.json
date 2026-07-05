@@ -1,0 +1,1006 @@
+{
+  "metadata": {
+    "id": "hefnoplant_nematoda_db",
+    "name_ar": "الديدان الخيطية — قاعدة بيانات النيماتودا",
+    "name_en": "HefnoPlant — Nematode Database",
+    "card_type": "danger_special",
+    "card_color": "#8B0000",
+    "card_icon": "nematode_alert",
+    "version": "1.0.0",
+    "priority": "critical",
+    "sources": [
+      "CAB International — Nematology Database",
+      "إدارة مكافحة الآفات — وزارة الزراعة المصرية",
+      "قسم النيماتولوجيا — مركز البحوث الزراعية",
+      "FAO — Nematode Management Guidelines",
+      "Journal of Nematology — Published Research",
+      "University of Florida IFAS — Nematode Guide"
+    ],
+    "warning_ar": "النيماتودا تسبب خسائر تتراوح بين 10-25% من الإنتاج الزراعي العالمي سنوياً — وفي مصر تقدر الخسائر بأكثر من 2 مليار جنيه سنوياً",
+    "last_updated": "2024"
+  },
+  "general_overview": {
+    "definition_ar": "النيماتودا أو الديدان الخيطية كائنات دقيقة متعددة الخلايا تنتمي لشعبة Nematoda — معظمها لا يرى بالعين المجردة — طولها يتراوح من 0.3 مم إلى عدة سنتيمترات — تعيش في التربة والمياه وجسم المضيف",
+    "size_ar": "0.1 — 5 مم (معظم الأنواع الزراعية الضارة 0.3 — 1.5 مم)",
+    "shape_ar": "خيطية الشكل — أسطوانية — رفيعة للغاية — تتحرك بحركة تموجية مميزة",
+    "habitat_ar": [
+      "التربة الزراعية (الأكثر شيوعاً)",
+      "المياه العذبة والمالحة",
+      "داخل أنسجة جذور النبات",
+      "داخل أجسام الحشرات والحيوانات والإنسان"
+    ],
+    "lifecycle_summary_ar": "بيضة → يرقة L1 → يرقة L2 (المرحلة المعدية) → يرقة L3 → يرقة L4 → بالغ — دورة حياة كاملة تتراوح بين 3 أسابيع و 3 أشهر حسب النوع ودرجة الحرارة",
+    "why_dangerous_ar": [
+      "تمتص عصارة الجذور وتضعف النبات بشكل مستمر",
+      "تحدث جروحاً في الجذور تكون بوابة لدخول الفطريات والبكتيريا",
+      "تخل بامتصاص الماء والعناصر الغذائية",
+      "تبقى في التربة لسنوات حتى بدون عائل",
+      "لا ترى بالعين المجردة — التشخيص صعب",
+      "تنتشر بسرعة عبر التربة الملوثة ومياه الري والأدوات الزراعية"
+    ],
+    "economic_losses_egypt_ar": {
+      "annual_losses_egp": "أكثر من 2 مليار جنيه",
+      "most_affected_crops_ar": [
+        "بطاطس",
+        "طماطم",
+        "موز",
+        "خضروات في الأراضي الرملية",
+        "محاصيل الدلتا"
+      ],
+      "yield_loss_percent": "10-80% حسب شدة الإصابة والمحصول"
+    }
+  },
+  "classification": {
+    "kingdom": "Animalia",
+    "phylum": "Nematoda",
+    "note_ar": "يوجد أكثر من 25,000 نوع موصوف — منها 4,000 نوع طفيلي للنبات — ومنها مفيد كمفترس للحشرات",
+    "main_groups_ar": [
+      {
+        "group_ar": "نيماتودا طفيلية للنبات (الضارة زراعياً)",
+        "group_en": "Plant Parasitic Nematodes",
+        "description_ar": "تتغذى على خلايا الجذور وتسبب الأضرار الزراعية"
+      },
+      {
+        "group_ar": "نيماتودا مفترسة (المفيدة)",
+        "group_en": "Entomopathogenic Nematodes",
+        "description_ar": "تتطفل على الحشرات وتقتلها — تستخدم في المكافحة البيولوجية"
+      },
+      {
+        "group_ar": "نيماتودا حرة المعيشة",
+        "group_en": "Free-living Nematodes",
+        "description_ar": "تتغذى على البكتيريا والفطريات — تحسن دورة المغذيات في التربة"
+      }
+    ]
+  },
+  "species": [
+    {
+      "id": "nem-001",
+      "name_ar": "نيماتودا تعقد الجذور",
+      "name_en": "Root-Knot Nematode",
+      "name_scientific": "Meloidogyne spp.",
+      "common_species": [
+        "Meloidogyne incognita",
+        "Meloidogyne javanica",
+        "Meloidogyne arenaria",
+        "Meloidogyne hapla"
+      ],
+      "danger_level": "عالية جداً",
+      "danger_icon": "🔴",
+      "prevalence_egypt": "الأكثر انتشاراً في مصر — موجودة في جميع المحافظات",
+      "feeding_type_ar": "داخلية راسخة — تدخل وتستقر داخل الجذر",
+      "description_ar": "الأكثر خطورة واتساعاً على مستوى العالم ومصر — تشكل عقداً (نتوءات) مميزة على الجذور — الأنثى تضع مئات البيض داخل كيس جيلاتيني",
+      "lifecycle": {
+        "total_days_at_25c": "25-30 يوم",
+        "stages_ar": [
+          {
+            "stage": "البيضة",
+            "duration_ar": "7-10 أيام",
+            "notes_ar": "تودع في كيس بيض جيلاتيني — قد يحتوي 200-500 بيضة"
+          },
+          {
+            "stage": "يرقة L1",
+            "duration_ar": "داخل البيضة — لا تغادرها",
+            "notes_ar": "تنسلخ مرة واحدة داخل البيضة"
+          },
+          {
+            "stage": "يرقة L2 (المرحلة المعدية)",
+            "duration_ar": "تتحرك حرة في التربة لأسابيع",
+            "notes_ar": "تبحث عن منطقة نمو الجذر — تخترق الجذر بالإبرة الفمية (Stylet)"
+          },
+          {
+            "stage": "يرقة L3 و L4",
+            "duration_ar": "5-10 أيام",
+            "notes_ar": "داخل الجذر — تتوقف عن الحركة وتبدأ في التغذية — تحدث تضخم الخلايا"
+          },
+          {
+            "stage": "البالغ",
+            "duration_ar": "الأنثى تعيش 4-8 أسابيع",
+            "notes_ar": "الأنثى كمثرية الشكل وراسخة داخل الجذر — الذكر خيطي يغادر الجذر"
+          }
+        ],
+        "generations_per_year": "4-12 جيل حسب درجة الحرارة",
+        "optimal_temp_c": "25-30",
+        "min_temp_c": 10,
+        "max_temp_c": 38
+      },
+      "symptoms": {
+        "underground_ar": [
+          "عقد (نتوءات) واضحة على الجذور — الميزة التشخيصية الأولى",
+          "تشوه وتفرع مفرط للجذور",
+          "تعفن الجذور الثانوي بسبب الفطريات والبكتيريا",
+          "ضعف عام في منظومة الجذور"
+        ],
+        "aboveground_ar": [
+          "تقزم النبات وضعف النمو",
+          "اصفرار الأوراق (كلوروز) يشبه نقص العناصر",
+          "ذبول في وقت الظهيرة حتى عند توفر الماء",
+          "تأخر النضج والإزهار",
+          "انخفاض حجم وجودة الثمار",
+          "موت النبات في الإصابات الشديدة"
+        ],
+        "confusion_with_ar": [
+          "نقص النيتروجين",
+          "نقص الحديد",
+          "الجفاف",
+          "أمراض الذبول الفطري"
+        ]
+      },
+      "host_plants_ar": {
+        "highly_susceptible_ar": [
+          "طماطم",
+          "خيار",
+          "فلفل",
+          "باذنجان",
+          "بطاطس",
+          "جزر",
+          "فراولة",
+          "موز",
+          "فول سوداني"
+        ],
+        "moderately_susceptible_ar": [
+          "قمح",
+          "ذرة",
+          "فاصوليا",
+          "بصل",
+          "ثوم",
+          "ملفوف"
+        ],
+        "resistant_ar": [
+          "نجيليات بعض الأصناف",
+          "قطن بعض الأصناف",
+          "جزر مقاوم"
+        ],
+        "note_ar": "تصيب أكثر من 3000 نوع نبات"
+      },
+      "spread_methods_ar": [
+        "التربة الملوثة المنقولة بالأدوات والآلات",
+        "مياه الري الملوثة",
+        "الشتلات والبذور الملوثة",
+        "الأحذية وملابس المزارعين",
+        "الرياح (بدرجة محدودة في تربة خفيفة)"
+      ],
+      "soil_preferences_ar": {
+        "best_conditions_ar": "رملية خفيفة — درجة حرارة 25-30 °م — رطوبة متوسطة",
+        "worst_conditions_ar": "طينية ثقيلة باردة — أقل من 10 °م — أعلى من 38 °م"
+      },
+      "management": {
+        "cultural_ar": [
+          {
+            "method_ar": "الدورة الزراعية",
+            "details_ar": "زراعة محاصيل غير عائلة (بصل، ثوم، نجيليات) لمدة موسمين متتاليين — تخفض الكثافة 60-80%",
+            "effectiveness": "عالية",
+            "cost": "منخفض"
+          },
+          {
+            "method_ar": "التشميس (Soil Solarization)",
+            "details_ar": "تغطية التربة الرطبة بنايلون شفاف لمدة 4-6 أسابيع في الصيف — ترفع درجة الحرارة إلى 50-60 °م فتقتل النيماتودا",
+            "effectiveness": "عالية جداً",
+            "cost": "متوسط - منخفض"
+          },
+          {
+            "method_ar": "إزالة بقايا المحصول",
+            "details_ar": "التخلص الفوري من الجذور المصابة وحرقها — لا تترك في التربة",
+            "effectiveness": "متوسطة",
+            "cost": "منخفض"
+          },
+          {
+            "method_ar": "استخدام أصناف مقاومة",
+            "details_ar": "زراعة طماطم بجين Mi-1.2 — خيار هجن مقاومة — بطاطس مقاومة",
+            "effectiveness": "عالية",
+            "cost": "منخفض"
+          },
+          {
+            "method_ar": "التطعيم على أصول مقاومة",
+            "details_ar": "تطعيم الطماطم على Solanum torvum أو KNVF — فعّال جداً في الزراعة المحمية",
+            "effectiveness": "عالية جداً",
+            "cost": "مرتفع"
+          }
+        ],
+        "biological_ar": [
+          {
+            "agent_ar": "Purpureocillium lilacinum (فطر)",
+            "details_ar": "فطر طفيلي على بيض النيماتودا — يضاف للتربة كمسحوق",
+            "effectiveness": "عالية - متوسطة",
+            "availability_ar": "متوفر تجارياً في مصر"
+          },
+          {
+            "agent_ar": "Bacillus firmus",
+            "details_ar": "بكتيريا تنتج مواد تثبط النيماتودا — تضاف كتلقيح للبذور أو التربة",
+            "effectiveness": "متوسطة",
+            "availability_ar": "متوفر في منتجات BioNem وغيرها"
+          },
+          {
+            "agent_ar": "Trichoderma harzianum",
+            "details_ar": "مزدوج الفائدة (نيماتودا + فطريات) — يفرز إنزيمات تهاجم كيس البيض",
+            "effectiveness": "متوسطة",
+            "availability_ar": "واسع الانتشار في مصر"
+          },
+          {
+            "agent_ar": "نباتات طاردة (Biofumigation)",
+            "details_ar": "زراعة خردل أو كزبرة أو القطيفة Tagetes بين المحاصيل — تفرز مواد تطرد النيماتودا",
+            "effectiveness": "متوسطة",
+            "availability_ar": "بذور متوفرة — سهل التطبيق"
+          }
+        ],
+        "chemical_ar": [
+          {
+            "active_ingredient_ar": "أوكساميل (Oxamyl)",
+            "trade_names_ar": [
+              "فيداب",
+              "أوكسادمير"
+            ],
+            "dose_ar": "2-3 لتر/فدان",
+            "method_ar": "حقن في التربة أو مع الري",
+            "preharvest_interval_days": 14,
+            "toxicity_ar": "عالية — تستخدم بحذر شديد",
+            "egypt_registered": true
+          },
+          {
+            "active_ingredient_ar": "فوسثيازيت (Fosthiazate)",
+            "trade_names_ar": [
+              "نيماكور"
+            ],
+            "dose_ar": "3-5 كجم/فدان",
+            "method_ar": "خلط مع التربة قبل الزراعة",
+            "preharvest_interval_days": 30,
+            "toxicity_ar": "متوسطة",
+            "egypt_registered": true
+          },
+          {
+            "active_ingredient_ar": "إيثوبروب (Ethoprophos)",
+            "trade_names_ar": [
+              "موكاب"
+            ],
+            "dose_ar": "4-6 كجم/فدان",
+            "method_ar": "تحت السطح قبل الزراعة",
+            "preharvest_interval_days": 60,
+            "toxicity_ar": "عالية — محدودية الاستخدام",
+            "egypt_registered": true
+          },
+          {
+            "active_ingredient_ar": "فلوبينداميد + سبيروديكلوفين (Fluopyram)",
+            "trade_names_ar": [
+              "فيلوم برايم"
+            ],
+            "dose_ar": "0.5-1 لتر/فدان",
+            "method_ar": "مع الري",
+            "preharvest_interval_days": 7,
+            "toxicity_ar": "جيل جديد — منخفضة نسبياً",
+            "egypt_registered": true
+          }
+        ],
+        "organic_options_ar": [
+          {
+            "material_ar": "مستخلص النيم (Azadirachtin)",
+            "details_ar": "يثبط تطور اليرقات ويمنع وضع البيض",
+            "dose_ar": "2-4 لتر/فدان",
+            "effectiveness": "متوسطة"
+          },
+          {
+            "material_ar": "الكمبوست الناضج",
+            "details_ar": "يحسن الحياة الميكروبية في التربة ويعزز المفترسات الطبيعية للنيماتودا",
+            "dose_ar": "3-5 طن/فدان",
+            "effectiveness": "متوسطة على المدى البعيد"
+          },
+          {
+            "material_ar": "كسب بذرة النيم",
+            "details_ar": "يضاف للتربة — معتمد في الزراعة العضوية",
+            "dose_ar": "50-100 كجم/فدان",
+            "effectiveness": "متوسطة"
+          }
+        ]
+      },
+      "diagnosis_ar": {
+        "field_ar": "الفحص المباشر للجذور — وجود عقد بارزة دليل قاطع على Meloidogyne",
+        "lab_ar": "عزل اليرقات من 250 جم تربة بطريقة Baermann — فحص مجهري بتكبير 40×",
+        "threshold_ar": "أكثر من 10 يرقات L2 / 250 جم تربة = عتبة اقتصادية تستوجب التدخل"
+      }
+    },
+    {
+      "id": "nem-002",
+      "name_ar": "نيماتودا التقرح أو الجرح",
+      "name_en": "Lesion Nematode",
+      "name_scientific": "Pratylenchus spp.",
+      "common_species": [
+        "Pratylenchus penetrans",
+        "Pratylenchus coffeae",
+        "Pratylenchus zeae"
+      ],
+      "danger_level": "عالية",
+      "danger_icon": "🟠",
+      "prevalence_egypt": "شائعة جداً — خاصة في محاصيل الحبوب والموز",
+      "feeding_type_ar": "داخلية متنقلة — تدخل وتتنقل داخل الجذر",
+      "description_ar": "لا تشكل عقداً بل آفات (lesions) بنية - سوداء اللون - تخترق الجذر وتتنقل داخله بحرية محدثة قنوات مميزة — خطرة جداً لأنها تفتح الباب لأمراض التعفن",
+      "lifecycle": {
+        "total_days_at_25c": "45-55 يوم",
+        "stages_ar": [
+          {
+            "stage": "البيضة",
+            "duration_ar": "10-14 يوم",
+            "notes_ar": "توضع منفردة داخل أنسجة الجذر"
+          },
+          {
+            "stage": "يرقة L2 (معدية)",
+            "duration_ar": "تتحرك في التربة وداخل الجذر",
+            "notes_ar": "تستطيع الإصابة في كل مراحلها"
+          },
+          {
+            "stage": "L3 و L4",
+            "duration_ar": "10-14 يوم لكل مرحلة",
+            "notes_ar": "داخل الجذر"
+          },
+          {
+            "stage": "البالغ",
+            "duration_ar": "3-4 أسابيع",
+            "notes_ar": "يتنقل داخل وخارج الجذر"
+          }
+        ],
+        "generations_per_year": "3-6 أجيال",
+        "optimal_temp_c": "20-25",
+        "min_temp_c": 5,
+        "max_temp_c": 35
+      },
+      "symptoms": {
+        "underground_ar": [
+          "آفات (بقع) بنية - سوداء على الجذر — الميزة التشخيصية",
+          "تعفن الجذر من نقاط الدخول",
+          "موت الجذور الشعرية الدقيقة",
+          "فارق مهم عن Meloidogyne (لا توجد عقد)"
+        ],
+        "aboveground_ar": [
+          "تقزم وضعف نمو عام",
+          "اصفرار الأوراق",
+          "ذبول خاصة في الموز والقهوة",
+          "انخفاض واضح في الإنتاج"
+        ],
+        "confusion_with_ar": [
+          "تعفن الجذور الفطري",
+          "نيماتودا تعقد الجذور (لكن بدون عقد)"
+        ]
+      },
+      "host_plants_ar": {
+        "highly_susceptible_ar": [
+          "موز",
+          "قهوة",
+          "قمح",
+          "ذرة",
+          "فراولة",
+          "بطاطس",
+          "فول سوداني"
+        ],
+        "moderately_susceptible_ar": [
+          "طماطم",
+          "خضروات متنوعة",
+          "أشجار فاكهة"
+        ],
+        "note_ar": "P. coffeae خطير جداً على الموز في مصر"
+      },
+      "management": {
+        "cultural_ar": [
+          {
+            "method_ar": "دورة زراعية",
+            "details_ar": "زراعة نجيلات أو بقوليات مقاومة",
+            "effectiveness": "متوسطة"
+          },
+          {
+            "method_ar": "تشميس التربة",
+            "details_ar": "فعّال في الصيف",
+            "effectiveness": "عالية"
+          }
+        ],
+        "biological_ar": [
+          {
+            "agent_ar": "Bacillus subtilis",
+            "details_ar": "يثبط تكاثر النيماتودا",
+            "effectiveness": "متوسطة"
+          }
+        ],
+        "chemical_ar": [
+          {
+            "active_ingredient_ar": "فوسثيازيت",
+            "trade_names_ar": [
+              "نيماكور"
+            ],
+            "dose_ar": "3-5 كجم/فدان",
+            "egypt_registered": true
+          },
+          {
+            "active_ingredient_ar": "فلوبيرام",
+            "trade_names_ar": [
+              "فيلوم"
+            ],
+            "dose_ar": "0.5-1 لتر/فدان",
+            "egypt_registered": true
+          }
+        ]
+      },
+      "diagnosis_ar": {
+        "field_ar": "قطع الجذر والبحث عن الآفات البنية — استخراج النيماتودا بتشريح الجذر تحت المجهر",
+        "lab_ar": "هضم الجذر بالنواشر وعزل النيماتودا — تعريف الأنواع بالمجهر",
+        "threshold_ar": "أكثر من 200 نيماتودا / 5 جم جذر = إصابة اقتصادية"
+      }
+    },
+    {
+      "id": "nem-003",
+      "name_ar": "نيماتودا تقزم الحبوب",
+      "name_en": "Cereal Cyst Nematode",
+      "name_scientific": "Heterodera avenae / Heterodera spp.",
+      "common_species": [
+        "Heterodera avenae",
+        "Heterodera schachtii (بنجر السكر)",
+        "Heterodera glycines (فول الصويا)"
+      ],
+      "danger_level": "عالية",
+      "danger_icon": "🟠",
+      "prevalence_egypt": "شائعة في محاصيل القمح والشعير — خاصة في الأراضي الجديدة",
+      "feeding_type_ar": "داخلية راسخة — الأنثى تبرز من الجذر كخراجة",
+      "description_ar": "النيماتودا الكيسية (Cyst) — الأنثى الميتة تتحول إلى خراجة قاسية بنية اللون تحتوي 200-500 بيضة — هذه الخراجات تبقى في التربة 10-20 سنة",
+      "lifecycle": {
+        "total_days_at_15c": "60-90 يوم",
+        "stages_ar": [
+          {
+            "stage": "الخراجة (Cyst)",
+            "duration_ar": "تبقى نشطة في التربة 10-20 سنة",
+            "notes_ar": "جدار الأنثى الميتة يحمي البيض من الظروف القاسية"
+          },
+          {
+            "stage": "يرقة L2 (معدية)",
+            "duration_ar": "تخرج من الخراجة عند وجود إفرازات الجذر",
+            "notes_ar": "تحفز بإفرازات جذر العائل فقط"
+          },
+          {
+            "stage": "يرقة L3 و L4",
+            "duration_ar": "داخل الجذر",
+            "notes_ar": "الأنثى تبرز — الذكر يغادر"
+          },
+          {
+            "stage": "البالغ",
+            "duration_ar": "2-4 أسابيع",
+            "notes_ar": "الأنثى بيضاء تبرز من الجذر ثم تتحول لخراجة بنية"
+          }
+        ],
+        "generations_per_year": "1-2 جيل",
+        "optimal_temp_c": "15-20",
+        "survival_years": "10-20 سنة في التربة"
+      },
+      "symptoms": {
+        "underground_ar": [
+          "خراجات بيضاء ثم بنية بارزة على الجذر — ميزة تشخيصية حاسمة",
+          "قصر الجذور وتفرعها المفرط",
+          "ضعف الجذر الرئيسي"
+        ],
+        "aboveground_ar": [
+          "بقع صفراء في الحقل بأشكال دائرية",
+          "تقزم شديد وشحوب",
+          "نقص حاد في الإشطاء (التفريع)",
+          "انخفاض 20-80% في إنتاج الحبوب"
+        ],
+        "confusion_with_ar": [
+          "نقص النيتروجين",
+          "حموضة التربة",
+          "ضعف الصرف"
+        ]
+      },
+      "host_plants_ar": {
+        "highly_susceptible_ar": [
+          "قمح",
+          "شعير",
+          "شوفان"
+        ],
+        "beet_species_ar": [
+          "بنجر السكر (H. schachtii)"
+        ],
+        "soybean_species_ar": [
+          "فول الصويا (H. glycines)"
+        ],
+        "resistant_ar": [
+          "محاصيل غير نجيلية — تكسر دورة الحياة"
+        ]
+      },
+      "management": {
+        "cultural_ar": [
+          {
+            "method_ar": "دورة زراعية طويلة",
+            "details_ar": "البعد عن نجيلات 3-5 سنوات يخفض الكثافة بشكل ملحوظ",
+            "effectiveness": "عالية"
+          },
+          {
+            "method_ar": "أصناف مقاومة",
+            "details_ar": "قمح وشعير بجينات مقاومة متوفرة في مصر",
+            "effectiveness": "عالية"
+          },
+          {
+            "method_ar": "ضبط موعد الزراعة",
+            "details_ar": "الزراعة في درجات حرارة أعلى من 20 °م يقلل الإصابة",
+            "effectiveness": "متوسطة"
+          }
+        ],
+        "chemical_ar": [
+          {
+            "active_ingredient_ar": "كارتاب (Cartap)",
+            "details_ar": "بديل أقل سمية",
+            "dose_ar": "2 كجم/فدان",
+            "egypt_registered": true
+          }
+        ]
+      },
+      "diagnosis_ar": {
+        "field_ar": "البقع الدائرية الصفراء في الحقل — رؤية الخراجات البيضاء بالعين المجردة على الجذور",
+        "lab_ar": "غسيل التربة وعزل الخراجات — عد الخراجات في 250 مل تربة",
+        "threshold_ar": "أكثر من 5 خراجات / 250 مل تربة = عتبة اقتصادية"
+      }
+    },
+    {
+      "id": "nem-004",
+      "name_ar": "نيماتودا الحلزون أو اللولبية",
+      "name_en": "Spiral Nematode",
+      "name_scientific": "Helicotylenchus spp.",
+      "common_species": [
+        "Helicotylenchus multicinctus",
+        "Helicotylenchus dihystera"
+      ],
+      "danger_level": "عالية - متوسطة",
+      "danger_icon": "🟡",
+      "prevalence_egypt": "شائعة جداً — خاصة على الموز وأشجار الفاكهة",
+      "feeding_type_ar": "خارجية وداخلية جزئية — تتغذى على الجذور من الخارج أو تدخل جزئياً",
+      "description_ar": "تتميز بجسمها الحلزوني اللولبي عند التوقف — تسبب آفات بنية على السطح الخارجي للجذر — خطيرة على الموز تحت اسم (Black head disease)",
+      "lifecycle": {
+        "total_days_at_25c": "30-40 يوم",
+        "stages_ar": [
+          {
+            "stage": "L2 (معدية)",
+            "duration_ar": "تتحرك حرة في التربة",
+            "notes_ar": "تتجمع حول الجذور"
+          },
+          {
+            "stage": "البالغ",
+            "duration_ar": "3-5 أسابيع",
+            "notes_ar": "يتغذى على قشرة الجذر"
+          }
+        ],
+        "generations_per_year": "4-8 أجيال",
+        "optimal_temp_c": "25-30"
+      },
+      "symptoms": {
+        "underground_ar": [
+          "آفات بنية - سوداء على السطح الخارجي للجذر",
+          "تحول قلب الجذر للأسود في الموز (Black head rot)",
+          "موت الجذور الشعرية"
+        ],
+        "aboveground_ar": [
+          "ذبول الموز وانخفاض إنتاجه",
+          "تقزم عام في الأشجار المصابة",
+          "ضعف المجموع الخضري"
+        ]
+      },
+      "host_plants_ar": {
+        "highly_susceptible_ar": [
+          "موز",
+          "حمضيات",
+          "نخيل",
+          "كاكاو"
+        ],
+        "moderately_susceptible_ar": [
+          "قمح",
+          "ذرة",
+          "خضروات متنوعة"
+        ]
+      },
+      "management": {
+        "cultural_ar": [
+          {
+            "method_ar": "إزالة وحرق الأمهات المصابة",
+            "details_ar": "تجنب نقل خلفات موز من مناطق مصابة",
+            "effectiveness": "عالية"
+          },
+          {
+            "method_ar": "تعقيم الخلفات",
+            "details_ar": "نقع خلفات الموز في ماء ساخن 50 °م لمدة 20 دقيقة",
+            "effectiveness": "عالية"
+          }
+        ],
+        "chemical_ar": [
+          {
+            "active_ingredient_ar": "فلوبيرام",
+            "trade_names_ar": [
+              "فيلوم"
+            ],
+            "dose_ar": "0.5 لتر/فدان",
+            "egypt_registered": true
+          }
+        ]
+      },
+      "diagnosis_ar": {
+        "field_ar": "فحص الجذور تحت المكبر — الشكل الحلزوني مميز جداً",
+        "lab_ar": "استخراج من التربة بطريقة Baermann",
+        "threshold_ar": "أكثر من 500 نيماتودا / 250 جم تربة"
+      }
+    },
+    {
+      "id": "nem-005",
+      "name_ar": "نيماتودا إبرة الجذور",
+      "name_en": "Stubby-root / Needle Nematode",
+      "name_scientific": "Trichodorus spp. / Paratrichodorus spp.",
+      "common_species": [
+        "Trichodorus primitivus",
+        "Paratrichodorus minor"
+      ],
+      "danger_level": "عالية",
+      "danger_icon": "🟠",
+      "prevalence_egypt": "شائعة في الأراضي الرملية — الأراضي المستصلحة حديثاً",
+      "feeding_type_ar": "خارجية — تتغذى على أطراف الجذور",
+      "description_ar": "تتغذى على أطراف الجذور النامية مسببة توقف نموها وتقصيرها (Stubby roots) — الأخطر أنها تنقل فيروسات التبقع الحلقي في الفول السوداني والتبغ",
+      "lifecycle": {
+        "total_days_at_20c": "20-30 يوم",
+        "stages_ar": [
+          {
+            "stage": "L2 (معدية)",
+            "duration_ar": "تتحرك حرة",
+            "notes_ar": "سريعة الحركة — تغير مواضعها باستمرار"
+          }
+        ],
+        "generations_per_year": "5-10 أجيال",
+        "optimal_temp_c": "20-25"
+      },
+      "symptoms": {
+        "underground_ar": [
+          "جذور قصيرة ومقصوفة الأطراف — الميزة التشخيصية",
+          "تورم أطراف الجذور",
+          "غياب الجذور الشعرية الدقيقة"
+        ],
+        "aboveground_ar": [
+          "تقزم شديد في الشتلات الصغيرة",
+          "ضعف الإنبات",
+          "بقع متفرقة في الحقل"
+        ],
+        "virus_transmission_ar": "تنقل TRSV (Tobacco ringspot virus) و PRSV في الفول السوداني"
+      },
+      "host_plants_ar": {
+        "highly_susceptible_ar": [
+          "ذرة",
+          "فول سوداني",
+          "تبغ",
+          "خضروات صغيرة"
+        ],
+        "note_ar": "خطرها يتضاعف بنقل الفيروسات"
+      },
+      "management": {
+        "cultural_ar": [
+          {
+            "method_ar": "تجنب الزراعة في التربة الرملية الموبوءة",
+            "effectiveness": "متوسطة"
+          },
+          {
+            "method_ar": "التشميس",
+            "details_ar": "فعّال جداً لأنها سطحية في التربة",
+            "effectiveness": "عالية"
+          }
+        ],
+        "chemical_ar": [
+          {
+            "active_ingredient_ar": "أوكساميل",
+            "dose_ar": "2-3 لتر/فدان",
+            "egypt_registered": true
+          }
+        ]
+      },
+      "diagnosis_ar": {
+        "field_ar": "جذور قصيرة جداً مع غياب الشعيرات",
+        "lab_ar": "استخراج من 250 جم تربة بطريقة الترشيح",
+        "threshold_ar": "أكثر من 200 نيماتودا / 250 جم تربة"
+      }
+    },
+    {
+      "id": "nem-006",
+      "name_ar": "نيماتودا الساق والبصلة",
+      "name_en": "Stem and Bulb Nematode",
+      "name_scientific": "Ditylenchus dipsaci",
+      "danger_level": "عالية جداً",
+      "danger_icon": "🔴",
+      "prevalence_egypt": "شائعة في محاصيل البصل والثوم والفول",
+      "feeding_type_ar": "داخلية — تصيب الأنسجة الهوائية فوق التربة",
+      "description_ar": "النيماتودا الوحيدة التي تصيب الأجزاء الهوائية (ساق + بصلة + أوراق) — خطيرة جداً على البصل والثوم والفول — تستطيع البقاء في البذور والبصيلات الجافة لسنوات",
+      "lifecycle": {
+        "total_days_at_15c": "19-23 يوم",
+        "stages_ar": [
+          {
+            "stage": "L4 (مقاومة للجفاف)",
+            "duration_ar": "تبقى حية في بصيلات جافة لـ 2-5 سنوات",
+            "notes_ar": "تدخل حالة سبات (Anhydrobiosis)"
+          },
+          {
+            "stage": "البالغ",
+            "duration_ar": "4-6 أسابيع",
+            "notes_ar": "يتكاثر داخل الأنسجة النباتية"
+          }
+        ],
+        "generations_per_year": "6-8 أجيال",
+        "optimal_temp_c": "15-20",
+        "survival_years": "2-5 سنوات في البصيلات الجافة"
+      },
+      "symptoms": {
+        "underground_ar": [
+          "تعفن قاعدة البصلة",
+          "تشقق البصلة من الداخل",
+          "تحول داخل الثوم لمادة بنية طرية"
+        ],
+        "aboveground_ar": [
+          "تضخم وتشوه الساق والأوراق",
+          "تشقق وتبقع الأوراق",
+          "موت الشتلات الصغيرة (Tulip blight type)",
+          "بقع دائرية مميزة في الحقل"
+        ],
+        "confusion_with_ar": [
+          "عفن الرقبة البوتريتيسي",
+          "الذبول البكتيري"
+        ]
+      },
+      "host_plants_ar": {
+        "highly_susceptible_ar": [
+          "بصل",
+          "ثوم",
+          "فول",
+          "برسيم",
+          "سبانخ",
+          "جاودار"
+        ],
+        "note_ar": "أكثر من 450 نوع نبات عائل"
+      },
+      "management": {
+        "cultural_ar": [
+          {
+            "method_ar": "استخدام بصيلات سليمة معتمدة",
+            "details_ar": "شراء تقاوٍ خالٍ من النيماتودا",
+            "effectiveness": "عالية جداً"
+          },
+          {
+            "method_ar": "الحرارة الرطبة (Hot water treatment)",
+            "details_ar": "نقع البصيلات في ماء 44 °م لمدة 4 ساعات",
+            "effectiveness": "عالية"
+          },
+          {
+            "method_ar": "دورة زراعية 4 سنوات",
+            "details_ar": "تجنب البصليات والبقوليات لمدة 4 سنوات",
+            "effectiveness": "عالية"
+          }
+        ],
+        "chemical_ar": [
+          {
+            "active_ingredient_ar": "فوسثيازيت",
+            "dose_ar": "3-4 كجم/فدان",
+            "egypt_registered": true
+          }
+        ]
+      },
+      "diagnosis_ar": {
+        "field_ar": "نقع بصلة مصابة في الماء — النيماتودا تخرج كسحابة بيضاء تحت المكبر",
+        "lab_ar": "عزل من الأنسجة النباتية بطريقة Baermann",
+        "threshold_ar": "وجود أي إصابة = تدخل فوري في محاصيل البصل"
+      }
+    },
+    {
+      "id": "nem-008",
+      "name_ar": "نيماتودا الجذور الخيطية (دبوسية)",
+      "name_en": "Pin Nematode",
+      "name_scientific": "Paratylenchus spp.",
+      "danger_level": "متوسطة",
+      "danger_icon": "🟡",
+      "prevalence_egypt": "موجودة في معظم الحقول المصرية — تشكل مشكلة عند الكثافات العالية",
+      "feeding_type_ar": "خارجية — تتغذى على السطح الخارجي للجذر",
+      "description_ar": "صغيرة جداً (0.3 مم) — يتراكم ضررها عند الكثافات العالية حيث تتغذى على الخلايا السطحية للجذر، مما يضعف الجذور ويفتح الباب للإصابات الفطرية الثانوية.",
+      "lifecycle": {
+        "total_days_at_20c": "20-30 يوم",
+        "stages_ar": [
+          {
+            "stage": "L2 (معدية)",
+            "duration_ar": "حرة في التربة",
+            "notes_ar": "تتجمع حول الجذور الصغيرة"
+          }
+        ],
+        "generations_per_year": "5-8 أجيال",
+        "optimal_temp_c": "18-25"
+      },
+      "symptoms": {
+        "underground_ar": ["جذور ضعيفة فاقدة اللمعان", "موت الشعيرات الجذرية المغذية"],
+        "aboveground_ar": ["تقزم خفيف إلى متوسط", "اصفرار الأوراق وتراجع النمو"]
+      },
+      "host_plants_ar": {
+        "highly_susceptible_ar": ["خضروات متنوعة", "فراولة", "نباتات الزينة", "قمح"]
+      },
+      "management": {
+        "cultural_ar": [
+          { "method_ar": "دورة زراعية", "effectiveness": "متوسطة" },
+          { "method_ar": "التشميس الشمسي", "effectiveness": "عالية" }
+        ]
+      },
+      "diagnosis_ar": {
+        "field_ar": "صعبة التشخيص الحقلي لصغر حجمها — العزل المخبري ضروري",
+        "threshold_ar": "أكثر من 1000 نيماتودا / 250 جم تربة"
+      }
+    }
+  ],
+
+  "beneficial_nematodes": {
+    "title_ar": "المكافحة البيولوجية — النيماتودا المفيدة",
+    "description_ar": "نيماتودا حشرية ممرضة (EPN) تستخدم كمبيد حيوي آمن، حيث تتطفل على الحشرات الضارة وتقتلها داخل التربة.",
+    "species": [
+      {
+        "id": "epn-001",
+        "name_ar": "ستينرنيما",
+        "name_en": "Steinernema spp.",
+        "common_species": ["Steinernema carpocapsae", "Steinernema feltiae", "Steinernema glaseri"],
+        "how_it_works_ar": "تخترق جسم الحشرة عبر الفتحات الطبيعية وتطلق بكتيريا (Xenorhabdus) تقتل الحشرة خلال 24-48 ساعة.",
+        "target_insects_ar": ["دودة الجذور", "يرقات الحفارات", "يرقات الذباب", "دودة ورق القطن"],
+        "application_ar": "رش على التربة أو حقن مع مياه الري — تحتاج رطوبة وحرارة بين 15-30 درجة مئوية.",
+        "availability_ar": "متوفر تجارياً في مصر (مثل منتج Bio-nema)",
+        "safety_ar": "آمن تماماً للإنسان والحيوان والنبات — معتمد في الزراعة العضوية"
+      },
+      {
+        "id": "epn-002",
+        "name_ar": "هيتيروهابديتيس",
+        "name_en": "Heterorhabditis spp.",
+        "common_species": ["Heterorhabditis bacteriophora", "Heterorhabditis megidis"],
+        "how_it_works_ar": "تتطفل على يرقات الحشرات في التربة وتطلق بكتيريا (Photorhabdus) القاتلة للأنسجة الحشرية.",
+        "target_insects_ar": ["خنفساء الجذور", "يرقات الديدان الدباسية", "سوسة النخيل (الأعمار الصغيرة)"],
+        "application_ar": "حقن في التربة أو رش مائي مباشر في منطقة الجذور",
+        "availability_ar": "متوفر في منتجات المكافحة الحيوية المتخصصة",
+        "safety_ar": "معتمد عضوياً وآمن تماماً للبيئة"
+      }
+    ]
+  },
+
+  "diagnosis_guide": {
+    "title_ar": "دليل التشخيص الميداني والمخبري",
+    "field_diagnosis_steps_ar": [
+      {
+        "step": 1,
+        "action_ar": "ملاحظة الأعراض الهوائية",
+        "details_ar": "ظهور بقع دائرية من التقزم أو الاصفرار أو الذبول المفاجئ في الحقل."
+      },
+      {
+        "step": 2,
+        "action_ar": "فحص الجذور مباشرة",
+        "details_ar": "عقد = Meloidogyne | بقع بنية = Pratylenchus | خراجات ليمونية = Heterodera | جذور مقصوفة = Trichodorus"
+      },
+      {
+        "step": 3,
+        "action_ar": "أخذ عينات التربة",
+        "details_ar": "جمع 5-10 عينات من نقاط مختلفة على عمق 20-30 سم ودمجها (حوالي 250 جم تربة)."
+      },
+      {
+        "step": 4,
+        "action_ar": "اختبار ميداني سريع",
+        "details_ar": "وضع 100 جم تربة في ماء دافئ لمدة 24 ساعة؛ يمكن رؤية النيماتودا تطفو باستخدام مكبر 10x."
+      }
+    ],
+    "lab_methods_ar": [
+      {
+        "method_ar": "طريقة قمع بيرمان (Baermann Funnel)",
+        "use_ar": "استخراج النيماتودا الحية من التربة أو أنسجة الجذور",
+        "steps_ar": ["وضع العينة في شاش فوق قمع مملوء بالماء", "الانتظار لمدة 48 ساعة", "تجميع الراشح وفحصه بالمجهر"]
+      },
+      {
+        "method_ar": "طريقة المناخل (Sieving Method)",
+        "use_ar": "فصل النيماتودا من حبيبات التربة الكبيرة",
+        "steps_ar": ["ترشيح معلق التربة عبر مناخل (500، 150، 25 ميكرون)", "جمع المتبقي في منخل الـ 25 ميكرون", "الفحص المجهري المباشر"]
+      }
+    ],
+    "identification_key_ar": {
+      "has_galls_ar": "وجود عقد واضحة -> نيماتودا تعقد الجذور (Meloidogyne)",
+      "has_cysts_ar": "وجود خراجات ليمونية/بنية -> النيماتودا الكيسية (Heterodera)",
+      "has_lesions_ar": "وجود بقع (آفات) بنية دون عقد -> نيماتودا التقرح (Pratylenchus)",
+      "stubby_roots_ar": "جذور قصيرة جداً ومقصوفة -> نيماتودا الإبرة/الخنجرية",
+      "aerial_symptoms_ar": "تشوه الأوراق والسيقان والبراعم -> Ditylenchus أو Aphelenchoides"
+    }
+  },
+
+  "integrated_management_plan": {
+    "title_ar": "الخطة المتكاملة لإدارة النيماتودا (IPM)",
+    "phases": [
+      {
+        "phase": 1,
+        "name_ar": "ما قبل الزراعة",
+        "timing_ar": "4-6 أسابيع قبل الزراعة",
+        "actions_ar": [
+          "تحليل التربة مخبرياً لتحديد النوع والكثافة",
+          "تطبيق التشميس الشمسي في الصيف",
+          "إضافة الكمبوست الناضج وكسب النيم لتعزيز الأعداء الطبيعية",
+          "اختيار شتلات معتمدة وخالية من الإصابة"
+        ]
+      },
+      {
+        "phase": 2,
+        "name_ar": "عند الزراعة",
+        "timing_ar": "يوم الزراعة",
+        "actions_ar": [
+          "إضافة النيماتودا المفيدة أو البكتيريا المضادة (Bacillus firmus)",
+          "استخدام مبيدات وقائية (Fosthiazate) عند توقع إصابة عالية",
+          "تطعيم الطماطم على أصول مقاومة"
+        ]
+      },
+      {
+        "phase": 3,
+        "name_ar": "خلال الموسم",
+        "timing_ar": "مستمر",
+        "actions_ar": [
+          "مراقبة دورية وتعقيم الأدوات الزراعية بالكحول أو الكلور (5%)",
+          "التغذية الجيدة للنبات (النبات القوي يتحمل الإصابة)",
+          "تجنب نقل التربة من المناطق المصابة"
+        ]
+      }
+    ]
+  },
+
+  "crops_susceptibility_matrix": {
+    "title_ar": "مصفوفة حساسية المحاصيل (0=مقاوم، 4=حساس جداً)",
+    "matrix": [
+      { "crop_ar": "طماطم", "Meloidogyne": 4, "Pratylenchus": 3, "Heterodera": 1 },
+      { "crop_ar": "بطاطس", "Meloidogyne": 4, "Pratylenchus": 3, "Heterodera": 2 },
+      { "crop_ar": "قمح", "Meloidogyne": 1, "Pratylenchus": 3, "Heterodera": 4 },
+      { "crop_ar": "موز", "Meloidogyne": 3, "Pratylenchus": 4, "Helicotylenchus": 4 },
+      { "crop_ar": "بصل", "Meloidogyne": 2, "Ditylenchus": 4 }
+    ]
+  },
+
+  "nematicides_registered_egypt": {
+    "title_ar": "مبيدات النيماتودا المسجلة في مصر",
+    "products": [
+      {
+        "id": "nem-chem-001",
+        "name_ar": "أوكساميل",
+        "name_en": "Oxamyl",
+        "trade_names_ar": ["فيداب 24%", "أوكسيميت"],
+        "dose_ar": "2-3 لتر/فدان",
+        "preharvest_interval_days": 14,
+        "toxicity_who_class": "Ia - عالي الخطورة"
+      },
+      {
+        "id": "nem-chem-003",
+        "name_ar": "فلوبيرام",
+        "name_en": "Fluopyram",
+        "trade_names_ar": ["فيلوم برايم 41.7%"],
+        "dose_ar": "0.5-1 لتر/فدان",
+        "preharvest_interval_days": 7,
+        "toxicity_who_class": "III - منخفض الخطورة"
+      }
+    ]
+  },
+
+  "card_display_config": {
+    "card_title_ar": "النيماتودا (الديدان الخيطية) — تحذير",
+    "card_subtitle_ar": "آفة خفية تسبب خسائر اقتصادية فادحة",
+    "card_color_primary": "#8B0000",
+    "card_icon": "⚠️",
+    "highlight_stats": [
+      { "label_ar": "خسائر الإنتاج", "value_ar": "10-25%" },
+      { "label_ar": "بقاء في التربة", "value_ar": "حتى 20 سنة" },
+      { "label_ar": "خسائر مصر سنوياً", "value_ar": "+2 مليار جنيه" }
+    ],
+    "quick_tips_ar": [
+      "فحص الجذور دورياً هو خط الدفاع الأول",
+      "التشميس الصيفي أفضل وقاية طبيعية",
+      "الكمبوست الناضج يقلل الإصابة بنسبة 20-40%"
+    ]
+  }
+}
+ 

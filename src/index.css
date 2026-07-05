@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html.dark {
+  background-color: #111827;
+  color: #f3f4f6;
+}
+
+/* Global dark mode overrides for all components */
+.dark .main-background {
+  background-color: #111827 !important;
+}
+
+.dark .hefno-contact {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+}
+
+.dark .hefno-contact .hefno-form-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+}
+
+.dark .hefno-contact input,
+.dark .hefno-contact textarea {
+  background: rgba(17, 24, 39, 0.8) !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-features-section {
+  background: #111827 !important;
+}
+
+.dark .hefno-features-section .hefno-features-bg {
+  background: linear-gradient(135deg, rgba(31,41,55,0.3) 0%, transparent 100%) !important;
+}
+
+.dark .knowledge-base-page {
+  background: #111827 !important;
+}
+
+.dark .knowledge-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .knowledge-card .card-glass {
+  background: rgba(255,255,255,0.03) !important;
+}
+
+.dark .hefno-features-section .hefno-feature-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-features-section .hefno-stat-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-stat-number,
+.dark .hefno-card-title,
+.dark .hefno-features-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .hefno-card-description,
+.dark .hefno-features-subtitle,
+.dark .hefno-stat-label {
+  color: #9ca3af !important;
+}
+
+.dark .calendar-page {
+  background: #111827 !important;
+}
+
+.dark .months-timeline .month-btn {
+  background: #1f2937 !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .info-card,
+.dark .content-card,
+.dark .operation-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .content-tabs .tab-btn {
+  background: #1f2937 !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .content-tabs .tab-btn.active {
+  background: #059669 !important;
+  color: white !important;
+}
+
+/* HNP AI Assistant Dark Mode */
+.dark .hnp-ai-assistant {
+  background: #111827 !important;
+}
+
+.dark .hnp-ai-header.glass,
+.dark .hnp-ai-sidebar.glass,
+.dark .hnp-ai-chat.glass {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .hnp-ai-message.user .hnp-ai-message-content {
+  background: #374151 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark .hnp-ai-message.ai .hnp-ai-message-content {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hnp-ai-message-input {
+  background: #1f2937 !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hnp-ai-category-btn {
+  color: #9ca3af !important;
+}
+
+.dark .hnp-ai-category-btn.active {
+  background: #059669 !important;
+  color: white !important;
+}
+
+/* Weather Dark Mode */
+.dark .weather-screen {
+  background: #111827 !important;
+}
+
+/* Knowledge Layer Dark Mode */
+.dark .knowledge-base-container {
+  background: #111827 !important;
+}
+
+/* Pesticides Hub Dark Mode */
+.dark .pesticides-hub {
+  background: #111827 !important;
+}
+
+/* Scrollbar dark mode */
+.dark ::-webkit-scrollbar-track {
+  background: #1f2937 !important;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #374151 !important;
+}

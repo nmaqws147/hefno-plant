@@ -1,0 +1,1317 @@
+{
+    "metadata": {
+        "id": "hefnoplant_academic_db",
+        "name_ar": " المراجع العلمية والمصطلحات األكاديمية",
+        "name_en": "HefnoPlant Academic References & Scientific Terminology",
+        "version": "1.0.0",
+        "description_ar": " مرجع أكاديمي شامل للطالب والمهندسين والباحثين مصطلحات علمية + مراجع موثقة + معادالت + تصنيف نباتي",
+        "target_users_ar": [
+            " طالب كليات الزراعة",
+            "مهندسون زراعيون",
+            "دكاترة وباحثون",
+            "شركات زراعية متخصصة"
+        ],
+        "citation_style": "APA 7th Edition",
+        "last_updated": "2024"
+    },
+    "glossary": {
+        "title_ar": " قاموس المصطلحات الزراعية العلمية",
+        "title_en": "Agricultural Scientific Glossary",
+        "description_ar": " المصطلحات األساسية في العلوم الزراعية عربي / إنجليزي / التيني مع التعريف األكاديمي ",
+        "terms": [
+            {
+                "id": "term-001",
+                "arabic": " التغذية المعدنية للنبات",
+                "english": "Mineral Plant Nutrition",
+                "latin": null,
+                "definition_ar": " علم دراسة العناصر الكيميائية الضرورية لنمو النبات واستيفاء وظائفه الحيوية يشمل17ًعنصرا ً أساسيا",
+                "definition_en": "The science of chemical elements essential for plant growth and physiological function, encompassing 17 essential elements",
+                "related_terms": [
+                    " العناصر الكبرى",
+                    "العناصر الصغرى",
+                    "االمتصاص األيوني"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-002",
+                "arabic": " العناصر الغذائية الكبرى",
+                "english": "Macronutrients",
+                "latin": null,
+                "definition_ar": "ً العناصر التي يحتاجها النبات بكميات كبيرة نسبيا تشمل N و P و K و Ca و Mg و S ت ُقاس بالكيلوجرامات لكل فدان",
+                "definition_en": "Nutrients required by plants in relatively large amounts: N, P, K, Ca, Mg, and S measured in kg/feddan",
+                "related_terms": [
+                    " النيتروجين",
+                    "الفوسفور",
+                    "البوتاسيوم"
+                ],
+                "field_ar": " تغذية النبات"
+            },
+            {
+                "id": "term-003",
+                "arabic": " العناصر الغذائية الصغرى",
+                "english": "Micronutrients / Trace Elements",
+                "latin": null,
+                "definition_ar": "ً العناصر التي يحتاجها النبات بكميات ضئيلة جدا تشمل Fe وZn وMn وCu وB وMo وCl وNi ت ُقاس بالجزء في المليون (ppm)",
+                "definition_en": "Nutrients required in very small amounts: Fe, Zn, Mn, Cu, B, Mo, Cl, and Ni measured in ppm",
+                "related_terms": [
+                    " الكيالت",
+                    "التثبيت",
+                    "نقص العناصر"
+                ],
+                "field_ar": " تغذية النبات"
+            },
+            {
+                "id": "term-004",
+                "arabic": " التمثيل الضوئي",
+                "english": "Photosynthesis",
+                "latin": "Photosynthesis",
+                "definition_ar": " العملية البيوكيميائية التي تحو ّل فيها النباتات الخضراء طاقة الضوء + ثاني أكسيد الكربون + الماء إلى جلوكوز وأكسجين",
+                "definition_en": "The biochemical process by which green plants convert light energy + CO₂ + H₂O into glucose and oxygen",
+                "equation": "6CO₂ + 6H₂O + Light Energy → C₆H₁₂O₆ + 6O₂",
+                "related_terms": [
+                    " الكلوروفيل",
+                    "دورة كالفن",
+                    "التنفس الخلوي"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-005",
+                "arabic": " التنفس الخلوي",
+                "english": "Cellular Respiration",
+                "latin": null,
+                "definition_ar": " عملية أكسدة المركبات العضوية للحصول على طاقة ATP تحدث في الميتوكوندريا",
+                "definition_en": "The process of oxidizing organic compounds to produce ATP energy occurs in mitochondria",
+                "equation": "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP",
+                "related_terms": [
+                    " التمثيل الضوئي",
+                    "الميتوكوندريا",
+                    "ATP"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-006",
+                "arabic": " النتح",
+                "english": "Transpiration",
+                "latin": null,
+                "definition_ar": " فقد الماء من النبات على شكل بخار ماء يحدث أساسا ً عبر الثغور ي ُحرك الماء والعناصر الغذائية من الجذور لألوراق",
+                "definition_en": "Water loss from plants as water vapor occurs mainly through stomata drives water and nutrients from roots to leaves",
+                "formula_ar": " معدل النتح يتأثر بـ: درجة الحرارة + الرطوبة + سرعة الرياح + شدة اإلضاءة",
+                "related_terms": [
+                    " الثغور",
+                    "البخر-نتح",
+                    "دفق اإلكسيلم "
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-007",
+                "arabic": " اإلمتصاص األيوني",
+                "english": "Ion Uptake / Mineral Absorption",
+                "latin": null,
+                "definition_ar": " عملية امتصاص األيونات المعدنية من التربة عبر الجذور يشمل آليتين: االمتصاص السلبي (Passive) والنشط (Active) الذي يحتاج ATP",
+                "definition_en": "The process of absorbing mineral ions from soil through roots includes passive (no energy) and active (ATP -requiring) mechanisms",
+                "related_terms": [
+                    " ناقالت األيونات",
+                    "ATP",
+                    " الضخ البروتوني"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-008",
+                "arabic": " التثبيت البيولوجي للنيتروجين",
+                "english": "Biological Nitrogen Fixation (BNF)",
+                "latin": null,
+                "definition_ar": " تحويل نيتروجين الهواء (N₂) إلى أمونيا (NH₃) بواسطة كائنات دقيقة أهمها الرايزوبيوم المتكافل مع البقوليات",
+                "definition_en": "Conversion of atmospheric N₂ to ammonia (NH₃) by microorganisms most important is Rhizobium symbiotic with legumes",
+                "equation": "N₂ + 8H⁺ + 8e⁻ + 16ATP → 2NH₃ + H₂ + 16ADP + 16Pi",
+                "enzyme_ar": " إنزيم النيتروجيناز (Nitrogenase) يتعطل باألكسجين",
+                "related_terms": [
+                    " رايزوبيوم",
+                    "العقد الجذرية",
+                    "النيتروجيناز"
+                ],
+                "field_ar": " ميكروبيولوجيا التربة"
+            },
+            {
+                "id": "term-009",
+                "arabic": " دورة النيتروجين في التربة",
+                "english": "Nitrogen Cycle",
+                "latin": null,
+                "definition_ar": " مسار النيتروجين في النظام البيئي يشمل: التثبيت → األمونيا → النترتة → النزع → التثبيت ً مجددا",
+                "definition_en": "The pathway of nitrogen through the ecosystem: Fixation → Ammonification → Nitrification → Denitrification → Re -fixation",
+                "processes_ar": {
+                    "ammonification_ar": " تحلل البروتين بفعل البكتيريا → NH₄⁺",
+                    "nitrification_ar": "NH₄⁺ → NO₂⁻ → NO₃⁻ ( بواسطة Nitrosomonas و Nitrobacter)",
+                    "denitrification_ar": "NO₃⁻ → N₂ ( في غياب األكسجين ي ُفقد N من التربة)",
+                    "fixation_ar": "N₂ → NH₃ ( ً بيولوجيا ً أو كيميائيا)"
+                },
+                "related_terms": [
+                    " نترتة",
+                    "أمونيوم",
+                    "نترات",
+                    "نزع النترات"
+                ],
+                "field_ar": " الكيمياء الزراعية"
+            },
+            {
+                "id": "term-010",
+                "arabic": " األس الهيدروجيني (pH)",
+                "english": "pH (Potential of Hydrogen)",
+                "latin": null,
+                "definition_ar": " مقياس حموضة أو قلوية المحلول يتراوح من0(حمضي جدا ً) إلى14(قلوي جدا ً) pH 7 محايد",
+                "definition_en": "A measure of the acidity or alkalinity of a solution ranges from 0 (very acidic) to 14 (very alkaline) pH 7 is neutral",
+                "formula": "pH = -log[H⁺]",
+                "agricultural_significance_ar": " يتحكم في توافر العناصر الغذائية pH 6-7 األمثل لمعظم المحاصيل التربة المصرية قلوية (7.5-8.5)",
+                "related_terms": [
+                    " حموضة التربة",
+                    "قلوية التربة",
+                    "توافر العناصر"
+                ],
+                "field_ar": " علم التربة"
+            },
+            {
+                "id": "term-011",
+                "arabic": " الطاقة االستيعابية للتبادل الكاتيوني",
+                "english": "Cation Exchange Capacity (CEC)",
+                "latin": null,
+                "definition_ar": " قدرة التربة على احتجاز وتبادل الكاتيونات الموجبة (Ca²⁺, Mg²⁺, K⁺, Na⁺, H⁺) ت ُقاس بالمكافئ المللي /100جم تربة ",
+                "definition_en": "The soil's ability to hold and exchange positively charged cations measured in meq/100g soil",
+                "significance_ar": "CEC عالية = تربة تحتفظ باألسمدة أكثر التربة الطينية CEC أعلى من الرملية",
+                "typical_values_ar": {
+                    "sandy_ar": "3-8 meq/100g",
+                    "loamy_ar": "15-25 meq/100g",
+                    "clay_ar": "25-50 meq/100g",
+                    "organic_matter_ar": "100-300 meq/100g"
+                },
+                "related_terms": [
+                    " كولويدات التربة",
+                    "الطين المعدني",
+                    "المادة العضوية"
+                ],
+                "field_ar": " علم التربة"
+            },
+            {
+                "id": "term-012",
+                "arabic": " األسمودة / الضغط األسموزي",
+                "english": "Osmosis / Osmotic Pressure",
+                "latin": null,
+                "definition_ar": "ً انتقال الماء عبر غشاء شبه نفاذ من محلول أقل تركيزا ً إلى أكثر تركيزا الضغط األسموزي العالي في التربة ي ُصع ّب امتصاص النبات للماء",
+                "definition_en": "Movement of water through a semipermeable membrane from lower to higher solute concentration high osmotic pressure in soil inhibits water uptake",
+                "agricultural_significance_ar": " الملوحة العالية ترفع الضغط األسموزي للتربة النبات يعاني إجهادا ً مائيا ً رغم توفر الماء (الجفاف الفسيولوجي)",
+                "related_terms": [
+                    " الملوحة",
+                    "الجفاف الفسيولوجي",
+                    "التركيز المحلولي"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-013",
+                "arabic": " معامل االنتشار",
+                "english": "Diffusion Coefficient",
+                "latin": null,
+                "definition_ar": " سرعة انتشار مادة معينة في وسط معين يتأثر بدرجة الحرارة والتركيز مهم في انتقال العناصر من التربة للجذور",
+                "definition_en": "The rate at which a substance diffuses through a medium affected by temperature and concentration important in nutrient movement from soil to roots",
+                "formula": "J = -D × (dC/dx) معادلة فيك لالنتشار",
+                "related_terms": [
+                    " االنتقال الجماعي",
+                    "تدفق اإلكسيلم",
+                    "امتصاص الجذور"
+                ],
+                "field_ar": " فيزياء التربة"
+            },
+            {
+                "id": "term-014",
+                "arabic": " الكفاءة االقتصادية للسماد",
+                "english": "Fertilizer Use Efficiency (FUE)",
+                "latin": null,
+                "definition_ar": " نسبة العنصر الم ُمت َص من السماد إلى الكمية الم ُضافة ًعادة N 30-50% P 10-25% K 40- 60%",
+                "definition_en": "The proportion of applied fertilizer nutrients that are absorbed by the plant typically N: 30-50%, P: 10-25%, K: 40-60%",
+                "formula": "FUE (%) = (Nutrient in plant / Nutrient applied) × 100",
+                "improvement_methods_ar": [
+                    " التسميد التنقيطي يرفع FUE 20-40%",
+                    " التقسيم على دفعات يقلل الفقد",
+                    "استخدام المثبطات"
+                ],
+                "related_terms": [
+                    " الكفاءة الزراعية",
+                    "فقد النيتروجين",
+                    "تثبيت الفوسفور"
+                ],
+                "field_ar": " علم األسمدة"
+            },
+            {
+                "id": "term-015",
+                "arabic": " العالقة المتبادلة بين العناصر",
+                "english": "Nutrient Antagonism & Synergism",
+                "latin": null,
+                "definition_ar": " التضاد: زيادة عنصر ت ُقلل امتصاص آخر ( مثل: K الزائد ي ُقلل Mg). التكافل: زيادة عنصر ت ُحسن امتصاص آخر ( مثل: P ي ُحسن امتصاص Zn)",
+                "definition_en": "Antagonism: excess of one nutrient reduces uptake of another (e.g., high K reduces Mg). Synergism: one nutrient improves uptake of another",
+                "examples_ar": {
+                    "antagonism_examples_ar": [
+                        "K الزائد ↓ Mg و Ca",
+                        "Ca الزائد ↓ Mg و K",
+                        "N الزائد ↓ Cu",
+                        "P الزائد ↓ Zn و Fe"
+                    ],
+                    "synergism_examples_ar": [
+                        "N يحسن امتصاص P",
+                        "Mg يحسن امتصاص P (Mg جزء من ATP)"
+                    ]
+                },
+                "related_terms": [
+                    " التوازن الغذائي",
+                    "نسبة K/Mg",
+                    " التفاعالت األيونية"
+                ],
+                "field_ar": " تغذية النبات"
+            },
+            {
+                "id": "term-016",
+                "arabic": " التسميد الورقي",
+                "english": "Foliar Fertilization",
+                "latin": null,
+                "definition_ar": " إضافة األسمدة مذابة عبر رش األوراق يتجاوز عوائق التربة فع ّال للعناصر الصغرى والمغذيات في اإلجهاد",
+                "definition_en": "Application of dissolved fertilizers through leaf spraying bypasses soil constraints effective for micronutrients and nutrients under stress",
+                "advantages_ar": [
+                    " سرعة االمتصاص1-4أيام",
+                    "يتجاوز ثبيت P وFe في التربة القلوية",
+                    "كميات أقل"
+                ],
+                "limitations_ar": [
+                    " ال ي ُغني عن التسميد األرضي",
+                    "درجات حرارة عالية تحرق األوراق",
+                    "تركيز أقل من3 ً% عموما "
+                ],
+                "absorption_mechanism_ar": " امتصاص عبر الكيوتيكل الورقي أو الثغور",
+                "related_terms": [
+                    " الكيوتيكل الورقي",
+                    "الثغور",
+                    "الفلويم"
+                ],
+                "field_ar": " علم األسمدة"
+            },
+            {
+                "id": "term-017",
+                "arabic": " التسميد التنقيطي (الهيدروبونيك األرضي)",
+                "english": "Fertigation",
+                "latin": null,
+                "definition_ar": " إضافة األسمدة مذابة عبر نظام الري التنقيطي مباشرة إلى منطقة الجذور يجمع بين الري والتسميد في عملية واحدة",
+                "definition_en": "Application of dissolved fertilizers through drip irrigation system directly to the root zone combines irrigation and fertilization",
+                "advantages_ar": [
+                    " كفاءة استخدام المياه واألسمدة90-95%",
+                    "توزيع منتظم",
+                    "تحكم دقيق في التوقيت والكمية "
+                ],
+                "solubility_requirements_ar": " تستخدم فقط أسمدة عالية الذوبان: يوريا نترات MAP MKP SOP نترات كالسيوم",
+                "related_terms": [
+                    "EC المحلول",
+                    "نسبة NPK",
+                    " حقن السماد"
+                ],
+                "field_ar": " الري والصرف"
+            },
+            {
+                "id": "term-018",
+                "arabic": " األسموبوتيكات النباتية",
+                "english": "Plant Osmoprotectants / Osmolytes",
+                "latin": null,
+                "definition_ar": " مركبات عضوية تتراكم في خاليا النبات تحت اإلجهاد (جفاف ملوحة برودة) لحماية البروتينات واألغشية مثل البرولين والجليسين البيتين ",
+                "definition_en": "Organic compounds accumulated in plant cells under stress (drought, salinity, cold) to protect proteins and membranes e.g., proline, glycine betaine",
+                "examples_ar": [
+                    " البرولين (Proline)",
+                    " الجليسين البيتين (Glycine betaine)",
+                    " السكريات المذابة (Soluble sugars)"
+                ],
+                "agricultural_application_ar": " األحماض األمينية الخارجية ت ُحفز تكوين األسموبوتيكات تزيد مقاومة اإلجهاد ",
+                "related_terms": [
+                    " اإلجهاد المائي",
+                    "مقاومة الملوحة",
+                    "األحماض األمينية"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-019",
+                "arabic": " التصنيف النباتي (التاكسونومي)",
+                "english": "Plant Taxonomy / Classification",
+                "latin": "Taxonomia",
+                "definition_ar": " علم تصنيف النباتات إلى مجموعات متدرجة: مملكة → شعبة → صف → رتبة → فصيلة → جنس → نوع",
+                "definition_en": "The science of classifying plants into hierarchical groups: Kingdom → Division → Class → Order → Family → Genus → Species",
+                "hierarchy_ar": {
+                    "kingdom_ar": " مملكة Kingdom",
+                    "division_ar": " شعبة Division / Phylum",
+                    "class_ar": " صف Class",
+                    "order_ar": " رتبة Order",
+                    "family_ar": " فصيلة Family",
+                    "genus_ar": " جنس Genus",
+                    "species_ar": " نوع Species",
+                    "variety_ar": " صنف Variety / Cultivar"
+                },
+                "naming_convention_ar": " االسم العلمي ثنائي (Binomial) الجنس مع أولى حروفه كبيرة + النوع بأحرف صغيرة ًي ُكتب مائال ",
+                "example_ar": "Triticum aestivum L. القمح L. = Linnaeus واضع االسم",
+                "related_terms": [
+                    " التسمية ثنائية",
+                    "االسم العلمي",
+                    "الصنف المزروع"
+                ],
+                "field_ar": " علم النبات"
+            },
+            {
+                "id": "term-020",
+                "arabic": " مقياس التوصيل الكهربي",
+                "english": "Electrical Conductivity (EC)",
+                "latin": null,
+                "definition_ar": " مقياس كمية األمالح الذائبة في الماء أو التربة ي ُقاس بـ dS/m أو mS/cm EC عالية = ملوحة عالية = ضغط أسموزي عال",
+                "definition_en": "A measure of dissolved salts in water or soil measured in dS/m or mS/cm high EC = high salinity = high osmotic pressure",
+                "interpretation_ar": {
+                    "ec_0_to_2": " أقل من2 dS/m غير ملح مناسب لجميع المحاصيل ",
+                    "ec_2_to_4": "2-4 dS/m خفيف يضر المحاصيل الحساسة ",
+                    "ec_4_to_8": "4-8 dS/m متوسط المحاصيل المتحملة فقط ",
+                    "ec_above_8": " أكثر من8 dS/m شديد القليل جدا ً من المحاصيل "
+                },
+                "related_terms": [
+                    " الملوحة",
+                    "TDS",
+                    " الضغط األسموزي"
+                ],
+                "field_ar": " علم التربة"
+            },
+            {
+                "id": "term-021",
+                "arabic": " المادة العضوية للتربة",
+                "english": "Soil Organic Matter (SOM)",
+                "latin": null,
+                "definition_ar": " مجموع المواد العضوية في التربة بما فيها الكائنات الحية والمواد المتحللة (الهيوموس) ت ُحسن البنية والخصوبة والحياة الميكروبية",
+                "definition_en": "The total organic material in soil including living organisms and decomposed matter (humus) improves structure, fertility, and microbial life",
+                "importance_ar": [
+                    " ترفع CEC وتحتجز العناصر",
+                    " تحسن بنية التربة وتهويتها",
+                    " تغذي الكائنات المفيدة في التربة",
+                    " ترفع احتجاز الماء",
+                    " ت ُفرز أحماض ت ُحرر العناصر المثبتة"
+                ],
+                "critical_level_ar": " التربة المصرية:0.5-1.5% (منخفض) المستهدف: أكثر من2 %",
+                "related_terms": [
+                    " الهيوموس",
+                    "الكمبوست",
+                    "التحلل العضوي"
+                ],
+                "field_ar": " علم التربة"
+            },
+            {
+                "id": "term-022",
+                "arabic": " الكيالت",
+                "english": "Chelate / Chelation",
+                "latin": "Chela ( مخلب بالالتينية)",
+                "definition_ar": " مركب عضوي ي ُحيط بأيون معدني وي ُثبته في شكل قابل لالمتصاص يمنع ترسب العناصر الصغرى في التربة القلوية",
+                "definition_en": "An organic compound that surrounds and stabilizes a metal ion in a bioavailable form prevents micronutrient precipitation in alkaline soils",
+                "common_chelates_ar": {
+                    "EDTA": " فع ّال في pH 4-6",
+                    "DTPA": " فع ّال في pH 4-7.5",
+                    "EDDHA": " فع ّال حتى pH 9 األفضل في التربة القلوية المصرية"
+                },
+                "agricultural_application_ar": " كيالت الحديد (Fe-EDDHA) األفضل لتصحيح نقص الحديد في التربة القلوية",
+                "related_terms": [
+                    "EDTA",
+                    "DTPA",
+                    "EDDHA",
+                    " أيون المعدن"
+                ],
+                "field_ar": " الكيمياء الزراعية"
+            },
+            {
+                "id": "term-023",
+                "arabic": " الميكوريزا",
+                "english": "Mycorrhiza",
+                "latin": "Mykes ( فطر) + Rhiza ( جذر)",
+                "definition_ar": " تكافل بين الفطريات وجذور النبات الفطر ي ُوسع منطقة امتصاص الجذر بـ100-1000ضعف ي ُحسن امتصاص P وZn والماء",
+                "definition_en": "A symbiosis between fungi and plant roots fungi extend root absorption area 100-1000x improves P, Zn, and water uptake",
+                "types_ar": {
+                    "ectomycorrhiza_ar": " خارجية ت ُحيط بخاليا القشرة الخارجية في األشجار الحرجية ",
+                    "arbuscular_ar": "AMF داخل خاليا الجذر ًاألكثر شيوعا ً زراعيا Glomus spp."
+                },
+                "benefits_ar": [
+                    " زيادة امتصاص P 40-60%",
+                    " تحسين مقاومة الجفاف",
+                    "تقليل اإلصابة بالنيماتودا",
+                    "تقليل تكلفة الفوسفات20-30 %"
+                ],
+                "related_terms": [
+                    " التكافل",
+                    "الفطريات المفيدة",
+                    "امتصاص الجذور"
+                ],
+                "field_ar": " ميكروبيولوجيا التربة"
+            },
+            {
+                "id": "term-024",
+                "arabic": " الهيوميك أسيد والفولفيك أسيد",
+                "english": "Humic Acid & Fulvic Acid",
+                "latin": null,
+                "definition_ar": " أحماض هيومية طبيعية ناتجة عن تحلل المادة العضوية الهيوميك (وزن جزيئي عال ي ُحسن التربة) الفولفيك (وزن منخفض أسرع امتصاصا ً) ",
+                "definition_en": "Natural humic acids from organic matter decomposition Humic acid (high MW improves soil) Fulvic acid (low MW faster absorption)",
+                "mechanisms_ar": [
+                    " ي ُحرر العناصر المثبتة في التربة القلوية",
+                    " يرفع CEC ويحسن بنية التربة",
+                    " ي ُحسن نشاط الميكروبات المفيدة",
+                    " ي ُعزز نمو الجذور"
+                ],
+                "related_terms": [
+                    " الهيوموس",
+                    "المادة العضوية",
+                    "تشيالت الحديد"
+                ],
+                "field_ar": " الكيمياء العضوية الزراعية"
+            },
+            {
+                "id": "term-025",
+                "arabic": " مقاومة المحاصيل لألمراض",
+                "english": "Disease Resistance / Host Plant Resistance (HPR)",
+                "latin": null,
+                "definition_ar": " قدرة النبات على منع إصابة الممرض أو الحد منها تشمل المقاومة الجينية (R genes) والم ُحف َّزة (Induced Systemic Resistance - ISR)",
+                "definition_en": "The ability of a plant to prevent or limit pathogen infection includes genetic resistance (R genes) and induced resistance (ISR)",
+                "types_ar": {
+                    "vertical_ar": " مقاومة رأسية ضد ساللة محددة من الممرض تنهار عند ظهور ساللة جديدة ",
+                    "horizontal_ar": " مقاومة أفقية جزئية ضد نطاق واسع أكثر استدامة "
+                },
+                "examples_ar": " جين Mi-1.2 في الطماطم للمقاومة ضد Meloidogyne جين Lr في القمح لمقاومة الصدأ",
+                "related_terms": [
+                    " الجينات R",
+                    "ISR",
+                    " الممرض",
+                    "الفيروسات"
+                ],
+                "field_ar": " أمراض النبات"
+            },
+            {
+                "id": "term-026",
+                "arabic": " الهرمونات النباتية",
+                "english": "Plant Hormones / Phytohormones",
+                "latin": null,
+                "definition_ar": " مواد كيميائية داخلية تنظم نمو النبات وتطوره الخمسة الكالسيكية: أكسينات + جبرللينات + سيتوكينينات + حمض أبسيسيك + إيثيلين",
+                "definition_en": "Internal chemical substances regulating plant growth and development five classical hormones: Auxins, Gibberellins, Cytokinins, ABA, Ethylene",
+                "hormones_ar": {
+                    "auxins_ar": " أكسينات (IAA) تحكم في االستطالة الخلوية والتجذر",
+                    "gibberellins_ar": " جبرللينات (GA) ت ُحفز استطالة الساق وإنبات البذور",
+                    "cytokinins_ar": " سيتوكينينات ت ُحفز انقسام الخاليا والتفريع ",
+                    "aba_ar": " حمض األبسيسيك (ABA) ي ُنظم إغالق الثغور في اإلجهاد المائي",
+                    "ethylene_ar": " إيثيلين (C₂H₄) ينظم النضج والتساقط والتعفن"
+                },
+                "agricultural_application_ar": " مستخلص عشب البحر يحتوي سيتوكينينات ي ُحسن العقد وتطور الثمار ",
+                "related_terms": [
+                    "IAA",
+                    "GA",
+                    "ABA",
+                    " إيثيلين",
+                    "السيتوكينين"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-027",
+                "arabic": " اإلجهاد الالأحيائي",
+                "english": "Abiotic Stress",
+                "latin": null,
+                "definition_ar": " الضغوط البيئية غير الحية التي تؤثر على النبات: الجفاف الملوحة الحرارة العالية والمنخفضة الغرق نقص العناصر التلوث ",
+                "definition_en": "Non-living environmental stresses affecting plants: drought, salinity, extreme temperatures, waterlogging, nutrient deficiency, pollution",
+                "plant_responses_ar": [
+                    " غلق الثغور لتقليل النتح",
+                    " تراكم األسموبوتيكات",
+                    " تحفيز إنتاج مضادات األكسدة",
+                    " تعديل في التعبير الجيني"
+                ],
+                "related_terms": [
+                    " اإلجهاد الحيائي",
+                    "األسموبوتيكات",
+                    "مضادات األكسدة"
+                ],
+                "field_ar": " فسيولوجيا النبات"
+            },
+            {
+                "id": "term-028",
+                "arabic": " الدورة الزراعية",
+                "english": "Crop Rotation",
+                "latin": null,
+                "definition_ar": " زراعة محاصيل مختلفة في نفس األرض بتسلسل منظم على مر المواسم لكسر دورات اآلفات واألمراض وتحسين خصوبة التربة",
+                "definition_en": "Growing different crops in a planned sequence on the same land over seasons to break pest and disease cycles and improve soil fertility",
+                "benefits_ar": [
+                    " تقليل األمراض المتخصصة بمحصول معين",
+                    " كسر دورة حياة النيماتودا والحشائش",
+                    " تحسين خصوبة التربة ( البقوليات ت ُثري N)",
+                    " تقليل االعتماد على المبيدات"
+                ],
+                "example_ar": " قمح (شتاء) → ذرة (صيف) → فول (شتاء) → قطن (صيف) دورة2سنة ",
+                "related_terms": [
+                    " البقوليات",
+                    "اإلدارة المتكاملة لآلفات",
+                    "خصوبة التربة"
+                ],
+                "field_ar": " إنتاج المحاصيل"
+            },
+            {
+                "id": "term-029",
+                "arabic": " االنتخاب والتربية النباتية",
+                "english": "Plant Breeding & Selection",
+                "latin": null,
+                "definition_ar": " علم تحسين الصفات الوراثية للنباتات لزيادة اإلنتاجية والمقاومة والجودة يشمل التهجين واالنتخاب والهندسة الوراثية",
+                "definition_en": "The science of improving plant genetic traits for higher yield, resistance, and quality includes hybridization, selection, and genetic engineering",
+                "methods_ar": {
+                    "hybridization_ar": " التهجين خلط صفات والدين مختلفين الهجن F1",
+                    "selection_ar": " االنتخاب اختيار أفضل األفراد للتكاثر ",
+                    "mutation_breeding_ar": " التربية بالطفرات الحث باألشعة أو الكيماويات ",
+                    "gmo_ar": " الهندسة الوراثية نقل جينات بين أنواع مختلفة "
+                },
+                "related_terms": [
+                    " الهجين F1",
+                    " المقاومة الجينية",
+                    "الصنف المحسن"
+                ],
+                "field_ar": " تربية النبات"
+            },
+            {
+                "id": "term-030",
+                "arabic": " اإلدارة المتكاملة لآلفات",
+                "english": "Integrated Pest Management (IPM)",
+                "latin": null,
+                "definition_ar": " نهج شامل لمكافحة اآلفات يجمع أساليب ثقافية وبيولوجية وكيميائية بهدف تقليل األضرار االقتصادية مع الحفاظ على البيئة",
+                "definition_en": "A comprehensive pest management approach combining cultural, biological, and chemical methods to minimize economic damage while protecting the environment",
+                "components_ar": [
+                    " المراقبة والرصد الدوري",
+                    " تحديد العتبة االقتصادية للضرر",
+                    " المكافحة الثقافية (الدورة الزراعية التوقيت) ",
+                    " المكافحة البيولوجية (األعداء الطبيعية)",
+                    " المكافحة الكيميائية كأخر حل"
+                ],
+                "threshold_concept_ar": " العتبة االقتصادية = مستوى اإلصابة عنده تصبح تكلفة المكافحة أقل من الخسارة المتوقعة",
+                "related_terms": [
+                    " العتبة االقتصادية",
+                    "المكافحة البيولوجية",
+                    "المكافحة الثقافية"
+                ],
+                "field_ar": " وقاية النبات"
+            }
+        ]
+    },
+    "plant_academic_data": {
+        "title_ar": " البيانات األكاديمية للنباتات",
+        "description_ar": " التصنيف البوتاني الكامل والمراجع العلمية لكل نبات",
+        "plants": [
+            {
+                "plant_id": "plant-001",
+                "name_ar": " قمح",
+                "name_en": "Wheat",
+                "taxonomy": {
+                    "kingdom_ar": " مملكة النباتات Plantae",
+                    "division_ar": " شعبة النباتات الزهرية Angiosperms",
+                    "class_ar": " صف أحادية الفلقة Monocotyledonae",
+                    "order_ar": " رتبة النجيليات Poales",
+                    "family_ar": " فصيلة النجيليات Poaceae (Gramineae)",
+                    "genus_ar": " جنس الحنطة Triticum",
+                    "species_ar": "Triticum aestivum L. ( قمح خبزي) / Triticum durum ( قمح مكرونة)",
+                    "chromosome_number": "2n = 42 ( سداسي المضاعف Hexaploid)",
+                    "genome_ar": " جينوم ABD حجم16مليار قاعدة نيوكليوتيد "
+                },
+                "academic_terms_ar": {
+                    "tillering_ar": " التفريع Tillering نمو براعم جانبية من العقدة القاعدية",
+                    "heading_ar": " طرد السنابل Heading خروج السنبلة من غمد الورقة العلمية",
+                    "anthesis_ar": " التزهير Anthesis مرحلة فتح األزهار والتلقيح",
+                    "grain_filling_ar": " امتالء الحبوب Grain Filling تراكم النشا والبروتين في اإلندوسبيرم",
+                    "vernalization_ar": " التبريد الربيعي Vernalization حاجة بعض األصناف للبرودة لإلزهار",
+                    "photoperiodism_ar": " الضوئية Photoperiodism استجابة النبات لطول النهار"
+                },
+                "npk_calculation": {
+                    "formula_ar": "NPK الموصى به = احتياج المحصول-ما في التربة-ما ي ُثب َّت ",
+                    "n_removal_kg_ton_grain": "20 -25 كجم N لكل طن حبوب",
+                    "p_removal_kg_ton_grain": "4-5 كجم P₂O₅ لكل طن",
+                    "k_removal_kg_ton_grain": "5-6 كجم K₂O لكل طن",
+                    "example_calculation_ar": " هدف3طن/فدان ×25=75كجم N ÷ كفاءة50= %150كجم يوريا/فدان "
+                },
+                "key_references": [
+                    {
+                        "authors": "Slafer, G.A., & Rawson, H.M.",
+                        "year": 1994,
+                        "title": "Sensitivity of wheat phasic development to major environmental factors: a re - examination of some assumptions made by physiologists and modellers",
+                        "journal": "Australian Journal of Plant Physiology",
+                        "volume": "21(4)",
+                        "pages": "393-426",
+                        "doi": "10.1071/PP9940393"
+                    },
+                    {
+                        "authors": "Tanner, C.B., & Sinclair, T.R.",
+                        "year": 1983,
+                        "title": "Efficient water use in crop production: Research or re -search?",
+                        "book": "Limitations to Efficient Water Use in Crop Production",
+                        "publisher": "ASA, CSSA, SSSA",
+                        "pages": "1-27"
+                    },
+                    {
+                        "authors": "Mengel, K., & Kirkby, E.A.",
+                        "year": 2001,
+                        "title": "Principles of Plant Nutrition (5th ed.)",
+                        "publisher": "Kluwer Academic Publishers",
+                        "isbn": "978-0-7923-7150-2"
+                    }
+                ],
+                "important_journals_ar": [
+                    "Field Crops Research",
+                    "Crop Science",
+                    "Journal of Cereal Science",
+                    "Plant and Soil"
+                ]
+            },
+            {
+                "plant_id": "plant-007",
+                "name_ar": " طماطم",
+                "name_en": "Tomato",
+                "taxonomy": {
+                    "kingdom_ar": "Plantae",
+                    "division_ar": "Angiosperms",
+                    "class_ar": " ثنائية الفلقة Dicotyledonae",
+                    "order_ar": " رتبة الباذنجانيات Solanales",
+                    "family_ar": " فصيلة الباذنجانيات Solanaceae",
+                    "genus_ar": "Solanum ( أعيد تصنيفها من Lycopersicon)",
+                    "species_ar": "Solanum lycopersicum L.",
+                    "chromosome_number": "2n = 24"
+                },
+                "academic_terms_ar": {
+                    "determinate_ar": " محدود النمو Determinate ينتهي النمو بتكوين نورة طرفية مناسب للزراعة الحقلية ",
+                    "indeterminate_ar": " غير محدود النمو Indeterminate يستمر في النمو مناسب للصوب ",
+                    "blossom_end_rot_ar": " تعفن الطرف الزهري BER نقص Ca في الثمار الصغيرة اضطراب فسيولوجي ",
+                    "fruit_set_ar": " عقد الثمار Fruit Set تطور المبيض بعد التلقيح",
+                    "parthenocarpy_ar": " العقد الالبذري Parthenocarpy تطور الثمار بدون تلقيح",
+                    "lycopene_ar": " الليكوبين Lycopene صبغة حمراء في الطماطم مضاد أكسدة قوي "
+                },
+                "npk_calculation": {
+                    "n_removal_kg_ton_fruit": "2.5 -3.0 كجم N لكل طن ثمار",
+                    "p_removal_kg_ton_fruit": "0.5 -0.7 كجم P₂O₅ لكل طن",
+                    "k_removal_kg_ton_fruit": "3.5 -4.5 كجم K₂O لكل طن",
+                    "example_calculation_ar": " هدف15طن/فدان ×3=45كجم N (احتياج) ي ُضاف2-3ضعف لتعويض الفقد "
+                },
+                "key_references": [
+                    {
+                        "authors": "Marschner, H.",
+                        "year": 1995,
+                        "title": "Mineral Nutrition of Higher Plants (2nd ed.)",
+                        "publisher": "Academic Press",
+                        "isbn": "978-0-12-473542-2"
+                    },
+                    {
+                        "authors": "Saltveit, M.E.",
+                        "year": 2005,
+                        "title": "Blossom-end rot of tomato (Lycopersicon esculentum Mill.) fruit calcium nutrition and factors affecting it",
+                        "journal": "Acta Horticulturae",
+                        "volume": "695",
+                        "pages": "55-72"
+                    }
+                ],
+                "important_journals_ar": [
+                    "HortScience",
+                    "Journal of the American Society for Horticultural Science",
+                    "Scientia Horticulturae"
+                ]
+            },
+            {
+                "plant_id": "plant-003",
+                "name_ar": " أرز",
+                "name_en": "Rice",
+                "taxonomy": {
+                    "kingdom_ar": "Plantae",
+                    "class_ar": "Monocotyledonae",
+                    "family_ar": "Poaceae",
+                    "genus_ar": "Oryza",
+                    "species_ar": "Oryza sativa L. ( أرز آسيوي) / Oryza glaberrima ( أرز أفريقي)",
+                    "chromosome_number": "2n = 24",
+                    "subspecies_ar": "Indica ( أرز استوائي) / Japonica ( أرز معتدل) / Javanica"
+                },
+                "academic_terms_ar": {
+                    "tillering_ar": " التفريع عدد األشطاء يتحدد في مرحلة النمو الخضري ",
+                    "panicle_ar": " السنبلة Panicle نورة األرز المتفرعة",
+                    "photoperiod_sensitivity_ar": " حساسية الضوئية كثير من أصناف األرز تحتاج نهارا ً قصيرا ً لإلزهار ",
+                    "spikelet_ar": " الزهيرة Spikelet الوحدة األساسية في نورة األرز",
+                    "sterility_ar": " العقم Sterility فشل التلقيح يزيد في درجات حرارة عالية أو منخفضة ",
+                    "awd_ar": " اإلرواء المتقطع AWD (Alternate Wetting and Drying) تقنية توفير المياه"
+                },
+                "npk_calculation": {
+                    "n_removal_kg_ton_grain": "14 -17 كجم N لكل طن",
+                    "p_removal_kg_ton_grain": "6-7 كجم P₂O₅ لكل طن",
+                    "k_removal_kg_ton_grain": "16 -20 كجم K₂O لكل طن"
+                },
+                "key_references": [
+                    {
+                        "authors": "Yoshida, S.",
+                        "year": 1981,
+                        "title": "Fundamentals of Rice Crop Science",
+                        "publisher": "International Rice Research Institute (IRRI)",
+                        "location": "Los Baños, Philippines"
+                    },
+                    {
+                        "authors": "Dobermann, A., & Fairhurst, T.",
+                        "year": 2000,
+                        "title": "Rice: Nutrient Disorders & Nutrient Management",
+                        "publisher": "IRRI & PPI & PPIC",
+                        "isbn": "978-981-04-2742-6"
+                    }
+                ],
+                "important_journals_ar": [
+                    "Rice (Springer)",
+                    "Field Crops Research",
+                    "Plant and Soil"
+                ]
+            }
+        ]
+    },
+    "fertilizer_academic_data": {
+        "title_ar": " البيانات األكاديمية لألسمدة",
+        "description_ar": " الكيمياء واآلليات العلمية والمراجع لكل سماد",
+        "fertilizers": [
+            {
+                "fert_id": "fert-001",
+                "name_ar": " يوريا",
+                "name_en": "Urea",
+                "chemistry": {
+                    "molecular_formula": "CO(NH₂)₂",
+                    "molecular_weight_g_mol": 60.06,
+                    "n_content_percent": 46.3,
+                    "synthesis_ar": " ً صناعيا: N₂ + 3H₂ → 2NH₃ (هابر بوش) ثم NH₃ + CO₂ → CO(NH₂)₂ + H₂O",
+                    "soil_transformation_ar": " اليوريا في التربة: CO(NH₂)₂ → (اليورياز) →2 NH₃ + CO₂ → NH₄⁺ + OH⁻",
+                    "urease_enzyme_ar": " إنزيم اليورياز بكتيري وفطري في التربة يتحلل اليوريا في1-7أيام ",
+                    "ph_effect_ar": " التحلل يرفع pHً محليا ً مؤقتا قد يسبب تطاير NH₃ في التربة القلوية الجافة"
+                },
+                "nitrogen_forms_ar": {
+                    "urea_n_ar": "N- أميدي يتحول ألمونيوم ثم نترات ",
+                    "ammonium_n_ar": "NH₄⁺ ي ُمتص مباشرة يبقى في التربة وال ينجرف ",
+                    "nitrate_n_ar": "NO₃⁻ ً ي ُمتص سريعا قابل لالنجراف بالماء "
+                },
+                "losses_ar": {
+                    "volatilization_ar": " تطاير NH₃ يصل20-40% في التربة القلوية إذا بقي على السطح ",
+                    "leaching_ar": " انجراف النترات في التربة الرملية والري المفرط ",
+                    "denitrification_ar": " نزع النترات في التربة الالهوائية المشبعة بالماء "
+                },
+                "key_references": [
+                    {
+                        "authors": "Goos, R.J., & Johnson, B.E.",
+                        "year": 2001,
+                        "title": "A comparison of three methods for reducing ammonia volatilization from urea fertilizer",
+                        "journal": "Agronomy Journal",
+                        "volume": "93(5)",
+                        "pages": "1106-1110"
+                    },
+                    {
+                        "authors": "Hatfield, J.L., & Prueger, J.H.",
+                        "year": 2015,
+                        "title": "Temperature extremes: Effect on plant growth and development",
+                        "journal": "Weather and Climate Extremes",
+                        "volume": "10",
+                        "pages": "4-10"
+                    }
+                ]
+            },
+            {
+                "fert_id": "fert-009",
+                "name_ar": " سوبر فوسفات أحادي SSP",
+                "name_en": "Single Superphosphate",
+                "chemistry": {
+                    "composition": "Ca(H₂PO₄)₂ + CaSO₄ + H₂O",
+                    "p2o5_percent": "16-20%",
+                    "ca_percent": "18-21%",
+                    "s_percent": "10-12%",
+                    "production_ar": " تفاعل الفوسفات الصخري مع حمض الكبريتيك: Ca₃(PO₄)₂ + 2H₂SO₄ → Ca(H₂PO₄)₂ + 2CaSO₄"
+                },
+                "soil_reactions_ar": {
+                    "in_soil_ar": "Ca(H₂PO₄)₂ يتفاعل مع التربة ويتحول لـ CaHPO₄ ثم Ca₃(PO₄)₂ ( يتثبت)",
+                    "fixation_ar": " تثبيت الفوسفور: يرتبط بـ Fe وAl في التربة الحمضية وبـ Ca في القلوية يقلل التوافر ",
+                    "ph_effect_ar": " التوافر أعلى في pH 6-7 ينخفض بشدة في pH أعلى من7.5(التربة المصرية) "
+                },
+                "improvement_strategies_ar": [
+                    " خلط مع حمض الهيوميك ي ُقلل التثبيت",
+                    " التطبيق بجانب البذرة (Band application) يقلل مالمسة التربة",
+                    "PSB (بكتيريا محللة الفوسفات) ت ُحرر الفوسفور المثبت",
+                    " تحميض التربة يحسن التوافر"
+                ],
+                "key_references": [
+                    {
+                        "authors": "Syers, J.K., Johnston, A.E., & Curtin, D.",
+                        "year": 2008,
+                        "title": "Efficiency of soil and fertilizer phosphorus use",
+                        "publisher": "FAO Fertilizer and Plant Nutrition Bulletin 18",
+                        "location": "Rome"
+                    }
+                ]
+            },
+            {
+                "fert_id": "fert-027",
+                "name_ar": " رايزوبيوم",
+                "name_en": "Rhizobium",
+                "microbiology": {
+                    "classification_ar": " بكتيريا Alphaproteobacteria رتبة Rhizobiales",
+                    "genera_ar": [
+                        "Rhizobium",
+                        "Bradyrhizobium",
+                        "Mesorhizobium",
+                        "Sinorhizobium",
+                        "Azorhizobium"
+                    ],
+                    "nodule_formation_ar": " تكوين العقد: جذر النبات ي ُفرز فالفونويدات → ت ُنشط جينات nod في الرايزوبيوم → تكوين عوامل Nod → تطور العقدة",
+                    "nitrogen_fixation_mechanism_ar": " إنزيم النيتروجيناز (nifH gene): N₂ + 8H⁺ + 8e⁻ + 16ATP → 2NH₃ + H₂ + 16ADP",
+                    "leghemoglobin_ar": " الليجهيموجلوبين ي ُنظم تركيز O₂ داخل العقدة يحمي النيتروجيناز من األكسدة ي ُعطي لون العقدة الوردي"
+                },
+                "specificity_ar": {
+                    "rhizobium_leguminosarum_ar": " فول + بازالء + عدس + حمص",
+                    "bradyrhizobium_japonicum_ar": " فول الصويا",
+                    "mesorhizobium_ciceri_ar": " حمص",
+                    "rhizobium_phaseoli_ar": " فاصوليا"
+                },
+                "inoculation_best_practices_ar": [
+                    " التلقيح مباشرة قبل الزراعة ال تعريض للشمس ",
+                    " الخلط بمادة الصقة (سكر أو صمغ عربي) لتثبيته على البذرة",
+                    " تجنب الخلط مع مبيدات الفطريات",
+                    " درجة حرارة التخزين4-8°م "
+                ],
+                "key_references": [
+                    {
+                        "authors": "Graham, P.H., & Vance, C.P.",
+                        "year": 2003,
+                        "title": "Legumes: Importance and constraints to greater use",
+                        "journal": "Plant Physiology",
+                        "volume": "131(3)",
+                        "pages": "872-877",
+                        "doi": "10.1104/pp.017004"
+                    }
+                ]
+            }
+        ]
+    },
+    "essential_equations": {
+        "title_ar": " المعادالت األساسية في التغذية النباتية والزراعة",
+        "equations": [
+            {
+                "id": "eq-001",
+                "name_ar": " حساب جرعة السماد من تحليل التربة",
+                "name_en": "Fertilizer Dose from Soil Analysis",
+                "formula": "Fertilizer dose = (Crop requirement - Soil supply) ÷ Fertilizer efficiency",
+                "example_ar": " قمح يحتاج80كجم N التربة توفر20كجم كفاءة اليوريا50( → %80-20÷ )0.5=120كجم N → 120 ÷ 0.46 = 261 كجم يوريا/فدان",
+                "variables_ar": {
+                    "crop_requirement_ar": " احتياج المحصول من العنصر (كجم/فدان)",
+                    "soil_supply_ar": " ما توفره التربة من نفس العنصر (من تحليل التربة)",
+                    "efficiency_ar": " كفاءة استخدام السماد (N=50%, P=20%, K=60%)"
+                }
+            },
+            {
+                "id": "eq-002",
+                "name_ar": " حساب EC المحلول المغذي",
+                "name_en": "Nutrient Solution EC Calculation",
+                "formula": "EC_total = Σ(concentration_i × EC_factor_i)",
+                "example_ar": " يوريا1كجم/1000لتر = EC +0.4 dS/m نترات كالسيوم1كجم/1000لتر = EC +0.9 dS/m",
+                "note_ar": "EC األمثل للتنقيط:1.5-3.5 dS/m حسب المحصول والطور"
+            },
+            {
+                "id": "eq-003",
+                "name_ar": " معادلة البخر-نتح المرجعية (Penman-Monteith)",
+                "name_en": "Reference Evapotranspiration (ET₀)",
+                "formula": "ET₀ = [0.408Δ(Rn-G) + γ(900/(T+273))u₂(es-ea)] ÷ [Δ + γ(1+0.34u₂)]",
+                "note_ar": " المعادلة الرسمية لـ FAO لحساب احتياجات الري Rn= اإلشعاع الشمسي الصافي T= درجة الحرارة u₂= سرعة الرياح es= ضغط بخار اإلشباع ea= ضغط البخار الفعلي",
+                "practical_ar": "ETcrop = ET₀ × Kc Kc= معامل المحصول (يختلف بحسب طور النمو)"
+            },
+            {
+                "id": "eq-004",
+                "name_ar": " قانون فيك لالنتشار",
+                "name_en": "Fick's First Law of Diffusion",
+                "formula": "J = -D × (dC/dx)",
+                "note_ar": "J= تدفق المادة D= معامل االنتشار dC/dx= تدرج التركيز ي ُطبق في انتقال العناصر من التربة لسطح الجذر"
+            },
+            {
+                "id": "eq-005",
+                "name_ar": " حساب اإلنتاجية المائية للري",
+                "name_en": "Water Use Efficiency (WUE)",
+                "formula": "WUE = Crop yield (kg) ÷ Water consumed (m³)",
+                "example_ar": " قمح3طن/فدان ÷2000م³=1.5كجم/م³ الري بالتنقيط يرفعها لـ2-3كجم/م³ "
+            },
+            {
+                "id": "eq-006",
+                "name_ar": " معادلة التمثيل الضوئي الكاملة",
+                "name_en": "Complete Photosynthesis Equation",
+                "formula": "6CO₂ + 12H₂O + Light → C₆H₁₂O₆ + 6O₂ + 6H₂O",
+                "note_ar": " النبات يستخدم12جزيء ماء ينتج6منها مع األكسجين و6تدخل في الجلوكوز "
+            },
+            {
+                "id": "eq-007",
+                "name_ar": " حساب االستحقاق الكيميائي للسماد",
+                "name_en": "Chemical Equivalent of Fertilizer",
+                "formula": "N in fertilizer (kg) = Weight of fertilizer (kg) × N% ÷ 100",
+                "examples_ar": [
+                    "100 كجم يوريا ×46= %46كجم N",
+                    "100 كجم نترات أمونيوم ×33.5= %33.5كجم N",
+                    "100 كجم MAP × 12% N + 61% P₂O₅ = 12 كجم N + 61 كجم P₂O₅"
+                ]
+            },
+            {
+                "id": "eq-008",
+                "name_ar": " تحويل P₂O₅ إلى P والعكس",
+                "name_en": "P₂O₅ to P Conversion",
+                "formula": "P = P₂O₅ × 0.436 || P₂O₅ = P × 2.291",
+                "also": "K = K₂O × 0.83 || K₂O = K × 1.205",
+                "note_ar": " األسمدة ت ُعبر عن P كـ P₂O₅ وعن K كـ K₂O التربة ت ُعبر عن P وK مباشرة انتبه للتحويل "
+            }
+        ]
+    },
+    "key_references_general": {
+        "title_ar": " المراجع األساسية في العلوم الزراعية",
+        "books": [
+            {
+                "id": "ref-book-001",
+                "title": "Mineral Nutrition of Higher Plants (3rd Edition)",
+                "authors": "Marschner, P. (Ed.)",
+                "year": 2012,
+                "publisher": "Academic Press Elsevier",
+                "isbn": "978-0-12-384905-2",
+                "relevance_ar": " المرجع األشمل في تغذية النبات كل عنصر بالتفصيل ضروري لكل دكتور ومهندس "
+            },
+            {
+                "id": "ref-book-002",
+                "title": "Soil Fertility and Fertilizers (8th Edition)",
+                "authors": "Havlin, J.L., Tisdale, S.L., Nelson, W.L., & Beaton, J.D.",
+                "year": 2014,
+                "publisher": "Pearson",
+                "isbn": "978-0-13-503373-9",
+                "relevance_ar": " المرجع األكاديمي األول لعلم التسميد والخصوبة ًي ُستخدم في كليات الزراعة عالميا "
+            },
+            {
+                "id": "ref-book-003",
+                "title": "Principles of Soil Chemistry (4th Edition)",
+                "authors": "Tan, K.H.",
+                "year": 2011,
+                "publisher": "CRC Press",
+                "isbn": "978-1-4398-1837-5",
+                "relevance_ar": " مرجع متخصص في كيمياء التربة pH CEC تفاعالت األسمدة"
+            },
+            {
+                "id": "ref-book-004",
+                "title": "Plant Physiology (5th Edition)",
+                "authors": "Taiz, L., Zeiger, E., Møller, I.M., & Murphy, A.",
+                "year": 2015,
+                "publisher": "Sinauer Associates",
+                "isbn": "978-1-60535-177-6",
+                "relevance_ar": "ً مرجع فسيولوجيا النبات األشهر عالميا التمثيل الضوئي والتنفس والهرمونات "
+            },
+            {
+                "id": "ref-book-005",
+                "title": "Crop Production in Dryland Areas",
+                "authors": "Tanner, C.B., & Sinclair, T.R.",
+                "year": 1983,
+                "publisher": "ASA-CSSA-SSSA",
+                "relevance_ar": " مرجع مهم للزراعة في المناطق الجافة وشبه الجافة مناسب للبيئة المصرية "
+            },
+            {
+                "id": "ref-book-006",
+                "title": " التغذية المعدنية للنبات مرجع عربي ",
+                "authors": " د. محمد عبد الحميد مصر ",
+                "year": 2010,
+                "publisher": " دار المعارف القاهرة ",
+                "relevance_ar": " مرجع عربي شامل في تغذية النبات ك ُتب لطالب كليات الزراعة العربية "
+            },
+            {
+                "id": "ref-book-007",
+                "title": "Nematology: Advances and Perspectives",
+                "authors": "Chen, Z.X., Chen, S.Y., & Dickson, D.W.",
+                "year": 2004,
+                "publisher": "CAB International",
+                "isbn": "978-0-85199-715-6",
+                "relevance_ar": " مرجع النيماتودا األكاديمي لكل متخصص في وقاية النبات "
+            },
+            {
+                "id": "ref-book-008",
+                "title": "Weed Science: Principles and Applications (4th Edition)",
+                "authors": "Zimdahl, R.L.",
+                "year": 2018,
+                "publisher": "Academic Press",
+                "isbn": "978-0-12-811143-0",
+                "relevance_ar": " مرجع علم الحشائش األكاديمي المكافحة والسلوك والتفاعالت "
+            },
+            {
+                "id": "ref-book-009",
+                "title": "FAO Crop Water Requirements (Irrigation and Drainage Paper 56)",
+                "authors": "Allen, R.G., Pereira, L.S., Raes, D., & Smith, M.",
+                "year": 1998,
+                "publisher": "Food and Agriculture Organization of the United Nations",
+                "relevance_ar": " المرجع الرسمي لحساب احتياجات الري معادلة Penman-Monteith مجاني على موقع FAO"
+            },
+            {
+                "id": "ref-book-010",
+                "title": "Integrated Pest Management: Concepts, Tactics, Strategies (2nd Edition)",
+                "authors": "Radcliffe, E.B., Hutchison, W.D., & Cancelado, R.E.",
+                "year": 2009,
+                "publisher": "Cambridge University Press",
+                "isbn": "978-0-521-87461-9",
+                "relevance_ar": " مرجع اإلدارة المتكاملة لآلفات للمهندسين والباحثين "
+            }
+        ],
+        "key_journals_ar": [
+            {
+                "name": "Plant and Soil",
+                "publisher": "Springer",
+                "focus_ar": " تغذية النبات والتربة"
+            },
+            {
+                "name": "Field Crops Research",
+                "publisher": "Elsevier",
+                "focus_ar": " إنتاج المحاصيل الحقلية"
+            },
+            {
+                "name": "Soil Biology and Biochemistry",
+                "publisher": "Elsevier",
+                "focus_ar": " أحياء التربة والتكافالت"
+            },
+            {
+                "name": "Phytopathology",
+                "publisher": "APS Press",
+                "focus_ar": " أمراض النبات"
+            },
+            {
+                "name": "Weed Science",
+                "publisher": "Cambridge",
+                "focus_ar": " الحشائش والمكافحة"
+            },
+            {
+                "name": "Journal of Nematology",
+                "publisher": "University of Florida",
+                "focus_ar": " النيماتودا"
+            },
+            {
+                "name": "Agronomy Journal",
+                "publisher": "ASA",
+                "focus_ar": " العلوم الزراعية الشاملة"
+            },
+            {
+                "name": "HortScience",
+                "publisher": "ASHS",
+                "focus_ar": " علوم البستنة"
+            },
+            {
+                "name": " المجلة المصرية لعلوم التربة",
+                "publisher": " الجمعية المصرية لعلوم التربة",
+                "focus_ar": " التربة المصرية"
+            },
+            {
+                "name": " المجلة المصرية للعلوم الزراعية",
+                "publisher": " جامعة القاهرة",
+                "focus_ar": " الزراعة المصرية"
+            }
+        ],
+        "online_databases_ar": [
+            {
+                "name": "Google Scholar",
+                "url": "scholar.google.com",
+                "note_ar": " بحث مجاني في األوراق العلمية"
+            },
+            {
+                "name": "Sci-Hub",
+                "url": "sci-hub.se",
+                "note_ar": " وصول مجاني لألوراق المدفوعة"
+            },
+            {
+                "name": "AGRIS",
+                "url": "agris.fao.org",
+                "note_ar": " قاعدة بيانات FAO الزراعية مجانية "
+            },
+            {
+                "name": "CAB Abstracts",
+                "url": "cabi.org",
+                "note_ar": " أشمل قاعدة بيانات زراعية"
+            },
+            {
+                "name": "PubMed",
+                "url": "pubmed.ncbi.nlm.nih.gov",
+                "note_ar": " للبحوث الطبية والحيوية"
+            },
+            {
+                "name": "IPNI",
+                "url": "ipni.net",
+                "note_ar": " معهد تغذية النبات الدولي أسمدة "
+            },
+            {
+                "name": "FAO FAOSTAT",
+                "url": "fao.org/faostat",
+                "note_ar": " إحصاءات اإلنتاج الزراعي العالمي"
+            }
+        ]
+    },
+    "academic_quick_reference": {
+        "title_ar": " الجداول السريعة للمراجعة األكاديمية",
+        "essential_elements_table": {
+            "title_ar": " العناصر األساسية الـ17للنبات ",
+            "elements": [
+                {
+                    "symbol": "C",
+                    "name_ar": " كربون",
+                    "source_ar": "CO₂ من الهواء",
+                    "function_ar": " هيكل المركبات العضوية 45% من وزن النبات الجاف ",
+                    "deficiency_ar": " نادر نقص CO₂"
+                },
+                {
+                    "symbol": "H",
+                    "name_ar": " هيدروجين",
+                    "source_ar": " ماء",
+                    "function_ar": " مكون الماء والمركبات العضوية",
+                    "deficiency_ar": " نادر"
+                },
+                {
+                    "symbol": "O",
+                    "name_ar": " أكسجين",
+                    "source_ar": " ماء وهواء",
+                    "function_ar": " التنفس والتمثيل الضوئي",
+                    "deficiency_ar": " نادر الغرق "
+                },
+                {
+                    "symbol": "N",
+                    "name_ar": " نيتروجين",
+                    "source_ar": " التربة األسمدة التثبيت البيولوجي ",
+                    "function_ar": " البروتينات الكلوروفيل األحماض النووية ",
+                    "deficiency_ar": " اصفرار عام بدء من األوراق القديمة"
+                },
+                {
+                    "symbol": "P",
+                    "name_ar": " فوسفور",
+                    "source_ar": " التربة األسمدة ",
+                    "function_ar": "ATP األحماض النووية DNA/RNA األغشية الخلوية",
+                    "deficiency_ar": " لون بنفسجي-أحمر ضعف التجذر والنضج "
+                },
+                {
+                    "symbol": "K",
+                    "name_ar": " بوتاسيوم",
+                    "source_ar": " التربة األسمدة ",
+                    "function_ar": " تنشيط اإلنزيمات فتح الثغور جودة الثمار ",
+                    "deficiency_ar": " احتراق حواف األوراق بدء من القديمة "
+                },
+                {
+                    "symbol": "Ca",
+                    "name_ar": " كالسيوم",
+                    "source_ar": " التربة األسمدة ",
+                    "function_ar": " جدار الخلية الصفيحة الوسطى إشارات ثانوية ",
+                    "deficiency_ar": " تعفن الطرف الزهري تشوه القمم النامية "
+                },
+                {
+                    "symbol": "Mg",
+                    "name_ar": " مغنيسيوم",
+                    "source_ar": " التربة األسمدة ",
+                    "function_ar": " مركز الكلوروفيل تنشيط ATP سينثيز",
+                    "deficiency_ar": " اصفرار بين العروق في األوراق المتوسطة"
+                },
+                {
+                    "symbol": "S",
+                    "name_ar": " كبريت",
+                    "source_ar": " التربة األسمدة الكبريتية ",
+                    "function_ar": " األحماض األمينية Cys وMet ليبيدات الخلية",
+                    "deficiency_ar": " اصفرار في األوراق الحديثة"
+                },
+                {
+                    "symbol": "Fe",
+                    "name_ar": " حديد",
+                    "source_ar": " التربة يتثبت في القلوية ",
+                    "function_ar": " صناعة الكلوروفيل السيتوكروم النيتروجيناز ",
+                    "deficiency_ar": " كلوروز حديدي اصفرار األوراق الحديثة مع بقاء العروق خضراء"
+                },
+                {
+                    "symbol": "Zn",
+                    "name_ar": " زنك",
+                    "source_ar": " التربة يتثبت في القلوية ",
+                    "function_ar": " تنشيط 300+ إنزيم هرمون األكسين إنتاج البروتين ",
+                    "deficiency_ar": " تقزم األوراق تباعد العقد أكثر نقص في مصر"
+                },
+                {
+                    "symbol": "Mn",
+                    "name_ar": " منجنيز",
+                    "source_ar": " التربة",
+                    "function_ar": " التمثيل الضوئي PSII تنشيط إنزيمات التربة",
+                    "deficiency_ar": " اصفرار بين العروق في األوراق الحديثة التربة القلوية "
+                },
+                {
+                    "symbol": "Cu",
+                    "name_ar": " نحاس",
+                    "source_ar": " التربة",
+                    "function_ar": " بالستوسيانين في التمثيل الضوئي تثبيت N",
+                    "deficiency_ar": " ذبول أطراف األوراق الحديثة نادر "
+                },
+                {
+                    "symbol": "B",
+                    "name_ar": " بور",
+                    "source_ar": " التربة",
+                    "function_ar": " جدار الخلية نقل السكريات تلقيح األزهار",
+                    "deficiency_ar": " تشقق الثمار موت القمم تعفن قلب البنجر "
+                },
+                {
+                    "symbol": "Mo",
+                    "name_ar": " موليبدين",
+                    "source_ar": " التربة",
+                    "function_ar": " إنزيم النيتروجيناز (التثبيت البيولوجي) اختزال النترات ",
+                    "deficiency_ar": " صفراء اللسان في القرنبيط نادر في القلوية "
+                },
+                {
+                    "symbol": "Cl",
+                    "name_ar": " كلور",
+                    "source_ar": " التربة والمياه",
+                    "function_ar": " ضبط األسموز التمثيل الضوئي PSII فتح الثغور",
+                    "deficiency_ar": "ً نادر جدا الزرقة في األوراق "
+                },
+                {
+                    "symbol": "Ni",
+                    "name_ar": " نيكل",
+                    "source_ar": " التربة",
+                    "function_ar": " إنزيم يورياز إنبات البذور ",
+                    "deficiency_ar": " تراكم يوريا سامة في األوراق ًنادر جدا "
+                }
+            ]
+        },
+        "soil_fertility_indicators_ar": {
+            "title_ar": " مؤشرات خصوبة التربة",
+            "indicators": [
+                {
+                    "parameter_ar": "pH",
+                    "optimal_ar": "6.0 -7.0",
+                    "egypt_typical_ar": "7.5 -8.5",
+                    "impact_ar": " يتحكم في توافر كل العناصر"
+                },
+                {
+                    "parameter_ar": "EC",
+                    "optimal_ar": " أقل من2 dS/m",
+                    "egypt_typical_ar": "0.5 -3 ( متغير)",
+                    "impact_ar": " الملوحة الضغط األسموزي "
+                },
+                {
+                    "parameter_ar": " مادة عضوية",
+                    "optimal_ar": " أكثر من2 %",
+                    "egypt_typical_ar": "0.5 -1.5%",
+                    "impact_ar": " الخصوبة الحياة الميكروبية "
+                },
+                {
+                    "parameter_ar": "N كلي",
+                    "optimal_ar": "0.1-0.2%",
+                    "egypt_typical_ar": "0.05 -0.15%",
+                    "impact_ar": " برنامج التسميد N"
+                },
+                {
+                    "parameter_ar": "P متاح",
+                    "optimal_ar": "20-40 ppm",
+                    "egypt_typical_ar": "5 -25 ppm",
+                    "impact_ar": " برنامج التسميد P"
+                },
+                {
+                    "parameter_ar": "K متاح",
+                    "optimal_ar": "150-300 ppm",
+                    "egypt_typical_ar": "100 -400 ppm",
+                    "impact_ar": " برنامج التسميد K"
+                },
+                {
+                    "parameter_ar": "Zn",
+                    "optimal_ar": " أكثر من1 ppm",
+                    "egypt_typical_ar": "0.2 -1.5 ppm",
+                    "impact_ar": " نقص Znً شائع جدا"
+                }
+            ]
+        }
+    }
+}

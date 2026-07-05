@@ -1,0 +1,141 @@
+{
+  "short_name": "Hefno Plant",
+  "name": "Hefno Plant - الذكاء الاصطناعي للزراعة",
+  "description": "تطبيق ذكي لتشخيص أمراض النباتات والاستشارات الزراعية باستخدام الذكاء الاصطناعي",
+  "icons": [
+    {
+      "src": "./fav/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "./fav/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./fav/android-chrome-512x512.png",
+      "type": "image/png", 
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./fav/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./fav/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512", 
+      "purpose": "maskable"
+    },
+    {
+      "src": "./fav/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "theme_color": "#27ae60",
+  "background_color": "#f0f9f0",
+  "dir": "rtl",
+  "lang": "ar",
+  "categories": ["lifestyle", "education", "health"],
+  "screenshots": [
+    {
+      "src": "screenshots/mobile1.png",
+      "type": "image/png", 
+      "sizes": "375x812",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "screenshots/tablet1.png",
+      "type": "image/png",
+      "sizes": "768x1024", 
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "تشخيص النبات",
+      "short_name": "تشخيص",
+      "description": "تشخيص سريع لأمراض النباتات",
+      "url": "/diagnosis?source=shortcut",
+      "icons": [
+        {
+          "src": "icons/diagnosis-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "قاعدة المعرفة", 
+      "short_name": "المعرفة",
+      "description": "الوصول السريع للمعلومات الزراعية",
+      "url": "/knowledge?source=shortcut",
+      "icons": [
+        {
+          "src": "icons/knowledge-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "الطقس الزراعي",
+      "short_name": "الطقس",
+      "description": "ظروف الطقس المناسبة للزراعة",
+      "url": "/weather?source=shortcut", 
+      "icons": [
+        {
+          "src": "icons/weather-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
+  "handle_links": "preferred",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "protocol_handlers": [
+    {
+      "protocol": "web+hfnoplant",
+      "url": "/?protocol=%s"
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": {
+      "title": "name",
+      "text": "description",
+      "url": "link"
+    }
+  },
+  "file_handlers": [
+    {
+      "action": "/analyze-image",
+      "accept": {
+        "image/*": [".jpg", ".jpeg", ".png", ".webp"]
+      }
+    }
+  ],
+  "permissions": [
+    "camera",
+    "geolocation"
+  ]
+}

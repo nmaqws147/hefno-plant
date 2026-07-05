@@ -1,0 +1,578 @@
+{
+  "metadata": {
+    "id": "hefnoplant_soil_irrigation_db",
+    "name_ar": "قاعدة بيانات التربة المصرية والري",
+    "name_en": "HefnoPlant — Egyptian Soils & Irrigation Database",
+    "version": "1.0.0",
+    "sources": [
+      "وزارة الزراعة المصرية — الإدارة المركزية للتربة والري",
+      "مركز بحوث الصحراء",
+      "MALR — معهد بحوث الأراضي والمياه والبيئة",
+      "FAO — Egypt Soil Survey",
+      "الهيئة العامة للإصلاح الزراعي"
+    ]
+  },
+
+  "egyptian_soil_types": [
+    {
+      "id": "soil-001",
+      "name_ar": "التربة الطميية (النيلية)",
+      "name_en": "Alluvial (Nile) Soil",
+      "local_name_ar": "الطمي — أرض النيل",
+      "color_ar": "بني داكن إلى رمادي داكن",
+      "texture_ar": "متوسطة إلى ثقيلة",
+      "distribution_ar": "وادي النيل والدلتا — أكثر من 3 مليون فدان",
+      "area_million_feddan": 6.0,
+      "regions_ar": ["الدلتا كاملة", "وادي النيل من أسوان لأسيوط", "الفيوم"],
+
+      "physical_properties": {
+        "clay_percent": "30-50%",
+        "silt_percent": "20-40%",
+        "sand_percent": "10-30%",
+        "bulk_density_g_cm3": "1.2-1.4",
+        "porosity_percent": "45-55%",
+        "water_holding_capacity_ar": "عالية جداً",
+        "drainage_ar": "متوسط إلى بطيء",
+        "permeability_ar": "بطيئة نسبياً"
+      },
+
+      "chemical_properties": {
+        "ph_range": "7.5-8.5",
+        "ph_character_ar": "قلوية",
+        "organic_matter_percent": "1.5-3%",
+        "cec_meq_100g": "25-40",
+        "calcium_carbonate_percent": "5-15%",
+        "salinity_ec_ds_m": "أقل من 2 عادةً",
+        "fertility_ar": "خصبة طبيعياً — غنية بالعناصر الغذائية"
+      },
+
+      "crop_suitability_ar": {
+        "excellent_ar": ["قمح", "أرز", "قطن", "ذرة", "فول", "بصل", "طماطم", "باذنجان"],
+        "good_ar": ["خضروات متنوعة", "أشجار فاكهة", "سمسم"],
+        "not_recommended_ar": ["بطاطس (تحتاج تربة أخف)", "جزر (يتشوه الجذر)"]
+      },
+
+      "management_tips_ar": [
+        "تحسين الصرف أهم تحدٍّ — الشبكات المغطاة ضرورية",
+        "تجنب الحرث وهي رطبة — تتكتل وتصعب",
+        "الكمبوست يُحسن بنيتها الفيزيائية كثيراً",
+        "حذر من التملح التدريجي مع الري المفرط",
+        "pH مرتفع قد يثبت الحديد والزنك — راقب النقص"
+      ],
+
+      "irrigation_notes_ar": "تحتفظ بالماء طويلاً — فترات ري أطول — خطر الغرق إذا أفرطت",
+      "fertilization_notes_ar": "خصبة طبيعياً — تحتاج أقل تسميد من الرملية — راقب الحديد والزنك والمنجنيز"
+    },
+
+    {
+      "id": "soil-002",
+      "name_ar": "التربة الرملية",
+      "name_en": "Sandy Soil",
+      "local_name_ar": "الأرض الرملية — أرض الصحراء",
+      "color_ar": "رمادي فاتح إلى بيج",
+      "texture_ar": "خفيفة جداً",
+      "distribution_ar": "الأراضي الجديدة المستصلحة — سيناء — الواحات — الساحل الشمالي",
+      "area_million_feddan": 5.5,
+      "regions_ar": ["شمال سيناء", "غرب الدلتا", "الوادي الجديد", "مطروح", "شرق العوينات"],
+
+      "physical_properties": {
+        "clay_percent": "أقل من 10%",
+        "silt_percent": "أقل من 15%",
+        "sand_percent": "أكثر من 70%",
+        "bulk_density_g_cm3": "1.5-1.8",
+        "porosity_percent": "35-45%",
+        "water_holding_capacity_ar": "منخفضة جداً",
+        "drainage_ar": "سريع جداً — ممتاز",
+        "permeability_ar": "عالية جداً"
+      },
+
+      "chemical_properties": {
+        "ph_range": "7.0-8.5",
+        "ph_character_ar": "محايدة إلى قلوية خفيفة",
+        "organic_matter_percent": "أقل من 0.5%",
+        "cec_meq_100g": "3-8",
+        "calcium_carbonate_percent": "2-10%",
+        "salinity_ec_ds_m": "متغيرة — قد ترتفع",
+        "fertility_ar": "فقيرة جداً — تحتاج تسميد مكثف"
+      },
+
+      "crop_suitability_ar": {
+        "excellent_ar": ["بطاطس", "فول سوداني", "جزر", "فراولة", "بطيخ", "شمام"],
+        "good_ar": ["طماطم مع تنقيط", "خيار", "فلفل", "بصل"],
+        "not_recommended_ar": ["أرز (يحتاج غمر)", "قطن (يحتاج ثقيلة)"]
+      },
+
+      "management_tips_ar": [
+        "الري بالتنقيط إلزامي — لا تهدر المياه",
+        "إضافة مادة عضوية كثيفة لتحسين الاحتجاز",
+        "التسميد على دفعات صغيرة متكررة لا كبيرة نادرة",
+        "هيوميك أسيد يُحسن CEC ويقلل غسيل العناصر",
+        "الملوحة خطر مستمر — مراقبة دورية",
+        "إضافة البنتونيت تُحسن احتجاز الماء"
+      ],
+
+      "irrigation_notes_ar": "تحتاج ري متكرر وقصير — التنقيط الأمثل — الغمر يهدر ماء ويغسل عناصر",
+      "fertilization_notes_ar": "تسميد مكثف منتظم — كل العناصر ناقصة أصلاً — هيوميك أسيد ضروري لتثبيت العناصر"
+    },
+
+    {
+      "id": "soil-003",
+      "name_ar": "التربة الطينية الثقيلة",
+      "name_en": "Heavy Clay Soil",
+      "local_name_ar": "الأرض الثقيلة — التربة البهارية",
+      "color_ar": "رمادي داكن — أسود أحياناً",
+      "texture_ar": "ثقيلة جداً",
+      "distribution_ar": "مناطق محددة في الدلتا — بعض أراضي الوجه القبلي",
+      "area_million_feddan": 1.5,
+      "regions_ar": ["أجزاء من الدقهلية", "كفر الشيخ", "بعض أراضي أسيوط"],
+
+      "physical_properties": {
+        "clay_percent": "أكثر من 50%",
+        "silt_percent": "20-30%",
+        "sand_percent": "أقل من 20%",
+        "bulk_density_g_cm3": "1.1-1.3",
+        "porosity_percent": "50-60%",
+        "water_holding_capacity_ar": "عالية جداً",
+        "drainage_ar": "بطيء جداً — مشكلة",
+        "permeability_ar": "منخفضة جداً"
+      },
+
+      "chemical_properties": {
+        "ph_range": "7.5-8.5",
+        "ph_character_ar": "قلوية",
+        "organic_matter_percent": "2-4%",
+        "cec_meq_100g": "35-55",
+        "calcium_carbonate_percent": "10-20%",
+        "salinity_ec_ds_m": "متغيرة",
+        "fertility_ar": "خصبة جداً لكن مشاكل فيزيائية"
+      },
+
+      "crop_suitability_ar": {
+        "excellent_ar": ["أرز", "قصب السكر", "برسيم"],
+        "good_ar": ["قمح", "ذرة", "فول"],
+        "not_recommended_ar": ["بطاطس", "جزر", "فراولة", "خضروات جذرية", "أشجار فاكهة (يغرق الجذر)"]
+      },
+
+      "management_tips_ar": [
+        "الصرف أولوية قصوى — بدونه لا زراعة",
+        "لا تحرث وهي مبللة — تتكتل بشدة",
+        "الجبس الزراعي يُحسن بنيتها كثيراً",
+        "الكمبوست يُحسن التهوية ويُخفف الكتلة",
+        "الحرث العميق مرة كل 3-4 سنوات"
+      ],
+
+      "irrigation_notes_ar": "ري خفيف ومتباعد — تحتفظ بالماء طويلاً — الغمر الزائد يقتل الجذور",
+      "fertilization_notes_ar": "خصبة لكن تثبت العناصر — Ca وZn وFe قد يكونون غير متاحين رغم وجودهم"
+    },
+
+    {
+      "id": "soil-004",
+      "name_ar": "التربة الرملية الطميية",
+      "name_en": "Sandy Loam Soil",
+      "local_name_ar": "الطميية الخفيفة",
+      "color_ar": "بني فاتح",
+      "texture_ar": "متوسطة — الأمثل للزراعة",
+      "distribution_ar": "أجزاء من الدلتا — بعض الأراضي المستصلحة الجيدة",
+      "area_million_feddan": 2.0,
+      "regions_ar": ["أجزاء من الإسماعيلية", "الشرقية", "بعض أراضي البحيرة"],
+
+      "physical_properties": {
+        "clay_percent": "15-25%",
+        "silt_percent": "20-35%",
+        "sand_percent": "40-60%",
+        "bulk_density_g_cm3": "1.3-1.5",
+        "porosity_percent": "45-50%",
+        "water_holding_capacity_ar": "متوسطة — جيدة",
+        "drainage_ar": "جيد",
+        "permeability_ar": "متوسطة"
+      },
+
+      "chemical_properties": {
+        "ph_range": "6.5-7.5",
+        "ph_character_ar": "محايدة إلى قلوية خفيفة",
+        "organic_matter_percent": "1-2%",
+        "cec_meq_100g": "15-25",
+        "calcium_carbonate_percent": "5-10%",
+        "salinity_ec_ds_m": "أقل من 2",
+        "fertility_ar": "متوسطة الخصوبة — تستجيب جيداً للتسميد"
+      },
+
+      "crop_suitability_ar": {
+        "excellent_ar": ["طماطم", "خيار", "فلفل", "فراولة", "بطاطس", "قمح", "ذرة", "جزر"],
+        "good_ar": ["جميع المحاصيل تقريباً"],
+        "notes_ar": "أفضل تربة للزراعة المتنوعة"
+      },
+
+      "management_tips_ar": [
+        "أسهل التربة في الإدارة — متوازنة",
+        "الحفاظ على المادة العضوية أهم شيء",
+        "مناسبة لجميع أنظمة الري",
+        "الدورة الزراعية تحافظ على خصوبتها"
+      ],
+
+      "irrigation_notes_ar": "تقبل جميع أنظمة الري — التنقيط الأمثل للخضروات — الغمر للحبوب",
+      "fertilization_notes_ar": "متوازنة — تحتاج برنامج تسميد معتدل منتظم"
+    },
+
+    {
+      "id": "soil-005",
+      "name_ar": "التربة الملحية (المتأثرة بالملوحة)",
+      "name_en": "Saline Soil",
+      "local_name_ar": "الأراضي الملحة — أرض الشبخة",
+      "color_ar": "رمادي فاتح — أبيض مع ترسبات ملحية على السطح",
+      "texture_ar": "متغيرة",
+      "distribution_ar": "الشمال الشرقي — بعض أراضي الدلتا الشمالية — شمال سيناء",
+      "area_million_feddan": 1.2,
+      "regions_ar": ["كفر الشيخ الشمالي", "البحيرة الشمالية", "شمال الشرقية", "شمال سيناء"],
+
+      "physical_properties": {
+        "clay_percent": "متغير",
+        "silt_percent": "متغير",
+        "sand_percent": "متغير",
+        "bulk_density_g_cm3": "متغير",
+        "porosity_percent": "متغير",
+        "water_holding_capacity_ar": "متغيرة",
+        "drainage_ar": "سيئ في الغالب",
+        "permeability_ar": "منخفضة"
+      },
+
+      "chemical_properties": {
+        "ph_range": "7.5-9.0",
+        "ph_character_ar": "قلوية إلى قلوية شديدة",
+        "organic_matter_percent": "أقل من 1%",
+        "cec_meq_100g": "متغير",
+        "calcium_carbonate_percent": "متغير",
+        "salinity_ec_ds_m": "أكثر من 4 dS/m",
+        "fertility_ar": "منخفضة — الملوحة العائق الرئيسي"
+      },
+
+      "crop_suitability_ar": {
+        "excellent_ar": ["بنجر السكر", "شعير", "نخيل التمر", "أتريبلكس (رعوي)"],
+        "good_ar": ["قمح (أصناف متحملة)", "قطن", "نخيل زينة"],
+        "not_recommended_ar": ["طماطم", "فراولة", "خيار", "فول بلدي", "أغلب الخضروات"]
+      },
+
+      "management_tips_ar": [
+        "غسيل الملوحة بالمياه العذبة أولاً",
+        "تحسين الصرف إلزامي قبل الزراعة",
+        "الجبس الزراعي لتصحيح الصوديوم",
+        "زراعة محاصيل متحملة للبدء",
+        "مراقبة EC التربة دورياً"
+      ],
+
+      "reclamation_steps_ar": [
+        "1. تحسين الصرف — شبكات صرف مغطاة",
+        "2. إضافة جبس زراعي 500-1000 كجم/فدان",
+        "3. غسيل بالفيضان — 3-5 مرات",
+        "4. زراعة برسيم لتحسين البنية",
+        "5. إدخال تسميد عضوي كثيف"
+      ],
+
+      "irrigation_notes_ar": "ري بمياه منخفضة الملوحة — التنقيط يُقلل تراكم الملح — لا تسمح بالإجهاد المائي",
+      "fertilization_notes_ar": "تجنب KCl و NaNO₃ — يزيدان الملوحة — استخدم SOP و Ca(NO₃)₂"
+    },
+
+    {
+      "id": "soil-006",
+      "name_ar": "التربة الكلسية (التربة الجيرية)",
+      "name_en": "Calcareous Soil",
+      "local_name_ar": "الأرض الكلسية — التربة الجيرية",
+      "color_ar": "أبيض إلى بيج فاتح",
+      "texture_ar": "متغيرة — في الغالب خفيفة",
+      "distribution_ar": "الصحراء الغربية — سيناء — جنوب مصر — الأراضي الجديدة",
+      "area_million_feddan": 3.0,
+      "regions_ar": ["الوادي الجديد", "سيناء", "مطروح", "أراضي الصحراء الغربية"],
+
+      "physical_properties": {
+        "clay_percent": "10-30%",
+        "silt_percent": "10-20%",
+        "sand_percent": "40-70%",
+        "bulk_density_g_cm3": "1.3-1.6",
+        "porosity_percent": "40-50%",
+        "water_holding_capacity_ar": "منخفضة إلى متوسطة",
+        "drainage_ar": "جيد إلى ممتاز",
+        "permeability_ar": "متوسطة إلى عالية"
+      },
+
+      "chemical_properties": {
+        "ph_range": "7.8-8.5",
+        "ph_character_ar": "قلوية",
+        "organic_matter_percent": "أقل من 1%",
+        "cec_meq_100g": "10-20",
+        "calcium_carbonate_percent": "20-60%",
+        "salinity_ec_ds_m": "أقل من 3 عادةً",
+        "fertility_ar": "منخفضة — تثبت الفوسفور والزنك والحديد"
+      },
+
+      "crop_suitability_ar": {
+        "good_ar": ["زيتون", "تين", "رمان", "نخيل التمر", "قمح (أصناف مناسبة)", "شعير"],
+        "with_management_ar": ["طماطم مع MAP", "بطاطس مع إدارة جيدة"],
+        "notes_ar": "تثبت P وFe وZn بشدة — تحتاج إدارة مكثفة"
+      },
+
+      "management_tips_ar": [
+        "استخدام MAP بدلاً من DAP لتحريك الفوسفور",
+        "كيلات الحديد (Fe-DTPA) وليس سلفات الحديد",
+        "كيلات الزنك وليس سلفات الزنك",
+        "هيوميك أسيد يُحرر العناصر المثبتة",
+        "تحميض التربة بالكبريت يُحسن توافر العناصر",
+        "PSB (بكتيريا محللة الفوسفات) فعالة جداً هنا"
+      ],
+
+      "irrigation_notes_ar": "التنقيط أفضل — يُقلل ترسب الكالسيوم في الأنابيب — استخدم حمض للتنظيف",
+      "fertilization_notes_ar": "MAP أفضل من DAP — كيلات أفضل من سلفات للعناصر الصغرى — تحميض خفيف مفيد"
+    }
+  ],
+
+  "soil_analysis_guide": {
+    "title_ar": "دليل تحليل التربة",
+    "why_important_ar": "تحليل التربة يوفر 20-40% من تكلفة الأسمدة ويزيد الإنتاج — كل 3 سنوات على الأقل",
+    "when_to_sample_ar": "قبل الموسم بـ 4-6 أسابيع — بعد الحصاد مباشرة — أفضل في درجات حرارة معتدلة",
+
+    "sampling_guide_ar": {
+      "depth_cm": "0-30 سم (طبقة الجذور الرئيسية)",
+      "deep_sample_cm": "30-60 سم (للملوحة والكربونات)",
+      "points_per_feddan": "5-10 نقطة موزعة بشكل W أو Z",
+      "mixed_sample_grams": "500 جم بعد خلط كل النقاط",
+      "tools_ar": "مثقاب تربة أو مجرفة نظيفة",
+      "container_ar": "كيس بلاستيك نظيف — لا معادن"
+    },
+
+    "key_parameters_ar": [
+      { "parameter_ar": "pH", "ideal_range": "6.0-7.5", "impact_ar": "يحدد توافر جميع العناصر" },
+      { "parameter_ar": "EC (الملوحة)", "ideal_range": "أقل من 2 dS/m", "impact_ar": "يحدد ما يمكن زراعته" },
+      { "parameter_ar": "المادة العضوية", "ideal_range": "أكثر من 2%", "impact_ar": "خصوبة وبنية التربة" },
+      { "parameter_ar": "النيتروجين الكلي", "ideal_range": "0.1-0.2%", "impact_ar": "برنامج التسميد النيتروجيني" },
+      { "parameter_ar": "الفوسفور المتاح", "ideal_range": "20-40 ppm", "impact_ar": "جرعة السماد الفوسفاتي" },
+      { "parameter_ar": "البوتاسيوم المتاح", "ideal_range": "150-300 ppm", "impact_ar": "جرعة السماد البوتاسي" },
+      { "parameter_ar": "الكالسيوم المتاح", "ideal_range": "1000-2000 ppm", "impact_ar": "قد يحتاج جبس زراعي" },
+      { "parameter_ar": "المغنيسيوم", "ideal_range": "100-200 ppm", "impact_ar": "نقصه شائع في مصر" },
+      { "parameter_ar": "الزنك", "ideal_range": "1-3 ppm", "impact_ar": "أكثر عنصر ناقص في مصر" },
+      { "parameter_ar": "الحديد", "ideal_range": "4-10 ppm", "impact_ar": "يتثبت في التربة القلوية" }
+    ],
+
+    "interpretation_quick_ar": {
+      "ph_below_6": "حمضية — أضف جير زراعي",
+      "ph_6_to_7": "مثالي — معظم المحاصيل",
+      "ph_7_to_8": "قلوية خفيفة — راقب Fe وZn",
+      "ph_above_8": "قلوية شديدة — أضف كبريت + كيلات",
+      "ec_above_4": "ملوحة عالية — محاصيل متحملة فقط",
+      "om_below_1": "فقيرة عضوياً — كمبوست إلزامي"
+    }
+  },
+
+  "irrigation": {
+    "title_ar": "دليل الري المصري الشامل",
+
+    "water_sources_egypt_ar": [
+      { "source_ar": "نهر النيل", "availability_ar": "أساسي — مقنن بحصص", "quality_ar": "ممتازة", "salinity_ec": "أقل من 0.5" },
+      { "source_ar": "مياه جوفية (آبار)", "availability_ar": "واسعة في الأراضي الجديدة", "quality_ar": "متغيرة", "salinity_ec": "0.5-5" },
+      { "source_ar": "مياه صرف زراعي معالجة", "availability_ar": "متاحة في الدلتا", "quality_ar": "متوسطة", "salinity_ec": "1-3" },
+      { "source_ar": "مياه أمطار", "availability_ar": "محدودة جداً — شمال فقط", "quality_ar": "ممتازة", "salinity_ec": "أقل من 0.1" }
+    ],
+
+    "irrigation_methods_ar": [
+      {
+        "id": "irr-001",
+        "name_ar": "الري بالغمر (السيحي)",
+        "name_en": "Flood Irrigation",
+        "efficiency_percent": "40-50%",
+        "suitable_soils_ar": ["طينية", "طميية"],
+        "suitable_crops_ar": ["أرز", "قصب السكر", "قمح", "ذرة", "برسيم"],
+        "advantages_ar": ["رخيص التركيب", "لا يحتاج ضغط", "يغسل الملوحة"],
+        "disadvantages_ar": ["هدر مياه كبير", "قد يضغط التربة", "يشجع الأمراض الفطرية"],
+        "water_requirement_note_ar": "يستهلك 2-3 أضعاف ما يحتاجه النبات فعلاً"
+      },
+      {
+        "id": "irr-002",
+        "name_ar": "الري بالرش",
+        "name_en": "Sprinkler Irrigation",
+        "efficiency_percent": "70-80%",
+        "suitable_soils_ar": ["رملية", "طميية خفيفة", "جميع الأنواع"],
+        "suitable_crops_ar": ["قمح", "فول سوداني", "خضروات ورقية", "جرجير", "بصل", "مشاتل"],
+        "advantages_ar": ["موحد التوزيع", "مناسب للأراضي المنحدرة", "يمكن إضافة أسمدة"],
+        "disadvantages_ar": ["يشجع الأمراض الورقية", "يتأثر بالرياح", "تكلفة متوسطة"],
+        "water_requirement_note_ar": "يوفر 30-40% من ماء الغمر"
+      },
+      {
+        "id": "irr-003",
+        "name_ar": "الري بالتنقيط",
+        "name_en": "Drip Irrigation",
+        "efficiency_percent": "90-95%",
+        "suitable_soils_ar": ["جميع الأنواع — الأفضل للرملية"],
+        "suitable_crops_ar": ["طماطم", "خيار", "فلفل", "فراولة", "بطاطس", "موز", "أشجار فاكهة"],
+        "advantages_ar": ["أعلى كفاءة ري", "تسميد دقيق عبر الري", "يقلل الأمراض الورقية", "يوفر مياه 50-60%"],
+        "disadvantages_ar": ["تكلفة تركيب عالية", "يحتاج صيانة منتظمة", "انسداد القطارات مشكلة"],
+        "water_requirement_note_ar": "الأكثر كفاءة — كل قطرة تصل للجذر مباشرة"
+      },
+      {
+        "id": "irr-004",
+        "name_ar": "الري تحت السطحي",
+        "name_en": "Subsurface Drip",
+        "efficiency_percent": "95-98%",
+        "suitable_soils_ar": ["طميية", "رملية طميية"],
+        "suitable_crops_ar": ["قطن", "ذرة", "أشجار فاكهة طويلة الأمد"],
+        "advantages_ar": ["أعلى كفاءة ممكنة", "يقلل تبخر السطح", "يدوم سنوات"],
+        "disadvantages_ar": ["تكلفة عالية جداً", "صعوبة الصيانة"],
+        "water_requirement_note_ar": "الأمثل للأراضي الصحراوية ومشاريع التوسع الكبيرة"
+      }
+    ],
+
+    "crop_water_requirements": [
+      {
+        "crop_ar": "قمح",
+        "crop_en": "Wheat",
+        "total_m3_per_feddan": "1800-2200",
+        "irrigation_frequency_ar": "كل 15-21 يوم (5-6 ريات)",
+        "critical_stages_ar": ["التفريع", "طرد السنابل", "حبوب اللبن"],
+        "peak_demand_stage_ar": "طرد السنابل",
+        "method_recommended_ar": "غمر — تحت سطحي",
+        "deficit_impact_ar": "نقص ماء عند طرد السنابل يُفقد 40-60% من الإنتاج"
+      },
+      {
+        "crop_ar": "أرز",
+        "crop_en": "Rice",
+        "total_m3_per_feddan": "4000-5500",
+        "irrigation_frequency_ar": "غمر مستمر",
+        "critical_stages_ar": ["الشتل", "التفريع", "طرد السنابل"],
+        "peak_demand_stage_ar": "جميع المراحل — يحتاج ماء دائم",
+        "method_recommended_ar": "غمر (تقليدي) — AWD (متقطع حديث)",
+        "deficit_impact_ar": "يموت النبات بدون غمر — محصول مائي بامتياز"
+      },
+      {
+        "crop_ar": "ذرة شامية",
+        "crop_en": "Maize",
+        "total_m3_per_feddan": "2500-3200",
+        "irrigation_frequency_ar": "كل 10-14 يوم (7-9 ريات)",
+        "critical_stages_ar": ["الإنبات", "الاندفاع", "الحرير والكيزان"],
+        "peak_demand_stage_ar": "الحرير والكيزان",
+        "method_recommended_ar": "غمر — رش — تنقيط",
+        "deficit_impact_ar": "نقص ماء عند الحرير يُقلل العقد ويخفض الإنتاج 50%"
+      },
+      {
+        "crop_ar": "قطن",
+        "crop_en": "Cotton",
+        "total_m3_per_feddan": "3000-3800",
+        "irrigation_frequency_ar": "كل 15-20 يوم (8-10 ريات)",
+        "critical_stages_ar": ["التزهير", "عقد اللوز", "تفتح اللوز"],
+        "peak_demand_stage_ar": "التزهير وعقد اللوز",
+        "method_recommended_ar": "غمر — تنقيط",
+        "deficit_impact_ar": "نقص ماء عند التزهير يسقط الأزهار واللوز الصغير"
+      },
+      {
+        "crop_ar": "طماطم",
+        "crop_en": "Tomato",
+        "total_m3_per_feddan": "2200-3000",
+        "irrigation_frequency_ar": "يومي عبر التنقيط",
+        "critical_stages_ar": ["الشتل", "التزهير", "تطور الثمار"],
+        "peak_demand_stage_ar": "تطور الثمار",
+        "method_recommended_ar": "تنقيط إلزامي",
+        "deficit_impact_ar": "نقص متقطع يسبب تشقق الثمار وتعفن الطرف الزهري"
+      },
+      {
+        "crop_ar": "بطاطس",
+        "crop_en": "Potato",
+        "total_m3_per_feddan": "2800-3500",
+        "irrigation_frequency_ar": "كل 5-7 أيام أو تنقيط يومي",
+        "critical_stages_ar": ["تكوين الدرنات", "نمو الدرنات"],
+        "peak_demand_stage_ar": "نمو الدرنات",
+        "method_recommended_ar": "رش — تنقيط",
+        "deficit_impact_ar": "نقص ماء عند تكوين الدرنات يُقلل الحجم والإنتاج 40%"
+      },
+      {
+        "crop_ar": "بصل",
+        "crop_en": "Onion",
+        "total_m3_per_feddan": "1800-2400",
+        "irrigation_frequency_ar": "كل 10-14 يوم (6-8 ريات)",
+        "critical_stages_ar": ["تكوين البصلة", "تضخم البصلة"],
+        "peak_demand_stage_ar": "تضخم البصلة",
+        "method_recommended_ar": "تنقيط — غمر خفيف",
+        "deficit_impact_ar": "نقص ماء عند التضخم يُقلل الحجم — وقف الري قبل الحصاد بـ 3 أسابيع"
+      },
+      {
+        "crop_ar": "موز",
+        "crop_en": "Banana",
+        "total_m3_per_feddan": "6000-8000",
+        "irrigation_frequency_ar": "يومي — تنقيط",
+        "critical_stages_ar": ["جميع المراحل"],
+        "peak_demand_stage_ar": "تطور الثمار",
+        "method_recommended_ar": "تنقيط إلزامي",
+        "deficit_impact_ar": "حساس جداً — نقص ماء يوم واحد يُضر الإنتاج"
+      },
+      {
+        "crop_ar": "برتقال وحمضيات",
+        "crop_en": "Citrus",
+        "total_m3_per_feddan": "4000-5500",
+        "irrigation_frequency_ar": "كل 7-14 يوم حسب الموسم",
+        "critical_stages_ar": ["التزهير", "عقد الثمار", "تضخم الثمار"],
+        "peak_demand_stage_ar": "تضخم الثمار (صيف)",
+        "method_recommended_ar": "تنقيط",
+        "deficit_impact_ar": "نقص ماء عند عقد الثمار يُسقطها — قبل نضج يُقلل الحجم"
+      },
+      {
+        "crop_ar": "مانجو",
+        "crop_en": "Mango",
+        "total_m3_per_feddan": "3500-5000",
+        "irrigation_frequency_ar": "كل 10-15 يوم — تنقيط يومي صيفاً",
+        "critical_stages_ar": ["عقد الثمار", "تضخم الثمار"],
+        "peak_demand_stage_ar": "تضخم الثمار",
+        "method_recommended_ar": "تنقيط",
+        "deficit_impact_ar": "نقص ماء قبل التزهير مفيد لتحفيز الإزهار — بعده ضار"
+      },
+      {
+        "crop_ar": "فراولة",
+        "crop_en": "Strawberry",
+        "total_m3_per_feddan": "1500-2200",
+        "irrigation_frequency_ar": "يومي — تنقيط",
+        "critical_stages_ar": ["التجذر", "التزهير", "نضج الثمار"],
+        "peak_demand_stage_ar": "نضج الثمار",
+        "method_recommended_ar": "تنقيط فقط — الرش يسبب أمراض",
+        "deficit_impact_ar": "نقص ماء يُصغر الثمار ويُحمّرها مبكراً"
+      },
+      {
+        "crop_ar": "قصب السكر",
+        "crop_en": "Sugar Cane",
+        "total_m3_per_feddan": "5500-7500",
+        "irrigation_frequency_ar": "كل 15-20 يوم (12-15 ريّة)",
+        "critical_stages_ar": ["الإنبات", "التفريع", "النمو السريع"],
+        "peak_demand_stage_ar": "النمو السريع (صيف)",
+        "method_recommended_ar": "غمر — تنقيط حديث",
+        "deficit_impact_ar": "نقص ماء في النمو السريع يُقلص طول الساق وتركيز السكر"
+      },
+      {
+        "crop_ar": "بنجر السكر",
+        "crop_en": "Sugar Beet",
+        "total_m3_per_feddan": "2200-2800",
+        "irrigation_frequency_ar": "كل 15-20 يوم (6-8 ريات)",
+        "critical_stages_ar": ["الإنبات", "نمو الجذر", "امتلاء الجذر"],
+        "peak_demand_stage_ar": "امتلاء الجذر",
+        "method_recommended_ar": "تنقيط — رش",
+        "deficit_impact_ar": "وقف الري قبل الحصاد بـ 3 أسابيع يرفع نسبة السكر"
+      }
+    ],
+
+    "water_quality_guide_ar": {
+      "title_ar": "دليل جودة مياه الري",
+      "parameters": [
+        { "param_ar": "EC (الملوحة)", "safe_ar": "أقل من 1.5 dS/m", "concern_ar": "1.5-3", "dangerous_ar": "أكثر من 3" },
+        { "param_ar": "pH الماء", "safe_ar": "6.5-8.0", "concern_ar": "8.0-8.5", "dangerous_ar": "أكثر من 8.5" },
+        { "param_ar": "الصوديوم SAR", "safe_ar": "أقل من 10", "concern_ar": "10-18", "dangerous_ar": "أكثر من 18" },
+        { "param_ar": "الكلوريد ppm", "safe_ar": "أقل من 140", "concern_ar": "140-350", "dangerous_ar": "أكثر من 350" },
+        { "param_ar": "البيكربونات ppm", "safe_ar": "أقل من 120", "concern_ar": "120-240", "dangerous_ar": "أكثر من 240" }
+      ],
+      "treatment_tips_ar": [
+        "مياه عالية الكلس: حقن حمض فوسفوريك أو نيتريك في نظام الري",
+        "مياه مالحة: زيادة الري لغسيل الملوحة من منطقة الجذور",
+        "بيكربونات عالية: تُسبب ترسب كالسيوم في نظام التنقيط — حمض للتنظيف"
+      ]
+    },
+
+    "water_stress_symptoms_ar": [
+      { "symptom_ar": "ذبول في الصباح الباكر", "diagnosis_ar": "إجهاد مائي شديد — ري فوري" },
+      { "symptom_ar": "ذبول في الظهيرة فقط", "diagnosis_ar": "طبيعي في الحر الشديد — راقب المساء" },
+      { "symptom_ar": "اصفرار الأوراق السفلية", "diagnosis_ar": "قد يكون إفراط في الري — تحقق من الصرف" },
+      { "symptom_ar": "تشقق الثمار", "diagnosis_ar": "ري غير منتظم — ثبّت الجدول" },
+      { "symptom_ar": "تعفن الطرف الزهري في الطماطم", "diagnosis_ar": "نقص Ca ناتج عن اضطراب الري" }
+    ]
+  }
+}

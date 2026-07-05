@@ -1,0 +1,2971 @@
+{
+  "id": "bactericide_active_ingredients",
+  "name_ar": "المواد الفعالة للمبيدات البكتيرية",
+  "name_en": "Bactericide Active Ingredients — Chemical, Biological & Botanical",
+  "source": "FRAC Code List 2024 + EPPO Standards + FAO/WHO + Egyptian Pesticide Register 2024",
+  "version": "1.0.0",
+  "total_count": 31,
+  "items": [
+    {
+      "id": "bai-001",
+      "name_ar": "نحاس هيدروكسيد",
+      "name_en": "Copper hydroxide",
+      "bact_group_id": "bact-grp-cu",
+      "group_code": "CU",
+      "chemical_class_ar": "نحاس هيدروكسيد",
+      "chemical_class_en": "Copper hydroxide Cu(OH)₂",
+      "systemic": false,
+      "type_ar": "ملامسي + وقائي",
+      "application": {
+        "dose_spray_ar": "2–4 جم م.ف/لتر",
+        "dose_feddan_ar": "1.5–3 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي — قبل الإصابة أو في بدايتها — كل 7-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1–3 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "جينات copABCD المشفرة على plasmids — المقاومة تتراكم ببطء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع الأنتيبيوتيكس أو البيولوجي",
+        "resistance_reported_in": [
+          "Xanthomonas (بعض المناطق)"
+        ]
+      },
+      "rotation": {
+        "group_id": "bact-grp-cu",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في كل رشة وقائية — تناوب مع ستربتوميسين أو بيولوجي علاجياً"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-18",
+          "name_ar": "التبقع الزاوي للقطن"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "حمضيات",
+        "تفاح",
+        "كمثرى",
+        "خوخ",
+        "مشمش",
+        "زيتون",
+        "عنب",
+        "بصل",
+        "ملفوف",
+        "قرنبيط",
+        "ورد",
+        "قطن",
+        "أرز"
+      ],
+      "spectrum_ar": "واسع جداً — بكتيريا + فطريات",
+      "activity_ar": "ملامسي وقائي — أيونات Cu²⁺ تُدمر الخلية البكتيرية",
+      "special_use_ar": "العمود الفقري لكل برنامج مكافحة بكتيرية — يعمل أيضاً ضد الفطريات — الأكثر استخداماً في مصر والعالم",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن نسبياً — تراكم النحاس في التربة عند الإفراط — سامة للأسماك — لا تستخدم مع زيوت معدنية",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-002",
+      "name_ar": "نحاس أوكسيكلوريد",
+      "name_en": "Copper oxychloride",
+      "bact_group_id": "bact-grp-cu",
+      "group_code": "CU",
+      "chemical_class_ar": "نحاس أوكسيكلوريد",
+      "chemical_class_en": "Copper oxychloride Cu₂(OH)₃Cl",
+      "systemic": false,
+      "type_ar": "ملامسي + وقائي",
+      "application": {
+        "dose_spray_ar": "2.5–4 جم م.ف/لتر",
+        "dose_feddan_ar": "2–3 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي — كل 7-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1–3 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "جينات cop — مشابه لنحاس هيدروكسيد",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع الأنتيبيوتيكس",
+        "resistance_reported_in": [
+          "Xanthomonas (بعض المناطق)"
+        ]
+      },
+      "rotation": {
+        "group_id": "bact-grp-cu",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في كل رشة وقائية — تناوب مع نحاسيات أخرى لتنويع الصياغة"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-18",
+          "name_ar": "التبقع الزاوي للقطن"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "حمضيات",
+        "تفاح",
+        "كمثرى",
+        "خوخ",
+        "زيتون",
+        "ورد",
+        "قطن",
+        "أرز",
+        "ملفوف"
+      ],
+      "spectrum_ar": "واسع جداً — بكتيريا + فطريات",
+      "activity_ar": "ملامسي وقائي",
+      "special_use_ar": "الأرخص والأكثر انتشاراً في مصر — يُستخدم منفرداً أو مع مبيدات فطرية",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن نسبياً — سامة للأسماك — تراكم في التربة عند الإفراط",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-003",
+      "name_ar": "محلول بوردو",
+      "name_en": "Bordeaux mixture (Cu SO₄ + Ca(OH)₂)",
+      "bact_group_id": "bact-grp-cu",
+      "group_code": "CU",
+      "chemical_class_ar": "كبريتات النحاس + جير حي",
+      "chemical_class_en": "Bordeaux mixture",
+      "systemic": false,
+      "type_ar": "ملامسي + وقائي",
+      "application": {
+        "dose_spray_ar": "1–2% تركيز (10–20 جم/لتر)",
+        "dose_feddan_ar": "لا ينطبق — يُحضّر محلياً",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي — قبل موسم الأمطار والرطوبة — كل 10-21 يوم",
+        "max_applications_season": 999,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–7 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-cu",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي وقت كوقاية — بديل اقتصادي جداً للنحاسيات الجاهزة"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-15",
+          "name_ar": "التقرح البكتيري للعنب"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-18",
+          "name_ar": "التبقع الزاوي للقطن"
+        }
+      ],
+      "target_crops": [
+        "عنب",
+        "تفاح",
+        "كمثرى",
+        "حمضيات",
+        "زيتون",
+        "ورد",
+        "طماطم",
+        "خيار",
+        "بطاطس",
+        "أرز",
+        "قطن"
+      ],
+      "spectrum_ar": "واسع جداً — بكتيريا + فطريات",
+      "activity_ar": "ملامسي وقائي طويل الأمد",
+      "special_use_ar": "أقدم مبيد بكتيري/فطري في التاريخ — اقتصادي جداً — يُحضَّر من كبريتات النحاس والجير — ممتاز للعنب والحمضيات والزيتون",
+      "regulatory_ar": "لا يحتاج تسجيلاً في معظم الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن نسبياً — تراكم النحاس في التربة — يُسبب حرق الأوراق إذا أُسيء التحضير",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-004",
+      "name_ar": "نحاس أوكتانوات (نحاس زفتي)",
+      "name_en": "Copper octanoate",
+      "bact_group_id": "bact-grp-cu",
+      "group_code": "CU",
+      "chemical_class_ar": "نحاس أوكتانوات",
+      "chemical_class_en": "Copper octanoate (copper soap)",
+      "systemic": false,
+      "type_ar": "ملامسي",
+      "application": {
+        "dose_spray_ar": "0.5–1% محلول",
+        "dose_feddan_ar": "لا ينطبق",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي وعلاجي خفيف — كل 7-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-cu",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في الزراعة العضوية والمتكاملة"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "حمضيات",
+        "ورد",
+        "أشجار فاكهة",
+        "زيتون"
+      ],
+      "spectrum_ar": "متوسط — بكتيريا + فطريات",
+      "activity_ar": "ملامسي وقائي",
+      "special_use_ar": "صابون النحاس — أقل قلوية من الأوكسيكلوريد — مناسب للنباتات الحساسة للنحاس",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن نسبياً — أقل تراكماً في التربة من الأشكال الأخرى",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-005",
+      "name_ar": "نحاس كبريتات (ماء نيلي)",
+      "name_en": "Copper sulfate (bluestone)",
+      "bact_group_id": "bact-grp-cu",
+      "group_code": "CU",
+      "chemical_class_ar": "كبريتات النحاس",
+      "chemical_class_en": "Copper sulfate CuSO₄",
+      "systemic": false,
+      "type_ar": "ملامسي",
+      "application": {
+        "dose_spray_ar": "0.5–2 جم م.ف/لتر",
+        "dose_feddan_ar": "لا ينطبق — للتطهير",
+        "methods_ar": [
+          "غمر بذور وشتلات",
+          "تطهير أدوات وتربة",
+          "رش تربة"
+        ],
+        "timing_ar": "تطهير ما قبل الزراعة — علاجي لإصابة الجذور والتربة",
+        "max_applications_season": 999,
+        "interval_days": 30,
+        "preharvest_interval_ar": "3–7 يوم",
+        "water_volume_ar": "100–200 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "جينات cop",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-cu",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "للتطهير وتعقيم التربة — يُستخدم مع الجير لتحضير محلول بوردو"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-05",
+          "name_ar": "الذبول البكتيري"
+        },
+        {
+          "id": "bact-09",
+          "name_ar": "الجرب البكتيري للبطاطس"
+        },
+        {
+          "id": "bact-17",
+          "name_ar": "تعفن التاج البكتيري — Crown Gall"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "بطاطس",
+        "بصل",
+        "أشجار فاكهة",
+        "مشاتل",
+        "جذور عامة"
+      ],
+      "spectrum_ar": "متوسط — بكتيريا + فطريات تربة",
+      "activity_ar": "ملامسي — تطهير وتعقيم",
+      "special_use_ar": "الخام الأساسي لمحلول بوردو — غمر الجذور والبصيلات يُقلل الإصابة البكتيرية",
+      "regulatory_ar": "مسجل ومتاح — مُسموح في الزراعة العضوية بتركيزات منخفضة",
+      "safety_notes_ar": "سامة بالتركيزات العالية — تؤذي الأسماك والكائنات المائية",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-006",
+      "name_ar": "نحاس ديهيدرات (نحاس بنتاهيدرات)",
+      "name_en": "Copper sulfate pentahydrate (foliar grade)",
+      "bact_group_id": "bact-grp-cu",
+      "group_code": "CU",
+      "chemical_class_ar": "كبريتات النحاس بنتاهيدرات",
+      "chemical_class_en": "Copper sulfate pentahydrate (purified)",
+      "systemic": false,
+      "type_ar": "ملامسي + وقائي",
+      "application": {
+        "dose_spray_ar": "1–3 جم م.ف/لتر",
+        "dose_feddan_ar": "0.7–2 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي — كل 10-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–5 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "جينات cop",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-cu",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في الرش الورقي عند الحاجة لنحاس سريع الذوبان"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "حمضيات",
+        "أرز",
+        "أشجار فاكهة",
+        "ملفوف",
+        "ورد"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات",
+      "activity_ar": "ملامسي وقائي",
+      "special_use_ar": "درجة نقاوة عالية للرش — ذوبان أفضل من أوكسيكلوريد في المياه القلوية",
+      "regulatory_ar": "مسجل ومتاح",
+      "safety_notes_ar": "آمن نسبياً — سامة للأسماك",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-007",
+      "name_ar": "نحاس أوكسيد",
+      "name_en": "Cuprous oxide (Cu₂O)",
+      "bact_group_id": "bact-grp-cu",
+      "group_code": "CU",
+      "chemical_class_ar": "نحاس أوكسيد",
+      "chemical_class_en": "Cuprous oxide Cu₂O",
+      "systemic": false,
+      "type_ar": "ملامسي + وقائي",
+      "application": {
+        "dose_spray_ar": "2–4 جم م.ف/لتر",
+        "dose_feddan_ar": "1.5–3 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي — كل 7-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1–3 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "جينات cop",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-cu",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "تناوب مع نحاس هيدروكسيد لتنويع الصياغة"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-18",
+          "name_ar": "التبقع الزاوي للقطن"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "حمضيات",
+        "تفاح",
+        "كمثرى",
+        "خوخ",
+        "ورد",
+        "أرز",
+        "قطن"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات",
+      "activity_ar": "ملامسي وقائي",
+      "special_use_ar": "ثبات جيد على الأوراق بعد الأمطار — جسيمات دقيقة تُعطي تغطية أفضل",
+      "regulatory_ar": "مسجل ومتاح — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن نسبياً — سامة للأسماك",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-008",
+      "name_ar": "ستربتوميسين سلفات",
+      "name_en": "Streptomycin sulfate",
+      "bact_group_id": "bact-grp-ab",
+      "group_code": "AB",
+      "chemical_class_ar": "أمينوغليكوزيد",
+      "chemical_class_en": "Aminoglycoside antibiotic",
+      "systemic": true,
+      "type_ar": "جهازي + ملامسي",
+      "application": {
+        "dose_spray_ar": "0.2–0.4 جم م.ف/لتر",
+        "dose_feddan_ar": "150–300 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "حقن جذعي"
+        ],
+        "timing_ar": "علاجي — عند أولى الأعراض أو توقع الإصابة بعد أمطار/رطوبة",
+        "max_applications_season": 3,
+        "interval_days": 7,
+        "preharvest_interval_ar": "3–7 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "جين strA-strB على plasmids — المقاومة منتشرة جداً في Erwinia وPseudomonas وXanthomonas عالمياً",
+        "cross_resistance_groups": [
+          {
+            "id": "bact-grp-ab",
+            "name_ar": "مضادات حيوية — تثبيط تخليق البروتين والحمض النووي"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع جنتاميسين داخل الأمينوغليكوزيدات",
+        "resistance_reported_in": [
+          "Erwinia amylovora",
+          "Pseudomonas syringae",
+          "Xanthomonas spp."
+        ]
+      },
+      "rotation": {
+        "group_id": "bact-grp-ab",
+        "max_consecutive": 1,
+        "must_rotate_after": 3,
+        "note_ar": "لا تكرر أكثر من 3 رشات — تناوب مع نحاسيات + بيولوجي — لا تستخدم منفرداً"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-11",
+          "name_ar": "الذبول البكتيري للذرة"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "تفاح",
+        "كمثرى",
+        "طماطم",
+        "فلفل",
+        "خيار",
+        "أرز",
+        "ذرة",
+        "ملفوف",
+        "بقوليات"
+      ],
+      "spectrum_ar": "متوسط — جرام سالب بشكل رئيسي",
+      "activity_ar": "جهازي + علاجي سريع — يتحرك داخل الأوعية الوعائية",
+      "special_use_ar": "الأكثر فاعلية ضد اللفحة النارية للتفاح والكمثرى — جهازي حقيقي يصل للأوعية الوعائية",
+      "regulatory_ar": "مسجل في مصر وبعض الدول العربية — محظور في الاتحاد الأوروبي — مقيّد في كثير من الدول",
+      "safety_notes_ar": "خطر تطوير مقاومة ينعكس على الطب البشري — استخدام حذر جداً — لا تتجاوز 3 رشات",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-009",
+      "name_ar": "أوكسيتيتراسيكلين",
+      "name_en": "Oxytetracycline",
+      "bact_group_id": "bact-grp-ab",
+      "group_code": "AB",
+      "chemical_class_ar": "تيتراسيكلين",
+      "chemical_class_en": "Tetracycline antibiotic",
+      "systemic": true,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "حقن جذعي"
+        ],
+        "timing_ar": "علاجي — عند أولى الأعراض",
+        "max_applications_season": 3,
+        "interval_days": 10,
+        "preharvest_interval_ar": "7–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "بروتينات نقل TetA-TetB على plasmids — طاردة للمضاد الحيوي",
+        "cross_resistance_groups": [
+          {
+            "id": "bact-grp-ab",
+            "name_ar": "مضادات حيوية — تثبيط تخليق البروتين والحمض النووي"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة بين التيتراسيكلينات",
+        "resistance_reported_in": [
+          "Erwinia amylovora",
+          "Pseudomonas syringae"
+        ]
+      },
+      "rotation": {
+        "group_id": "bact-grp-ab",
+        "max_consecutive": 1,
+        "must_rotate_after": 3,
+        "note_ar": "تناوب مع ستربتوميسين + نحاسيات — 3 رشات كحد أقصى"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        }
+      ],
+      "target_crops": [
+        "تفاح",
+        "كمثرى",
+        "حمضيات",
+        "خوخ",
+        "طماطم",
+        "أرز",
+        "زيتون"
+      ],
+      "spectrum_ar": "متوسط — جرام سالب وجرام موجب",
+      "activity_ar": "جهازي — يتحرك في الأوعية الوعائية",
+      "special_use_ar": "بديل لستربتوميسين في مناطق ظهور المقاومة — فعّال ضد البكتيريا الوعائية",
+      "regulatory_ar": "مسجل في بعض الدول العربية — محظور في الاتحاد الأوروبي",
+      "safety_notes_ar": "خطر تطوير مقاومة متقاطعة — استخدام حذر — لا تتجاوز 3 رشات",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-010",
+      "name_ar": "كاسوجاميسين",
+      "name_en": "Kasugamycin",
+      "bact_group_id": "bact-grp-ab",
+      "group_code": "AB",
+      "chemical_class_ar": "أمينوغليكوزيد",
+      "chemical_class_en": "Aminoglycoside (aminocyclitol)",
+      "systemic": true,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_spray_ar": "0.2–0.4 جم م.ف/لتر",
+        "dose_feddan_ar": "150–280 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "علاجي — عند أولى الأعراض",
+        "max_applications_season": 3,
+        "interval_days": 7,
+        "preharvest_interval_ar": "3–5 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "جينات aac — بطيء نسبياً مقارنة بستربتوميسين",
+        "cross_resistance_groups": [
+          {
+            "id": "bact-grp-ab",
+            "name_ar": "مضادات حيوية — تثبيط تخليق البروتين والحمض النووي"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة محدودة مع ستربتوميسين",
+        "resistance_reported_in": [
+          "Pseudomonas syringae (بعض المناطق الآسيوية)"
+        ]
+      },
+      "rotation": {
+        "group_id": "bact-grp-ab",
+        "max_consecutive": 1,
+        "must_rotate_after": 3,
+        "note_ar": "تناوب مع نحاسيات — 3 رشات كحد أقصى"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "أرز",
+        "خيار",
+        "طماطم",
+        "تفاح",
+        "كمثرى"
+      ],
+      "spectrum_ar": "متوسط — جرام سالب بشكل رئيسي",
+      "activity_ar": "جهازي + علاجي",
+      "special_use_ar": "فعّال جداً ضد التبقع البكتيري للأرز — يُستخدم في آسيا بكثرة — أبطأ في المقاومة",
+      "regulatory_ar": "مسجل في آسيا وبعض الدول — تحقق من التسجيل المحلي",
+      "safety_notes_ar": "خطر تطوير مقاومة — استخدام حذر — لا تتجاوز 3 رشات",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-011",
+      "name_ar": "جنتاميسين سلفات",
+      "name_en": "Gentamicin sulfate",
+      "bact_group_id": "bact-grp-ab",
+      "group_code": "AB",
+      "chemical_class_ar": "أمينوغليكوزيد",
+      "chemical_class_en": "Aminoglycoside antibiotic",
+      "systemic": true,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_spray_ar": "0.1–0.3 جم م.ف/لتر",
+        "dose_feddan_ar": "80–200 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "حقن جذعي"
+        ],
+        "timing_ar": "علاجي — عند ظهور الأعراض الأولى",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "7–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ جداً",
+        "risk_level": 4,
+        "risk_color": "red",
+        "mechanism_ar": "جينات aac, ant, aph على plasmids — مشتركة مع مقاومة طبية",
+        "cross_resistance_groups": [
+          {
+            "id": "bact-grp-ab",
+            "name_ar": "مضادات حيوية — تثبيط تخليق البروتين والحمض النووي"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة مع ستربتوميسين",
+        "resistance_reported_in": [
+          "Erwinia",
+          "Xanthomonas (بعض المناطق)"
+        ]
+      },
+      "rotation": {
+        "group_id": "bact-grp-ab",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "رشتان فقط — تناوب مع ستربتوميسين + نحاسيات"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        }
+      ],
+      "target_crops": [
+        "حمضيات",
+        "تفاح",
+        "زيتون",
+        "طماطم",
+        "أرز"
+      ],
+      "spectrum_ar": "متوسط — جرام سالب بشكل رئيسي",
+      "activity_ar": "جهازي علاجي",
+      "special_use_ar": "فعّال جداً لكن خطر المقاومة عالٍ جداً لتشاركه مع المقاومة الطبية للإنسان",
+      "regulatory_ar": "مسجل في بعض دول الشرق الأوسط — محظور في دول كثيرة لخطر المقاومة",
+      "safety_notes_ar": "خطر صحي عالٍ من ناحية المقاومة المتقاطعة مع الطب البشري — استخدام في أضيق الحدود",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-012",
+      "name_ar": "فوسفوميسين",
+      "name_en": "Fosfomycin",
+      "bact_group_id": "bact-grp-ab",
+      "group_code": "AB",
+      "chemical_class_ar": "فوسفونات مضاد حيوي",
+      "chemical_class_en": "Fosfomycin (phosphonate antibiotic)",
+      "systemic": true,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_spray_ar": "0.5–1 جم م.ف/لتر",
+        "dose_feddan_ar": "350–700 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "رش تربة"
+        ],
+        "timing_ar": "علاجي — عند الإصابة المؤكدة",
+        "max_applications_season": 2,
+        "interval_days": 14,
+        "preharvest_interval_ar": "7 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "عالٍ",
+        "risk_level": 3,
+        "risk_color": "orange",
+        "mechanism_ar": "طفرات في murA أو نظام نقل الفوسفونات",
+        "cross_resistance_groups": [
+          {
+            "id": "bact-grp-ab",
+            "name_ar": "مضادات حيوية — تثبيط تخليق البروتين والحمض النووي"
+          }
+        ],
+        "cross_resistance_note_ar": "مقاومة متبادلة محدودة",
+        "resistance_reported_in": [
+          "Ralstonia solanacearum (بعض السلالات)"
+        ]
+      },
+      "rotation": {
+        "group_id": "bact-grp-ab",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع نحاسيات — رشتان فقط"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-05",
+          "name_ar": "الذبول البكتيري"
+        },
+        {
+          "id": "bact-09",
+          "name_ar": "الجرب البكتيري للبطاطس"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "بطاطس",
+        "بطاطا",
+        "بقوليات"
+      ],
+      "spectrum_ar": "ضيق — بكتيريا التربة والجذور",
+      "activity_ar": "جهازي علاجي",
+      "special_use_ar": "فعّال ضد الذبول البكتيري Ralstonia حيث تفشل النحاسيات — نادر الاستخدام",
+      "regulatory_ar": "تحقق من التسجيل المحلي",
+      "safety_notes_ar": "خطر مقاومة متقاطعة مع الطب البشري",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-013",
+      "name_ar": "فوسفيت البوتاسيوم",
+      "name_en": "Potassium phosphite (K₂HPO₃)",
+      "bact_group_id": "bact-grp-phos",
+      "group_code": "PHOS",
+      "chemical_class_ar": "فوسفيت غير عضوي",
+      "chemical_class_en": "Potassium phosphite",
+      "systemic": true,
+      "type_ar": "جهازي ثنائي الاتجاه",
+      "application": {
+        "dose_spray_ar": "3–5 مل م.ف/لتر",
+        "dose_feddan_ar": "2–4 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "وقائي وعلاجي — كل 10-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع أي مجموعة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-phos",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي وقت — ممتاز كبرنامج وقائي منتظم"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-18",
+          "name_ar": "التبقع الزاوي للقطن"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "حمضيات",
+        "أرز",
+        "تفاح",
+        "زيتون",
+        "عنب",
+        "قطن",
+        "ملفوف",
+        "أشجار فاكهة"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات (Oomycetes) + تحفيز مناعة",
+      "activity_ar": "جهازي ثنائي الاتجاه — يتحرك للأعلى والأسفل — يُحفز مقاومة النبات",
+      "special_use_ar": "آمن تماماً وفعّال ومقرون بتغذية النبات بالفوسفور — الأفضل كمنظم وقائي منتظم في البرامج المتكاملة",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً على الإنسان والبيئة — يُحسّن كفاءة امتصاص الفوسفور",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-014",
+      "name_ar": "فوسيت ألومنيوم",
+      "name_en": "Fosetyl-aluminium (Fosetyl-Al)",
+      "bact_group_id": "bact-grp-phos",
+      "group_code": "PHOS",
+      "chemical_class_ar": "فوسفونات ألومنيوم",
+      "chemical_class_en": "Aluminium phosphonate",
+      "systemic": true,
+      "type_ar": "جهازي ثنائي الاتجاه",
+      "application": {
+        "dose_spray_ar": "2–4 جم م.ف/لتر",
+        "dose_feddan_ar": "1.5–3 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري",
+          "حقن جذعي"
+        ],
+        "timing_ar": "وقائي وعلاجي — كل 14-21 يوم",
+        "max_applications_season": 4,
+        "interval_days": 14,
+        "preharvest_interval_ar": "21 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "طفرات في مسار الفوسفونات — أبطأ من الأنتيبيوتيكس",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع الأنتيبيوتيكس أو النحاسيات",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-phos",
+        "max_consecutive": 1,
+        "must_rotate_after": 4,
+        "note_ar": "تناوب مع نحاسيات — 4 رشات كحد أقصى"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-05",
+          "name_ar": "الذبول البكتيري"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-15",
+          "name_ar": "التقرح البكتيري للعنب"
+        }
+      ],
+      "target_crops": [
+        "حمضيات",
+        "تفاح",
+        "كمثرى",
+        "موز",
+        "زيتون",
+        "عنب",
+        "أشجار فاكهة"
+      ],
+      "spectrum_ar": "متوسط — بكتيريا الجذور والأوعية + Oomycetes",
+      "activity_ar": "جهازي ثنائي الاتجاه — يتحرك للأعلى والأسفل — يُحفز SAR",
+      "special_use_ar": "ممتاز للأشجار المعمرة — يصل للجذور والثمار — يُحفز مناعة النبات + يعمل مباشرة",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي",
+      "safety_notes_ar": "آمن نسبياً — الجرعات العالية قد تسبب تسمماً في بعض الأصناف الحساسة",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-015",
+      "name_ar": "فوسفيت الكالسيوم والمغنيسيوم",
+      "name_en": "Calcium-Magnesium phosphite",
+      "bact_group_id": "bact-grp-phos",
+      "group_code": "PHOS",
+      "chemical_class_ar": "فوسفيت مُعزَّز",
+      "chemical_class_en": "Calcium-Magnesium phosphite complex",
+      "systemic": true,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_spray_ar": "4–6 مل م.ف/لتر",
+        "dose_feddan_ar": "3–5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري"
+        ],
+        "timing_ar": "وقائي — كل 10-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 10,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-phos",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم — يُغذّي ويُحمي في نفس الوقت"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "حمضيات",
+        "أرز",
+        "أشجار فاكهة",
+        "ورد"
+      ],
+      "spectrum_ar": "متوسط — مشابه لفوسفيت البوتاسيوم مع فائدة تغذوية إضافية",
+      "activity_ar": "جهازي — وقائي — يُحفز SAR + يُوفر Ca وMg",
+      "special_use_ar": "يجمع بين التغذية والمكافحة البكتيرية والفطرية — مثالي كتطبيق منتظم",
+      "regulatory_ar": "مسجل في بعض الدول — تحقق من التسجيل المحلي",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-016",
+      "name_ar": "أسيبنزولار-S-ميثيل — ASM",
+      "name_en": "Acibenzolar-S-methyl (ASM) — Benzothiadiazole",
+      "bact_group_id": "bact-grp-sar",
+      "group_code": "SAR",
+      "chemical_class_ar": "بنزوثيادييازول",
+      "chemical_class_en": "Benzothiadiazole (BTH)",
+      "systemic": false,
+      "type_ar": "محفز مناعة — جهازي غير مباشر",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "معاملة بذور"
+        ],
+        "timing_ar": "وقائي — قبل الإصابة المتوقعة بـ 3-5 أيام — كل 14-21 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة ممكنة — يُحفز النبات لا يقتل البكتيريا مباشرة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع أي مجموعة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-sar",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة — وقائي قبل الإصابة — يُكمل النحاسيات"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-11",
+          "name_ar": "الذبول البكتيري للذرة"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-18",
+          "name_ar": "التبقع الزاوي للقطن"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "حمضيات",
+        "تفاح",
+        "كمثرى",
+        "أرز",
+        "ذرة",
+        "ملفوف",
+        "قطن",
+        "ورد"
+      ],
+      "spectrum_ar": "واسع جداً — بكتيريا + فطريات + فيروسات عبر تحفيز مناعة النبات",
+      "activity_ar": "يُنشّط جينات PR proteins وحمض الساليسيليك — النبات يُكوّن دفاعاته الخاصة",
+      "special_use_ar": "يُحفز مقاومة شاملة للنبات — آمن تماماً — لا فترة انتظار — مثالي كعنصر أساسي في برامج IPM",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي",
+      "safety_notes_ar": "آمن تماماً — لا تأثيرات سلبية معروفة على الإنسان أو البيئة",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-017",
+      "name_ar": "حمض الساليسيليك وملحه",
+      "name_en": "Salicylic acid & sodium salicylate",
+      "bact_group_id": "bact-grp-sar",
+      "group_code": "SAR",
+      "chemical_class_ar": "فينول — حمض هيدروكسي بنزويك",
+      "chemical_class_en": "Salicylic acid (SA)",
+      "systemic": false,
+      "type_ar": "محفز مناعة",
+      "application": {
+        "dose_spray_ar": "0.5–1 مل م.ف/لتر",
+        "dose_feddan_ar": "300–700 مل م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي — قبل الإصابة — كل 10-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة ممكنة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-sar",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم كوقاية — مع النحاسيات أو البيولوجي"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-18",
+          "name_ar": "التبقع الزاوي للقطن"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "حمضيات",
+        "أرز",
+        "أشجار فاكهة",
+        "قطن",
+        "ورد"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات + فيروسات",
+      "activity_ar": "يُحفز مسار SAR الطبيعي",
+      "special_use_ar": "الجزيء الطبيعي المنشّط لـ SAR في النبات — آمن جداً — اقتصادي",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً — يُعتبر من أأمن المواد الزراعية",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-018",
+      "name_ar": "BABA — بيتا أمينوبيوتيريك أسيد",
+      "name_en": "Beta-aminobutyric acid (BABA)",
+      "bact_group_id": "bact-grp-sar",
+      "group_code": "SAR",
+      "chemical_class_ar": "حمض أميني — محفز مناعة",
+      "chemical_class_en": "Beta-aminobutyric acid",
+      "systemic": false,
+      "type_ar": "محفز مناعة",
+      "application": {
+        "dose_spray_ar": "0.5–2 جم م.ف/لتر",
+        "dose_feddan_ar": "350–1400 جم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري",
+          "معاملة بذور"
+        ],
+        "timing_ar": "وقائي — قبل الإصابة",
+        "max_applications_season": 999,
+        "interval_days": 10,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة ممكنة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-sar",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم — يُكمل ASM وحمض الساليسيليك"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "طماطم",
+        "تفاح",
+        "أرز",
+        "ملفوف",
+        "بقوليات"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات",
+      "activity_ar": "يُنشّط مسار ISR والتعبير الجيني للبروتينات الدفاعية",
+      "special_use_ar": "حمض أميني طبيعي يُحفز SAR/ISR — فعّال جداً ضد Botrytis وOomycetes أيضاً — آمن",
+      "regulatory_ar": "مسجل في بعض الدول — تحقق من التسجيل المحلي",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-019",
+      "name_ar": "كبريت ذائب وقابل للبلل",
+      "name_en": "Wettable sulfur (colloidal sulfur)",
+      "bact_group_id": "bact-grp-sul",
+      "group_code": "SUL",
+      "chemical_class_ar": "كبريت عنصري",
+      "chemical_class_en": "Elemental sulfur",
+      "systemic": false,
+      "type_ar": "ملامسي + تبخري",
+      "application": {
+        "dose_spray_ar": "2–4 جم م.ف/لتر",
+        "dose_feddan_ar": "2–5 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "تعفير"
+        ],
+        "timing_ar": "وقائي — كل 7-10 أيام",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-sul",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم كمكمل للنحاسيات — لا يُستخدم فوق 35°م"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "أرز",
+        "خوخ",
+        "مشمش",
+        "ورد",
+        "ملفوف",
+        "بقوليات"
+      ],
+      "spectrum_ar": "متوسط — بكتيريا + فطريات (بياض دقيقي بشكل رئيسي)",
+      "activity_ar": "ملامسي + تبخري",
+      "special_use_ar": "مكمل اقتصادي للنحاسيات — يُنتج SO₂ السام للبكتيريا — مُسموح في الزراعة العضوية",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن نسبياً — لا يُستخدم فوق 35°م لتجنب حرق الأوراق",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-020",
+      "name_ar": "ثيو بيكاربازيد (TCMTB)",
+      "name_en": "Thiocarbamic acid derivative (TCMTB)",
+      "bact_group_id": "bact-grp-sul",
+      "group_code": "SUL",
+      "chemical_class_ar": "ثيوكاربامات غير زراعي",
+      "chemical_class_en": "Thiocyanoate bactericide",
+      "systemic": false,
+      "type_ar": "ملامسي",
+      "application": {
+        "dose_spray_ar": "2–5 مل م.ف/لتر",
+        "dose_feddan_ar": "لا ينطبق — للتطهير",
+        "methods_ar": [
+          "غمر بذور",
+          "تطهير مياه الري",
+          "تطهير أدوات"
+        ],
+        "timing_ar": "تعقيم وتطهير — قبل الزراعة",
+        "max_applications_season": 999,
+        "interval_days": 30,
+        "preharvest_interval_ar": "لا ينطبق — للتطهير",
+        "water_volume_ar": "حسب الاستخدام"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-sul",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "للتطهير فقط — لا للرش الورقي"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-05",
+          "name_ar": "الذبول البكتيري"
+        },
+        {
+          "id": "bact-09",
+          "name_ar": "الجرب البكتيري للبطاطس"
+        },
+        {
+          "id": "bact-17",
+          "name_ar": "تعفن التاج البكتيري — Crown Gall"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "بذور عامة",
+        "مياه الري",
+        "أدوات زراعية",
+        "بيوت محمية"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات — تطهير",
+      "activity_ar": "ملامسي — تطهير قوي",
+      "special_use_ar": "مطهر قوي لمياه الري والبذور والأدوات — يمنع انتشار البكتيريا مع الري",
+      "regulatory_ar": "مسجل في بعض الدول — تحقق من التسجيل المحلي",
+      "safety_notes_ar": "سامة للأسماك والكائنات المائية — استخدام بعيداً عن مصادر المياه",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-021",
+      "name_ar": "باسيلوس سوبتيليس — سلالات مضادة للبكتيريا",
+      "name_en": "Bacillus subtilis (bactericidal strains)",
+      "bact_group_id": "bact-grp-bio",
+      "group_code": "BIO",
+      "chemical_class_ar": "بكتيريا Bacillus subtilis",
+      "chemical_class_en": "Beneficial bacterium — biocontrol",
+      "systemic": false,
+      "type_ar": "ملامسي + غير مباشر",
+      "application": {
+        "dose_spray_ar": "5–10 جم م.ف/لتر",
+        "dose_feddan_ar": "3–7 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري",
+          "معاملة بذور",
+          "تقطير مع الري"
+        ],
+        "timing_ar": "وقائي — من الزراعة كل 7-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع أي مجموعة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة — مع النحاسيات أو بديلاً عنها في الزراعة العضوية"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "تفاح",
+        "كمثرى",
+        "أرز",
+        "ملفوف",
+        "زيتون",
+        "ورد",
+        "بقوليات"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات",
+      "activity_ar": "يُنتج iturin وsurfactin وfengycin — مضادات حيوية طبيعية",
+      "special_use_ar": "أوسع الكائنات البيولوجية استخداماً ضد الأمراض البكتيرية والفطرية — مُسموح في الزراعة العضوية",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً على الإنسان والبيئة والنحل",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-022",
+      "name_ar": "باسيلوس أميلوليكيفاسينس",
+      "name_en": "Bacillus amyloliquefaciens (B. velezensis)",
+      "bact_group_id": "bact-grp-bio",
+      "group_code": "BIO",
+      "chemical_class_ar": "بكتيريا Bacillus amyloliquefaciens",
+      "chemical_class_en": "Beneficial bacterium — biocontrol",
+      "systemic": false,
+      "type_ar": "ملامسي + غير مباشر",
+      "application": {
+        "dose_spray_ar": "5–10 جم م.ف/لتر",
+        "dose_feddan_ar": "3–7 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري",
+          "معاملة بذور"
+        ],
+        "timing_ar": "وقائي — كل 7-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–500 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة — وحده أو مع باسيلوس سوبتيليس"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "حمضيات",
+        "أرز",
+        "تفاح",
+        "ملفوف",
+        "ورد"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات",
+      "activity_ar": "يُنتج lipopeptides + سيدروفورات + إنزيمات مُحللة لجدار الخلية",
+      "special_use_ar": "من أقوى Bacillus spp. في المكافحة البيولوجية — أعلى إنتاجاً للمضادات الحيوية الطبيعية",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-023",
+      "name_ar": "سيودوموناس كلورورافيس",
+      "name_en": "Pseudomonas chlororaphis",
+      "bact_group_id": "bact-grp-bio",
+      "group_code": "BIO",
+      "chemical_class_ar": "بكتيريا Pseudomonas chlororaphis PGPR",
+      "chemical_class_en": "Beneficial rhizobacterium — biocontrol",
+      "systemic": false,
+      "type_ar": "ملامسي + تحفيز مناعة",
+      "application": {
+        "dose_spray_ar": "5–10 لتر/فدان معلق",
+        "dose_feddan_ar": "5–10 لتر/فدان",
+        "methods_ar": [
+          "صب جذري",
+          "تقطير مع الري",
+          "معاملة بذور"
+        ],
+        "timing_ar": "وقائي — من الزراعة كل 2-3 أسابيع",
+        "max_applications_season": 999,
+        "interval_days": 14,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم — يُعزز عمل النحاسيات والبيولوجي الأخرى"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-05",
+          "name_ar": "الذبول البكتيري"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "تفاح",
+        "كمثرى",
+        "أرز",
+        "ملفوف",
+        "ورد",
+        "بقوليات",
+        "زيتون"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات + مقاومة النبات",
+      "activity_ar": "يُنتج 2,4-diacetylphloroglucinol وسيدروفورات + يُحفز ISR",
+      "special_use_ar": "فعّال ضد طيف واسع من البكتيريا النباتية + يُحسّن نمو النبات + يُحفز مناعته",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-024",
+      "name_ar": "راديوباكتر K84 — عامل ضد Crown Gall",
+      "name_en": "Agrobacterium radiobacter K84 (Rhizobium radiobacter)",
+      "bact_group_id": "bact-grp-bio",
+      "group_code": "BIO",
+      "chemical_class_ar": "بكتيريا Agrobacterium radiobacter K84",
+      "chemical_class_en": "Biocontrol bacterium — Crown Gall antagonist",
+      "systemic": false,
+      "type_ar": "ملامسي تنافسي",
+      "application": {
+        "dose_spray_ar": "لا ينطبق — معلق تجاري",
+        "dose_feddan_ar": "لا ينطبق",
+        "methods_ar": [
+          "غمر جذور الشتلات",
+          "غمر بذور",
+          "رش جذور"
+        ],
+        "timing_ar": "قبل الزراعة — معاملة جذور الشتلات والعقل",
+        "max_applications_season": 999,
+        "interval_days": 365,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "لا ينطبق — معاملة جذور"
+      },
+      "resistance": {
+        "risk_ar": "منخفض",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة في الحقل",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "معاملة وقائية قبل الزراعة — لا علاج للنباتات المصابة"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-17",
+          "name_ar": "تعفن التاج البكتيري — Crown Gall"
+        }
+      ],
+      "target_crops": [
+        "ورد",
+        "عنب",
+        "شجر فاكهة",
+        "حمضيات",
+        "زيتون",
+        "مشاتل عامة"
+      ],
+      "spectrum_ar": "ضيق جداً — Crown Gall فقط",
+      "activity_ar": "تنافسي — يحتل موقع الجذر قبل Agrobacterium المسبب للمرض",
+      "special_use_ar": "الوسيلة البيولوجية الوحيدة الفعّالة لمنع تعفن التاج — لا علاج بعد الإصابة — وقائي فقط",
+      "regulatory_ar": "مسجل في بعض الدول — تحقق من التسجيل المحلي — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-025",
+      "name_ar": "ليزوباكتر إنزيموجنيس",
+      "name_en": "Lysobacter enzymogenes",
+      "bact_group_id": "bact-grp-bio",
+      "group_code": "BIO",
+      "chemical_class_ar": "بكتيريا Lysobacter enzymogenes",
+      "chemical_class_en": "Biocontrol bacterium — antibiotic producer",
+      "systemic": false,
+      "type_ar": "ملامسي + إنزيمي",
+      "application": {
+        "dose_spray_ar": "3–5 جم م.ف/لتر",
+        "dose_feddan_ar": "2–4 كجم م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري"
+        ],
+        "timing_ar": "وقائي وعلاجي خفيف — كل 10-14 يوم",
+        "max_applications_season": 999,
+        "interval_days": 7,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bio",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في أي مرحلة — مع النحاسيات أو البيولوجي الأخرى"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "تفاح",
+        "أرز",
+        "ملفوف",
+        "ورد",
+        "بقوليات"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات",
+      "activity_ar": "يُنتج HSAF (Heat-stable antifungal factor) + إنزيمات تُحلل جدار البكتيريا",
+      "special_use_ar": "من أحدث الكائنات البيولوجية — ينتج مضادات حيوية طبيعية ضد طيف واسع من البكتيريا والفطريات",
+      "regulatory_ar": "قيد التسجيل في بعض الدول — تحقق من التسجيل المحلي",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-026",
+      "name_ar": "ديكيل ثنائي ميثيل كلوريد الأمونيوم — DDAC",
+      "name_en": "Didecyl dimethyl ammonium chloride (DDAC)",
+      "bact_group_id": "bact-grp-qac",
+      "group_code": "QAC",
+      "chemical_class_ar": "رباعي أمونيوم",
+      "chemical_class_en": "Quaternary ammonium compound (DDAC)",
+      "systemic": false,
+      "type_ar": "ملامسي — مطهر",
+      "application": {
+        "dose_spray_ar": "0.5–1% محلول",
+        "dose_feddan_ar": "لا ينطبق — للتطهير",
+        "methods_ar": [
+          "تطهير أدوات وبيوت محمية",
+          "غمر بذور",
+          "رش منشآت"
+        ],
+        "timing_ar": "تعقيم وتطهير — قبل الموسم وبين المواسم",
+        "max_applications_season": 999,
+        "interval_days": 365,
+        "preharvest_interval_ar": "لا ينطبق — للتطهير",
+        "water_volume_ar": "حسب الاستخدام"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "جينات qac (efflux pumps) — بطيء التطور",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع النحاسيات أو الأنتيبيوتيكس",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-qac",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "للتطهير فقط — لا للرش الورقي على النباتات"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-05",
+          "name_ar": "الذبول البكتيري"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-09",
+          "name_ar": "الجرب البكتيري للبطاطس"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-17",
+          "name_ar": "تعفن التاج البكتيري — Crown Gall"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "بيوت محمية",
+        "مشاتل",
+        "أدوات زراعية",
+        "سكاكين تطعيم",
+        "صناديق تعبئة"
+      ],
+      "spectrum_ar": "واسع جداً — معظم البكتيريا والفطريات — للتطهير",
+      "activity_ar": "ملامسي — تدمير الغشاء الخلوي فوراً",
+      "special_use_ar": "أفضل مطهر لبيوت الزراعة المحمية والأدوات — يمنع انتقال البكتيريا بين النباتات",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي",
+      "safety_notes_ar": "سامة للأسماك والكائنات المائية — آمن للإنسان بالتركيزات المعتادة — لا تُضف للمياه الجارية",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-027",
+      "name_ar": "بنزالكونيوم كلوريد — BAC",
+      "name_en": "Benzalkonium chloride (BAC)",
+      "bact_group_id": "bact-grp-qac",
+      "group_code": "QAC",
+      "chemical_class_ar": "رباعي أمونيوم — أمفيفيليك",
+      "chemical_class_en": "Quaternary ammonium compound (BAC)",
+      "systemic": false,
+      "type_ar": "ملامسي — مطهر",
+      "application": {
+        "dose_spray_ar": "0.1–0.5% محلول",
+        "dose_feddan_ar": "لا ينطبق — للتطهير",
+        "methods_ar": [
+          "تطهير أدوات",
+          "غمر بذور",
+          "رش جذور الشتلات"
+        ],
+        "timing_ar": "تعقيم وتطهير",
+        "max_applications_season": 999,
+        "interval_days": 365,
+        "preharvest_interval_ar": "لا ينطبق",
+        "water_volume_ar": "حسب الاستخدام"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "جينات qac (efflux pumps)",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع الأنتيبيوتيكس",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-qac",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "للتطهير فقط"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-05",
+          "name_ar": "الذبول البكتيري"
+        },
+        {
+          "id": "bact-06",
+          "name_ar": "اللفحة النارية — Fire blight"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-09",
+          "name_ar": "الجرب البكتيري للبطاطس"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-17",
+          "name_ar": "تعفن التاج البكتيري — Crown Gall"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "بيوت محمية",
+        "مشاتل",
+        "أدوات زراعية",
+        "مياه الري"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات + فيروسات — تطهير",
+      "activity_ar": "ملامسي — تدمير فوري للغشاء الخلوي",
+      "special_use_ar": "أوسع مطهر رباعي استخداماً — يقتل البكتيريا والفطريات والفيروسات — سريع وفعّال",
+      "regulatory_ar": "مسجل ومتاح في مصر والوطن العربي",
+      "safety_notes_ar": "سامة للأسماك والكائنات المائية — آمن للإنسان",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-028",
+      "name_ar": "زيت الزعتر وزيت الأوريغانو — ثايمول وكارفاكرول",
+      "name_en": "Thyme/Oregano essential oil — Thymol/Carvacrol",
+      "bact_group_id": "bact-grp-bot",
+      "group_code": "BOT-B",
+      "chemical_class_ar": "زيت عطري — فينول",
+      "chemical_class_en": "Essential oil — phenols",
+      "systemic": false,
+      "type_ar": "ملامسي + تبخري",
+      "application": {
+        "dose_spray_ar": "1–3 مل م.ف/لتر",
+        "dose_feddan_ar": "700–2000 مل م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي وعلاجي خفيف — كل 5-10 أيام",
+        "max_applications_season": 999,
+        "interval_days": 1,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم — مع النحاسيات أو البيولوجي"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "حمضيات",
+        "خوخ",
+        "أرز",
+        "ملفوف",
+        "بصل",
+        "ورد"
+      ],
+      "spectrum_ar": "متوسط — بكتيريا جرام سالب وجرام موجب",
+      "activity_ar": "ملامسي + تبخري — يُدمر غشاء الخلية البكتيرية",
+      "special_use_ar": "مضادات حيوية طبيعية قوية — آمنة تماماً — لا فترة انتظار — مثالي للزراعة العضوية",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً — رائحة حادة أثناء التطبيق فقط",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-029",
+      "name_ar": "مستخلص الثوم — أليسين",
+      "name_en": "Garlic extract — Allicin",
+      "bact_group_id": "bact-grp-bot",
+      "group_code": "BOT-B",
+      "chemical_class_ar": "مستخلص نباتي — ثيوسلفينات",
+      "chemical_class_en": "Botanical — Allicin/Allyl sulfides",
+      "systemic": false,
+      "type_ar": "ملامسي + طارد",
+      "application": {
+        "dose_spray_ar": "5–10 مل م.ف/لتر",
+        "dose_feddan_ar": "3–7 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي",
+          "صب جذري"
+        ],
+        "timing_ar": "وقائي — كل 5-7 أيام",
+        "max_applications_season": 999,
+        "interval_days": 1,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم طوال الموسم كعنصر داعم"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-03",
+          "name_ar": "التعفن الطري البكتيري"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-14",
+          "name_ar": "التبقع البكتيري للتبغ"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        },
+        {
+          "id": "bact-19",
+          "name_ar": "التعفن الطري للبصل والثوم"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "حمضيات",
+        "أرز",
+        "ملفوف",
+        "بصل",
+        "ورد",
+        "بقوليات"
+      ],
+      "spectrum_ar": "واسع — بكتيريا + فطريات + بعض الفيروسات",
+      "activity_ar": "ملامسي + طارد",
+      "special_use_ar": "أليسين يُدمر إنزيم acetyl-CoA في البكتيريا — اقتصادي جداً — متوفر في كل مكان",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-030",
+      "name_ar": "مستخلص القرفة — سينامالديهيد",
+      "name_en": "Cinnamon extract — Cinnamaldehyde",
+      "bact_group_id": "bact-grp-bot",
+      "group_code": "BOT-B",
+      "chemical_class_ar": "مستخلص نباتي — ألديهيد",
+      "chemical_class_en": "Botanical — Cinnamaldehyde",
+      "systemic": false,
+      "type_ar": "ملامسي",
+      "application": {
+        "dose_spray_ar": "2–5 مل م.ف/لتر",
+        "dose_feddan_ar": "1.4–3.5 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي وعلاجي خفيف — كل 7-10 أيام",
+        "max_applications_season": 999,
+        "interval_days": 1,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في الزراعة العضوية مع البيولوجي والنحاسيات"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "حمضيات",
+        "خوخ",
+        "أرز",
+        "ملفوف",
+        "ورد"
+      ],
+      "spectrum_ar": "متوسط — بكتيريا جرام سالب وجرام موجب + فطريات",
+      "activity_ar": "ملامسي — يُدمر بروتينات الغشاء الخلوي",
+      "special_use_ar": "مضاد حيوي طبيعي قوي — آمن تماماً — يُستخدم في الغذاء والزراعة العضوية",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    },
+    {
+      "id": "bai-031",
+      "name_ar": "مستخلص القرنفل — يوجينول",
+      "name_en": "Clove extract — Eugenol",
+      "bact_group_id": "bact-grp-bot",
+      "group_code": "BOT-B",
+      "chemical_class_ar": "مستخلص نباتي — فينيل بروبانويد",
+      "chemical_class_en": "Botanical — Eugenol",
+      "systemic": false,
+      "type_ar": "ملامسي + تبخري",
+      "application": {
+        "dose_spray_ar": "2–4 مل م.ف/لتر",
+        "dose_feddan_ar": "1.4–2.8 لتر م.ف/فدان",
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "وقائي وعلاجي خفيف — كل 7-10 أيام",
+        "max_applications_season": 999,
+        "interval_days": 1,
+        "preharvest_interval_ar": "1 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض جداً",
+        "risk_level": 1,
+        "risk_color": "green",
+        "mechanism_ar": "لا مقاومة موثقة",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة",
+        "resistance_reported_in": []
+      },
+      "rotation": {
+        "group_id": "bact-grp-bot",
+        "max_consecutive": 1,
+        "must_rotate_after": 999,
+        "note_ar": "يُستخدم في الزراعة العضوية — يُكمل زيت الزعتر"
+      },
+      "target_diseases": [
+        {
+          "id": "bact-01",
+          "name_ar": "التبقع البكتيري للطماطم والفلفل"
+        },
+        {
+          "id": "bact-02",
+          "name_ar": "التبقع الزاوي للخيار والقرعيات"
+        },
+        {
+          "id": "bact-04",
+          "name_ar": "التقرح البكتيري للحمضيات"
+        },
+        {
+          "id": "bact-07",
+          "name_ar": "التبقع البكتيري للخوخ واللوز"
+        },
+        {
+          "id": "bact-08",
+          "name_ar": "التقرح البكتيري للنباتات الخشبية"
+        },
+        {
+          "id": "bact-10",
+          "name_ar": "التبقع البكتيري للأرز"
+        },
+        {
+          "id": "bact-12",
+          "name_ar": "التعفن الأسود للصليبيات"
+        },
+        {
+          "id": "bact-13",
+          "name_ar": "التقرح والنكشة البكتيرية للزيتون"
+        },
+        {
+          "id": "bact-16",
+          "name_ar": "التبقع البكتيري للفول والبقوليات"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "حمضيات",
+        "خوخ",
+        "أرز",
+        "ملفوف",
+        "ورد"
+      ],
+      "spectrum_ar": "متوسط — بكتيريا + فطريات",
+      "activity_ar": "ملامسي + تبخري",
+      "special_use_ar": "يوجينول يُثبط إنزيمات بكتيرية حيوية — آمن تماماً — نكهة ورائحة القرنفل",
+      "regulatory_ar": "مسجل في بعض الدول — مُسموح في الزراعة العضوية",
+      "safety_notes_ar": "آمن تماماً",
+      "references": "FRAC Code List 2024 + EPPO + Egyptian Pesticide Register 2024"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+/* components/home/hero.css */
+
+.hefno-hero {
+  position: relative;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #0a1f15;
+  overflow: hidden;
+  direction: ltr;
+  margin-top: 30px;
+}
+
+
+/* ===== المحتوى الرئيسي ===== */
+.hero-container {
+  position: relative;
+  z-index: 30;
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  gap: 20px;
+  padding: 0 5%;
+  margin-bottom: 200px;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0;
+  padding: 2rem;
+  transform: translateY(60px);
+  transform: translateX(120px);
+  text-align: left;
+  display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      gap: 20px;
+}
+
+/* Hefno plant - كبير جداً وبتدرج أخضر */
+.hero-title-large {
+  /* font-size: clamp(5rem, 12vw, 9rem);  */
+  font-size: clamp(4rem, 10vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #a5d6a5, #66bb6a, #2E7D32, #1B5E20);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 20px rgba(46, 125, 50, 0.4);
+  letter-spacing: -1px; /* تقريب الحروف شوية عشان الشكل أحلى */
+}
+
+/* النص الفرعي - أصغر وبلون أسمر */
+.hero-subtitle {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  color: #282016;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+  text-align: left;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  line-height: 1.6;
+  font-weight: 400;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* الزرار زي ما هو بالظبط */
+.emerald-btn {
+  background: linear-gradient(135deg, #2D6A4F, #1e4f3a);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 60px;
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 25px -8px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emerald-btn:hover {
+  background: linear-gradient(135deg, #1e4f3a, #0f2f22);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 30px -8px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== تحسينات للأجهزة الصغيرة ===== */
+@media (max-width: 768px) {
+
+  .hero-content{
+    transform: translateX(0px) ;
+    transform: translateY(60px);
+  }
+  
+  .emerald-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .hero-title-large {
+    font-size: clamp(3rem, 8vw, 4rem);
+  } */
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-subtitle br {
+    display: none; /* نخفي الفاصل على الشاشات الصغيرة */
+  }
+  
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  
+  .emerald-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

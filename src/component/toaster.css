@@ -1,0 +1,95 @@
+/* حاوية التنبيهات */
+.toast-container {
+    position: fixed;
+    top: 20px; /* أو bottom: 20px حسب رغبتك */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none; /* عشان ميمنعش الضغط على الزراير اللي تحته */
+}
+
+/* المكون الزجاجي الرئيسي */
+.toast-item {
+    pointer-events: auto;
+    min-width: 320px;
+    max-width: 450px;
+    padding: 16px 24px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    direction: rtl;
+    
+    /* تأثير Glassmorphism */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    /* أنيميشن الظهور */
+    animation: slideDownFade 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    color: #ffffff;
+}
+
+/* أيقونة التنبيه */
+.toast-icon {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* محتوى النص */
+.toast-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+}
+
+/* ستايل النجاح - Success */
+.toast-item.success {
+    background: rgba(46, 213, 115, 0.15);
+    border-left: 5px solid #2ed573; /* خط جانبي لتمييز الحالة */
+}
+.toast-item.success .toast-icon {
+    filter: drop-shadow(0 0 8px #2ed573);
+}
+
+/* ستايل الخطأ - Error */
+.toast-item.error {
+    background: rgba(255, 71, 87, 0.15);
+    border-left: 5px solid #ff4757;
+}
+.toast-item.error .toast-icon {
+    filter: drop-shadow(0 0 8px #ff4757);
+}
+
+/* أنيميشن الدخول */
+@keyframes slideDownFade {
+    from {
+        transform: translateY(-100%) translateX(0); /* لو الـ Toaster فوق */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+}
+
+/* أنيميشن الخروج (اختياري لو ضفت Logic للخروج) */
+.toast-exit {
+    animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
