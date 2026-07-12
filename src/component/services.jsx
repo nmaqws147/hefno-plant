@@ -112,7 +112,7 @@ function Services() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="group relative rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 lg:p-5 pb-4 sm:pb-5 lg:pb-6 border-2 border-gray-300 dark:border-white/[0.08] bg-white dark:bg-gray-800/50 dark:backdrop-blur-xl shadow-lg dark:shadow-none transition-all hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_30px_60px_-20px_rgba(82,183,136,0.5)] dark:hover:shadow-[0_30px_60px_-20px_rgba(82,183,136,0.4)] min-h-[220px] sm:min-h-[300px] lg:min-h-[340px] flex flex-col"
+            className="group relative rounded-2xl sm:rounded-3xl p-3.5 sm:p-4 lg:p-5 pb-4 sm:pb-5 lg:pb-6 border-2 border-gray-300 dark:border-white/[0.08] bg-white dark:bg-gray-800/50 dark:backdrop-blur-xl shadow-lg dark:shadow-none transition-all hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-[0_30px_60px_-20px_rgba(82,183,136,0.5)] dark:hover:shadow-[0_30px_60px_-20px_rgba(82,183,136,0.4)] min-h-[220px] sm:min-h-[300px] lg:min-h-[340px] h-full flex flex-col"
           >
             <div
               className={`absolute -top-8 sm:-top-10 -right-8 sm:-right-10 size-32 sm:size-40 lg:size-56 rounded-full bg-gradient-to-br ${s.hue} blur-3xl opacity-80 dark:opacity-80`}
