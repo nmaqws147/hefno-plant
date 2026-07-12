@@ -51,7 +51,7 @@ const BlogPostPage = () => {
   const readTime = Math.max(1, Math.ceil((post.body || '').split(/\s+/).length / 200));
 
   return (
-    <div className="min-h-screen bg-champagne dark:bg-[#111827]">
+    <div className="min-h-screen bg-champagne dark:bg-[#111827]" dir="rtl">
       <Helmet>
         <title>مقال | Hefno-Plant</title>
         <meta name="description" content="اقرأ أحدث المقالات الزراعية على مدونة Hefno-Plant — نصائح وإرشادات للمزارعين." />

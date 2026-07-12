@@ -36,7 +36,6 @@ const useTracking = () => {
       });
       
       if (response.ok) {
-        const result = await response.json();
         console.log(`✅ Tracking success`);
       }
     } catch (error) {
@@ -63,7 +62,7 @@ const useTracking = () => {
     
     const path = location.pathname;
     let pageName = path === '/' ? 'home' : path.slice(1).replace(/\//g, '_');
-    pageName = pageName.replace(/[^a-zA-Z0-9_\-]/g, '_');
+    pageName = pageName.replace(/[^a-zA-Z0-9_-]/g, '_');
     
     const referrer = document.referrer || 'direct';
     

@@ -1,0 +1,5325 @@
+{
+  "metadata": {
+    "id": "hefnoplant_plants_db",
+    "name_ar": "قاعدة بيانات النباتات والمحاصيل",
+    "name_en": "HefnoPlant — Plants & Crops Database",
+    "version": "1.0.0",
+    "sources": [
+      "وزارة الزراعة واستصلاح الأراضي المصرية",
+      "مركز البحوث الزراعية — مصر",
+      "FAO — Food and Agriculture Organization",
+      "IPNI — International Plant Nutrition Institute",
+      "الجهاز المركزي للتعبئة العامة والإحصاء — مصر 2024"
+    ],
+    "groups_count": 5,
+    "total_plants": 41,
+    "last_updated": "2024"
+  },
+  "groups": [
+    {
+      "id": "grp-field",
+      "name_ar": "المحاصيل الحقلية",
+      "name_en": "Field Crops",
+      "description_ar": "المحاصيل الرئيسية التي تُزرع على نطاق واسع في الأراضي الزراعية المصرية وتُشكل العمود الفقري للاقتصاد الزراعي",
+      "sub_categories": [
+        "حبوب",
+        "بقوليات",
+        "محاصيل زيتية",
+        "محاصيل سكرية",
+        "محاصيل ألياف"
+      ],
+      "plants_count": 12,
+      "plants": [
+        {
+          "id": "plant-001",
+          "name_ar": "قمح",
+          "name_en": "Wheat",
+          "name_scientific": "Triticum aestivum",
+          "category": "حبوب",
+          "group_id": "grp-field",
+          "description_ar": "أهم محصول حقلي في مصر — الغذاء الرئيسي للشعب المصري — يُزرع في جميع محافظات الوجه البحري والقبلي",
+          "seasons": {
+            "planting_months": [
+              10,
+              11,
+              12
+            ],
+            "planting_season_ar": "أكتوبر — ديسمبر",
+            "harvest_months": [
+              4,
+              5
+            ],
+            "harvest_season_ar": "أبريل — مايو",
+            "growth_duration_days": "120-150",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طينية",
+              "طميية",
+              "طينية طميية"
+            ],
+            "ph_range": "6.0-7.5",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط — يتحمل حتى 6 dS/m",
+            "drainage_ar": "جيد الصرف — لا يتحمل الغرق",
+            "organic_matter_ar": "مرتفع المادة العضوية أفضل"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1800-2200",
+            "irrigation_times": "5-6 ريات",
+            "first_irrigation_ar": "بعد 21-25 يوم من الزراعة (ري المحاياة)",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التفريع",
+              "طرد السنابل",
+              "حبوب اللبن"
+            ],
+            "method_ar": "غمر — تحت السطحي — رش"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "60-80",
+            "total_p_kg_per_feddan": "20-30",
+            "total_k_kg_per_feddan": "24-36",
+            "n_split_ar": "ثلث عند الزراعة + ثلث عند الإنبات + ثلث عند التفريع",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل أو نصفين عند الزراعة والتفريع",
+            "micronutrients_ar": {
+              "Zn": "مهم — 3-5 كجم ZnSO₄/فدان عند الحاجة",
+              "Fe": "نادر النقص في مصر",
+              "Mn": "قد يظهر نقصه في التربة القلوية"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "المصدر الرئيسي للنيتروجين",
+              "dose_ar": "100-150 كجم/فدان مقسمة"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي SSP",
+              "purpose_ar": "الفوسفور قبل الزراعة",
+              "dose_ar": "150-200 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-015",
+              "name_ar": "كلوريد البوتاسيوم MOP",
+              "purpose_ar": "البوتاسيوم",
+              "dose_ar": "50 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-007",
+              "name_ar": "نترات الأمونيوم الكلسية CAN",
+              "purpose_ar": "توبدريس في التفريع",
+              "dose_ar": "50-60 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-028",
+              "name_ar": "أزوسبيريلوم",
+              "purpose_ar": "تثبيت نيتروجين بيولوجي",
+              "dose_ar": "تلقيح البذور"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "صدأ القمح الأصفر",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "حشرة سونة القمح",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "الحفار",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 340,
+            "protein_g": 12.6,
+            "carbs_g": 71.2,
+            "fat_g": 1.5,
+            "fiber_g": 10.7,
+            "iron_mg": 3.5,
+            "zinc_mg": 2.8
+          },
+          "geographic_regions_egypt_ar": [
+            "الدلتا",
+            "الوجه القبلي",
+            "سيناء",
+            "وادي النيل"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "3200000",
+            "yield_ton_per_feddan": "2.5-3.5",
+            "total_production_ton_approx": "9000000",
+            "rank_egypt_ar": "أهم محصول استراتيجي"
+          },
+          "common_varieties_ar": [
+            "سدس 12",
+            "سدس 14",
+            "جيزة 168",
+            "مصر 1",
+            "مصر 3"
+          ],
+          "economic_importance_ar": "محصول استراتيجي — يغطي 60% من احتياج مصر من القمح",
+          "organic_suitable": false,
+          "export_potential": false
+        },
+        {
+          "id": "plant-002",
+          "name_ar": "ذرة شامية",
+          "name_en": "Maize / Corn",
+          "name_scientific": "Zea mays",
+          "category": "حبوب",
+          "group_id": "grp-field",
+          "description_ar": "ثاني أهم محصول حبوب في مصر — يُستخدم للغذاء والعلف والصناعة",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "planting_season_ar": "مارس — يونيو",
+            "harvest_months": [
+              7,
+              8,
+              9
+            ],
+            "harvest_season_ar": "يوليو — سبتمبر",
+            "growth_duration_days": "90-120",
+            "season_type_ar": "صيفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية عميقة",
+              "طينية طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "5.8-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط — حساس للملوحة العالية",
+            "drainage_ar": "جيد الصرف إلزامي",
+            "organic_matter_ar": "يستجيب جيداً للمادة العضوية"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2500-3000",
+            "irrigation_times": "7-9 ريات",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "6-8 أوراق",
+              "الاندفاع",
+              "الحرير والكيزان",
+              "حبوب اللبن"
+            ],
+            "method_ar": "غمر — رش — تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "80-100",
+            "total_p_kg_per_feddan": "30-40",
+            "total_k_kg_per_feddan": "30-40",
+            "n_split_ar": "ربع عند الزراعة + ربع عند 4 أوراق + نصف عند الاندفاع",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "نصفين",
+            "micronutrients_ar": {
+              "Zn": "ضروري جداً — أكثر المحاصيل استجابة للزنك",
+              "Fe": "نادر",
+              "B": "مهم عند التزهير"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "النيتروجين الرئيسي",
+              "dose_ar": "150-200 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-010",
+              "name_ar": "DAP",
+              "purpose_ar": "فوسفور + نيتروجين عند الزراعة",
+              "dose_ar": "100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-015",
+              "name_ar": "كلوريد البوتاسيوم",
+              "purpose_ar": "البوتاسيوم",
+              "dose_ar": "50-75 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحسين امتصاص الزنك والفوسفور",
+              "dose_ar": "10-15 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "دودة الحشد الخريفية",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "لفحة الذرة",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "دودة القصب",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 365,
+            "protein_g": 9.4,
+            "carbs_g": 74.3,
+            "fat_g": 4.7,
+            "fiber_g": 7.3,
+            "iron_mg": 2.7,
+            "zinc_mg": 2.2
+          },
+          "geographic_regions_egypt_ar": [
+            "الدلتا",
+            "الوجه القبلي",
+            "مصر الوسطى"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "2000000",
+            "yield_ton_per_feddan": "3.0-4.5",
+            "total_production_ton_approx": "7500000",
+            "rank_egypt_ar": "ثاني أهم محصول حبوب"
+          },
+          "common_varieties_ar": [
+            "هجين 310",
+            "هجين 352",
+            "TWC 321",
+            "بايونير 3025"
+          ],
+          "economic_importance_ar": "غذاء — علف — صناعة نشا وزيت",
+          "organic_suitable": false,
+          "export_potential": false
+        },
+        {
+          "id": "plant-003",
+          "name_ar": "أرز",
+          "name_en": "Rice",
+          "name_scientific": "Oryza sativa",
+          "category": "حبوب",
+          "group_id": "grp-field",
+          "description_ar": "محصول حبوب رئيسي يُزرع في الدلتا — يحتاج كميات كبيرة من المياه",
+          "seasons": {
+            "planting_months": [
+              5,
+              6
+            ],
+            "planting_season_ar": "مايو — يونيو",
+            "harvest_months": [
+              9,
+              10
+            ],
+            "harvest_season_ar": "سبتمبر — أكتوبر",
+            "growth_duration_days": "120-145",
+            "season_type_ar": "صيفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طينية ثقيلة",
+              "طينية"
+            ],
+            "ph_range": "5.5-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "حساس — لا يتحمل أكثر من 3 dS/m",
+            "drainage_ar": "يحتاج حقول مسوّاة جيداً للغمر",
+            "organic_matter_ar": "يستفيد كثيراً من المادة العضوية"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "4000-5000",
+            "irrigation_times": "غمر مستمر أغلب الموسم",
+            "first_irrigation_ar": "غمر فوري عند الشتل",
+            "critical_stages_ar": [
+              "الشتل",
+              "التفريع",
+              "بداية طرد السنابل",
+              "حبوب اللبن"
+            ],
+            "method_ar": "غمر (الطريقة التقليدية) — ري متقطع (AWD)"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "60-80",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "20-30",
+            "n_split_ar": "ثلث عند الشتل + ثلث عند التفريع + ثلث عند طرد السنابل",
+            "p_timing_ar": "كامل قبل الشتل",
+            "k_timing_ar": "كامل قبل الشتل",
+            "micronutrients_ar": {
+              "Zn": "نقص شائع جداً في أرز مصر — 5 كجم ZnSO₄/فدان",
+              "Fe": "نادراً ما ينقص في الغمر",
+              "Si": "مفيد لتقوية الساق"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-003",
+              "name_ar": "سلفات الأمونيوم",
+              "purpose_ar": "N+S مناسب للأرز",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "توبدريس النيتروجين",
+              "dose_ar": "50-75 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "الفوسفور قبل الشتل",
+              "dose_ar": "150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-019",
+              "name_ar": "السماد البلدي",
+              "purpose_ar": "تحسين التربة قبل الموسم",
+              "dose_ar": "3-5 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "اللفحة البكتيرية",
+              "type": "مرض بكتيري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "مرض الأورزا — البلاست",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "حشرة ساق الأرز",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 365,
+            "protein_g": 7.1,
+            "carbs_g": 80.0,
+            "fat_g": 0.7,
+            "fiber_g": 1.3,
+            "iron_mg": 0.8,
+            "zinc_mg": 1.1
+          },
+          "geographic_regions_egypt_ar": [
+            "كفر الشيخ",
+            "الدقهلية",
+            "البحيرة",
+            "الغربية",
+            "الشرقية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "1400000",
+            "yield_ton_per_feddan": "3.0-3.8",
+            "total_production_ton_approx": "4500000",
+            "rank_egypt_ar": "ثالث أهم محصول حبوب"
+          },
+          "common_varieties_ar": [
+            "سخا 101",
+            "سخا 104",
+            "سخا 107",
+            "جيزة 177",
+            "هجين 1"
+          ],
+          "economic_importance_ar": "غذاء رئيسي — محصول استراتيجي — مُقيَّدة مساحته لأسباب مائية",
+          "organic_suitable": false,
+          "export_potential": true
+        },
+        {
+          "id": "plant-004",
+          "name_ar": "قطن",
+          "name_en": "Cotton",
+          "name_scientific": "Gossypium barbadense",
+          "category": "محاصيل ألياف",
+          "group_id": "grp-field",
+          "description_ar": "القطن المصري طويل التيلة — من أجود أنواع القطن عالمياً — محصول تصديري بامتياز",
+          "seasons": {
+            "planting_months": [
+              4,
+              5
+            ],
+            "planting_season_ar": "أبريل — مايو",
+            "harvest_months": [
+              9,
+              10,
+              11
+            ],
+            "harvest_season_ar": "سبتمبر — نوفمبر",
+            "growth_duration_days": "180-200",
+            "season_type_ar": "صيفي طويل"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طينية عميقة",
+              "طميية طينية"
+            ],
+            "ph_range": "6.0-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط-جيد — يتحمل حتى 7 dS/m",
+            "drainage_ar": "جيد الصرف — لا يتحمل الغرق",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "3000-3500",
+            "irrigation_times": "8-10 ريات",
+            "first_irrigation_ar": "بعد 3-4 أسابيع من الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التفريع",
+              "التزهير",
+              "عقد اللوز",
+              "تفتح اللوز"
+            ],
+            "method_ar": "غمر — تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "70-90",
+            "total_p_kg_per_feddan": "25-35",
+            "total_k_kg_per_feddan": "40-50",
+            "n_split_ar": "ثلث عند الزراعة + ثلث عند التفريع + ثلث عند التزهير",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "نصف عند الزراعة + نصف عند التزهير",
+            "micronutrients_ar": {
+              "Zn": "مهم — 3 كجم/فدان",
+              "B": "ضروري جداً لعقد اللوز — رش ورقي 0.2%",
+              "Mn": "نادر"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "النيتروجين الرئيسي",
+              "dose_ar": "120-160 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "الفوسفور + الكبريت",
+              "dose_ar": "200 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم SOP",
+              "purpose_ar": "البوتاسيوم بدون كلور",
+              "dose_ar": "75-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-032",
+              "name_ar": "أزوتوباكتر",
+              "purpose_ar": "تثبيت نيتروجين بيولوجي",
+              "dose_ar": "3 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "دودة اللوز القرنفلية",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "ذبابة البيضاء",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "عفن الجذر",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": null,
+          "geographic_regions_egypt_ar": [
+            "الدلتا",
+            "الوجه البحري",
+            "الشرقية",
+            "الدقهلية",
+            "كفر الشيخ"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "300000",
+            "yield_ton_per_feddan": "0.9-1.3",
+            "total_production_ton_approx": "350000",
+            "rank_egypt_ar": "أجود قطن في العالم — طويل التيلة"
+          },
+          "common_varieties_ar": [
+            "جيزة 86",
+            "جيزة 90",
+            "جيزة 94",
+            "بنجورا"
+          ],
+          "economic_importance_ar": "محصول تصديري استراتيجي — صناعة النسيج — الزيت",
+          "organic_suitable": false,
+          "export_potential": true
+        },
+        {
+          "id": "plant-005",
+          "name_ar": "فول بلدي",
+          "name_en": "Faba Bean",
+          "name_scientific": "Vicia faba",
+          "category": "بقوليات",
+          "group_id": "grp-field",
+          "description_ar": "من أقدم المحاصيل المصرية — غذاء رئيسي وشعبي — يُثري التربة بالنيتروجين",
+          "seasons": {
+            "planting_months": [
+              11,
+              12
+            ],
+            "planting_season_ar": "نوفمبر — ديسمبر",
+            "harvest_months": [
+              3,
+              4
+            ],
+            "harvest_season_ar": "مارس — أبريل",
+            "growth_duration_days": "110-130",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طينية",
+              "طميية",
+              "طينية طميية"
+            ],
+            "ph_range": "6.0-7.5",
+            "ph_ideal": 6.8,
+            "salinity_tolerance_ar": "حساس — لا يتحمل أكثر من 3 dS/m",
+            "drainage_ar": "جيد الصرف",
+            "organic_matter_ar": "يستفيد كثيراً من الكمبوست"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1200-1600",
+            "irrigation_times": "4-5 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 20-25 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التفريع",
+              "التزهير",
+              "عقد القرون"
+            ],
+            "method_ar": "غمر خفيف — رش"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "10-20",
+            "total_p_kg_per_feddan": "15-20",
+            "total_k_kg_per_feddan": "15-20",
+            "n_split_ar": "جرعة صغيرة للتشجيع الأولي فقط — يثبت N بيولوجياً",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Mo": "ضروري جداً لعمل الرايزوبيوم — رش 0.1%",
+              "B": "مهم لعقد القرون",
+              "Zn": "عند نقصه"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-027",
+              "name_ar": "رايزوبيوم",
+              "purpose_ar": "تثبيت النيتروجين الجوي — ضروري جداً",
+              "dose_ar": "تلقيح البذور قبل الزراعة"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "الفوسفور والكبريت",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-015",
+              "name_ar": "كلوريد البوتاسيوم",
+              "purpose_ar": "البوتاسيوم",
+              "dose_ar": "25-50 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "تحسين التربة والمادة العضوية",
+              "dose_ar": "2-3 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "حشرة المن الأسود",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "الصدأ",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 341,
+            "protein_g": 26.1,
+            "carbs_g": 58.3,
+            "fat_g": 1.5,
+            "fiber_g": 25.0,
+            "iron_mg": 6.7,
+            "zinc_mg": 3.1
+          },
+          "geographic_regions_egypt_ar": [
+            "الوجه البحري",
+            "المنيا",
+            "أسيوط",
+            "سوهاج",
+            "قنا"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "500000",
+            "yield_ton_per_feddan": "0.6-1.0",
+            "total_production_ton_approx": "500000",
+            "rank_egypt_ar": "أهم محصول بقولي في مصر"
+          },
+          "common_varieties_ar": [
+            "الأنتر",
+            "سخا 1",
+            "سخا 3",
+            "نوبارية 1",
+            "الحلبي"
+          ],
+          "economic_importance_ar": "غذاء شعبي رئيسي — يُثري التربة بالنيتروجين للمحصول التالي",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-006",
+          "name_ar": "بنجر السكر",
+          "name_en": "Sugar Beet",
+          "name_scientific": "Beta vulgaris",
+          "category": "محاصيل سكرية",
+          "group_id": "grp-field",
+          "description_ar": "محصول سكري استراتيجي — بديل لقصب السكر في الأراضي الجديدة — سريع العائد",
+          "seasons": {
+            "planting_months": [
+              9,
+              10,
+              11
+            ],
+            "planting_season_ar": "سبتمبر — نوفمبر",
+            "harvest_months": [
+              2,
+              3,
+              4
+            ],
+            "harvest_season_ar": "فبراير — أبريل",
+            "growth_duration_days": "160-180",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية عميقة",
+              "رملية طميية",
+              "طينية طميية"
+            ],
+            "ph_range": "6.5-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "جيد جداً — يتحمل حتى 8 dS/m",
+            "drainage_ar": "جيد الصرف — لا يتحمل الغرق",
+            "organic_matter_ar": "مهم لعمق التربة"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2200-2800",
+            "irrigation_times": "6-8 ريات",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "نمو الجذر",
+              "امتلاء الجذر",
+              "التوقف 3 أسابيع قبل الحصاد"
+            ],
+            "method_ar": "تنقيط — رش — غمر"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "80-100",
+            "total_p_kg_per_feddan": "35-50",
+            "total_k_kg_per_feddan": "60-80",
+            "n_split_ar": "ثلث عند الزراعة + ثلثين على دفعتين — يُوقف N قبل الحصاد بشهر لرفع نسبة السكر",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "مقسم — K مهم جداً لرفع نسبة السكر",
+            "micronutrients_ar": {
+              "B": "ضروري جداً — نقصه يسبب تعفن القلب",
+              "Mn": "مهم",
+              "Na": "يفيد بكميات صغيرة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "النيتروجين",
+              "dose_ar": "120-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-010",
+              "name_ar": "DAP",
+              "purpose_ar": "فوسفور عند الزراعة",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "رفع نسبة السكر",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N في مراحل التثمير",
+              "dose_ar": "30-50 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "لفحة سيركوسبورا",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "الديدان الخيطية",
+              "type": "نيماتودا",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 43,
+            "protein_g": 1.6,
+            "carbs_g": 9.6,
+            "fat_g": 0.2,
+            "fiber_g": 2.8,
+            "iron_mg": 0.8,
+            "zinc_mg": 0.4
+          },
+          "geographic_regions_egypt_ar": [
+            "الوادي الجديد",
+            "شمال سيناء",
+            "مرسى مطروح",
+            "الإسماعيلية",
+            "الدلتا"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "700000",
+            "yield_ton_per_feddan": "18-25",
+            "total_production_ton_approx": "14000000",
+            "rank_egypt_ar": "ثاني مصدر للسكر بعد قصب السكر"
+          },
+          "common_varieties_ar": [
+            "كلاين فانزلبن",
+            "بيتا 4722",
+            "هجن أوروبية"
+          ],
+          "economic_importance_ar": "مُكوِّن صناعة السكر — بديل استراتيجي لقصب السكر في الأراضي الجديدة",
+          "organic_suitable": false,
+          "export_potential": false
+        },
+        {
+          "id": "plant-021",
+          "name_ar": "سمسم",
+          "name_en": "Sesame",
+          "name_scientific": "Sesamum indicum",
+          "category": "محاصيل زيتية",
+          "group_id": "grp-field",
+          "description_ar": "أقدم المحاصيل الزيتية في مصر — يُستخدم في إنتاج الزيت والطحينة والحلاوة الطحينية",
+          "seasons": {
+            "planting_months": [
+              5,
+              6
+            ],
+            "planting_season_ar": "مايو — يونيو",
+            "harvest_months": [
+              8,
+              9
+            ],
+            "harvest_season_ar": "أغسطس — سبتمبر",
+            "growth_duration_days": "90-110",
+            "season_type_ar": "صيفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "رملية طميية",
+              "طميية"
+            ],
+            "ph_range": "5.5-8.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد جداً — لا يتحمل الغرق",
+            "organic_matter_ar": "يستفيد من المادة العضوية"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1000-1500",
+            "irrigation_times": "3-4 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 20 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير",
+              "تكوين القرون"
+            ],
+            "method_ar": "غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "30-50",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "15-25",
+            "n_split_ar": "نصفين — عند الزراعة والتزهير",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "S": "مهم لإنتاج الزيت",
+              "Zn": "يُحسن الجودة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N بجرعات خفيفة",
+              "dose_ar": "50-80 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-003",
+              "name_ar": "سلفات الأمونيوم",
+              "purpose_ar": "N+S لإنتاج الزيت",
+              "dose_ar": "50-75 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S+Ca",
+              "dose_ar": "100 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "ذبول الفيوزاريوم",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "حشرة الجاسيد",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 573,
+            "protein_g": 17.7,
+            "carbs_g": 23.5,
+            "fat_g": 49.7,
+            "fiber_g": 11.8,
+            "calcium_mg": 975,
+            "iron_mg": 14.6
+          },
+          "geographic_regions_egypt_ar": [
+            "أسيوط",
+            "سوهاج",
+            "قنا",
+            "الوادي الجديد"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "80000",
+            "yield_ton_per_feddan": "0.4-0.7",
+            "total_production_ton_approx": "45000",
+            "rank_egypt_ar": "أهم محصول زيتي صيفي"
+          },
+          "common_varieties_ar": [
+            "سدس 32",
+            "تهامي",
+            "بلدي"
+          ],
+          "economic_importance_ar": "زيت — طحينة — حلاوة — تصدير",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-022",
+          "name_ar": "فول سوداني",
+          "name_en": "Groundnut / Peanut",
+          "name_scientific": "Arachis hypogaea",
+          "category": "محاصيل زيتية",
+          "group_id": "grp-field",
+          "description_ar": "محصول زيتي بقولي مزدوج الفائدة — زيت وبروتين وعلف — مُثبِّت للنيتروجين",
+          "seasons": {
+            "planting_months": [
+              4,
+              5
+            ],
+            "planting_season_ar": "أبريل — مايو",
+            "harvest_months": [
+              8,
+              9
+            ],
+            "harvest_season_ar": "أغسطس — سبتمبر",
+            "growth_duration_days": "100-130",
+            "season_type_ar": "صيفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "رملية طميية خفيفة",
+              "طميية رملية"
+            ],
+            "ph_range": "5.5-7.0",
+            "ph_ideal": 6.0,
+            "salinity_tolerance_ar": "حساس — لا يتحمل أكثر من 3 dS/m",
+            "drainage_ar": "ممتاز — التربة الخفيفة ضرورية لاختراق الوتدة",
+            "organic_matter_ar": "مفيد"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1500-2000",
+            "irrigation_times": "5-6 ريات",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير",
+              "دخول الوتدة التربة",
+              "نضج القرون"
+            ],
+            "method_ar": "رش — غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "10-20",
+            "total_p_kg_per_feddan": "20-30",
+            "total_k_kg_per_feddan": "20-30",
+            "n_split_ar": "جرعة صغيرة للتشجيع فقط — يثبت N بيولوجياً",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Ca": "ضروري جداً لامتلاء القرون — جبس زراعي",
+              "Mo": "لتنشيط الرايزوبيوم",
+              "Zn": "مهم"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-027",
+              "name_ar": "رايزوبيوم",
+              "purpose_ar": "تثبيت N الجوي",
+              "dose_ar": "تلقيح البذور"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+Ca+S",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K بدون كلور",
+              "dose_ar": "50 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "صدأ الفول السوداني",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "الأفلاتوكسين (تلوث فطري)",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 567,
+            "protein_g": 25.8,
+            "carbs_g": 16.1,
+            "fat_g": 49.2,
+            "fiber_g": 8.5,
+            "iron_mg": 4.6,
+            "zinc_mg": 3.3
+          },
+          "geographic_regions_egypt_ar": [
+            "الشرقية",
+            "البحيرة",
+            "الوادي الجديد",
+            "الإسماعيلية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "150000",
+            "yield_ton_per_feddan": "1.0-1.8",
+            "total_production_ton_approx": "200000",
+            "rank_egypt_ar": "أهم محصول زيتي-بروتيني"
+          },
+          "common_varieties_ar": [
+            "جيزة 5",
+            "جيزة 6",
+            "إسماعيلية 1"
+          ],
+          "economic_importance_ar": "زيت نباتي — زبدة الفول السوداني — علف — تصنيع",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-023",
+          "name_ar": "فاصوليا",
+          "name_en": "Common Bean",
+          "name_scientific": "Phaseolus vulgaris",
+          "category": "بقوليات",
+          "group_id": "grp-field",
+          "description_ar": "محصول بقولي غذائي مهم — يُستهلك طازجاً وجافاً — يُثري التربة بالنيتروجين",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              8,
+              9
+            ],
+            "planting_season_ar": "مارس-أبريل — أغسطس-سبتمبر",
+            "harvest_months": [
+              5,
+              6,
+              10,
+              11
+            ],
+            "harvest_season_ar": "مايو-يونيو — أكتوبر-نوفمبر",
+            "growth_duration_days": "55-70",
+            "season_type_ar": "صيفي وخريفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "حساس جداً",
+            "drainage_ar": "ممتاز",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1200-1800",
+            "irrigation_times": "4-5 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 15 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير",
+              "عقد القرون"
+            ],
+            "method_ar": "رش — غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "15-25",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "20-30",
+            "n_split_ar": "جرعة صغيرة أولية فقط",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Mo": "ضروري للرايزوبيوم",
+              "Zn": "مهم",
+              "B": "يُحسن العقد"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-027",
+              "name_ar": "رايزوبيوم",
+              "purpose_ar": "تثبيت N",
+              "dose_ar": "تلقيح البذور"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S+Ca",
+              "dose_ar": "100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "تحسين التربة",
+              "dose_ar": "2 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "صدأ الفاصوليا",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 347,
+            "protein_g": 23.4,
+            "carbs_g": 62.4,
+            "fat_g": 1.2,
+            "fiber_g": 20.4,
+            "iron_mg": 8.2,
+            "zinc_mg": 3.7
+          },
+          "geographic_regions_egypt_ar": [
+            "الشرقية",
+            "الدقهلية",
+            "الغربية",
+            "المنوفية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "120000",
+            "yield_ton_per_feddan": "0.8-1.4",
+            "total_production_ton_approx": "130000",
+            "rank_egypt_ar": "محصول بقولي مهم"
+          },
+          "common_varieties_ar": [
+            "ناز 24",
+            "كرمة 1",
+            "جيزة 3"
+          ],
+          "economic_importance_ar": "غذاء — تصدير طازج ومجفف",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-024",
+          "name_ar": "عدس",
+          "name_en": "Lentil",
+          "name_scientific": "Lens culinaris",
+          "category": "بقوليات",
+          "group_id": "grp-field",
+          "description_ar": "بقولية غذائية قديمة — غنية بالبروتين والحديد — مهمة للأمن الغذائي",
+          "seasons": {
+            "planting_months": [
+              11,
+              12
+            ],
+            "planting_season_ar": "نوفمبر — ديسمبر",
+            "harvest_months": [
+              3,
+              4
+            ],
+            "harvest_season_ar": "مارس — أبريل",
+            "growth_duration_days": "100-120",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "طينية طميية"
+            ],
+            "ph_range": "6.0-8.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "مفيد"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "800-1200",
+            "irrigation_times": "3-4 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 20 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير",
+              "عقد القرون"
+            ],
+            "method_ar": "غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "10-20",
+            "total_p_kg_per_feddan": "15-20",
+            "total_k_kg_per_feddan": "10-15",
+            "n_split_ar": "جرعة صغيرة فقط",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Mo": "للرايزوبيوم",
+              "Zn": "مهم"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-027",
+              "name_ar": "رايزوبيوم",
+              "purpose_ar": "تثبيت N",
+              "dose_ar": "تلقيح البذور"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S",
+              "dose_ar": "75-100 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "لفحة أسكوكيتا",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 352,
+            "protein_g": 24.6,
+            "carbs_g": 60.1,
+            "fat_g": 1.1,
+            "fiber_g": 10.7,
+            "iron_mg": 7.5,
+            "zinc_mg": 3.3
+          },
+          "geographic_regions_egypt_ar": [
+            "أسيوط",
+            "سوهاج",
+            "المنيا",
+            "الوادي الجديد"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "60000",
+            "yield_ton_per_feddan": "0.5-0.9",
+            "total_production_ton_approx": "40000",
+            "rank_egypt_ar": "محصول بقولي شتوي مهم"
+          },
+          "common_varieties_ar": [
+            "الجيزاوي",
+            "سدس 1",
+            "مصر 1"
+          ],
+          "economic_importance_ar": "غذاء محلي — استيراد يُكمل الاحتياج",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-025",
+          "name_ar": "حمص",
+          "name_en": "Chickpea",
+          "name_scientific": "Cicer arietinum",
+          "category": "بقوليات",
+          "group_id": "grp-field",
+          "description_ar": "بقولية غذائية مهمة — أساس الحمص والفلافل — غنية بالبروتين",
+          "seasons": {
+            "planting_months": [
+              11,
+              12
+            ],
+            "planting_season_ar": "نوفمبر — ديسمبر",
+            "harvest_months": [
+              3,
+              4
+            ],
+            "harvest_season_ar": "مارس — أبريل",
+            "growth_duration_days": "90-110",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد جداً",
+            "organic_matter_ar": "مفيد"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "700-1000",
+            "irrigation_times": "2-3 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 25 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير"
+            ],
+            "method_ar": "غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "10-15",
+            "total_p_kg_per_feddan": "10-20",
+            "total_k_kg_per_feddan": "10-15",
+            "n_split_ar": "جرعة بسيطة للتشجيع",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Mo": "للرايزوبيوم",
+              "Zn": "مهم"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-027",
+              "name_ar": "رايزوبيوم (Mesorhizobium ciceri)",
+              "purpose_ar": "تثبيت N — ضروري",
+              "dose_ar": "تلقيح البذور"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S",
+              "dose_ar": "75 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "لفحة أسكوكيتا",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "دودة الحمص Helicoverpa",
+              "type": "حشرة",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 364,
+            "protein_g": 19.3,
+            "carbs_g": 60.7,
+            "fat_g": 6.0,
+            "fiber_g": 17.4,
+            "iron_mg": 6.2,
+            "zinc_mg": 2.8
+          },
+          "geographic_regions_egypt_ar": [
+            "أسيوط",
+            "سوهاج",
+            "الوادي الجديد"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "30000",
+            "yield_ton_per_feddan": "0.6-1.0",
+            "total_production_ton_approx": "25000",
+            "rank_egypt_ar": "محصول بقولي"
+          },
+          "common_varieties_ar": [
+            "الجيزة 1",
+            "الجيزة 4",
+            "نوبارية 1"
+          ],
+          "economic_importance_ar": "غذاء — تصنيع حمص وفلافل",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-026",
+          "name_ar": "قصب السكر",
+          "name_en": "Sugar Cane",
+          "name_scientific": "Saccharum officinarum",
+          "category": "محاصيل سكرية",
+          "group_id": "grp-field",
+          "description_ar": "المصدر الرئيسي للسكر في مصر — يُزرع في صعيد مصر بصورة رئيسية",
+          "seasons": {
+            "planting_months": [
+              2,
+              3,
+              9,
+              10
+            ],
+            "planting_season_ar": "فبراير-مارس (ربيعي) — سبتمبر-أكتوبر (خريفي)",
+            "harvest_months": [
+              12,
+              1,
+              2,
+              3,
+              4
+            ],
+            "harvest_season_ar": "ديسمبر — أبريل",
+            "growth_duration_days": "330-365",
+            "season_type_ar": "معمر — يُعاد الحصاد (خلفة)"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طينية عميقة",
+              "طميية طينية"
+            ],
+            "ph_range": "6.0-8.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط — يتحمل حتى 5 dS/m",
+            "drainage_ar": "جيد مع القدرة على الغمر",
+            "organic_matter_ar": "يستفيد كثيراً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "5000-7000",
+            "irrigation_times": "12-15 ريات",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التفريع",
+              "النمو السريع",
+              "النضج"
+            ],
+            "method_ar": "غمر — تنقيط (حديث)"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "100-140",
+            "total_p_kg_per_feddan": "40-60",
+            "total_k_kg_per_feddan": "80-120",
+            "n_split_ar": "4-5 دفعات على الموسم الطويل",
+            "p_timing_ar": "ثلثين عند الزراعة + ثلث في التفريع",
+            "k_timing_ar": "مقسم — مرتفع في النمو السريع",
+            "micronutrients_ar": {
+              "Si": "يقوي الساق ويقاوم الأمراض",
+              "Zn": "مهم",
+              "Fe": "عند الاصفرار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N الرئيسي",
+              "dose_ar": "150-200 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S+Ca",
+              "dose_ar": "200 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-015",
+              "name_ar": "كلوريد البوتاسيوم",
+              "purpose_ar": "K اقتصادي",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-028",
+              "name_ar": "أزوسبيريلوم",
+              "purpose_ar": "تثبيت N",
+              "dose_ar": "تلقيح العقل"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "حشرة ساق القصب",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "اللفحة البكتيرية",
+              "type": "مرض بكتيري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "مرض التخطط",
+              "type": "مرض فيروسي",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 73,
+            "protein_g": 0.2,
+            "carbs_g": 18.2,
+            "fat_g": 0.2,
+            "fiber_g": 0.0,
+            "sucrose_percent": "12-18%"
+          },
+          "geographic_regions_egypt_ar": [
+            "أسوان",
+            "قنا",
+            "سوهاج",
+            "أسيوط",
+            "المنيا"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "350000",
+            "yield_ton_per_feddan": "35-50",
+            "total_production_ton_approx": "15000000",
+            "rank_egypt_ar": "المصدر الأول للسكر"
+          },
+          "common_varieties_ar": [
+            "جيزة 51",
+            "جيزة 54",
+            "جيزة 56"
+          ],
+          "economic_importance_ar": "صناعة السكر — كحول — علف من مخلفات العصير",
+          "organic_suitable": false,
+          "export_potential": false
+        }
+      ]
+    },
+    {
+      "id": "grp-vegetables",
+      "name_ar": "الخضروات",
+      "name_en": "Vegetables",
+      "description_ar": "محاصيل الخضروات المصرية الرئيسية للاستهلاك المحلي والتصدير — تشمل الخضروات الورقية والثمرية والجذرية والبصلية",
+      "sub_categories": [
+        "خضروات ثمرية",
+        "خضروات ورقية",
+        "خضروات جذرية",
+        "خضروات بصلية",
+        "خضروات قرعية"
+      ],
+      "plants_count": 11,
+      "plants": [
+        {
+          "id": "plant-007",
+          "name_ar": "طماطم",
+          "name_en": "Tomato",
+          "name_scientific": "Solanum lycopersicum",
+          "category": "خضروات ثمرية",
+          "group_id": "grp-vegetables",
+          "description_ar": "أهم محصول خضروات في مصر اقتصادياً — للاستهلاك الطازج والتصنيع — يُزرع على مدار العام",
+          "seasons": {
+            "planting_months": [
+              1,
+              2,
+              7,
+              8,
+              9
+            ],
+            "planting_season_ar": "يناير-فبراير (صيفي) — يوليو-سبتمبر (خريفي)",
+            "harvest_months": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12
+            ],
+            "harvest_season_ar": "أبريل-يونيو — أكتوبر-ديسمبر",
+            "growth_duration_days": "90-120",
+            "season_type_ar": "صيفي وخريفي وشتوي (محمية)"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "طينية طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط الحساسية — لا يتحمل أكثر من 4 dS/m",
+            "drainage_ar": "ممتاز — لا يتحمل الرطوبة الزائدة إطلاقاً",
+            "organic_matter_ar": "يستجيب استجابة كبيرة للمادة العضوية"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2000-3000",
+            "irrigation_times": "مستمر عبر التنقيط",
+            "first_irrigation_ar": "فوري بعد الشتل",
+            "critical_stages_ar": [
+              "الشتل",
+              "النمو الخضري",
+              "التزهير",
+              "عقد الثمار",
+              "تطور الثمار",
+              "النضج"
+            ],
+            "method_ar": "تنقيط — رش (في المشاتل)"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "80-120",
+            "total_p_kg_per_feddan": "40-60",
+            "total_k_kg_per_feddan": "100-150",
+            "n_split_ar": "مقسم على الموسم كاملاً عبر التنقيط — يُرفع في التزهير",
+            "p_timing_ar": "مركّز في بداية الموسم — يُخفَّض بعد العقد",
+            "k_timing_ar": "يُرفع تدريجياً من التزهير حتى النضج — K أهم عنصر للطماطم",
+            "micronutrients_ar": {
+              "Ca": "ضروري جداً — نقصه يسبب تعفن الطرف الزهري — نترات الكالسيوم أسبوعياً",
+              "Mg": "مهم — نقصه يسبب اصفرار بين العروق",
+              "B": "مهم لعقد الثمار",
+              "Fe": "رش ورقي عند الاصفرار",
+              "Zn": "عند الحاجة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N — منع تعفن الطرف الزهري",
+              "dose_ar": "20-30 كجم/فدان/أسبوع"
+            },
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N في مرحلة الثمار",
+              "dose_ar": "15-25 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-011",
+              "name_ar": "MAP",
+              "purpose_ar": "فوسفور في بداية الموسم",
+              "dose_ar": "10-20 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-012",
+              "name_ar": "MKP",
+              "purpose_ar": "P+K قبل النضج",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحسين الامتصاص",
+              "dose_ar": "3-5 لتر/فدان"
+            },
+            {
+              "fert_id": "fert-023",
+              "name_ar": "مستخلص عشب البحر",
+              "purpose_ar": "تحسين عقد الثمار",
+              "dose_ar": "رش ورقي عند التزهير"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "الذبابة البيضاء",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "العنكبوت الأحمر",
+              "type": "حشرة دقيقة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "اللفحة المبكرة والمتأخرة",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "فيروس التبقع التوماتي TSWV",
+              "type": "مرض فيروسي",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 18,
+            "protein_g": 0.9,
+            "carbs_g": 3.9,
+            "fat_g": 0.2,
+            "fiber_g": 1.2,
+            "vitamin_c_mg": 14,
+            "lycopene_mg": 2573,
+            "iron_mg": 0.3
+          },
+          "geographic_regions_egypt_ar": [
+            "البحيرة",
+            "الشرقية",
+            "البحر الأحمر",
+            "أسوان",
+            "الوادي الجديد",
+            "جميع المحافظات"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "600000",
+            "yield_ton_per_feddan": "10-20",
+            "total_production_ton_approx": "8000000",
+            "rank_egypt_ar": "أول محصول خضروات في مصر"
+          },
+          "common_varieties_ar": [
+            "كاسل روك",
+            "سان مارزانو",
+            "بيفستيك",
+            "هايبرد F1",
+            "المدور المحلي"
+          ],
+          "economic_importance_ar": "تصدير طازج وتصنيع — صلصة — معجون — طازج",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-008",
+          "name_ar": "بطاطس",
+          "name_en": "Potato",
+          "name_scientific": "Solanum tuberosum",
+          "category": "خضروات جذرية",
+          "group_id": "grp-vegetables",
+          "description_ar": "محصول خضروات اقتصادي مهم — للاستهلاك الطازج والتصنيع والتصدير — يُزرع ثلاث عروات سنوياً في مصر",
+          "seasons": {
+            "planting_months": [
+              8,
+              9,
+              12,
+              1
+            ],
+            "planting_season_ar": "أغسطس-سبتمبر (خريفي) — ديسمبر-يناير (نيلي)",
+            "harvest_months": [
+              11,
+              12,
+              3,
+              4
+            ],
+            "harvest_season_ar": "نوفمبر-ديسمبر — مارس-أبريل",
+            "growth_duration_days": "75-110",
+            "season_type_ar": "خريفي — شتوي — نيلي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "رملية طميية",
+              "طميية خفيفة"
+            ],
+            "ph_range": "5.5-6.5",
+            "ph_ideal": 6.0,
+            "salinity_tolerance_ar": "حساس — لا يتحمل أكثر من 3 dS/m",
+            "drainage_ar": "ممتاز — التربة الثقيلة تشوّه الدرنات",
+            "organic_matter_ar": "ضروري — يُحسن شكل وجودة الدرنات"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2500-3200",
+            "irrigation_times": "مستمر عبر التنقيط أو رش",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "تكوين الدرنات",
+              "نمو الدرنات",
+              "النضج"
+            ],
+            "method_ar": "تنقيط — رش (الأفضل للبطاطس)"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "80-100",
+            "total_p_kg_per_feddan": "50-70",
+            "total_k_kg_per_feddan": "120-160",
+            "n_split_ar": "مقسم على الموسم — يُوقف قبل الحصاد بـ 3-4 أسابيع",
+            "p_timing_ar": "مركّز في البداية والتكوين",
+            "k_timing_ar": "أعلى جرعة في المحاصيل — K أساسي لجودة وحجم الدرنات",
+            "micronutrients_ar": {
+              "Ca": "مهم لجودة القشرة",
+              "Mg": "يُحسن التمثيل الضوئي — Cl حساس",
+              "B": "يمنع التشقق الداخلي",
+              "Zn": "مهم للجودة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم SOP",
+              "purpose_ar": "K الرئيسي — بدون كلور",
+              "dose_ar": "150-200 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-011",
+              "name_ar": "MAP",
+              "purpose_ar": "فوسفور في التنقيط",
+              "dose_ar": "20-30 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "النيتروجين",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca لجودة القشرة",
+              "dose_ar": "20-40 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-018",
+              "name_ar": "KMAG",
+              "purpose_ar": "K+Mg+S معاً",
+              "dose_ar": "50-100 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "اللفحة المتأخرة",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "الجرب العادي",
+              "type": "مرض بكتيري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "الدودة الحديدية",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "فيروس اللف",
+              "type": "مرض فيروسي",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 77,
+            "protein_g": 2.0,
+            "carbs_g": 17.5,
+            "fat_g": 0.1,
+            "fiber_g": 2.2,
+            "vitamin_c_mg": 19.7,
+            "potassium_mg": 421,
+            "iron_mg": 0.8
+          },
+          "geographic_regions_egypt_ar": [
+            "البحيرة",
+            "الإسكندرية",
+            "الإسماعيلية",
+            "الوادي الجديد",
+            "البحر الأحمر"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "500000",
+            "yield_ton_per_feddan": "8-15",
+            "total_production_ton_approx": "5000000",
+            "rank_egypt_ar": "من أهم محاصيل التصدير"
+          },
+          "common_varieties_ar": [
+            "سبونتا",
+            "ديزيريه",
+            "مارفونا",
+            "أريدا",
+            "بيكاسو"
+          ],
+          "economic_importance_ar": "تصدير — تصنيع شيبس — استهلاك طازج",
+          "organic_suitable": false,
+          "export_potential": true
+        },
+        {
+          "id": "plant-009",
+          "name_ar": "بصل",
+          "name_en": "Onion",
+          "name_scientific": "Allium cepa",
+          "category": "خضروات بصلية",
+          "group_id": "grp-vegetables",
+          "description_ar": "من أهم محاصيل التصدير المصرية — مصر من أكبر مصدري البصل في العالم",
+          "seasons": {
+            "planting_months": [
+              9,
+              10,
+              11
+            ],
+            "planting_season_ar": "سبتمبر — نوفمبر (شتوي)",
+            "harvest_months": [
+              3,
+              4,
+              5
+            ],
+            "harvest_season_ar": "مارس — مايو",
+            "growth_duration_days": "150-180",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "رملية طميية",
+              "طينية طميية خفيفة"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط — لا يتحمل أكثر من 4 dS/m",
+            "drainage_ar": "ممتاز — لا يتحمل الرطوبة الزائدة",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1800-2400",
+            "irrigation_times": "6-8 ريات",
+            "first_irrigation_ar": "بعد الشتل مباشرة",
+            "critical_stages_ar": [
+              "الشتل والإنبات",
+              "تكوين البصلة",
+              "تضخم البصلة",
+              "النضج — يُوقف الري قبل الحصاد بـ 3 أسابيع"
+            ],
+            "method_ar": "تنقيط — غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "60-80",
+            "total_p_kg_per_feddan": "30-40",
+            "total_k_kg_per_feddan": "40-60",
+            "n_split_ar": "ثلث عند الزراعة + ثلث عند التكوين + ثلث عند التضخم — يُوقف عند اكتمال البصلة",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "مقسم — يُرفع في مرحلة التضخم",
+            "micronutrients_ar": {
+              "S": "ضروري جداً للنكهة الحارة — سلفات الأمونيوم الأفضل",
+              "Ca": "يُحسن جودة القشرة",
+              "B": "يمنع انشقاق البصلة",
+              "Zn": "مهم"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-003",
+              "name_ar": "سلفات الأمونيوم",
+              "purpose_ar": "N+S — الأنسب للبصل",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S+Ca",
+              "dose_ar": "150-200 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم SOP",
+              "purpose_ar": "K+S بدون كلور",
+              "dose_ar": "75-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-025",
+              "name_ar": "كبريت عضوي حيوي",
+              "purpose_ar": "تحميض التربة + توفير S",
+              "dose_ar": "20-30 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "التبقع الأرجواني",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "العفن الرقبي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "ذبابة البصل",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 40,
+            "protein_g": 1.1,
+            "carbs_g": 9.3,
+            "fat_g": 0.1,
+            "fiber_g": 1.7,
+            "vitamin_c_mg": 7.4,
+            "calcium_mg": 23,
+            "iron_mg": 0.2
+          },
+          "geographic_regions_egypt_ar": [
+            "الشرقية",
+            "البحيرة",
+            "الدقهلية",
+            "كفر الشيخ",
+            "المنيا",
+            "الفيوم"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "450000",
+            "yield_ton_per_feddan": "8-12",
+            "total_production_ton_approx": "3500000",
+            "rank_egypt_ar": "من أكبر 5 دول مصدِّرة للبصل"
+          },
+          "common_varieties_ar": [
+            "جيزة 20",
+            "صعيدي",
+            "بهلول",
+            "أبيض الشرقية",
+            "بصل الكتكوت"
+          ],
+          "economic_importance_ar": "تصدير رئيسي — المملكة العربية السعودية وأوروبا أكبر الأسواق",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-010",
+          "name_ar": "خيار",
+          "name_en": "Cucumber",
+          "name_scientific": "Cucumis sativus",
+          "category": "خضروات قرعية",
+          "group_id": "grp-vegetables",
+          "description_ar": "محصول قرعي سريع النمو — مناسب للزراعة المحمية والمكشوفة — يُزرع طوال العام تقريباً",
+          "seasons": {
+            "planting_months": [
+              1,
+              2,
+              3,
+              8,
+              9
+            ],
+            "planting_season_ar": "يناير-مارس (ربيعي) — أغسطس-سبتمبر (خريفي)",
+            "harvest_months": [
+              3,
+              4,
+              5,
+              6,
+              10,
+              11,
+              12
+            ],
+            "harvest_season_ar": "مارس-يونيو — أكتوبر-ديسمبر",
+            "growth_duration_days": "45-65",
+            "season_type_ar": "صيفي وخريفي وزراعة محمية"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "رملية طميية",
+              "طينية خفيفة"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "حساس — لا يتحمل أكثر من 3.5 dS/m",
+            "drainage_ar": "ممتاز",
+            "organic_matter_ar": "يستجيب جيداً جداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1500-2500",
+            "irrigation_times": "مستمر عبر التنقيط",
+            "first_irrigation_ar": "فوري بعد الشتل",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير",
+              "عقد الثمار",
+              "نمو الثمار"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "60-80",
+            "total_p_kg_per_feddan": "30-40",
+            "total_k_kg_per_feddan": "80-100",
+            "n_split_ar": "مقسم — يُرفع عند التزهير",
+            "p_timing_ar": "مركّز في البداية",
+            "k_timing_ar": "يُرفع من التزهير",
+            "micronutrients_ar": {
+              "Ca": "ضروري — يمنع تعفن الطرف",
+              "Mg": "مهم",
+              "B": "يُحسن العقد"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N — يمنع تعفن الطرف",
+              "dose_ar": "15-25 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N عند الثمار",
+              "dose_ar": "15-20 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-011",
+              "name_ar": "MAP",
+              "purpose_ar": "فوسفور في البداية",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-029",
+              "name_ar": "ميكوريزا",
+              "purpose_ar": "تحسين الجذور وامتصاص P",
+              "dose_ar": "200-300 جم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "العنكبوت الأحمر",
+              "type": "حشرة دقيقة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "ذبابة الأوراق",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 15,
+            "protein_g": 0.65,
+            "carbs_g": 3.63,
+            "fat_g": 0.11,
+            "fiber_g": 0.5,
+            "vitamin_c_mg": 2.8,
+            "potassium_mg": 147,
+            "iron_mg": 0.28
+          },
+          "geographic_regions_egypt_ar": [
+            "جميع المحافظات",
+            "أسوان (شتاء)",
+            "الوادي الجديد"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "150000",
+            "yield_ton_per_feddan": "6-12",
+            "total_production_ton_approx": "1200000",
+            "rank_egypt_ar": "من أهم محاصيل الزراعة المحمية"
+          },
+          "common_varieties_ar": [
+            "بيتا ألفا",
+            "سمارت",
+            "رويال سلم",
+            "هجن F1"
+          ],
+          "economic_importance_ar": "تصدير طازج للخليج وأوروبا — زراعة محمية",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-011",
+          "name_ar": "فلفل",
+          "name_en": "Pepper",
+          "name_scientific": "Capsicum annuum",
+          "category": "خضروات ثمرية",
+          "group_id": "grp-vegetables",
+          "description_ar": "محصول خضروات ثمري بأنواعه الحلوة والحارة — مهم للتصدير والاستهلاك المحلي",
+          "seasons": {
+            "planting_months": [
+              1,
+              2,
+              8,
+              9
+            ],
+            "planting_season_ar": "يناير-فبراير (ربيعي) — أغسطس-سبتمبر (خريفي)",
+            "harvest_months": [
+              4,
+              5,
+              6,
+              11,
+              12
+            ],
+            "harvest_season_ar": "أبريل-يونيو — نوفمبر-ديسمبر",
+            "growth_duration_days": "90-120",
+            "season_type_ar": "صيفي وخريفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "طينية طميية"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط الحساسية",
+            "drainage_ar": "ممتاز",
+            "organic_matter_ar": "يستفيد كثيراً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2000-2800",
+            "irrigation_times": "مستمر عبر التنقيط",
+            "first_irrigation_ar": "فوري بعد الشتل",
+            "critical_stages_ar": [
+              "الشتل",
+              "التزهير",
+              "عقد الثمار",
+              "تطور الثمار"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "70-90",
+            "total_p_kg_per_feddan": "35-50",
+            "total_k_kg_per_feddan": "90-120",
+            "n_split_ar": "مقسم على الموسم",
+            "p_timing_ar": "مركّز في البداية",
+            "k_timing_ar": "يُرفع من التزهير",
+            "micronutrients_ar": {
+              "Ca": "ضروري جداً — كتعفن الطرف في الطماطم",
+              "Mg": "نقصه يسبب اصفرار الأوراق",
+              "B": "مهم لعقد الثمار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N أساسي للفلفل",
+              "dose_ar": "20-30 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N عند الثمار",
+              "dose_ar": "15-25 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K إضافي",
+              "dose_ar": "50-75 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "العنكبوت الأحمر",
+              "type": "حشرة دقيقة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "فيروس الموزايك",
+              "type": "مرض فيروسي",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "عفن الجذر الفيتوفثورا",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 26,
+            "protein_g": 1.0,
+            "carbs_g": 6.0,
+            "fat_g": 0.3,
+            "fiber_g": 2.1,
+            "vitamin_c_mg": 80,
+            "vitamin_a_iu": 3131,
+            "iron_mg": 0.43
+          },
+          "geographic_regions_egypt_ar": [
+            "الإسماعيلية",
+            "الشرقية",
+            "أسوان",
+            "جميع المحافظات"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "100000",
+            "yield_ton_per_feddan": "6-12",
+            "total_production_ton_approx": "800000",
+            "rank_egypt_ar": "من أهم الخضروات التصديرية"
+          },
+          "common_varieties_ar": [
+            "كاليفورنيا وندر",
+            "شاشي هوت",
+            "سينتا",
+            "هجن F1"
+          ],
+          "economic_importance_ar": "تصدير طازج ومجفف وبابريكا",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-027",
+          "name_ar": "جرجير",
+          "name_en": "Rocket / Arugula",
+          "name_scientific": "Eruca sativa",
+          "category": "خضروات ورقية",
+          "group_id": "grp-vegetables",
+          "description_ar": "خضروات ورقية محبوبة — غنية بالحديد والفيتامينات — تُصدَّر طازجة لأوروبا",
+          "seasons": {
+            "planting_months": [
+              9,
+              10,
+              11,
+              12,
+              1,
+              2
+            ],
+            "planting_season_ar": "سبتمبر — فبراير",
+            "harvest_months": [
+              11,
+              12,
+              1,
+              2,
+              3,
+              4
+            ],
+            "harvest_season_ar": "نوفمبر — أبريل",
+            "growth_duration_days": "25-40 لكل حشة",
+            "season_type_ar": "شتوي — يُحش عدة مرات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "مهم للنمو السريع"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "600-900",
+            "irrigation_times": "رشتان في الأسبوع",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "النمو الخضري"
+            ],
+            "method_ar": "رش — تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "30-50",
+            "total_p_kg_per_feddan": "10-20",
+            "total_k_kg_per_feddan": "20-30",
+            "n_split_ar": "دفعة بعد كل حشة",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "مع كل N",
+            "micronutrients_ar": {
+              "Fe": "مهم للون الأوراق الداكن",
+              "Ca": "يُحسن الجودة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N للنمو الخضري السريع",
+              "dose_ar": "30-50 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحسين الامتصاص",
+              "dose_ar": "3-5 لتر/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الزغبي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "حشرة الحفّار",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 25,
+            "protein_g": 2.6,
+            "carbs_g": 3.6,
+            "fat_g": 0.7,
+            "fiber_g": 1.6,
+            "vitamin_c_mg": 15,
+            "iron_mg": 1.5,
+            "calcium_mg": 160
+          },
+          "geographic_regions_egypt_ar": [
+            "جميع المحافظات — خاصة الدلتا"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "40000",
+            "yield_ton_per_feddan": "1.5-3 لكل حشة",
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "من أهم الخضروات التصديرية"
+          },
+          "common_varieties_ar": [
+            "البلدي",
+            "الواسع الورق"
+          ],
+          "economic_importance_ar": "تصدير لأوروبا — استهلاك طازج",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-028",
+          "name_ar": "سبانخ",
+          "name_en": "Spinach",
+          "name_scientific": "Spinacia oleracea",
+          "category": "خضروات ورقية",
+          "group_id": "grp-vegetables",
+          "description_ar": "خضروات ورقية غنية بالحديد والفيتامينات — للاستهلاك الطازج والتجميد والتصدير",
+          "seasons": {
+            "planting_months": [
+              10,
+              11,
+              12,
+              1
+            ],
+            "planting_season_ar": "أكتوبر — يناير",
+            "harvest_months": [
+              12,
+              1,
+              2,
+              3
+            ],
+            "harvest_season_ar": "ديسمبر — مارس",
+            "growth_duration_days": "40-60",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "طينية طميية"
+            ],
+            "ph_range": "6.0-7.5",
+            "ph_ideal": 6.8,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "مهم جداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "800-1200",
+            "irrigation_times": "رشة كل 4-5 أيام",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "الإنبات",
+              "النمو الخضري"
+            ],
+            "method_ar": "رش — تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "40-60",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "25-35",
+            "n_split_ar": "3 دفعات خلال الموسم",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "مع N",
+            "micronutrients_ar": {
+              "Fe": "ضروري جداً — يُحسن محتوى الحديد",
+              "Mn": "مهم",
+              "Ca": "يُحسن الجودة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N",
+              "dose_ar": "15-20 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N للنمو",
+              "dose_ar": "50-75 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "مادة عضوية",
+              "dose_ar": "2-3 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الزغبي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 23,
+            "protein_g": 2.9,
+            "carbs_g": 3.6,
+            "fat_g": 0.4,
+            "fiber_g": 2.2,
+            "vitamin_c_mg": 28,
+            "iron_mg": 2.7,
+            "calcium_mg": 99
+          },
+          "geographic_regions_egypt_ar": [
+            "الدلتا",
+            "الوجه القبلي"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "25000",
+            "yield_ton_per_feddan": "3-6",
+            "total_production_ton_approx": "120000",
+            "rank_egypt_ar": "محصول ورقي مهم"
+          },
+          "common_varieties_ar": [
+            "البلدي العريض",
+            "الطويل الورق"
+          ],
+          "economic_importance_ar": "طازج — مجمد — تصدير",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-029",
+          "name_ar": "ملوخية",
+          "name_en": "Jute Mallow",
+          "name_scientific": "Corchorus olitorius",
+          "category": "خضروات ورقية",
+          "group_id": "grp-vegetables",
+          "description_ar": "خضروات ورقية مصرية أصيلة — غذاء شعبي رئيسي — يُؤكل طازجاً ومجففاً",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              5
+            ],
+            "planting_season_ar": "مارس — مايو",
+            "harvest_months": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "harvest_season_ar": "مايو — سبتمبر",
+            "growth_duration_days": "60-90",
+            "season_type_ar": "صيفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "طينية طميية"
+            ],
+            "ph_range": "6.0-7.5",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1200-1800",
+            "irrigation_times": "5-6 ريات",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "النمو الخضري السريع"
+            ],
+            "method_ar": "غمر — رش"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "40-60",
+            "total_p_kg_per_feddan": "15-20",
+            "total_k_kg_per_feddan": "20-30",
+            "n_split_ar": "نصفين",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "مع N",
+            "micronutrients_ar": {
+              "Fe": "مهم",
+              "Mg": "يُحسن اخضرار الأوراق"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N للنمو الخضري",
+              "dose_ar": "60-80 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P",
+              "dose_ar": "100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-019",
+              "name_ar": "السماد البلدي",
+              "purpose_ar": "مادة عضوية",
+              "dose_ar": "3 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "دودة الملوخية",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "العفن الجذري",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 43,
+            "protein_g": 4.6,
+            "carbs_g": 7.6,
+            "fat_g": 0.5,
+            "fiber_g": 2.0,
+            "vitamin_c_mg": 80,
+            "iron_mg": 3.1,
+            "calcium_mg": 208
+          },
+          "geographic_regions_egypt_ar": [
+            "جميع المحافظات"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "60000",
+            "yield_ton_per_feddan": "4-8",
+            "total_production_ton_approx": "350000",
+            "rank_egypt_ar": "من أشهر الخضروات المصرية"
+          },
+          "common_varieties_ar": [
+            "البلدي الأخضر",
+            "الأخضر الفاتح"
+          ],
+          "economic_importance_ar": "غذاء شعبي أساسي — تجفيف وتصنيع",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-030",
+          "name_ar": "باذنجان",
+          "name_en": "Eggplant / Aubergine",
+          "name_scientific": "Solanum melongena",
+          "category": "خضروات ثمرية",
+          "group_id": "grp-vegetables",
+          "description_ar": "خضروات ثمرية شعبية — تُزرع طوال العام تقريباً — متنوعة الاستخدام",
+          "seasons": {
+            "planting_months": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "planting_season_ar": "يناير-فبراير — يوليو-أغسطس",
+            "harvest_months": [
+              4,
+              5,
+              6,
+              10,
+              11,
+              12
+            ],
+            "harvest_season_ar": "أبريل-يونيو — أكتوبر-ديسمبر",
+            "growth_duration_days": "90-120",
+            "season_type_ar": "صيفي وخريفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "طينية طميية"
+            ],
+            "ph_range": "5.5-7.0",
+            "ph_ideal": 6.0,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2000-3000",
+            "irrigation_times": "مستمر",
+            "first_irrigation_ar": "فوري بعد الشتل",
+            "critical_stages_ar": [
+              "الشتل",
+              "التزهير",
+              "عقد الثمار",
+              "تطور الثمار"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "70-90",
+            "total_p_kg_per_feddan": "30-45",
+            "total_k_kg_per_feddan": "80-110",
+            "n_split_ar": "مقسم على الموسم",
+            "p_timing_ar": "مرتفع في البداية",
+            "k_timing_ar": "يُرفع عند الثمار",
+            "micronutrients_ar": {
+              "Ca": "ضروري — يمنع تعفن الطرف",
+              "Mg": "مهم",
+              "B": "للعقد"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N",
+              "dose_ar": "20-25 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N عند الثمار",
+              "dose_ar": "15-20 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-011",
+              "name_ar": "MAP",
+              "purpose_ar": "فوسفور في البداية",
+              "dose_ar": "10-15 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "حشرة ثاقبة ساق الباذنجان",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "العنكبوت الأحمر",
+              "type": "حشرة دقيقة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "ذبول الفيوزاريوم",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 25,
+            "protein_g": 1.0,
+            "carbs_g": 5.9,
+            "fat_g": 0.2,
+            "fiber_g": 3.0,
+            "vitamin_c_mg": 2.2,
+            "potassium_mg": 229
+          },
+          "geographic_regions_egypt_ar": [
+            "جميع المحافظات",
+            "أسوان وقنا (شتاء)"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "120000",
+            "yield_ton_per_feddan": "8-15",
+            "total_production_ton_approx": "1200000",
+            "rank_egypt_ar": "من أهم الخضروات الثمرية"
+          },
+          "common_varieties_ar": [
+            "البلدي الطويل",
+            "الهجن المحسنة",
+            "فلوريدا مارت"
+          ],
+          "economic_importance_ar": "استهلاك محلي — تصدير محدود",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-031",
+          "name_ar": "جزر",
+          "name_en": "Carrot",
+          "name_scientific": "Daucus carota",
+          "category": "خضروات جذرية",
+          "group_id": "grp-vegetables",
+          "description_ar": "خضروات جذرية غنية بالكاروتين — تُزرع شتاءً في مصر — مهمة للتصدير",
+          "seasons": {
+            "planting_months": [
+              9,
+              10,
+              11
+            ],
+            "planting_season_ar": "سبتمبر — نوفمبر",
+            "harvest_months": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "harvest_season_ar": "يناير — أبريل",
+            "growth_duration_days": "90-120",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "رملية طميية عميقة",
+              "طميية خفيفة"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط الحساسية",
+            "drainage_ar": "ممتاز — التربة الخشنة تُعطي جذراً مستقيماً",
+            "organic_matter_ar": "متحلل تماماً فقط — الطازج يُشوّه الجذر"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1500-2000",
+            "irrigation_times": "6-7 ريات",
+            "first_irrigation_ar": "خفيف جداً لحين الإنبات",
+            "critical_stages_ar": [
+              "الإنبات",
+              "تكوين الجذر",
+              "نمو الجذر",
+              "التوقف قبل الحصاد بأسبوعين"
+            ],
+            "method_ar": "رش — تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "40-60",
+            "total_p_kg_per_feddan": "25-35",
+            "total_k_kg_per_feddan": "50-70",
+            "n_split_ar": "نصفين — يُوقف قبل الحصاد",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "يُرفع عند نمو الجذر",
+            "micronutrients_ar": {
+              "B": "مهم لمنع التقرح الداخلي",
+              "K": "يُحسن الحلاوة واللون"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N",
+              "dose_ar": "50-75 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K+S — يُحسن اللون والطعم",
+              "dose_ar": "75-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-011",
+              "name_ar": "MAP",
+              "purpose_ar": "فوسفور في التنقيط",
+              "dose_ar": "10-15 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "العفن الجذري الأسود",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "الديدان الخيطية",
+              "type": "نيماتودا",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 41,
+            "protein_g": 0.93,
+            "carbs_g": 9.6,
+            "fat_g": 0.24,
+            "fiber_g": 2.8,
+            "vitamin_a_iu": 16706,
+            "vitamin_c_mg": 5.9,
+            "potassium_mg": 320
+          },
+          "geographic_regions_egypt_ar": [
+            "الإسماعيلية",
+            "الشرقية",
+            "البحيرة",
+            "الدقهلية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "80000",
+            "yield_ton_per_feddan": "8-14",
+            "total_production_ton_approx": "700000",
+            "rank_egypt_ar": "خضروات جذرية رئيسية"
+          },
+          "common_varieties_ar": [
+            "ناندو",
+            "شانتيني",
+            "نانتيس"
+          ],
+          "economic_importance_ar": "طازج — تصنيع عصائر — تصدير",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-032",
+          "name_ar": "كوسة",
+          "name_en": "Zucchini",
+          "name_scientific": "Cucurbita pepo",
+          "category": "خضروات قرعية",
+          "group_id": "grp-vegetables",
+          "description_ar": "محصول قرعي سريع جداً — يُزرع في جميع المحافظات — للاستهلاك الطازج والتصدير",
+          "seasons": {
+            "planting_months": [
+              1,
+              2,
+              3,
+              8,
+              9
+            ],
+            "planting_season_ar": "يناير-مارس — أغسطس-سبتمبر",
+            "harvest_months": [
+              3,
+              4,
+              5,
+              6,
+              10,
+              11
+            ],
+            "harvest_season_ar": "مارس-يونيو — أكتوبر-نوفمبر",
+            "growth_duration_days": "40-55",
+            "season_type_ar": "صيفي وخريفي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-7.5",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1500-2200",
+            "irrigation_times": "مستمر",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير",
+              "العقد"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "50-70",
+            "total_p_kg_per_feddan": "25-35",
+            "total_k_kg_per_feddan": "60-80",
+            "n_split_ar": "مقسم",
+            "p_timing_ar": "في البداية",
+            "k_timing_ar": "يُرفع عند الثمار",
+            "micronutrients_ar": {
+              "Ca": "مهم",
+              "B": "للعقد",
+              "Mg": "يُحسن النمو"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N",
+              "dose_ar": "15-20 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N",
+              "dose_ar": "15-20 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-023",
+              "name_ar": "مستخلص عشب البحر",
+              "purpose_ar": "تحسين العقد",
+              "dose_ar": "رش ورقي"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "ذبابة الأوراق",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 17,
+            "protein_g": 1.21,
+            "carbs_g": 3.11,
+            "fat_g": 0.32,
+            "fiber_g": 1.0,
+            "vitamin_c_mg": 17.9,
+            "potassium_mg": 261
+          },
+          "geographic_regions_egypt_ar": [
+            "جميع المحافظات"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "90000",
+            "yield_ton_per_feddan": "6-12",
+            "total_production_ton_approx": "700000",
+            "rank_egypt_ar": "من أكثر الخضروات انتشاراً"
+          },
+          "common_varieties_ar": [
+            "رونان",
+            "كودي",
+            "كلاريتا F1"
+          ],
+          "economic_importance_ar": "استهلاك طازج — تصدير",
+          "organic_suitable": true,
+          "export_potential": true
+        }
+      ]
+    },
+    {
+      "id": "grp-fruits",
+      "name_ar": "الفواكه",
+      "name_en": "Fruits",
+      "description_ar": "الفواكه المصرية الرئيسية تشمل الفواكه الاستوائية وشبه الاستوائية والحمضيات والعنب والفراولة",
+      "sub_categories": [
+        "حمضيات",
+        "استوائية وشبه استوائية",
+        "عنبيات",
+        "توتيات",
+        "تفاحيات"
+      ],
+      "plants_count": 7,
+      "plants": [
+        {
+          "id": "plant-012",
+          "name_ar": "برتقال",
+          "name_en": "Orange",
+          "name_scientific": "Citrus sinensis",
+          "category": "حمضيات",
+          "group_id": "grp-fruits",
+          "description_ar": "أهم فاكهة تصديرية في مصر — برتقال الناول والبلدي مشهور عالمياً بجودته",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              9,
+              10
+            ],
+            "planting_season_ar": "ربيع — خريف (شجرة معمرة)",
+            "harvest_months": [
+              10,
+              11,
+              12,
+              1,
+              2
+            ],
+            "harvest_season_ar": "أكتوبر — فبراير",
+            "growth_duration_days": null,
+            "season_type_ar": "شجرة معمرة — تُثمر سنوياً",
+            "years_to_first_fruiting": "3-4 سنوات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية عميقة",
+              "رملية طميية جيدة الصرف"
+            ],
+            "ph_range": "5.5-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "حساس — لا يتحمل أكثر من 2.5 dS/m",
+            "drainage_ar": "ممتاز — لا يتحمل تشبع الماء إطلاقاً",
+            "organic_matter_ar": "مهم جداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "4000-5000",
+            "irrigation_times": "مستمر عبر التنقيط",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "التزهير",
+              "عقد الثمار",
+              "تضخم الثمار",
+              "النضج"
+            ],
+            "method_ar": "تنقيط — رش (لصغار الأشجار)"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "80-120",
+            "total_p_kg_per_feddan": "30-50",
+            "total_k_kg_per_feddan": "120-160",
+            "n_split_ar": "3-4 دفعات على السنة — لا يُعطى N في الصيف والخريف",
+            "p_timing_ar": "أوائل الربيع + الخريف",
+            "k_timing_ar": "مرتفع جداً — أهم عنصر للحمضيات بعد N",
+            "micronutrients_ar": {
+              "Fe": "نقصه شائع جداً — رش Fe-EDTA أو Fe-DTPA",
+              "Zn": "نقصه شائع — رش ZnSO₄",
+              "Mn": "نقصه في التربة القلوية",
+              "B": "مهم لعقد الثمار",
+              "Mg": "مهم جداً — نقصه يسبب اصفرار الأوراق"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N الرئيسي",
+              "dose_ar": "100-150 كجم/فدان/سنة"
+            },
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N عند الثمار",
+              "dose_ar": "20-30 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-018",
+              "name_ar": "KMAG",
+              "purpose_ar": "K+Mg+S",
+              "dose_ar": "80-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K الرئيسي",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحرير الحديد والزنك",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-029",
+              "name_ar": "ميكوريزا",
+              "purpose_ar": "توسيع الجذور وامتصاص P وZn",
+              "dose_ar": "عند الزراعة"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "تريبس الحمضيات",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "حشرة الدرع البنية",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "تصمغ قلف الحمضيات",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "موت القمم",
+              "type": "اضطراب فسيولوجي",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 47,
+            "protein_g": 0.9,
+            "carbs_g": 11.8,
+            "fat_g": 0.1,
+            "fiber_g": 2.4,
+            "vitamin_c_mg": 53.2,
+            "calcium_mg": 40,
+            "potassium_mg": 181
+          },
+          "geographic_regions_egypt_ar": [
+            "الإسكندرية",
+            "البحيرة",
+            "الإسماعيلية",
+            "الشرقية",
+            "الوادي الجديد",
+            "أسوان"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "800000",
+            "yield_ton_per_feddan": "4-8",
+            "total_production_ton_approx": "4000000",
+            "rank_egypt_ar": "أول فاكهة تصديرية"
+          },
+          "common_varieties_ar": [
+            "ناول",
+            "بلدي",
+            "فالنسيا",
+            "صندوق",
+            "ياز"
+          ],
+          "economic_importance_ar": "التصدير للمملكة وأوروبا — أهم محصول فاكهة تصديري",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-013",
+          "name_ar": "مانجو",
+          "name_en": "Mango",
+          "name_scientific": "Mangifera indica",
+          "category": "استوائية وشبه استوائية",
+          "group_id": "grp-fruits",
+          "description_ar": "ملكة الفواكه — مصر من أكبر منتجي المانجو في الشرق الأوسط — الإسماعيلية وأسوان مشهورتان",
+          "seasons": {
+            "planting_months": [
+              3,
+              4
+            ],
+            "planting_season_ar": "ربيع (شجرة معمرة)",
+            "harvest_months": [
+              6,
+              7,
+              8,
+              9
+            ],
+            "harvest_season_ar": "يونيو — سبتمبر",
+            "growth_duration_days": null,
+            "season_type_ar": "شجرة معمرة — تُثمر صيفاً",
+            "years_to_first_fruiting": "3-5 سنوات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية عميقة",
+              "رملية طميية"
+            ],
+            "ph_range": "5.5-7.5",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد جداً",
+            "organic_matter_ar": "مهم جداً للأشجار الصغيرة"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "3500-5000",
+            "irrigation_times": "مستمر عبر التنقيط",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "التزهير",
+              "عقد الثمار",
+              "تضخم الثمار",
+              "قبل التزهير يُوقف الري لتحفيز الإزهار"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "60-100",
+            "total_p_kg_per_feddan": "25-40",
+            "total_k_kg_per_feddan": "80-120",
+            "n_split_ar": "3-4 دفعات — يُوقف قبل التزهير بشهر",
+            "p_timing_ar": "دفعتان — ربيع وخريف",
+            "k_timing_ar": "يُرفع في مرحلة التضخم",
+            "micronutrients_ar": {
+              "Zn": "نقصه شائع — رش ZnSO₄ بعد التزهير",
+              "B": "مهم جداً لعقد الثمار",
+              "Fe": "عند الاصفرار",
+              "Mg": "مهم"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N الرئيسي",
+              "dose_ar": "100-150 كجم/فدان/سنة"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K لجودة الثمار",
+              "dose_ar": "80-120 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-012",
+              "name_ar": "MKP",
+              "purpose_ar": "P+K قبل النضج",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-023",
+              "name_ar": "مستخلص عشب البحر",
+              "purpose_ar": "تحسين العقد وتقليل التساقط",
+              "dose_ar": "رش ورقي عند التزهير"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "ذبابة الفاكهة",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "الأنثراكنوز",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "البودرة البيضاء",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 60,
+            "protein_g": 0.82,
+            "carbs_g": 15.0,
+            "fat_g": 0.38,
+            "fiber_g": 1.6,
+            "vitamin_c_mg": 36.4,
+            "vitamin_a_iu": 1082,
+            "potassium_mg": 168
+          },
+          "geographic_regions_egypt_ar": [
+            "الإسماعيلية",
+            "أسوان",
+            "الدقهلية",
+            "سوهاج",
+            "قنا"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "400000",
+            "yield_ton_per_feddan": "3-5",
+            "total_production_ton_approx": "1500000",
+            "rank_egypt_ar": "أكبر منتج للمانجو في الشرق الأوسط"
+          },
+          "common_varieties_ar": [
+            "فجر الكيلان",
+            "تيمور",
+            "ألفونسو",
+            "سيدر",
+            "هندي"
+          ],
+          "economic_importance_ar": "تصدير — طازج ومصنع — عصير ومربى",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-014",
+          "name_ar": "فراولة",
+          "name_en": "Strawberry",
+          "name_scientific": "Fragaria × ananassa",
+          "category": "توتيات",
+          "group_id": "grp-fruits",
+          "description_ar": "من أهم محاصيل التصدير المصرية — الفراولة المصرية مشهورة بجودتها في الأسواق الأوروبية",
+          "seasons": {
+            "planting_months": [
+              9,
+              10
+            ],
+            "planting_season_ar": "سبتمبر — أكتوبر",
+            "harvest_months": [
+              12,
+              1,
+              2,
+              3
+            ],
+            "harvest_season_ar": "ديسمبر — مارس",
+            "growth_duration_days": "90-120",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "رملية طميية",
+              "طميية خفيفة"
+            ],
+            "ph_range": "5.5-6.5",
+            "ph_ideal": 6.0,
+            "salinity_tolerance_ar": "حساس جداً — لا يتحمل أكثر من 2 dS/m",
+            "drainage_ar": "ممتاز جداً",
+            "organic_matter_ar": "ضروري جداً — الورميكمبوست الأفضل"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1500-2000",
+            "irrigation_times": "يومي عبر التنقيط",
+            "first_irrigation_ar": "فوري بعد الشتل",
+            "critical_stages_ar": [
+              "الشتل والتجذر",
+              "التزهير",
+              "عقد الثمار",
+              "النضج"
+            ],
+            "method_ar": "تنقيط فقط — الرش يسبب أمراضاً"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "50-70",
+            "total_p_kg_per_feddan": "30-50",
+            "total_k_kg_per_feddan": "80-120",
+            "n_split_ar": "مقسم على الموسم — يُخفَّض N في النضج",
+            "p_timing_ar": "مرتفع في البداية للتجذر",
+            "k_timing_ar": "يُرفع من التزهير حتى النضج",
+            "micronutrients_ar": {
+              "Ca": "ضروري — يُحسن صلابة الثمار",
+              "Mg": "نقصه شائع",
+              "Fe": "رش عند الاصفرار",
+              "B": "مهم لعقد الثمار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم SOP",
+              "purpose_ar": "K الرئيسي بدون كلور",
+              "dose_ar": "80-120 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-012",
+              "name_ar": "MKP",
+              "purpose_ar": "P+K قبل النضج",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca لصلابة الثمار",
+              "dose_ar": "15-25 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-026",
+              "name_ar": "ورميكمبوست",
+              "purpose_ar": "تحسين التربة والجذور",
+              "dose_ar": "1-2 طن/فدان"
+            },
+            {
+              "fert_id": "fert-034",
+              "name_ar": "أحماض أمينية",
+              "purpose_ar": "مقاومة الإجهاد",
+              "dose_ar": "رش ورقي"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "العفن الرمادي Botrytis",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "العنكبوت الأحمر",
+              "type": "حشرة دقيقة",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 32,
+            "protein_g": 0.67,
+            "carbs_g": 7.68,
+            "fat_g": 0.3,
+            "fiber_g": 2.0,
+            "vitamin_c_mg": 58.8,
+            "folate_mcg": 24,
+            "potassium_mg": 153
+          },
+          "geographic_regions_egypt_ar": [
+            "الإسماعيلية",
+            "الشرقية",
+            "بنها",
+            "كفر الشيخ"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "70000",
+            "yield_ton_per_feddan": "5-10",
+            "total_production_ton_approx": "500000",
+            "rank_egypt_ar": "من أهم الفواكه التصديرية — الأسواق الأوروبية"
+          },
+          "common_varieties_ar": [
+            "فلوريدا، فيستيفال",
+            "سويت شارلي",
+            "سنسيشن، فورتونه"
+          ],
+          "economic_importance_ar": "تصدير لأوروبا — عصائر — مصنع",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-015",
+          "name_ar": "عنب",
+          "name_en": "Grape",
+          "name_scientific": "Vitis vinifera",
+          "category": "عنبيات",
+          "group_id": "grp-fruits",
+          "description_ar": "شجرة معمرة — يُنتج العنب الطازج والمجفف (الزبيب) والعصير — مصر لها تراث عريق في زراعة العنب",
+          "seasons": {
+            "planting_months": [
+              1,
+              2,
+              3
+            ],
+            "planting_season_ar": "يناير-مارس (شجرة معمرة)",
+            "harvest_months": [
+              5,
+              6,
+              7,
+              8
+            ],
+            "harvest_season_ar": "مايو — أغسطس",
+            "growth_duration_days": null,
+            "season_type_ar": "شجرة معمرة — يُقلَّم سنوياً",
+            "years_to_first_fruiting": "2-3 سنوات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "رملية",
+              "طميية",
+              "متنوعة"
+            ],
+            "ph_range": "6.0-7.5",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط — يتحمل حتى 4 dS/m",
+            "drainage_ar": "ممتاز",
+            "organic_matter_ar": "يستفيد كثيراً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "3000-4000",
+            "irrigation_times": "مستمر عبر التنقيط",
+            "first_irrigation_ar": "بعد التقليم مباشرة",
+            "critical_stages_ar": [
+              "خروج البراعم",
+              "الإزهار",
+              "تكوين العناقيد",
+              "تضخم الحبات",
+              "النضج"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "60-100",
+            "total_p_kg_per_feddan": "30-50",
+            "total_k_kg_per_feddan": "100-150",
+            "n_split_ar": "3-4 دفعات — يُوقف قبل النضج",
+            "p_timing_ar": "ربيع + خريف",
+            "k_timing_ar": "يُرفع جداً من تطور العناقيد حتى النضج",
+            "micronutrients_ar": {
+              "Mg": "نقصه شائع جداً في العنب — يسبب اصفرار بين العروق",
+              "B": "ضروري جداً — نقصه يسبب فشل الإخصاب",
+              "Zn": "مهم لحجم الحبات",
+              "Fe": "عند الاصفرار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N لجودة العنب",
+              "dose_ar": "20-30 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-018",
+              "name_ar": "KMAG",
+              "purpose_ar": "K+Mg+S",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K لرفع السكر",
+              "dose_ar": "80-120 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-023",
+              "name_ar": "مستخلص عشب البحر",
+              "purpose_ar": "تحسين العقد والجودة",
+              "dose_ar": "رش ورقي"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "العفن الأسود Botrytis",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "المن الصوفي",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 67,
+            "protein_g": 0.63,
+            "carbs_g": 17.2,
+            "fat_g": 0.35,
+            "fiber_g": 0.9,
+            "vitamin_c_mg": 3.2,
+            "potassium_mg": 191,
+            "resveratrol_mg": 0.16
+          },
+          "geographic_regions_egypt_ar": [
+            "البحيرة",
+            "الإسكندرية",
+            "الوادي الجديد",
+            "المنيا",
+            "القليوبية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "200000",
+            "yield_ton_per_feddan": "4-8",
+            "total_production_ton_approx": "1200000",
+            "rank_egypt_ar": "من أهم الفواكه المصرية"
+          },
+          "common_varieties_ar": [
+            "بنات زينب",
+            "عزيزي",
+            "فلييم سيدليس",
+            "سبيريور",
+            "كريمسون"
+          ],
+          "economic_importance_ar": "طازج — زبيب — عصير — تصدير",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-033",
+          "name_ar": "رمان",
+          "name_en": "Pomegranate",
+          "name_scientific": "Punica granatum",
+          "category": "استوائية وشبه استوائية",
+          "group_id": "grp-fruits",
+          "description_ar": "فاكهة مصرية أصيلة ذات قيمة طبية عالية — يتزايد تصديرها سنوياً",
+          "seasons": {
+            "planting_months": [
+              2,
+              3
+            ],
+            "planting_season_ar": "فبراير-مارس (شجرة معمرة)",
+            "harvest_months": [
+              9,
+              10,
+              11
+            ],
+            "harvest_season_ar": "سبتمبر — نوفمبر",
+            "growth_duration_days": null,
+            "season_type_ar": "شجرة معمرة",
+            "years_to_first_fruiting": "2-3 سنوات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "متنوعة — متحمل للظروف الصعبة"
+            ],
+            "ph_range": "5.5-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "جيد — يتحمل حتى 5 dS/m",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2500-3500",
+            "irrigation_times": "مستمر",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "التزهير",
+              "عقد الثمار",
+              "تضخم الثمار"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "50-80",
+            "total_p_kg_per_feddan": "20-35",
+            "total_k_kg_per_feddan": "70-100",
+            "n_split_ar": "3 دفعات سنوياً",
+            "p_timing_ar": "ربيع وخريف",
+            "k_timing_ar": "مرتفع عند الثمار",
+            "micronutrients_ar": {
+              "Zn": "مهم للجودة",
+              "B": "يمنع انشقاق الثمار",
+              "Fe": "عند الاصفرار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N",
+              "dose_ar": "80-120 كجم/فدان/سنة"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K+S",
+              "dose_ar": "80-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-012",
+              "name_ar": "MKP",
+              "purpose_ar": "P+K قبل النضج",
+              "dose_ar": "10-15 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "حشرة الرمان القشرية",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "الأنثراكنوز",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 83,
+            "protein_g": 1.67,
+            "carbs_g": 18.7,
+            "fat_g": 1.17,
+            "fiber_g": 4.0,
+            "vitamin_c_mg": 10.2,
+            "potassium_mg": 236
+          },
+          "geographic_regions_egypt_ar": [
+            "أسيوط",
+            "سوهاج",
+            "المنيا",
+            "أسوان",
+            "الفيوم"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "100000",
+            "yield_ton_per_feddan": "3-5",
+            "total_production_ton_approx": "400000",
+            "rank_egypt_ar": "من أهم فواكه الصعيد"
+          },
+          "common_varieties_ar": [
+            "وندرفول",
+            "مانافار",
+            "البلدي الحلو"
+          ],
+          "economic_importance_ar": "طازج — عصير — طب — تصدير متنامٍ",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-034",
+          "name_ar": "تين",
+          "name_en": "Fig",
+          "name_scientific": "Ficus carica",
+          "category": "استوائية وشبه استوائية",
+          "group_id": "grp-fruits",
+          "description_ar": "فاكهة مصرية تاريخية — يُزرع منذ آلاف السنين — طازج ومجفف",
+          "seasons": {
+            "planting_months": [
+              2,
+              3
+            ],
+            "planting_season_ar": "فبراير-مارس",
+            "harvest_months": [
+              6,
+              7,
+              8,
+              9
+            ],
+            "harvest_season_ar": "يونيو — سبتمبر",
+            "growth_duration_days": null,
+            "season_type_ar": "شجرة معمرة نفضية",
+            "years_to_first_fruiting": "2-3 سنوات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "متنوعة جداً — متحمل"
+            ],
+            "ph_range": "6.0-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "مفيد"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2000-3000",
+            "irrigation_times": "تنقيط",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "تضخم الثمار"
+            ],
+            "method_ar": "تنقيط — غمر"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "40-70",
+            "total_p_kg_per_feddan": "20-30",
+            "total_k_kg_per_feddan": "50-80",
+            "n_split_ar": "ربيع وخريف",
+            "p_timing_ar": "ربيع",
+            "k_timing_ar": "يُرفع عند الثمار",
+            "micronutrients_ar": {
+              "Zn": "مهم",
+              "Fe": "عند الاصفرار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N",
+              "dose_ar": "60-100 كجم/فدان/سنة"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم",
+              "purpose_ar": "K",
+              "dose_ar": "60-80 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-019",
+              "name_ar": "السماد البلدي",
+              "purpose_ar": "مادة عضوية",
+              "dose_ar": "3-5 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "خنفساء التين",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "تصدع الثمار",
+              "type": "اضطراب فسيولوجي",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 74,
+            "protein_g": 0.75,
+            "carbs_g": 19.2,
+            "fat_g": 0.3,
+            "fiber_g": 2.9,
+            "calcium_mg": 35,
+            "potassium_mg": 232
+          },
+          "geographic_regions_egypt_ar": [
+            "الوادي الجديد",
+            "سيناء",
+            "المنيا",
+            "أسيوط"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "50000",
+            "yield_ton_per_feddan": "2-4",
+            "total_production_ton_approx": "170000",
+            "rank_egypt_ar": "فاكهة تاريخية"
+          },
+          "common_varieties_ar": [
+            "الدباس",
+            "برمون",
+            "بياض",
+            "أسود مصري"
+          ],
+          "economic_importance_ar": "طازج — مجفف — تصدير",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-035",
+          "name_ar": "موز",
+          "name_en": "Banana",
+          "name_scientific": "Musa spp.",
+          "category": "استوائية وشبه استوائية",
+          "group_id": "grp-fruits",
+          "description_ar": "فاكهة استوائية مهمة — مصر السادسة عالمياً في الإنتاج — أسوان والأقصر من أجود المناطق",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              5
+            ],
+            "planting_season_ar": "ربيع",
+            "harvest_months": null,
+            "harvest_season_ar": "طوال السنة — 9-12 شهر من الزراعة",
+            "growth_duration_days": "270-360",
+            "season_type_ar": "معمر — يُجدد من الخلفات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية عميقة",
+              "طينية طميية"
+            ],
+            "ph_range": "5.5-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "حساس جداً — لا يتحمل أكثر من 1.5 dS/m",
+            "drainage_ar": "ممتاز — لا يتحمل الغرق إطلاقاً",
+            "organic_matter_ar": "ضروري جداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "6000-8000",
+            "irrigation_times": "مستمر يومياً",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "جميع المراحل — محصول مائي"
+            ],
+            "method_ar": "تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "120-180",
+            "total_p_kg_per_feddan": "40-60",
+            "total_k_kg_per_feddan": "200-280",
+            "n_split_ar": "جرعات شهرية صغيرة",
+            "p_timing_ar": "منخفض — يُعطى أوائل الموسم",
+            "k_timing_ar": "أعلى محصول في احتياج K — ضروري لحجم الثمار وجودتها",
+            "micronutrients_ar": {
+              "Mg": "نقصه شائع جداً — 50-80 كجم MgSO₄/فدان",
+              "Zn": "مهم جداً",
+              "B": "للتزهير وحجم الثمار",
+              "Fe": "عند الاصفرار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N",
+              "dose_ar": "150-200 كجم/فدان/سنة"
+            },
+            {
+              "fert_id": "fert-016",
+              "name_ar": "سلفات البوتاسيوم SOP",
+              "purpose_ar": "K الرئيسي",
+              "dose_ar": "300-400 كجم/فدان/سنة"
+            },
+            {
+              "fert_id": "fert-018",
+              "name_ar": "KMAG",
+              "purpose_ar": "K+Mg+S — ضروري",
+              "dose_ar": "100-150 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحسين الامتصاص",
+              "dose_ar": "10-15 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "الذبول بنماما Fusarium TR4",
+              "type": "مرض فطري",
+              "severity": "عالية جداً — خطر"
+            },
+            {
+              "name_ar": "سوسة الموز",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "تبقع سيركوسبورا",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 89,
+            "protein_g": 1.09,
+            "carbs_g": 22.8,
+            "fat_g": 0.33,
+            "fiber_g": 2.6,
+            "vitamin_c_mg": 8.7,
+            "potassium_mg": 358
+          },
+          "geographic_regions_egypt_ar": [
+            "أسوان",
+            "قنا",
+            "أسيوط",
+            "الإسماعيلية",
+            "البحيرة"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "120000",
+            "yield_ton_per_feddan": "8-15",
+            "total_production_ton_approx": "1400000",
+            "rank_egypt_ar": "السادس عالمياً"
+          },
+          "common_varieties_ar": [
+            "وليامز",
+            "جراند ناين",
+            "بلدي هندي"
+          ],
+          "economic_importance_ar": "استهلاك محلي ضخم — تصدير متنامٍ",
+          "organic_suitable": false,
+          "export_potential": true
+        }
+      ]
+    },
+    {
+      "id": "grp-ornamental",
+      "name_ar": "نباتات الزينة",
+      "name_en": "Ornamental Plants",
+      "description_ar": "نباتات تُزرع لجمالها وزخرفتها سواء للزراعة الداخلية أو الحدائق العامة والمنازل",
+      "sub_categories": [
+        "نباتات داخلية",
+        "زهور حولية",
+        "شجيرات زينة",
+        "نخيل وأشجار زينة"
+      ],
+      "plants_count": 5,
+      "plants": [
+        {
+          "id": "plant-016",
+          "name_ar": "وردة (نبات الورد)",
+          "name_en": "Rose",
+          "name_scientific": "Rosa spp.",
+          "category": "زهور معمرة",
+          "group_id": "grp-ornamental",
+          "description_ar": "ملكة الزهور — يُزرع للزينة والتصدير وصناعة العطور — مصر من كبار مصدري الورد",
+          "seasons": {
+            "planting_months": [
+              10,
+              11,
+              1,
+              2
+            ],
+            "planting_season_ar": "خريف — شتاء (الزراعة الأولى)",
+            "harvest_months": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              9,
+              10,
+              11,
+              12
+            ],
+            "harvest_season_ar": "طوال السنة في الزراعة المحمية",
+            "growth_duration_days": null,
+            "season_type_ar": "معمر — يُزهر طوال السنة في المحميات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "رملية طميية جيدة التهوية"
+            ],
+            "ph_range": "6.0-6.8",
+            "ph_ideal": 6.3,
+            "salinity_tolerance_ar": "حساس — لا يتحمل أكثر من 2.5 dS/m",
+            "drainage_ar": "ممتاز جداً",
+            "organic_matter_ar": "ضروري جداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2000-3000",
+            "irrigation_times": "يومي تقريباً",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "التجذر",
+              "النمو الخضري",
+              "التبرعم",
+              "الإزهار"
+            ],
+            "method_ar": "تنقيط — رش أسفل الأوراق فقط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "60-80",
+            "total_p_kg_per_feddan": "25-35",
+            "total_k_kg_per_feddan": "80-120",
+            "n_split_ar": "جرعات صغيرة متكررة — K أهم عنصر",
+            "p_timing_ar": "مرتفع عند التجذر",
+            "k_timing_ar": "مرتفع طوال الموسم",
+            "micronutrients_ar": {
+              "Fe": "نقصه شائع جداً — رش كيلات الحديد",
+              "Mg": "مهم للون الأوراق",
+              "B": "يُحسن جودة الأزهار",
+              "Mn": "عند الاصفرار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N المتوازن",
+              "dose_ar": "10-15 كجم/فدان/أسبوعين"
+            },
+            {
+              "fert_id": "fert-004",
+              "name_ar": "نترات الكالسيوم",
+              "purpose_ar": "Ca+N للنمو الصحي",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-022",
+              "name_ar": "فولفيك أسيد",
+              "purpose_ar": "تحسين امتصاص العناصر الصغرى",
+              "dose_ar": "رش ورقي أسبوعي"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "العفن الرمادي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "العنكبوت الأحمر",
+              "type": "حشرة دقيقة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "عالية"
+            }
+          ],
+          "nutritional_value_per_100g": null,
+          "geographic_regions_egypt_ar": [
+            "الإسماعيلية",
+            "الشرقية",
+            "الغربية",
+            "البحيرة"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "30000",
+            "yield_ton_per_feddan": "10-20 طن زهور/فدان",
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "من أكبر مصدري الورد في الشرق الأوسط"
+          },
+          "common_varieties_ar": [
+            "هايبرد تي",
+            "جراندتيرو",
+            "روبينسكي",
+            "فيرست ريد"
+          ],
+          "economic_importance_ar": "تصدير للخليج وأوروبا — صناعة عطور — زينة",
+          "organic_suitable": false,
+          "export_potential": true
+        },
+        {
+          "id": "plant-017",
+          "name_ar": "نخيل الزينة",
+          "name_en": "Ornamental Palm",
+          "name_scientific": "Washingtonia filifera / Phoenix roebelenii",
+          "category": "نخيل وأشجار زينة",
+          "group_id": "grp-ornamental",
+          "description_ar": "رمز المناخ الحار — يُزرع على نطاق واسع في الحدائق والشوارع والمنتجعات",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              5
+            ],
+            "planting_season_ar": "ربيع",
+            "harvest_months": null,
+            "harvest_season_ar": null,
+            "growth_duration_days": null,
+            "season_type_ar": "شجرة معمرة دائمة الخضرة"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "رملية",
+              "طميية",
+              "متنوعة — متحمل جداً"
+            ],
+            "ph_range": "6.0-8.5",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "جيد — يتحمل حتى 6 dS/m",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "مفيد لكن غير ضروري"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "2000-4000",
+            "irrigation_times": "مرتان أسبوعياً عند النضج",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "التجذر الأول",
+              "الصيف الحار"
+            ],
+            "method_ar": "تنقيط — غمر"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "30-60",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "40-60",
+            "n_split_ar": "مرتين سنوياً — ربيع وخريف",
+            "p_timing_ar": "مرة سنوياً",
+            "k_timing_ar": "مرتين سنوياً",
+            "micronutrients_ar": {
+              "Mg": "نقصه شائع جداً في النخيل",
+              "Mn": "نقصه يسبب تشوه الأوراق الحديثة",
+              "B": "مهم",
+              "Fe": "عند الاصفرار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N ربيع وخريف",
+              "dose_ar": "50-100 جم/شجرة"
+            },
+            {
+              "fert_id": "fert-018",
+              "name_ar": "KMAG",
+              "purpose_ar": "Mg+K+S ضروري للنخيل",
+              "dose_ar": "100-200 جم/شجرة"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "سوسة النخيل الحمراء",
+              "type": "حشرة",
+              "severity": "عالية جداً"
+            },
+            {
+              "name_ar": "حشرة الرافعة",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": null,
+          "geographic_regions_egypt_ar": [
+            "جميع المحافظات"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": null,
+            "yield_ton_per_feddan": null,
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "أكثر أشجار الزينة شيوعاً"
+          },
+          "common_varieties_ar": [
+            "واشنطونيا",
+            "فينيكس صغير",
+            "كاريوتا"
+          ],
+          "economic_importance_ar": "تنسيق حدائق — تشجير شوارع — منتجعات سياحية",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-036",
+          "name_ar": "ياسمين",
+          "name_en": "Jasmine",
+          "name_scientific": "Jasminum sambac / officinale",
+          "category": "شجيرات زينة",
+          "group_id": "grp-ornamental",
+          "description_ar": "أشهر نبات عطري مصري — يُصدَّر زيته وأزهاره — رمز الطيب والجمال المصري",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              9,
+              10
+            ],
+            "planting_season_ar": "ربيع وخريف",
+            "harvest_months": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "harvest_season_ar": "مايو — سبتمبر",
+            "growth_duration_days": null,
+            "season_type_ar": "معمر دائم الخضرة"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "مهم لإنتاج الأزهار"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1500-2500",
+            "irrigation_times": "3-4 مرات أسبوعياً",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "التزهير"
+            ],
+            "method_ar": "تنقيط — غمر"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "30-50",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "40-60",
+            "n_split_ar": "ربيع قبل التزهير + خريف",
+            "p_timing_ar": "ربيع",
+            "k_timing_ar": "يُرفع في موسم الإزهار",
+            "micronutrients_ar": {
+              "Fe": "مهم للون الأوراق",
+              "Zn": "يُحسن الرائحة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N للإزهار",
+              "dose_ar": "10-15 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "تحسين التربة",
+              "dose_ar": "2-3 طن/فدان"
+            },
+            {
+              "fert_id": "fert-023",
+              "name_ar": "مستخلص عشب البحر",
+              "purpose_ar": "تحفيز الإزهار",
+              "dose_ar": "رش ورقي"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "حشرة المن",
+              "type": "حشرة",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "العنكبوت الأحمر",
+              "type": "حشرة دقيقة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": null,
+          "geographic_regions_egypt_ar": [
+            "الغربية",
+            "المنوفية",
+            "الشرقية",
+            "الجيزة"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "15000",
+            "yield_ton_per_feddan": "0.5-1.5 طن أزهار",
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "أول منتج لزيت الياسمين عالمياً"
+          },
+          "common_varieties_ar": [
+            "الياسمين البلدي",
+            "الياسمين العربي",
+            "الياسمين المنوفي"
+          ],
+          "economic_importance_ar": "صناعة عطور — تصدير أزهار مقطرة — زينة",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-037",
+          "name_ar": "بوجينفيليا",
+          "name_en": "Bougainvillea",
+          "name_scientific": "Bougainvillea spectabilis",
+          "category": "شجيرات زينة",
+          "group_id": "grp-ornamental",
+          "description_ar": "متسلق زيني مشهور بألوانه الزاهية — يُزرع على نطاق واسع في الحدائق والمنتجعات المصرية",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              5,
+              9,
+              10
+            ],
+            "planting_season_ar": "ربيع وخريف",
+            "harvest_months": null,
+            "harvest_season_ar": "يُزهر ربيعاً وخريفاً",
+            "growth_duration_days": null,
+            "season_type_ar": "معمر — يُقلَّم لتحفيز الإزهار"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "متنوعة — غير حساس"
+            ],
+            "ph_range": "5.5-8.5",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "جيد",
+            "drainage_ar": "جيد جداً — يتحمل الجفاف",
+            "organic_matter_ar": "مفيد لكن غير ضروري"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "800-1500",
+            "irrigation_times": "مرتان أسبوعياً",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "بعد التقليم",
+              "التزهير"
+            ],
+            "method_ar": "تنقيط — غمر"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "20-40",
+            "total_p_kg_per_feddan": "10-20",
+            "total_k_kg_per_feddan": "30-50",
+            "n_split_ar": "مرتين — ربيع وخريف",
+            "p_timing_ar": "مرة سنوياً",
+            "k_timing_ar": "يُرفع قبل الإزهار",
+            "micronutrients_ar": {
+              "Fe": "عند الاصفرار",
+              "Mg": "مفيد"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-005",
+              "name_ar": "نترات البوتاسيوم",
+              "purpose_ar": "K+N لتحفيز الإزهار",
+              "dose_ar": "5-10 كجم/شجرة"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحسين امتصاص الحديد",
+              "dose_ar": "2-3 لتر"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "منخفضة"
+            },
+            {
+              "name_ar": "التبقع الورقي",
+              "type": "مرض فطري",
+              "severity": "منخفضة"
+            }
+          ],
+          "nutritional_value_per_100g": null,
+          "geographic_regions_egypt_ar": [
+            "جميع المحافظات — خاصة المناطق الساحلية والسياحية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": null,
+            "yield_ton_per_feddan": null,
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "أكثر متسلقات الزينة شيوعاً"
+          },
+          "common_varieties_ar": [
+            "الأحمر",
+            "البنفسجي",
+            "الوردي",
+            "البرتقالي",
+            "الأبيض"
+          ],
+          "economic_importance_ar": "تنسيق حدائق — مناطق سياحية — شوارع",
+          "organic_suitable": true,
+          "export_potential": false
+        },
+        {
+          "id": "plant-038",
+          "name_ar": "كالانكو",
+          "name_en": "Kalanchoe",
+          "name_scientific": "Kalanchoe blossfeldiana",
+          "category": "نباتات داخلية",
+          "group_id": "grp-ornamental",
+          "description_ar": "نبات رسوخي سهل العناية — من أكثر نباتات الأصص مبيعاً في مصر والعالم",
+          "seasons": {
+            "planting_months": [
+              9,
+              10,
+              11,
+              12
+            ],
+            "planting_season_ar": "خريف-شتاء",
+            "harvest_months": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "harvest_season_ar": "يناير — أبريل (ذروة التزهير)",
+            "growth_duration_days": "90-120 حتى التزهير",
+            "season_type_ar": "نبات داخلي معمر"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "تربة أصص جيدة الصرف",
+              "رملية طميية خفيفة جداً"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "حساس",
+            "drainage_ar": "ممتاز جداً — لا يتحمل تشبع الماء",
+            "organic_matter_ar": "متوسط"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "منخفض — ريّ قليل",
+            "irrigation_times": "مرة كل 10-14 يوم",
+            "first_irrigation_ar": "بعد الزراعة بـ 3 أيام",
+            "critical_stages_ar": [
+              "النمو الخضري",
+              "التبرعم"
+            ],
+            "method_ar": "ري من أسفل الأصيص"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "10-20",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "20-30",
+            "n_split_ar": "شهري بتركيز منخفض",
+            "p_timing_ar": "مرتفع عند التبرعم",
+            "k_timing_ar": "مرتفع قبل الإزهار",
+            "micronutrients_ar": {
+              "Fe": "مهم للون",
+              "Ca": "يُحسن الجودة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-012",
+              "name_ar": "MKP",
+              "purpose_ar": "P+K لتحفيز الإزهار",
+              "dose_ar": "1-2 جم/لتر ماء"
+            },
+            {
+              "fert_id": "fert-022",
+              "name_ar": "فولفيك أسيد",
+              "purpose_ar": "تحسين امتصاص العناصر",
+              "dose_ar": "1-2 مل/لتر"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الدقيقي",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": null,
+          "geographic_regions_egypt_ar": [
+            "مشاتل القاهرة الكبرى",
+            "الإسكندرية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": null,
+            "yield_ton_per_feddan": null,
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "من أكثر نباتات الأصص مبيعاً"
+          },
+          "common_varieties_ar": [
+            "الأحمر",
+            "الوردي",
+            "البرتقالي",
+            "الأصفر",
+            "الأبيض"
+          ],
+          "economic_importance_ar": "زينة داخلية — هدايا — تصدير محدود",
+          "organic_suitable": true,
+          "export_potential": false
+        }
+      ]
+    },
+    {
+      "id": "grp-medicinal",
+      "name_ar": "النباتات الطبية والعطرية",
+      "name_en": "Medicinal & Aromatic Plants",
+      "description_ar": "نباتات ذات قيمة طبية وعطرية — مصر من أكبر المنتجين والمصدرين للنباتات الطبية والعطرية عالمياً",
+      "sub_categories": [
+        "أعشاب طبية",
+        "نباتات عطرية",
+        "توابل"
+      ],
+      "plants_count": 6,
+      "plants": [
+        {
+          "id": "plant-018",
+          "name_ar": "كمون",
+          "name_en": "Cumin",
+          "name_scientific": "Cuminum cyminum",
+          "category": "توابل",
+          "group_id": "grp-medicinal",
+          "description_ar": "من أهم التوابل المصرية — مصر من كبار منتجي ومصدري الكمون عالمياً",
+          "seasons": {
+            "planting_months": [
+              11,
+              12,
+              1
+            ],
+            "planting_season_ar": "نوفمبر — يناير",
+            "harvest_months": [
+              3,
+              4
+            ],
+            "harvest_season_ar": "مارس — أبريل",
+            "growth_duration_days": "90-110",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "رملية طميية"
+            ],
+            "ph_range": "6.5-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستفيد من الكمبوست"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "800-1200",
+            "irrigation_times": "3-4 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 15-20 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التفريع",
+              "الإزهار"
+            ],
+            "method_ar": "غمر خفيف — رش"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "20-30",
+            "total_p_kg_per_feddan": "10-15",
+            "total_k_kg_per_feddan": "10-20",
+            "n_split_ar": "نصفين — عند الزراعة والتفريع",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Zn": "مهم للجودة",
+              "B": "يُحسن إنتاج الزيت العطري"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N بجرعات خفيفة",
+              "dose_ar": "30-50 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S+Ca",
+              "dose_ar": "50-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "تحسين الجودة والنكهة",
+              "dose_ar": "1-2 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "الذبول الفيوزاريومي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 375,
+            "protein_g": 17.8,
+            "carbs_g": 44.2,
+            "fat_g": 22.3,
+            "fiber_g": 10.5,
+            "iron_mg": 66.4,
+            "essential_oil_percent": "2.5-4%"
+          },
+          "geographic_regions_egypt_ar": [
+            "أسيوط",
+            "سوهاج",
+            "قنا",
+            "الوادي الجديد"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "50000",
+            "yield_ton_per_feddan": "0.3-0.6",
+            "total_production_ton_approx": "20000",
+            "rank_egypt_ar": "من أهم المصدرين الإقليميين"
+          },
+          "common_varieties_ar": [
+            "الكمون المصري",
+            "الكمون البلدي"
+          ],
+          "economic_importance_ar": "تصدير — تحضير أدوية — صناعة عطور وتوابل",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-019",
+          "name_ar": "نعناع",
+          "name_en": "Mint",
+          "name_scientific": "Mentha spp.",
+          "category": "أعشاب طبية",
+          "group_id": "grp-medicinal",
+          "description_ar": "نبات عطري طبي شائع — يُزرع للاستهلاك الطازج وتقطير الزيت العطري وتصدير المجفف",
+          "seasons": {
+            "planting_months": [
+              2,
+              3,
+              9,
+              10
+            ],
+            "planting_season_ar": "فبراير-مارس — سبتمبر-أكتوبر",
+            "harvest_months": [
+              4,
+              5,
+              6,
+              7,
+              11,
+              12
+            ],
+            "harvest_season_ar": "أبريل-يوليو — نوفمبر-ديسمبر",
+            "growth_duration_days": "60-90",
+            "season_type_ar": "معمر — يُحش عدة مرات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "طينية طميية"
+            ],
+            "ph_range": "6.0-7.0",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد — يتحمل الرطوبة نسبياً",
+            "organic_matter_ar": "مهم جداً لإنتاج الزيت العطري"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1500-2000",
+            "irrigation_times": "5-7 ريات للحشة الواحدة",
+            "first_irrigation_ar": "فوري بعد الزراعة",
+            "critical_stages_ar": [
+              "الإنبات",
+              "النمو الخضري",
+              "قبل الحش"
+            ],
+            "method_ar": "غمر خفيف — رش"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "40-60",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "20-35",
+            "n_split_ar": "دفعة بعد كل حشة",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "مع كل دفعة N",
+            "micronutrients_ar": {
+              "Fe": "مهم للون الأوراق",
+              "Mg": "يُحسن محتوى المنثول",
+              "S": "مهم لإنتاج الزيت"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-003",
+              "name_ar": "سلفات الأمونيوم",
+              "purpose_ar": "N+S لإنتاج الزيت العطري",
+              "dose_ar": "50-75 كجم/فدان/حشة"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "تحسين جودة الزيت",
+              "dose_ar": "2-3 طن/فدان"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحسين الامتصاص",
+              "dose_ar": "5-10 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "صدأ النعناع",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "البثور الثؤلولية",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 70,
+            "protein_g": 3.75,
+            "carbs_g": 14.9,
+            "fat_g": 0.94,
+            "fiber_g": 8.0,
+            "vitamin_c_mg": 31.8,
+            "essential_oil_percent": "0.5-2.5%",
+            "menthol_percent": "40-50% من الزيت"
+          },
+          "geographic_regions_egypt_ar": [
+            "الغربية",
+            "المنوفية",
+            "الشرقية",
+            "الفيوم"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "30000",
+            "yield_ton_per_feddan": "2-4 أعشاب طازجة / حشة",
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "من أكبر منتجي زيت النعناع"
+          },
+          "common_varieties_ar": [
+            "النعناع البلدي",
+            "النعناع الإفرنجي",
+            "نعناع المنثول"
+          ],
+          "economic_importance_ar": "تصدير زيت عطري — صناعة أدوية — مشروبات — صناعة غذائية",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-020",
+          "name_ar": "بابونج",
+          "name_en": "Chamomile",
+          "name_scientific": "Matricaria chamomilla",
+          "category": "أعشاب طبية",
+          "group_id": "grp-medicinal",
+          "description_ar": "نبات طبي عطري مهم — مصر من أكبر المنتجين عالمياً — يُصدَّر مجففاً وكزيت عطري",
+          "seasons": {
+            "planting_months": [
+              10,
+              11
+            ],
+            "planting_season_ar": "أكتوبر — نوفمبر",
+            "harvest_months": [
+              2,
+              3,
+              4
+            ],
+            "harvest_season_ar": "فبراير — أبريل",
+            "growth_duration_days": "110-130",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية خفيفة",
+              "رملية طميية"
+            ],
+            "ph_range": "5.6-7.5",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1000-1500",
+            "irrigation_times": "4-5 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 10-15 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التفريع",
+              "الإزهار"
+            ],
+            "method_ar": "رش — غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "20-40",
+            "total_p_kg_per_feddan": "10-20",
+            "total_k_kg_per_feddan": "15-25",
+            "n_split_ar": "نصفين",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Zn": "يُحسن إنتاج الزيت",
+              "B": "مهم للإزهار"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N خفيف",
+              "dose_ar": "20-40 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-019",
+              "name_ar": "السماد البلدي",
+              "purpose_ar": "تحسين المادة العضوية",
+              "dose_ar": "2-3 طن/فدان"
+            },
+            {
+              "fert_id": "fert-027",
+              "name_ar": "رايزوبيوم (للدورة الزراعية)",
+              "purpose_ar": "تثبيت N قبل زراعة البابونج",
+              "dose_ar": "تلقيح البقوليات السابقة"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "الذبول الفيوزاريومي",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "منخفضة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 1,
+            "protein_g": 0.0,
+            "carbs_g": 0.2,
+            "fat_g": 0.0,
+            "fiber_g": 0.0,
+            "essential_oil_percent": "0.3-1.5%",
+            "chamazulene_percent": "1-15% من الزيت"
+          },
+          "geographic_regions_egypt_ar": [
+            "المنوفية",
+            "الغربية",
+            "البحيرة",
+            "كفر الشيخ"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "20000",
+            "yield_ton_per_feddan": "0.8-1.5 أزهار جافة",
+            "total_production_ton_approx": "15000",
+            "rank_egypt_ar": "من أكبر 3 دول مصدرة للبابونج عالمياً"
+          },
+          "common_varieties_ar": [
+            "البابونج الألماني",
+            "البابونج المصري البلدي"
+          ],
+          "economic_importance_ar": "تصدير أزهار مجففة وزيت عطري — صناعة أدوية وعطور ومستحضرات تجميل",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-039",
+          "name_ar": "حلبة",
+          "name_en": "Fenugreek",
+          "name_scientific": "Trigonella foenum-graecum",
+          "category": "أعشاب طبية",
+          "group_id": "grp-medicinal",
+          "description_ar": "بقولية طبية متعددة الاستخدام — بذورها وأوراقها غذاء ودواء — مصر من أكبر المصدرين",
+          "seasons": {
+            "planting_months": [
+              10,
+              11,
+              12
+            ],
+            "planting_season_ar": "أكتوبر — ديسمبر",
+            "harvest_months": [
+              3,
+              4
+            ],
+            "harvest_season_ar": "مارس — أبريل",
+            "growth_duration_days": "100-120",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستفيد"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "800-1200",
+            "irrigation_times": "3-4 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 15 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التزهير",
+              "عقد القرون"
+            ],
+            "method_ar": "غمر خفيف"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "15-25",
+            "total_p_kg_per_feddan": "15-20",
+            "total_k_kg_per_feddan": "10-20",
+            "n_split_ar": "جرعة أولية صغيرة — يثبت N بيولوجياً",
+            "p_timing_ar": "كامل عند الزراعة",
+            "k_timing_ar": "كامل عند الزراعة",
+            "micronutrients_ar": {
+              "Mo": "للرايزوبيوم",
+              "Zn": "مهم للجودة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-027",
+              "name_ar": "رايزوبيوم",
+              "purpose_ar": "تثبيت N — بقولية",
+              "dose_ar": "تلقيح البذور"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S",
+              "dose_ar": "75-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "تحسين الجودة",
+              "dose_ar": "1-2 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "صدأ الحلبة",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "منخفضة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 323,
+            "protein_g": 23.0,
+            "carbs_g": 58.4,
+            "fat_g": 6.4,
+            "fiber_g": 24.6,
+            "iron_mg": 33.5,
+            "essential_oil_percent": "0.3-0.5%"
+          },
+          "geographic_regions_egypt_ar": [
+            "أسيوط",
+            "سوهاج",
+            "المنيا",
+            "الفيوم"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "35000",
+            "yield_ton_per_feddan": "0.5-0.9",
+            "total_production_ton_approx": "25000",
+            "rank_egypt_ar": "من أكبر مصدري الحلبة"
+          },
+          "common_varieties_ar": [
+            "الحلبة المصرية البلدية",
+            "الحلبة الحلوة"
+          ],
+          "economic_importance_ar": "تصدير — طب — تصنيع أغذية وأدوية",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-040",
+          "name_ar": "شمر",
+          "name_en": "Fennel",
+          "name_scientific": "Foeniculum vulgare",
+          "category": "نباتات عطرية",
+          "group_id": "grp-medicinal",
+          "description_ar": "نبات عطري طبي ذو قيمة اقتصادية عالية — يُصدَّر بذوره وزيته — له استخدامات واسعة",
+          "seasons": {
+            "planting_months": [
+              9,
+              10,
+              11
+            ],
+            "planting_season_ar": "سبتمبر — نوفمبر",
+            "harvest_months": [
+              3,
+              4,
+              5
+            ],
+            "harvest_season_ar": "مارس — مايو",
+            "growth_duration_days": "150-180",
+            "season_type_ar": "شتوي"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية عميقة",
+              "رملية طميية"
+            ],
+            "ph_range": "6.5-8.0",
+            "ph_ideal": 7.0,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "يستجيب جيداً"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1200-1800",
+            "irrigation_times": "4-5 ريات",
+            "first_irrigation_ar": "بعد الزراعة بـ 20 يوم",
+            "critical_stages_ar": [
+              "الإنبات",
+              "التفريع",
+              "الإزهار",
+              "نضج البذور"
+            ],
+            "method_ar": "غمر — رش"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "25-40",
+            "total_p_kg_per_feddan": "15-25",
+            "total_k_kg_per_feddan": "20-30",
+            "n_split_ar": "نصفين",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "مع N",
+            "micronutrients_ar": {
+              "B": "مهم لإنتاج الزيت العطري",
+              "Zn": "يُحسن الجودة"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N",
+              "dose_ar": "40-60 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-009",
+              "name_ar": "سوبر فوسفات أحادي",
+              "purpose_ar": "P+S+Ca",
+              "dose_ar": "75-100 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-021",
+              "name_ar": "هيوميك أسيد",
+              "purpose_ar": "تحسين امتصاص المغذيات",
+              "dose_ar": "5 كجم/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "لفحة الشمر",
+              "type": "مرض فطري",
+              "severity": "متوسطة"
+            },
+            {
+              "name_ar": "دودة أوراق الشمر",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 345,
+            "protein_g": 15.8,
+            "carbs_g": 52.3,
+            "fat_g": 14.9,
+            "fiber_g": 39.8,
+            "iron_mg": 18.5,
+            "essential_oil_percent": "2-4%"
+          },
+          "geographic_regions_egypt_ar": [
+            "الوادي الجديد",
+            "أسيوط",
+            "سوهاج",
+            "البحيرة"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "25000",
+            "yield_ton_per_feddan": "0.4-0.8",
+            "total_production_ton_approx": "15000",
+            "rank_egypt_ar": "من أهم الدول المصدرة"
+          },
+          "common_varieties_ar": [
+            "الشمر البلدي",
+            "الشمر الرومي"
+          ],
+          "economic_importance_ar": "تصدير — طب — صناعات غذائية وعطور",
+          "organic_suitable": true,
+          "export_potential": true
+        },
+        {
+          "id": "plant-041",
+          "name_ar": "ريحان",
+          "name_en": "Basil",
+          "name_scientific": "Ocimum basilicum",
+          "category": "نباتات عطرية",
+          "group_id": "grp-medicinal",
+          "description_ar": "نبات عطري سريع النمو — يُصدَّر طازجاً ومجففاً وكزيت عطري لأوروبا",
+          "seasons": {
+            "planting_months": [
+              3,
+              4,
+              5
+            ],
+            "planting_season_ar": "مارس — مايو",
+            "harvest_months": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "harvest_season_ar": "مايو — سبتمبر",
+            "growth_duration_days": "30-45 لكل حشة",
+            "season_type_ar": "صيفي — يُحش عدة مرات"
+          },
+          "soil_requirements": {
+            "preferred_types_ar": [
+              "طميية",
+              "رملية طميية"
+            ],
+            "ph_range": "6.0-7.5",
+            "ph_ideal": 6.5,
+            "salinity_tolerance_ar": "متوسط",
+            "drainage_ar": "جيد",
+            "organic_matter_ar": "مهم لإنتاج الزيت"
+          },
+          "irrigation": {
+            "total_water_m3_per_feddan": "1000-1500",
+            "irrigation_times": "رش كل 3-4 أيام",
+            "first_irrigation_ar": "فوري",
+            "critical_stages_ar": [
+              "الإنبات",
+              "النمو الخضري"
+            ],
+            "method_ar": "رش — تنقيط"
+          },
+          "nutrition": {
+            "total_n_kg_per_feddan": "30-50",
+            "total_p_kg_per_feddan": "10-20",
+            "total_k_kg_per_feddan": "20-35",
+            "n_split_ar": "دفعة بعد كل حشة",
+            "p_timing_ar": "كامل في البداية",
+            "k_timing_ar": "مع كل حشة",
+            "micronutrients_ar": {
+              "Mg": "يزيد محتوى الزيت العطري",
+              "Fe": "للون الأوراق"
+            }
+          },
+          "recommended_fertilizers": [
+            {
+              "fert_id": "fert-001",
+              "name_ar": "يوريا",
+              "purpose_ar": "N للنمو الخضري",
+              "dose_ar": "30-50 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-003",
+              "name_ar": "سلفات الأمونيوم",
+              "purpose_ar": "N+S للزيت العطري",
+              "dose_ar": "25-40 كجم/فدان"
+            },
+            {
+              "fert_id": "fert-020",
+              "name_ar": "الكمبوست",
+              "purpose_ar": "تحسين الجودة",
+              "dose_ar": "2 طن/فدان"
+            }
+          ],
+          "pests_and_diseases_ar": [
+            {
+              "name_ar": "البياض الزغبي",
+              "type": "مرض فطري",
+              "severity": "عالية"
+            },
+            {
+              "name_ar": "المن",
+              "type": "حشرة",
+              "severity": "متوسطة"
+            }
+          ],
+          "nutritional_value_per_100g": {
+            "calories_kcal": 23,
+            "protein_g": 3.15,
+            "carbs_g": 2.65,
+            "fat_g": 0.64,
+            "fiber_g": 1.6,
+            "vitamin_c_mg": 18,
+            "iron_mg": 3.17,
+            "essential_oil_percent": "0.4-0.8%"
+          },
+          "geographic_regions_egypt_ar": [
+            "الغربية",
+            "المنوفية",
+            "الشرقية"
+          ],
+          "production_stats_egypt": {
+            "area_feddan_approx": "15000",
+            "yield_ton_per_feddan": "2-4 أعشاب طازجة/حشة",
+            "total_production_ton_approx": null,
+            "rank_egypt_ar": "من أهم مصدري الريحان الطازج لأوروبا"
+          },
+          "common_varieties_ar": [
+            "الكبير الورق",
+            "الصغير الورق",
+            "الأرجواني"
+          ],
+          "economic_importance_ar": "تصدير طازج لأوروبا — زيت عطري — مستحضرات تجميل",
+          "organic_suitable": true,
+          "export_potential": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,948 @@
+{
+  "id": "frac_groups",
+  "name_ar": "مجموعات FRAC للمبيدات الفطرية",
+  "name_en": "FRAC Groups — Fungicide Resistance Action Committee",
+  "source": "FRAC Code List 2024 (CropLife International)",
+  "version": "1.0.0",
+  "total_groups": 19,
+  "groups": [
+    {
+      "id": "frac-c3",
+      "frac_code": "3",
+      "frac_letter": "C",
+      "frac_subgroup": "C3",
+      "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات",
+      "name_en": "DMI Fungicides — Sterol Demethylation Inhibitors",
+      "chemical_class_ar": "تريازولات، إيميدازولات، بيريميدينات",
+      "chemical_class_en": "Triazoles, Imidazoles, Pyrimidines",
+      "MoA_ar": "تثبيط إنزيم CYP51 (ستيرول 14α-ديميثيلاز) — يمنع تخليق الإرغوستيرول المكوّن الأساسي لجدار خلية الفطر",
+      "MoA_en": "Sterol C14-demethylation inhibition (CYP51 / ERG11)",
+      "MoA_site": "CYP51 enzyme",
+      "systemic": true,
+      "resistance_risk_ar": "متوسط إلى عالٍ",
+      "resistance_risk_level": 3,
+      "resistance_risk_color": "orange",
+      "resistance_mechanism_ar": "طفرات في جين CYP51/ERG11 + فرط التعبير الجيني + مضخات طرد فعّال",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "لا تتجاوز 3 رشات في الموسم — تناوب مع C5 أو C7 أو M",
+      "rotation_compatible_ids": [
+        "frac-c5",
+        "frac-c7",
+        "frac-m",
+        "frac-b1",
+        "frac-p3",
+        "frac-p7"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-c3"
+      ],
+      "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين كل أعضاء المجموعة — التناوب داخلها غير مفيد",
+      "spectrum_ar": "واسع — فطريات أسكية وبازيدية — لا يعمل على Oomycetes",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي + جزئياً مبيد",
+      "importance_egypt": "عالية جداً — الأكثر استخداماً في مصر في الحبوب والخضروات والفاكهة",
+      "ai_count": 14,
+      "rotation_compatible": [
+        {
+          "id": "frac-c5",
+          "name_ar": "ستروبيلورينات — مثبطات Qo"
+        },
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        },
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-b1",
+          "name_ar": "بنزيميدازولات"
+        },
+        {
+          "id": "frac-p3",
+          "name_ar": "فنيل أميدات — ميتالاكسيل ومشتقاته"
+        },
+        {
+          "id": "frac-p7",
+          "name_ar": "أميدات الكاربوكسيل — ديموثيمورف ومشتقاته (CAA)"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-c3",
+          "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات"
+        }
+      ]
+    },
+    {
+      "id": "frac-c5",
+      "frac_code": "11",
+      "frac_letter": "C",
+      "frac_subgroup": "C5",
+      "name_ar": "ستروبيلورينات — مثبطات Qo",
+      "name_en": "QoI Fungicides — Strobilurins (Quinone outside Inhibitors)",
+      "chemical_class_ar": "ستروبيلورينات، أوكسازوليدينديونات",
+      "chemical_class_en": "Strobilurins, Oxazolidinediones",
+      "MoA_ar": "تثبيط نقل الإلكترون في سلسلة تنفس الميتوكوندريا عند موقع Qo في مركب III (سيتوكروم bc1)",
+      "MoA_en": "Respiration inhibitor — Complex III: Cytochrome bc1 (Qo site)",
+      "MoA_site": "Cytochrome bc1 — Qo site (Complex III)",
+      "systemic": true,
+      "resistance_risk_ar": "عالٍ جداً",
+      "resistance_risk_level": 4,
+      "resistance_risk_color": "red",
+      "resistance_mechanism_ar": "طفرة نقطية في جين CYTB — G143A الأكثر شيوعاً — طفرة واحدة تُعطي مقاومة كاملة (>1000x)",
+      "max_applications_season": 2,
+      "rotation_rule_ar": "رشتان كحد أقصى — لا تستخدم منفرداً أبداً — تناوب إلزامي مع C3 أو C7 أو M",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c7",
+        "frac-m",
+        "frac-p3",
+        "frac-p7"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-c5"
+      ],
+      "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين جميع الستروبيلورينات — تناوب داخل المجموعة عديم الفائدة",
+      "spectrum_ar": "واسع جداً — فطريات أسكية وبازيدية وبعض Oomycetes",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي بامتياز — علاجي محدود جداً",
+      "importance_egypt": "عالية — ضروري في مخاليط لكن المقاومة منتشرة في مصر",
+      "ai_count": 6,
+      "rotation_compatible": [
+        {
+          "id": "frac-c3",
+          "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات"
+        },
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        },
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-p3",
+          "name_ar": "فنيل أميدات — ميتالاكسيل ومشتقاته"
+        },
+        {
+          "id": "frac-p7",
+          "name_ar": "أميدات الكاربوكسيل — ديموثيمورف ومشتقاته (CAA)"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-c5",
+          "name_ar": "ستروبيلورينات — مثبطات Qo"
+        }
+      ]
+    },
+    {
+      "id": "frac-c7",
+      "frac_code": "7",
+      "frac_letter": "C",
+      "frac_subgroup": "C7",
+      "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI",
+      "name_en": "SDHI Fungicides — Succinate Dehydrogenase Inhibitors",
+      "chemical_class_ar": "بيريدينيل إيثيل بنزاميد، ثياذول كاربوكساميد",
+      "chemical_class_en": "Pyridyl-ethyl-benzamide, Thiazole-carboxamide",
+      "MoA_ar": "تثبيط إنزيم سوكسينات ديهيدروجيناز (مركب II في سلسلة تنفس الميتوكوندريا) — يوقف أكسدة السوكسينات إلى فيومارات",
+      "MoA_en": "Respiration inhibitor — Complex II: Succinate dehydrogenase (SDHB/SDHC/SDHD subunits)",
+      "MoA_site": "Succinate dehydrogenase — Complex II",
+      "systemic": true,
+      "resistance_risk_ar": "متوسط إلى عالٍ",
+      "resistance_risk_level": 3,
+      "resistance_risk_color": "orange",
+      "resistance_mechanism_ar": "طفرات نقطية في وحدات SDHB أو SDHC أو SDHD — متعددة المواقع — أكثر تعقيداً من QoI",
+      "max_applications_season": 2,
+      "rotation_rule_ar": "رشتان كحد أقصى — تناوب مع C3 أو C5 أو M — من أثمن المجموعات — احفظها",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c5",
+        "frac-m",
+        "frac-b1",
+        "frac-p7"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-c7"
+      ],
+      "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين أعضاء المجموعة — التناوب الداخلي غير مفيد",
+      "spectrum_ar": "واسع — فطريات أسكية وبازيدية — لا يعمل على Oomycetes",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي جيد",
+      "importance_egypt": "عالية جداً — من أحدث وأقوى المجموعات — يجب الحفاظ عليها",
+      "ai_count": 8,
+      "rotation_compatible": [
+        {
+          "id": "frac-c3",
+          "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات"
+        },
+        {
+          "id": "frac-c5",
+          "name_ar": "ستروبيلورينات — مثبطات Qo"
+        },
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-b1",
+          "name_ar": "بنزيميدازولات"
+        },
+        {
+          "id": "frac-p7",
+          "name_ar": "أميدات الكاربوكسيل — ديموثيمورف ومشتقاته (CAA)"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        }
+      ]
+    },
+    {
+      "id": "frac-b1",
+      "frac_code": "1",
+      "frac_letter": "B",
+      "frac_subgroup": "B1",
+      "name_ar": "بنزيميدازولات",
+      "name_en": "MBC Fungicides — Benzimidazoles",
+      "chemical_class_ar": "بنزيميدازول كاربامات",
+      "chemical_class_en": "Benzimidazole carbamate",
+      "MoA_ar": "تثبيط تجمّع البيتا-تيوبيولين في انقسام الخلية الفطرية — يوقف تكوين مغزل الانقسام",
+      "MoA_en": "Mitosis and cell division — beta-tubulin assembly inhibition",
+      "MoA_site": "β-tubulin",
+      "systemic": true,
+      "resistance_risk_ar": "عالٍ جداً",
+      "resistance_risk_level": 4,
+      "resistance_risk_color": "red",
+      "resistance_mechanism_ar": "طفرات نقطية في جين TUB2: E198A، E198K، F200Y — المقاومة منتشرة في معظم الفطريات",
+      "max_applications_season": 2,
+      "rotation_rule_ar": "رشتان كحد أقصى — تناوب مع مجموعات مختلفة تماماً C3 أو C7 أو M",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c7",
+        "frac-m",
+        "frac-g1",
+        "frac-f"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-b1"
+      ],
+      "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين ثيوفانات ميثيل وكاربندازيم",
+      "spectrum_ar": "واسع — فطريات أسكية وبازيدية — لا يعمل على Oomycetes",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي مبكر + جزئياً مبيد",
+      "importance_egypt": "متوسطة — المقاومة انتشرت — يُستخدم في معاملة البذور ومخاليط محدودة",
+      "ai_count": 2,
+      "rotation_compatible": [
+        {
+          "id": "frac-c3",
+          "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات"
+        },
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        },
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-g1",
+          "name_ar": "ديكاربوكسيميدات"
+        },
+        {
+          "id": "frac-f",
+          "name_ar": "فينيل بيرولات"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-b1",
+          "name_ar": "بنزيميدازولات"
+        }
+      ]
+    },
+    {
+      "id": "frac-m",
+      "frac_code": "M1–M12",
+      "frac_letter": "M",
+      "frac_subgroup": "Multi-site",
+      "name_ar": "مبيدات ملامسية متعددة المواقع",
+      "name_en": "Multi-site Contact Fungicides",
+      "chemical_class_ar": "ثيوكاربامات، كلوروألكيلثيو، نحاسيات، كبريت",
+      "chemical_class_en": "Dithiocarbamates, Chloroalkylthio, Copper compounds, Sulfur",
+      "MoA_ar": "تثبيط متعدد المواقع في آنٍ واحد — يضرب إنزيمات وعمليات حيوية متعددة داخل الخلية الفطرية",
+      "MoA_en": "Multi-site contact activity — various enzymatic targets",
+      "MoA_site": "متعدد المواقع — ثيول إنزيمات وأيونات معدنية",
+      "systemic": false,
+      "resistance_risk_ar": "منخفض جداً",
+      "resistance_risk_level": 1,
+      "resistance_risk_color": "green",
+      "resistance_mechanism_ar": "يستلزم طفرات متعددة متزامنة في مواقع مختلفة — صعب جداً عملياً — لا حالات مقاومة موثقة",
+      "max_applications_season": 999,
+      "rotation_rule_ar": "لا حد — يجب أن يكون في كل رشة أو في تناوب مستمر — العمود الفقري لكل برنامج مكافحة",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c5",
+        "frac-c7",
+        "frac-b1",
+        "frac-p3",
+        "frac-p7",
+        "frac-g1",
+        "frac-f"
+      ],
+      "rotation_incompatible_ids": [],
+      "cross_resistance_note_ar": "لا توجد مقاومة متبادلة — فعال مع كل المجموعات",
+      "spectrum_ar": "متوسط إلى واسع — وقائي فقط — لا نفاذ جهازي",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي فقط — قبل الإصابة أو في بدايتها",
+      "importance_egypt": "ضرورية جداً — لا غنى عنها في أي برنامج رش — الأرخص والأأمن",
+      "ai_count": 8,
+      "rotation_compatible": [
+        {
+          "id": "frac-c3",
+          "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات"
+        },
+        {
+          "id": "frac-c5",
+          "name_ar": "ستروبيلورينات — مثبطات Qo"
+        },
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        },
+        {
+          "id": "frac-b1",
+          "name_ar": "بنزيميدازولات"
+        },
+        {
+          "id": "frac-p3",
+          "name_ar": "فنيل أميدات — ميتالاكسيل ومشتقاته"
+        },
+        {
+          "id": "frac-p7",
+          "name_ar": "أميدات الكاربوكسيل — ديموثيمورف ومشتقاته (CAA)"
+        },
+        {
+          "id": "frac-g1",
+          "name_ar": "ديكاربوكسيميدات"
+        },
+        {
+          "id": "frac-f",
+          "name_ar": "فينيل بيرولات"
+        }
+      ],
+      "rotation_incompatible": []
+    },
+    {
+      "id": "frac-p3",
+      "frac_code": "4",
+      "frac_letter": "P",
+      "frac_subgroup": "P3",
+      "name_ar": "فنيل أميدات — ميتالاكسيل ومشتقاته",
+      "name_en": "Phenylamides — Metalaxyl Group (PA)",
+      "chemical_class_ar": "أسيتانيليد، أكسازوليدينون",
+      "chemical_class_en": "Acetanilide, Oxazolidinone",
+      "MoA_ar": "تثبيط RNA بوليميراز I — يوقف تخليق RNA الريبوزومي في Oomycetes فقط — متخصص جداً",
+      "MoA_en": "RNA polymerase I inhibition — rRNA synthesis (specific to Oomycetes)",
+      "MoA_site": "RNA polymerase I",
+      "systemic": true,
+      "resistance_risk_ar": "عالٍ جداً",
+      "resistance_risk_level": 4,
+      "resistance_risk_color": "red",
+      "resistance_mechanism_ar": "طفرات في جينات RNA بوليميراز I — المقاومة انتشرت عالمياً في Phytophthora منذ 1980",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "3 رشات كحد أقصى — لا يُستخدم منفرداً أبداً — دائماً مع ملامسي",
+      "rotation_compatible_ids": [
+        "frac-m",
+        "frac-c5",
+        "frac-p7"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-p3"
+      ],
+      "cross_resistance_note_ar": "مقاومة متبادلة كاملة بين ميتالاكسيل وميتالاكسيل-M — لا مقاومة مع CAA (frac-p7)",
+      "spectrum_ar": "ضيق جداً — Oomycetes فقط (Phytophthora، Pythium، Plasmopara، Peronospora)",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي + علاجي (حتى 48 ساعة بعد الإصابة)",
+      "importance_egypt": "عالية جداً — لا بديل له ضد لفحة البطاطس المتأخرة وبياض زغبي العنب والخضروات",
+      "ai_count": 2,
+      "rotation_compatible": [
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-c5",
+          "name_ar": "ستروبيلورينات — مثبطات Qo"
+        },
+        {
+          "id": "frac-p7",
+          "name_ar": "أميدات الكاربوكسيل — ديموثيمورف ومشتقاته (CAA)"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-p3",
+          "name_ar": "فنيل أميدات — ميتالاكسيل ومشتقاته"
+        }
+      ]
+    },
+    {
+      "id": "frac-p7",
+      "frac_code": "28",
+      "frac_letter": "P",
+      "frac_subgroup": "P7",
+      "name_ar": "أميدات الكاربوكسيل — ديموثيمورف ومشتقاته (CAA)",
+      "name_en": "Carboxylic Acid Amides — Dimethomorph Group (CAA)",
+      "chemical_class_ar": "سينامات، ڤاليناميد، ميندياميد",
+      "chemical_class_en": "Cinnamate, Valinamide, Mandelic acid amide",
+      "MoA_ar": "تثبيط تخليق الجلوكان في جدار خلية Oomycetes — يمنع تكوين جدار الأووسبور والجراثيم",
+      "MoA_en": "Cell wall biosynthesis inhibition — Cellulose synthase (CesA3) in Oomycetes",
+      "MoA_site": "Cellulose synthase (CesA3)",
+      "systemic": true,
+      "resistance_risk_ar": "متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في جين CesA3 — أبطأ من ميتالاكسيل — موثقة في Plasmopara بأوروبا",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "3 رشات كحد أقصى — دائماً مع ملامسي — بديل ممتاز حيث انتشرت مقاومة ميتالاكسيل",
+      "rotation_compatible_ids": [
+        "frac-m",
+        "frac-c5",
+        "frac-p3"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-p7"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع فنيل أميدات (P3) — بديل جيد عند فشلها",
+      "spectrum_ar": "ضيق — Oomycetes فقط",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي + علاجي (حتى 24–48 ساعة)",
+      "importance_egypt": "عالية — مهم ضد بياض زغبي العنب والخضروات",
+      "ai_count": 3,
+      "rotation_compatible": [
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-c5",
+          "name_ar": "ستروبيلورينات — مثبطات Qo"
+        },
+        {
+          "id": "frac-p3",
+          "name_ar": "فنيل أميدات — ميتالاكسيل ومشتقاته"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-p7",
+          "name_ar": "أميدات الكاربوكسيل — ديموثيمورف ومشتقاته (CAA)"
+        }
+      ]
+    },
+    {
+      "id": "frac-g1",
+      "frac_code": "2",
+      "frac_letter": "G",
+      "frac_subgroup": "G1",
+      "name_ar": "ديكاربوكسيميدات",
+      "name_en": "Dicarboximides",
+      "chemical_class_ar": "ديكاربوكسيميد",
+      "chemical_class_en": "Dicarboximide",
+      "MoA_ar": "تثبيط مسار نقل الإشارة الأسموزية — MAP kinase cascade (Os-2/HOG1) — يُعطّل استجابة الفطر للإجهاد الأسموزي",
+      "MoA_en": "Signal transduction — Osmotic MAP kinase (Os-2, HOG1 pathway)",
+      "MoA_site": "Histidine kinase (Os-1) — MAP kinase cascade",
+      "systemic": false,
+      "resistance_risk_ar": "متوسط إلى عالٍ",
+      "resistance_risk_level": 3,
+      "resistance_risk_color": "orange",
+      "resistance_mechanism_ar": "طفرات في جين Bos1/os-1 — المقاومة موثقة في Botrytis cinerea",
+      "max_applications_season": 2,
+      "rotation_rule_ar": "رشتان كحد أقصى — تناوب مع SDHI أو فينيل بيرولات",
+      "rotation_compatible_ids": [
+        "frac-m",
+        "frac-c7",
+        "frac-f",
+        "frac-b1"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-g1"
+      ],
+      "cross_resistance_note_ar": "مقاومة متبادلة جزئية بين الأعضاء — فنهيكساميد (FRAC 17) لا مقاومة متبادلة معها",
+      "spectrum_ar": "متوسط — Ascomycetes بشكل رئيسي",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي مبكر",
+      "importance_egypt": "متوسطة — ممتاز ضد Botrytis لكن محظور في أوروبا",
+      "ai_count": 2,
+      "rotation_compatible": [
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        },
+        {
+          "id": "frac-f",
+          "name_ar": "فينيل بيرولات"
+        },
+        {
+          "id": "frac-b1",
+          "name_ar": "بنزيميدازولات"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-g1",
+          "name_ar": "ديكاربوكسيميدات"
+        }
+      ]
+    },
+    {
+      "id": "frac-f",
+      "frac_code": "12",
+      "frac_letter": "E",
+      "frac_subgroup": "E2",
+      "name_ar": "فينيل بيرولات",
+      "name_en": "Phenylpyrroles (PP)",
+      "chemical_class_ar": "فينيل بيرول",
+      "chemical_class_en": "Phenylpyrrole",
+      "MoA_ar": "تثبيط مسار MAP kinase الأسموزي (os-2/HOG1) — موقع مختلف عن الديكاربوكسيميدات — يُعطّل التوازن الأسموزي للخلية",
+      "MoA_en": "Signal transduction — MAP kinase (Os-2, HOG1) — different site from dicarboximides",
+      "MoA_site": "MAP kinase pathway — different from G1",
+      "systemic": false,
+      "resistance_risk_ar": "منخفض إلى متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في جينات os-1 وos-2 — مختلفة عن الديكاربوكسيميدات — المقاومة أبطأ",
+      "max_applications_season": 2,
+      "rotation_rule_ar": "رشتان — تناوب مع SDHI أو ملامسي",
+      "rotation_compatible_ids": [
+        "frac-m",
+        "frac-c7",
+        "frac-b1",
+        "frac-g1"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-f"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع الديكاربوكسيميدات رغم تشابه الآلية",
+      "spectrum_ar": "متوسط — Ascomycetes بشكل رئيسي",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي بامتياز — ممتاز لما بعد الحصاد ومعاملة البذور",
+      "importance_egypt": "عالية — فلودايوكسونيل من أفضل مبيدات معاملة البذور وما بعد الحصاد",
+      "ai_count": 2,
+      "rotation_compatible": [
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        },
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        },
+        {
+          "id": "frac-b1",
+          "name_ar": "بنزيميدازولات"
+        },
+        {
+          "id": "frac-g1",
+          "name_ar": "ديكاربوكسيميدات"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-f",
+          "name_ar": "فينيل بيرولات"
+        }
+      ]
+    },
+    {
+      "id": "frac-c8",
+      "frac_code": "16",
+      "frac_letter": "C",
+      "frac_subgroup": "C8",
+      "name_ar": "مثبطات تخليق الميلانين في Appressorium",
+      "name_en": "Melanin Synthesis Inhibitors — MBI-R",
+      "chemical_class_ar": "تريسيكلازول",
+      "chemical_class_en": "Tricyclazole, Isoprothiolane",
+      "MoA_ar": "تثبيط تخليق الميلانين في الطفيلي الاختراقي (Appressorium) — الميلانين ضروري لاختراق جدار خلية العائل في بلاست الأرز",
+      "MoA_en": "Melanin biosynthesis in appressorium — Reductase step (Scytalone dehydratase)",
+      "MoA_site": "Melanin biosynthesis pathway",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض إلى متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في مسار تخليق الميلانين — بطيئة التطور نسبياً",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "تناوب مع QoI أو DMI في الأرز",
+      "rotation_compatible_ids": [
+        "frac-c5",
+        "frac-c3",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-c8"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع QoI أو DMI",
+      "spectrum_ar": "ضيق جداً — بلاست الأرز فقط (Magnaporthe oryzae)",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي — متخصص جداً",
+      "importance_egypt": "عالية للأرز — الأفضل ضد Rice Blast في الدلتا المصرية",
+      "ai_count": 2,
+      "rotation_compatible": [
+        {
+          "id": "frac-c5",
+          "name_ar": "ستروبيلورينات — مثبطات Qo"
+        },
+        {
+          "id": "frac-c3",
+          "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات"
+        },
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        }
+      ],
+      "rotation_incompatible": [
+        {
+          "id": "frac-c8",
+          "name_ar": "مثبطات تخليق الميلانين في Appressorium"
+        }
+      ]
+    },
+    {
+      "id": "frac-i3",
+      "frac_code": "24",
+      "frac_letter": "I",
+      "frac_subgroup": "I3",
+      "name_ar": "مثبطات التريهالاز — فاليداميسين",
+      "name_en": "Trehalase Inhibitors — Validamycin",
+      "chemical_class_ar": "أمينوغليكوزيد (مضاد حيوي طبيعي)",
+      "chemical_class_en": "Aminoglycoside antibiotic",
+      "MoA_ar": "تثبيط إنزيم تريهالاز — يمنع تكسير تريهالوز (سكر الطاقة في الفطريات) — يُعطّل نمو الهيف وتفرعه",
+      "MoA_en": "Trehalose metabolism — Trehalase inhibition",
+      "MoA_site": "Trehalase enzyme",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض جداً",
+      "resistance_risk_level": 1,
+      "resistance_risk_color": "green",
+      "resistance_mechanism_ar": "لا حالات مقاومة موثقة حتى الآن رغم عقود من الاستخدام في آسيا",
+      "max_applications_season": 999,
+      "rotation_rule_ar": "آمن للتكرار — يُستخدم في أي مرحلة من البرنامج",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c7",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع أي مجموعة",
+      "spectrum_ar": "ضيق — Rhizoctonia solani بشكل رئيسي",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي مبكر",
+      "importance_egypt": "عالية للأرز والقمح — الأفضل والأأمن ضد موت الغمد",
+      "ai_count": 1,
+      "rotation_compatible": [
+        {
+          "id": "frac-c3",
+          "name_ar": "مثبطات ديميثيلاز الستيرول — تريازولات وإيميدازولات"
+        },
+        {
+          "id": "frac-c7",
+          "name_ar": "مثبطات ديهيدروجيناز السوكسينات — SDHI"
+        },
+        {
+          "id": "frac-m",
+          "name_ar": "مبيدات ملامسية متعددة المواقع"
+        }
+      ],
+      "rotation_incompatible": []
+    },
+    {
+      "id": "frac-c9",
+      "frac_code": "27",
+      "frac_letter": "C",
+      "frac_subgroup": "C9",
+      "name_ar": "سيانو أسيتاميد أوكسيم — سيموكسانيل",
+      "name_en": "Cyanoacetamide-oxime — Cymoxanil",
+      "chemical_class_ar": "سيانو أسيتاميد أوكسيم",
+      "chemical_class_en": "Cyanoacetamide-oxime",
+      "MoA_ar": "تثبيط تخليق الأحماض النووية — يُعيق نسخ DNA وتكاثر الفطر داخل خلايا العائل — آلية غير مؤكدة تماماً",
+      "MoA_en": "Nucleic acid synthesis inhibition — uncertain exact target",
+      "MoA_site": "DNA/RNA synthesis (uncertain)",
+      "systemic": true,
+      "resistance_risk_ar": "متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "آلية عمل غير محددة تماماً — المقاومة أبطأ من P3",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "3 رشات كحد أقصى — دائماً في مخاليط مع ملامسي — يُستخدم بديلاً لـ P3 أو إضافةً إليها",
+      "rotation_compatible_ids": [
+        "frac-m",
+        "frac-p3",
+        "frac-p7",
+        "frac-c5"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-c9"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع فنيل أميدات (P3) ولا CAA (P7) — يُستخدم بديلاً فعّالاً",
+      "spectrum_ar": "ضيق — Oomycetes فقط",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي + علاجي ممتاز (حتى 72 ساعة)",
+      "importance_egypt": "عالية جداً — الأكثر تداولاً في مصر في مخاليط مع مانكوزيب",
+      "ai_count": 1
+    },
+    {
+      "id": "frac-c2",
+      "frac_code": "5",
+      "frac_letter": "C",
+      "frac_subgroup": "C2",
+      "name_ar": "مثبطات ديميثيلاز الستيرول — الفئة الثانية (SBI II) — سبيروكسامين",
+      "name_en": "SBI class II — Spiroketalamine / Morpholine subgroup",
+      "chemical_class_ar": "سبيروكيتال أمين، مورفولين",
+      "chemical_class_en": "Spiroketalamine, Morpholine",
+      "MoA_ar": "تثبيط الخطوتين الأخيرتين في مسار تخليق الإرغوستيرول (Δ8→Δ7 isomerase وΔ14-reductase) — مختلف تماماً عن موقع عمل DMI",
+      "MoA_en": "Sterol biosynthesis inhibition — C8 sterol isomerase and C14 reductase (different from DMI)",
+      "MoA_site": "C8-sterol isomerase (ERG2) and C14-reductase",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض إلى متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في إنزيمات Δ8→Δ7 وΔ14 reductase — أبطأ تطوراً من DMI",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "يُستخدم في تناوب مع DMI (C3) — لا مقاومة متبادلة معها",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c5",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-c2"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع DMI (C3) — تناوب فعّال بينهما",
+      "spectrum_ar": "متوسط — فطريات أسكية وبازيدية — ممتاز ضد البياض الدقيقي",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي",
+      "importance_egypt": "متوسطة — ضد البياض الدقيقي حين تنخفض فاعلية DMI",
+      "ai_count": 1
+    },
+    {
+      "id": "frac-c6",
+      "frac_code": "13",
+      "frac_letter": "C",
+      "frac_subgroup": "C6",
+      "name_ar": "مثبطات البياض الدقيقي الانتقائية — Quinoxyfen",
+      "name_en": "Quinoxyfen group — Oxy-pyrimidine fungicides",
+      "chemical_class_ar": "أوكسي بيريميدين",
+      "chemical_class_en": "Oxy-pyrimidine",
+      "MoA_ar": "تثبيط إنتاج الهاوستوريا (Appressoria formation) — يمنع اختراق جدار خلية العائل قبل الإصابة",
+      "MoA_en": "Signal transduction — Appressoria formation and germination inhibition",
+      "MoA_site": "Appressorium formation — signal transduction",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض إلى متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في مسار نقل الإشارة المرتبط بتكوين الهاوستوريا",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "تناوب مع DMI أو QoI أو كبريت",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c5",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-c6"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع DMI أو QoI — تناوب فعّال",
+      "spectrum_ar": "ضيق جداً — البياض الدقيقي فقط (Erysiphales)",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي بامتياز",
+      "importance_egypt": "متوسطة — ضد البياض الدقيقي في الحبوب والعنب",
+      "ai_count": 2
+    },
+    {
+      "id": "frac-q1",
+      "frac_code": "21",
+      "frac_letter": "C",
+      "frac_subgroup": "Qi-inhibitor",
+      "name_ar": "مثبطات Qi في مركب III — سيازوفاميد",
+      "name_en": "QiI Fungicides — Cyazofamid group (Quinone inside Inhibitors)",
+      "chemical_class_ar": "سيانو إيميدازول",
+      "chemical_class_en": "Cyano-imidazole",
+      "MoA_ar": "تثبيط نقل الإلكترون في سلسلة تنفس الميتوكوندريا عند موقع Qi (الداخلي) في مركب III — مختلف عن موقع Qo للستروبيلورينات",
+      "MoA_en": "Complex III: Cytochrome bc1 (Qi site) — different from QoI strobilurins",
+      "MoA_site": "Cytochrome bc1 — Qi site (Complex III)",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض إلى متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في موقع Qi من جين CYTB — مختلفة عن طفرة G143A للستروبيلورينات",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "تناوب مع P3 أو P7 أو C9 — ممتاز حيث انتشرت مقاومة P3",
+      "rotation_compatible_ids": [
+        "frac-p3",
+        "frac-p7",
+        "frac-c9",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-q1"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع QoI رغم نفس مركب الهدف — آلية مختلفة",
+      "spectrum_ar": "ضيق — Oomycetes فقط",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي + علاجي",
+      "importance_egypt": "متوسطة — ضد بياض زغبي العنب والخضروات حين فشل P3",
+      "ai_count": 1
+    },
+    {
+      "id": "frac-p8",
+      "frac_code": "40",
+      "frac_letter": "P",
+      "frac_subgroup": "P8",
+      "name_ar": "أميدات الكاربوكسيل الحديثة — مانديبروباميد (CAA)",
+      "name_en": "Carboxylic Acid Amides — Mandipropamid (Mandelic acid amide)",
+      "chemical_class_ar": "ميندياميد",
+      "chemical_class_en": "Mandelic acid amide",
+      "MoA_ar": "تثبيط تخليق الجلوكان في جدار خلية Oomycetes — نفس موقع عمل ديموثيمورف (CesA3) لكن ارتباط مختلف",
+      "MoA_en": "Cell wall biosynthesis — Cellulose synthase (CesA3) — same target as CAA but different binding",
+      "MoA_site": "Cellulose synthase CesA3",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض إلى متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في جين CesA3 — أبطأ من P3 — مقاومة جزئية مع P7",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "تناوب مع P3 وC9 — دائماً مع ملامسي",
+      "rotation_compatible_ids": [
+        "frac-p3",
+        "frac-c9",
+        "frac-q1",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-p7",
+        "frac-p8"
+      ],
+      "cross_resistance_note_ar": "مقاومة متبادلة جزئية مع P7 (ديموثيمورف) — تناوب فعّال مع P3 وC9",
+      "spectrum_ar": "ضيق — Oomycetes فقط",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي + علاجي ممتاز",
+      "importance_egypt": "عالية — فعّال حيث ظهرت مقاومة لـ P7",
+      "ai_count": 1
+    },
+    {
+      "id": "frac-q2",
+      "frac_code": "45",
+      "frac_letter": "C",
+      "frac_subgroup": "QiI-2",
+      "name_ar": "مثبطات Qi الثانية — أميتوكترادين",
+      "name_en": "QiI-2 — Ametoctradin (2-aminopyrimidine)",
+      "chemical_class_ar": "2-أمينو بيريميدين",
+      "chemical_class_en": "2-aminopyrimidine",
+      "MoA_ar": "تثبيط سلسلة التنفس عند موقع bc1 Qi — مشابه لـ FRAC 21 لكن بنية كيميائية مختلفة",
+      "MoA_en": "Respiration inhibitor — Complex III Qi site (2-aminopyrimidine class)",
+      "MoA_site": "Cytochrome bc1 — Qi site",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض إلى متوسط",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "طفرات في موقع Qi — مختلفة عن G143A",
+      "max_applications_season": 3,
+      "rotation_rule_ar": "دائماً في مخاليط مع DMI أو P3 — ضد Oomycetes",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-p3",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-q1",
+        "frac-q2"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع QoI أو P3",
+      "spectrum_ar": "ضيق — Oomycetes فقط",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي + علاجي",
+      "importance_egypt": "متوسطة — يُستخدم في مخاليط مع DMI ضد بياض زغبي العنب",
+      "ai_count": 1
+    },
+    {
+      "id": "frac-o1",
+      "frac_code": "49",
+      "frac_letter": "C",
+      "frac_subgroup": "OSBPI",
+      "name_ar": "مثبطات ارتباط الأوكسيستيرول — أوكساثيابيبرولين",
+      "name_en": "Oxysterol binding protein inhibitors (OSBPI) — Oxathiapiprolin",
+      "chemical_class_ar": "بيبيريديل ثيازول إيزوكسازولين",
+      "chemical_class_en": "Piperidinyl thiazole isoxazoline",
+      "MoA_ar": "تثبيط بروتين ارتباط الأوكسيستيرول (OSBP1) — مسار مختلف كلياً عن كل المجموعات السابقة — يُعطّل توزيع الدهون في الخلية",
+      "MoA_en": "Oxysterol binding protein 1 (OSBP1) inhibition — completely novel mode of action",
+      "MoA_site": "Oxysterol binding protein (OSBP1)",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض (مجموعة جديدة — لا مقاومة بعد)",
+      "resistance_risk_level": 1,
+      "resistance_risk_color": "green",
+      "resistance_mechanism_ar": "لا حالات مقاومة موثقة حتى الآن — آلية جديدة كلياً",
+      "max_applications_season": 2,
+      "rotation_rule_ar": "رشتان كحد أقصى — احفظها للحالات الصعبة — تناوب مع P3 وP7 وC9",
+      "rotation_compatible_ids": [
+        "frac-p3",
+        "frac-p7",
+        "frac-c9",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-o1"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع أي مجموعة — فعّالة حتى حيث فشلت P3 وP7",
+      "spectrum_ar": "ضيق — Oomycetes فقط — فعّالية عالية جداً بجرعات صغيرة",
+      "target_oomycetes": true,
+      "activity_ar": "وقائي + علاجي ممتاز بجرعات منخفضة جداً",
+      "importance_egypt": "متوسطة (جديد — قيد التسجيل في بعض الدول)",
+      "ai_count": 1
+    },
+    {
+      "id": "frac-p9",
+      "frac_code": "50",
+      "frac_letter": "C",
+      "frac_subgroup": "Picolinamide",
+      "name_ar": "بيكولينيل فيوران — فنبيكوكساميد",
+      "name_en": "Picolinamide fungicides — Fenpicoxamid",
+      "chemical_class_ar": "بيكولينيل فيوران أميد",
+      "chemical_class_en": "Picolinamide",
+      "MoA_ar": "تثبيط مركب III في سلسلة التنفس عند الجانب Qo لكن بموقع ارتباط مختلف عن الستروبيلورينات — لا مقاومة متبادلة مع QoI",
+      "MoA_en": "Complex III Qo site — different binding pocket from strobilurins — no cross-resistance with QoI",
+      "MoA_site": "Cytochrome bc1 Qo — different binding from QoI",
+      "systemic": true,
+      "resistance_risk_ar": "منخفض (جديد)",
+      "resistance_risk_level": 2,
+      "resistance_risk_color": "yellow",
+      "resistance_mechanism_ar": "لا حالات مقاومة موثقة — آلية ارتباط مختلفة عن QoI",
+      "max_applications_season": 2,
+      "rotation_rule_ar": "رشتان — تناوب مع DMI أو SDHI",
+      "rotation_compatible_ids": [
+        "frac-c3",
+        "frac-c7",
+        "frac-m"
+      ],
+      "rotation_incompatible_ids": [
+        "frac-p9"
+      ],
+      "cross_resistance_note_ar": "لا مقاومة متبادلة مع QoI (FRAC 11) رغم نفس مركب الهدف — فعّال ضد السلالات المقاومة",
+      "spectrum_ar": "واسع — فطريات أسكية وبازيدية في الحبوب",
+      "target_oomycetes": false,
+      "activity_ar": "وقائي + علاجي",
+      "importance_egypt": "منخفضة حالياً — جديد قيد التسجيل",
+      "ai_count": 1
+    }
+  ]
+}

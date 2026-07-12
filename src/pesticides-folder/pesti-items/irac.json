@@ -4,7 +4,7 @@
   "name_en": "Insecticide & Acaricide Active Ingredients — IRAC Classified",
   "source": "IRAC MoA Classification v10.4 (2024)",
   "version": "1.0.0",
-  "total_count": 62,
+  "total_count": 72,
   "items": [
     {
       "id": "iai-001",
@@ -5086,6 +5086,318 @@
       "regulatory_ar": "مسجل ومتاح — مُسموح في الزراعة العضوية",
       "safety_notes_ar": "آمن تماماً على الثدييات والنحل والأعداء الطبيعية والبيئة",
       "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "irac_code": "22B",
+      "irac_name_en": "Semicarbazones",
+      "name_ar": "السيماكاربوزونات",
+      "mode_of_action_ar": "Voltage-dependent sodium channel blockers – مشابهة للأوكساديازينات لكن بموقع ارتباط مختلف.",
+      "active_ingredients": [
+        {
+          "name_ar": "ميتافلوميزون",
+          "name_en": "Metaflumizone",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن والخضر والفواكه",
+              "crop_ar": "القطن والخضر"
+            },
+            {
+              "pest_ar": "الحشرات القارضة والزاحفة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً."
+        }
+      ],
+      "irac_rotation_advice": "فعال ضد المقاومة للبيرثرويدات – تناوب مع 28"
+    },
+    {
+      "irac_code": "2A",
+      "irac_name_en": "Cyclodiene Organochlorines",
+      "name_ar": "السيكلوديين العضوية الكلورية",
+      "mode_of_action_ar": "تثبيط قنوات كلوريد GABA في الأعصاب، مما يؤدي إلى فرط تنبيه وتشنجات ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "إندوسلفان",
+          "name_en": "Endosulfan",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "محظور في مصر",
+          "recommendations": [
+            {
+              "pest_ar": "الحشرات القارضة وصانعات الأنفاق",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "الخضروات"
+            }
+          ],
+          "safety_notes_ar": "محظور أو محدود الاستخدام – استبدل بمبيدات حديثة."
+        },
+        {
+          "name_ar": "كلوردين",
+          "name_en": "Chlordane",
+          "nature_of_action_ar": "ملامسة",
+          "egypt_status": "محظور في مصر",
+          "recommendations": [
+            {
+              "pest_ar": "الحشرات القارضة في الحبوب",
+              "crop_ar": "المخازن"
+            },
+            {
+              "pest_ar": "الآفات الطائرة والزاحفة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "محظور – استبدل بمبيدات حديثة."
+        }
+      ],
+      "irac_rotation_advice": "محظور في معظم الدول بما فيها مصر – لا تستخدم"
+    },
+    {
+      "irac_code": "3B",
+      "irac_name_en": "Organochlorines - DDT derivatives",
+      "name_ar": "الكلور العضوية (مشتقات DDT)",
+      "mode_of_action_ar": "إطالة فتح قنوات الصوديوم في الأعصاب، مع ثبات بيئي طويل.",
+      "active_ingredients": [
+        {
+          "name_ar": "ميثوكسيكلور",
+          "name_en": "Methoxychlor",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "مقيد",
+          "recommendations": [
+            {
+              "pest_ar": "الحشرات القارضة والزاحفة",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "الخضر والمحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "تجنب القرب من المياه + تقليل الاستخدام بسبب التراكم البيئي."
+        }
+      ],
+      "irac_rotation_advice": "قلل الاستخدام بسبب الثبات البيئي"
+    },
+    {
+      "irac_code": "4B",
+      "irac_name_en": "Nicotine",
+      "name_ar": "النيكوتين",
+      "mode_of_action_ar": "تنشيط مستقبلات nAChR، سريع التأثير ويستهدف الحشرات الماصة والزاحفة.",
+      "active_ingredients": [
+        {
+          "name_ar": "نيكوتين",
+          "name_en": "Nicotine",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد بحذر",
+          "recommendations": [
+            {
+              "pest_ar": "المن والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "النمل الأبيض والصراصير",
+              "crop_ar": "الزاحفة"
+            }
+          ],
+          "safety_notes_ar": "سام جدًا للبشر – معدات وقاية كاملة + تجنب القرب من المياه."
+        }
+      ],
+      "irac_rotation_advice": "استخدام محدود لتقليل المقاومة"
+    },
+    {
+      "irac_code": "4D",
+      "irac_name_en": "Butenolides",
+      "name_ar": "البيوتينواليدز",
+      "mode_of_action_ar": "تنشيط nAChR، جهازي وينتشر داخل النبات.",
+      "active_ingredients": [
+        {
+          "name_ar": "فلوبيراديفور",
+          "name_en": "Flupyradifurone",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن الأبيض والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الحشرات الماصة",
+              "crop_ar": "القطن والذرة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + تجنب الخلط غير المتوافق."
+        }
+      ],
+      "irac_rotation_advice": "فعال ضد الحشرات الماصة"
+    },
+    {
+      "irac_code": "4E",
+      "irac_name_en": "Pyridylidenes",
+      "name_ar": "البيريديلدينات",
+      "mode_of_action_ar": "تثبيط nAChR، جهازي وينتشر داخل النبات.",
+      "active_ingredients": [
+        {
+          "name_ar": "فلوبيريمين",
+          "name_en": "Flupyrimin",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن الأبيض والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الحشرات الماصة",
+              "crop_ar": "القطن والذرة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + مراقبة النباتات."
+        }
+      ],
+      "irac_rotation_advice": "تناوب مع مجموعات أخرى"
+    },
+    {
+      "irac_code": "29",
+      "irac_name_en": "Flonicamid",
+      "name_ar": "الفلونيكاميد",
+      "mode_of_action_ar": "تثبيط التغذية لدى الحشرات الماصة عن طريق الجهاز العصبي المركزي.",
+      "active_ingredients": [
+        {
+          "name_ar": "فلونيكاميد",
+          "name_en": "Flonicamid",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن الأبيض والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الحشرات الماصة",
+              "crop_ar": "القطن والذرة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً."
+        }
+      ],
+      "irac_rotation_advice": "فعال ضد المقاومة للنيونيكوتينويدات"
+    },
+    {
+      "irac_code": "7C",
+      "irac_name_en": "Juvenile Hormone Mimics",
+      "name_ar": "منظمات النمو الحشرية – شبيهات هرمون اليفاعة",
+      "mode_of_action_ar": "محاكاة هرمون اليفاعة → منع التحول والانسلاخ → عقم وانخفاض تعداد الآفة (يؤثر على الأطوار غير الكاملة).",
+      "active_ingredients": [
+        {
+          "name_ar": "بيريبروكسيفين",
+          "name_en": "Pyriproxyfen",
+          "nature_of_action_ar": "ملامسة وجهازي محدود",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الذبابة البيضاء",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "المن والحشرات القشرية",
+              "crop_ar": "الموالح والزينة"
+            }
+          ],
+          "safety_notes_ar": "لا يعطي نتيجة سريعة على الكاملة – استخدم في المراحل المبكرة + IPM."
+        },
+        {
+          "name_ar": "فينوكسكارب",
+          "name_en": "Fenoxycarb",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الحشرات القشرية والبق الدقيقي",
+              "crop_ar": "الموالح والفاكهة"
+            },
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "الخضر والزينة"
+            }
+          ],
+          "safety_notes_ar": "استخدم عند وجود البيض واليرقات + IPM."
+        }
+      ],
+      "irac_rotation_advice": "مناسب لبرامج IPM – يؤثر على الأجيال التالية"
+    },
+    {
+      "irac_code": "18",
+      "irac_name_en": "Ecdysone receptor agonists",
+      "name_ar": "محفزات الانسلاخ (Diacylhydrazines)",
+      "mode_of_action_ar": "محاكاة هرمون الانسلاخ → انسلاخ مبكر غير طبيعي → موت اليرقات.",
+      "active_ingredients": [
+        {
+          "name_ar": "تيبوفينزويد",
+          "name_en": "Tebufenozide",
+          "nature_of_action_ar": "معدة وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن وديدان الأوراق",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "يؤثر على اليرقات الصغيرة + IPM."
+        },
+        {
+          "name_ar": "ميثوكسي فينوزيد",
+          "name_en": "Methoxyfenozide",
+          "nature_of_action_ar": "معدة وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان اللوز وديدان التفاح",
+              "crop_ar": "القطن والخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "يؤثر على اليرقات الصغيرة + IPM."
+        },
+        {
+          "name_ar": "هالوفينوزيد",
+          "name_en": "Halofenozide",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "يرقات الحشرات القارضة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "يؤثر على اليرقات الصغيرة + IPM."
+        }
+      ],
+      "irac_rotation_advice": "تناوب مع مجموعات أخرى"
+    },
+    {
+      "irac_code": "20D",
+      "irac_name_en": "Mite growth inhibitors (Bifenazate)",
+      "name_ar": "مثبطات نقل الإلكترون في الميتوكوندريا – موقع I",
+      "mode_of_action_ar": "تثبيط نقل الإلكترونات (Complex I) → إيقاف ATP → موت الأكاروسات.",
+      "active_ingredients": [
+        {
+          "name_ar": "بيفينازات",
+          "name_en": "Bifenazate",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "العنكبوت الأحمر والأكاروسات",
+              "crop_ar": "الخضر والفاكهة والموالح"
+            }
+          ],
+          "safety_notes_ar": "متخصص للأكاروسات – تناوب مع أكاروسات أخرى."
+        }
+      ],
+      "irac_rotation_advice": "تناوب مع 10A أو 23"
     }
   ]
 }

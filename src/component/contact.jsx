@@ -1,9 +1,80 @@
-// components/home/ContactSection.jsx
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Leaf, Send, ChevronLeft } from 'lucide-react';
 import { toast } from 'sonner';
-import './contact.css';
 
-const ContactSection = () => {
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+  })
+};
+
+function SectionShell({ id, children, className = "" }) {
+  return (
+    <section
+      id={id}
+      className={`relative border-t border-b border-gray-200/60 dark:border-white/[0.06] bg-gradient-to-b from-gray-50 to-white dark:from-[oklch(0.19_0.03_155)] dark:to-[oklch(0.14_0.02_155)] overflow-x-hidden ${className}`}
+    >
+      <div className="absolute inset-0 grid-bg opacity-[0.15] dark:opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)] pointer-events-none" />
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-primary/5 dark:bg-primary/10 blur-[120px] pointer-events-none" />
+      <div className="relative">{children}</div>
+    </section>
+  );
+}
+
+function SectionHeader({ eyebrow, title, subtitle }) {
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-80px" }}
+      variants={fadeUp}
+      className="text-center space-y-2 sm:space-y-3 mb-6 sm:mb-8 lg:mb-12"
+    >
+      <div className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] text-primary">{eyebrow}</div>
+      <h2 className="text-xl sm:text-3xl md:text-[42px] font-black tracking-tight leading-[1.3] text-gray-900 dark:text-white">{title}</h2>
+      {subtitle && <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-[11px] sm:text-sm px-2">{subtitle}</p>}
+    </motion.div>
+  );
+}
+
+function FacebookIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+    </svg>
+  );
+}
+
+function YoutubeIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505a3.017 3.017 0 00-2.122 2.136C0 8.055 0 12 0 12s0 3.945.501 5.814a3.015 3.015 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.945 24 12 24 12s0-3.945-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+    </svg>
+  );
+}
+
+function SparklesIcon({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M12 3l1.5 5.5L18 10l-4.5 1.5L12 17l-1.5-5.5L6 10l4.5-1.5z" />
+      <path d="M18.5 5l.5 2 2 .5-2 .5-.5 2-.5-2-2-.5 2-.5z" />
+    </svg>
+  );
+}
+
+function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -27,221 +98,194 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     const response = await fetch('/api/contact', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(formData),
-  });
-  
-  const result = await response.json();
-  if (result.success) toast("تم الإرسال بنجاح!","success");
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
 
-    
-    // محاكاة إرسال النموذج
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      
-      // إخفاء رسالة النجاح بعد 5 ثواني
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    const result = await response.json();
+    if (result.success) {
+      toast.success("تم الإرسال بنجاح!");
+    } else {
+      toast.error(result.message || "حدث خطأ أثناء الإرسال");
+    }
+
+    setIsSubmitting(false);
+    setSubmitStatus('success');
+    setFormData({ name: '', email: '', phone: '', message: '' });
+    setTimeout(() => setSubmitStatus(null), 5000);
   };
 
   const contactInfo = [
-    {
-      icon: '📞',
-      title: 'اتصل بنا',
-      details: '+20 11 02118765',
-      subDetails: 'السبت - الخميس '
-    },
-    {
-      icon: '✉️',
-      title: 'البريد الإلكتروني',
-      details: 'elhfnaweedowidar21@gmail.com',
-      subDetails: 'نرد خلال 24 ساعة'
-    },
-    {
-      icon: '📍',
-      title: 'العنوان',
-      details: 'المنوفيه . مصر',
-      subDetails: 'تلا'
-    }
+    { icon: Mail, title: "البريد الإلكتروني", value: "elhfnaweedowidar21@gmail.com" },
+    { icon: Phone, title: "الهاتف", value: "+20 11 02118765" },
+    { icon: MapPin, title: "العنوان", value: "المنوفيه . مصر" },
+  ];
+
+  const socialLinks = [
+    { href: "https://www.facebook.com/elhfnawee.dowidar.5", icon: FacebookIcon, label: "Facebook" },
+    { href: "https://wa.me/+201102118765", icon: Send, label: "WhatsApp" },
+    { href: "https://www.youtube.com/@Eng-elhefnawy", icon: YoutubeIcon, label: "YouTube" },
+    { href: "#", icon: InstagramIcon, label: "Instagram" },
+    { href: "#", icon: SparklesIcon, label: "More" },
   ];
 
   return (
-    <section className="hefno-contact" dir="rtl">
-      {/* خلفية زخرفية */}
-      <div className="hefno-contact-bg">
-        <div className="hefno-contact-glow"></div>
-        <div className="hefno-contact-particles"></div>
-        <div className="hefno-contact-leaves">
-          <div className="hefno-leaf leaf-1"></div>
-          <div className="hefno-leaf leaf-2"></div>
-          <div className="hefno-leaf leaf-3"></div>
-        </div>
-      </div>
+    <SectionShell id="contact" className="py-12 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-14">
+      <SectionHeader
+        eyebrow="CONTACT US"
+        title={
+          <>
+            نحن هنا <span className="text-gradient">لمساعدتك</span>
+            <Leaf className="inline-block size-7 text-primary ms-2 -translate-y-1" />
+          </>
+        }
+        subtitle="فريقنا متاح للإجابة على استفساراتك وتقديم الدعم الفني"
+      />
 
-      <div className="hefno-contact-container">
-        {/* عنوان القسم */}
-        <div className="hefno-contact-header">
-          <div className="hefno-contact-tag">
-            <span className="hefno-tag-icon">🌱</span>
-            <span className="hefno-tag-text">تواصل معنا</span>
-          </div>
-          <h2 className="hefno-contact-title">
-            <span className="hefno-title-highlight">كيف نقدر نساعدك؟</span>
-          </h2>
-          <p className="hefno-contact-subtitle">
-            فريقنا متاح للإجابة على استفساراتك وتقديم الدعم الفني
-          </p>
-        </div>
-
-        <div className="hefno-contact-wrapper">
-          {/* معلومات الاتصال */}
-          <div className="hefno-contact-info">
-            {contactInfo.map((item, index) => (
-              <div key={index} className="hefno-info-card">
-                <div className="hefno-info-icon-wrapper">
-                  <span className="hefno-info-icon">{item.icon}</span>
-                  <div className="hefno-info-glow"></div>
-                </div>
-                <div className="hefno-info-content">
-                  <h3 className="hefno-info-title">{item.title}</h3>
-                  <p className="hefno-info-details">{item.details}</p>
-                  <p className="hefno-info-subdetails">{item.subDetails}</p>
-                </div>
+      <div className="relative mx-auto max-w-[1200px] grid grid-cols-1 md:grid-cols-[1fr_1.4fr] lg:grid-cols-[1fr_1.4fr_1fr] gap-3 sm:gap-4 lg:gap-5">
+        {/* Contact info card */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="glass-strong rounded-2xl sm:rounded-3xl p-4 sm:p-6 space-y-4 sm:space-y-5 border border-gray-200 dark:border-white/[0.08]"
+        >
+          {contactInfo.map((c) => (
+            <div key={c.title} className="flex items-start gap-3">
+              <div className="size-9 sm:size-10 rounded-xl bg-primary/15 dark:bg-primary/15 border border-primary/30 dark:border-primary/30 grid place-items-center shrink-0">
+                <c.icon className="size-4 sm:size-4 text-primary" />
               </div>
-            ))}
-
-            {/* وسائل التواصل الاجتماعي */}
-            <div className="hefno-social-wrapper">
-              <h4 className="hefno-social-title">تابعنا على</h4>
-            <div className="hefno-social-wrapper">
-  <a href="https://www.facebook.com/elhfnawee.dowidar.5" className="hefno-social-btn facebook" aria-label="Facebook" target="_blank" rel="noreferrer">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-  </a>
-
-  <a href="https://wa.me/+201102118765" className="hefno-social-btn whatsapp" aria-label="WhatsApp" target="_blank" rel="noreferrer">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.431 5.63 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-
-  <a href="https://www.youtube.com/@Eng-elhefnawy" className="hefno-social-btn youtube" aria-label="YouTube" target="_blank" rel="noreferrer">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505a3.017 3.017 0 00-2.122 2.136C0 8.055 0 12 0 12s0 3.945.501 5.814a3.015 3.015 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.945 24 12 24 12s0-3.945-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-  </a>
-
-  <a href="https://www.tiktok.com/@elhefnawyde" className="hefno-social-btn tiktok" aria-label="TikTok" target="_blank" rel="noreferrer">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.9-.32-1.98-.23-2.8.12-.79.38-1.46 1.07-1.7 1.9-.13.45-.15.92-.12 1.39.07 1.18.81 2.25 1.88 2.77 1.02.59 2.42.51 3.4-.16.64-.42 1.08-1.1 1.29-1.85.17-.48.18-.99.18-1.48-.01-5.07 0-10.14-.02-15.21z"/></svg>
-  </a>
-</div>
+              <div>
+                <div className="text-[12px] sm:text-[13px] font-bold text-gray-900 dark:text-white">{c.title}</div>
+                <div className="text-[11px] sm:text-[12px] text-gray-500 dark:text-muted-foreground mt-0.5">{c.value}</div>
+              </div>
             </div>
-          </div>
+          ))}
+        </motion.div>
 
-          {/* نموذج الاتصال */}
-          <div className="hefno-contact-form-wrapper">
-            <div className="hefno-form-glass"></div>
-            <form className="hefno-contact-form" onSubmit={handleSubmit}>
-              <h3 className="hefno-form-title">أرسل لنا رسالة</h3>
-              
-              <div className="hefno-form-group">
-                <label htmlFor="name" className="hefno-form-label">الاسم كامل</label>
+        {/* Form */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-gray-200 dark:border-white/[0.08] bg-white dark:bg-gray-800/70 dark:backdrop-blur-xl shadow-lg dark:shadow-none"
+        >
+          <form className="space-y-3 sm:space-y-3" onSubmit={handleSubmit}>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <div>
+                <label className="text-[11px] text-gray-500 dark:text-muted-foreground mb-1.5 block">الاسم كامل</label>
                 <input
-                  type="text"
-                  id="name"
                   name="name"
-                  className="hefno-form-input"
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="أدخل اسمك الكامل"
+                  placeholder="اسمك"
+                  className="w-full rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-200 dark:border-white/[0.08] px-4 py-2.5 text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-primary transition-colors"
                 />
               </div>
-
-              <div className="hefno-form-row">
-                <div className="hefno-form-group">
-                  <label htmlFor="email" className="hefno-form-label">البريد الإلكتروني</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="hefno-form-input"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="example@domain.com"
-                  />
-                </div>
-
-                <div className="hefno-form-group">
-                  <label htmlFor="phone" className="hefno-form-label">رقم الهاتف</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="hefno-form-input"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+20 XXX XXX XXXX"
-                  />
-                </div>
-              </div>
-
-              <div className="hefno-form-group">
-                <label htmlFor="message" className="hefno-form-label">الرسالة</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  className="hefno-form-textarea"
-                  value={formData.message}
+              <div>
+                <label className="text-[11px] text-gray-500 dark:text-muted-foreground mb-1.5 block">البريد الإلكتروني</label>
+                <input
+                  name="email"
+                  type="email"
+                  value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="اكتب رسالتك هنا..."
-                  rows="5"
-                ></textarea>
+                  dir="ltr"
+                  placeholder="you@email.com"
+                  className="w-full rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-200 dark:border-white/[0.08] px-4 py-2.5 text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-primary transition-colors text-right"
+                />
               </div>
-
-              <button 
-                type="submit" 
-                className="hefno-form-submit"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <span>جاري الإرسال...</span>
-                ) : (
-                  <span>
-                    إرسال الرسالة
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M17 10L3 10M17 10L13 14M17 10L13 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                    </svg>
-                  </span>
-                )}
-              </button>
-
-              {submitStatus === 'success' && (
-                <div className="hefno-form-success">
-                  تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
-                </div>
+            </div>
+            <div>
+              <label className="text-[11px] text-gray-500 dark:text-muted-foreground mb-1.5 block">رقم الهاتف</label>
+              <input
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+20 XXX XXX XXXX"
+                className="w-full rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-200 dark:border-white/[0.08] px-4 py-2.5 text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-primary transition-colors"
+              />
+            </div>
+            <div>
+              <label className="text-[11px] text-gray-500 dark:text-muted-foreground mb-1.5 block">الرسالة</label>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                placeholder="اكتب رسالتك هنا..."
+                className="w-full rounded-xl bg-gray-50 dark:bg-gray-900/70 border border-gray-200 dark:border-white/[0.08] px-4 py-2.5 text-sm text-gray-900 dark:text-gray-100 outline-none focus:border-primary transition-colors resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-emerald-400 to-primary text-primary-foreground dark:text-white py-3 text-sm font-bold shadow-[0_10px_30px_-8px_rgba(82,183,136,0.6)] hover:brightness-110 transition-all disabled:opacity-60"
+            >
+              {isSubmitting ? "جاري الإرسال..." : (
+                <>
+                  إرسال الرسالة
+                  <Send className="size-4" />
+                </>
               )}
-            </form>
-          </div>
-        </div>
+            </button>
+            {submitStatus === 'success' && (
+              <div className="text-center text-sm text-primary font-bold py-2 rounded-xl bg-primary/10 dark:bg-primary/15 border border-primary/20 dark:border-primary/30">
+                تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
+              </div>
+            )}
+          </form>
+        </motion.div>
 
-        {/* خريطة موقع (اختياري) */}
-        {/* <div className="hefno-location-card">
-  <div className="hefno-map-overlay"></div>
-  <div className="hefno-map-container">
-    <div className="hefno-map-info">
-      <span className="hefno-pin-pulse">📍</span>
-      <span className="hefno-author-tag"> 
-        <a href="https://wa.me/+201025374656" target="_blank" rel="noreferrer">
-          Made By Uncle Sam
-        </a>
-      </span>
-    </div>
-  </div>
-        </div> */}
+        {/* Follow + response */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="space-y-3 sm:space-y-4 lg:space-y-5"
+        >
+          <div className="glass-strong rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-gray-200 dark:border-white/[0.08]">
+            <div className="flex items-center justify-between mb-4">
+              <div className="text-[13px] font-bold text-gray-900 dark:text-white">تابعنا</div>
+              <ChevronLeft className="size-4 text-gray-400 dark:text-muted-foreground" />
+            </div>
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
+              {socialLinks.map((s, i) => (
+                <a
+                  key={i}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="aspect-square rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 grid place-items-center text-gray-600 dark:text-white hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all"
+                >
+                  <s.icon className="size-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="glass-strong rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-gray-200 dark:border-white/[0.08]">
+            <div className="text-[10px] sm:text-[11px] text-gray-500 dark:text-muted-foreground mb-2 uppercase tracking-wider">
+              نرد عادة خلال
+            </div>
+            <div className="flex items-end gap-2">
+              <div className="text-4xl sm:text-5xl font-black text-primary leading-none">24</div>
+              <div className="text-sm text-gray-500 dark:text-muted-foreground pb-1">ساعة</div>
+            </div>
+            <div className="mt-4 h-1.5 rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden">
+              <div className="h-full w-3/4 bg-gradient-to-r from-emerald-400 to-primary rounded-full" />
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </section>
+    </SectionShell>
   );
-};
+}
 
 export default ContactSection;

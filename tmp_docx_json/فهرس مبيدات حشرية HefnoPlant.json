@@ -1,0 +1,112 @@
+{
+  "id": "irac_master_index",
+  "name_ar": "فهرس قاعدة بيانات المبيدات الحشرية والأكاروسية IRAC",
+  "name_en": "IRAC Insecticide & Acaricide Database Master Index",
+  "version": "1.0.0",
+  "status": "production_ready",
+  "source": "IRAC Mode of Action Classification v10.4 (2024)",
+  "scope": "مصر والوطن العربي",
+  "quality_checks": {
+    "commercial_brands": false,
+    "ids_unique": true,
+    "all_ai_have_pests": true,
+    "all_groups_covered": true,
+    "rotation_programs_complete": true
+  },
+  "summary": {
+    "total_groups": 20,
+    "total_active_ingredients": 62,
+    "total_relationships": 343,
+    "total_rotation_programs": 10,
+    "total_crops_covered": 10,
+    "total_pests_covered": 26,
+    "total_size_kb": 406
+  },
+  "files": [
+    {
+      "file": "irac_01_groups.json",
+      "key": "groups",
+      "count": 20,
+      "description": "مجموعات IRAC — آلية العمل وخطر المقاومة وقواعد التناوب"
+    },
+    {
+      "file": "irac_02_active_ingredients.json",
+      "key": "items",
+      "count": 62,
+      "description": "المواد الفعالة — جرعات وتطبيق ومقاومة وآفات مستهدفة"
+    },
+    {
+      "file": "irac_03_relationships.json",
+      "key": "relationships",
+      "count": 343,
+      "description": "جدول علاقات مادة فعالة ↔ آفة — بحث في الاتجاهين"
+    },
+    {
+      "file": "irac_04_rotation_programs.json",
+      "key": "programs",
+      "count": 10,
+      "description": "برامج تناوب جاهزة للمحاصيل الرئيسية"
+    }
+  ],
+  "use_cases": {
+    "search_by_ai": "items.find(a => a.id === 'iai-032')  // أبامكتين",
+    "search_by_pest": "relationships.filter(r => r.pest_id === 'pest-12').sort((a,b) => b.efficacy_level - a.efficacy_level)",
+    "resistance_warning": "ai.resistance.risk_level >= 4  // بيريثرويدات ونيونيكوتينويدات",
+    "safe_rotation": "groups.find(g => g.id === ai.irac_group_id).rotation_compatible_ids",
+    "rotation_program": "programs.find(p => p.crop === 'طماطم')",
+    "acaricides_only": "items.filter(a => a.target_pests.some(p => p.id.startsWith('pest-2')))",
+    "bio_safe": "items.filter(a => a.resistance.risk_level === 1)",
+    "organic_allowed": "items.filter(a => a.irac_group_id === 'irac-11a' || a.irac_group_id === 'irac-un')",
+    "cross_resistance": "ai.resistance.cross_resistance_groups"
+  },
+  "groups_by_risk": {
+    "very_high_4": [
+      "irac-1a",
+      "irac-1b",
+      "irac-3a",
+      "irac-4a"
+    ],
+    "high_3": [
+      "irac-2b",
+      "irac-4c",
+      "irac-28"
+    ],
+    "medium_2": [
+      "irac-5",
+      "irac-6",
+      "irac-7",
+      "irac-9c",
+      "irac-10",
+      "irac-11a",
+      "irac-13",
+      "irac-15",
+      "irac-21a",
+      "irac-22a"
+    ],
+    "low_1": [
+      "irac-18a",
+      "irac-23",
+      "irac-un"
+    ]
+  },
+  "crops_with_programs": [
+    "أرز",
+    "تفاح وكمثرى وخوخ ومشمش",
+    "حمضيات",
+    "خيار وقرعيات",
+    "طماطم",
+    "عنب",
+    "فراولة",
+    "فلفل",
+    "قطن",
+    "قمح وشعير"
+  ],
+  "key_rotation_rules": [
+    "لا تكرر نفس مجموعة IRAC في رشتين متتاليتين",
+    "رشتان كحد أقصى من نفس المجموعة في الموسم",
+    "احفظ مجموعة 28 (الدايامايد) للضغط العالٍ فقط",
+    "أدرج Bt والكائنات الحيوية (11A) في كل برنامج",
+    "طفرة kdr في 3A ومقاومة 4A منتشرتان في مصر — تناوب إلزامي",
+    "المجموعات 6 و5 و23 أقل خطراً للمقاومة — احفظها"
+  ]
+}

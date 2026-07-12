@@ -1,0 +1,1571 @@
+{
+  "platform": "HefnoPlant",
+  "version": "1.0.0",
+  "description": "قاعدة المعرفة الشاملة للشات الذكي - تغطي جميع المجالات الزراعية",
+  "last_updated": "2026-04-10",
+  "diseases": [
+    {
+      "id": "dis_001",
+      "name_ar": "اللفحة المتأخرة",
+      "scientific_name": "Phytophthora infestans",
+      "type": "فطري (أوميسيتس)",
+      "symptoms_ar": "بقع مائية زيتية على الأوراق تتحول للبني، نمو أبيض رمادي على الجانب السفلي للأوراق، تعفن سريع للثمار والدرنات، رائحة كريهة للنبات المصاب",
+      "conditions_ar": "رطوبة نسبية فوق 85%، درجة حرارة 10-25°م، وجود قطرات ماء على الأوراق لأكثر من 10 ساعات",
+      "crops": [
+        "طماطم",
+        "بطاطس",
+        "فلفل",
+        "باذنجان"
+      ],
+      "severity": "عالية جداً",
+      "spread_method": "بالرياح والمطر والتربة الملوثة",
+      "pesticides": [
+        {
+          "name_ar": "ميتالاكسيل + مانكوزيب",
+          "active_ingredient": "Metalaxyl + Mancozeb",
+          "type": "وقائي وعلاجي",
+          "dosage_per_liter": "2.5 جم/لتر",
+          "dosage_per_feddan": "500 جم/فدان",
+          "withdrawal_period": 14,
+          "application_method": "رش على الأوراق",
+          "notes": "يجب الرش وقائياً قبل ظهور الأعراض"
+        },
+        {
+          "name_ar": "ديميثومورف + مانكوزيب",
+          "active_ingredient": "Dimethomorph + Mancozeb",
+          "type": "علاجي",
+          "dosage_per_liter": "2 جم/لتر",
+          "dosage_per_feddan": "400 جم/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق",
+          "notes": "فعال في علاج الإصابات المبكرة"
+        },
+        {
+          "name_ar": "فلوبيكوليد + بروباموكارب",
+          "active_ingredient": "Fluopicolide + Propamocarb",
+          "type": "علاجي متقدم",
+          "dosage_per_liter": "1.5 مل/لتر",
+          "dosage_per_feddan": "300 مل/فدان",
+          "withdrawal_period": 3,
+          "application_method": "رش على الأوراق",
+          "notes": "فعال جداً ضد السلالات المقاومة"
+        },
+        {
+          "name_ar": "مركبات النحاس (بوردو)",
+          "active_ingredient": "Copper hydroxide",
+          "type": "وقائي",
+          "dosage_per_liter": "2-3 جم/لتر",
+          "dosage_per_feddan": "500 جم/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق",
+          "notes": "آمن للزراعة العضوية"
+        }
+      ],
+      "prevention_ar": "زراعة أصناف مقاومة، تهوية جيدة بين النباتات، تجنب الري بالرش، إزالة الأوراق السفلية، الرش الوقائي في المواسم الرطبة",
+      "quick_diagnosis": [
+        "بقع بنية مائية على الأوراق",
+        "عفن أسود على الثمار",
+        "رائحة كريهة",
+        "انتشار سريع في الرطوبة"
+      ]
+    },
+    {
+      "id": "dis_002",
+      "name_ar": "البياض الدقيقي",
+      "scientific_name": "Erysiphe / Sphaerotheca spp.",
+      "type": "فطري حقيقي",
+      "symptoms_ar": "طبقة بيضاء مسحوقية على السطح العلوي للأوراق والسيقان والثمار، اصفرار الأوراق المصابة وجفافها، تشوه البراعم والأزهار",
+      "conditions_ar": "جو جاف نهاراً ورطب ليلاً، درجة حرارة 20-30°م، الرطوبة النسبية 50-70%",
+      "crops": [
+        "خيار",
+        "كوسة",
+        "قرع",
+        "طماطم",
+        "ورد",
+        "قمح",
+        "عنب"
+      ],
+      "severity": "متوسطة إلى عالية",
+      "spread_method": "بالرياح",
+      "pesticides": [
+        {
+          "name_ar": "كبريت ميكروني",
+          "active_ingredient": "Sulfur micronized",
+          "type": "وقائي وعلاجي",
+          "dosage_per_liter": "2-3 جم/لتر",
+          "dosage_per_feddan": "500-750 جم/فدان",
+          "withdrawal_period": 1,
+          "application_method": "رش أو تعفير",
+          "notes": "لا يُستخدم في درجات حرارة فوق 35°م"
+        },
+        {
+          "name_ar": "مايكلوبوتانيل",
+          "active_ingredient": "Myclobutanil",
+          "type": "علاجي",
+          "dosage_per_liter": "0.5 مل/لتر",
+          "dosage_per_feddan": "100 مل/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق",
+          "notes": "فعال جداً ضد البياض الدقيقي"
+        },
+        {
+          "name_ar": "تيبوكونازول",
+          "active_ingredient": "Tebuconazole",
+          "type": "علاجي وجهازي",
+          "dosage_per_liter": "1 مل/لتر",
+          "dosage_per_feddan": "200 مل/فدان",
+          "withdrawal_period": 14,
+          "application_method": "رش على الأوراق",
+          "notes": "جهازي يُوزع داخل النبات"
+        },
+        {
+          "name_ar": "بيكاربونات البوتاسيوم",
+          "active_ingredient": "Potassium bicarbonate",
+          "type": "وقائي طبيعي",
+          "dosage_per_liter": "5-10 جم/لتر",
+          "dosage_per_feddan": "1 كجم/فدان",
+          "withdrawal_period": 0,
+          "application_method": "رش على الأوراق",
+          "notes": "مناسب للزراعة العضوية"
+        }
+      ],
+      "prevention_ar": "اختيار أصناف مقاومة، تهوية جيدة، تجنب الإفراط في التسميد الآزوتي، الرش الوقائي في بداية الموسم",
+      "quick_diagnosis": [
+        "بودرة بيضاء على الأوراق",
+        "تنتشر في الجو الجاف",
+        "لا تحتاج رطوبة عالية"
+      ]
+    },
+    {
+      "id": "dis_003",
+      "name_ar": "البياض الزغبي",
+      "scientific_name": "Peronospora / Plasmopara spp.",
+      "type": "فطري (أوميسيتس)",
+      "symptoms_ar": "بقع صفراء على السطح العلوي للأوراق، نمو رمادي أرجواني على السطح السفلي، تجفف الأوراق وتموت",
+      "conditions_ar": "رطوبة نسبية فوق 90%، درجة حرارة 15-22°م، جو بارد رطب",
+      "crops": [
+        "خيار",
+        "كوسة",
+        "بصل",
+        "عنب",
+        "خس",
+        "سبانخ"
+      ],
+      "severity": "عالية",
+      "spread_method": "بالرياح والمطر",
+      "pesticides": [
+        {
+          "name_ar": "ميتالاكسيل + مانكوزيب",
+          "active_ingredient": "Metalaxyl + Mancozeb",
+          "type": "وقائي وعلاجي",
+          "dosage_per_liter": "2.5 جم/لتر",
+          "dosage_per_feddan": "500 جم/فدان",
+          "withdrawal_period": 14,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "فوسيتيل الألومنيوم",
+          "active_ingredient": "Fosetyl-Aluminum",
+          "type": "جهازي",
+          "dosage_per_liter": "2.5 جم/لتر",
+          "dosage_per_feddan": "500 جم/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق"
+        }
+      ],
+      "prevention_ar": "الري في الصباح لا المساء، تجنب الزراعة الكثيفة، إزالة بقايا النباتات",
+      "quick_diagnosis": [
+        "بقع صفراء علوية مع نمو رمادي سفلي",
+        "جو بارد رطب",
+        "ينتشر بسرعة في الخريف"
+      ]
+    },
+    {
+      "id": "dis_004",
+      "name_ar": "اللفحة المبكرة",
+      "scientific_name": "Alternaria solani",
+      "type": "فطري",
+      "symptoms_ar": "بقع بنية داكنة ذات حلقات متحدة المركز (كالهدف) على الأوراق السفلية أولاً، اصفرار حول البقع، تجفف وسقوط الأوراق",
+      "conditions_ar": "درجة حرارة 24-29°م، رطوبة عالية، جو حار رطب",
+      "crops": [
+        "طماطم",
+        "بطاطس",
+        "باذنجان",
+        "فلفل"
+      ],
+      "severity": "متوسطة",
+      "spread_method": "بالرياح والمطر والبذور",
+      "pesticides": [
+        {
+          "name_ar": "مانكوزيب",
+          "active_ingredient": "Mancozeb",
+          "type": "وقائي",
+          "dosage_per_liter": "2.5 جم/لتر",
+          "dosage_per_feddan": "500 جم/فدان",
+          "withdrawal_period": 5,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "كلوروثالونيل",
+          "active_ingredient": "Chlorothalonil",
+          "type": "وقائي",
+          "dosage_per_liter": "2 مل/لتر",
+          "dosage_per_feddan": "400 مل/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "أزوكسيستروبين",
+          "active_ingredient": "Azoxystrobin",
+          "type": "جهازي",
+          "dosage_per_liter": "1 مل/لتر",
+          "dosage_per_feddan": "200 مل/فدان",
+          "withdrawal_period": 3,
+          "application_method": "رش على الأوراق"
+        }
+      ],
+      "prevention_ar": "إزالة الأوراق السفلية المصابة، تجنب الري بالرش، التسميد المتوازن",
+      "quick_diagnosis": [
+        "بقع دائرية متحدة المركز",
+        "تبدأ من الأوراق القديمة السفلية",
+        "حلقات بنية داكنة"
+      ]
+    },
+    {
+      "id": "dis_005",
+      "name_ar": "عفن الرمادي",
+      "scientific_name": "Botrytis cinerea",
+      "type": "فطري",
+      "symptoms_ar": "نمو رمادي كثيف على الأوراق والثمار والسيقان، تعفن ناعم للأجزاء المصابة، انتشار سريع في الجو البارد الرطب",
+      "conditions_ar": "رطوبة نسبية فوق 90%، درجة حرارة 15-20°م، غياب التهوية",
+      "crops": [
+        "طماطم",
+        "فراولة",
+        "عنب",
+        "خيار",
+        "ورد",
+        "فلفل"
+      ],
+      "severity": "عالية جداً في الصوب",
+      "spread_method": "بالهواء والتلامس المباشر",
+      "pesticides": [
+        {
+          "name_ar": "فينهكساميد",
+          "active_ingredient": "Fenhexamid",
+          "type": "علاجي",
+          "dosage_per_liter": "1 جم/لتر",
+          "dosage_per_feddan": "200 جم/فدان",
+          "withdrawal_period": 3,
+          "application_method": "رش على الأوراق والثمار"
+        },
+        {
+          "name_ar": "بوسكاليد + كريسوكسيم ميثيل",
+          "active_ingredient": "Boscalid + Kresoxim-methyl",
+          "type": "علاجي",
+          "dosage_per_liter": "0.5 جم/لتر",
+          "dosage_per_feddan": "100 جم/فدان",
+          "withdrawal_period": 3,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "بيكنيل",
+          "active_ingredient": "Pyrimethanil",
+          "type": "علاجي",
+          "dosage_per_liter": "1 مل/لتر",
+          "dosage_per_feddan": "200 مل/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق"
+        }
+      ],
+      "prevention_ar": "تهوية جيدة في الصوب، تجنب الإفراط في الري، إزالة الأجزاء الميتة فوراً، تقليل الرطوبة الليلية",
+      "quick_diagnosis": [
+        "عفن رمادي كثيف وناعم",
+        "جو بارد رطب",
+        "ينتشر في الصوب والمخازن"
+      ]
+    },
+    {
+      "id": "dis_006",
+      "name_ar": "الذبول الفيوزاري",
+      "scientific_name": "Fusarium oxysporum",
+      "type": "فطري في التربة",
+      "symptoms_ar": "ذبول مفاجئ للنبات في ساعات النهار الحارة، اصفرار من القاع للأعلى، اسوداد الأوعية الوعائية عند تقطيع الساق",
+      "conditions_ar": "تربة دافئة 25-30°م، تربة حامضية، إصابات جذرية سابقة",
+      "crops": [
+        "طماطم",
+        "فلفل",
+        "خيار",
+        "قطن",
+        "موز",
+        "قرنبيط"
+      ],
+      "severity": "عالية جداً - لا علاج فعال",
+      "spread_method": "التربة والبذور الملوثة والأدوات",
+      "pesticides": [
+        {
+          "name_ar": "تريكوديرما",
+          "active_ingredient": "Trichoderma harzianum",
+          "type": "حيوي وقائي",
+          "dosage_per_liter": "5 جم/لتر",
+          "dosage_per_feddan": "1 كجم/فدان",
+          "withdrawal_period": 0,
+          "application_method": "رش في التربة أو معاملة جذور",
+          "notes": "وقائي فقط - يُستخدم قبل الزراعة"
+        },
+        {
+          "name_ar": "ثيوفانات ميثيل",
+          "active_ingredient": "Thiophanate-methyl",
+          "type": "علاجي محدود",
+          "dosage_per_liter": "1.5 جم/لتر",
+          "dosage_per_feddan": "300 جم/فدان",
+          "withdrawal_period": 7,
+          "application_method": "ري في منطقة الجذر"
+        }
+      ],
+      "prevention_ar": "تعقيم التربة بالبخار أو الشمس (Solarization)، استخدام أصناف مقاومة، الدورة الزراعية (4-5 سنوات)، تجنب جرح الجذور",
+      "quick_diagnosis": [
+        "ذبول في الحر",
+        "لا يتحسن بالري",
+        "اسمرار الأوعية الداخلية عند تقطيع الساق"
+      ]
+    },
+    {
+      "id": "dis_007",
+      "name_ar": "تبرقش الطماطم الفيروسي TYLCV",
+      "scientific_name": "Tomato Yellow Leaf Curl Virus",
+      "type": "فيروسي",
+      "symptoms_ar": "تجعد وتصغر الأوراق الحديثة، اصفرار حواف الأوراق، انتصاب الأوراق للأعلى، تقزم النبات وقلة الإنتاج أو انعدامه",
+      "conditions_ar": "ينتقل بالذباب الأبيض (Bemisia tabaci) فقط، ينتشر في الحرارة العالية",
+      "crops": [
+        "طماطم",
+        "فلفل",
+        "خيار",
+        "قرع"
+      ],
+      "severity": "عالية جداً - لا علاج للنبات المصاب",
+      "spread_method": "بالذباب الأبيض حصراً",
+      "pesticides": [
+        {
+          "name_ar": "إيميداكلوبريد (لمكافحة الناقل)",
+          "active_ingredient": "Imidacloprid",
+          "type": "مبيد حشري للناقل",
+          "dosage_per_liter": "0.5 مل/لتر",
+          "dosage_per_feddan": "100 مل/فدان",
+          "withdrawal_period": 21,
+          "application_method": "رش على الأوراق أو ري في التربة",
+          "notes": "لمكافحة الذباب الأبيض الناقل للفيروس"
+        },
+        {
+          "name_ar": "أسيتاميبريد",
+          "active_ingredient": "Acetamiprid",
+          "type": "مبيد حشري للناقل",
+          "dosage_per_liter": "0.5 جم/لتر",
+          "dosage_per_feddan": "100 جم/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق"
+        }
+      ],
+      "prevention_ar": "زراعة أصناف مقاومة (مثل بريسيدنت، هزار F1)، شبك حشري 50 mesh على فتحات الصوب، لاصقات صفراء، مكافحة الذباب الأبيض بانتظام، إزالة النباتات المصابة",
+      "quick_diagnosis": [
+        "تجعد وتصغر الأوراق الجديدة",
+        "اصفرار الحواف",
+        "في وجود ذباب أبيض",
+        "لا يُعالج - يُعزل"
+      ]
+    },
+    {
+      "id": "dis_008",
+      "name_ar": "صدأ القمح الأصفر",
+      "scientific_name": "Puccinia striiformis",
+      "type": "فطري",
+      "symptoms_ar": "خطوط صفراء موازية للعروق على الأوراق، بثرات صفراء-برتقالية مرتبة في صفوف، اصفرار عام وجفاف الأوراق عند الإصابة الشديدة",
+      "conditions_ar": "درجة حرارة منخفضة 10-15°م، رطوبة عالية، طقس بارد رطب",
+      "crops": [
+        "قمح",
+        "شعير",
+        "جاودار"
+      ],
+      "severity": "عالية جداً",
+      "spread_method": "بالرياح لمسافات بعيدة جداً",
+      "pesticides": [
+        {
+          "name_ar": "تيبوكونازول + تريفلوكسيستروبين",
+          "active_ingredient": "Tebuconazole + Trifloxystrobin",
+          "type": "علاجي جهازي",
+          "dosage_per_liter": "1 مل/لتر",
+          "dosage_per_feddan": "200 مل/فدان",
+          "withdrawal_period": 35,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "بروبيكونازول",
+          "active_ingredient": "Propiconazole",
+          "type": "علاجي",
+          "dosage_per_liter": "1 مل/لتر",
+          "dosage_per_feddan": "200 مل/فدان",
+          "withdrawal_period": 35,
+          "application_method": "رش على الأوراق"
+        }
+      ],
+      "prevention_ar": "زراعة أصناف مقاومة، مراقبة مبكرة، الرش الفوري عند ظهور أولى الأعراض",
+      "quick_diagnosis": [
+        "خطوط صفراء في صفوف على القمح",
+        "في الطقس البارد الرطب",
+        "تنتشر بسرعة"
+      ]
+    },
+    {
+      "id": "dis_009",
+      "name_ar": "الذبول البكتيري",
+      "scientific_name": "Ralstonia solanacearum",
+      "type": "بكتيري",
+      "symptoms_ar": "ذبول مفاجئ للنبات بدون اصفرار مسبق، يتعافى قليلاً ليلاً ويذبل نهاراً، عند قطع الساق يخرج سائل لبني أبيض، اسوداد الأوعية الوعائية",
+      "conditions_ar": "تربة رطبة دافئة 25-35°م، تربة رملية، مناطق حارة رطبة",
+      "crops": [
+        "طماطم",
+        "بطاطس",
+        "فلفل",
+        "باذنجان",
+        "موز",
+        "زنجبيل"
+      ],
+      "severity": "عالية جداً - لا علاج فعال",
+      "spread_method": "التربة والمياه الملوثة والأدوات",
+      "pesticides": [
+        {
+          "name_ar": "لا يوجد علاج كيميائي فعال",
+          "active_ingredient": "N/A",
+          "type": "وقائي فقط",
+          "dosage_per_liter": "N/A",
+          "dosage_per_feddan": "N/A",
+          "withdrawal_period": 0,
+          "application_method": "N/A",
+          "notes": "الوقاية أهم من العلاج - تعقيم التربة والأدوات"
+        }
+      ],
+      "prevention_ar": "تعقيم التربة، الدورة الزراعية (4 سنوات بعيداً عن نفس العائل)، استخدام تقاوٍ خالية من البكتيريا، تعقيم أدوات الزراعة بالكلور",
+      "quick_diagnosis": [
+        "ذبول مفاجئ بدون اصفرار",
+        "سائل أبيض عند قطع الساق",
+        "لا يتحسن بالري"
+      ]
+    },
+    {
+      "id": "dis_010",
+      "name_ar": "الجرب المعتاد في البطاطس",
+      "scientific_name": "Streptomyces scabies",
+      "type": "بكتيري (أكتينوميسيتس)",
+      "symptoms_ar": "قروح سطحية بارزة أو غائرة بنية اللون على سطح الدرنات، لا تؤثر على لب الدرنة، تخفض القيمة التسويقية",
+      "conditions_ar": "تربة قلوية pH أعلى من 7، تربة جافة، درجة حرارة 20-22°م",
+      "crops": [
+        "بطاطس",
+        "جزر",
+        "شمندر"
+      ],
+      "severity": "منخفضة للإنتاج - عالية للتسويق",
+      "spread_method": "التربة والتقاوي الملوثة",
+      "pesticides": [
+        {
+          "name_ar": "معاملة التقاوي بمانكوزيب",
+          "active_ingredient": "Mancozeb",
+          "type": "وقائي على البذور",
+          "dosage_per_liter": "2.5 جم/لتر",
+          "dosage_per_feddan": "N/A",
+          "withdrawal_period": 0,
+          "application_method": "غمر أو رش على التقاوي قبل الزراعة"
+        }
+      ],
+      "prevention_ar": "خفض pH التربة بالكبريت الزراعي، ري منتظم في طور التدريع، الدورة الزراعية، معاملة التقاوي قبل الزراعة",
+      "quick_diagnosis": [
+        "قروح بنية على سطح درنات البطاطس",
+        "اللب سليم",
+        "تربة قلوية جافة"
+      ]
+    }
+  ],
+  "pests": [
+    {
+      "id": "pest_001",
+      "name_ar": "المن",
+      "scientific_name": "Aphididae spp.",
+      "type": "حشرة ماصة",
+      "order": "Hemiptera",
+      "description_ar": "حشرة صغيرة جداً (1-3 مم)، لينة الجسم، خضراء أو صفراء أو سوداء حسب النوع، تتجمع على القمم النامية وتحت الأوراق الصغيرة",
+      "damage_ar": "مص عصارة النبات يسبب الاصفرار والذبول، إفراز الندوة العسلية يؤدي لنمو العفن الأسود، ناقل لأكثر من 150 فيروساً نباتياً",
+      "favorable_conditions": "طقس معتدل 15-25°م، وجود النيتروجين الزائد",
+      "crops": [
+        "طماطم",
+        "فلفل",
+        "خيار",
+        "قمح",
+        "قطن",
+        "ورد",
+        "حمضيات"
+      ],
+      "life_cycle": "تكاثر بكري وجنسي، جيل كل أسبوعين في الصيف، تنتج أعداداً هائلة بسرعة",
+      "monitoring": "فحص القمم النامية وأسفل الأوراق الصغيرة أسبوعياً",
+      "pesticides": [
+        {
+          "name_ar": "إيميداكلوبريد",
+          "active_ingredient": "Imidacloprid",
+          "type": "جهازي - نيونيكوتينويد",
+          "dosage_per_liter": "0.5 مل/لتر",
+          "dosage_per_feddan": "100 مل/فدان",
+          "withdrawal_period": 21,
+          "application_method": "رش على الأوراق أو ري في التربة",
+          "notes": "فعال جداً، يُجنب الرش في وجود النحل"
+        },
+        {
+          "name_ar": "أسيتاميبريد",
+          "active_ingredient": "Acetamiprid",
+          "type": "جهازي - نيونيكوتينويد",
+          "dosage_per_liter": "0.5 جم/لتر",
+          "dosage_per_feddan": "100 جم/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "سبيروتيترامات",
+          "active_ingredient": "Spirotetramat",
+          "type": "جهازي ثنائي الاتجاه",
+          "dosage_per_liter": "0.75 مل/لتر",
+          "dosage_per_feddan": "150 مل/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق",
+          "notes": "يتحرك صعوداً وهبوطاً في النبات"
+        },
+        {
+          "name_ar": "بوفيريا باسيانا (حيوي)",
+          "active_ingredient": "Beauveria bassiana",
+          "type": "حيوي",
+          "dosage_per_liter": "2-3 جم/لتر",
+          "dosage_per_feddan": "500 جم/فدان",
+          "withdrawal_period": 0,
+          "application_method": "رش مساءً على الأوراق",
+          "notes": "مناسب للزراعة العضوية"
+        }
+      ],
+      "natural_enemies": [
+        "أبو العيد (Coccinellidae)",
+        "قاتل المن (Chrysoperla)",
+        "Aphidius wasps"
+      ],
+      "prevention_ar": "زراعة أصناف مقاومة، حماية الحشرات المفيدة، اللاصقات الصفراء للرصد",
+      "quick_id": [
+        "مجموعات صغيرة على القمم والبراعم",
+        "تفرز مادة لزجة",
+        "تتواجد مع النمل"
+      ]
+    },
+    {
+      "id": "pest_002",
+      "name_ar": "الذباب الأبيض",
+      "scientific_name": "Bemisia tabaci",
+      "type": "حشرة ماصة",
+      "order": "Hemiptera",
+      "description_ar": "حشرة صغيرة (1.5-2 مم) بيضاء لامعة، تتجمع على أسفل الأوراق، تطير بسرعة عند الاقتراب من النبات",
+      "damage_ar": "مص العصارة يضعف النبات، الندوة العسلية تؤدي لنمو العفن الأسود، ناقل لـ TYLCV وأكثر من 100 فيروس خطير",
+      "favorable_conditions": "حرارة عالية 25-35°م، رطوبة منخفضة",
+      "crops": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "بطاطيا"
+      ],
+      "life_cycle": "بيضة - 4 أطوار حورية - بالغ، كل 3-4 أسابيع في الصيف",
+      "monitoring": "لاصقات صفراء للرصد، فحص أسفل الأوراق أسبوعياً",
+      "pesticides": [
+        {
+          "name_ar": "سبيروميسيفن",
+          "active_ingredient": "Spiromesifen",
+          "type": "مثبط نمو + مبيد حشري",
+          "dosage_per_liter": "0.75 مل/لتر",
+          "dosage_per_feddan": "150 مل/فدان",
+          "withdrawal_period": 3,
+          "application_method": "رش على أسفل الأوراق"
+        },
+        {
+          "name_ar": "بيريبروكسيفن",
+          "active_ingredient": "Pyriproxyfen",
+          "type": "مثبط هرموني",
+          "dosage_per_liter": "0.75 مل/لتر",
+          "dosage_per_feddan": "150 مل/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على أسفل الأوراق"
+        },
+        {
+          "name_ar": "سيانترانيليبرول",
+          "active_ingredient": "Cyantraniliprole",
+          "type": "حديد ديامايد",
+          "dosage_per_liter": "0.4 مل/لتر",
+          "dosage_per_feddan": "80 مل/فدان",
+          "withdrawal_period": 1,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "إيميداكلوبريد",
+          "active_ingredient": "Imidacloprid",
+          "type": "جهازي - نيونيكوتينويد",
+          "dosage_per_liter": "0.5 مل/لتر",
+          "dosage_per_feddan": "100 مل/فدان",
+          "withdrawal_period": 21,
+          "application_method": "رش أو ري في التربة",
+          "notes": "يُجنب في وجود النحل"
+        }
+      ],
+      "natural_enemies": [
+        "Encarsia formosa",
+        "Eretmocerus eremicus"
+      ],
+      "prevention_ar": "شبك حشري 50 mesh على فتحات الصوب، لاصقات صفراء، إزالة النباتات المصابة بـ TYLCV",
+      "quick_id": [
+        "حشرات بيضاء صغيرة تطير",
+        "على أسفل الأوراق",
+        "تاج زجاجي"
+      ]
+    },
+    {
+      "id": "pest_003",
+      "name_ar": "الحلم العنكبوتي",
+      "scientific_name": "Tetranychus urticae",
+      "type": "حلم - ليس حشرة",
+      "order": "Acari",
+      "description_ar": "حيوان مفصلي صغير جداً (0.5 مم) لا يرى بالعين المجردة بسهولة، لونه أخضر أصفر مع بقعتين داكنتين، ينسج شبكة حريرية دقيقة على الأوراق",
+      "damage_ar": "يخز الخلايا ويمص محتوياتها، يظهر على الأوراق كبقع فاتحة صغيرة (stippling)، اصفرار عام وجفاف الأوراق عند الإصابة الشديدة، خسائر كبيرة في الجو الحار الجاف",
+      "favorable_conditions": "حرارة فوق 30°م، رطوبة منخفضة أقل من 50%، جو جاف",
+      "crops": [
+        "خيار",
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "ورد",
+        "فراولة",
+        "حمضيات",
+        "تفاح"
+      ],
+      "life_cycle": "بيضة - يرقة - حورية - بالغ، كل أسبوع في الصيف الحار",
+      "monitoring": "فحص أسفل الأوراق بعدسة مكبرة، الشبكة الحريرية علامة مميزة",
+      "pesticides": [
+        {
+          "name_ar": "أباميكتين",
+          "active_ingredient": "Abamectin",
+          "type": "حيوي المصدر",
+          "dosage_per_liter": "0.75 مل/لتر",
+          "dosage_per_feddan": "150 مل/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على أسفل الأوراق بعناية",
+          "notes": "فعال جداً، يجب تغطية أسفل الأوراق"
+        },
+        {
+          "name_ar": "سبيروميسيفن",
+          "active_ingredient": "Spiromesifen",
+          "type": "مثبط نمو",
+          "dosage_per_liter": "0.75 مل/لتر",
+          "dosage_per_feddan": "150 مل/فدان",
+          "withdrawal_period": 3,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "هيكسيثيازوكس",
+          "active_ingredient": "Hexythiazox",
+          "type": "مثبط نمو (يؤثر على البيض واليرقات)",
+          "dosage_per_liter": "0.5 جم/لتر",
+          "dosage_per_feddan": "100 جم/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "فيتوسيولس برسيميليس (حيوي)",
+          "active_ingredient": "Phytoseiulus persimilis",
+          "type": "حيوي - حلم مفترس",
+          "dosage_per_liter": "N/A",
+          "dosage_per_feddan": "50,000 حشرة/فدان",
+          "withdrawal_period": 0,
+          "application_method": "إطلاق في الحقل أو الصوبة",
+          "notes": "ممتاز للصوب - يأكل الحلم بشراهة"
+        }
+      ],
+      "natural_enemies": [
+        "Phytoseiulus persimilis",
+        "Neoseiulus californicus",
+        "Feltiella acarisuga"
+      ],
+      "prevention_ar": "رفع رطوبة الهواء، رش المياه على أسفل الأوراق، تجنب الإجهاد المائي للنبات، تنظيف الأدوات",
+      "quick_id": [
+        "بقع فاتحة صغيرة على الأوراق",
+        "شبكة حريرية دقيقة",
+        "يزداد في الحر والجفاف"
+      ]
+    },
+    {
+      "id": "pest_004",
+      "name_ar": "التربس",
+      "scientific_name": "Thrips tabaci / Frankliniella occidentalis",
+      "type": "حشرة ماصة",
+      "order": "Thysanoptera",
+      "description_ar": "حشرة صغيرة جداً (1-2 مم)، بنية أو صفراء، لها أجنحة ريشية، تتحرك بسرعة عند الإزعاج",
+      "damage_ar": "يخز الخلايا ويمص محتوياتها، يترك بقعاً فضية لامعة، تشوه الأوراق والثمار والأزهار، ناقل لفيروس TSWV الخطير",
+      "favorable_conditions": "حرارة 25-30°م، جو جاف",
+      "crops": [
+        "طماطم",
+        "فلفل",
+        "خيار",
+        "بصل",
+        "قطن",
+        "ورد",
+        "جربيرا"
+      ],
+      "life_cycle": "بيضة - يرقتان - طور ما قبل العذراء في التربة - بالغ",
+      "monitoring": "لاصقات زرقاء أو صفراء للرصد، فحص الأزهار",
+      "pesticides": [
+        {
+          "name_ar": "سبينوساد",
+          "active_ingredient": "Spinosad",
+          "type": "حيوي المصدر",
+          "dosage_per_liter": "0.5 مل/لتر",
+          "dosage_per_feddan": "100 مل/فدان",
+          "withdrawal_period": 1,
+          "application_method": "رش على الأوراق والأزهار",
+          "notes": "فعال جداً - مشتق طبيعي"
+        },
+        {
+          "name_ar": "إيميداكلوبريد",
+          "active_ingredient": "Imidacloprid",
+          "type": "جهازي",
+          "dosage_per_liter": "0.5 مل/لتر",
+          "dosage_per_feddan": "100 مل/فدان",
+          "withdrawal_period": 21,
+          "application_method": "رش أو ري"
+        },
+        {
+          "name_ar": "أباميكتين",
+          "active_ingredient": "Abamectin",
+          "type": "حيوي المصدر",
+          "dosage_per_liter": "0.75 مل/لتر",
+          "dosage_per_feddan": "150 مل/فدان",
+          "withdrawal_period": 7,
+          "application_method": "رش على الأوراق"
+        }
+      ],
+      "natural_enemies": [
+        "Amblyseius cucumeris",
+        "Amblyseius swirskii"
+      ],
+      "prevention_ar": "لاصقات زرقاء للرصد والجذب، شبك حشري دقيق، إزالة حشائش المجاورة",
+      "quick_id": [
+        "بقع فضية على الأوراق والثمار",
+        "تشوه الأزهار",
+        "تجدها في الأزهار عند فحصها"
+      ]
+    },
+    {
+      "id": "pest_005",
+      "name_ar": "دودة اللوز القرنفلية",
+      "scientific_name": "Pectinophora gossypiella",
+      "type": "حشرة قارضة",
+      "order": "Lepidoptera",
+      "description_ar": "فراشة صغيرة رمادية بنية، اليرقة وردية تحفر في لوز القطن",
+      "damage_ar": "يرقات تحفر داخل لوز القطن وتأكل البذور، تسبب الثقوب المستديرة في اللوز، خسائر فادحة في الإنتاج والجودة",
+      "favorable_conditions": "حرارة 25-35°م، مرحلة تكون اللوز",
+      "crops": [
+        "قطن"
+      ],
+      "life_cycle": "بيضة - يرقة (داخل اللوز) - عذراء - بالغ",
+      "monitoring": "مصائد فيرومونية، فحص اللوز المتساقط",
+      "pesticides": [
+        {
+          "name_ar": "كلورانترانيليبرول",
+          "active_ingredient": "Chlorantraniliprole",
+          "type": "ديامايد",
+          "dosage_per_liter": "0.4 مل/لتر",
+          "dosage_per_feddan": "80 مل/فدان",
+          "withdrawal_period": 14,
+          "application_method": "رش على الأوراق"
+        },
+        {
+          "name_ar": "إيماميكتين بنزوات",
+          "active_ingredient": "Emamectin benzoate",
+          "type": "حيوي المصدر",
+          "dosage_per_liter": "0.4 جم/لتر",
+          "dosage_per_feddan": "80 جم/فدان",
+          "withdrawal_period": 14,
+          "application_method": "رش على الأوراق"
+        }
+      ],
+      "natural_enemies": [
+        "Trichogramma evanescens"
+      ],
+      "prevention_ar": "مصائد فيرومونية لرصد وخفض الذكور، الرش المبني على العتبة الاقتصادية، إتلاف المخلفات بعد الحصاد",
+      "quick_id": [
+        "ثقوب صغيرة في لوز القطن",
+        "يرقة وردية داخل اللوز",
+        "يرقات بيضاء ثم وردية"
+      ]
+    },
+    {
+      "id": "pest_006",
+      "name_ar": "دودة الحشد الخريفية",
+      "scientific_name": "Spodoptera frugiperda",
+      "type": "حشرة قارضة",
+      "order": "Lepidoptera",
+      "description_ar": "آفة غازية خطيرة، اليرقة لها شكل Y بارز على الرأس وخطوط جانبية بيضاء ونقطة سوداء مربعة عند نهاية الجسم",
+      "damage_ar": "تهاجم كرنب الذرة والقمة النامية، تسبب خسائر 50-80% دون مكافحة، عدة أجيال في السنة",
+      "favorable_conditions": "حرارة 25-35°م، محاصيل ذرة وعمرها أقل من 30 يوم",
+      "crops": [
+        "ذرة شامية",
+        "قمح",
+        "قصب سكر",
+        "سرغم"
+      ],
+      "life_cycle": "بيضة - 6 أطوار يرقية - عذراء في التربة - بالغ",
+      "monitoring": "مصائد ضوئية وفيرومونية، فحص القمة النامية للذرة يومياً",
+      "pesticides": [
+        {
+          "name_ar": "كلورانترانيليبرول",
+          "active_ingredient": "Chlorantraniliprole",
+          "type": "ديامايد",
+          "dosage_per_liter": "0.4 مل/لتر",
+          "dosage_per_feddan": "80 مل/فدان",
+          "withdrawal_period": 14,
+          "application_method": "رش مباشرة على القمة النامية مع توجيه الرذاذ للداخل"
+        },
+        {
+          "name_ar": "إيماميكتين بنزوات",
+          "active_ingredient": "Emamectin benzoate",
+          "type": "حيوي المصدر",
+          "dosage_per_liter": "0.4 جم/لتر",
+          "dosage_per_feddan": "80 جم/فدان",
+          "withdrawal_period": 14,
+          "application_method": "رش على الأوراق والقمة النامية"
+        },
+        {
+          "name_ar": "باسيلوس ثورينجينسيس (Bt)",
+          "active_ingredient": "Bacillus thuringiensis var. aizawai",
+          "type": "حيوي",
+          "dosage_per_liter": "2-3 جم/لتر",
+          "dosage_per_feddan": "500 جم/فدان",
+          "withdrawal_period": 0,
+          "application_method": "رش على الأوراق مع توجيه للقمة النامية",
+          "notes": "أكثر فاعلية على اليرقات الصغيرة"
+        }
+      ],
+      "natural_enemies": [
+        "Telenomus remus",
+        "Cotesia marginiventris"
+      ],
+      "prevention_ar": "مراقبة مبكرة من الإنبات، الرش الفوري عند وجود أكثر من يرقة/10 نباتات، استخدام أصناف Bt",
+      "quick_id": [
+        "حفر في كرنب الذرة",
+        "شكل Y على رأس اليرقة",
+        "نقطة سوداء مربعة في ذيلها"
+      ]
+    },
+    {
+      "id": "pest_007",
+      "name_ar": "ذبابة الفاكهة المتوسطية",
+      "scientific_name": "Ceratitis capitata",
+      "type": "حشرة ثاقبة",
+      "order": "Diptera",
+      "description_ar": "ذبابة متوسطة الحجم مبرقشة الألوان، الأنثى لها إبرة وضع البيض",
+      "damage_ar": "تضع بيضها داخل الثمرة، اليرقات تتغذى على اللب من الداخل، تدمير كامل للثمرة وتهيئتها لدخول الفطريات والبكتيريا",
+      "favorable_conditions": "حرارة 20-30°م، فترة اكتمال نضج الثمار",
+      "crops": [
+        "مانجو",
+        "خوخ",
+        "مشمش",
+        "تفاح",
+        "جوافة",
+        "حمضيات",
+        "عنب",
+        "تين"
+      ],
+      "life_cycle": "بيضة داخل الثمرة - يرقة - عذراء في التربة - بالغ",
+      "monitoring": "مصائد فيرومونية يومية لرصد التعداد",
+      "pesticides": [
+        {
+          "name_ar": "طعم سبينوساد البروتيني",
+          "active_ingredient": "Spinosad + بروتين متحلل",
+          "type": "حيوي - طعم جاذب",
+          "dosage_per_liter": "1 مل/لتر",
+          "dosage_per_feddan": "200 مل/فدان",
+          "withdrawal_period": 1,
+          "application_method": "رش قطعي (spot spray) على جزء من كل شجرة",
+          "notes": "الأفضل والأآمن - يُرش الطعم فقط لا الشجرة كلها"
+        },
+        {
+          "name_ar": "مالاثيون + بروتين",
+          "active_ingredient": "Malathion + Protein hydrolysate",
+          "type": "طعم كيميائي",
+          "dosage_per_liter": "1.5 مل/لتر",
+          "dosage_per_feddan": "N/A",
+          "withdrawal_period": 7,
+          "application_method": "رش قطعي على جزء من الشجرة"
+        }
+      ],
+      "natural_enemies": [
+        "Fopius arisanus",
+        "Diachasmimorpha longicaudata"
+      ],
+      "prevention_ar": "تكييس الثمار، المصائد الفيرومونية، جمع الثمار الساقطة فوراً، تقنية الذكور المعقمة (SIT)",
+      "quick_id": [
+        "ثمار بها ثقوب صغيرة",
+        "يرقات بيضاء داخل الثمرة",
+        "تعفن الثمار من الداخل"
+      ]
+    },
+    {
+      "id": "pest_008",
+      "name_ar": "نيماتودا تعقد الجذور",
+      "scientific_name": "Meloidogyne spp.",
+      "type": "نيماتودا",
+      "order": "Tylenchida",
+      "description_ar": "ديدان مجهرية تعيش في التربة، لا ترى بالعين المجردة، تتطفل على جذور النباتات",
+      "damage_ar": "تكوين عقد أو تضخمات على الجذور، اضطراب امتصاص الماء والغذاء، ذبول وتقزم واصفرار النبات رغم الري الكافي، بوابة دخول للأمراض الفطرية والبكتيرية",
+      "favorable_conditions": "تربة رملية دافئة 25-30°م، رطوبة معتدلة",
+      "crops": [
+        "طماطم",
+        "خيار",
+        "باذنجان",
+        "فلفل",
+        "بطاطس",
+        "موز",
+        "كل الخضر تقريباً"
+      ],
+      "life_cycle": "بيضة - 4 أطوار يرقية - بالغ، عدة أجيال في السنة",
+      "monitoring": "فحص الجذور عند الشتل وفي المنتصف، تحليل عينة تربة",
+      "pesticides": [
+        {
+          "name_ar": "أوكساميل",
+          "active_ingredient": "Oxamyl",
+          "type": "نيماتيسيد كيميائي",
+          "dosage_per_liter": "3 مل/لتر",
+          "dosage_per_feddan": "2 لتر/فدان",
+          "withdrawal_period": 21,
+          "application_method": "ري في التربة قبل الزراعة",
+          "notes": "سام جداً - يستلزم احترازات"
+        },
+        {
+          "name_ar": "فوسثيازات",
+          "active_ingredient": "Fosthiazate",
+          "type": "نيماتيسيد كيميائي",
+          "dosage_per_liter": "2 مل/لتر",
+          "dosage_per_feddan": "1.5 لتر/فدان",
+          "withdrawal_period": 21,
+          "application_method": "ري في التربة"
+        },
+        {
+          "name_ar": "باستوريا بنيترانس (حيوي)",
+          "active_ingredient": "Pasteuria penetrans",
+          "type": "حيوي - بكتيريا طفيلة",
+          "dosage_per_liter": "N/A",
+          "dosage_per_feddan": "حسب التوصية",
+          "withdrawal_period": 0,
+          "application_method": "إضافة للتربة",
+          "notes": "آمن تماماً للبيئة"
+        },
+        {
+          "name_ar": "تريكوديرما + باسيلوس",
+          "active_ingredient": "Trichoderma + Bacillus subtilis",
+          "type": "حيوي وقائي",
+          "dosage_per_liter": "3-5 جم/لتر",
+          "dosage_per_feddan": "1 كجم/فدان",
+          "withdrawal_period": 0,
+          "application_method": "إضافة للتربة مع الزراعة"
+        }
+      ],
+      "natural_enemies": [
+        "Pasteuria penetrans",
+        "Arthrobotrys fungi"
+      ],
+      "prevention_ar": "تعقيم التربة بالشمس (4-6 أسابيع تحت البلاستيك)، الدورة الزراعية مع نجيليات، أصناف مقاومة، تجنب جرح الجذور",
+      "quick_id": [
+        "عقد أو تضخمات على الجذور",
+        "ذبول رغم الري",
+        "تقزم وضعف عام غير مفسر"
+      ]
+    }
+  ],
+  "fertilization": {
+    "macro_elements": [
+      {
+        "id": "macro_001",
+        "element": "النيتروجين",
+        "symbol": "N",
+        "function_ar": "بناء البروتينات والكلوروفيل، تحفيز النمو الخضري",
+        "deficiency_symptoms_ar": "اصفرار عام يبدأ من الأوراق القديمة السفلية، ضعف النمو، أوراق صغيرة شاحبة",
+        "toxicity_symptoms_ar": "نمو خضري غزير على حساب الإزهار والإثمار، أوراق خضراء داكنة وهشة",
+        "sources": [
+          "يوريا 46%",
+          "نترات الأمونيوم 33%",
+          "سلفات الأمونيوم 21%",
+          "نترات الكالسيوم 15.5%"
+        ],
+        "best_applied": "مرحلة النمو الخضري",
+        "notes_ar": "ينقسم إلى دفعات عند تسميد الحقل - لا يُسمد دفعة واحدة"
+      },
+      {
+        "id": "macro_002",
+        "element": "الفوسفور",
+        "symbol": "P",
+        "function_ar": "تطوير الجذور، نضج البذور والثمار، نقل الطاقة (ATP)",
+        "deficiency_symptoms_ar": "لون أرجواني بنفسجي على أسفل الأوراق، ضعف الجذور، تأخر النضج",
+        "toxicity_symptoms_ar": "نادر - قد يسبب نقص الزنك والحديد والمنغنيز",
+        "sources": [
+          "سوبر فوسفات أحادي 20%",
+          "سوبر فوسفات ثلاثي 46%",
+          "DAP 18-46-0",
+          "MAP 12-61-0"
+        ],
+        "best_applied": "قبل الزراعة أو مع البذرة",
+        "notes_ar": "يثبت في التربة القلوية - الفوسفور العضوي أفضل امتصاصاً"
+      },
+      {
+        "id": "macro_003",
+        "element": "البوتاسيوم",
+        "symbol": "K",
+        "function_ar": "تنظيم فتح الثغور، جودة الثمار ولونها وصلابتها، مقاومة الأمراض والإجهادات",
+        "deficiency_symptoms_ar": "احتراق حواف الأوراق القديمة، ذبول جزئي في الحرارة، ثمار فاقدة الجودة",
+        "toxicity_symptoms_ar": "نادر - قد يتداخل مع امتصاص الكالسيوم والمغنسيوم",
+        "sources": [
+          "كلوريد البوتاسيوم 60%",
+          "سلفات البوتاسيوم 50%",
+          "نترات البوتاسيوم 13-0-46"
+        ],
+        "best_applied": "طور الإزهار والإثمار",
+        "notes_ar": "سلفات البوتاسيوم أفضل للمحاصيل الحساسة للكلوريد"
+      },
+      {
+        "id": "macro_004",
+        "element": "الكالسيوم",
+        "symbol": "Ca",
+        "function_ar": "بناء جدار الخلية، نمو القمم الجذرية، استقرار الغشاء الخلوي",
+        "deficiency_symptoms_ar": "موت قمم النبات، تعفن طرف الزهري في الطماطم والفلفل، تشقق الثمار",
+        "toxicity_symptoms_ar": "نادر",
+        "sources": [
+          "نترات الكالسيوم 19-0-0+17Ca",
+          "كلوريد الكالسيوم",
+          "كبريتات الكالسيوم (جبس)"
+        ],
+        "best_applied": "طوال مراحل النمو مع التركيز في طور تكون الثمار",
+        "notes_ar": "لا ينتقل في النبات، يعتمد على التدفق الخشبي والنتح - الري المنتظم أساسي"
+      },
+      {
+        "id": "macro_005",
+        "element": "المغنسيوم",
+        "symbol": "Mg",
+        "function_ar": "مركز جزيء الكلوروفيل، تنشيط إنزيمات كثيرة",
+        "deficiency_symptoms_ar": "اصفرار بين العروق في الأوراق القديمة مع بقاء العروق خضراء",
+        "toxicity_symptoms_ar": "نادر",
+        "sources": [
+          "سلفات المغنسيوم (ملح إبسوم) 9.9%Mg",
+          "نترات المغنسيوم"
+        ],
+        "best_applied": "طوال موسم النمو",
+        "notes_ar": "رش ورقي بـ 2-3% سلفات مغنسيوم فعال عند نقص شديد"
+      },
+      {
+        "id": "macro_006",
+        "element": "الكبريت",
+        "symbol": "S",
+        "function_ar": "تكوين الأحماض الأمينية والبروتينات والفيتامينات",
+        "deficiency_symptoms_ar": "اصفرار الأوراق الحديثة (عكس النيتروجين)، تأخر النمو",
+        "toxicity_symptoms_ar": "نادر في الظروف الطبيعية",
+        "sources": [
+          "سلفات الأمونيوم 24%S",
+          "سلفات البوتاسيوم 18%S",
+          "كبريت زراعي 90%"
+        ],
+        "best_applied": "مع الأسمدة الأساسية",
+        "notes_ar": "ينخفض في الترب الرملية وعالية الإنتاجية"
+      }
+    ],
+    "micro_elements": [
+      {
+        "id": "micro_001",
+        "element": "الحديد",
+        "symbol": "Fe",
+        "function_ar": "تكوين الكلوروفيل، نقل الإلكترونات في التنفس والتمثيل الضوئي",
+        "deficiency_symptoms_ar": "كلوروزيس بين العروق في الأوراق الحديثة الصغيرة، الأوراق تصبح صفراء شاحبة مع عروق خضراء",
+        "favorable_for_deficiency": "تربة قلوية pH > 7.5، تربة مشبعة بالماء",
+        "sources": [
+          "EDDHA-Fe 6%",
+          "EDTA-Fe 13%",
+          "سلفات الحديد FeSO4"
+        ],
+        "dosage_ar": "EDDHA: 1-3 كجم/فدان في التربة، أو 1-2 جم/لتر رشاً",
+        "application_method": "في التربة القلوية يُفضل EDDHA (أكثر ثباتاً)",
+        "notes_ar": "EDDHA الأفضل في التربة القلوية المصرية"
+      },
+      {
+        "id": "micro_002",
+        "element": "الزنك",
+        "symbol": "Zn",
+        "function_ar": "تنشيط الإنزيمات، تخليق هرمون الأوكسين، تنظيم تعبير الجينات",
+        "deficiency_symptoms_ar": "تقزم وتصغر الأوراق، تقصير السلاميات، تشوه الأوراق وتموجها",
+        "favorable_for_deficiency": "تربة قلوية أو حامضية جداً، فوسفور زائد في التربة",
+        "sources": [
+          "سلفات الزنك ZnSO4 35%",
+          "كيلات الزنك EDTA-Zn"
+        ],
+        "dosage_ar": "سلفات الزنك: 1-2 جم/لتر رشاً، أو 5-10 كجم/فدان في التربة",
+        "application_method": "رش ورقي أو إضافة للتربة",
+        "notes_ar": "يُضاف مع الري أو رشاً على الأوراق"
+      },
+      {
+        "id": "micro_003",
+        "element": "المنغنيز",
+        "symbol": "Mn",
+        "function_ar": "التمثيل الضوئي (تكسير الماء)، تنشيط إنزيمات كثيرة",
+        "deficiency_symptoms_ar": "كلوروزيس بين العروق في الأوراق الحديثة مشابه لنقص الحديد، لكن بقع بنية صغيرة تظهر لاحقاً",
+        "favorable_for_deficiency": "تربة قلوية أو رملية جيدة الصرف",
+        "sources": [
+          "سلفات المنغنيز MnSO4 27%Mn",
+          "كيلات المنغنيز"
+        ],
+        "dosage_ar": "سلفات المنغنيز: 1-2 جم/لتر رشاً",
+        "application_method": "رش ورقي هو الأسرع فعلاً",
+        "notes_ar": "التفريق بين نقص Mn ونقص Fe: Mn يصيب أوراق حديثة مع بقع - Fe لا بقع"
+      },
+      {
+        "id": "micro_004",
+        "element": "البورون",
+        "symbol": "B",
+        "function_ar": "نمو الأنابيب حبوب اللقاح، بناء جدار الخلية، تكوين السكريات",
+        "deficiency_symptoms_ar": "موت القمم النامية، تشوه وتصلب الأوراق الحديثة، تفريع مفرط، تشقق وتشوه الثمار، فراغات في قلب اللفت والشمندر",
+        "favorable_for_deficiency": "تربة رملية، تربة جافة، تربة قلوية، وفرة الكالسيوم",
+        "sources": [
+          "حمض البوريك H3BO3 17%B",
+          "بوراكس Na2B4O7 11%B",
+          "سولوبور 17%B"
+        ],
+        "dosage_ar": "حمض البوريك: 0.5-1 جم/لتر رشاً، أو 1-2 كجم/فدان في التربة",
+        "application_method": "رش ورقي أو إضافة للري، هامش السمية ضيق - لا تزد الجرعة",
+        "notes_ar": "عنصر حرج جداً - نقصه ووفرته كلاهما ضار - الهامش الآمن ضيق"
+      },
+      {
+        "id": "micro_005",
+        "element": "النحاس",
+        "symbol": "Cu",
+        "function_ar": "التمثيل الضوئي، تنشيط الإنزيمات",
+        "deficiency_symptoms_ar": "ذبول وتجعد الأوراق الحديثة، لون أزرق أخضر مائل، جفاف القمم النامية",
+        "favorable_for_deficiency": "تربة عضوية، تربة حامضية رملية",
+        "sources": [
+          "سلفات النحاس CuSO4 25%Cu",
+          "كيلات النحاس EDTA-Cu"
+        ],
+        "dosage_ar": "سلفات النحاس: 0.5 جم/لتر رشاً",
+        "application_method": "رش ورقي",
+        "notes_ar": "مركبات النحاس مبيد فطري أيضاً"
+      },
+      {
+        "id": "micro_006",
+        "element": "الموليبدنيوم",
+        "symbol": "Mo",
+        "function_ar": "اختزال النترات، تثبيت النيتروجين في البقوليات",
+        "deficiency_symptoms_ar": "تشوه وتشعث الأوراق (Whiptail) في القرنبيط، اصفرار عام",
+        "favorable_for_deficiency": "تربة حامضية pH < 5.5",
+        "sources": [
+          "موليبدات الصوديوم",
+          "موليبدات الأمونيوم"
+        ],
+        "dosage_ar": "موليبدات الصوديوم: 0.1 جم/لتر رشاً",
+        "application_method": "رش ورقي أو معاملة بذور",
+        "notes_ar": "الكميات المطلوبة ضئيلة جداً - يكفي رشة واحدة غالباً"
+      }
+    ],
+    "fertilization_programs": [
+      {
+        "id": "prog_001",
+        "crop": "طماطم",
+        "total_season_npk": "200-80-250 كجم N-P2O5-K2O / هكتار",
+        "stages": [
+          {
+            "stage": "الشتل والجذرة (0-20 يوم)",
+            "npk_ratio": "10:52:10",
+            "focus": "الفوسفور لتطوير الجذور",
+            "dosage": "2-3 كجم/1000 لتر",
+            "additional": "هيوميك أسيد لتقوية الجذور"
+          },
+          {
+            "stage": "النمو الخضري (21-45 يوم)",
+            "npk_ratio": "20:10:20",
+            "focus": "الآزوت للنمو الخضري",
+            "dosage": "3-4 كجم/1000 لتر",
+            "additional": "كالسيوم ومغنسيوم"
+          },
+          {
+            "stage": "الإزهار (46-70 يوم)",
+            "npk_ratio": "12:6:36",
+            "focus": "تقليل الآزوت، رفع البوتاسيوم",
+            "dosage": "3-4 كجم/1000 لتر",
+            "additional": "بورون 300 جم/فدان رشاً لتحسين الإخصاب"
+          },
+          {
+            "stage": "عقد وتضخم الثمار (71-100 يوم)",
+            "npk_ratio": "8:8:40",
+            "focus": "البوتاسيوم وكالسيوم لجودة الثمار",
+            "dosage": "4-5 كجم/1000 لتر",
+            "additional": "كالسيوم لمنع تعفن الطرف الزهري"
+          }
+        ]
+      },
+      {
+        "id": "prog_002",
+        "crop": "خيار",
+        "total_season_npk": "150-60-200 كجم N-P2O5-K2O / هكتار",
+        "stages": [
+          {
+            "stage": "الإنبات والشتل (0-15 يوم)",
+            "npk_ratio": "10:52:10",
+            "focus": "الفوسفور",
+            "dosage": "2 كجم/1000 لتر"
+          },
+          {
+            "stage": "النمو الخضري (16-35 يوم)",
+            "npk_ratio": "20:10:20",
+            "focus": "الآزوت والبوتاسيوم",
+            "dosage": "3 كجم/1000 لتر"
+          },
+          {
+            "stage": "الإثمار والحصاد (36+ يوم)",
+            "npk_ratio": "15:5:30",
+            "focus": "بوتاسيوم لصلابة الثمار",
+            "dosage": "4 كجم/1000 لتر"
+          }
+        ]
+      },
+      {
+        "id": "prog_003",
+        "crop": "قمح",
+        "total_season_npk": "90-30-0 كجم N-P2O5 / فدان",
+        "stages": [
+          {
+            "stage": "قبل الزراعة",
+            "npk_ratio": "0:100:0",
+            "focus": "فوسفور للإنبات",
+            "dosage": "150 كجم سوبر فوسفات/فدان"
+          },
+          {
+            "stage": "التفريع (الرية الثانية)",
+            "npk_ratio": "100:0:0",
+            "focus": "آزوت للتفريع",
+            "dosage": "75 كجم يوريا/فدان"
+          },
+          {
+            "stage": "الإطالة",
+            "npk_ratio": "100:0:0",
+            "focus": "آزوت للإطالة والسنبلة",
+            "dosage": "75 كجم يوريا/فدان"
+          }
+        ]
+      }
+    ]
+  },
+  "pesticides_database": [
+    {
+      "id": "pst_001",
+      "trade_name_ar": "ريدوميل جولد",
+      "active_ingredient": "Metalaxyl-M + Mancozeb",
+      "registration_number": "مسجل",
+      "type": "مبيد فطري",
+      "mode_of_action": "مثبط تخليق RNA + تأثير متعدد المواقع",
+      "spectrum": "ضيق الطيف ضد الأوميسيتس (فيتوفثورا، بياض زغبي)",
+      "crops_registered": [
+        "طماطم",
+        "بطاطس",
+        "بصل",
+        "خيار",
+        "عنب"
+      ],
+      "dosage": "2.5 جم/لتر ماء",
+      "phi": 14,
+      "pre_harvest_interval_days": 14,
+      "safety_class": "Class III - ضعيف السمية",
+      "notes_ar": "يجب التناوب مع مبيدات أخرى لتجنب المقاومة"
+    },
+    {
+      "id": "pst_002",
+      "trade_name_ar": "أكتارا",
+      "active_ingredient": "Thiamethoxam",
+      "registration_number": "مسجل",
+      "type": "مبيد حشري",
+      "mode_of_action": "نيونيكوتينويد - مثبط مستقبلات الأسيتيل كولين",
+      "spectrum": "واسع الطيف - حشرات ماصة وقارضة",
+      "crops_registered": [
+        "طماطم",
+        "بطاطس",
+        "قطن",
+        "خضر"
+      ],
+      "dosage": "0.2 جم/لتر أو 100 جم/100 لتر",
+      "phi": 7,
+      "safety_class": "Class II",
+      "notes_ar": "ضار جداً للنحل - يُجنب الرش في وقت الإزهار ووجود النحل"
+    },
+    {
+      "id": "pst_003",
+      "trade_name_ar": "فيرتيميك / أجريميك",
+      "active_ingredient": "Abamectin 1.8%",
+      "registration_number": "مسجل",
+      "type": "مبيد حشري وأكاروسيدي",
+      "mode_of_action": "مثبط قنوات الكلوريد (GABA)",
+      "spectrum": "حلم وتربس ومن",
+      "crops_registered": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "ورد",
+        "حمضيات"
+      ],
+      "dosage": "0.75 مل/لتر",
+      "phi": 7,
+      "safety_class": "Class Ib - سمية عالية",
+      "notes_ar": "سام جداً للأسماك والكائنات المائية - خطر على النحل"
+    },
+    {
+      "id": "pst_004",
+      "trade_name_ar": "كابتان",
+      "active_ingredient": "Captan 50%",
+      "registration_number": "مسجل",
+      "type": "مبيد فطري وقائي",
+      "mode_of_action": "تأثير متعدد المواقع",
+      "spectrum": "واسع الطيف ضد معظم الفطريات",
+      "crops_registered": [
+        "تفاح",
+        "كمثرى",
+        "فراولة",
+        "عنب"
+      ],
+      "dosage": "2-3 جم/لتر",
+      "phi": 7,
+      "safety_class": "Class III",
+      "notes_ar": "وقائي فقط - يُطبق قبل الإصابة"
+    },
+    {
+      "id": "pst_005",
+      "trade_name_ar": "كونفيدور",
+      "active_ingredient": "Imidacloprid 70% WG",
+      "registration_number": "مسجل",
+      "type": "مبيد حشري جهازي",
+      "mode_of_action": "نيونيكوتينويد",
+      "spectrum": "حشرات ماصة (من، ذباب أبيض، تربس)",
+      "crops_registered": [
+        "طماطم",
+        "بطاطس",
+        "قطن",
+        "حمضيات"
+      ],
+      "dosage": "0.5 جم/لتر رشاً أو 100 جم/فدان ري",
+      "phi": 21,
+      "safety_class": "Class II",
+      "notes_ar": "ضار للنحل - يُجنب الرش عند الإزهار"
+    }
+  ],
+  "crops_info": [
+    {
+      "id": "crop_001",
+      "name_ar": "طماطم",
+      "scientific_name": "Solanum lycopersicum",
+      "family": "Solanaceae",
+      "season": "شتوي وصيفي",
+      "planting_period": "أغسطس-سبتمبر (شتوي)، يناير-فبراير (صيفي)",
+      "harvest_period": "بعد 65-90 يوم من الشتل",
+      "water_requirements": "600-800 مم/موسم",
+      "optimal_temp": "18-27°م",
+      "optimal_ph": "6.0-6.8",
+      "yield_per_feddan": "6-12 طن/فدان حقل مفتوح",
+      "main_diseases": [
+        "لفحة متأخرة",
+        "لفحة مبكرة",
+        "فيوزاريوم",
+        "TYLCV",
+        "عفن رمادي"
+      ],
+      "main_pests": [
+        "ذباب أبيض",
+        "تربس",
+        "حلم عنكبوتي",
+        "من"
+      ],
+      "key_nutrients": [
+        "كالسيوم (تعفن الطرف)",
+        "بوتاسيوم (جودة الثمار)",
+        "مغنسيوم",
+        "بورون"
+      ],
+      "tips_ar": "الكالسيوم مهم جداً لمنع تعفن الطرف الزهري، ري منتظم ضروري، تجنب البلل الورقي"
+    },
+    {
+      "id": "crop_002",
+      "name_ar": "خيار",
+      "scientific_name": "Cucumis sativus",
+      "family": "Cucurbitaceae",
+      "season": "ربيعي وصيفي",
+      "planting_period": "فبراير-مارس أو أغسطس-سبتمبر",
+      "harvest_period": "40-55 يوم من الزراعة",
+      "water_requirements": "500-700 مم/موسم",
+      "optimal_temp": "18-28°م",
+      "optimal_ph": "6.0-7.0",
+      "yield_per_feddan": "8-15 طن/فدان",
+      "main_diseases": [
+        "بياض دقيقي",
+        "بياض زغبي",
+        "عفن رمادي",
+        "تبرقش فيروسي"
+      ],
+      "main_pests": [
+        "حلم عنكبوتي",
+        "ذباب أبيض",
+        "تربس",
+        "من"
+      ],
+      "key_nutrients": [
+        "بوتاسيوم",
+        "كالسيوم",
+        "مغنسيوم"
+      ],
+      "tips_ar": "الحصاد المنتظم يزيد الإنتاج - لا تترك الثمار تكبر جداً"
+    },
+    {
+      "id": "crop_003",
+      "name_ar": "قمح",
+      "scientific_name": "Triticum aestivum",
+      "family": "Poaceae",
+      "season": "شتوي",
+      "planting_period": "أكتوبر-ديسمبر",
+      "harvest_period": "أبريل-مايو",
+      "water_requirements": "400-500 مم/موسم (5-6 ريات)",
+      "optimal_temp": "12-22°م (للنمو) - يتحمل الصقيع",
+      "optimal_ph": "6.0-7.5",
+      "yield_per_feddan": "2-3 طن/فدان",
+      "main_diseases": [
+        "صدأ أصفر",
+        "صدأ برتقالي",
+        "بياض دقيقي",
+        "تفحم"
+      ],
+      "main_pests": [
+        "حشرة الأفيس",
+        "التربس",
+        "دودة السنابل"
+      ],
+      "key_nutrients": [
+        "نيتروجين (أهم عنصر)",
+        "فوسفور",
+        "كبريت"
+      ],
+      "tips_ar": "موعد الزراعة أهم عامل للإنتاج - أصناف مقاومة للصدأ متوفرة"
+    },
+    {
+      "id": "crop_004",
+      "name_ar": "بطاطس",
+      "scientific_name": "Solanum tuberosum",
+      "family": "Solanaceae",
+      "season": "شتوي وربيعي",
+      "planting_period": "سبتمبر-أكتوبر (شتوي)، يناير-فبراير (ربيعي)",
+      "harvest_period": "90-110 يوم من الزراعة",
+      "water_requirements": "500-700 مم/موسم",
+      "optimal_temp": "15-22°م",
+      "optimal_ph": "4.8-6.5",
+      "yield_per_feddan": "4-8 طن/فدان",
+      "main_diseases": [
+        "لفحة متأخرة",
+        "جرب معتاد",
+        "فيوزاريوم",
+        "ذبول بكتيري"
+      ],
+      "main_pests": [
+        "نيماتودا",
+        "دودة درنات البطاطس",
+        "حشرة الكولورادو (في بعض المناطق)"
+      ],
+      "key_nutrients": [
+        "بوتاسيوم (الأهم)",
+        "نيتروجين",
+        "مغنسيوم"
+      ],
+      "tips_ar": "الري المنتظم خلال التدريع يمنع الجرب، الكالسيوم يحسن جودة الدرنات"
+    },
+    {
+      "id": "crop_005",
+      "name_ar": "ذرة شامية",
+      "scientific_name": "Zea mays",
+      "family": "Poaceae",
+      "season": "صيفي",
+      "planting_period": "مارس-يونيو",
+      "harvest_period": "90-120 يوم من الزراعة",
+      "water_requirements": "600-800 مم/موسم",
+      "optimal_temp": "20-30°م",
+      "optimal_ph": "5.8-7.0",
+      "yield_per_feddan": "2.5-4 طن حبوب/فدان",
+      "main_diseases": [
+        "تفحم الذرة",
+        "لفحة أوراق الذرة",
+        "عفن الكيزان"
+      ],
+      "main_pests": [
+        "دودة الحشد الخريفية",
+        "ثاقبة الساق الأوروبية",
+        "دودة ورق الذرة"
+      ],
+      "key_nutrients": [
+        "نيتروجين (احتياج عالٍ جداً)",
+        "فوسفور",
+        "زنك"
+      ],
+      "tips_ar": "دودة الحشد تحتاج مراقبة مبكرة جداً - الزنك ضروري للذرة في التربة المصرية"
+    }
+  ],
+  "ai_chat_responses": {
+    "greetings": [
+      "أهلاً وسهلاً! أنا مساعدك الزراعي الذكي في HefnoPlant. كيف يمكنني مساعدتك اليوم؟",
+      "مرحباً بك في HefnoPlant! اسألني أي سؤال زراعي وسأساعدك بأفضل الإجابات العلمية.",
+      "أهلاً! أنا هنا لمساعدتك في كل ما يخص المحاصيل والأمراض والآفات والتسميد."
+    ],
+    "not_found": "عذراً، لم أجد معلومات كافية عن هذا الموضوع في قاعدة بياناتي حالياً. يمكنك التواصل مع فريق HefnoPlant للحصول على مساعدة متخصصة.",
+    "keywords_map": {
+      "مرض": "diseases",
+      "مبيد": "pesticides_database",
+      "آفة": "pests",
+      "حشرة": "pests",
+      "تسميد": "fertilization",
+      "سماد": "fertilization",
+      "عنصر": "fertilization.micro_elements",
+      "نقص": "fertilization",
+      "نيتروجين": "fertilization.macro_elements",
+      "فوسفور": "fertilization.macro_elements",
+      "بوتاسيوم": "fertilization.macro_elements",
+      "حديد": "fertilization.micro_elements",
+      "زنك": "fertilization.micro_elements",
+      "طماطم": "crops_info.crop_001",
+      "خيار": "crops_info.crop_002",
+      "قمح": "crops_info.crop_003",
+      "بطاطس": "crops_info.crop_004",
+      "ذرة": "crops_info.crop_005"
+    },
+    "sample_questions": [
+      "أوراق الطماطم بتاعتي اصفرت، إيه المشكلة؟",
+      "إيه أعراض اللفحة المتأخرة في البطاطس؟",
+      "إيه أفضل مبيد للمن على الخيار؟",
+      "عندي نقص حديد في النباتات - إيه العلاج؟",
+      "إزاي أعمل برنامج تسميد للطماطم؟",
+      "أعراض الذباب الأبيض على الطماطم إيه؟",
+      "إيه جرعة الكبريت الميكروني للبياض الدقيقي؟",
+      "إزاي أعالج نيماتودا الجذور في التربة؟"
+    ]
+  },
+  "metadata": {
+    "total_diseases": 10,
+    "total_pests": 8,
+    "total_macro_elements": 6,
+    "total_micro_elements": 6,
+    "total_fertilization_programs": 3,
+    "total_crops": 5,
+    "total_pesticides_db": 5,
+    "language": "ar",
+    "version": "1.0.0",
+    "notes": "يمكن توسيع هذا الملف بإضافة المزيد من الأمراض والآفات والمحاصيل والمبيدات تدريجياً"
+  }
+}

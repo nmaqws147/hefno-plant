@@ -7,6 +7,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        primary: {
+          DEFAULT: '#52b788',
+          foreground: '#0d2818',
+        },
+        muted: {
+          foreground: '#6b7280',
+        },
+        background: '#ffffff',
+        foreground: '#1f2937',
         forest: {
           DEFAULT: '#1e352f',
           light: '#2d5a4a',
@@ -36,4 +45,3 @@ module.exports = {
     require('@tailwindcss/typography'),
   ],
 }
-

@@ -1,8 +1,8 @@
 
-import { Redis } from '@upstash/redis';
-import crypto from 'crypto';
-import fs from 'fs';
-import path from 'path';
+const { Redis } = require('@upstash/redis');
+const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
 
 //  Redis
 const redis = new Redis({
@@ -455,7 +455,7 @@ function formatResponse(text) {
 
 // ==================== الـ Handler الرئيسي (لـ Vercel) ====================
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     const requestId = Math.random().toString(36).substring(7).toUpperCase();
     const startTime = Date.now();
 

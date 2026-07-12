@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 function loadFertilizerData() {
     const fertilizerData = [];
@@ -400,7 +400,7 @@ function getDefaultProgram(crop, areaFeddan) {
     };
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     const requestId = Math.random().toString(36).substring(7).toUpperCase();
     const startTime = Date.now();
 

@@ -1,0 +1,1558 @@
+{
+  "metadata": {
+    "id": "hefnoplant_weeds_db",
+    "name_ar": "قاعدة بيانات الحشائش والأعشاب الضارة",
+    "name_en": "HefnoPlant — Egyptian Weeds & Weed Management Database",
+    "version": "1.0.0",
+    "description_ar": "دليل شامل للحشائش الضارة بالمحاصيل المصرية — التعريف والتشخيص والمكافحة",
+    "warning_ar": "الحشائش تُسبب خسائر تتراوح بين 20-50% من الإنتاج الزراعي في مصر عند عدم المكافحة",
+    "sources": [
+      "وزارة الزراعة المصرية — قسم أبحاث الحشائش",
+      "مركز البحوث الزراعية — معهد بحوث أمراض النباتات",
+      "WSSA — Weed Science Society of America",
+      "FAO — Weed Management Guidelines",
+      "خبرات الزراعة المصرية الميدانية"
+    ],
+    "total_weeds": 45,
+    "categories": ["حشائش النجيليات", "حشائش عريضة الأوراق", "حشائش الثرة", "حشائش طفيلية"],
+    "last_updated": "2024"
+  },
+
+  "economic_importance": {
+    "title_ar": "الأهمية الاقتصادية للحشائش في مصر",
+    "annual_losses_egp": "أكثر من 5 مليار جنيه سنوياً",
+    "yield_loss_percent": {
+      "wheat_ar": "20-40% بدون مكافحة",
+      "rice_ar": "30-70% بدون مكافحة",
+      "corn_ar": "25-50% بدون مكافحة",
+      "vegetables_ar": "30-60% بدون مكافحة",
+      "cotton_ar": "20-40% بدون مكافحة"
+    },
+    "competition_mechanisms_ar": [
+      "التنافس على الضوء — الحشائش الطويلة تُظلل المحصول",
+      "التنافس على الماء — الحشائش عميقة الجذور تستنزف رطوبة التربة",
+      "التنافس على العناصر الغذائية — الحشائش سريعة الامتصاص",
+      "إفراز مواد كيميائية مثبطة للمحصول (Allelopathy)",
+      "إيواء الحشرات والأمراض وتكثير بوجودها"
+    ]
+  },
+
+  "weed_categories": [
+
+    {
+      "id": "weed-cat-01",
+      "name_ar": "حشائش النجيليات (الرفيعة)",
+      "name_en": "Grassy Weeds (Monocots)",
+      "description_ar": "حشائش ذات أوراق رفيعة ضيقة — أصعب في المكافحة الانتقائية داخل محاصيل النجيليات",
+      "characteristics_ar": "أوراق رفيعة — عروق موازية — لا فلقتان — جذر ليفي",
+      "weeds": [
+        {
+          "id": "weed-001",
+          "name_ar": "نجيل الشيطان / نجيل بلدي",
+          "name_en": "Bermuda Grass / Devil's Grass",
+          "name_scientific": "Cynodon dactylon",
+          "family_ar": "النجيليات Poaceae",
+          "type_ar": "معمرة — ضارة جداً",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "من أخطر وأصعب الحشائش المعمرة في مصر — تتكاثر بالبذور والسيقان الجارية والجذامير تحت التربة",
+          "identification": {
+            "height_cm": "10-40 سم",
+            "leaf_ar": "أوراق رفيعة خشنة على الحافة — لها ريش في القاعدة",
+            "stem_ar": "سيقان جارية فوق وتحت التربة (ستولونات وجذامير)",
+            "flower_ar": "نورات أصابعية 3-6 أصابع",
+            "seed_ar": "بذور صغيرة جداً — تنتشر بالرياح والماء والآلات",
+            "root_ar": "جذامير أفقية تحت التربة — عميقة حتى 30 سم",
+            "season_ar": "صيفي — نشط في الحرارة العالية"
+          },
+          "habitat_ar": ["جميع الأراضي الزراعية", "حواف الترع", "الطرق الزراعية", "الحدائق"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-002", "crop_ar": "ذرة شامية", "severity": "عالية جداً"},
+            {"crop_id": "plant-004", "crop_ar": "قطن", "severity": "عالية"},
+            {"crop_id": "plant-007", "crop_ar": "طماطم", "severity": "عالية جداً"},
+            {"crop_id": "plant-008", "crop_ar": "بطاطس", "severity": "عالية"},
+            {"crop_id": "plant-035", "crop_ar": "موز", "severity": "عالية"},
+            {"crop_id": "plant-012", "crop_ar": "حمضيات", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور", "سيقان جارية (ستولونات)", "جذامير تحت التربة"],
+            "seeds_per_plant": "5000-50000 بذرة",
+            "viability_years": "2-4 سنوات في التربة",
+            "spread_ar": "الحرث يقطع الجذامير ويزيد انتشارها — أشنع تأثير للحرث في وجودها"
+          },
+          "management": {
+            "prevention_ar": [
+              "تنظيف الآلات الزراعية قبل الانتقال بين الحقول",
+              "عدم إدخال تربة ملوثة أو شتالت غير معقمة",
+              "حرق بقايا النجيل قبل الزراعة"
+            ],
+            "cultural_ar": [
+              "الحرث العميق المتكرر في الصيف الحار يجفف الجذامير",
+              "التغطية بالنايلون الأسود 4-6 أسابيع في الصيف",
+              "الدورة الزراعية مع محاصيل شتوية كثيفة (برسيم)"
+            ],
+            "mechanical_ar": [
+              "العزيق المتكرر قبل الزراعة لاستنزاف الجذامير",
+              "التشميس الصيفي فعّال جداً"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "جليفوسيت (Glyphosate)",
+                "trade_names_ar": ["راونداب", "توتال", "ستارابي"],
+                "dose_ar": "2-3 لتر/100 لتر ماء",
+                "method_ar": "رش على الأوراق — يصل للجذامير",
+                "timing_ar": "على النجيل النشط قبل الزراعة",
+                "selectivity_ar": "غير انتقائي — يقتل كل النباتات",
+                "egypt_registered": true,
+                "preharvest_interval_days": null
+              },
+              {
+                "active_ingredient_ar": "فلوازيفوب (Fluazifop-p-butyl)",
+                "trade_names_ar": ["فوسيلاد فورت"],
+                "dose_ar": "1-1.5 لتر/فدان",
+                "method_ar": "رش بعد ظهور 3-4 أوراق",
+                "timing_ar": "خلال الموسم في الخضروات والبقوليات",
+                "selectivity_ar": "انتقائي ضد النجيليات — آمن على عريضات الأوراق",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": [
+              "مقصلة أو مهراس يدوي متكرر",
+              "غطاء نباتي كثيف من البرسيم",
+              "كومبوست ورق كوش 10 سم فوق التربة"
+            ]
+          },
+          "allelopathy_ar": "يُفرز مواد كيميائية تُثبط إنبات بذور بعض المحاصيل",
+          "useful_notes_ar": "النجيل يُستخدم كعشب للحدائق — الضار هو غير المُتحكَّم فيه في الحقول"
+        },
+
+        {
+          "id": "weed-002",
+          "name_ar": "الأرز البري / زؤان الأرز",
+          "name_en": "Red Rice / Weedy Rice",
+          "name_scientific": "Oryza sativa f. spontanea",
+          "family_ar": "النجيليات Poaceae",
+          "type_ar": "حولية — خطيرة جداً في حقول الأرز",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "من أخطر حشائش حقول الأرز في مصر — يشبه الأرز المزروع تماماً في المظهر — يُفرز البذور قبل الحصاد",
+          "identification": {
+            "height_cm": "70-120 سم",
+            "leaf_ar": "مشابه للأرز المزروع — أوراق أضيق قليلاً",
+            "stem_ar": "ساق أنحف من الأرز المزروع — أحمر عند القاعدة",
+            "flower_ar": "سنابل متشعبة — حبوب تتساقط بسهولة",
+            "seed_ar": "حبوب أصغر وأحمر اللون — تتساقط قبل الحصاد",
+            "root_ar": "جذور ليفية مشابهة للأرز",
+            "season_ar": "صيفي — نفس موسم الأرز"
+          },
+          "habitat_ar": ["حقول الأرز فقط"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-003", "crop_ar": "أرز", "severity": "عالية جداً — خطر وراثي"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور فقط — تتساقط قبل الحصاد"],
+            "seeds_per_plant": "300-2000 بذرة",
+            "viability_years": "3-10 سنوات في التربة",
+            "spread_ar": "مع تقاوي الأرز الملوثة — ومياه الري"
+          },
+          "management": {
+            "prevention_ar": [
+              "استخدام تقاوي أرز معتمدة خالية من الأرز البري",
+              "تنظيف آلات الحصاد جيداً",
+              "عدم نقل مياه من حقول مصابة"
+            ],
+            "cultural_ar": [
+              "الزراعة الجافة ثم الإغراق يُقلل الإنبات",
+              "الشتل بدلاً من الزراعة المباشرة يُقلل كثيراً",
+              "الدورة الزراعية مع محاصيل غير مائية"
+            ],
+            "mechanical_ar": [
+              "قلع يدوي عند ظهوره — ضروري قبل إطلاق البذور",
+              "الإزالة قبل الإزهار إلزامية"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "بروبانيل (Propanil)",
+                "trade_names_ar": ["ستام F-34", "سوبر ستام"],
+                "dose_ar": "4-5 لتر/فدان",
+                "method_ar": "رش مائي موجه",
+                "timing_ar": "عند 3-4 أوراق من الحشيشة",
+                "selectivity_ar": "انتقائي في الأرز — لكن قد يضر الأرز البري",
+                "egypt_registered": true,
+                "preharvest_interval_days": 45
+              }
+            ],
+            "organic_control_ar": [
+              "القلع اليدوي المنتظم",
+              "الشتل يُقلل الإصابة بشكل كبير"
+            ]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "الخطر الأكبر هو التهجين مع الأرز المزروع — يُفسد نقاء الصنف"
+        },
+
+        {
+          "id": "weed-003",
+          "name_ar": "الذرة الريحية / حشيشة السيف",
+          "name_en": "Johnson Grass",
+          "name_scientific": "Sorghum halepense",
+          "family_ar": "النجيليات Poaceae",
+          "type_ar": "معمرة — خطيرة",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "حشيشة معمرة ضخمة تصل لـ 2 متر — جذامير قوية — تنافس الذرة والقمح بشدة — تُحرر حمض البروسيك عند الجفاف",
+          "identification": {
+            "height_cm": "100-200 سم",
+            "leaf_ar": "أوراق عريضة نسبياً لنجيلية — خط أبيض وسطي — خشنة",
+            "stem_ar": "سميك — فارغ — أحمر قرب القاعدة",
+            "flower_ar": "نورة هرمية كبيرة بنفسجية اللون",
+            "seed_ar": "حبوب بيضاوية — بنية داكنة",
+            "root_ar": "جذامير بيضاء عميقة تصل 1.5 متر",
+            "season_ar": "صيفي — نشط جداً في الحرارة"
+          },
+          "habitat_ar": ["حقول الذرة", "حقول القطن", "الأراضي البور"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-002", "crop_ar": "ذرة شامية", "severity": "عالية جداً"},
+            {"crop_id": "plant-004", "crop_ar": "قطن", "severity": "عالية"},
+            {"crop_id": "plant-001", "crop_ar": "قمح", "severity": "متوسطة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور", "جذامير تحت التربة"],
+            "seeds_per_plant": "1000-5000 بذرة",
+            "viability_years": "5-7 سنوات",
+            "spread_ar": "الحرث يقطع الجذامير ويزيد الانتشار"
+          },
+          "management": {
+            "prevention_ar": ["حرق أو إزالة الحشيشة قبل إزهارها"],
+            "cultural_ar": [
+              "حرث صيفي عميق + تشميس",
+              "دورة زراعية مع برسيم أو فول"
+            ],
+            "mechanical_ar": ["عزيق متكرر لاستنزاف الجذامير"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "جليفوسيت",
+                "trade_names_ar": ["راونداب", "توتال"],
+                "dose_ar": "3-4 لتر/100 لتر ماء",
+                "method_ar": "رش على الأوراق قبل الزراعة",
+                "timing_ar": "على نبات نشط طوله 30-50 سم",
+                "selectivity_ar": "غير انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": null
+              },
+              {
+                "active_ingredient_ar": "نيكوسولفيورون (Nicosulfuron)",
+                "trade_names_ar": ["أكومباك"],
+                "dose_ar": "1.5-2 لتر/فدان",
+                "method_ar": "رش موجه بعد الزراعة",
+                "timing_ar": "الذرة في 3-5 أوراق",
+                "selectivity_ar": "انتقائي في الذرة فقط",
+                "egypt_registered": true,
+                "preharvest_interval_days": 40
+              }
+            ],
+            "organic_control_ar": ["حرث عميق + تشميس", "البقول الكثيفة في الدورة"]
+          },
+          "allelopathy_ar": "يُفرز مواد تُثبط نمو المحاصيل",
+          "useful_notes_ar": "تُحرر حمض البروسيك (HCN) عند الذبول — خطر على الماشية"
+        },
+
+        {
+          "id": "weed-004",
+          "name_ar": "الدُّخن البري",
+          "name_en": "Barnyard Grass / Water Grass",
+          "name_scientific": "Echinochloa crus-galli",
+          "family_ar": "النجيليات Poaceae",
+          "type_ar": "حولية — خطيرة في الأرز",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "من أكثر حشائش الأرز ضراراً في مصر — تُشبه الأرز في المرحلة الأولى ويصعب تمييزها",
+          "identification": {
+            "height_cm": "50-150 سم",
+            "leaf_ar": "أوراق مسطحة عريضة — بدون لسين (ligule)",
+            "stem_ar": "سميك — منتفخ عند القاعدة",
+            "flower_ar": "سنابل أصابعية خضراء أو أرجوانية — أرجل إبرية طويلة",
+            "seed_ar": "بذور بيضاوية صغيرة",
+            "root_ar": "جذور ليفية",
+            "season_ar": "صيفي — يحب الرطوبة"
+          },
+          "habitat_ar": ["حقول الأرز", "الأراضي الرطبة", "الأراضي المرّوية"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-003", "crop_ar": "أرز", "severity": "عالية جداً"},
+            {"crop_id": "plant-002", "crop_ar": "ذرة شامية", "severity": "عالية"},
+            {"crop_id": "plant-055", "crop_ar": "بطيخ", "severity": "متوسطة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور فقط"],
+            "seeds_per_plant": "2000-40000 بذرة",
+            "viability_years": "5-10 سنوات",
+            "spread_ar": "مياه الري — ينبت في الغمر"
+          },
+          "management": {
+            "prevention_ar": ["تحضير قاع الحقل جيداً", "غمر مبكر"],
+            "cultural_ar": [
+              "الغمر السريع بعد الشتل يُثبط الإنبات",
+              "الشتل بدلاً من الزراعة المباشرة"
+            ],
+            "mechanical_ar": ["إزالة يدوية مبكرة"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "بيونزباك + بروبانيل",
+                "trade_names_ar": ["ستام كومبي"],
+                "dose_ar": "2 لتر/فدان",
+                "method_ar": "رش مائي موجه",
+                "timing_ar": "3-4 أوراق من الحشيشة",
+                "selectivity_ar": "انتقائي في الأرز",
+                "egypt_registered": true,
+                "preharvest_interval_days": 40
+              },
+              {
+                "active_ingredient_ar": "بنتيوبيراد (Penthiopyrad) + سيكلوسولفاميورون",
+                "trade_names_ar": ["كورنشيلد"],
+                "dose_ar": "1.5-2 كجم/فدان",
+                "method_ar": "رش",
+                "timing_ar": "مبكر عند 2-3 أوراق",
+                "selectivity_ar": "انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": 50
+              }
+            ],
+            "organic_control_ar": ["غمر مبكر وعميق", "إزالة يدوية مكثفة"]
+          },
+          "allelopathy_ar": "نعم — يُفرز مواد تُثبط إنبات الأرز",
+          "useful_notes_ar": "عند نقص الغمر تنفجر كمياتها — الغمر المستمر أهم وسيلة مكافحة"
+        },
+
+        {
+          "id": "weed-005",
+          "name_ar": "الثيل / حشيشة الروضة",
+          "name_en": "Cogon Grass / Imperata",
+          "name_scientific": "Imperata cylindrica",
+          "family_ar": "النجيليات Poaceae",
+          "type_ar": "معمرة — خطيرة جداً",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "من أسوأ حشائش العالم — جذامير عميقة قوية — مقاومة للجفاف والحرق — تُشعل النيران",
+          "identification": {
+            "height_cm": "30-120 سم",
+            "leaf_ar": "أوراق رفيعة مدببة جداً — حافة حادة كالسكين — لامعة",
+            "stem_ar": "ساق قائم",
+            "flower_ar": "نورة بيضاء ناعمة كالقطن — جميلة المظهر",
+            "seed_ar": "بذور ريشية تطير بالرياح",
+            "root_ar": "جذامير أفقية بيضاء سميكة — عميقة جداً",
+            "season_ar": "معمرة — نشطة طوال السنة"
+          },
+          "habitat_ar": ["الأراضي الرملية", "الأراضي الجديدة", "الأراضي المهجورة"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-004", "crop_ar": "قطن", "severity": "عالية"},
+            {"crop_id": "plant-002", "crop_ar": "ذرة شامية", "severity": "عالية"},
+            {"crop_id": "plant-044", "crop_ar": "عباد الشمس", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور ريشية", "جذامير أفقية"],
+            "seeds_per_plant": "3000 بذرة",
+            "viability_years": "1-2 سنوات للبذور — الجذامير تعيش سنوات",
+            "spread_ar": "الرياح — الآلات الزراعية — مياه الري"
+          },
+          "management": {
+            "prevention_ar": ["عدم إدخال تربة من مناطق مصابة"],
+            "cultural_ar": [
+              "حرث عميق + تشميس مكثف",
+              "زراعة محاصيل كثيفة تُغطي التربة"
+            ],
+            "mechanical_ar": [
+              "حرث عميق متكرر لاستنزاف الجذامير",
+              "إزالة الجذامير يدوياً"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "جليفوسيت",
+                "trade_names_ar": ["راونداب"],
+                "dose_ar": "3-5 لتر/100 لتر ماء",
+                "method_ar": "رش مكثف على الأوراق",
+                "timing_ar": "على نبات نشط — عدة مرات",
+                "selectivity_ar": "غير انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": null
+              }
+            ],
+            "organic_control_ar": ["حرث عميق مستمر", "تغطية بالنايلون الأسود 3 أشهر"]
+          },
+          "allelopathy_ar": "نعم — يُثبط إنبات ونمو معظم المحاصيل",
+          "useful_notes_ar": "مدرج ضمن أسوأ 10 حشائش في العالم — مقاومة للحرق"
+        },
+
+        {
+          "id": "weed-006",
+          "name_ar": "الفالاريس / العليق النجيلي",
+          "name_en": "Canary Grass",
+          "name_scientific": "Phalaris minor",
+          "family_ar": "النجيليات Poaceae",
+          "type_ar": "حولية شتوية",
+          "danger_level": "عالية",
+          "danger_icon": "",
+          "description_ar": "من أهم حشائش القمح والشعير في مصر — كثيراً ما تُخطأ كزرعة قمح ناعمة",
+          "identification": {
+            "height_cm": "30-80 سم",
+            "leaf_ar": "أوراق رفيعة ناعمة — أكثر لمعاناً من القمح",
+            "stem_ar": "ناعم — أقل متانة من القمح",
+            "flower_ar": "نورة أسطوانية كثيفة — تُشبه نورة القنب",
+            "seed_ar": "بذور بيضاوية — تُشبه حبوب القمح الصغيرة",
+            "root_ar": "ليفي",
+            "season_ar": "شتوي — يظهر مع القمح"
+          },
+          "habitat_ar": ["حقول القمح والشعير", "الأراضي الشتوية"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-001", "crop_ar": "قمح", "severity": "عالية جداً"},
+            {"crop_id": "plant-042", "crop_ar": "شعير", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور فقط"],
+            "seeds_per_plant": "1000-3000 بذرة",
+            "viability_years": "3-5 سنوات",
+            "spread_ar": "مع تقاوي القمح الملوثة"
+          },
+          "management": {
+            "prevention_ar": ["استخدام تقاوي قمح معتمدة خالية من البذور"],
+            "cultural_ar": ["تأخير موعد الزراعة إسبوعين يُقلل الإنبات"],
+            "mechanical_ar": ["إزالة يدوية مبكرة قبل الإزهار"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "إيسوبروتيورون (Isoproturon)",
+                "trade_names_ar": ["تولكان"],
+                "dose_ar": "1-1.5 كجم/فدان",
+                "method_ar": "رش ما بعد الإنبات",
+                "timing_ar": "عند 2-3 أوراق من الحشيشة",
+                "selectivity_ar": "انتقائي في القمح",
+                "egypt_registered": true,
+                "preharvest_interval_days": 60
+              },
+              {
+                "active_ingredient_ar": "كلودينافوب (Clodinafop)",
+                "trade_names_ar": ["توبيك"],
+                "dose_ar": "60-75 جم/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "2-4 أوراق من الحشيشة",
+                "selectivity_ar": "انتقائي في القمح والشعير",
+                "egypt_registered": true,
+                "preharvest_interval_days": 50
+              }
+            ],
+            "organic_control_ar": ["تأخير الزراعة أسبوعين مع حرث خفيف لاستنزاف الإنبات"]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "تحولت بعض سلالاتها لمقاومة مبيد الإيسوبروتيورون — مهم التدوير"
+        }
+      ]
+    },
+
+    {
+      "id": "weed-cat-02",
+      "name_ar": "حشائش عريضة الأوراق (ثنائية الفلقة)",
+      "name_en": "Broadleaf Weeds (Dicots)",
+      "description_ar": "حشائش ذات أوراق عريضة — عروق متشعبة — أسهل في المكافحة الانتقائية داخل النجيليات",
+      "characteristics_ar": "أوراق عريضة — عروق شبكية — فلقتان — جذر وتدي أو ليفي",
+      "weeds": [
+        {
+          "id": "weed-007",
+          "name_ar": "الحلفا / نبات الفصة",
+          "name_en": "Field Bindweed / Convolvulus",
+          "name_scientific": "Convolvulus arvensis",
+          "family_ar": "عائلة الحلفا Convolvulaceae",
+          "type_ar": "معمرة — ضارة جداً",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "من أشهر الحشائش المعمرة في مصر — تلتف حول النباتات وتخنقها — جذور عميقة جداً تصل 5 أمتار",
+          "identification": {
+            "height_cm": "تتسلق حتى 200 سم",
+            "leaf_ar": "سهمية الشكل — ناعمة — لامعة",
+            "stem_ar": "رفيع ملتوٍ — يلتف عكس عقارب الساعة",
+            "flower_ar": "أزهار قمعية بيضاء أو وردية فاتحة — جميلة",
+            "seed_ar": "بذور بنية صلبة — تعيش عقوداً",
+            "root_ar": "جذور وتدية عميقة جداً + جذامير أفقية",
+            "season_ar": "معمرة — نشطة في الربيع والصيف"
+          },
+          "habitat_ar": ["جميع الحقول الزراعية", "البساتين", "الحدائق"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-001", "crop_ar": "قمح", "severity": "عالية"},
+            {"crop_id": "plant-002", "crop_ar": "ذرة", "severity": "عالية"},
+            {"crop_id": "plant-004", "crop_ar": "قطن", "severity": "عالية جداً"},
+            {"crop_id": "plant-007", "crop_ar": "طماطم", "severity": "عالية"},
+            {"crop_id": "plant-012", "crop_ar": "حمضيات", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور طويلة العمر", "جذامير أفقية", "جذور عميقة"],
+            "seeds_per_plant": "500-600 بذرة",
+            "viability_years": "20-50 سنة في التربة",
+            "spread_ar": "الحرث يقطع الجذور ويزيد الانتشار"
+          },
+          "management": {
+            "prevention_ar": ["تجنب نقل تربة ملوثة", "لا تحرث عند وجودها دون إزالة مبدئية"],
+            "cultural_ar": [
+              "البرسيم الكثيف يكبح نموها",
+              "تغطية بالنايلون الأسود"
+            ],
+            "mechanical_ar": [
+              "عزيق عميق متكرر لاستنزاف الجذور",
+              "قطع المجموع الخضري مراراً"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D أمين",
+                "trade_names_ar": ["ووثر أمين", "إيرادكان"],
+                "dose_ar": "1-1.5 لتر/فدان",
+                "method_ar": "رش موجه أو قبل الإنبات",
+                "timing_ar": "قبل أو بعد الزراعة",
+                "selectivity_ar": "انتقائي في النجيليات — يقتل عريضات الأوراق",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              },
+              {
+                "active_ingredient_ar": "جليفوسيت",
+                "trade_names_ar": ["راونداب"],
+                "dose_ar": "4-5 لتر/100 لتر ماء",
+                "method_ar": "رش مباشر قبل الزراعة",
+                "timing_ar": "على نبات نشط",
+                "selectivity_ar": "غير انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": null
+              }
+            ],
+            "organic_control_ar": [
+              "قطع منتظم — لا قلع لأن الجذر يتجدد",
+              "غطاء نباتي كثيف يكبحها"
+            ]
+          },
+          "allelopathy_ar": "نعم — تُفرز مواد تُثبط بعض المحاصيل",
+          "useful_notes_ar": "أزهارها جميلة لكن الجذور تمتص مياه وعناصر المحصول — بذورها تعيش 50 سنة في التربة"
+        },
+
+        {
+          "id": "weed-008",
+          "name_ar": "الحميض / الحُمَيضة",
+          "name_en": "Dock / Sorrel",
+          "name_scientific": "Rumex dentatus / Rumex crispus",
+          "family_ar": "عائلة العقدة Polygonaceae",
+          "type_ar": "حولية وثنائية الحول",
+          "danger_level": "عالية",
+          "danger_icon": "",
+          "description_ar": "حشيشة شائعة جداً في مصر في حقول الخضروات والقمح — أوراقها مسننة أو مجعدة — طعمها حامض",
+          "identification": {
+            "height_cm": "30-80 سم",
+            "leaf_ar": "كبيرة — مسننة الحافة أو مجعدة — خضراء داكنة",
+            "stem_ar": "قائم — أحمر عند القاعدة",
+            "flower_ar": "نورات طويلة — أزهار صغيرة خضراء ثم بنية",
+            "seed_ar": "بذور صغيرة مجنحة ثلاثية",
+            "root_ar": "جذر وتدي سميك — يصعب اقتلاعه",
+            "season_ar": "شتوي وربيعي"
+          },
+          "habitat_ar": ["حقول الخضروات", "حقول القمح", "الأراضي الرطبة", "أحواض الري"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-009", "crop_ar": "بصل", "severity": "عالية"},
+            {"crop_id": "plant-001", "crop_ar": "قمح", "severity": "متوسطة"},
+            {"crop_id": "plant-027", "crop_ar": "جرجير", "severity": "عالية"},
+            {"crop_id": "plant-028", "crop_ar": "سبانخ", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور"],
+            "seeds_per_plant": "1000-60000 بذرة",
+            "viability_years": "5-10 سنوات",
+            "spread_ar": "مياه الري — الرياح"
+          },
+          "management": {
+            "prevention_ar": ["نظافة مياه الري من بذور الحشائش"],
+            "cultural_ar": ["حرث عميق لكسر الجذر الوتدي"],
+            "mechanical_ar": ["قلع يدوي كامل مع الجذر — قطع الساق وحده لا يكفي"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D",
+                "trade_names_ar": ["ووثر أمين"],
+                "dose_ar": "1 لتر/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "قبل تشكل الجذر الوتدي",
+                "selectivity_ar": "انتقائي في النجيليات",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": ["قلع كامل مع الجذر — مزاولة منتظمة"]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "أوراق الحميض الصغيرة تُؤكل في السلطات — طعمها حامض بسبب حمض الأوكساليك"
+        },
+
+        {
+          "id": "weed-009",
+          "name_ar": "الرجلة / البقلة",
+          "name_en": "Purslane",
+          "name_scientific": "Portulaca oleracea",
+          "family_ar": "عائلة الرجلة Portulacaceae",
+          "type_ar": "حولية صيفية",
+          "danger_level": "متوسطة-عالية",
+          "danger_icon": "",
+          "description_ar": "حشيشة مائية اللحم — سريعة النمو جداً — تُغطي التربة بسرعة — تنافس الخضروات على الماء والعناصر",
+          "identification": {
+            "height_cm": "5-30 سم",
+            "leaf_ar": "أوراق سميكة عصارية — بيضاوية — لامعة — خضراء داكنة",
+            "stem_ar": "أحمر — لحمي — ينكسر بسهولة",
+            "flower_ar": "أزهار صفراء صغيرة جداً — تُفتح في الصباح",
+            "seed_ar": "بذور سوداء صغيرة جداً",
+            "root_ar": "جذور ضحلة ليفية",
+            "season_ar": "صيفي — يحب الحرارة والرطوبة"
+          },
+          "habitat_ar": ["حقول الخضروات", "الحدائق", "جميع الأراضي المرّوية"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-007", "crop_ar": "طماطم", "severity": "عالية"},
+            {"crop_id": "plant-010", "crop_ar": "خيار", "severity": "عالية"},
+            {"crop_id": "plant-009", "crop_ar": "بصل", "severity": "عالية"},
+            {"crop_id": "plant-032", "crop_ar": "كوسة", "severity": "متوسطة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور فقط"],
+            "seeds_per_plant": "52000-240000 بذرة",
+            "viability_years": "40+ سنة في التربة",
+            "spread_ar": "الري — الرياح — التربة"
+          },
+          "management": {
+            "prevention_ar": ["تقليل الري السطحي"],
+            "cultural_ar": ["التغطية بالمالش أو البلاستيك الأسود"],
+            "mechanical_ar": [
+              "عزيق سطحي متكرر",
+              "يجب إخراجها من الحقل — لا تترك على التربة فتتجذر من الساق"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "أوكسيفلورفين (Oxyfluorfen)",
+                "trade_names_ar": ["جول", "شوت"],
+                "dose_ar": "500-750 مل/فدان",
+                "method_ar": "رش قبل الإنبات",
+                "timing_ar": "قبل أو بعد الزراعة مباشرة",
+                "selectivity_ar": "انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": 45
+              }
+            ],
+            "organic_control_ar": [
+              "المالش العضوي 5-8 سم",
+              "عزيق سطحي بعد كل رية",
+              "لا تترك قطع الساق على التربة — تتجذر"
+            ]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "الرجلة نبات غذائي مفيد — أوراقها وسيقانها تُؤكل وغنية بـ Omega-3 والحديد — الضرر فقط عند كثرتها غير المُتحكَّم فيها"
+        },
+
+        {
+          "id": "weed-010",
+          "name_ar": "السلق البري / القطف البري",
+          "name_en": "Fat Hen / Lamb's Quarters",
+          "name_scientific": "Chenopodium album",
+          "family_ar": "عائلة القطفية Chenopodiaceae",
+          "type_ar": "حولية",
+          "danger_level": "عالية",
+          "danger_icon": "",
+          "description_ar": "حشيشة شائعة جداً — تنمو بسرعة وترتفع كثيراً — تنافس القطن والخضروات على الضوء والعناصر",
+          "identification": {
+            "height_cm": "30-150 سم",
+            "leaf_ar": "معينية الشكل — مسحوقة بيضاء على السطح السفلي",
+            "stem_ar": "مخطط أحمر وأبيض — قائم متفرع",
+            "flower_ar": "نورات خضراء صغيرة كثيفة",
+            "seed_ar": "بذور سوداء لامعة صغيرة",
+            "root_ar": "وتدي",
+            "season_ar": "ربيعي وصيفي"
+          },
+          "habitat_ar": ["حقول القطن", "حقول الذرة", "حقول الخضروات"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-004", "crop_ar": "قطن", "severity": "عالية"},
+            {"crop_id": "plant-002", "crop_ar": "ذرة", "severity": "عالية"},
+            {"crop_id": "plant-006", "crop_ar": "بنجر السكر", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور"],
+            "seeds_per_plant": "3000-70000 بذرة",
+            "viability_years": "6-10 سنوات",
+            "spread_ar": "الرياح — الماء"
+          },
+          "management": {
+            "prevention_ar": ["حرث مبكر عميق"],
+            "cultural_ar": ["المحاصيل الكثيفة تُقلل نموها"],
+            "mechanical_ar": ["عزيق مبكر قبل التزهير"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D أمين",
+                "trade_names_ar": ["ووثر أمين"],
+                "dose_ar": "1-1.5 لتر/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "في مرحلة البادرات",
+                "selectivity_ar": "انتقائي في النجيليات",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              },
+              {
+                "active_ingredient_ar": "ميتريبيوزين (Metribuzin)",
+                "trade_names_ar": ["سنكور"],
+                "dose_ar": "300-400 جم/فدان",
+                "method_ar": "رش ما قبل الإنبات أو المبكر",
+                "timing_ar": "قبل إنبات الحشيشة",
+                "selectivity_ar": "انتقائي في البطاطس والطماطم وفول الصويا",
+                "egypt_registered": true,
+                "preharvest_interval_days": 45
+              }
+            ],
+            "organic_control_ar": ["عزيق مبكر", "مالش عضوي"]
+          },
+          "allelopathy_ar": "نعم — تُفرز مادة تُثبط بعض المحاصيل",
+          "useful_notes_ar": "نبات غذائي — يُؤكل مطهياً — غني بالفيتامينات"
+        },
+
+        {
+          "id": "weed-011",
+          "name_ar": "العاقول / الحسك",
+          "name_en": "Puncturevine / Goathead",
+          "name_scientific": "Tribulus terrestris",
+          "family_ar": "عائلة العاقول Zygophyllaceae",
+          "type_ar": "حولية صيفية",
+          "danger_level": "متوسطة",
+          "danger_icon": "",
+          "description_ar": "حشيشة زاحفة ذات ثمار شوكية حادة — تُؤذي عجلات الآلات وأقدام الإنسان والحيوان",
+          "identification": {
+            "height_cm": "10-40 سم — زاحفة",
+            "leaf_ar": "أوراق مركبة ريشية — صغيرة",
+            "stem_ar": "زاحف — ناعم — أخضر",
+            "flower_ar": "أزهار صفراء صغيرة",
+            "seed_ar": "ثمار شوكية حادة — تتعلق بالأقدام والإطارات",
+            "root_ar": "وتدي",
+            "season_ar": "صيفي"
+          },
+          "habitat_ar": ["الأراضي الرملية", "الطرق الزراعية", "حواف الحقول"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-002", "crop_ar": "ذرة", "severity": "متوسطة"},
+            {"crop_id": "plant-055", "crop_ar": "بطيخ", "severity": "متوسطة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور شوكية"],
+            "seeds_per_plant": "200-5000 بذرة",
+            "viability_years": "3-5 سنوات",
+            "spread_ar": "تتعلق بالأقدام والحيوانات والآلات"
+          },
+          "management": {
+            "prevention_ar": ["تنظيف الآلات والأحذية"],
+            "cultural_ar": ["حرث عميق", "تغطية كثيفة بالمحصول"],
+            "mechanical_ar": ["قلع قبل الإثمار"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D",
+                "trade_names_ar": ["ووثر أمين"],
+                "dose_ar": "1 لتر/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "مبكر",
+                "selectivity_ar": "انتقائي في النجيليات",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": ["قلع يدوي مبكر قبل الإثمار"]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "الثمار الشوكية خطر على الأقدام العارية وإطارات الآلات الزراعية — تستخدم في الطب الشعبي"
+        },
+
+        {
+          "id": "weed-012",
+          "name_ar": "العُشَر / كُشُوث",
+          "name_en": "Cuscuta / Dodder",
+          "name_scientific": "Cuscuta spp.",
+          "family_ar": "عائلة الكشوث Cuscutaceae",
+          "type_ar": "حولية طفيلية كاملة",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "طفيلي كامل لا يحتوي كلوروفيل — خيوط برتقالية أو صفراء تلتف على النباتات وتمتص عصارتها — يُفسد حقول البرسيم والبصل والجزر",
+          "identification": {
+            "height_cm": "متسلق",
+            "leaf_ar": "لا أوراق — فقط حراشيف",
+            "stem_ar": "خيوط رفيعة جداً برتقالية أو صفراء ملتوية",
+            "flower_ar": "أزهار بيضاء صغيرة جداً في عناقيد",
+            "seed_ar": "بذور صغيرة بنية — تصمد سنوات",
+            "root_ar": "لا جذور حقيقية — ماصات (haustoria) تخترق ساق العائل",
+            "season_ar": "ربيعي وصيفي"
+          },
+          "habitat_ar": ["حقول البرسيم", "حقول البقوليات", "حقول البصل والجزر"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-043", "crop_ar": "برسيم مصري", "severity": "عالية جداً"},
+            {"crop_id": "plant-009", "crop_ar": "بصل", "severity": "عالية"},
+            {"crop_id": "plant-031", "crop_ar": "جزر", "severity": "عالية"},
+            {"crop_id": "plant-047", "crop_ar": "برسيم حجازي", "severity": "عالية جداً"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور فقط"],
+            "seeds_per_plant": "3000-16000 بذرة",
+            "viability_years": "5-10 سنوات في التربة",
+            "spread_ar": "مع تقاوي البرسيم الملوثة — الماء — الرياح"
+          },
+          "management": {
+            "prevention_ar": [
+              "استخدام تقاوي برسيم معتمدة خالية من الكشوث",
+              "فحص التقاوي قبل الزراعة"
+            ],
+            "cultural_ar": [
+              "الدورة الزراعية مع محاصيل غير عائلة 3-4 سنوات",
+              "حرق الأجزاء المصابة فوراً — لا تتركها على التربة"
+            ],
+            "mechanical_ar": [
+              "قطع وحرق الأجزاء المصابة قبل الإزهار",
+              "إزالة فورية عند أول ظهور"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "ديكامبا (Dicamba)",
+                "trade_names_ar": ["بانفيل"],
+                "dose_ar": "200-400 مل/فدان",
+                "method_ar": "رش موجه على الكشوث",
+                "timing_ar": "عند أول ظهور قبل الإزهار",
+                "selectivity_ar": "يضر البرسيم — يُستخدم بحذر",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": [
+              "حرق الأجزاء المصابة",
+              "دورة زراعية طويلة",
+              "استخدام تقاوي معتمدة"
+            ]
+          },
+          "allelopathy_ar": "لا — طفيلي مباشر",
+          "useful_notes_ar": "المكافحة الوقائية أهم بكثير من العلاجية — لا تستخدم تقاوي برسيم رخيصة غير معتمدة"
+        },
+
+        {
+          "id": "weed-013",
+          "name_ar": "الهالوك / الهالوك",
+          "name_en": "Broomrape",
+          "name_scientific": "Orobanche spp.",
+          "family_ar": "عائلة الهالوك Orobanchaceae",
+          "type_ar": "طفيلية جذرية كاملة",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "من أخطر الحشائش الطفيلية في مصر — يتطفل على جذور الفول والبطاطس والطماطم والجزر — لا كلوروفيل — صعب المكافحة",
+          "identification": {
+            "height_cm": "10-40 سم",
+            "leaf_ar": "حراشيف فقط — بنية أو أرجوانية",
+            "stem_ar": "لحمي — بني أو أصفر — يخرج من التربة",
+            "flower_ar": "أزهار أنبوبية جميلة — بنفسجية أو صفراء",
+            "seed_ar": "بذور مجهرية — ملايين البذور — تعيش عقوداً",
+            "root_ar": "لا جذور — ماصات تتصل بجذور العائل",
+            "season_ar": "ربيعي وشتوي"
+          },
+          "habitat_ar": ["حقول الفول", "حقول الجزر", "حقول البطاطس", "حقول البقوليات"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-005", "crop_ar": "فول بلدي", "severity": "عالية جداً"},
+            {"crop_id": "plant-031", "crop_ar": "جزر", "severity": "عالية"},
+            {"crop_id": "plant-007", "crop_ar": "طماطم", "severity": "عالية"},
+            {"crop_id": "plant-008", "crop_ar": "بطاطس", "severity": "عالية"},
+            {"crop_id": "plant-024", "crop_ar": "عدس", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور مجهرية"],
+            "seeds_per_plant": "100000-500000 بذرة",
+            "viability_years": "15-20 سنة في التربة",
+            "spread_ar": "تُحفز بإفرازات جذور العائل — لا تنبت بدون عائل"
+          },
+          "management": {
+            "prevention_ar": [
+              "استخدام أصناف مقاومة من الفول",
+              "عدم نقل تربة من حقول مصابة",
+              "تنظيف الآلات الزراعية"
+            ],
+            "cultural_ar": [
+              "دورة زراعية 5-6 سنوات بعيداً عن العائل",
+              "زراعة محاصيل فخ (trap crops) لاستنزاف بذور الهالوك — يُحفز الإنبات دون تكملة الحياة",
+              "الذرة الصفراء والذرة الرفيعة محاصيل فخ ممتازة"
+            ],
+            "mechanical_ar": [
+              "اقتلاع قبل الإزهار وحرق",
+              "الحرث العميق لتعميق البذور بعيداً عن مستوى الإنبات"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "إيميازاباير (Imazapyr)",
+                "trade_names_ar": ["أرسينال"],
+                "dose_ar": "حسب التوصية",
+                "method_ar": "رش موجه",
+                "timing_ar": "قبل خروج الهالوك من التربة",
+                "selectivity_ar": "جهازي — يصل للهالوك عبر العائل",
+                "egypt_registered": false,
+                "preharvest_interval_days": 60
+              },
+              {
+                "active_ingredient_ar": "جليفوسيت",
+                "trade_names_ar": ["راونداب"],
+                "dose_ar": "2-3% محلول",
+                "method_ar": "دهن مباشر على سيقان الهالوك",
+                "timing_ar": "قبل الإزهار",
+                "selectivity_ar": "موضعي بالدهن",
+                "egypt_registered": true,
+                "preharvest_interval_days": null
+              }
+            ],
+            "organic_control_ar": [
+              "محاصيل فخ — الأفضل عضوياً",
+              "اقتلاع يدوي متكرر قبل الإزهار",
+              "دورة زراعية طويلة"
+            ]
+          },
+          "allelopathy_ar": "لا — طفيلي مباشر",
+          "useful_notes_ar": "مشكلة خطيرة في الفول المصري — الأصناف المقاومة أفضل حل طويل المدى"
+        },
+
+        {
+          "id": "weed-014",
+          "name_ar": "الخردل البري",
+          "name_en": "Wild Mustard / Charlock",
+          "name_scientific": "Sinapis arvensis",
+          "family_ar": "عائلة الخردل Brassicaceae",
+          "type_ar": "حولية شتوية",
+          "danger_level": "عالية",
+          "danger_icon": "",
+          "description_ar": "حشيشة شتوية خطيرة في القمح والشعير — أزهار صفراء مميزة — رائحة كريهة عند السحق",
+          "identification": {
+            "height_cm": "30-90 سم",
+            "leaf_ar": "أوراق كبيرة مفصصة — شعرية — خشنة",
+            "stem_ar": "قائم — متفرع",
+            "flower_ar": "أزهار صفراء زاهية بـ 4 بتلات — لافتة للنظر",
+            "seed_ar": "قرون بذرية طولية — بذور سوداء صغيرة",
+            "root_ar": "وتدي",
+            "season_ar": "شتوي"
+          },
+          "habitat_ar": ["حقول القمح والشعير", "حقول الخضروات الشتوية"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-001", "crop_ar": "قمح", "severity": "عالية"},
+            {"crop_id": "plant-042", "crop_ar": "شعير", "severity": "عالية"},
+            {"crop_id": "plant-005", "crop_ar": "فول بلدي", "severity": "متوسطة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور"],
+            "seeds_per_plant": "2000-4000 بذرة",
+            "viability_years": "5-8 سنوات",
+            "spread_ar": "الرياح — مياه الري"
+          },
+          "management": {
+            "prevention_ar": ["تنقية تقاوي القمح"],
+            "cultural_ar": ["الحرث المبكر يستنزف الإنبات"],
+            "mechanical_ar": ["عزيق أو قلع قبل الإزهار"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D + MCPA",
+                "trade_names_ar": ["ووثر D"],
+                "dose_ar": "1-1.5 لتر/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "في مرحلة التفريع في القمح",
+                "selectivity_ar": "انتقائي في النجيليات",
+                "egypt_registered": true,
+                "preharvest_interval_days": 45
+              }
+            ],
+            "organic_control_ar": ["قلع يدوي قبل الإزهار", "حرث مبكر استنزافي"]
+          },
+          "allelopathy_ar": "نعم — تُثبط إنبات القمح عند كثرتها",
+          "useful_notes_ar": "البذور تُستخدم في صناعة الخردل التجاري"
+        },
+
+        {
+          "id": "weed-015",
+          "name_ar": "الدندر / الشوك الأزرق",
+          "name_en": "Field Thistle / Blue Thistle",
+          "name_scientific": "Cirsium arvense",
+          "family_ar": "عائلة المركبات Asteraceae",
+          "type_ar": "معمرة",
+          "danger_level": "عالية",
+          "danger_icon": "",
+          "description_ar": "شوكة معمرة — أوراقها شوكية حادة — تنتشر بالجذامير وبذور ريشية — صعبة القلع",
+          "identification": {
+            "height_cm": "50-150 سم",
+            "leaf_ar": "أوراق مفصصة بأشواك حادة — لها تلوين لبني سفلي",
+            "stem_ar": "متفرع — مجنح شوكي",
+            "flower_ar": "رؤوس زهرية أرجوانية جميلة",
+            "seed_ar": "بذور ريشية تطير بالرياح",
+            "root_ar": "جذامير أفقية عميقة",
+            "season_ar": "ربيعي وصيفي"
+          },
+          "habitat_ar": ["حقول القمح", "حقول الخضروات", "أطراف الحقول"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-001", "crop_ar": "قمح", "severity": "متوسطة"},
+            {"crop_id": "plant-009", "crop_ar": "بصل", "severity": "عالية"},
+            {"crop_id": "plant-007", "crop_ar": "طماطم", "severity": "متوسطة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور ريشية", "جذامير أفقية"],
+            "seeds_per_plant": "1500-5000 بذرة",
+            "viability_years": "5-8 سنوات",
+            "spread_ar": "الرياح تحمل البذور كيلومترات"
+          },
+          "management": {
+            "prevention_ar": ["مكافحة حواف الحقول"],
+            "cultural_ar": ["حرث عميق يقطع الجذامير"],
+            "mechanical_ar": ["قطع متكرر يُضعفها"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D",
+                "trade_names_ar": ["ووثر أمين"],
+                "dose_ar": "1.5 لتر/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "مبكر",
+                "selectivity_ar": "انتقائي في النجيليات",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": ["قطع منتظم قبل الإزهار"]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "الحيوانات لا ترعاها بسبب الأشواك — الأرانب البرية تأكل جذورها"
+        },
+
+        {
+          "id": "weed-016",
+          "name_ar": "الطرخشقون / هندبا البر",
+          "name_en": "Dandelion",
+          "name_scientific": "Taraxacum officinale",
+          "family_ar": "عائلة المركبات Asteraceae",
+          "type_ar": "معمرة",
+          "danger_level": "منخفضة-متوسطة",
+          "danger_icon": "",
+          "description_ar": "معروفة بزهرتها الصفراء وبذورها الريشية البيضاء — أقل ضرراً من غيرها — تُعالج بسهولة",
+          "identification": {
+            "height_cm": "5-40 سم",
+            "leaf_ar": "متوردة من القاعدة — مفصصة مسننة",
+            "stem_ar": "جوفاء — حليبية العصارة",
+            "flower_ar": "رأس زهري أصفر جميل — يتحول لكرة بذرية بيضاء ريشية",
+            "seed_ar": "بذور ريشية تطير بالرياح",
+            "root_ar": "وتدي عميق — يصعب اقتلاعه كاملاً",
+            "season_ar": "ربيعي وخريفي"
+          },
+          "habitat_ar": ["الحدائق", "حقول الخضروات", "المروج"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-027", "crop_ar": "جرجير", "severity": "منخفضة"},
+            {"crop_id": "plant-028", "crop_ar": "سبانخ", "severity": "منخفضة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور ريشية"],
+            "seeds_per_plant": "150-400 بذرة",
+            "viability_years": "5 سنوات",
+            "spread_ar": "الرياح"
+          },
+          "management": {
+            "prevention_ar": [],
+            "cultural_ar": ["محصول كثيف يُقلل نموها"],
+            "mechanical_ar": ["قلع كامل مع الجذر الوتدي"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D",
+                "trade_names_ar": ["ووثر أمين"],
+                "dose_ar": "1 لتر/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "مبكر",
+                "selectivity_ar": "انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": ["قلع كامل مع الجذر"]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "نبات طبي وغذائي — الأوراق الصغيرة في السلطات — الجذر قهوة بديلة — المتاعب مع الزراعة فقط عند كثرتها"
+        },
+
+        {
+          "id": "weed-017",
+          "name_ar": "بقلة اليهودي / الهمبازة",
+          "name_en": "Common Mallow",
+          "name_scientific": "Malva parviflora",
+          "family_ar": "عائلة الخطمية Malvaceae",
+          "type_ar": "حولية شتوية",
+          "danger_level": "متوسطة",
+          "danger_icon": "",
+          "description_ar": "حشيشة شتوية شائعة — تنافس الخضروات الشتوية — لها قيمة غذائية لكن الإفراط ضار",
+          "identification": {
+            "height_cm": "20-60 سم",
+            "leaf_ar": "مستديرة — مفصصة خفيفة — ناعمة",
+            "stem_ar": "زاحف ثم قائم",
+            "flower_ar": "أزهار وردية صغيرة بـ 5 بتلات",
+            "seed_ar": "بذور قرصية على شكل جبنة صغيرة",
+            "root_ar": "وتدي",
+            "season_ar": "شتوي وربيعي"
+          },
+          "habitat_ar": ["حقول الخضروات الشتوية", "الأراضي البور", "الحدائق"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-009", "crop_ar": "بصل", "severity": "متوسطة"},
+            {"crop_id": "plant-052", "crop_ar": "ملفوف", "severity": "متوسطة"},
+            {"crop_id": "plant-027", "crop_ar": "جرجير", "severity": "متوسطة"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور"],
+            "seeds_per_plant": "500-2000 بذرة",
+            "viability_years": "3-5 سنوات",
+            "spread_ar": "الرياح — الماء"
+          },
+          "management": {
+            "prevention_ar": [],
+            "cultural_ar": ["محصول كثيف"],
+            "mechanical_ar": ["عزيق أو قلع مبكر"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D",
+                "trade_names_ar": ["ووثر أمين"],
+                "dose_ar": "1 لتر/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "مبكر",
+                "selectivity_ar": "انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": ["قلع يدوي مبكر"]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "أوراقها الصغيرة تُطبخ وتُؤكل — تُستخدم في الطب الشعبي"
+        },
+
+        {
+          "id": "weed-018",
+          "name_ar": "الزُّعَيترة البرية / البابونج البري",
+          "name_en": "Mayweed / Stinking Chamomile",
+          "name_scientific": "Anthemis cotula",
+          "family_ar": "عائلة المركبات Asteraceae",
+          "type_ar": "حولية",
+          "danger_level": "متوسطة",
+          "danger_icon": "",
+          "description_ar": "تُشبه البابونج الطبي لكنها ذات رائحة كريهة — شائعة في حقول القمح والخضروات",
+          "identification": {
+            "height_cm": "20-60 سم",
+            "leaf_ar": "أوراق دقيقة مفصصة كثيراً — رائحة كريهة عند السحق",
+            "stem_ar": "متفرع",
+            "flower_ar": "رؤوس زهرية بيضاء مع قرص أصفر — تُشبه البابونج تماماً",
+            "seed_ar": "بذور صغيرة ضلعية",
+            "root_ar": "ليفي",
+            "season_ar": "شتوي وربيعي"
+          },
+          "habitat_ar": ["حقول القمح", "حقول الخضروات", "الحدائق"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-001", "crop_ar": "قمح", "severity": "متوسطة"},
+            {"crop_id": "plant-020", "crop_ar": "بابونج", "severity": "عالية — تلوث الحصاد"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["بذور"],
+            "seeds_per_plant": "1000-2000 بذرة",
+            "viability_years": "3-5 سنوات",
+            "spread_ar": "الرياح"
+          },
+          "management": {
+            "prevention_ar": [],
+            "cultural_ar": ["تنقية التقاوي"],
+            "mechanical_ar": ["قلع قبل الإزهار"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "2,4-D",
+                "trade_names_ar": ["ووثر أمين"],
+                "dose_ar": "1 لتر/فدان",
+                "method_ar": "رش في مرحلة التفريع للقمح",
+                "timing_ar": "مبكر",
+                "selectivity_ar": "انتقائي في النجيليات",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": ["قلع يدوي قبل الإزهار"]
+          },
+          "allelopathy_ar": "لا",
+          "useful_notes_ar": "تمييزها عن البابونج الطبي مهم — الرائحة الكريهة عند السحق الفارق الرئيسي"
+        }
+      ]
+    },
+
+    {
+      "id": "weed-cat-03",
+      "name_ar": "حشائش ثرة الأرض",
+      "name_en": "Sedges",
+      "description_ar": "حشائش تشبه النجيليات لكنها تنتمي لعائلة مختلفة — ساق مثلثة المقطع — تنمو في الأراضي الرطبة",
+      "characteristics_ar": "ساق مثلثة المقطع غالباً — أوراق مرتبة على 3 صفوف — لا عقد",
+      "weeds": [
+        {
+          "id": "weed-019",
+          "name_ar": "سعد الزراعة / نبات الحلفا",
+          "name_en": "Purple Nutsedge / Nutgrass",
+          "name_scientific": "Cyperus rotundus",
+          "family_ar": "عائلة السعدية Cyperaceae",
+          "type_ar": "معمرة — من أسوأ حشائش العالم",
+          "danger_level": "عالية جداً",
+          "danger_icon": "",
+          "description_ar": "مدرجة ضمن أسوأ 10 حشائش عالمياً — تكوينات درنية تحت التربة تصعب إزالتها — تنمو بسرعة مذهلة",
+          "identification": {
+            "height_cm": "10-50 سم",
+            "leaf_ar": "أوراق رفيعة لامعة خضراء داكنة — 3 صفوف",
+            "stem_ar": "مثلثة المقطع — الفارق الرئيسي عن النجيليات",
+            "flower_ar": "نورة برسية بنية-أرجوانية",
+            "seed_ar": "بذور صغيرة ثلاثية الأوجه",
+            "root_ar": "درنات بيضاء تحت التربة — شبكة معقدة",
+            "season_ar": "صيفي — يحب الحرارة والرطوبة"
+          },
+          "habitat_ar": ["جميع الحقول المرّوية", "خاصة الخضروات", "حقول قصب السكر"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-007", "crop_ar": "طماطم", "severity": "عالية جداً"},
+            {"crop_id": "plant-010", "crop_ar": "خيار", "severity": "عالية جداً"},
+            {"crop_id": "plant-026", "crop_ar": "قصب السكر", "severity": "عالية"},
+            {"crop_id": "plant-002", "crop_ar": "ذرة", "severity": "عالية"},
+            {"crop_id": "plant-008", "crop_ar": "بطاطس", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["درنات تحت التربة (الأهم)", "بذور"],
+            "seeds_per_plant": "2400 بذرة",
+            "tubers_per_plant": "درنة واحدة تُنتج 1900 نبات في سنة",
+            "viability_years": "3-5 سنوات للدرنات",
+            "spread_ar": "الحرث يقطع الشبكة ويزيد الانتشار"
+          },
+          "management": {
+            "prevention_ar": ["لا تحرث عند وجودها دون تحضير"],
+            "cultural_ar": [
+              "التشميس الصيفي + تغطية نايلون فعّال جداً",
+              "دورة زراعية مع محاصيل شتوية كثيفة",
+              "المالش البلاستيكي الأسود يُثبط النمو"
+            ],
+            "mechanical_ar": [
+              "العزيق المتكرر يستنزف الدرنات",
+              "التشميس الصيفي أفضل أسلوب ميكانيكي"
+            ],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "جليفوسيت",
+                "trade_names_ar": ["راونداب"],
+                "dose_ar": "3-4 لتر/100 لتر ماء",
+                "method_ar": "رش على الأوراق — يصل للدرنات",
+                "timing_ar": "على نبات نشط قبل الزراعة",
+                "selectivity_ar": "غير انتقائي",
+                "egypt_registered": true,
+                "preharvest_interval_days": null
+              },
+              {
+                "active_ingredient_ar": "هالوسولفيورون (Halosulfuron)",
+                "trade_names_ar": ["سيدج هامر"],
+                "dose_ar": "35-52 جم/فدان",
+                "method_ar": "رش موجه",
+                "timing_ar": "في الذرة عند 2-6 أوراق",
+                "selectivity_ar": "انتقائي في الذرة",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": [
+              "تشميس صيفي — الأفضل عضوياً",
+              "مالش أسود سميك",
+              "عزيق متكرر لاستنزاف الدرنات"
+            ]
+          },
+          "allelopathy_ar": "نعم — من أقوى الحشائش في إفراز مواد مثبطة",
+          "useful_notes_ar": "الدرنات الجافة تُستخدم في الطب الشعبي — مدرجة ضمن أسوأ حشائش العالم"
+        },
+
+        {
+          "id": "weed-020",
+          "name_ar": "سعد الحشائش / الحلفا المائية",
+          "name_en": "Water Sedge / Yellow Nutsedge",
+          "name_scientific": "Cyperus esculentus",
+          "family_ar": "عائلة السعدية Cyperaceae",
+          "type_ar": "معمرة",
+          "danger_level": "عالية",
+          "danger_icon": "",
+          "description_ar": "قريب من سعد الزراعة لكن أقل خطراً — درناته خشنة وصالحة للأكل — مشكلة في حقول الأرز والخضروات",
+          "identification": {
+            "height_cm": "15-60 سم",
+            "leaf_ar": "مشابهة لسعد الزراعة لكن أخف لوناً",
+            "stem_ar": "مثلثة المقطع",
+            "flower_ar": "نورة برسية صفراء",
+            "seed_ar": "بذور صغيرة",
+            "root_ar": "درنات بيضاء أكبر وأكثر مذاقاً",
+            "season_ar": "صيفي"
+          },
+          "habitat_ar": ["حقول الأرز", "الأراضي الرطبة", "حقول الخضروات"],
+          "affected_crops_ar": [
+            {"crop_id": "plant-003", "crop_ar": "أرز", "severity": "عالية"},
+            {"crop_id": "plant-007", "crop_ar": "طماطم", "severity": "عالية"}
+          ],
+          "reproduction_ar": {
+            "methods_ar": ["درنات", "بذور"],
+            "seeds_per_plant": "2000 بذرة",
+            "viability_years": "2-3 سنوات",
+            "spread_ar": "مياه الري — الحرث"
+          },
+          "management": {
+            "prevention_ar": [],
+            "cultural_ar": ["تشميس صيفي — دورة زراعية"],
+            "mechanical_ar": ["عزيق متكرر"],
+            "herbicides": [
+              {
+                "active_ingredient_ar": "هالوسولفيورون",
+                "trade_names_ar": ["سيدج هامر"],
+                "dose_ar": "35-52 جم/فدان",
+                "method_ar": "رش",
+                "timing_ar": "مبكر",
+                "selectivity_ar": "انتقائي في الذرة",
+                "egypt_registered": true,
+                "preharvest_interval_days": 30
+              }
+            ],
+            "organic_control_ar": ["تشميس صيفي", "عزيق متكرر"]
+          },
+          "allelopathy_ar": "نعم — أقل من Cyperus rotundus",
+          "useful_notes_ar": "درناته تُؤكل طازجة أو مجففة — شراب الشعير تُصنع منه في بعض المناطق"
+        }
+      ]
+    }
+  ],
+
+  "weed_management_calendar": {
+    "title_ar": "تقويم مكافحة الحشائش الشهري",
+    "months": [
+      {
+        "months_ar": "يناير — فبراير",
+        "season_ar": "شتاء",
+        "active_weeds_ar": ["فالاريس في القمح", "خردل بري", "حميض", "بقلة اليهودي"],
+        "recommended_actions_ar": [
+          "مكافحة الفالاريس في حقول القمح (كلودينافوب / توبيك)",
+          "مكافحة عريضات الأوراق في القمح (2,4-D) عند التفريع",
+          "عزيق يدوي في الخضروات الشتوية",
+          "مراقبة ظهور الهالوك في حقول الفول"
+        ]
+      },
+      {
+        "months_ar": "مارس — أبريل",
+        "season_ar": "ربيع",
+        "active_weeds_ar": ["حلفا", "نجيل شيطان (بداية)", "كشوث في البرسيم", "هالوك في الفول"],
+        "recommended_actions_ar": [
+          "مكافحة الكشوث في البرسيم قبل الإزهار",
+          "إزالة الهالوك يدوياً من حقول الفول",
+          "مراقبة النجيل البري في الأراضي الصيفية",
+          "تحضير الأراضي الصيفية بالحرث"
+        ]
+      },
+      {
+        "months_ar": "مايو — يونيو",
+        "season_ar": "صيف مبكر",
+        "active_weeds_ar": ["نجيل شيطان", "سعد زراعة", "ذرة ريحية", "رجلة"],
+        "recommended_actions_ar": [
+          "التشميس الصيفي للأراضي الخالية (أفضل وقت)",
+          "رش جليفوسيت قبل زراعة الذرة على الحشائش المعمرة",
+          "عزيق مستمر في الخضروات الصيفية",
+          "مكافحة سعد الزراعة في الذرة (هالوسولفيورون)"
+        ]
+      },
+      {
+        "months_ar": "يوليو — أغسطس",
+        "season_ar": "صيف",
+        "active_weeds_ar": ["نجيل شيطان (ذروة)", "سعد زراعة (ذروة)", "رجلة", "الريحة"],
+        "recommended_actions_ar": [
+          "مواصلة التشميس للأراضي الفارغة",
+          "عزيق مستمر وكثيف في الخضروات",
+          "لا تترك حشيشة تُزهر أو تُبذر",
+          "تغطية بالمالش في البساتين"
+        ]
+      },
+      {
+        "months_ar": "سبتمبر — أكتوبر",
+        "season_ar": "خريف",
+        "active_weeds_ar": ["نجيل شيطان (تراجع)", "حلفا خريفية", "سعد زراعة (نهاية)"],
+        "recommended_actions_ar": [
+          "حرث عميق لتهيئة الأراضي الشتوية",
+          "استنزاف آخر دفعة من جذامير النجيل",
+          "مراقبة ظهور حشائش الخريف مع زراعة البصل والثوم",
+          "تنظيف حواف الحقول من النجيل"
+        ]
+      },
+      {
+        "months_ar": "نوفمبر — ديسمبر",
+        "season_ar": "شتاء مبكر",
+        "active_weeds_ar": ["فالاريس (بداية)", "خردل بري", "حميض", "بقلة اليهودي"],
+        "recommended_actions_ar": [
+          "مراقبة ظهور الفالاريس في القمح",
+          "مكافحة مبكرة قبل التفريع في القمح",
+          "عزيق في الخضروات الشتوية",
+          "تنظيف قنوات الري من الحشائش المائية"
+        ]
+      }
+    ]
+  },
+
+  "herbicide_safety_guide": {
+    "title_ar": "دليل السلامة في استخدام مبيدات الحشائش",
+    "general_warnings_ar": [
+      "ارتداء قفازات ونظارات ومريلة واقية دائماً",
+      "عدم الرش في الرياح — يسبب انجراف للمحاصيل المجاورة",
+      "غسيل الأدوات جيداً بعد كل استخدام",
+      "حفظ المبيدات بعيداً عن الأطفال والغذاء والماء",
+      "قراءة تعليمات الملصق دائماً",
+      "عدم الرش قبل الأمطار أو الري الغمري"
+    ],
+    "crop_safety_matrix_ar": {
+      "title_ar": "ما الذي يقتله كل مبيد",
+      "herbicides": [
+        {
+          "name_ar": "جليفوسيت (راونداب)",
+          "kills_ar": "كل النباتات — غير انتقائي",
+          "safe_in_ar": "لا شيء — فقط قبل الزراعة",
+          "warning_ar": "لا يُرش على المحصول — يقتله"
+        },
+        {
+          "name_ar": "2,4-D أمين",
+          "kills_ar": "عريضات الأوراق فقط",
+          "safe_in_ar": "القمح — الشعير — الذرة — الأرز (بحذر)",
+          "warning_ar": "يضر الطماطم والخضروات عريضة الأوراق — لا تستخدم بالقرب منها"
+        },
+        {
+          "name_ar": "فلوازيفوب (فوسيلاد)",
+          "kills_ar": "النجيليات فقط",
+          "safe_in_ar": "الخضروات عريضة الأوراق — البقوليات — الكرة",
+          "warning_ar": "لا يُستخدم في حقول الحبوب (قمح — ذرة)"
+        },
+        {
+          "name_ar": "أوكسيفلورفين (جول)",
+          "kills_ar": "حشائش واسعة بعد الإنبات",
+          "safe_in_ar": "بصل — بطاطا — فول سوداني",
+          "warning_ar": "لا يُستخدم في الطقس الحار أو الرياح"
+        }
+      ]
+    },
+    "resistance_management_ar": [
+      "تدوير المبيدات من مجموعات كيميائية مختلفة كل موسمين",
+      "الجمع بين المكافحة الكيميائية والثقافية والميكانيكية",
+      "عدم الاعتماد على مبيد واحد لأكثر من 3 مواسم متتالية",
+      "الفالاريس في مصر تطور مقاومة للإيسوبروتيورون في بعض المناطق"
+    ]
+  },
+
+  "organic_weed_management": {
+    "title_ar": "المكافحة العضوية المتكاملة للحشائش",
+    "principles_ar": [
+      "المنع أهم من العلاج — لا تسمح للحشيشة بالإبذار",
+      "المحصول الكثيف السريع هو أفضل مكافح للحشائش",
+      "الدورة الزراعية تكسر دورة حياة الحشائش",
+      "التشميس الصيفي أقوى أداة عضوية لمكافحة الحشائش المعمرة"
+    ],
+    "methods_ar": [
+      {
+        "method_ar": "المالش العضوي (Mulching)",
+        "details_ar": "تغطية التربة بطبقة 5-10 سم من القش أو نشارة الخشب أو أوراق النخيل — تمنع ضوء الشمس عن البذور",
+        "effectiveness_ar": "تقليل 70-90% للحشائش",
+        "crops_ar": ["خضروات", "بساتين فاكهة"]
+      },
+      {
+        "method_ar": "التشميس الصيفي (Solarization)",
+        "details_ar": "تغطية التربة الرطبة بنايلون شفاف 40 ميكرون لمدة 4-8 أسابيع في الصيف — درجة حرارة التربة تصل 55-65°م",
+        "effectiveness_ar": "قتل 95-99% من بذور الحشائش السطحية والنيماتودا والأمراض",
+        "crops_ar": ["جميع المحاصيل — قبل الزراعة"]
+      },
+      {
+        "method_ar": "الدورة الزراعية",
+        "details_ar": "تبديل المحاصيل يكسر دورة حياة الحشائش المتخصصة في محصول معين",
+        "effectiveness_ar": "تقليل 40-60% على المدى البعيد",
+        "crops_ar": ["جميع المحاصيل"]
+      },
+      {
+        "method_ar": "المحاصيل الكثيفة الخانقة",
+        "details_ar": "زراعة محاصيل تُظلل التربة بسرعة (برسيم — شعير كثيف — برسيم حجازي) تُقلل إنبات الحشائش",
+        "effectiveness_ar": "تقليل 50-70%",
+        "crops_ar": ["دورة مع الخضروات والمحاصيل الحقلية"]
+      },
+      {
+        "method_ar": "العزيق المتقن والمتكرر",
+        "details_ar": "العزيق السطحي 2-3 سم أفضل من العميق — لا يُصعّد بذوراً جديدة",
+        "effectiveness_ar": "فعّال مع الحشائش الحولية",
+        "crops_ar": ["جميع المحاصيل"]
+      }
+    ]
+  },
+
+  "crop_weed_free_periods": {
+    "title_ar": "الفترة الحرجة الخالية من الحشائش لكل محصول",
+    "description_ar": "الفترة التي إذا كانت فيها الحشيشة موجودة تُسبب خسارة اقتصادية لا تُعوَّض",
+    "crops": [
+      {"crop_ar": "قمح", "critical_period_ar": "أول 30-45 يوم من الإنبات", "yield_loss_if_missed_ar": "20-40%"},
+      {"crop_ar": "ذرة شامية", "critical_period_ar": "أول 4-8 أسابيع (V3-V8)", "yield_loss_if_missed_ar": "30-50%"},
+      {"crop_ar": "أرز", "critical_period_ar": "أول 20-45 يوم من الشتل", "yield_loss_if_missed_ar": "40-70%"},
+      {"crop_ar": "قطن", "critical_period_ar": "أول 6-8 أسابيع", "yield_loss_if_missed_ar": "25-45%"},
+      {"crop_ar": "طماطم", "critical_period_ar": "أول 3-6 أسابيع من الشتل", "yield_loss_if_missed_ar": "30-60%"},
+      {"crop_ar": "بصل", "critical_period_ar": "أول 60-70 يوم", "yield_loss_if_missed_ar": "40-60%"},
+      {"crop_ar": "فول سوداني", "critical_period_ar": "أول 6 أسابيع", "yield_loss_if_missed_ar": "30-50%"},
+      {"crop_ar": "بنجر السكر", "critical_period_ar": "أول 45-60 يوم", "yield_loss_if_missed_ar": "30-70%"}
+    ]
+  },
+
+  "weed_identification_key": {
+    "title_ar": "مفتاح تعريف الحشائش الشائعة",
+    "steps": [
+      {
+        "step": 1,
+        "question_ar": "هل الساق مثلثة المقطع؟",
+        "yes_ar": "← عائلة السعدية (Cyperaceae) — سعد الزراعة أو الحلفا المائية",
+        "no_ar": "← انتقل للخطوة 2"
+      },
+      {
+        "step": 2,
+        "question_ar": "هل الأوراق رفيعة ضيقة مع عروق موازية؟",
+        "yes_ar": "← نجيليات — نجيل شيطان أو فالاريس أو دخن بري",
+        "no_ar": "← عريضة الأوراق — انتقل للخطوة 3"
+      },
+      {
+        "step": 3,
+        "question_ar": "هل النبات بدون أوراق حقيقية (خيوط ملتوية)؟",
+        "yes_ar": "← طفيلي — كشوث (خيوط برتقالية) أو هالوك (يخرج من التربة)",
+        "no_ar": "← انتقل للخطوة 4"
+      },
+      {
+        "step": 4,
+        "question_ar": "هل النبات لحمي عصاري (ساق سميك مائي)؟",
+        "yes_ar": "← الرجلة (Portulaca) — أوراق سميكة خضراء داكنة",
+        "no_ar": "← انتقل للخطوة 5"
+      },
+      {
+        "step": 5,
+        "question_ar": "هل للنبات أشواك؟",
+        "yes_ar": "← عاقول (ثمار شوكية) أو دندر (أوراق شوكية)",
+        "no_ar": "← انتقل للخطوة 6"
+      },
+      {
+        "step": 6,
+        "question_ar": "هل النبات يتسلق ويلتف؟",
+        "yes_ar": "← حلفا (Convolvulus) — أزهار قمعية بيضاء أو وردية",
+        "no_ar": "← حميض أو سلق بري أو خردل بري — ابحث عن شكل الورقة والزهرة"
+      }
+    ]
+  },
+
+  "card_display_config": {
+    "card_title_ar": "الحشائش والأعشاب الضارة",
+    "card_subtitle_ar": "عدو خفي يسرق 20-50% من إنتاجك",
+    "card_color_primary": "#5C4A1E",
+    "card_color_secondary": "#8B7355",
+    "card_icon": "🌿",
+    "danger_levels": {
+      "عالية جداً": {"color": "#DC2626", "icon": ""},
+      "عالية": {"color": "#EA580C", "icon": ""},
+      "متوسطة": {"color": "#CA8A04", "icon": ""},
+      "منخفضة": {"color": "#16A34A", "icon": ""}
+    },
+    "highlight_stats": [
+      {"label_ar": "خسارة بدون مكافحة", "value_ar": "20-70% من الإنتاج"},
+      {"label_ar": "عدد الحشائش الموثقة", "value_ar": "20+ نوع رئيسي"},
+      {"label_ar": "عمر بذور في التربة", "value_ar": "حتى 50 سنة"},
+      {"label_ar": "الفترة الحرجة", "value_ar": "أول 4-8 أسابيع للمحصول"}
+    ],
+    "quick_tips_ar": [
+      "لا تسمح لأي حشيشة بالإزهار — ستُبذّر آلاف البذور",
+      "التشميس الصيفي أقوى وسيلة عضوية للمكافحة",
+      "الفترة الحرجة أول 4-8 أسابيع — نظّف فيها تنظيفاً كاملاً",
+      "الحرث يقطع الجذامير ويزيد انتشار المعمرة — احذر",
+      "دوّر المبيدات — الحشائش تطور مقاومة"
+    ],
+    "related_plant_ids": ["plant-001","plant-002","plant-003","plant-004","plant-005","plant-007","plant-009"],
+    "related_nematoda": true
+  }
+}

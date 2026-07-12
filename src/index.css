@@ -9,7 +9,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark mode transition */
 html {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -19,16 +18,130 @@ html.dark {
   color: #f3f4f6;
 }
 
-/* Global dark mode overrides for all components */
+/* ===== Dark Mode: Page Backgrounds ===== */
 .dark .main-background {
   background-color: #111827 !important;
+  background-image: none !important;
 }
 
-.dark .hefno-contact {
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+
+.dark .hefno-features-section { background: #111827 !important; }
+.dark .knowledge-base-page { background: #111827 !important; }
+.dark .knowledge-base-container { background: #111827 !important; }
+.dark .calendar-page { background: #111827 !important; }
+.dark .weather-screen { background: #111827 !important; }
+.dark .pesticides-hub { background: #111827 !important; }
+
+/* ===== Dark Mode: Cards & Glass Surfaces ===== */
+.dark .card-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
 }
 
-.dark .hefno-contact .hefno-form-glass {
+.dark .disease-card .card-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+}
+
+.dark .stat-card,
+.dark .knowledge-card,
+.dark .hefno-feature-card,
+.dark .hefno-stat-card,
+.dark .info-card,
+.dark .content-card,
+.dark .operation-card,
+.dark .disease-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.dark .disease-modal,
+.dark .disease-modal .modal-header {
+  background: #111827 !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .modal-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.dark .categories-tabs,
+.dark .groups-tabs {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .cat-tab,
+.dark .group-tab {
+  background: rgba(31, 41, 55, 0.5) !important;
+  color: #9ca3af !important;
+}
+
+.dark .cat-tab.active,
+.dark .group-tab.active {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .category-header,
+.dark .group-header {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .header-content {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .diseases-stats-footer {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .special-page-header {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .double-special-page-header {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .symptoms-preview {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .modal-info-grid {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .stat-chip {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-form-glass {
   background: rgba(31, 41, 55, 0.95) !important;
 }
 
@@ -39,63 +152,250 @@ html.dark {
   border-color: #374151 !important;
 }
 
-.dark .hefno-features-section {
-  background: #111827 !important;
-}
-
-.dark .hefno-features-section .hefno-features-bg {
-  background: linear-gradient(135deg, rgba(31,41,55,0.3) 0%, transparent 100%) !important;
-}
-
-.dark .knowledge-base-page {
-  background: #111827 !important;
-}
-
-.dark .knowledge-card {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-.dark .knowledge-card .card-glass {
-  background: rgba(255,255,255,0.03) !important;
-}
-
-.dark .hefno-features-section .hefno-feature-card {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-.dark .hefno-features-section .hefno-stat-card {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
+/* ===== Dark Mode: Text Colors ===== */
+.dark .disease-name,
+.dark .card-title,
+.dark .modal-title h2,
+.dark .header-text h1,
+.dark .category-title,
 .dark .hefno-stat-number,
 .dark .hefno-card-title,
-.dark .hefno-features-title {
+.dark .hefno-features-title,
+.dark .info-value,
+.dark .weather-info h3 {
   color: #f3f4f6 !important;
 }
 
+.dark .scientific-name,
+.dark .card-description,
+.dark .disease-description,
+.dark .type-text,
+.dark .modal-section p,
+.dark .modal-list li,
+.dark .header-description,
+.dark .category-en,
+.dark .stat-label-footer,
+.dark .stat-chip,
 .dark .hefno-card-description,
 .dark .hefno-features-subtitle,
-.dark .hefno-stat-label {
+.dark .hefno-stat-label,
+.dark .stat-label {
   color: #9ca3af !important;
 }
 
-.dark .calendar-page {
-  background: #111827 !important;
+.dark .info-label {
+  color: #9ca3af !important;
+  border-right-color: #059669 !important;
 }
 
-.dark .months-timeline .month-btn {
-  background: #1f2937 !important;
-  color: #f3f4f6 !important;
+.dark .disease-type {
+  border-bottom-color: #374151 !important;
+}
+
+.dark .card-footer {
+  border-top-color: #374151 !important;
+}
+
+.dark .modal-list li {
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dark .modal-footer {
+  border-top-color: #374151 !important;
+}
+
+.dark .modal-info-footer {
+  background: rgba(31, 41, 55, 0.5) !important;
+}
+
+.dark .footer-item {
+  color: #9ca3af !important;
+}
+
+.dark .footer-item strong {
+  color: #059669 !important;
+}
+
+.dark .close-modal-btn {
+  background: #059669 !important;
+}
+
+.dark .close-modal-btn:hover {
+  background: #047857 !important;
+}
+
+.dark .back-button {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .back-button:hover {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .modal-close {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #9ca3af !important;
+}
+
+.dark .modal-close:hover {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+.dark .card-link {
+  color: #059669 !important;
+}
+
+.dark .stat-chip strong,
+.dark .stat-number-footer,
+.dark .modal-section h3 {
+  color: #059669 !important;
+}
+
+.dark .effectiveness {
+  color: #059669 !important;
+}
+
+.dark .family-tag {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .severity-badge.severity-high,
+.dark .severity-badge.severity-very-high {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.dark .severity-badge.severity-moderate {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #f59e0b !important;
+}
+
+.dark .severity-badge.severity-low {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+}
+
+.dark .card-icon-wrapper {
   border-color: #374151 !important;
 }
 
-.dark .info-card,
-.dark .content-card,
-.dark .operation-card {
+.dark .card-badge {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: #374151 !important;
+  color: #9ca3af !important;
+}
+
+.dark .modal-section h3 {
+  border-right-color: #059669 !important;
+}
+
+.dark .sub-section {
+  border-right-color: rgba(5, 150, 105, 0.3) !important;
+}
+
+.dark .sub-section h4 {
+  color: #059669 !important;
+}
+
+.dark .family-tag {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .stat-value {
+  color: #059669 !important;
+  background: rgba(5, 150, 105, 0.1) !important;
+  border-color: rgba(5, 150, 105, 0.2) !important;
+}
+
+.dark .stat-divider-footer {
+  background: #374151 !important;
+}
+
+.dark .info-item span {
+  color: #9ca3af !important;
+}
+
+.dark .modal-list li {
+  color: #9ca3af !important;
+}
+
+/* ===== Dark Mode: Header ===== */
+.dark .hefno-header.scrolled {
+  background: rgba(17, 24, 39, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom-color: #374151 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .hefno-header:not(.scrolled) {
+  background: rgba(17, 24, 39, 0.95) !important;
+}
+
+.dark .nav-link {
+  color: #9ca3af !important;
+}
+
+.dark .nav-link:hover,
+.dark .nav-link.active {
+  color: #f3f4f6 !important;
+}
+
+.dark .mobile-menu-btn {
+  color: #9ca3af !important;
+}
+
+.dark .mobile-menu {
+  background: #111827 !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Footer ===== */
+.dark .hefno-footer {
+  background: #0f1729 !important;
+  border-top-color: #374151 !important;
+}
+
+.dark .footer-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .footer-text,
+.dark .footer-link {
+  color: #9ca3af !important;
+}
+
+.dark .footer-link:hover {
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: Bottom Navigation ===== */
+.dark .bottom-navigation {
+  background: rgba(17, 24, 39, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.dark .nav-item {
+  color: #9ca3af !important;
+}
+
+.dark .nav-item.active {
+  background: rgba(5, 150, 105, 0.1) !important;
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: HNP AI Assistant ===== */
+
+/* ===== Dark Mode: Calendar Page ===== */
+.dark .months-timeline .month-btn {
   background: #1f2937 !important;
+  color: #f3f4f6 !important;
   border-color: #374151 !important;
 }
 
@@ -110,63 +410,2216 @@ html.dark {
   color: white !important;
 }
 
-/* HNP AI Assistant Dark Mode */
-.dark .hnp-ai-assistant {
-  background: #111827 !important;
-}
-
-.dark .hnp-ai-header.glass,
-.dark .hnp-ai-sidebar.glass,
-.dark .hnp-ai-chat.glass {
-  background: rgba(31, 41, 55, 0.9) !important;
-  border-color: #374151 !important;
-}
-
-.dark .hnp-ai-message.user .hnp-ai-message-content {
-  background: #374151 !important;
+/* ===== Dark Mode: Weather Page ===== */
+.dark .weather-info h2,
+.dark .weather-temp {
   color: #f3f4f6 !important;
 }
 
-.dark .hnp-ai-message.ai .hnp-ai-message-content {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-.dark .hnp-ai-message-input {
-  background: #1f2937 !important;
-  color: #f3f4f6 !important;
-  border-color: #374151 !important;
-}
-
-.dark .hnp-ai-category-btn {
-  color: #9ca3af !important;
-}
-
-.dark .hnp-ai-category-btn.active {
-  background: #059669 !important;
-  color: white !important;
-}
-
-/* Weather Dark Mode */
-.dark .weather-screen {
-  background: #111827 !important;
-}
-
-/* Knowledge Layer Dark Mode */
-.dark .knowledge-base-container {
-  background: #111827 !important;
-}
-
-/* Pesticides Hub Dark Mode */
-.dark .pesticides-hub {
-  background: #111827 !important;
-}
-
-/* Scrollbar dark mode */
+/* ===== Dark Mode: Scrollbar ===== */
 .dark ::-webkit-scrollbar-track {
   background: #1f2937 !important;
 }
 
 .dark ::-webkit-scrollbar-thumb {
   background: #374151 !important;
+}
+
+/* ===== Dark Mode: Divider ===== */
+.dark .hefno-divider {
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: About / Privacy / Terms Pages ===== */
+.dark .hefno-about,
+.dark .hefno-privacy,
+.dark .hefno-terms {
+  background: #111827 !important;
+}
+
+.dark .hefno-about-content,
+.dark .hefno-privacy-content,
+.dark .hefno-terms-content {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-about-article,
+.dark .hefno-about-mission-vision,
+.dark .hefno-about-mv-block {
+  background: rgba(31, 41, 55, 0.8) !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-about-hero-label,
+.dark .hefno-privacy-hero-label,
+.dark .hefno-terms-hero-label {
+  color: #059669 !important;
+}
+
+.dark .hefno-about-hero-title,
+.dark .hefno-about-hero-sub,
+.dark .hefno-about-closing,
+.dark .hefno-privacy-hero-title,
+.dark .hefno-privacy-hero-sub,
+.dark .hefno-terms-hero-title,
+.dark .hefno-terms-hero-sub {
+  color: #f3f4f6 !important;
+}
+
+.dark .hefno-privacy-section-title,
+.dark .hefno-terms-section-title,
+.dark .hefno-privacy-section p,
+.dark .hefno-terms-section p,
+.dark .hefno-privacy-list li,
+.dark .hefno-terms-list li,
+.dark .hefno-privacy-note,
+.dark .hefno-terms-note {
+  color: #d1d5db !important;
+}
+
+.dark .hefno-privacy-divider,
+.dark .hefno-terms-divider {
+  background: #374151 !important;
+}
+
+.dark .hefno-privacy-hero-title-accent,
+.dark .hefno-terms-hero-title-accent {
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: Program Planner ===== */
+.dark .planner-container {
+  background: #111827 !important;
+}
+
+.dark .planner-header {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .fertilizer-card,
+.dark .summary-card,
+.dark .stage-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .stage-card.expanded {
+  border-color: #059669 !important;
+}
+
+.dark .stage-title,
+.dark .stage-number,
+.dark .fert-name,
+.dark .summary-info {
+  color: #f3f4f6 !important;
+}
+
+.dark .stage-description,
+.dark .stage-info,
+.dark .fert-details,
+.dark .fert-dose,
+.dark .summary-icon {
+  color: #9ca3af !important;
+}
+
+.dark .crop-tag,
+.dark .form-group label {
+  color: #9ca3af !important;
+}
+
+.dark .form-group input,
+.dark .form-group select,
+.dark .form-group textarea {
+  background: rgba(17, 24, 39, 0.8) !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .submit-btn {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .submit-btn:hover {
+  background: #047857 !important;
+}
+
+.dark .reset-btn {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.dark .tip-card,
+.dark .warning-section,
+.dark .error-section {
+  background: rgba(31, 41, 55, 0.8) !important;
+  border-color: #374151 !important;
+}
+
+.dark .tip-icon,
+.dark .warning-icon {
+  color: #f59e0b !important;
+}
+
+.dark .error-icon {
+  color: #ef4444 !important;
+}
+
+/* ===== Dark Mode: Weeds Page ===== */
+.dark .weed-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .weed-name,
+.dark .weed-description {
+  color: #f3f4f6 !important;
+}
+
+.dark .weeds-tags .weed-tag {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .weed-modal {
+  background: #111827 !important;
+  border-color: #374151 !important;
+}
+
+.dark .herbicide-card,
+.dark .organic-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .herb-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .identification-grid .ident-item {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .ident-label {
+  color: #9ca3af !important;
+}
+
+.dark .ident-value {
+  color: #f3f4f6 !important;
+}
+
+.dark .quick-tips-section .tip-card {
+  background: rgba(31, 41, 55, 0.8) !important;
+  border-color: #374151 !important;
+}
+
+.dark .warning-banner {
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+.dark .warning-text {
+  color: #ef4444 !important;
+}
+
+.dark .crop-tag-small {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .herb-details {
+  color: #9ca3af !important;
+}
+
+.dark .management-section-modal {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .mgmt-group h4 {
+  color: #059669 !important;
+}
+
+.dark .reprod-item,
+.dark .reprod-label,
+.dark .reprod-value {
+  color: #9ca3af !important;
+}
+
+.dark .notes-card {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .calendar-card {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Insects Page ===== */
+.dark .order-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .order-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .order-description,
+.dark .order-en {
+  color: #9ca3af !important;
+}
+
+.dark .order-icon {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .search-section {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .search-input[type="text"] {
+  background: rgba(17, 24, 39, 0.8) !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .search-icon {
+  color: #9ca3af !important;
+}
+
+.dark .no-results {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+  color: #9ca3af !important;
+}
+
+.dark .card-stats .stat {
+  color: #9ca3af !important;
+}
+
+.dark .card-stats .stat-value {
+  color: #059669 !important;
+}
+
+.dark .view-link {
+  color: #059669 !important;
+}
+
+.dark .stats-badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: Weather Page ===== */
+.dark .weather-card {
+  background: rgba(31, 41, 55, 0.95) !important;
+  border-color: #374151 !important;
+}
+
+.dark .weather-stat-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .weather-location {
+  color: #f3f4f6 !important;
+}
+
+.dark .weather-stat-label,
+.dark .weather-detail-label {
+  color: #9ca3af !important;
+}
+
+.dark .weather-stat-value,
+.dark .weather-detail-value {
+  color: #f3f4f6 !important;
+}
+
+.dark .weather-day,
+.dark .weather-hour {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .weather-date {
+  color: #9ca3af !important;
+}
+
+.dark .weather-temp-range {
+  color: #f3f4f6 !important;
+}
+
+.dark .weather-header {
+  background: linear-gradient(135deg, #0f1729 0%, #1f2937 50%, #111827 100%) !important;
+}
+
+/* ===== Dark Mode: AI Assistant (additional) ===== */
+.dark .hnp-ai-message-content h4,
+.dark .hnp-ai-message-content p,
+.dark .hnp-ai-message-content li {
+  color: #d1d5db !important;
+}
+
+.dark .hnp-ai-message.user .hnp-ai-message-content h4,
+.dark .hnp-ai-message.user .hnp-ai-message-content p,
+.dark .hnp-ai-message.user .hnp-ai-message-content li {
+  color: #f3f4f6 !important;
+}
+
+.dark .hnp-ai-empty-state {
+  color: #9ca3af !important;
+}
+
+.dark .hnp-ai-input-wrapper {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Calendar Page (additional) ===== */
+.dark .calendar-card,
+.dark .operation-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .operation-header h4 {
+  color: #f3f4f6 !important;
+}
+
+.dark .operation-details {
+  color: #9ca3af !important;
+}
+
+.dark .priority-badge.high {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.dark .priority-badge.medium {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #f59e0b !important;
+}
+
+.dark .priority-badge.low {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+}
+
+.dark .month-season {
+  color: #9ca3af !important;
+}
+
+.dark .month-info {
+  color: #9ca3af !important;
+}
+
+/* ===== Dark Mode: Pesticides Hub ===== */
+.dark .pesticide-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .pesticide-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .pesticide-info {
+  color: #9ca3af !important;
+}
+
+.dark .hub-stats .stat-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hub-stats .stat-value {
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: Fertilizers Page ===== */
+.dark .fertilizers-page {
+  background: #111827 !important;
+}
+
+.dark .fertilizer-modal,
+.dark .fertilizer-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .fertilizer-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .fertilizer-description {
+  color: #9ca3af !important;
+}
+
+.dark .fert-purpose {
+  color: #9ca3af !important;
+}
+
+.dark .fert-item {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .fert-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .application-grid .app-item,
+.dark .advantages-list li,
+.dark .disadvantages-list li {
+  color: #9ca3af !important;
+}
+
+.dark .storage-section {
+  color: #d1d5db !important;
+}
+
+/* ===== Dark Mode: Plants & Crops Page ===== */
+.dark .plant-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .plant-name,
+.dark .plant-name-en {
+  color: #f3f4f6 !important;
+}
+
+.dark .plant-description {
+  color: #9ca3af !important;
+}
+
+.dark .plant-modal {
+  background: #111827 !important;
+  border-color: #374151 !important;
+}
+
+.dark .plant-stats .stat-badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .season-badge {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .crops-section {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Soil & Irrigation Page ===== */
+.dark .soil-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .soil-name,
+.dark .soil-local {
+  color: #f3f4f6 !important;
+}
+
+.dark .soil-modal,
+.dark .nutrient-modal,
+.dark .method-modal {
+  background: #111827 !important;
+  border-color: #374151 !important;
+}
+
+.dark .soil-stats .stat-badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .properties-grid .property-group {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .method-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .method-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .method-details {
+  color: #9ca3af !important;
+}
+
+.dark .efficiency-badge.high {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+}
+
+.dark .efficiency-badge.medium {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #f59e0b !important;
+}
+
+.dark .efficiency-badge.low {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.dark .texture-badge {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #9ca3af !important;
+}
+
+/* ===== Dark Mode: Plant Elements / Nutrients Page ===== */
+.dark .nutrient-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .nutrient-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .nutrient-symbol {
+  color: #059669 !important;
+}
+
+.dark .nutrient-tabs .tab-btn {
+  background: #1f2937 !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .nutrient-tabs .tab-btn.active {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .nutrients-stats .stat-badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .deficiency-section,
+.dark .correction-section,
+.dark .functions-section,
+.dark .interactions-grid {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .deficiency-preview {
+  color: #9ca3af !important;
+}
+
+.dark .interaction-card.synergies {
+  background: rgba(16, 185, 129, 0.1) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+.dark .interaction-card.antagonistic {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border-color: rgba(239, 68, 68, 0.3) !important;
+}
+
+/* ===== Dark Mode: Academic Page ===== */
+.dark .academic-page {
+  background: #111827 !important;
+}
+
+.dark .database-card,
+.dark .journal-card,
+.dark .ref-card,
+.dark .season-card,
+.dark .term-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .database-card h4,
+.dark .journal-card h4,
+.dark .ref-title,
+.dark .term-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .db-note a,
+.dark .journal-focus,
+.dark .ref-authors,
+.dark .ref-year,
+.dark .term-def {
+  color: #9ca3af !important;
+}
+
+.dark .academic-tabs .tab-btn {
+  background: #1f2937 !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .academic-tabs .tab-btn.active {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .academic-modal {
+  background: #111827 !important;
+  border-color: #374151 !important;
+}
+
+.dark .equation-card {
+  background: rgba(31, 41, 55, 0.8) !important;
+  border-color: #374151 !important;
+}
+
+.dark .equation-name {
+  color: #f3f4f6 !important;
+}
+
+.dark .equation-formula {
+  color: #059669 !important;
+}
+
+.dark .term-english,
+.dark .term-latin {
+  color: #9ca3af !important;
+}
+
+.dark .quickref-table th {
+  background: #1f2937 !important;
+  color: #f3f4f6 !important;
+}
+
+.dark .quickref-table td {
+  background: rgba(31, 41, 55, 0.5) !important;
+  color: #d1d5db !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Knowledge Base (category-specific) ===== */
+.dark .knowledge-base-container {
+  background: #111827 !important;
+}
+
+.dark .kb-content {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .type-header,
+.dark .type-content {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .type-header h2,
+.dark .type-content h3 {
+  color: #f3f4f6 !important;
+}
+
+.dark .type-content p,
+.dark .type-content li {
+  color: #d1d5db !important;
+}
+
+.dark .disease-type.red,
+.dark .disease-type.danger {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+}
+
+.dark .disease-type.green,
+.dark .disease-type.safe {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: #10b981 !important;
+}
+
+.dark .disease-type.yellow,
+.dark .disease-type.caution {
+  background: rgba(245, 158, 11, 0.1) !important;
+  color: #f59e0b !important;
+}
+
+.dark .symptoms-list li,
+.dark .treatment-item,
+.dark .prevention-item {
+  color: #d1d5db !important;
+}
+
+.dark .level-indicator.high,
+.dark .level-indicator.severe {
+  background: rgba(239, 68, 68, 0.1) !important;
+  color: #ef4444 !important;
+}
+
+.dark .level-indicator.medium,
+.dark .level-indicator.moderate {
+  background: rgba(245, 158, 11, 0.1) !important;
+  color: #f59e0b !important;
+}
+
+.dark .level-indicator.low,
+.dark .level-indicator.mild {
+  background: rgba(16, 185, 129, 0.1) !important;
+  color: #10b981 !important;
+}
+
+.dark .treatment-card,
+.dark .prevention-card {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .treatment-card h4,
+.dark .prevention-card h4 {
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: Knowledge Base - Category Headers ===== */
+.dark .category-header.bacteria { background: rgba(239, 68, 68, 0.15) !important; }
+.dark .category-header.fungi { background: rgba(16, 185, 129, 0.15) !important; }
+.dark .category-header.virus { background: rgba(139, 92, 246, 0.15) !important; }
+.dark .category-header.nema { background: rgba(139, 90, 43, 0.15) !important; }
+.dark .category-header.phys { background: rgba(168, 85, 247, 0.15) !important; }
+.dark .category-header.para { background: rgba(245, 158, 11, 0.15) !important; }
+
+.dark .category-header.bacteria { border-color: rgba(239, 68, 68, 0.3) !important; }
+.dark .category-header.fungi { border-color: rgba(16, 185, 129, 0.3) !important; }
+.dark .category-header.virus { border-color: rgba(139, 92, 246, 0.3) !important; }
+.dark .category-header.nema { border-color: rgba(139, 90, 43, 0.3) !important; }
+.dark .category-header.phys { border-color: rgba(168, 85, 247, 0.3) !important; }
+.dark .category-header.para { border-color: rgba(245, 158, 11, 0.3) !important; }
+
+/* ===== Dark Mode: Knowledge Base Page (cards with big titles) ===== */
+.dark .knowledge-base-page {
+  background: #111827 !important;
+}
+
+.dark .knowledge-header .header-content {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .header-icon {
+  background: rgba(5, 150, 105, 0.15) !important;
+  border-color: #374151 !important;
+}
+
+.dark .header-text h1 {
+  color: #f3f4f6 !important;
+}
+
+.dark .header-subtitle {
+  color: #9ca3af !important;
+}
+
+.dark .header-stats .stat-item .stat-number {
+  color: #059669 !important;
+}
+
+.dark .header-stats .stat-divider {
+  background: #374151 !important;
+}
+
+.dark .knowledge-card .card-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .knowledge-card:hover .card-glass {
+  background: rgba(31, 41, 55, 0.98) !important;
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .card-stats-badge {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .stats-label {
+  color: #9ca3af !important;
+}
+
+.dark .card-title-en {
+  color: #059669 !important;
+}
+
+.dark .card-tags .tag {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .card-tags .tag .tag-dot {
+  opacity: 0.7 !important;
+}
+
+.dark .card-hover-effect {
+  background: linear-gradient(135deg, 
+    rgba(5, 150, 105, 0.03) 0%, 
+    transparent 50%,
+    rgba(5, 150, 105, 0.02) 100%) !important;
+}
+
+.dark .card-shine {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(5, 150, 105, 0.06) 50%,
+    transparent 70%
+  ) !important;
+}
+
+.dark .knowledge-stats .stats-container {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .stat-number-large {
+  color: #059669 !important;
+}
+
+.dark .stat-label-large {
+  color: #9ca3af !important;
+}
+
+.dark .knowledge-tips {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .tips-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .tip-card {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .tip-card:hover {
+  background: rgba(31, 41, 55, 0.7) !important;
+}
+
+.dark .tip-content h4 {
+  color: #f3f4f6 !important;
+}
+
+.dark .tip-content p {
+  color: #9ca3af !important;
+}
+
+/* ===== Dark Mode: Diseases Page (knowledge_base/disease) ===== */
+.dark .diseases-page {
+  background: #111827 !important;
+}
+
+.dark .diseases-bg {
+  opacity: 0.3 !important;
+}
+
+.dark .category-card .card-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .category-card:hover .card-glass {
+  background: rgba(31, 41, 55, 0.98) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .card-name-en {
+  color: #059669 !important;
+}
+
+.dark .card-short-desc {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .short-text {
+  color: #9ca3af !important;
+}
+
+.dark .card-stats .stat-item .stat-value {
+  color: #059669 !important;
+}
+
+.dark .diseases-stats {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Knowledge Base Sub-pages (bacteria, fungi, virus, etc.) ===== */
+.dark .bacteria-page,
+.dark .fungi-page,
+.dark .virus-page,
+.dark .nema-page,
+.dark .para-page,
+.dark .phys-page {
+  background: #111827 !important;
+}
+
+.dark .bacteria-page .card-glass,
+.dark .fungi-page .card-glass,
+.dark .virus-page .card-glass,
+.dark .nema-page .card-glass,
+.dark .para-page .card-glass,
+.dark .phys-page .card-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .bacteria-page .card-name-en,
+.dark .fungi-page .card-name-en,
+.dark .virus-page .card-name-en,
+.dark .nema-page .card-name-en,
+.dark .para-page .card-name-en,
+.dark .phys-page .card-name-en {
+  color: #059669 !important;
+}
+
+.dark .bacteria-page .card-short-desc,
+.dark .fungi-page .card-short-desc,
+.dark .virus-page .card-short-desc,
+.dark .nema-page .card-short-desc,
+.dark .para-page .card-short-desc,
+.dark .phys-page .card-short-desc {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .bacteria-page .short-text,
+.dark .fungi-page .short-text,
+.dark .virus-page .short-text,
+.dark .nema-page .short-text,
+.dark .para-page .short-text,
+.dark .phys-page .short-text {
+  color: #9ca3af !important;
+}
+
+.dark .bacteria-page .diseases-stats,
+.dark .fungi-page .diseases-stats,
+.dark .virus-page .diseases-stats,
+.dark .nema-page .diseases-stats,
+.dark .para-page .diseases-stats,
+.dark .phys-page .diseases-stats {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Knowledge Base - Oomycota / Nematoda / Public Health ===== */
+.dark .oomy-page,
+.dark .nematoda-page,
+.dark .public-health-page {
+  background: #111827 !important;
+}
+
+.dark .oomy-page .card-glass,
+.dark .nematoda-page .card-glass,
+.dark .public-health-page .card-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .oomy-page .card-name-en,
+.dark .nematoda-page .card-name-en,
+.dark .public-health-page .card-name-en {
+  color: #059669 !important;
+}
+
+.dark .oomy-page .short-text,
+.dark .nematoda-page .short-text,
+.dark .public-health-page .short-text {
+  color: #9ca3af !important;
+}
+
+.dark .oomy-page .diseases-stats,
+.dark .nematoda-page .diseases-stats,
+.dark .public-health-page .diseases-stats {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Dialog Component ===== */
+.dark .dialog-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.dark .dialog-content {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .dialog-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .dialog-text {
+  color: #9ca3af !important;
+}
+
+.dark .dialog-button {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .dialog-button:hover {
+  background: #047857 !important;
+}
+
+.dark .dialog-button.danger {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+}
+
+.dark .dialog-button.danger:hover {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+.dark .dialog-button.cancel {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: Advanced Search ===== */
+.dark .search-bar {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .search-bar input[type="text"],
+.dark .search-input {
+  background: rgba(17, 24, 39, 0.8) !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .search-input::placeholder {
+  color: #6b7280 !important;
+}
+
+.dark .filter-group label,
+.dark .filter-option {
+  color: #9ca3af !important;
+}
+
+.dark .filter-chip {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .filter-chip.active {
+  background: #059669 !important;
+  color: white !important;
+  border-color: #059669 !important;
+}
+
+.dark .clear-button {
+  color: #9ca3af !important;
+}
+
+.dark .clear-button:hover {
+  color: #ef4444 !important;
+}
+
+.dark .search-results .result-item {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .search-results .result-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .search-results .result-description {
+  color: #9ca3af !important;
+}
+
+/* ===== Dark Mode: Knowledge Preview ===== */
+.dark .knowledge-preview-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .preview-header h3,
+.dark .preview-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .preview-content,
+.dark .preview-description {
+  color: #9ca3af !important;
+}
+
+.dark .preview-meta {
+  color: #6b7280 !important;
+}
+
+.dark .preview-badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: Knowledge Preview Section (3rd section on homepage) ===== */
+.dark .hefno-knowledge-preview {
+  background: #111827 !important;
+}
+
+.dark .hefno-knowledge-glow {
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.05) 0%, transparent 70%) !important;
+  opacity: 0.5 !important;
+}
+
+.dark .hefno-knowledge-particles {
+  opacity: 0.02 !important;
+}
+
+.dark .hefno-knowledge-card {
+  background: transparent !important;
+  border-color: rgba(55, 65, 81, 0.5) !important;
+}
+
+.dark .hefno-knowledge-card-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.dark .hefno-knowledge-card:hover .hefno-knowledge-card-glass {
+  background: rgba(31, 41, 55, 0.98) !important;
+}
+
+.dark .hefno-card-badge {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-badge-count {
+  color: #059669 !important;
+}
+
+.dark .hefno-badge-label {
+  color: #9ca3af !important;
+}
+
+.dark .hefno-card-icon-wrapper {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-card-details .hefno-detail-tag {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-detail-text {
+  color: #9ca3af !important;
+}
+
+.dark .hefno-knowledge-card:hover .hefno-card-title {
+  color: #059669 !important;
+}
+
+.dark .hefno-card-hover-effect {
+  background: linear-gradient(135deg, 
+    rgba(5, 150, 105, 0.05) 0%, 
+    transparent 50%,
+    rgba(5, 150, 105, 0.03) 100%) !important;
+}
+
+.dark .hefno-card-shine {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(5, 150, 105, 0.08) 50%,
+    transparent 70%
+  ) !important;
+}
+
+.dark .hefno-knowledge-stats {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-stat-value {
+  color: #059669 !important;
+}
+
+.dark .hefno-stat-divider {
+  background: #374151 !important;
+}
+
+.dark .hefno-card-link {
+  color: #059669 !important;
+}
+
+.dark .hefno-knowledge-tag {
+  background: rgba(5, 150, 105, 0.15) !important;
+  border-color: rgba(5, 150, 105, 0.3) !important;
+}
+
+.dark .hefno-tag-text {
+  color: #059669 !important;
+}
+
+.dark .hefno-knowledge-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .hefno-knowledge-subtitle {
+  color: #9ca3af !important;
+}
+
+/* ===== Dark Mode: Resources Page ===== */
+.dark .resource-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .resource-header h3 {
+  color: #f3f4f6 !important;
+}
+
+.dark .resource-content {
+  color: #9ca3af !important;
+}
+
+.dark .resource-icon {
+  color: #059669 !important;
+}
+
+.dark .resource-badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+/* ===== Dark Mode: Pesticides Hub New ===== */
+.dark .pesticides-hub-new {
+  background: #111827 !important;
+}
+
+.dark .hub-header-new {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .hub-stats-new {
+  background: rgba(31, 41, 55, 0.7) !important;
+  backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .hub-stats-new .stat-card-new {
+  background: transparent !important;
+  border: none !important;
+}
+
+.dark .stat-divider-new {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark .stat-card-new .stat-value-new {
+  color: #059669 !important;
+}
+
+.dark .stat-card-new .stat-label-new {
+  color: #9ca3af !important;
+}
+
+.dark .search-section-new {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .search-input-new {
+  background: rgba(17, 24, 39, 0.8) !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .group-card-new {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .group-name-new {
+  color: #f3f4f6 !important;
+}
+
+.dark .group-code-new,
+.dark .group-description,
+.dark .group-en,
+.dark .moa-label-new,
+.dark .moa-text-new,
+.dark .spectrum-label-new,
+.dark .spectrum-value-new,
+.dark .res-label-new,
+.dark .res-value-new {
+  color: #9ca3af !important;
+}
+
+.dark .group-meta-new,
+.dark .group-spectrum-new,
+.dark .group-resistance-info-new,
+.dark .group-rotation-new {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .no-results-new {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+  color: #9ca3af !important;
+}
+
+.dark .view-link-new {
+  color: #059669 !important;
+}
+
+.dark .safety-text-new {
+  color: #f59e0b !important;
+}
+
+.dark .category-info-new {
+  background: rgba(31, 41, 55, 0.7) !important;
+  border-color: #374151 !important;
+}
+
+.dark .info-stats-new span {
+  background: rgba(31, 41, 55, 0.5) !important;
+  color: #9ca3af !important;
+}
+
+.dark .info-text-new h2 {
+  color: #f3f4f6 !important;
+}
+
+.dark .info-text-new p {
+  color: #9ca3af !important;
+}
+
+.dark .search-wrapper-new {
+  background: rgba(17, 24, 39, 0.6) !important;
+  border-color: #374151 !important;
+}
+
+.dark .search-icon-new {
+  color: #9ca3af !important;
+}
+
+.dark .clear-search-new {
+  color: #6b7280 !important;
+}
+
+.dark .clear-search-new:hover {
+  background: rgba(55, 65, 81, 0.5) !important;
+  color: #d1d5db !important;
+}
+
+.dark .group-name-en-new {
+  color: #9ca3af !important;
+}
+
+.dark .meta-value-new {
+  color: #d1d5db !important;
+}
+
+.dark .group-moa-new {
+  color: #9ca3af !important;
+}
+
+.dark .card-footer-new {
+  border-color: #374151 !important;
+}
+
+.dark .ai-count-new {
+  color: #059669 !important;
+}
+
+.dark .arrow-new {
+  color: #059669 !important;
+}
+
+.dark .section-title-new {
+  color: #f3f4f6 !important;
+}
+
+.dark .header-text-new h1 {
+  color: #f3f4f6 !important;
+}
+
+.dark .header-text-new p {
+  color: #9ca3af !important;
+}
+
+.dark .header-icon-new {
+  background: rgba(5, 150, 105, 0.15) !important;
+}
+
+.dark .back-button-new {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .back-button-new:hover {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .no-results-new h3 {
+  color: #f3f4f6 !important;
+}
+
+.dark .no-results-new p {
+  color: #9ca3af !important;
+}
+
+.dark .no-results-new button {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .no-results-new button:hover {
+  background: #047857 !important;
+}
+
+/* ===== Dark Mode: Pesticides Group Page ===== */
+.dark .hub-bg-new {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+}
+
+.dark .bg-glow-new {
+  background: radial-gradient(circle at 20% 30%, rgba(5, 150, 105, 0.05) 0%, transparent 60%) !important;
+}
+
+.dark .bg-particles-new {
+  background-image: radial-gradient(circle at 10% 20%, rgba(5, 150, 105, 0.06) 2px, transparent 2px) !important;
+}
+
+.dark .group-header-new {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .group-icon {
+  background: rgba(5, 150, 105, 0.15) !important;
+}
+
+.dark .group-header-text h1 {
+  color: #f3f4f6 !important;
+}
+
+.dark .group-header-text p {
+  color: #9ca3af !important;
+}
+
+.dark .pesticides-hub-new .badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .group-description-new {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .group-description-new h3 {
+  color: #f3f4f6 !important;
+}
+
+.dark .group-description-new p {
+  color: #9ca3af !important;
+}
+
+.dark .rotation-note {
+  background: rgba(30, 58, 138, 0.15) !important;
+  color: #93c5fd !important;
+  border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+.dark .spectrum-note {
+  background: rgba(31, 41, 55, 0.5) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .public-health-note {
+  background: rgba(31, 41, 55, 0.5) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .results-count-new {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .item-card-new {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .item-header h4 {
+  color: #f3f4f6 !important;
+}
+
+.dark .item-name-en {
+  color: #9ca3af !important;
+}
+
+.dark .item-details {
+  border-color: #374151 !important;
+}
+
+.dark .item-detail .detail-label {
+  color: #9ca3af !important;
+}
+
+.dark .item-detail .detail-value {
+  color: #d1d5db !important;
+}
+
+.dark .item-targets > span {
+  color: #9ca3af !important;
+}
+
+.dark .target-tag {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .item-footer {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+.dark .view-details {
+  color: #059669 !important;
+}
+
+.dark .view-details .arrow {
+  color: #059669 !important;
+}
+
+.dark .item-modal-new {
+  background: rgba(31, 41, 55, 0.98) !important;
+  border-color: #374151 !important;
+}
+
+.dark .pesticides-hub-new .modal-icon {
+  background: rgba(5, 150, 105, 0.15) !important;
+}
+
+.dark .modal-group {
+  color: #059669 !important;
+}
+
+.dark .detail-grid {
+  background: rgba(17, 24, 39, 0.6) !important;
+  border-color: #374151 !important;
+}
+
+.dark .detail-row {
+  border-color: #374151 !important;
+}
+
+.dark .application-box,
+.dark .resistance-box,
+.dark .safety-box,
+.dark .special-box,
+.dark .regulatory-box,
+.dark .target-pests-box {
+  background: rgba(17, 24, 39, 0.6) !important;
+  border-color: #374151 !important;
+}
+
+.dark .application-box h4,
+.dark .resistance-box h4,
+.dark .safety-box h4,
+.dark .special-box h4,
+.dark .regulatory-box h4,
+.dark .target-pests-box h4 {
+  color: #059669 !important;
+}
+
+.dark .app-row {
+  color: #d1d5db !important;
+}
+
+.dark .pest-tag {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+}
+
+.dark .close-btn {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .close-btn:hover {
+  background: #047857 !important;
+}
+
+.dark .loading-container p {
+  color: #9ca3af !important;
+}
+
+.dark .loading-spinner {
+  border-color: rgba(5, 150, 105, 0.2) !important;
+  border-top-color: #059669 !important;
+}
+
+.dark .error-container {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .error-container h2 {
+  color: #f3f4f6 !important;
+}
+
+.dark .error-container p {
+  color: #9ca3af !important;
+}
+
+.dark .back-home-btn {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .back-home-btn:hover {
+  background: #047857 !important;
+}
+
+/* ===== Dark Mode: Features Section (remaining) ===== */
+.dark .feature-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+.dark .feature-card .feature-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .feature-card .feature-description {
+  color: #9ca3af !important;
+}
+
+.dark .feature-icon-wrapper {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #059669 !important;
+  border-color: rgba(5, 150, 105, 0.2) !important;
+}
+
+/* ===== Dark Mode: Cookie Consent ===== */
+.dark .cookie-consent {
+  background: rgba(17, 24, 39, 0.98) !important;
+}
+
+.dark .cookie-consent p {
+  color: rgba(232, 245, 232, 0.8) !important;
+}
+
+.dark .cookie-consent a {
+  color: #b8955a !important;
+}
+
+.dark .cookie-accept-btn {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .cookie-decline-btn {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+/* ===== Dark Mode: General Utility ===== */
+.dark .section-title,
+.dark .group-title,
+.dark .category-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .section-description,
+.dark .group-description,
+.dark .category-description,
+.dark .header-description {
+  color: #9ca3af !important;
+}
+
+.dark .stat-divider {
+  background: #374151 !important;
+}
+
+.dark .content-section {
+  background: #111827 !important;
+}
+
+.dark .stats-row .stat-item {
+  background: rgba(31, 41, 55, 0.5) !important;
+  border-color: #374151 !important;
+}
+
+.dark .stats-row .stat-label {
+  color: #9ca3af !important;
+}
+
+.dark .stats-row .stat-number {
+  color: #059669 !important;
+}
+
+.dark .sub-header {
+  background: rgba(31, 41, 55, 0.9) !important;
+  border-color: #374151 !important;
+}
+
+.dark .tags-container .tag {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #9ca3af !important;
+  border-color: #374151 !important;
+}
+
+.dark .tags-container .tag.active {
+  background: #059669 !important;
+  color: white !important;
+}
+
+.dark .empty-state,
+.dark .loading-state {
+  color: #9ca3af !important;
+}
+
+/* ===== Dark Mode: Contact Section (4th/last on homepage) ===== */
+.dark .hefno-contact {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%) !important;
+}
+
+.dark .hefno-contact-glow {
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.04) 0%, transparent 70%) !important;
+  opacity: 0.5 !important;
+}
+
+.dark .hefno-contact-particles {
+  opacity: 0.015 !important;
+}
+
+.dark .hefno-leaf {
+  opacity: 0.02 !important;
+}
+
+.dark .hefno-contact-tag {
+  background: rgba(5, 150, 105, 0.15) !important;
+  border-color: rgba(5, 150, 105, 0.3) !important;
+}
+
+.dark .hefno-tag-text {
+  color: #059669 !important;
+}
+
+.dark .hefno-contact-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .hefno-contact-subtitle {
+  color: #9ca3af !important;
+}
+
+.dark .hefno-info-card {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-info-card:hover {
+  background: rgba(31, 41, 55, 0.95) !important;
+  border-color: #059669 !important;
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .hefno-info-icon-wrapper {
+  background: rgba(5, 150, 105, 0.15) !important;
+  border-color: rgba(5, 150, 105, 0.3) !important;
+}
+
+.dark .hefno-info-glow {
+  opacity: 0.1 !important;
+}
+
+.dark .hefno-info-card:hover .hefno-info-glow {
+  opacity: 0.3 !important;
+}
+
+.dark .hefno-info-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .hefno-info-details {
+  color: #059669 !important;
+}
+
+.dark .hefno-info-subdetails {
+  color: #9ca3af !important;
+}
+
+.dark .hefno-social-wrapper {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-social-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .hefno-social-icon {
+  background: rgba(5, 150, 105, 0.15) !important;
+  border-color: rgba(5, 150, 105, 0.3) !important;
+  color: #059669 !important;
+}
+
+.dark .hefno-social-icon:hover {
+  background: #059669 !important;
+  border-color: #059669 !important;
+  color: white !important;
+}
+
+.dark .hefno-contact-form-wrapper {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-form-glass {
+  background: rgba(31, 41, 55, 0.95) !important;
+}
+
+.dark .hefno-form-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .hefno-form-label {
+  color: #9ca3af !important;
+}
+
+.dark .hefno-form-input,
+.dark .hefno-form-textarea {
+  background: rgba(17, 24, 39, 0.8) !important;
+  color: #f3f4f6 !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-form-input:focus,
+.dark .hefno-form-textarea:focus {
+  border-color: #059669 !important;
+  background: rgba(17, 24, 39, 0.95) !important;
+  box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.15) !important;
+}
+
+.dark .hefno-form-input::placeholder,
+.dark .hefno-form-textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+.dark .hefno-form-submit {
+  background: #059669 !important;
+}
+
+.dark .hefno-form-submit:hover:not(:disabled) {
+  background: #047857 !important;
+  box-shadow: 0 15px 25px -8px rgba(5, 150, 105, 0.4) !important;
+}
+
+.dark .hefno-form-success {
+  background: rgba(5, 150, 105, 0.15) !important;
+  border-color: #059669 !important;
+  color: #059669 !important;
+}
+
+.dark .hefno-map-wrapper {
+  background: rgba(31, 41, 55, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: #374151 !important;
+}
+
+.dark .hefno-map-glass {
+  background: rgba(31, 41, 55, 0.5) !important;
+}
+
+.dark .hefno-map-content {
+  background: rgba(5, 150, 105, 0.05) !important;
+  border-color: rgba(5, 150, 105, 0.2) !important;
+}
+
+.dark .hefno-map-placeholder {
+  background: rgba(31, 41, 55, 0.8) !important;
+  color: #d1d5db !important;
+  border-color: #374151 !important;
+}
+
+.dark ::selection {
+  background: rgba(5, 150, 105, 0.3) !important;
+}
+
+/* ===== Hero Utility Classes ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.text-gradient {
+  color: #52b788;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #52b788, #2d6a4f, #1a5c3a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.glow-primary {
+  box-shadow: 0 0 30px rgba(82, 183, 136, 0.3), 0 0 60px rgba(82, 183, 136, 0.1);
+}
+
+.grid-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .grid-bg {
+  background-image: linear-gradient(rgba(45, 106, 79, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 106, 79, 0.08) 1px, transparent 1px) !important;
+}
+
+.dark .glass {
+  background: rgba(10, 31, 21, 0.8) !important;
+  border-color: rgba(45, 106, 79, 0.3) !important;
+  backdrop-filter: none !important;
+}
+
+.dark .glass-strong {
+  background: rgba(10, 31, 21, 0.95) !important;
+  border-color: rgba(45, 106, 79, 0.3) !important;
+  backdrop-filter: none !important;
+}
+
+:root {
+  --emerald-glow: rgba(82, 183, 136, 0.6);
+}
+
+.gradient-emerald {
+  background: linear-gradient(135deg, #52b788, #2d6a4f);
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #52b788, #8bc34a, #52b788);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(82, 183, 136, 0.5), 0 0 40px rgba(82, 183, 136, 0.3);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(82, 183, 136, 0.3);
+  border-radius: 99px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 183, 136, 0.5);
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { opacity: 0.4; transform: scale(0.95); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+  100% { opacity: 0.4; transform: scale(0.95); }
+}
+
+.dark .gradient-emerald {
+  background: linear-gradient(135deg, #52b788, #2d6a4f);
+}
+
+.dark .text-glow {
+  text-shadow: 0 0 20px rgba(82, 183, 136, 0.6), 0 0 60px rgba(82, 183, 136, 0.3);
+}
+
+/* ===== Error Boundary ===== */
+.hefno-error-boundary {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #faf7f0;
+  direction: rtl;
+  padding: 4rem 5%;
+}
+
+.hefno-error-boundary-container {
+  text-align: center;
+  max-width: 440px;
+}
+
+.hefno-error-boundary-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.hefno-error-boundary-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 700;
+  color: #1a332c;
+  margin: 0 0 0.75rem;
+}
+
+.hefno-error-boundary-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #4a5d52;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0 0 1.5rem;
+}
+
+.hefno-error-boundary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: #2d6a4f;
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hefno-error-boundary-btn:hover {
+  background: #1a4a38;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(45, 106, 79, 0.3);
+}
+
+.dark .hefno-error-boundary {
+  background: #111827;
+}
+
+.dark .hefno-error-boundary-title {
+  color: #f3f4f6;
+}
+
+.dark .hefno-error-boundary-desc {
+  color: #9ca3af;
+}
+
+.dark .hefno-error-boundary-btn {
+  background: #059669;
+}
+
+.dark .hefno-error-boundary-btn:hover {
+  background: #047857;
+}
+
+@media (max-width: 768px) {
+  .hefno-error-boundary {
+    min-height: 60vh;
+    padding: 3rem 5%;
+  }
+
+  .hefno-error-boundary-icon {
+    font-size: 2.5rem;
+  }
+
+  .hefno-error-boundary-title {
+    font-size: 1.15rem;
+  }
+
+  .hefno-error-boundary-desc {
+    font-size: 0.88rem;
+  }
+
+  .hefno-error-boundary-btn {
+    padding: 0.7rem 1.6rem;
+    font-size: 0.88rem;
+  }
 }

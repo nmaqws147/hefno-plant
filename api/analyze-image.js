@@ -1,6 +1,6 @@
 
-import { Redis } from '@upstash/redis';
-import crypto from 'crypto';
+const { Redis } = require('@upstash/redis');
+const crypto = require('crypto');
 
 const redis = new Redis({
   url: process.env.REDIS_URL,
@@ -279,7 +279,7 @@ async function tryAllModels(base64Image) {
   return { success: false, errorType: "SERVER_OVERLOAD" };
 }
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const startTime = Date.now();
 
   try {

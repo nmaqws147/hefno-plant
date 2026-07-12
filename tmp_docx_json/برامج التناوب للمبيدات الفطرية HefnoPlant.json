@@ -1,0 +1,1291 @@
+{
+  "id": "frac_rotation_programs",
+  "name_ar": "برامج التناوب الجاهزة للمحاصيل الرئيسية",
+  "name_en": "Ready-made Fungicide Rotation Programs",
+  "description_ar": "برامج تناوب علمية جاهزة للمحاصيل الرئيسية في مصر — مبنية على مبادئ FRAC لتأخير المقاومة",
+  "principles_ar": [
+    "لا تكرر نفس مجموعة FRAC في رشتين متتاليتين",
+    "ادمج دائماً مبيداً ملامسياً (M) مع كل مبيد جهازي",
+    "لا تتجاوز الحد الأقصى من الرشات لأي مجموعة في الموسم",
+    "احفظ SDHI (C7) للمراحل الحرجة فقط",
+    "راقب الجو وابدأ قبل الإصابة لا بعدها"
+  ],
+  "total_programs": 17,
+  "programs": [
+    {
+      "id": "rot-001",
+      "name_ar": "برنامج تناوب القمح — الصداء وسيبتوريا",
+      "name_en": "Wheat Rotation Program — Rust & Septoria",
+      "crop": "قمح",
+      "season_ar": "فبراير–أبريل",
+      "target_disease_ids": [
+        "basi-1",
+        "basi-2",
+        "basi-3",
+        "asco-13",
+        "asco-17"
+      ],
+      "target_diseases_ar": [
+        "صدأ الساق",
+        "صدأ الأوراق",
+        "صدأ الأصفر",
+        "سيبتوريا",
+        "FHB فيوزاريوم"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند 5% إصابة بالصداء — أو وقائياً عند انتشار المرض في المنطقة",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-001",
+            "ai-002"
+          ],
+          "example_ai_ar": "بروبيكونازول أو تيبوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بروبيكونازول 0.5 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "الرشة الأولى الوقائية — DMI ممتاز ضد الصداء"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "بعد 14 يوم — أو عند ظهور الأعراض على الورقة العلم",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-016",
+            "ai-019"
+          ],
+          "example_ai_ar": "تريفلوكسيستروبين أو ديموكسيستروبين",
+          "must_mix_with_id": "frac-c3",
+          "mix_ai_ar": "تيبوكونازول (مزيج DMI+QoI)",
+          "dose_note_ar": "تريفلوكسيستروبين 0.3 مل/لتر + تيبوكونازول 0.5 مل/لتر",
+          "notes_ar": "تناوب بين C3 وC5 — المزيج الأقوى ضد الصداء"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "عند بداية الطرد — حرجة لمكافحة FHB",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-021",
+            "ai-024"
+          ],
+          "example_ai_ar": "فلوكساپيروكساد أو بيكسافن",
+          "must_mix_with_id": "frac-c3",
+          "mix_ai_ar": "بروثيوكونازول (SDHI+DMI)",
+          "dose_note_ar": "فلوكساپيروكساد 0.4 جم/لتر + بروثيوكونازول 0.5 مل/لتر",
+          "notes_ar": "SDHI+DMI = الأقوى ضد FHB والصداء في مرحلة الطرد"
+        }
+      ],
+      "rotation_summary_ar": "C3 → C5 → C7+C3 — لا تكرار لأي مجموعة — M في كل رشة",
+      "resistance_notes_ar": "تجنب: C3+C3، C5+C5 — ستزيد المقاومة دون فائدة إضافية",
+      "general_notes_ar": "معاملة البذور بتيبوكونازول + فلودايوكسونيل تُقلل الضغط المرضي المبكر وتوفر رشة كاملة"
+    },
+    {
+      "id": "rot-002",
+      "name_ar": "برنامج تناوب الطماطم — اللفحة والعفن الرمادي",
+      "name_en": "Tomato Rotation Program — Blight & Botrytis",
+      "crop": "طماطم",
+      "season_ar": "طوال العام في البيوت المحمية",
+      "target_disease_ids": [
+        "oomy-2",
+        "oomy-4",
+        "asco-4",
+        "asco-5",
+        "asco-6",
+        "asco-7",
+        "asco-8",
+        "basi-8",
+        "basi-9"
+      ],
+      "target_diseases_ar": [
+        "لفحة متأخرة",
+        "عفن القدم",
+        "عفن رمادي",
+        "ألترناريا",
+        "عفن أبيض",
+        "موت الغمد",
+        "ريزوكتونيا"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً كل 10-14 يوم — ابدأ بعد الزراعة بأسبوعين",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-030",
+            "ai-036"
+          ],
+          "example_ai_ar": "مانكوزيب أو نحاسيات",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "البداية بالملامسي — وقاية قاعدية"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند بداية التزهير أو الضغط المرضي",
+          "frac_group_id": "frac-p3",
+          "example_ai_ids": [
+            "ai-038"
+          ],
+          "example_ai_ar": "ميتالاكسيل-M",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب (إلزامي — لا يُستخدم منفرداً)",
+          "dose_note_ar": "ميتالاكسيل-M 0.5 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "ضد اللفحة المتأخرة والأمراض البيضية — P3 لا يُستخدم منفرداً أبداً"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 14 يوم — تناوب عن P3",
+          "frac_group_id": "frac-p7",
+          "example_ai_ids": [
+            "ai-040"
+          ],
+          "example_ai_ar": "ديموثيمورف",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب أو فولبيت",
+          "dose_note_ar": "ديموثيمورف 0.6 جم/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "تناوب P3↔P7 — يمنع مقاومة الأمراض البيضية"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "عند بداية العقد — أهم مرحلة لـ Botrytis",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020",
+            "ai-027"
+          ],
+          "example_ai_ar": "بوسكاليد أو بيديفلوميتوفن",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب أو كلوروثالونيل",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "SDHI — الأقوى ضد Botrytis وSclerotinia"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "بعد 14 يوم — تناوب",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-003"
+          ],
+          "example_ai_ar": "ديفينوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب أو كلوروثالونيل",
+          "dose_note_ar": "ديفينوكونازول 0.4 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "DMI ضد Alternaria والبقع الورقية"
+        }
+      ],
+      "rotation_summary_ar": "M → P3+M → P7+M → C7+M → C3+M → تكرار",
+      "resistance_notes_ar": "لا تكرر P3 وحده — لا تكرر C7 أكثر من مرتين — M في كل رشة بدون استثناء",
+      "general_notes_ar": "في البيوت المحمية: فاليداميسين صب في التربة ضد موت الغمد — ريزوكتونيا"
+    },
+    {
+      "id": "rot-003",
+      "name_ar": "برنامج تناوب العنب — بياض زغبي وبياض دقيقي",
+      "name_en": "Grapevine Rotation Program — Downy & Powdery Mildew",
+      "crop": "عنب",
+      "season_ar": "مارس–يوليو",
+      "target_disease_ids": [
+        "oomy-6",
+        "asco-1",
+        "asco-4",
+        "fin-1",
+        "fin-11"
+      ],
+      "target_diseases_ar": [
+        "بياض زغبي",
+        "بياض دقيقي",
+        "عفن رمادي",
+        "جرب العنب",
+        "لفحة أوراق"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند تفتح 5-10 سم (Eichblatt)",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-030",
+            "ai-034"
+          ],
+          "example_ai_ar": "مانكوزيب أو فولبيت",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "أولى رشات الموسم — ملامسي وقائي"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "قبيل الإزهار (Vorknospenblüte)",
+          "frac_group_id": "frac-p3",
+          "example_ai_ids": [
+            "ai-038"
+          ],
+          "example_ai_ar": "ميتالاكسيل-M",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "فولبيت أو مانكوزيب",
+          "dose_note_ar": "ميتالاكسيل-M 0.5 مل/لتر + فولبيت 2 جم/لتر",
+          "notes_ar": "أحرج مرحلة للبياض الزغبي — P3 + ملامسي"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد الإزهار مباشرةً (Post-bloom)",
+          "frac_group_id": "frac-p7",
+          "example_ai_ids": [
+            "ai-040",
+            "ai-042"
+          ],
+          "example_ai_ar": "ديموثيمورف أو ڤاليفيناليت",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "فولبيت",
+          "dose_note_ar": "ديموثيمورف 0.6 جم/لتر + فولبيت 2 جم/لتر",
+          "notes_ar": "تناوب P3→P7 لمنع مقاومة البياض الزغبي"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "مرحلة حبة البازلاء",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020"
+          ],
+          "example_ai_ar": "بوسكاليد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "SDHI ضد Botrytis قبل إغلاق العناقيد"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "3-4 أسابيع قبل الحصاد",
+          "frac_group_id": "frac-f",
+          "example_ai_ids": [
+            "ai-045"
+          ],
+          "example_ai_ar": "فلودايوكسونيل",
+          "must_mix_with_id": null,
+          "mix_ai_ar": "كبريت ذائب ضد البياض الدقيقي",
+          "dose_note_ar": "فلودايوكسونيل 0.4 مل/لتر + كبريت 2 جم/لتر",
+          "notes_ar": "آخر رشة قبل الحصاد — فلودايوكسونيل آمن جداً"
+        }
+      ],
+      "rotation_summary_ar": "M → P3+M → P7+M → C7+M → F+M — تناوب P3↔P7 للبياض الزغبي",
+      "resistance_notes_ar": "للبياض الدقيقي: تناوب C3 ↔ C5 ↔ كبريت — لا تعتمد على مجموعة واحدة",
+      "general_notes_ar": "كبريت ذائب يُستخدم طوال الموسم ضد البياض الدقيقي — آمن ورخيص"
+    },
+    {
+      "id": "rot-004",
+      "name_ar": "برنامج تناوب البطاطس — اللفحة المتأخرة",
+      "name_en": "Potato Rotation Program — Late Blight",
+      "crop": "بطاطس",
+      "season_ar": "أكتوبر–فبراير (الشتوية) — فبراير–مايو (الربيعية)",
+      "target_disease_ids": [
+        "oomy-2",
+        "oomy-3",
+        "asco-5",
+        "asco-8",
+        "plasm-2"
+      ],
+      "target_diseases_ar": [
+        "لفحة متأخرة",
+        "لفحة مبكرة",
+        "ألترناريا",
+        "Alternaria",
+        "جرب إسفنجي"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "10% إغلاق خطوط الزراعة — وقائياً",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-030"
+          ],
+          "example_ai_ar": "مانكوزيب",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "البداية وقائياً بالملامسي"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظروف الإصابة (رطوبة + برودة) أو أولى الأعراض",
+          "frac_group_id": "frac-p3",
+          "example_ai_ids": [
+            "ai-038"
+          ],
+          "example_ai_ar": "ميتالاكسيل-M",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب (إلزامي)",
+          "dose_note_ar": "ميتالاكسيل-M 0.5 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "علاجي حتى 48 ساعة — لا تؤخر"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 10-14 يوم — تناوب",
+          "frac_group_id": "frac-p7",
+          "example_ai_ids": [
+            "ai-040",
+            "ai-041"
+          ],
+          "example_ai_ar": "ديموثيمورف أو إيبروباليكارب",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب أو كلوروثالونيل",
+          "dose_note_ar": "ديموثيمورف 0.6 جم/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "CAA بديل للـ P3 — لا مقاومة متبادلة"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "بعد 14 يوم",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-015"
+          ],
+          "example_ai_ar": "أزوكسيستروبين",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "أزوكسيستروبين 1 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "QoI ضد اللفحة والألترناريا معاً"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "قبل الحصاد بـ 21 يوم — آخر رشة",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-003"
+          ],
+          "example_ai_ar": "ديفينوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "ديفينوكونازول 0.4 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "DMI ضد Alternaria وبقع الأوراق"
+        }
+      ],
+      "rotation_summary_ar": "M → P3+M → P7+M → C5+M → C3+M",
+      "resistance_notes_ar": "افحص حساسية سلالات Phytophthora infestans المحلية لـ P3 قبل الاعتماد عليه",
+      "general_notes_ar": "معاملة درنات التقاوي بفلودايوكسونيل+سيبروديونيل تحمي من أمراض البذرة والبادرات"
+    },
+    {
+      "id": "rot-005",
+      "name_ar": "برنامج تناوب الأرز — بلاست وموت الغمد",
+      "name_en": "Rice Rotation Program — Blast & Sheath Blight",
+      "crop": "أرز",
+      "season_ar": "يونيو–سبتمبر",
+      "target_disease_ids": [
+        "asco-18",
+        "basi-8",
+        "basi-9"
+      ],
+      "target_diseases_ar": [
+        "بلاست الأرز",
+        "موت الغمد",
+        "ريزوكتونيا"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند بداية التفريغ — وقائياً ضد بلاست",
+          "frac_group_id": "frac-c8",
+          "example_ai_ids": [
+            "ai-047"
+          ],
+          "example_ai_ar": "تريسيكلازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "تريسيكلازول 0.6 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "الأفضل ضد بلاست الأرز"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "صب في التربة عند الإشتال أو التفريغ",
+          "frac_group_id": "frac-i3",
+          "example_ai_ids": [
+            "ai-049"
+          ],
+          "example_ai_ar": "فاليداميسين-أ",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "فاليداميسين 2 مل/لتر صب في التربة",
+          "notes_ar": "ضد موت الغمد — آمن جداً — لا مقاومة"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "عند الطرد (Heading) — أحرج مرحلة",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-015"
+          ],
+          "example_ai_ar": "أزوكسيستروبين",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "أزوكسيستروبين 1 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "تناوب C8→C5 — QoI ممتاز ضد بلاست مرحلة الطرد"
+        }
+      ],
+      "rotation_summary_ar": "C8+M → I3 صب تربة → C5+M",
+      "resistance_notes_ar": "تناوب C8↔C5 لمنع مقاومة بلاست الأرز — فاليداميسين لا يحتاج تناوب",
+      "general_notes_ar": "إيزوبروثيولان كبديل لتريسيكلازول ويُقلل الرقاد — صب في ماء الري"
+    },
+    {
+      "id": "rot-006",
+      "name_ar": "برنامج تناوب الفراولة — عفن رمادي وأنثراكنوز",
+      "name_en": "Strawberry Rotation Program — Botrytis & Anthracnose",
+      "crop": "فراولة",
+      "season_ar": "أكتوبر–فبراير",
+      "target_disease_ids": [
+        "asco-4",
+        "asco-5",
+        "asco-9",
+        "oomy-5",
+        "fin-5",
+        "add-3"
+      ],
+      "target_diseases_ar": [
+        "عفن رمادي",
+        "ألترناريا",
+        "ذبول الفيوزاريوم",
+        "عفن جذور",
+        "أنثراكنوز",
+        "عفن ساق صمغي"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند بداية التزهير",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-027"
+          ],
+          "example_ai_ar": "بيديفلوميتوفن أو بوسكاليد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "SDHI — الأقوى ضد Botrytis عند التزهير"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "بعد 10-12 يوم",
+          "frac_group_id": "frac-f",
+          "example_ai_ids": [
+            "ai-045",
+            "ai-046"
+          ],
+          "example_ai_ar": "فلودايوكسونيل أو سيبروديونيل",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "فلودايوكسونيل 0.4 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "تناوب C7→F — لا مقاومة متبادلة"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 10-12 يوم — قبيل الحصاد",
+          "frac_group_id": "frac-g1",
+          "example_ai_ids": [
+            "ai-050"
+          ],
+          "example_ai_ar": "فنهيكساميد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "فنهيكساميد 1 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "فترة انتظار 3 أيام — آمن قريباً من الحصاد"
+        }
+      ],
+      "rotation_summary_ar": "C7+M → F+M → G1+M — تناوب ثلاث مجموعات ضد Botrytis",
+      "resistance_notes_ar": "Botrytis تطور مقاومة سريعة — التناوب الصارم بين C7 وF وG1 إلزامي",
+      "general_notes_ar": "معاملة الشتلات بفلودايوكسونيل+سيبروديونيل تحمي من أنثراكنوز وعفن الجذور من البداية"
+    },
+    {
+      "id": "rot-007",
+      "name_ar": "برنامج تناوب الخيار والقرعيات — بياض زغبي ودقيقي",
+      "name_en": "Cucumber/Cucurbits Rotation Program",
+      "crop": "خيار — كوسة — قرعيات",
+      "season_ar": "طوال العام في البيوت المحمية",
+      "target_disease_ids": [
+        "oomy-7",
+        "asco-1",
+        "asco-4",
+        "asco-7",
+        "basi-8",
+        "add-3"
+      ],
+      "target_diseases_ar": [
+        "بياض زغبي",
+        "بياض دقيقي",
+        "عفن رمادي",
+        "عفن أبيض",
+        "موت الغمد",
+        "عفن صمغي"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً كل 7-10 أيام",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-030",
+            "ai-035"
+          ],
+          "example_ai_ar": "مانكوزيب أو كبريت (ضد البياض الدقيقي)",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "مانكوزيب 2.5 جم/لتر — أو كبريت 3 جم/لتر ضد بياض دقيقي",
+          "notes_ar": "البداية بالملامسي — أرخص وأأمن"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظروف رطوبة عالية أو أولى أعراض بياض زغبي",
+          "frac_group_id": "frac-p3",
+          "example_ai_ids": [
+            "ai-038"
+          ],
+          "example_ai_ar": "ميتالاكسيل-M",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "ميتالاكسيل-M 0.5 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "ضد البياض الزغبي — P3 + ملامسي"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 14 يوم",
+          "frac_group_id": "frac-p7",
+          "example_ai_ids": [
+            "ai-040"
+          ],
+          "example_ai_ar": "ديموثيمورف",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "ديموثيمورف 0.6 جم/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "تناوب P3→P7 للبياض الزغبي"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "عند أولى أعراض العفن الرمادي أو الأبيض",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020"
+          ],
+          "example_ai_ar": "بوسكاليد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب أو كلوروثالونيل",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "SDHI ضد Botrytis وSclerotinia"
+        }
+      ],
+      "rotation_summary_ar": "M → P3+M → P7+M → C7+M — كبريت طوال الموسم ضد البياض الدقيقي",
+      "resistance_notes_ar": "تناوب P3↔P7 إلزامي لمنع مقاومة البياض الزغبي",
+      "general_notes_ar": "كبريت ذائب يُستخدم في كل رشة ضد البياض الدقيقي — رخيص وآمن"
+    },
+    {
+      "id": "rot-008",
+      "name_ar": "برنامج تناوب الشعير — صداء وتبقع شبكي",
+      "name_en": "Barley Rotation Program — Rust & Net Blotch",
+      "crop": "شعير",
+      "season_ar": "فبراير–أبريل",
+      "target_disease_ids": [
+        "basi-2",
+        "basi-3",
+        "basi-4",
+        "asco-13",
+        "fin-19",
+        "basi-12"
+      ],
+      "target_diseases_ar": [
+        "صدأ الأوراق",
+        "صدأ أصفر",
+        "صدأ الساق",
+        "سيبتوريا",
+        "تبقع شبكي",
+        "تفحم"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند ظهور الورقة العلم — وقائياً",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-001",
+            "ai-008"
+          ],
+          "example_ai_ar": "بروبيكونازول أو بروثيوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بروبيكونازول 0.5 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "DMI ممتاز ضد كل صداء الشعير"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند الطرد",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-021",
+            "ai-023"
+          ],
+          "example_ai_ar": "فلوكساپيروكساد أو إيسوبيرازام",
+          "must_mix_with_id": "frac-c3",
+          "mix_ai_ar": "بروبيكونازول (SDHI+DMI)",
+          "dose_note_ar": "فلوكساپيروكساد 0.4 جم/لتر + بروبيكونازول 0.4 مل/لتر",
+          "notes_ar": "SDHI+DMI — الأقوى في مرحلة الطرد"
+        }
+      ],
+      "rotation_summary_ar": "C3+M → C7+C3",
+      "resistance_notes_ar": "معاملة البذور بتيبوكونازول تُقلل صداء السلاميات وتفحم الشعير",
+      "general_notes_ar": "معاملة بذور الشعير بـ فلودايوكسونيل+سيبروديونيل+تيبوكونازول = حماية شاملة"
+    },
+    {
+      "id": "rot-009",
+      "name_ar": "برنامج تناوب الحمضيات — تقرح وبياض زغبي وعفن جذور",
+      "name_en": "Citrus Rotation Program",
+      "crop": "حمضيات",
+      "season_ar": "فبراير–يونيو (ربيع) — أغسطس–أكتوبر (خريف)",
+      "target_disease_ids": [
+        "oomy-12",
+        "bact-5",
+        "asco-4",
+        "basi-10",
+        "basi-11"
+      ],
+      "target_diseases_ar": [
+        "عفن الجذور Phytophthora",
+        "تقرح بكتيري",
+        "عفن رمادي",
+        "أرميلاريا",
+        "جانوديرما"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "أوائل الربيع — قبل تفتح البراعم",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-036"
+          ],
+          "example_ai_ar": "نحاس هيدروكسيد أو محلول بوردو",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "نحاسيات 3 جم/لتر",
+          "notes_ar": "وقائي ضد التقرح البكتيري والفطري"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "مرحلة تفتح الطرود الخضراء",
+          "frac_group_id": "frac-p3",
+          "example_ai_ids": [
+            "ai-052"
+          ],
+          "example_ai_ar": "فوسيت ألومنيوم",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "نحاسيات",
+          "dose_note_ar": "فوسيت ألومنيوم 3 جم/لتر + نحاسيات 2 جم/لتر",
+          "notes_ar": "ضد Phytophthora في الجذور والتاج — يتحرك للجذور والأوراق"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد الإزهار — مرحلة العقد",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-056"
+          ],
+          "example_ai_ar": "إيمازاليل أو ديفينوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "نحاسيات",
+          "dose_note_ar": "ديفينوكونازول 0.4 مل/لتر + نحاسيات 2 جم/لتر",
+          "notes_ar": "ضد فطريات الفروع والأوراق"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "أوائل الخريف — قبل الأمطار",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-036"
+          ],
+          "example_ai_ar": "نحاسيات",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "محلول بوردو 1%",
+          "notes_ar": "وقائي قبل موسم الأمطار"
+        }
+      ],
+      "rotation_summary_ar": "M(نحاس) → P3+M → C3+M → M(نحاس)",
+      "resistance_notes_ar": "فوسيت ألومنيوم صب في التربة قرب قاعدة الأشجار لمكافحة Phytophthora الجذرية",
+      "general_notes_ar": "معاملة الجروح فوراً بمعجون نحاسي — حقن الأشجار المعمرة المصابة بـ Ganoderma بفوسيت ألومنيوم"
+    },
+    {
+      "id": "rot-010",
+      "name_ar": "برنامج تناوب البصل والثوم — بياض زغبي وبوتريتيس",
+      "name_en": "Onion & Garlic Rotation Program",
+      "crop": "بصل وثوم",
+      "season_ar": "أكتوبر–مارس",
+      "target_disease_ids": [
+        "oomy-9",
+        "asco-4",
+        "asco-7",
+        "asco-11",
+        "add-13"
+      ],
+      "target_diseases_ar": [
+        "بياض زغبي البصل",
+        "عفن رمادي",
+        "عفن أبيض",
+        "تفحم البصل",
+        "بقعة الزنبق IYSV"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً بعد الزراعة بـ 3 أسابيع",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-030"
+          ],
+          "example_ai_ar": "مانكوزيب",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "وقائي قاعدي"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظروف رطوبة عالية أو أولى أعراض البياض الزغبي",
+          "frac_group_id": "frac-p3",
+          "example_ai_ids": [
+            "ai-038"
+          ],
+          "example_ai_ar": "ميتالاكسيل-M",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "ميتالاكسيل-M 0.5 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "ضد البياض الزغبي — P3 + ملامسي"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 14 يوم — تناوب",
+          "frac_group_id": "frac-p7",
+          "example_ai_ids": [
+            "ai-040"
+          ],
+          "example_ai_ar": "ديموثيمورف",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "ديموثيمورف 0.6 جم/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "تناوب P3→P7"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "عند بداية تضخم البصلات",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020"
+          ],
+          "example_ai_ar": "بوسكاليد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "SDHI ضد Botrytis وSclerotinia"
+        }
+      ],
+      "rotation_summary_ar": "M → P3+M → P7+M → C7+M",
+      "resistance_notes_ar": "معاملة البصيلات قبل الزراعة بفلودايوكسونيل+سيبروديونيل تحمي من تفحم البصل",
+      "general_notes_ar": "تناوب P3↔P7 إلزامي لمنع مقاومة البياض الزغبي — مكافحة التربس ناقل IYSV مهمة"
+    },
+    {
+      "id": "rot-011",
+      "name_ar": "برنامج تناوب الفول والبقوليات — صداء وبوتريتيس وأسكوكيتا",
+      "name_en": "Faba Bean & Legumes Rotation Program",
+      "crop": "فول وبقوليات",
+      "season_ar": "نوفمبر–مارس",
+      "target_disease_ids": [
+        "basi-4",
+        "asco-4",
+        "add-20",
+        "add-16",
+        "add-2",
+        "oomy-1"
+      ],
+      "target_diseases_ar": [
+        "صدأ الفول",
+        "عفن رمادي",
+        "بوتريتيس الفول",
+        "أسكوكيتا",
+        "لفحة الحمص",
+        "تعفن الشتلات"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "معاملة البذور قبل الزراعة — إلزامية",
+          "frac_group_id": "frac-f",
+          "example_ai_ids": [
+            "ai-045",
+            "ai-046"
+          ],
+          "example_ai_ar": "فلودايوكسونيل + سيبروديونيل",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "فلودايوكسونيل+سيبروديونيل 5 جم/100 كجم بذرة",
+          "notes_ar": "معاملة البذور ضد تعفن الشتلات وأمراض البادرات"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظهور أولى بثرات الصداء أو بداية التزهير",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-001",
+            "ai-002"
+          ],
+          "example_ai_ar": "بروبيكونازول أو تيبوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بروبيكونازول 0.5 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "DMI ممتاز ضد صدأ الفول"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 14 يوم — مرحلة التزهير الكامل",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020",
+            "ai-027"
+          ],
+          "example_ai_ar": "بوسكاليد أو بيديفلوميتوفن",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "SDHI ضد Botrytis fabae وأمراض الفروع"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "عند الإصابة بالأسكوكيتا",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-030",
+            "ai-031"
+          ],
+          "example_ai_ar": "مانكوزيب أو كلوروثالونيل",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "مانكوزيب 2.5 جم/لتر أو كلوروثالونيل 2 مل/لتر",
+          "notes_ar": "ملامسي وقائي ضد أسكوكيتا"
+        }
+      ],
+      "rotation_summary_ar": "معاملة بذور F → C3+M → C7+M → M",
+      "resistance_notes_ar": "البذور السليمة الخالية من أمراض البذور هي الركيزة الأولى",
+      "general_notes_ar": "كثافة الزراعة المنخفضة تُقلل Botrytis fabae بشكل كبير — تهوية جيدة أهم من المبيد"
+    },
+    {
+      "id": "rot-012",
+      "name_ar": "برنامج تناوب المانجو — أنثراكنوز وبياض دقيقي",
+      "name_en": "Mango Rotation Program",
+      "crop": "مانجو",
+      "season_ar": "فبراير–يونيو (تزهير وإثمار)",
+      "target_disease_ids": [
+        "asco-8",
+        "asco-1",
+        "asco-4",
+        "asco-14"
+      ],
+      "target_diseases_ar": [
+        "أنثراكنوز المانجو",
+        "بياض دقيقي",
+        "عفن رمادي",
+        "عفن بني"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "قبل تفتح البراعم الزهرية بأسبوع",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-006",
+            "ai-003"
+          ],
+          "example_ai_ar": "مايكلوبوتانيل أو ديفينوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "مايكلوبوتانيل 0.3 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "وقائي قبل الإزهار ضد البياض الدقيقي والأنثراكنوز"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "في الإزهار الكامل",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-015"
+          ],
+          "example_ai_ar": "أزوكسيستروبين",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب أو كاپتان",
+          "dose_note_ar": "أزوكسيستروبين 1 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "QoI ممتاز ضد الأنثراكنوز في مرحلة الإزهار"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد عقد الثمار — مرحلة حبة الفول",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020"
+          ],
+          "example_ai_ar": "بوسكاليد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "SDHI ضد Botrytis وأنثراكنوز الثمار"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "قبل الحصاد بـ 21 يوم",
+          "frac_group_id": "frac-f",
+          "example_ai_ids": [
+            "ai-045"
+          ],
+          "example_ai_ar": "فلودايوكسونيل",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "كاپتان",
+          "dose_note_ar": "فلودايوكسونيل 0.4 مل/لتر + كاپتان 2 جم/لتر",
+          "notes_ar": "آمن قبل الحصاد — يمنع عفن ما بعد الحصاد"
+        }
+      ],
+      "rotation_summary_ar": "C3+M → C5+M → C7+M → F+M",
+      "resistance_notes_ar": "الأنثراكنوز يدخل الثمار في مرحلة الإزهار — الوقاية المبكرة أهم من العلاج",
+      "general_notes_ar": "معاملة الثمار بعد الحصاد بإيمازاليل أو فلودايوكسونيل تطيل مدة التخزين والتصدير"
+    },
+    {
+      "id": "rot-013",
+      "name_ar": "برنامج تناوب الموز — سيجاتوكا وفيوزاريوم",
+      "name_en": "Banana Rotation Program — Sigatoka & Fusarium",
+      "crop": "موز",
+      "season_ar": "طوال العام",
+      "target_disease_ids": [
+        "add-5",
+        "add-18",
+        "basi-8",
+        "oomy-5"
+      ],
+      "target_diseases_ar": [
+        "سيجاتوكا السوداء",
+        "مرض بنما FOC TR4",
+        "موت الغمد",
+        "عفن جذور"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً كل 14-21 يوم — ضد سيجاتوكا",
+          "frac_group_id": "frac-m",
+          "example_ai_ids": [
+            "ai-030"
+          ],
+          "example_ai_ar": "مانكوزيب",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "الأساس الوقائي ضد سيجاتوكا"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند الضغط المرضي أو موسم الرطوبة",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-001"
+          ],
+          "example_ai_ar": "بروبيكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بروبيكونازول 0.5 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "DMI ضد سيجاتوكا — تناوب كل 3 رشات"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "تناوب — بعد رشتي DMI",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-016"
+          ],
+          "example_ai_ar": "تريفلوكسيستروبين",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "تريفلوكسيستروبين 0.3 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "QoI في التناوب — لا تكرر أكثر من مرتين"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "صب في التربة لمكافحة FOC/Fusarium",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-021"
+          ],
+          "example_ai_ar": "فلوكساپيروكساد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "فلوكساپيروكساد 0.4 جم/لتر صب في التربة",
+          "notes_ar": "SDHI تأثير محدود على FOC — أهم وقائياً ضد أمراض الجذور"
+        }
+      ],
+      "rotation_summary_ar": "M → C3+M → C5+M → تكرار — C7 صب تربة لأمراض الجذور",
+      "resistance_notes_ar": "سيجاتوكا تُطوّر مقاومة سريعة للـ DMI والـ QoI — تناوب صارم إلزامي",
+      "general_notes_ar": "FOC TR4 لا علاج له — الوقاية بشتلات سليمة هي الحل الوحيد — الـ Trichoderma في التربة مفيد"
+    },
+    {
+      "id": "rot-014",
+      "name_ar": "برنامج تناوب القطن — تعفن بذور وذبول",
+      "name_en": "Cotton Rotation Program",
+      "crop": "قطن",
+      "season_ar": "مارس–أكتوبر",
+      "target_disease_ids": [
+        "asco-9",
+        "asco-24",
+        "asco-25",
+        "basi-8",
+        "basi-9",
+        "nema-6"
+      ],
+      "target_diseases_ar": [
+        "ذبول الفيرتيسيليوم",
+        "عفن الجذور السوداء",
+        "ريزوكتونيا",
+        "موت الغمد",
+        "النيماتودا الكلوية"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "معاملة البذور قبل الزراعة — إلزامية",
+          "frac_group_id": "frac-f",
+          "example_ai_ids": [
+            "ai-045",
+            "ai-046"
+          ],
+          "example_ai_ar": "فلودايوكسونيل + سيبروديونيل",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "فلودايوكسونيل+سيبروديونيل 5 جم/100 كجم بذرة",
+          "notes_ar": "معاملة البذور — أساس المكافحة في القطن"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "صب في التربة عند الزراعة",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-026"
+          ],
+          "example_ai_ar": "كاربوكسين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "كاربوكسين 2 جم م.ف / كجم بذرة",
+          "notes_ar": "ضد Rhizoctonia وFusarium في التربة"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "عند مرحلة 4-6 أوراق عند الضغط المرضي",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-002"
+          ],
+          "example_ai_ar": "تيبوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "تيبوكونازول 0.5 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "ضد الأمراض الورقية والأوعية الوعائية"
+        }
+      ],
+      "rotation_summary_ar": "معاملة بذور F+C7 → C3+M عند الحاجة",
+      "resistance_notes_ar": "الذبول الفيرتيسيلومي لا علاج له — الوقاية والدورة الزراعية هي الحل",
+      "general_notes_ar": "تعقيم التربة بالشمس + دورة زراعية مع الحبوب أهم من المبيدات ضد الذبول الوعائي"
+    },
+    {
+      "id": "rot-015",
+      "name_ar": "برنامج تناوب بنجر السكر — تبقع سيركوسبورا وصداء",
+      "name_en": "Sugar Beet Rotation Program",
+      "crop": "بنجر سكري",
+      "season_ar": "أكتوبر–مارس",
+      "target_disease_ids": [
+        "asco-12",
+        "basi-3",
+        "fin-7",
+        "asco-9"
+      ],
+      "target_diseases_ar": [
+        "تبقع سيركوسبورا",
+        "صداء بنجر السكر",
+        "عفن الجذور البنفسجي",
+        "ذبول فيرتيسيليوم"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند ظهور أولى بقع سيركوسبورا (العتبة: 5% إصابة)",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-001",
+            "ai-003"
+          ],
+          "example_ai_ar": "بروبيكونازول أو ديفينوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بروبيكونازول 0.5 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "DMI — الأفضل ضد سيركوسبورا"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "بعد 14-21 يوم — تناوب",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020"
+          ],
+          "example_ai_ar": "بوسكاليد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "SDHI — ممتاز ضد سيركوسبورا والصداء"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "إذا استمر الضغط المرضي",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-015"
+          ],
+          "example_ai_ar": "أزوكسيستروبين",
+          "must_mix_with_id": "frac-c3",
+          "mix_ai_ar": "بروبيكونازول",
+          "dose_note_ar": "أزوكسيستروبين 1 مل/لتر + بروبيكونازول 0.3 مل/لتر",
+          "notes_ar": "QoI+DMI — التناوب الثالث"
+        }
+      ],
+      "rotation_summary_ar": "C3+M → C7+M → C5+C3",
+      "resistance_notes_ar": "سيركوسبورا تُطوّر مقاومة للـ DMI — رصد الفاعلية مهم بعد 3 مواسم",
+      "general_notes_ar": "تجنب الري الزائد — يُشجع عفن الجذور البنفسجي — تحميض التربة يُقلل الإصابة"
+    },
+    {
+      "id": "rot-016",
+      "name_ar": "برنامج تناوب الذرة — صداء وبلاست وتفحم",
+      "name_en": "Corn Rotation Program",
+      "crop": "ذرة",
+      "season_ar": "مايو–أغسطس",
+      "target_disease_ids": [
+        "basi-5",
+        "asco-18",
+        "basi-7",
+        "basi-13",
+        "add-15"
+      ],
+      "target_diseases_ar": [
+        "صدأ الذرة",
+        "بلاست",
+        "تفحم الذرة",
+        "Brown Spot",
+        "تفحم القصب"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "معاملة البذور قبل الزراعة",
+          "frac_group_id": "frac-f",
+          "example_ai_ids": [
+            "ai-046",
+            "ai-045"
+          ],
+          "example_ai_ar": "سيبروديونيل + فلودايوكسونيل",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سيبروديونيل+فلودايوكسونيل 5 جم/100 كجم بذرة",
+          "notes_ar": "ضد أمراض البادرات"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظهور أولى بثرات الصداء",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-001"
+          ],
+          "example_ai_ar": "بروبيكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بروبيكونازول 0.5 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "DMI ضد صدأ الذرة"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "قبيل الطرد — مرحلة حرجة",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-015",
+            "ai-017"
+          ],
+          "example_ai_ar": "أزوكسيستروبين أو بيراكلوستروبين",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "أزوكسيستروبين 1 مل/لتر + مانكوزيب 2 جم/لتر",
+          "notes_ar": "QoI — وقائي ممتاز قبل الطرد"
+        }
+      ],
+      "rotation_summary_ar": "معاملة بذور F → C3+M → C5+M",
+      "resistance_notes_ar": "تفحم الذرة لا علاج له — معاملة البذور أفضل وسيلة",
+      "general_notes_ar": "الأصناف الهجينة المقاومة للصداء أهم من المبيدات — تهوية جيدة تُقلل Brown Spot"
+    },
+    {
+      "id": "rot-017",
+      "name_ar": "برنامج تناوب فول السوداني — صداء وتبقع ورقي",
+      "name_en": "Peanut Rotation Program",
+      "crop": "فول سوداني",
+      "season_ar": "مايو–سبتمبر",
+      "target_disease_ids": [
+        "basi-14",
+        "asco-12",
+        "asco-9",
+        "add-4",
+        "add-1"
+      ],
+      "target_diseases_ar": [
+        "صدأ الفول السوداني",
+        "سيركوسبورا",
+        "ذبول",
+        "عفن الجراب",
+        "عفن تاج جنوبي"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند 5% إصابة بالصداء أو عند بداية الإزهار وقائياً",
+          "frac_group_id": "frac-c3",
+          "example_ai_ids": [
+            "ai-001",
+            "ai-003"
+          ],
+          "example_ai_ar": "بروبيكونازول أو ديفينوكونازول",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بروبيكونازول 0.5 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "DMI ممتاز ضد الصداء والسيركوسبورا"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "بعد 14 يوم",
+          "frac_group_id": "frac-c5",
+          "example_ai_ids": [
+            "ai-015"
+          ],
+          "example_ai_ar": "أزوكسيستروبين",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "أزوكسيستروبين 1 مل/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "QoI في التناوب ضد الصداء وتبقع الأوراق"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "عند الضغط العالي أو مرحلة امتلاء القرون",
+          "frac_group_id": "frac-c7",
+          "example_ai_ids": [
+            "ai-020"
+          ],
+          "example_ai_ar": "بوسكاليد",
+          "must_mix_with_id": "frac-m",
+          "mix_ai_ar": "مانكوزيب",
+          "dose_note_ar": "بوسكاليد 0.6 جم/لتر + مانكوزيب 2.5 جم/لتر",
+          "notes_ar": "SDHI ضد عفن الجراب والصداء"
+        }
+      ],
+      "rotation_summary_ar": "C3+M → C5+M → C7+M",
+      "resistance_notes_ar": "لا تستخدم C3 وحده أكثر من 3 رشات في الموسم",
+      "general_notes_ar": "صدأ الفول السوداني يتطور بسرعة — ابدأ برنامج الرش وقائياً لا علاجياً"
+    }
+  ]
+}

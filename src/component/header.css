@@ -17,7 +17,9 @@
 }
 
 .hefno-header:not(.scrolled) {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .header-container {
@@ -262,7 +264,7 @@
 
 /* Dark Mode */
 .dark .hefno-header:not(.scrolled) {
-  background: rgba(17, 24, 39, 0.95);
+  background: rgba(10, 31, 21, 0.9);
 }
 
 .dark .hefno-header.scrolled {

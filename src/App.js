@@ -8,7 +8,10 @@ import Header from './component/header';
 import Footer from './component/footer';
 import ScrollToTop from './component/scrollTop';
 import CookieConsent from './component/cookieConsent';
+import ErrorBoundary from './component/ErrorBoundary';
 import useTracking from './hooks/useTracking';
+
+const GlobalToaster = () => <Toaster position="top-center" richColors closeButton />;
 
 // Lazy Load 
 const HomeScreen = lazy(() => import('./pages/homescreen'));
@@ -37,8 +40,11 @@ const BacteriaDiseasesPage = lazy(() => import('./knowledge_base/bacteria'));
 const VirusesDiseasesPage = lazy(() => import('./knowledge_base/virus'));
 const NematodesDiseasesPage = lazy(() => import('./knowledge_base/nema'));
 const ParasiticPlantsPage = lazy(() => import('./knowledge_base/para'));
-const FungalDiseasesPage = lazy(() => import('./knowledge_base/phys'));
+const PhysiologicalDisordersPage = lazy(() => import('./knowledge_base/phys'));
 const FungalClassificationPage = lazy(() => import('./knowledge_base/fungi'));
+
+const FoodSafetyPage = lazy(() => import('./knowledge_base/food-safety/food-safety'));
+const HoneyBeesPage = lazy(() => import('./knowledge_base/honey-bees/honey-bees'));
 
 const OomycotaDiseasesPage = lazy(() => import('./knowledge_base/fungi-classes/oomy'));
 const ZygomycotaDiseasesPage = lazy(() => import('./knowledge_base/fungi-classes/zygo'));
@@ -55,12 +61,12 @@ const PesticideGroupPage = lazy(() => import('./pages/pesticides-group-page'));
 const PrivacyPage = lazy(() => import('./pages/privacy'));
 const TermsPage = lazy(() => import('./pages/terms'));
 const AboutPage = lazy(() => import('./pages/about'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
-// 🎨 Loader بسيط
 const Loader = () => (
   <div className="page-loader">
     <div className="page-loader-spinner" />
-    <span className="page-loader-text">Loading HefnoPlant</span>
+    <span className="page-loader-text">HefnoPlant</span>
   </div>
 );
 
@@ -68,19 +74,25 @@ const Loader = () => (
 const AppContent = () => {
 
   const { trackAction } = useTracking();
-  const location = useLocation();
-  
-  // تتبع التطبيق عند التحميل
+
   useEffect(() => {
     trackAction('app_loaded');
-  }, []);
+  }, [trackAction]);
 
   return (
     <div className="app" id="main-app">
       <Helmet>
         <title>Hefno-Plant | خبيرك الزراعي الذكي</title>
         <meta name="description" content="منصة زراعية متكاملة لتشخيص أمراض النباتات بالذكاء الاصطناعي، دليل المبيدات، التقويم الزراعي، وأكثر." />
+        <meta property="og:title" content="Hefno-Plant" />
+        <meta property="og:description" content="منصة زراعية متكاملة - تشخيص الآفات، التوصيات، والمقالات الزراعية" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hefnoplant.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hefno-Plant" />
+        <meta name="twitter:description" content="منصة زراعية متكاملة - تشخيص الآفات، التوصيات، والمقالات الزراعية" />
       </Helmet>
+      <GlobalToaster />
       <Header />
       <ScrollToTop />
 
@@ -95,56 +107,60 @@ const AppContent = () => {
             path="*"
             element={
               <main className="main-content main-background">
-                <Toaster />
 
-                <Routes>
-                  <Route path="/diagnose" element={<DiagnoseScreen />} />
-                  <Route path="/weather" element={<WeatherScreen />} />
-                  <Route path="/ai-chat" element={<AIAssistant />} />
-                  <Route path="/knowledge-base/resources" element={<ResourcesPage />} />
-                  <Route path="/program-planner" element={<FertilizerPlanner />} />
+                  <ErrorBoundary>
+                    <Routes>
+                    <Route path="/diagnose" element={<DiagnoseScreen />} />
+                    <Route path="/weather" element={<WeatherScreen />} />
+                    <Route path="/ai-chat" element={<AIAssistant />} />
+                    <Route path="/knowledge-base/resources" element={<ResourcesPage />} />
+                    <Route path="/program-planner" element={<FertilizerPlanner />} />
 
-                  {/* Knowledge Base */}
-                  <Route path="/knowledge-base" element={<KnowledgeLayout />}>
-                    <Route index element={<KnowledgeBase />} />
-                    <Route path="calendar" element={<AgriculturalCalendarPage />} />
-                    <Route path="plant-elements" element={<PlantNutrientsPage />} />
-                    <Route path="fertilizer" element={<FertilizersPage />} />
-                    <Route path="soil-irri" element={<SoilsPage />} />
-                    <Route path="weeds" element={<WeedsPage />} />
-                    <Route path="plants-crops" element={<PlantsPage />} />
-                    <Route path="academic" element={<AcademicPage />} />
-                    <Route path="diseases" element={<DiseasesPage />} />
+                    {/* Knowledge Base */}
+                    <Route path="/knowledge-base" element={<KnowledgeLayout />}>
+                      <Route index element={<KnowledgeBase />} />
+                      <Route path="calendar" element={<AgriculturalCalendarPage />} />
+                      <Route path="plant-elements" element={<PlantNutrientsPage />} />
+                      <Route path="fertilizer" element={<FertilizersPage />} />
+                      <Route path="soil-irri" element={<SoilsPage />} />
+                      <Route path="weeds" element={<WeedsPage />} />
+                      <Route path="plants-crops" element={<PlantsPage />} />
+                      <Route path="academic" element={<AcademicPage />} />
+                      <Route path="food-safety" element={<FoodSafetyPage />} />
+                      <Route path="honey-bees" element={<HoneyBeesPage />} />
+                      <Route path="diseases" element={<DiseasesPage />} />
 
-                    {/* الأمراض */}
-                    <Route path="diseases/bacteria" element={<BacteriaDiseasesPage />} />
-                    <Route path="diseases/viruses" element={<VirusesDiseasesPage />} />
-                    <Route path="diseases/nematodes" element={<NematodesDiseasesPage />} />
-                    <Route path="diseases/parasitic_plants" element={<ParasiticPlantsPage />} />
-                    <Route path="diseases/physiological_disorders" element={<FungalDiseasesPage />} />
-                    <Route path="diseases/fungi" element={<FungalClassificationPage />} />
-                    <Route path="diseases/fungi/oomy" element={<OomycotaDiseasesPage />} />
-                    <Route path="diseases/fungi/zygo" element={<ZygomycotaDiseasesPage />} />
-                    <Route path="diseases/fungi/asco" element={<AscomycotaDiseasesPage />} />
-                    <Route path="diseases/fungi/basi" element={<BasidiomycotaDiseasesPage />} />
+                      {/* الأمراض */}
+                      <Route path="diseases/bacteria" element={<BacteriaDiseasesPage />} />
+                      <Route path="diseases/viruses" element={<VirusesDiseasesPage />} />
+                      <Route path="diseases/nematodes" element={<NematodesDiseasesPage />} />
+                      <Route path="diseases/parasitic_plants" element={<ParasiticPlantsPage />} />
+                      <Route path="diseases/physiological_disorders" element={<PhysiologicalDisordersPage />} />
+                      <Route path="diseases/fungi" element={<FungalClassificationPage />} />
+                      <Route path="diseases/fungi/oomy" element={<OomycotaDiseasesPage />} />
+                      <Route path="diseases/fungi/zygo" element={<ZygomycotaDiseasesPage />} />
+                      <Route path="diseases/fungi/asco" element={<AscomycotaDiseasesPage />} />
+                      <Route path="diseases/fungi/basi" element={<BasidiomycotaDiseasesPage />} />
 
-                    {/* الحشرات */}
-                    <Route path="insects" element={<InsectsPageNew />} />
-                    <Route path="insects/:orderId" element={<InsectOrderPage />} />
-                    <Route path="insects/public-health-pets" element={<PublicHealthPestsPage />} />
-                    <Route path="insects/nematoda" element={<NematodaPage />} />
+                      {/* الحشرات */}
+                      <Route path="insects" element={<InsectsPageNew />} />
+                      <Route path="insects/:orderId" element={<InsectOrderPage />} />
+                      <Route path="insects/public-health-pests" element={<PublicHealthPestsPage />} />
+                      <Route path="insects/nematoda" element={<NematodaPage />} />
 
-                    {/* المبيدات */}
-                    <Route path="pesticides" element={<PesticidesHub />} />
-                    <Route path="pesticides/group/:groupCode" element={<PesticideGroupPage />} />
-                  </Route>
-                  <Route path="/blog" element={<BlogPage />} />
-                  <Route path="/blog/:slug" element={<BlogPostPage />} />
-                  <Route path="/admin/blog" element={<AdminBlogPage />} />
-                  <Route path="/privacy" element={<PrivacyPage />} />
-                  <Route path="/terms" element={<TermsPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                </Routes>
+                      {/* المبيدات */}
+                      <Route path="pesticides" element={<PesticidesHub />} />
+                      <Route path="pesticides/group/:groupCode" element={<PesticideGroupPage />} />
+                    </Route>
+                    <Route path="/blog" element={<BlogPage />} />
+                    <Route path="/blog/:slug" element={<BlogPostPage />} />
+                    <Route path="/admin/blog" element={<AdminBlogPage />} />
+                    <Route path="/privacy" element={<PrivacyPage />} />
+                    <Route path="/terms" element={<TermsPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Routes>
+                  </ErrorBoundary>
               </main>
             }
           />

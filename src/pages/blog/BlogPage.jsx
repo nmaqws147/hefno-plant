@@ -48,7 +48,7 @@ const BlogPage = () => {
   const featured = posts[0];
 
   return (
-    <div className="min-h-screen bg-champagne dark:bg-[#111827]">
+    <div className="min-h-screen bg-champagne dark:bg-[#111827]" dir="rtl">
       <Helmet>
         <title>المقالات الزراعية | Hefno-Plant</title>
         <meta name="description" content="مدونة Hefno-Plant — مقالات زراعية، نصائح، وإرشادات للمزارعين والمهتمين بالمجال الزراعي." />
@@ -62,6 +62,15 @@ const BlogPage = () => {
           <p className="mt-4 text-lg text-[#2d2a24] dark:text-[#a8a29e] max-w-2xl">
             Insights, guides, and updates from the Hefno team
           </p>
+          <Link
+            to="/admin/blog"
+            className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gold hover:bg-gold/90 transition-all shadow-md shadow-gold/20"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+            إدارة المقالات
+          </Link>
         </div>
 
         {posts.length === 0 ? (

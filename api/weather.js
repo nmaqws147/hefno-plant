@@ -1,6 +1,6 @@
 
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
 function loadWeatherAlertsData() {
   try {
@@ -44,11 +44,17 @@ function evaluateRisks(weatherData, alertsData, userCrops = []) {
   };
 
   const checkConditions = (ruleConditions, currentData, forecast24Data, forecast72Data) => {
+    if (!ruleConditions) return false;
+    if (!ruleConditions.operator) {
+      return checkCondition(ruleConditions, currentData, forecast24Data, forecast72Data);
+    }
     if (ruleConditions.operator === 'AND') {
+      if (!ruleConditions.conditions || !Array.isArray(ruleConditions.conditions)) return false;
       return ruleConditions.conditions.every(cond => 
         checkCondition(cond, currentData, forecast24Data, forecast72Data)
       );
     } else if (ruleConditions.operator === 'OR') {
+      if (!ruleConditions.conditions || !Array.isArray(ruleConditions.conditions)) return false;
       return ruleConditions.conditions.some(cond => 
         checkCondition(cond, currentData, forecast24Data, forecast72Data)
       );
@@ -59,10 +65,12 @@ function evaluateRisks(weatherData, alertsData, userCrops = []) {
   for (const category of alertsData.alert_categories || []) {
     for (const rule of category.rules || []) {
       if (userCrops.length > 0) {
-        const hasMatchingCrop = rule.affected_crops.some(crop => 
+        const affected = rule.affected_crops;
+        if (!affected || !Array.isArray(affected) || affected.length === 0) continue;
+        const hasMatchingCrop = affected.some(crop => 
           userCrops.some(uc => uc.toLowerCase() === crop.toLowerCase())
         );
-        if (!hasMatchingCrop && userCrops.length > 0) continue;
+        if (!hasMatchingCrop) continue;
       }
 
       const conditionsMet = checkConditions(
@@ -177,9 +185,10 @@ function getWeatherDescription(weather) {
 
 function getTopRecommendations(alerts, current, forecast) {
   const recommendations = [];
+  const alertList = alerts || [];
   
-  const criticalAlerts = alerts.filter(a => a.risk_level === 'critical');
-  const highAlerts = alerts.filter(a => a.risk_level === 'high');
+  const criticalAlerts = alertList.filter(a => a.risk_level === 'critical');
+  const highAlerts = alertList.filter(a => a.risk_level === 'high');
   
   for (const alert of [...criticalAlerts, ...highAlerts].slice(0, 3)) {
     if (alert.recommendations && alert.recommendations.length > 0) {
@@ -250,15 +259,17 @@ function buildWeatherResponse(weatherData, alerts, userCrops) {
   let generalStatus = 'good';
   let generalMessage = '';
 
-  if (alerts.some(a => a.risk_level === 'critical')) {
-    generalStatus = 'critical';
-    generalMessage = '⚠️ هناك تحذيرات عاجلة يجب اتخاذ إجراء فوري';
-  } else if (alerts.some(a => a.risk_level === 'high')) {
-    generalStatus = 'warning';
-    generalMessage = '⚠️ هناك تنبيهات مهمة يُنصح بمتابعتها';
-  } else if (alerts.some(a => a.risk_level === 'medium')) {
-    generalStatus = 'moderate';
-    generalMessage = 'ℹ️ هناك ملاحظات يمكن أخذها في الاعتبار';
+  if (alerts && alerts.length > 0) {
+    if (alerts.some(a => a.risk_level === 'critical')) {
+      generalStatus = 'critical';
+      generalMessage = '⚠️ هناك تحذيرات عاجلة يجب اتخاذ إجراء فوري';
+    } else if (alerts.some(a => a.risk_level === 'high')) {
+      generalStatus = 'warning';
+      generalMessage = '⚠️ هناك تنبيهات مهمة يُنصح بمتابعتها';
+    } else if (alerts.some(a => a.risk_level === 'medium')) {
+      generalStatus = 'moderate';
+      generalMessage = 'ℹ️ هناك ملاحظات يمكن أخذها في الاعتبار';
+    }
   } else {
     generalStatus = 'good';
     generalMessage = '✅ الظروف الجوية مناسبة للأنشطة الزراعية';
@@ -303,7 +314,7 @@ function buildWeatherResponse(weatherData, alerts, userCrops) {
   };
 }
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   try {
     const API_KEY = process.env.WEATHER; 
     const BASE_URL = "https://api.openweathermap.org/data/2.5";
@@ -410,3 +421,5 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: "Server error: " + err.message });
   }
 };
+
+module.exports = handler;

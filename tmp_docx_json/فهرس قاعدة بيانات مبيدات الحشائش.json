@@ -1,0 +1,142 @@
+{
+  "id": "hrac_master_index",
+  "name_ar": "فهرس قاعدة بيانات مبيدات الحشائش HRAC",
+  "name_en": "HRAC Herbicide Database Master Index",
+  "version": "1.0.0",
+  "status": "production_ready",
+  "source": "HRAC Mode of Action Classification 2020 (CropLife International)",
+  "scope": "مصر والوطن العربي",
+  "quality_checks": {
+    "commercial_brands": false,
+    "ids_unique": true,
+    "all_covered": true
+  },
+  "summary": {
+    "total_groups": 16,
+    "total_active_ingredients": 59,
+    "total_relationships": 373,
+    "total_rotation_programs": 11,
+    "total_crops_covered": 11,
+    "total_weeds_covered": 24,
+    "total_size_kb": 408
+  },
+  "files": [
+    {
+      "file": "hrac_01_groups.json",
+      "key": "groups",
+      "count": 16,
+      "description": "مجموعات HRAC — آلية العمل وخطر المقاومة وقواعد التناوب"
+    },
+    {
+      "file": "hrac_02_active_ingredients.json",
+      "key": "items",
+      "count": 59,
+      "description": "المواد الفعالة — جرعات قبل وبعد الإنبات وحشائش مستهدفة"
+    },
+    {
+      "file": "hrac_03_relationships.json",
+      "key": "relationships",
+      "count": 373,
+      "description": "جدول علاقات مبيد ↔ حشيشة — بحث في الاتجاهين"
+    },
+    {
+      "file": "hrac_04_rotation_programs.json",
+      "key": "programs",
+      "count": 11,
+      "description": "برامج تناوب جاهزة للمحاصيل الرئيسية"
+    }
+  ],
+  "use_cases": {
+    "search_by_herbicide": "items.find(a => a.id === 'hai-036')  // جلايفوسات",
+    "search_by_weed": "relationships.filter(r => r.weed_id === 'weed-01').sort((a,b) => b.efficacy_level - a.efficacy_level)",
+    "pre_emergence_only": "items.filter(a => a.application.dose_pre_emergence_ar && !a.application.dose_post_emergence_ar)",
+    "post_emergence_only": "items.filter(a => a.application.dose_post_emergence_ar && !a.application.dose_pre_emergence_ar)",
+    "grass_herbicides": "items.filter(a => a.hrac_group_id === 'hrac-a')  // ACCase — نجيليات فقط",
+    "broadleaf_herbicides": "items.filter(a => a.hrac_group_id === 'hrac-o')  // أوكسين — عريضات فقط",
+    "non_selective": "items.filter(a => a.hrac_group_id === 'hrac-g' || a.hrac_group_id === 'hrac-d')",
+    "rotation_program": "programs.find(p => p.crop.includes('قمح'))",
+    "resistance_warning": "ai.resistance.risk_level >= 4",
+    "safe_rotation": "groups.find(g => g.id === ai.hrac_group_id).rotation_compatible_ids"
+  },
+  "groups_by_risk": {
+    "very_high_4": [
+      "hrac-a",
+      "hrac-b"
+    ],
+    "high_3": [
+      "hrac-c1",
+      "hrac-c2",
+      "hrac-g"
+    ],
+    "medium_2": [
+      "hrac-e",
+      "hrac-k1",
+      "hrac-k3",
+      "hrac-n",
+      "hrac-o",
+      "hrac-f2"
+    ],
+    "low_1": [
+      "hrac-d",
+      "hrac-f1",
+      "hrac-h",
+      "hrac-l",
+      "hrac-z"
+    ]
+  },
+  "selectivity_guide": {
+    "grass_only": [
+      "hrac-a"
+    ],
+    "broadleaf_only": [
+      "hrac-o"
+    ],
+    "non_selective": [
+      "hrac-g",
+      "hrac-d",
+      "hrac-h"
+    ],
+    "pre_emergence": [
+      "hrac-k1",
+      "hrac-k3",
+      "hrac-n",
+      "hrac-f1"
+    ],
+    "post_emergence": [
+      "hrac-a",
+      "hrac-b",
+      "hrac-o",
+      "hrac-g",
+      "hrac-d",
+      "hrac-h"
+    ],
+    "both": [
+      "hrac-b",
+      "hrac-c1",
+      "hrac-c2",
+      "hrac-e",
+      "hrac-f2"
+    ]
+  },
+  "crops_with_programs": [
+    "أرز",
+    "بصل وثوم",
+    "بطاطس",
+    "بنجر سكري",
+    "ذرة",
+    "طماطم وفلفل وخيار",
+    "عام — برنامج لمكافحة الحشائش المعمرة",
+    "فول وفول الصويا وفول السوداني",
+    "قصب سكر",
+    "قطن",
+    "قمح وشعير"
+  ],
+  "resistance_management_rules": [
+    "لا تكرر نفس مجموعة HRAC في موسمين متتاليين بنفس الحقل",
+    "التناوب المحصولي (قمح-بقوليات-ذرة) يُقلل الضغط على مجموعة واحدة",
+    "B (ALS) — الأكثر عرضةً للمقاومة — تناوب صارم مع A وO وC",
+    "A (ACCase) — مقاومة FOP منتشرة — استخدم DIM كبديل أو مناوبة",
+    "G (جلايفوسات) — مقاومة بدأت تظهر — تناوب مع D وحرث عميق",
+    "الحشائش الناجية = بذرة مقاومة — استئصلها يدوياً قبل الإثمار"
+  ]
+}

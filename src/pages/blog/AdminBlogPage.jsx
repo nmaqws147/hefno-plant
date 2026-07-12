@@ -63,6 +63,7 @@ const AdminBlogPage = () => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => { loadPosts(); }, [adminKey]);
 
   const handleSave = async (postData) => {

@@ -1,0 +1,2597 @@
+{
+  "platform": "HefnoPlant",
+  "module": "food_safety_quality",
+  "version": "2.0.0",
+  "language": "ar",
+  "last_updated": "2026-04-10",
+  "description_ar": "قاعدة البيانات الشاملة لسلامة الغذاء وجودته — من الحقل للمستهلك — تغطي المعايير الدولية والمحلية والتطبيق العملي",
+  "international_standards": {
+    "title_ar": "المعايير والشهادات الدولية",
+    "icon": "🏆",
+    "standards": [
+      {
+        "id": "std-001",
+        "name": "GlobalGAP",
+        "full_name_ar": "الممارسات الزراعية الجيدة العالمية",
+        "full_name_en": "Global Good Agricultural Practices",
+        "category": "زراعة",
+        "importance_level": "عالية جداً",
+        "description_ar": "أشهر وأهم شهادة زراعية في العالم — شرط أساسي للتصدير لأوروبا والخليج وكثير من الأسواق العالمية",
+        "history_ar": "أُسست عام 1997 في المملكة المتحدة تحت اسم EUREPGAP ثم تحولت لـ GlobalGAP عام 2007",
+        "what_covers_ar": [
+          "سلامة الغذاء من الحقل للمستهلك",
+          "الصحة والسلامة المهنية للعمال",
+          "الاستدامة البيئية",
+          "تتبع المنتج (Traceability) الكامل",
+          "إدارة الآفات المتكاملة IPM",
+          "إدارة المياه وجودتها",
+          "إدارة التربة والأسمدة",
+          "رفاهية الحيوان للمزارع الحيوانية"
+        ],
+        "key_requirements_ar": [
+          "تسجيل كل العمليات الزراعية يومياً في سجلات موثقة",
+          "سجلات المبيدات والأسمدة المستخدمة مع الجرعات والتواريخ",
+          "شهادات تدريب العمال على سلامة الغذاء والمبيدات",
+          "فحص مياه الري سنوياً من مختبر معتمد",
+          "اختبارات متبقيات المبيدات قبل الحصاد",
+          "منشآت صحية مناسبة للعمال (حمامات - مياه شرب - إسعاف)",
+          "إدارة النفايات والمخلفات الزراعية",
+          "خطة إدارة المخاطر والطوارئ",
+          "خريطة واضحة للحقول مع أرقام تسجيل",
+          "مخزن مبيدات آمن ومقفول ومهوى"
+        ],
+        "modules_ar": {
+          "AF": "كل المزارع — إلزامي لجميع المنتجين",
+          "CB": "المحاصيل الحقلية والبيوت المحمية",
+          "FV": "الفاكهة والخضروات — الأكثر شيوعاً",
+          "GG": "المحاصيل الحقلية الكبيرة",
+          "LB": "القواعد الأساسية للسوق المحلي",
+          "PPM": "إدارة الآفات المتكاملة"
+        },
+        "audit_process_ar": {
+          "steps": [
+            "التسجيل على موقع GlobalGAP واختيار جهة التدقيق المعتمدة",
+            "دراسة المتطلبات وتطبيقها على المزرعة (6-12 شهر)",
+            "تدقيق داخلي ذاتي للتحقق من الجاهزية",
+            "تدقيق خارجي من المدقق المعتمد",
+            "معالجة أي عدم مطابقة (Nonconformances)",
+            "الحصول على الشهادة وتجديدها سنوياً"
+          ],
+          "nonconformance_types": {
+            "major": "عدم مطابقة رئيسي — يمنع الشهادة — يجب إصلاحه فوراً",
+            "minor": "عدم مطابقة ثانوي — يسمح بالشهادة مع خطة تصحيح"
+          }
+        },
+        "cost_guide_ar": {
+          "registration": "100-500 دولار/سنة حسب عدد الحقول",
+          "audit": "500-2000 دولار حسب الجهة والحجم",
+          "implementation": "تكلفة تطبيق متغيرة — سجلات وتدريب ومنشآت",
+          "roi": "سعر أعلى 10-30% للمنتج المعتمد + فتح أسواق جديدة"
+        },
+        "egypt_status_ar": "متاحة في مصر — عدة جهات معتمدة: HEIA، Control Union، SGS، Bureau Veritas",
+        "who_needs_ar": "كل مزارع يريد التصدير لأوروبا أو الخليج أو المحلات الكبرى",
+        "website": "www.globalgap.org",
+        "quick_tips_ar": [
+          "ابدأ بالسجلات قبل أي شيء آخر — هي الأساس",
+          "المدقق يريد أن يرى التطبيق الفعلي لا الأوراق فقط",
+          "احتفظ بصور من كل شيء على هاتفك كنسخة احتياطية"
+        ]
+      },
+      {
+        "id": "std-002",
+        "name": "HACCP",
+        "full_name_ar": "تحليل المخاطر ونقاط التحكم الحرجة",
+        "full_name_en": "Hazard Analysis and Critical Control Points",
+        "category": "معالجة وتصنيع",
+        "importance_level": "عالية جداً",
+        "description_ar": "نظام علمي منهجي لتحديد وتقييم وإدارة المخاطر الغذائية — إلزامي قانونياً في كثير من دول العالم للغذاء المصنّع",
+        "history_ar": "طورته NASA وشركة Pillsbury في الستينيات لضمان سلامة غذاء رواد الفضاء — اعتمدته Codex Alimentarius عام 1993",
+        "hazard_types_ar": {
+          "biological": {
+            "title_ar": "مخاطر بيولوجية",
+            "examples_ar": [
+              "بكتيريا: Salmonella, E. coli O157:H7, Listeria, Campylobacter",
+              "فيروسات: نوروفيروس, هيباتيتس A",
+              "طفيليات: Cryptosporidium, Toxoplasma",
+              "سموم فطرية: أفلاتوكسين, أوكراتوكسين"
+            ]
+          },
+          "chemical": {
+            "title_ar": "مخاطر كيميائية",
+            "examples_ar": [
+              "متبقيات مبيدات فوق الحد المسموح",
+              "معادن ثقيلة: رصاص، كاديوم، زرنيخ",
+              "مواد التنظيف والتعقيم",
+              "مواد التغليف غير الآمنة",
+              "الإضافات الغذائية الغير مصرح بها"
+            ]
+          },
+          "physical": {
+            "title_ar": "مخاطر فيزيائية",
+            "examples_ar": [
+              "زجاج",
+              "معدن",
+              "بلاستيك",
+              "عظام",
+              "حجارة وخشب",
+              "مجوهرات العمال"
+            ]
+          }
+        },
+        "seven_principles_ar": [
+          {
+            "principle": 1,
+            "title_ar": "تحليل المخاطر",
+            "description_ar": "تحديد كل المخاطر المحتملة (بيولوجية، كيميائية، فيزيائية) في كل خطوة من خطوات الإنتاج وتقييم احتمالية حدوثها وخطورتها"
+          },
+          {
+            "principle": 2,
+            "title_ar": "تحديد نقاط التحكم الحرجة CCP",
+            "description_ar": "تحديد النقاط في العملية التي يمكن فيها السيطرة على الخطر أو القضاء عليه — مثل: درجة حرارة البسترة، pH المخللات، معالجة المياه"
+          },
+          {
+            "principle": 3,
+            "title_ar": "وضع الحدود الحرجة",
+            "description_ar": "تحديد القيم المقبولة والقيم الحرجة لكل CCP — مثل: درجة حرارة البسترة لا تقل عن 72°م لمدة 15 ثانية"
+          },
+          {
+            "principle": 4,
+            "title_ar": "نظام المراقبة والرصد",
+            "description_ar": "وضع نظام لمراقبة كل CCP بانتظام — من يقيس؟ كيف؟ كم مرة؟ وبأي أداة؟"
+          },
+          {
+            "principle": 5,
+            "title_ar": "الإجراءات التصحيحية",
+            "description_ar": "تحديد ما يجب فعله عند انحراف CCP عن حده الحرج — وقف الإنتاج؟ عزل المنتج؟ إعادة المعالجة؟"
+          },
+          {
+            "principle": 6,
+            "title_ar": "التحقق من الفعالية",
+            "description_ar": "التحقق الدوري من أن نظام HACCP يعمل بفعالية — تحاليل ميكروبيولوجية، مراجعات دورية، تدقيق داخلي"
+          },
+          {
+            "principle": 7,
+            "title_ar": "التوثيق والسجلات",
+            "description_ar": "الاحتفاظ بسجلات كاملة لكل ما سبق — السجلات هي الدليل على تطبيق النظام وهي المطلوبة للتدقيق"
+          }
+        ],
+        "farm_ccps_ar": [
+          {
+            "ccp": "CCP-1",
+            "point_ar": "مياه الري",
+            "hazard_ar": "تلوث ميكروبي",
+            "control_ar": "فحص دوري + كلورة عند الحاجة",
+            "limit_ar": "E. coli أقل من 126 cfu/100mL"
+          },
+          {
+            "ccp": "CCP-2",
+            "point_ar": "تطبيق المبيدات",
+            "hazard_ar": "متبقيات فوق MRL",
+            "control_ar": "الالتزام بالجرعة وفترة الأمان PHI",
+            "limit_ar": "احترام PHI + 20% هامش أمان"
+          },
+          {
+            "ccp": "CCP-3",
+            "point_ar": "السماد العضوي",
+            "hazard_ar": "تلوث بكتيري Salmonella/E.coli",
+            "control_ar": "تخمر كامل + اختبار قبل الاستخدام",
+            "limit_ar": "Salmonella غائب في 25 جم"
+          },
+          {
+            "ccp": "CCP-4",
+            "point_ar": "الحصاد والتعبئة",
+            "hazard_ar": "تلوث فيزيائي وميكروبي",
+            "control_ar": "نظافة العمال والأدوات والعبوات",
+            "limit_ar": "لا عيوب مرئية — نظافة 100%"
+          },
+          {
+            "ccp": "CCP-5",
+            "point_ar": "التبريد والتخزين",
+            "hazard_ar": "نمو بكتيري",
+            "control_ar": "التحكم في درجة الحرارة والرطوبة",
+            "limit_ar": "حسب المنتج — راجع جدول التخزين"
+          }
+        ],
+        "who_needs_ar": "منشآت التصنيع الغذائي — خطوط التعبئة والتغليف — المصانع — خطوط عصر العصائر والزيوت",
+        "website": "www.fda.gov/food/hazard-analysis-critical-control-point-haccp"
+      },
+      {
+        "id": "std-003",
+        "name": "ISO 22000:2018",
+        "full_name_ar": "نظام إدارة سلامة الغذاء",
+        "full_name_en": "Food Safety Management System",
+        "category": "نظام إدارة",
+        "importance_level": "عالية",
+        "description_ar": "معيار دولي من ISO يجمع HACCP مع نظام إدارة الجودة ISO 9001 — للشركات الراغبة في شهادة دولية شاملة معترف بها",
+        "vs_haccp_ar": "ISO 22000 = HACCP + نظام إدارة + تواصل في سلسلة الغذاء + تحسين مستمر",
+        "key_elements_ar": [
+          "التواصل التفاعلي على طول سلسلة الغذاء (المورد - المنتج - الموزع - المستهلك)",
+          "إدارة النظام المؤسسي (Leadership - Planning - Support)",
+          "برامج المتطلبات الأساسية PRPs (GMP - GHP)",
+          "مبادئ HACCP المدمجة",
+          "التحسين المستمر",
+          "إدارة الطوارئ وسحب المنتج"
+        ],
+        "iso_22000_vs_fssc": {
+          "iso_22000": "معيار أساسي — معترف به دولياً",
+          "fssc_22000": "ISO 22000 + متطلبات إضافية — مطلوب لكبار تجار التجزئة والتوريد للشركات العالمية"
+        },
+        "prp_programs_ar": [
+          "GMP — الممارسات التصنيعية الجيدة",
+          "GHP — الممارسات الصحية الجيدة",
+          "مكافحة الآفات في المصنع",
+          "جودة المياه المستخدمة في التصنيع",
+          "إدارة مواد التغليف",
+          "الصيانة الوقائية للمعدات",
+          "التحكم في التلوث العرضي",
+          "تدريب وتوعية الموظفين"
+        ],
+        "who_needs_ar": "شركات التصدير الكبيرة — موردو السلاسل العالمية — مصانع الغذاء الراغبة في الاعتراف الدولي",
+        "website": "www.iso.org/iso-22000-food-safety-management"
+      },
+      {
+        "id": "std-004",
+        "name": "BRC Global Standard",
+        "full_name_ar": "المعيار البريطاني العالمي لسلامة الغذاء",
+        "full_name_en": "British Retail Consortium Global Standard for Food Safety",
+        "category": "تصنيع وتجزئة",
+        "importance_level": "عالية جداً للسوق البريطاني",
+        "description_ar": "أحد أصعب وأشمل معايير سلامة الغذاء في العالم — مطلوب للتوريد لكبرى المتاجر البريطانية والأوروبية",
+        "grade_levels_ar": {
+          "AA": "ممتاز — أعلى الدرجات",
+          "A": "جيد جداً",
+          "B": "مقبول",
+          "C": "يحتاج تحسين",
+          "D": "غير مقبول"
+        },
+        "key_chapters_ar": [
+          "التزام الإدارة العليا",
+          "خطة سلامة الغذاء (HACCP)",
+          "نظام إدارة الجودة",
+          "معايير المصنع والمعدات",
+          "مراقبة المنتج",
+          "العمليات والإنتاج",
+          "الموظفون"
+        ],
+        "food_fraud_ar": "BRC Issue 8 أضاف متطلبات الغش الغذائي (Food Fraud Vulnerability Assessment) — التحقق من أصالة المكونات",
+        "who_needs_ar": "الموردون لـ Tesco, Sainsbury's, Marks & Spencer, ASDA, Lidl, Aldi",
+        "website": "www.brcgs.com"
+      },
+      {
+        "id": "std-005",
+        "name": "ISO 9001:2015",
+        "full_name_ar": "نظام إدارة الجودة",
+        "full_name_en": "Quality Management System",
+        "category": "إدارة الجودة",
+        "importance_level": "متوسطة - أساسية",
+        "description_ar": "المعيار الأم لأنظمة إدارة الجودة — يطبق على أي منظمة بأي حجم في أي قطاع",
+        "quality_principles_ar": [
+          "التركيز على العميل",
+          "القيادة الفعالة",
+          "مشاركة الأشخاص",
+          "نهج العملية",
+          "التحسين المستمر",
+          "اتخاذ القرار بناءً على الأدلة",
+          "إدارة العلاقات مع الموردين"
+        ],
+        "pdca_cycle_ar": {
+          "Plan": "التخطيط — تحديد الأهداف والعمليات",
+          "Do": "التنفيذ — تطبيق الخطة",
+          "Check": "التحقق — مراقبة النتائج",
+          "Act": "التصرف — تحسين العمليات"
+        },
+        "who_needs_ar": "أي شركة تريد نظام إدارة محكم — أساس لكل شهادات الجودة الأخرى",
+        "website": "www.iso.org/iso-9001-quality-management"
+      },
+      {
+        "id": "std-006",
+        "name": "SQF (Safe Quality Food)",
+        "full_name_ar": "نظام جودة الغذاء الآمن",
+        "full_name_en": "Safe Quality Food Program",
+        "category": "سلامة وجودة",
+        "importance_level": "عالية للسوق الأمريكي",
+        "description_ar": "برنامج أمريكي لسلامة وجودة الغذاء — معترف به من GFSI — شرط في سلاسل التوريد الكبرى بأمريكا",
+        "levels_ar": {
+          "level_2": "سلامة الغذاء الأساسية — HACCP",
+          "level_3": "سلامة وجودة الغذاء المتقدمة"
+        },
+        "who_needs_ar": "المصدرون للولايات المتحدة — موردو Walmart, Whole Foods, Costco",
+        "website": "www.sqfi.com"
+      },
+      {
+        "id": "std-007",
+        "name": "IFS Food",
+        "full_name_ar": "المعيار الدولي للغذاء",
+        "full_name_en": "International Featured Standards Food",
+        "category": "تصنيع",
+        "importance_level": "عالية للسوق الألماني والفرنسي",
+        "description_ar": "معيار أوروبي من ألمانيا وفرنسا — مطلوب للتوريد لكبار تجار التجزئة الألمان والفرنسيين",
+        "scoring_ar": "نظام تقييم بالنقاط — نتيجة أعلى من 75% = شهادة — 95%+ = شهادة متقدمة",
+        "who_needs_ar": "الموردون لـ Rewe, Edeka, Auchan, Carrefour France",
+        "website": "www.ifs-certification.com"
+      },
+      {
+        "id": "std-008",
+        "name": "EgGAP",
+        "full_name_ar": "الممارسات الزراعية الجيدة المصرية",
+        "full_name_en": "Egyptian Good Agricultural Practices",
+        "category": "زراعة محلية",
+        "importance_level": "متوسطة - مهمة للبداية",
+        "description_ar": "المعيار الوطني المصري للممارسات الزراعية الجيدة — صادر عن وزارة الزراعة المصرية — خطوة أولى نحو GlobalGAP",
+        "advantages_ar": [
+          "أرخص وأسهل من GlobalGAP",
+          "باللغة العربية بالكامل",
+          "مدعوم من وزارة الزراعة المصرية",
+          "مقبول في السوق المحلي وبعض الأسواق الإقليمية"
+        ],
+        "who_needs_ar": "المزارعون المصريون المبتدئون أو الراغبون في السوق المحلي أو كخطوة أولى نحو GlobalGAP",
+        "egypt_contact_ar": "الإدارة المركزية لتنمية الصادرات الزراعية — وزارة الزراعة المصرية"
+      },
+      {
+        "id": "std-009",
+        "name": "EU Organic (EC 2018/848)",
+        "full_name_ar": "الزراعة العضوية الأوروبية",
+        "full_name_en": "EU Organic Farming Regulation",
+        "category": "زراعة عضوية",
+        "importance_level": "عالية للتصدير العضوي",
+        "description_ar": "اللائحة الأوروبية للزراعة العضوية — الرمز الأخضر EU Organic إلزامي على المنتجات العضوية المباعة في أوروبا",
+        "logo_ar": "شعار أخضر به نجمات أوروبية تشكل ورقة — إلزامي على كل منتج عضوي في EU",
+        "prohibited_inputs_ar": [
+          "المبيدات الكيميائية الاصطناعية",
+          "الأسمدة الكيميائية الاصطناعية",
+          "الكائنات المحورة وراثياً GMO",
+          "الهرمونات والمضادات الحيوية",
+          "الإشعاع المؤين"
+        ],
+        "who_needs_ar": "أي مصدر يريد بيع منتجاته كـ 'عضوي' في الأسواق الأوروبية",
+        "website": "eur-lex.europa.eu"
+      },
+      {
+        "id": "std-010",
+        "name": "FSMA (FDA Food Safety Modernization Act)",
+        "full_name_ar": "قانون تحديث سلامة الغذاء الأمريكي",
+        "full_name_en": "FDA Food Safety Modernization Act",
+        "category": "قانون أمريكي",
+        "importance_level": "إلزامية للتصدير لأمريكا",
+        "description_ar": "قانون أمريكي أصدرته FDA عام 2011 — أكبر إصلاح لقوانين سلامة الغذاء الأمريكية منذ 70 عاماً — يطبق على المصدرين لأمريكا",
+        "fsma_rules_ar": [
+          "FSMA FSVP: برنامج التحقق من موردي الأغذية الأجنبية — يطبق على المستوردين الأمريكيين",
+          "FSMA Produce Safety Rule: قواعد سلامة الخضروات والفاكهة الطازجة",
+          "FSMA Preventive Controls: ضوابط وقائية للمنشآت البشرية"
+        ],
+        "egypt_impact_ar": "المصدرون المصريون لأمريكا ملزمون بالامتثال — المستورد الأمريكي مسؤول عن التحقق",
+        "website": "www.fda.gov/food/food-safety-modernization-act-fsma"
+      }
+    ]
+  },
+  "pesticide_residues": {
+    "title_ar": "إدارة متبقيات المبيدات",
+    "icon": "🔬",
+    "mrl_concept": {
+      "definition_ar": "الحد الأقصى للمتبقيات (MRL) هو أعلى تركيز قانوني مسموح به من متبقيات المبيد في الغذاء أو العلف — يُعبَّر عنه بـ mg/kg أو ppm",
+      "how_set_ar": [
+        "تحديد جرعة عدم وجود تأثير ضار NOAEL من دراسات الحيوانات",
+        "حساب الجرعة اليومية المقبولة ADI = NOAEL ÷ عامل أمان 100",
+        "دراسات المتبقيات في الحقل (Field Trials) بالجرعة والتوقيت الموصى به",
+        "إضافة هامش أمان إضافي",
+        "مقارنة التعرض اليومي المقدر بـ ADI"
+      ],
+      "key_terms_ar": {
+        "MRL": "الحد الأقصى للمتبقيات — Maximum Residue Limit",
+        "ADI": "الجرعة اليومية المقبولة — Acceptable Daily Intake",
+        "ARfD": "الجرعة المرجعية الحادة — Acute Reference Dose",
+        "PHI": "فترة الأمان قبل الحصاد — Pre-Harvest Interval",
+        "LOD": "حد الكشف — Limit of Detection",
+        "LOQ": "حد التحديد الكمي — Limit of Quantification"
+      }
+    },
+    "key_markets": [
+      {
+        "market": "الاتحاد الأوروبي EU",
+        "authority": "EFSA + European Commission",
+        "strictness": "الأشد في العالم",
+        "default_mrl": "0.01 mg/kg لأي مبيد غير مسجل — عملياً صفر",
+        "database": "ec.europa.eu/food/plant/pesticides/eu-pesticides-database",
+        "banned_examples_ar": [
+          "Chlorpyrifos: محظور تماماً منذ 2020",
+          "Dimethoate: محظور على الثمار والخضروات الكثيرة",
+          "Endosulfan: محظور منذ 2013",
+          "Methomyl: محظور على كثير من المحاصيل",
+          "Fipronil: محظور على المحاصيل الغذائية"
+        ],
+        "egypt_rasff_ar": "مصر تتلقى تنبيهات RASFF متكررة — انتبه جيداً وتحقق من قائمة المبيدات المسموحة في EU قبل الرش",
+        "rasff_meaning_ar": "RASFF = نظام الإنذار السريع للغذاء والعلف — يُصدر تنبيهاً فورياً عند اكتشاف خطر في منتج مستورد"
+      },
+      {
+        "market": "المملكة العربية السعودية",
+        "authority": "SFDA — الهيئة السعودية للغذاء والدواء",
+        "strictness": "متشدد ومتزايد",
+        "notes_ar": "تتبع Codex عموماً مع قيود إضافية — اشتراطات المنتجات الغذائية الجديدة صارمة",
+        "database": "www.sfda.gov.sa"
+      },
+      {
+        "market": "الإمارات العربية",
+        "authority": "ESMA + وزارة التغيير المناخي",
+        "strictness": "متوسط إلى عالي",
+        "notes_ar": "بوابة إعادة تصدير — تتبع معايير دولية متعددة",
+        "database": "www.esma.gov.ae"
+      },
+      {
+        "market": "الولايات المتحدة USA",
+        "authority": "EPA + FDA + USDA",
+        "strictness": "صارم لكن مختلف عن EU",
+        "notes_ar": "MRL يُسمى Tolerance — يختلف كثيراً عن EU — ما هو مسموح في EU قد لا يكون مسموحاً في USA",
+        "database": "www.epa.gov/pesticide-tolerances"
+      },
+      {
+        "market": "Codex Alimentarius",
+        "authority": "WHO/FAO",
+        "strictness": "المرجع الدولي — أقل تشدداً من EU",
+        "notes_ar": "تتبعه معظم الدول النامية — مرجع WTO في النزاعات التجارية",
+        "database": "www.fao.org/fao-who-codexalimentarius"
+      }
+    ],
+    "phi_table": {
+      "title_ar": "جدول فترات الأمان (PHI) حسب مجموعة المبيد",
+      "critical_note_ar": "هذا الجدول إرشادي — الالتزام بالعبوة وتوصيات المسجّل هو المرجع القانوني دائماً",
+      "groups": [
+        {
+          "group_ar": "مبيدات فطرية تماسية",
+          "examples": [
+            "Mancozeb",
+            "Captan",
+            "Chlorothalonil",
+            "Zineb",
+            "Copper hydroxide"
+          ],
+          "phi_range_days": "3-15",
+          "eu_status": "معظمها مسجل في EU",
+          "notes_ar": "وقائية بالأساس — يجب الرش قبل ظهور الأعراض"
+        },
+        {
+          "group_ar": "مبيدات فطرية جهازية (Triazoles)",
+          "examples": [
+            "Tebuconazole",
+            "Propiconazole",
+            "Myclobutanil",
+            "Difenoconazole"
+          ],
+          "phi_range_days": "7-30",
+          "eu_status": "معظمها مسجل مع قيود",
+          "notes_ar": "علاجية ووقائية — خطر المقاومة عند الاستخدام المتكرر"
+        },
+        {
+          "group_ar": "مبيدات فطرية (Strobilurins/QoI)",
+          "examples": [
+            "Azoxystrobin",
+            "Trifloxystrobin",
+            "Kresoxim-methyl"
+          ],
+          "phi_range_days": "3-14",
+          "eu_status": "مسجل مع تحذيرات مقاومة",
+          "notes_ar": "لا تستخدم وحده — دمج مع مجموعة أخرى لتجنب المقاومة"
+        },
+        {
+          "group_ar": "مبيدات حشرية فوسفات عضوي",
+          "examples": [
+            "Chlorpyrifos",
+            "Dimethoate",
+            "Malathion",
+            "Phosmet"
+          ],
+          "phi_range_days": "7-28",
+          "eu_status": "Chlorpyrifos محظور — Dimethoate محدود جداً",
+          "notes_ar": "⚠️ تحقق من حالة كل مادة في السوق المستهدف قبل الاستخدام"
+        },
+        {
+          "group_ar": "مبيدات حشرية بيريثرويد",
+          "examples": [
+            "Lambda-cyhalothrin",
+            "Cypermethrin",
+            "Deltamethrin",
+            "Bifenthrin"
+          ],
+          "phi_range_days": "3-14",
+          "eu_status": "مسجل مع تحذيرات للنحل",
+          "notes_ar": "⚠️ ضار جداً للنحل — رش في الليل فقط — لا رش عند الإزهار"
+        },
+        {
+          "group_ar": "مبيدات حشرية نيونيكوتينويد",
+          "examples": [
+            "Imidacloprid",
+            "Thiamethoxam",
+            "Clothianidin",
+            "Acetamiprid"
+          ],
+          "phi_range_days": "7-28",
+          "eu_status": "Imidacloprid, Thiamethoxam, Clothianidin: محظورة في الهواء الطلق في EU",
+          "notes_ar": "⚠️ خطر كبير على النحل — تحقق من القيود في السوق المستهدف"
+        },
+        {
+          "group_ar": "مبيدات حشرية ديامايد",
+          "examples": [
+            "Chlorantraniliprole",
+            "Cyantraniliprole",
+            "Flubendiamide"
+          ],
+          "phi_range_days": "1-14",
+          "eu_status": "مسجل — PHI قصيرة — آمن نسبياً",
+          "notes_ar": "من أحدث المبيدات وأكثرها أماناً — ثابت وفعال"
+        },
+        {
+          "group_ar": "مبيدات أكاروسية",
+          "examples": [
+            "Abamectin",
+            "Spiromesifen",
+            "Hexythiazox",
+            "Clofentezine"
+          ],
+          "phi_range_days": "3-28",
+          "eu_status": "معظمها مسجل",
+          "notes_ar": "Abamectin سام للأسماك — تجنب قرب مجاري المياه"
+        },
+        {
+          "group_ar": "مبيدات بيولوجية (حيوية المصدر)",
+          "examples": [
+            "Spinosad",
+            "Spinosyn",
+            "Emamectin benzoate",
+            "Azadirachtin"
+          ],
+          "phi_range_days": "0-7",
+          "eu_status": "مسموح في EU — Spinosad مسموح عضوياً",
+          "notes_ar": "الأفضل للتصدير — PHI قصيرة جداً"
+        },
+        {
+          "group_ar": "مبيدات ميكروبية (بكتيريا/فطر)",
+          "examples": [
+            "Bacillus thuringiensis Bt",
+            "Beauveria bassiana",
+            "Metarhizium",
+            "Trichoderma"
+          ],
+          "phi_range_days": "0-3",
+          "eu_status": "مسموح ومشجع في EU — مقبول في الزراعة العضوية",
+          "notes_ar": "المستقبل الآمن للمكافحة — لا سمية على الإنسان"
+        },
+        {
+          "group_ar": "مبيدات نباتية",
+          "examples": [
+            "Pyrethrin (الطبيعي)",
+            "Azadirachtin/Neem",
+            "Rotenone"
+          ],
+          "phi_range_days": "0-1",
+          "eu_status": "مسموح في الزراعة العضوية",
+          "notes_ar": "آمنة جداً — مناسبة لما قبل الحصاد مباشرة"
+        },
+        {
+          "group_ar": "مبيدات نيماتيسيدية",
+          "examples": [
+            "Oxamyl",
+            "Fosthiazate",
+            "Cadusafos"
+          ],
+          "phi_range_days": "21-60",
+          "eu_status": "محدودة جداً في EU",
+          "notes_ar": "⚠️ سمية عالية — استخدام محدود جداً — بدائل حيوية أفضل"
+        },
+        {
+          "group_ar": "مبيدات الحشائش (قبل الإنبات)",
+          "examples": [
+            "Metribuzin",
+            "Pendimethalin",
+            "Clomazone"
+          ],
+          "phi_range_days": "30-90",
+          "eu_status": "متفاوت",
+          "notes_ar": "تطبيق قبل الزراعة أو قبل الإنبات — PHI طويلة نسبياً"
+        },
+        {
+          "group_ar": "مبيدات الحشائش (بعد الإنبات)",
+          "examples": [
+            "Glyphosate",
+            "Clodinafop",
+            "Haloxyfop",
+            "Metsulfuron"
+          ],
+          "phi_range_days": "14-60",
+          "eu_status": "Glyphosate قيد المراجعة في EU — انتبه",
+          "notes_ar": "استخدام بعد الإنبات — دقق في PHI لكل مادة ومحصول"
+        }
+      ]
+    },
+    "residue_management_tips_ar": [
+      "استخدم فقط المبيدات المسجلة في بلد الاستيراد — ليس فقط المسجلة في مصر",
+      "احترم PHI بدقة + أضف هامش أمان 20-30% إضافي خاصة في الحرارة الشديدة",
+      "اختبر عينات من محصولك من مختبر معتمد قبل الشحن",
+      "ابقَ على اطلاع بالتغييرات الجديدة في قوائم المبيدات المحظورة كل موسم",
+      "استخدم مبيدات بيولوجية خلال آخر أسبوعين قبل الحصاد",
+      "دوّر بين المبيدات لتقليل تراكم متبقيات مادة واحدة",
+      "قلل الجرعة كلما كان الوقت قريباً من الحصاد",
+      "سجّل كل رشة بالتفصيل للرجوع إليها عند الحاجة"
+    ],
+    "testing_labs_egypt": [
+      {
+        "name_ar": "المختبر المركزي للمبيدات",
+        "authority_ar": "وزارة الزراعة المصرية",
+        "services_ar": "تحليل متبقيات مبيدات — معتمد رسمياً",
+        "accreditation": "ISO 17025"
+      },
+      {
+        "name_ar": "SGS Egypt",
+        "authority_ar": "شركة دولية",
+        "services_ar": "تحليل شامل — معترف به دولياً",
+        "accreditation": "ISO 17025 — UKAS"
+      },
+      {
+        "name_ar": "Bureau Veritas Egypt",
+        "authority_ar": "شركة دولية",
+        "services_ar": "تحليل شامل — معترف به دولياً",
+        "accreditation": "ISO 17025"
+      },
+      {
+        "name_ar": "Eurofins Egypt",
+        "authority_ar": "شركة دولية",
+        "services_ar": "أوسع شبكة مختبرات في أوروبا — نتائج معتمدة دولياً",
+        "accreditation": "ISO 17025 — UKAS — DAkkS"
+      },
+      {
+        "name_ar": "مختبر جامعة القاهرة — كلية الزراعة",
+        "authority_ar": "جامعة حكومية",
+        "services_ar": "تحليل أكاديمي وبحثي",
+        "accreditation": "اعتماد أكاديمي"
+      }
+    ]
+  },
+  "mycotoxins": {
+    "title_ar": "السموم الفطرية — Mycotoxins",
+    "icon": "⚠️",
+    "critical_note_ar": "السموم الفطرية لا تُدمَّر بالطبخ أو الحرارة أو التخزين الطويل — الوقاية قبل وأثناء وبعد الحصاد هي الحل الوحيد",
+    "overview_ar": "مواد سامة ثانوية تنتجها فطريات معينة بشروط معينة من الرطوبة والحرارة — خطيرة على صحة الإنسان والحيوان — لا ترى ولا تُشَم ولا تُحَس",
+    "types": [
+      {
+        "id": "myco-001",
+        "name_ar": "أفلاتوكسينات",
+        "name_en": "Aflatoxins (B1, B2, G1, G2, M1)",
+        "producer_ar": "Aspergillus flavus, A. parasiticus",
+        "who_classification": "Group 1A — مؤكد التسبب في السرطان عند الإنسان",
+        "health_effects_ar": {
+          "acute_ar": "تسمم كبدي حاد عند الجرعات العالية — قاتل",
+          "chronic_ar": "سرطان الكبد (HCC) — أشد السرطانات خطورةً — تأثير تراكمي",
+          "most_vulnerable_ar": "الأطفال — المرضى — الحوامل — حاملو فيروس B الكبدي"
+        },
+        "affected_products_ar": [
+          "فول سوداني — الأكثر إصابةً",
+          "ذرة شامية",
+          "قطن (بذرة القطن)",
+          "زيوت نباتية من المصادر أعلاه",
+          "حليب ومنتجاته (M1) — ينتقل من أعلاف الماشية",
+          "توابل وبهارات",
+          "مكسرات متنوعة"
+        ],
+        "favorable_conditions_ar": "حرارة 25-40°م + رطوبة نسبية 80%+ + رطوبة الحبوب 14%+",
+        "eu_limits": {
+          "B1_in_food": "2 μg/kg",
+          "total_B1B2G1G2_food": "4 μg/kg",
+          "B1_in_feed": "5 μg/kg",
+          "M1_in_milk": "0.05 μg/kg",
+          "baby_food": "0.1 μg/kg"
+        },
+        "egypt_limits_ar": "20 ppb حسب المعايير المصرية — أعلى بكثير من EU",
+        "prevention_ar": [
+          "حصاد في الوقت الصحيح — لا تأخير عند اكتمال النضج",
+          "تجفيف فوري وسريع لأقل من 13% رطوبة للحبوب",
+          "تخزين في درجة حرارة منخفضة جافة مع تهوية جيدة",
+          "فرز وإزالة الحبوب المعطوبة والمتشققة والمتغيرة اللون فوراً",
+          "مكافحة حشرات وقوارض التخزين",
+          "استخدام تقنية الأتموسفير المعدل (تخزين بـ CO2 أو N2)",
+          "معاملة بـ Aspergillus flavus ضعيف الإمراضية (Biological control)"
+        ],
+        "detection_ar": [
+          "ELISA: سريع وأرخص — للفرز المبدئي — دقة 85-90%",
+          "HPLC مع كاشف فلوري: دقيق ومعتمد للتصدير",
+          "LC-MS/MS: الأدق والأغلى — للتحكيم والتحقيق",
+          "كيتات فحص سريع: نتيجة في 5-10 دقائق — مناسب للمزارع"
+        ]
+      },
+      {
+        "id": "myco-002",
+        "name_ar": "أوكراتوكسين A",
+        "name_en": "Ochratoxin A (OTA)",
+        "producer_ar": "Aspergillus ochraceus, A. carbonarius, Penicillium verrucosum",
+        "who_classification": "Group 2B — محتمل التسبب في السرطان",
+        "health_effects_ar": {
+          "chronic_ar": "سمية شديدة للكلى (Nephrotoxic) — ضمور كلوي",
+          "cancer_ar": "محتمل مسبب لسرطان الكلى والمثانة",
+          "immune_ar": "يثبط المناعة"
+        },
+        "affected_products_ar": [
+          "قمح وحبوب متعددة",
+          "شعير وجاودار",
+          "قهوة — خاصة البن غير المحمص",
+          "عنب ونبيذ",
+          "عصير عنب",
+          "توابل — خاصة الفلفل الأسود والحمراء",
+          "كاكاو"
+        ],
+        "favorable_conditions_ar": "ينمو في مدى حراري واسع 8-37°م — رطوبة 85%+ — خطير في التخزين البارد الرطب",
+        "eu_limits": {
+          "cereals": "3 μg/kg",
+          "cereal_products": "3 μg/kg",
+          "dried_grapes": "10 μg/kg",
+          "wine": "2 μg/L",
+          "coffee_roasted": "5 μg/kg",
+          "spices": "15-30 μg/kg",
+          "baby_food": "0.5 μg/kg"
+        },
+        "prevention_ar": [
+          "تجفيف الحبوب لأقل من 14% رطوبة قبل التخزين",
+          "تهوية مستمرة لمستودعات التخزين",
+          "مراقبة وإبادة حشرات وقوارض التخزين",
+          "التفتيش الدوري على الحبوب المخزنة"
+        ]
+      },
+      {
+        "id": "myco-003",
+        "name_ar": "ديوكسي نيفالينول (DON)",
+        "name_en": "Deoxynivalenol / Vomitoxin",
+        "producer_ar": "Fusarium graminearum, F. culmorum",
+        "who_classification": "Group 3 — لا يمكن تصنيفه حالياً",
+        "health_effects_ar": {
+          "acute_ar": "غثيان وقيء وإسهال وآلام بطنية عند الجرعات العالية",
+          "chronic_ar": "تثبيط المناعة — تأثير على نمو الجنين عند التعرض المزمن"
+        },
+        "affected_products_ar": [
+          "قمح",
+          "شعير",
+          "ذرة",
+          "شوفان"
+        ],
+        "favorable_conditions_ar": "أمطار وقت إزهار القمح — رطوبة عالية — حرارة 15-30°م",
+        "link_to_disease_ar": "ينتج بشكل رئيسي عند الإصابة بلفحة السنابل الفيوزارية (Scab/FHB)",
+        "eu_limits": {
+          "unprocessed_cereals": "1750 μg/kg",
+          "flour": "750 μg/kg",
+          "bread_pasta": "500 μg/kg",
+          "baby_food": "200 μg/kg"
+        },
+        "prevention_ar": [
+          "زراعة أصناف مقاومة للفيوزاريوم",
+          "رش مبيدات فطرية (Tebuconazole) عند بداية الإزهار",
+          "الدورة الزراعية — تجنب القمح بعد الذرة مباشرة",
+          "حصاد سريع — تجفيف فوري"
+        ]
+      },
+      {
+        "id": "myco-004",
+        "name_ar": "فوموزينات",
+        "name_en": "Fumonisins (B1, B2, B3)",
+        "producer_ar": "Fusarium verticillioides (moniliforme), F. proliferatum",
+        "who_classification": "Group 2B — محتمل التسبب في السرطان",
+        "health_effects_ar": {
+          "human_ar": "محتمل مسبب لسرطان المريء والكبد",
+          "neural_ar": "سبب لعيوب الأنبوب العصبي عند الأجنة",
+          "animal_ar": "يسبب وذمة رئوية في الخنازير — سرطان كبد في الفئران"
+        },
+        "affected_products_ar": [
+          "ذرة شامية — الأكثر تضرراً بكثير جداً",
+          "عصير ذرة وزيت ذرة"
+        ],
+        "favorable_conditions_ar": "إصابة بثاقبة ساق الذرة + حرارة 20-30°م + جفاف متكرر",
+        "eu_limits": {
+          "corn_food": "1000 μg/kg",
+          "corn_flour": "800 μg/kg",
+          "corn_snacks": "800 μg/kg",
+          "baby_food": "200 μg/kg"
+        },
+        "prevention_ar": [
+          "مكافحة ثاقبة ساق الذرة (ثقوبها تدخل الفطر للداخل)",
+          "حصاد سريع عند النضج الكامل",
+          "تجفيف فوري لأقل من 13% رطوبة",
+          "تخزين في بيئة باردة جافة"
+        ]
+      },
+      {
+        "id": "myco-005",
+        "name_ar": "باتولين",
+        "name_en": "Patulin",
+        "producer_ar": "Penicillium expansum, Aspergillus clavatus",
+        "who_classification": "Group 3",
+        "health_effects_ar": {
+          "acute_ar": "سمية للجهاز الهضمي والعصبي عند الجرعات العالية",
+          "chronic_ar": "سمية للجهاز المناعي — محتمل مسبب للسرطان"
+        },
+        "affected_products_ar": [
+          "تفاح — الثمار المصابة والمتعفنة",
+          "عصير تفاح وعصائر فاكهة أخرى",
+          "مربى تفاح"
+        ],
+        "favorable_conditions_ar": "تعفن Penicillium في التفاح وثمار أخرى — خاصة الجروح والكدمات",
+        "eu_limits": {
+          "apple_juice": "50 μg/kg",
+          "solid_apple_products": "25 μg/kg",
+          "baby_juice": "10 μg/kg"
+        },
+        "prevention_ar": [
+          "لا تعصر الثمار المتعفنة أو التالفة — مهما كانت نسبة التلف صغيرة",
+          "تبريد فوري بعد الحصاد",
+          "فرز صارم وكامل قبل العصر",
+          "إزالة الكدمات والجروح قبل التصنيع"
+        ],
+        "important_note_ar": "قطع الجزء المتعفن لا يكفي — السم يتفشى في النسيج المحيط لمسافة أكبر مما يبدو"
+      },
+      {
+        "id": "myco-006",
+        "name_ar": "زيرالينون",
+        "name_en": "Zearalenone (ZEA)",
+        "producer_ar": "Fusarium graminearum, F. culmorum",
+        "who_classification": "Group 3",
+        "health_effects_ar": {
+          "hormonal_ar": "يحاكي هرمون الإستروجين — اضطرابات هرمونية تناسلية",
+          "animal_ar": "سبب رئيسي لاضطرابات الإنجاب في الخنازير"
+        },
+        "affected_products_ar": [
+          "قمح",
+          "ذرة",
+          "شعير",
+          "شوفان"
+        ],
+        "eu_limits": {
+          "unprocessed_cereals": "100 μg/kg",
+          "flour": "75 μg/kg",
+          "baby_food": "20 μg/kg"
+        },
+        "prevention_ar": "نفس وقاية DON — الدورة الزراعية + أصناف مقاومة + تخزين جاف"
+      },
+      {
+        "id": "myco-007",
+        "name_ar": "تريكوثيسينات T-2 وHT-2",
+        "name_en": "T-2 and HT-2 Toxins",
+        "producer_ar": "Fusarium sporotrichioides, F. langsethiae",
+        "who_classification": "Group 3",
+        "health_effects_ar": {
+          "acute_ar": "سمية شديدة — تدمير الأنسجة الرخوة والجهاز الهضمي",
+          "immune_ar": "تثبيط شديد للجهاز المناعي"
+        },
+        "affected_products_ar": [
+          "شوفان — الأكثر تضرراً",
+          "قمح",
+          "شعير"
+        ],
+        "prevention_ar": "نفس وقاية DON + تخزين الشوفان بعناية شديدة"
+      }
+    ],
+    "general_prevention_strategies_ar": {
+      "pre_harvest": [
+        "زراعة أصناف مقاومة",
+        "الدورة الزراعية",
+        "مكافحة الحشرات الثاقبة التي تسمح بدخول الفطريات",
+        "تجنب الإجهاد المائي للنبات",
+        "توقيت الحصاد الصحيح"
+      ],
+      "harvest": [
+        "حصاد سريع عند النضج الكامل",
+        "تجنب الجروح الميكانيكية",
+        "الفرز الأولي لاستبعاد الثمار المعطوبة"
+      ],
+      "post_harvest": [
+        "تجفيف فوري وسريع لأقل من 13-14% رطوبة",
+        "تبريد سريع للفاكهة والخضروات",
+        "تخزين في ظروف مثالية (حرارة ورطوبة مناسبة)",
+        "تهوية جيدة ومستمرة",
+        "مكافحة حشرات وقوارض التخزين",
+        "فحص دوري للمحزون",
+        "تدوير المخزون (FIFO)"
+      ]
+    }
+  },
+  "post_harvest": {
+    "title_ar": "جودة ما بعد الحصاد والتخزين",
+    "icon": "📦",
+    "importance_ar": "40% من الغذاء في الدول النامية يضيع بعد الحصاد — تحسين ما بعد الحصاد يمكن أن يضاعف الدخل دون زيادة المساحة المزروعة",
+    "quality_factors_ar": [
+      "درجة حرارة التخزين — العامل الأهم",
+      "الرطوبة النسبية للهواء",
+      "تركيز الأكسجين O₂",
+      "تركيز ثاني أكسيد الكربون CO₂",
+      "مستوى الإيثيلين — هرمون النضج والشيخوخة",
+      "الضوء — بعض المنتجات حساسة له",
+      "الجروح الميكانيكية أثناء الحصاد والنقل",
+      "الإصابات الميكروبية الثانوية"
+    ],
+    "storage_table": [
+      {
+        "product_ar": "طماطم ناضجة",
+        "temp_c": "8-12",
+        "humidity_pct": "85-90",
+        "duration_ar": "1-3 أسابيع",
+        "ethylene_sensitivity": "عالية — لا تخزن مع الفاكهة",
+        "chilling_injury_ar": "تحت 8°م تتلف — بقع بيضاء وطرية",
+        "notes_ar": "لا تخزن في الثلاجة المنزلية — تتلف ويتأثر طعمها"
+      },
+      {
+        "product_ar": "طماطم خضراء (للنضج)",
+        "temp_c": "12-20",
+        "humidity_pct": "85-90",
+        "duration_ar": "4-6 أسابيع",
+        "ethylene_sensitivity": "يستخدم الإيثيلين لتسريع النضج",
+        "notes_ar": "تنضج تدريجياً — الحرارة العالية تسرع النضج"
+      },
+      {
+        "product_ar": "خيار",
+        "temp_c": "10-13",
+        "humidity_pct": "90-95",
+        "duration_ar": "10-14 يوم",
+        "ethylene_sensitivity": "عالية جداً — يسبب اصفراراً سريعاً",
+        "chilling_injury_ar": "تحت 10°م — تلف بالبرودة — بقع مائية",
+        "notes_ar": "لا تخزن مع الطماطم أو التفاح"
+      },
+      {
+        "product_ar": "فلفل ألوان",
+        "temp_c": "7-13",
+        "humidity_pct": "90-95",
+        "duration_ar": "2-4 أسابيع",
+        "ethylene_sensitivity": "متوسطة",
+        "chilling_injury_ar": "تحت 7°م — تلف بالبرودة",
+        "notes_ar": "تخزين حسب اللون — الأحمر أقل من الأخضر"
+      },
+      {
+        "product_ar": "فراولة",
+        "temp_c": "0-2",
+        "humidity_pct": "90-95",
+        "duration_ar": "5-10 أيام",
+        "ethylene_sensitivity": "منخفضة",
+        "critical_ar": "تبريد فوري بعد الحصاد إلزامي — كل ساعة تأخير = خسارة يوم من العمر التسويقي",
+        "notes_ar": "حساسة جداً — الحصاد في برودة الصباح أفضل"
+      },
+      {
+        "product_ar": "عنب",
+        "temp_c": "-0.5 إلى 0",
+        "humidity_pct": "90-95",
+        "duration_ar": "شهر إلى 6 أشهر",
+        "ethylene_sensitivity": "منخفضة",
+        "so2_treatment_ar": "SO₂ يمنع عفن Botrytis — يُستخدم في التصدير",
+        "notes_ar": "يتحمل التخزين الطويل عند درجة حرارة قريبة من الصفر"
+      },
+      {
+        "product_ar": "برتقال وحمضيات",
+        "temp_c": "3-9",
+        "humidity_pct": "85-90",
+        "duration_ar": "1-4 أشهر",
+        "ethylene_sensitivity": "منخفضة — لكن الإيثيلين يُستخدم لتوحيد اللون",
+        "fungicide_treatment_ar": "معاملة ما بعد الحصاد بـ Thiabendazole أو Imazalil لمنع عفن Penicillium",
+        "notes_ar": "تهوية جيدة — تجنب التعرق — يحسّن اللون عند تعريضه للإيثيلين"
+      },
+      {
+        "product_ar": "مانجو",
+        "temp_c": "10-13",
+        "humidity_pct": "85-90",
+        "duration_ar": "2-4 أسابيع",
+        "ethylene_sensitivity": "عالية — منتج للإيثيلين",
+        "chilling_injury_ar": "تحت 10°م — تلف بالبرودة — بقع رمادية وطعم فاسد",
+        "hot_water_treatment_ar": "معاملة بالماء الساخن 46-48°م لمدة 65-90 دقيقة لمنع ذبابة الفاكهة",
+        "notes_ar": "حساس للتلف — يحتاج عناية خاصة في الشحن"
+      },
+      {
+        "product_ar": "موز أخضر",
+        "temp_c": "13-15",
+        "humidity_pct": "85-95",
+        "duration_ar": "20-30 يوم",
+        "chilling_injury_ar": "تحت 12°م — تلف بالبرودة — تسواد الجلد",
+        "ripening_ar": "ينضج بتعريضه للإيثيلين في غرف متخصصة",
+        "notes_ar": "يُشحن أخضر دائماً — الإنضاج في المقصد"
+      },
+      {
+        "product_ar": "تفاح",
+        "temp_c": "-1 إلى 4",
+        "humidity_pct": "90-95",
+        "duration_ar": "1-12 شهر",
+        "ethylene_sensitivity": "منتج للإيثيلين — عزله عن المنتجات الأخرى",
+        "ca_storage_ar": "التخزين المتحكم (CA): 1-2% O₂ + 1-2% CO₂ يطيل العمر لـ 12 شهر",
+        "notes_ar": "أفضل الفاكهة تحملاً للتخزين الطويل"
+      },
+      {
+        "product_ar": "بطاطس",
+        "temp_c": "4-10",
+        "humidity_pct": "90-95",
+        "duration_ar": "2-8 أشهر",
+        "light_sensitivity_ar": "تجنب الضوء تماماً — يسبب التخضير وتراكم السولانين السام",
+        "sprouting_ar": "CIPC أو الإشعاع لمنع التبرعم",
+        "notes_ar": "لا تخزن مع الفاكهة المنتجة للإيثيلين"
+      },
+      {
+        "product_ar": "بصل",
+        "temp_c": "0-3",
+        "humidity_pct": "65-70",
+        "duration_ar": "1-8 أشهر",
+        "low_humidity_note_ar": "رطوبة منخفضة ضرورية — الرطوبة العالية تسبب العفن",
+        "curing_ar": "تجفيف (Curing) لمدة 1-3 أسابيع بعد الحصاد قبل التخزين",
+        "notes_ar": "تهوية ممتازة — كومات صغيرة — لا تخزن بكميات كبيرة بدون تهوية"
+      },
+      {
+        "product_ar": "ثوم",
+        "temp_c": "0 أو أكثر من 27",
+        "humidity_pct": "65-70",
+        "duration_ar": "6-8 أشهر",
+        "special_note_ar": "تخزين في منتصف النطاق (8-18°م) يحفز التبرعم بسرعة",
+        "curing_ar": "تجفيف كامل 3-4 أسابيع قبل التخزين ضروري",
+        "notes_ar": "الثوم المصري جودة عالية — الحفاظ على الجودة بالتخزين الصحيح يرفع سعره"
+      },
+      {
+        "product_ar": "جزر",
+        "temp_c": "0-1",
+        "humidity_pct": "95-98",
+        "duration_ar": "4-8 أشهر",
+        "ethylene_sensitivity": "عالية جداً — الإيثيلين يسبب مرارة",
+        "notes_ar": "رطوبة عالية جداً تمنع التجفف — لا تخزن مع التفاح والإجاص"
+      },
+      {
+        "product_ar": "خس وجرجير",
+        "temp_c": "0-2",
+        "humidity_pct": "95-100",
+        "duration_ar": "2-4 أسابيع",
+        "ethylene_sensitivity": "عالية جداً — يسبب تلوناً بالبني وعفن سريع",
+        "precooling_ar": "تبريد بالتفريغ (Vacuum Cooling) الأفضل — تبريد في دقائق",
+        "notes_ar": "لا تخزن مع أي فاكهة — حساسية عالية للإيثيلين"
+      },
+      {
+        "product_ar": "خضروات ورقية عموماً",
+        "temp_c": "0-4",
+        "humidity_pct": "90-100",
+        "duration_ar": "أيام إلى 3 أسابيع",
+        "notes_ar": "الأكثر حساسية وأقلها عمراً تسويقياً — تبريد فوري إلزامي"
+      },
+      {
+        "product_ar": "فاصوليا خضراء",
+        "temp_c": "4-7",
+        "humidity_pct": "90-95",
+        "duration_ar": "1-2 أسبوع",
+        "chilling_injury_ar": "تحت 4°م — بقع بنية على الجراب",
+        "notes_ar": "تبريد فوري — لا تخزن مع الإيثيلين"
+      },
+      {
+        "product_ar": "بطيخ",
+        "temp_c": "10-15",
+        "humidity_pct": "85-90",
+        "duration_ar": "2-4 أسابيع",
+        "chilling_injury_ar": "تحت 10°م — تلف داخلي — تفاوت اللون",
+        "notes_ar": "حساس للبرودة — تخزين على درجة حرارة الغرفة إذا سيُستهلك قريباً"
+      },
+      {
+        "product_ar": "بطاطا حلوة",
+        "temp_c": "12-15",
+        "humidity_pct": "85-90",
+        "duration_ar": "4-7 أشهر",
+        "curing_ar": "تجفيف (Curing): 30-32°م + رطوبة 90-95% لمدة 4-7 أيام قبل التخزين",
+        "chilling_injury_ar": "تحت 10°م — تلف بالبرودة",
+        "notes_ar": "التجفيف قبل التخزين يعالج الجروح ويطيل العمر"
+      },
+      {
+        "product_ar": "قمح وحبوب جافة",
+        "temp_c": "10-15",
+        "humidity_pct": "60-70",
+        "duration_ar": "1-5 سنوات",
+        "critical_ar": "رطوبة الحبوب أهم من رطوبة الهواء — يجب أقل من 13%",
+        "notes_ar": "تهوية جيدة + مراقبة حرارة الكومة + مكافحة حشرات التخزين"
+      }
+    ],
+    "cold_chain": {
+      "title_ar": "سلسلة التبريد (Cold Chain)",
+      "definition_ar": "الحفاظ المستمر على درجة الحرارة المثالية من لحظة الحصاد حتى وصول المنتج للمستهلك",
+      "importance_ar": "كسر سلسلة التبريد لساعة واحدة قد يساوي خسارة 2-3 أيام من العمر التسويقي",
+      "steps_ar": [
+        {
+          "step": 1,
+          "name_ar": "التبريد المبدئي (Pre-cooling)",
+          "timing_ar": "فور الحصاد — قبل أي معالجة أو فرز",
+          "importance_ar": "الأهم في السلسلة — إزالة حرارة الحقل قبل تراكم الحرارة"
+        },
+        {
+          "step": 2,
+          "name_ar": "الفرز والتدريج والتعبئة",
+          "timing_ar": "في غرفة مبردة أو خلال فترة قصيرة"
+        },
+        {
+          "step": 3,
+          "name_ar": "التخزين في مستودع مبرد",
+          "timing_ar": "بالدرجة الصحيحة لكل منتج"
+        },
+        {
+          "step": 4,
+          "name_ar": "النقل بسيارات مبردة (Reefer)",
+          "timing_ar": "تشغيل التبريد قبل التحميل — لا تحمّل في سيارة ساخنة"
+        },
+        {
+          "step": 5,
+          "name_ar": "محطات التوزيع والمستودعات",
+          "timing_ar": "التفريغ السريع في بيئة مبردة"
+        },
+        {
+          "step": 6,
+          "name_ar": "العرض في نقطة البيع",
+          "timing_ar": "ثلاجات العرض بالدرجة الصحيحة"
+        }
+      ],
+      "precooling_methods_ar": [
+        {
+          "method_ar": "تبريد بالغرفة (Room Cooling)",
+          "speed": "بطيء — 6-12 ساعة",
+          "suitable_ar": "مناسب لمنتجات أقل حساسية — اقتصادي",
+          "products_ar": [
+            "بصل",
+            "بطاطس",
+            "جزر"
+          ]
+        },
+        {
+          "method_ar": "تبريد بالهواء القسري (Forced Air Cooling)",
+          "speed": "متوسط — 1-6 ساعات",
+          "suitable_ar": "مناسب لمعظم الفاكهة والخضروات",
+          "products_ar": [
+            "طماطم",
+            "فلفل",
+            "عنب",
+            "مانجو"
+          ]
+        },
+        {
+          "method_ar": "تبريد بالماء (Hydrocooling)",
+          "speed": "سريع — 15-30 دقيقة",
+          "suitable_ar": "فعال جداً — يزيد الرطوبة النسبية",
+          "products_ar": [
+            "فراولة",
+            "كرز",
+            "خضروات"
+          ]
+        },
+        {
+          "method_ar": "تبريد بالثلج (Package Icing)",
+          "speed": "فوري تقريباً",
+          "suitable_ar": "للمنتجات التي تتحمل الماء المباشر",
+          "products_ar": [
+            "ذرة",
+            "بروكلي",
+            "كرفس"
+          ]
+        },
+        {
+          "method_ar": "تبريد بالتفريغ (Vacuum Cooling)",
+          "speed": "سريع جداً — 20-30 دقيقة",
+          "suitable_ar": "الأفضل للخضروات الورقية",
+          "products_ar": [
+            "خس",
+            "جرجير",
+            "سبانخ",
+            "شبت"
+          ]
+        }
+      ]
+    },
+    "post_harvest_diseases_ar": [
+      {
+        "disease_ar": "عفن رمادي Botrytis",
+        "pathogen": "Botrytis cinerea",
+        "products_ar": [
+          "فراولة",
+          "عنب",
+          "طماطم",
+          "خيار",
+          "ورد"
+        ],
+        "symptoms_ar": "نمو رمادي كثيف وناعم — تعفن رطب سريع الانتشار",
+        "favorable_conditions_ar": "رطوبة عالية + درجة حرارة 15-25°م",
+        "prevention_ar": [
+          "SO₂ للعنب أثناء التخزين",
+          "تبريد فوري",
+          "تجنب الجروح",
+          "تهوية جيدة"
+        ],
+        "treatment_ar": "Fenhexamid, Pyrimethanil, Boscalid بعد الحصاد المباشر"
+      },
+      {
+        "disease_ar": "عفن Penicillium الأخضر والأزرق",
+        "pathogen": "Penicillium digitatum, P. italicum",
+        "products_ar": [
+          "برتقال",
+          "ليمون",
+          "يوسفي",
+          "جريب فروت"
+        ],
+        "symptoms_ar": "بقعة بيضاء تتحول لخضراء أو زرقاء مع حواف بيضاء",
+        "favorable_conditions_ar": "جروح في القشرة + رطوبة + درجة حرارة فوق 10°م",
+        "prevention_ar": [
+          "تجنب الجروح وقت الحصاد",
+          "تبريد فوري",
+          "معاملة بمبيدات ما بعد الحصاد"
+        ],
+        "treatment_ar": "Imazalil, Thiabendazole, Fludioxonil في حمام الغمر أو الرش"
+      },
+      {
+        "disease_ar": "عفن Rhizopus",
+        "pathogen": "Rhizopus stolonifer",
+        "products_ar": [
+          "فراولة",
+          "بطاطا حلوة",
+          "خوخ",
+          "مشمش"
+        ],
+        "symptoms_ar": "عفن رطب سريع — خيوط بيضاء رفيعة مع نقاط سوداء — تفسخ كامل",
+        "favorable_conditions_ar": "حرارة 20-25°م + جروح في المنتج",
+        "prevention_ar": [
+          "تجنب الجروح",
+          "تبريد فوري تحت 10°م يوقف النمو",
+          "فرز الثمار المعطوبة"
+        ]
+      },
+      {
+        "disease_ar": "تعفن الساق البكتيري",
+        "pathogen": "Pectobacterium carotovorum",
+        "products_ar": [
+          "جزر",
+          "بطاطس",
+          "كرفس",
+          "خيار"
+        ],
+        "symptoms_ar": "تعفن طري ومائي مع رائحة كريهة — يتفشى بسرعة رهيبة",
+        "prevention_ar": [
+          "تجنب الجروح والكدمات",
+          "تبريد فوري",
+          "رطوبة مناسبة لا مفرطة"
+        ]
+      }
+    ]
+  },
+  "irrigation_water_safety": {
+    "title_ar": "سلامة مياه الري",
+    "icon": "💧",
+    "importance_ar": "مياه الري الملوثة هي أكبر مصدر لتلوث الغذاء بالمسببات الميكروبية — خاصة في الخضروات الورقية والفراولة",
+    "risk_assessment_ar": {
+      "high_risk_ar": [
+        "الخضروات الورقية تُرش بمياه ملوثة",
+        "الفراولة تُغمر في مياه ملوثة",
+        "ري بالرش على الأجزاء المأكولة"
+      ],
+      "medium_risk_ar": [
+        "ري بالتنقيط لخضروات ثمرية",
+        "ري بالغمر لمحاصيل حقلية"
+      ],
+      "low_risk_ar": [
+        "ري بالتنقيط لأشجار فاكهة",
+        "ري بالغمر لمحاصيل غير ورقية"
+      ]
+    },
+    "microbiological_standards": [
+      {
+        "parameter": "E. coli (Fecal coliforms)",
+        "limit_spray_ar": "أقل من 126 cfu/100 mL — للرش على الأجزاء المأكولة",
+        "limit_drip_ar": "أقل من 1000 cfu/100 mL — للري بالتنقيط",
+        "standard": "WHO/FAO 2006 + GlobalGAP"
+      },
+      {
+        "parameter": "Salmonella spp.",
+        "limit_ar": "غائبة تماماً في 25 mL — صفر تسامح",
+        "standard": "WHO — HACCP"
+      },
+      {
+        "parameter": "Cryptosporidium oocysts",
+        "limit_ar": "أقل من 1/100 L",
+        "standard": "WHO"
+      },
+      {
+        "parameter": "Ascaris eggs (طفيليات)",
+        "limit_ar": "أقل من 1 بيضة / لتر",
+        "standard": "WHO 2006"
+      }
+    ],
+    "chemical_standards": [
+      {
+        "parameter": "pH",
+        "limit_ar": "6.5 - 8.5",
+        "reason_ar": "pH خارج النطاق يؤثر على امتصاص المغذيات والمبيدات"
+      },
+      {
+        "parameter": "EC (ملوحة)",
+        "limit_ar": "أقل من 1 dS/m للحساسين — 2 dS/m للمتحملين",
+        "reason_ar": "الملوحة الزائدة تجهد النبات وتقلل الإنتاج"
+      },
+      {
+        "parameter": "نترات NO₃⁻",
+        "limit_ar": "أقل من 50 mg/L",
+        "reason_ar": "ميثيموجلوبينيميا عند الأطفال الرضع"
+      },
+      {
+        "parameter": "رصاص Pb",
+        "limit_ar": "أقل من 0.1 mg/L",
+        "reason_ar": "سمية عصبية تراكمية"
+      },
+      {
+        "parameter": "كاديوم Cd",
+        "limit_ar": "أقل من 0.01 mg/L",
+        "reason_ar": "سمية كلوية تراكمية"
+      },
+      {
+        "parameter": "زرنيخ As",
+        "limit_ar": "أقل من 0.1 mg/L",
+        "reason_ar": "مسرطن — يتراكم في الأرز والخضروات الجذرية"
+      },
+      {
+        "parameter": "الزئبق Hg",
+        "limit_ar": "أقل من 0.001 mg/L",
+        "reason_ar": "سمية عصبية شديدة"
+      },
+      {
+        "parameter": "البوم B",
+        "limit_ar": "أقل من 1 mg/L للحساسين",
+        "reason_ar": "سمية للنبات عند التركيزات العالية"
+      },
+      {
+        "parameter": "النحاس Cu",
+        "limit_ar": "أقل من 0.2 mg/L",
+        "reason_ar": "يؤثر على التربة والأحياء الدقيقة"
+      },
+      {
+        "parameter": "المبيدات الكلورية العضوية",
+        "limit_ar": "غائبة عملياً أو أقل من 0.0002 mg/L",
+        "reason_ar": "مسرطنة وتتراكم في السلسلة الغذائية"
+      }
+    ],
+    "nile_water_note_ar": "مياه نهر النيل والترع في مصر: تتحسن معالجتها — لكن الملوثات الصناعية والبيولوجية موجودة خاصة في مصب الترع وعند المصارف الصناعية — الفحص الدوري إلزامي",
+    "water_treatment_methods": [
+      {
+        "method_ar": "الكلورة",
+        "active_agent": "Sodium hypochlorite / Chlorine gas",
+        "dose_ar": "1-3 ppm كلور حر للري — 50-200 ppm لغسيل المنتجات",
+        "effectiveness_ar": "ممتاز للبكتيريا — متوسط للفيروسات — ضعيف للطفيليات",
+        "cost": "منخفض",
+        "notes_ar": "أكثر الطرق شيوعاً واقتصادية — راقب الكلور المتبقي"
+      },
+      {
+        "method_ar": "أشعة UV",
+        "dose_ar": "لا تركيز كيميائي — يعتمد على وقت التعرض",
+        "effectiveness_ar": "ممتاز للبكتيريا والفيروسات والطفيليات",
+        "cost": "متوسط إلى مرتفع",
+        "notes_ar": "لا تأثير للمياه العكرة — يحتاج ترشيح قبله"
+      },
+      {
+        "method_ar": "حمض البيروكسي أسيتيك PAA",
+        "dose_ar": "80-100 ppm لغسيل المنتجات",
+        "effectiveness_ar": "ممتاز — مقبول في الزراعة العضوية",
+        "cost": "متوسط",
+        "notes_ar": "لا رائحة الكلور — آمن للغذاء — مفضل للخضروات الطازجة"
+      },
+      {
+        "method_ar": "الأوزون O₃",
+        "dose_ar": "0.5-2 ppm",
+        "effectiveness_ar": "ممتاز لكل الكائنات الدقيقة",
+        "cost": "مرتفع",
+        "notes_ar": "يتحلل بسرعة — لا متبقيات — مثالي للتصنيع الغذائي"
+      },
+      {
+        "method_ar": "الترشيح الدقيق",
+        "types_ar": "ميكروفلترة — ألتراফلترة — نانوفلترة — تناضح عكسي RO",
+        "effectiveness_ar": "يزيل الجسيمات والطفيليات والبكتيريا (حسب نوع الفلتر)",
+        "cost": "متوسط إلى مرتفع",
+        "notes_ar": "يُستخدم قبل الكلورة أو UV لتحسين فعاليتها"
+      },
+      {
+        "method_ar": "أحواض الترسيب والمعالجة الطبيعية",
+        "effectiveness_ar": "يقلل الحمل الميكروبي 90-99%",
+        "cost": "منخفض جداً",
+        "notes_ar": "بطيء — يحتاج مساحة — مناسب قبل الطرق الأخرى"
+      }
+    ],
+    "testing_frequency_ar": {
+      "globalgap": "فحص سنوي على الأقل — فحص إضافي عند الشك",
+      "leafy_vegetables": "كل 3 أشهر — أو قبل كل دورة إنتاجية",
+      "strawberry": "كل دورة إنتاجية",
+      "tree_crops": "سنوياً",
+      "parameters_minimum_ar": [
+        "E. coli الكلي",
+        "pH",
+        "EC",
+        "نترات"
+      ]
+    }
+  },
+  "heavy_metals": {
+    "title_ar": "الملوثات والمعادن الثقيلة في التربة والغذاء",
+    "icon": "☠️",
+    "description_ar": "معادن ثقيلة تتراكم في التربة ومياه الري والأسمدة ثم تنتقل للغذاء وتضر بالصحة بشكل تراكمي على المدى الطويل",
+    "metals": [
+      {
+        "metal_ar": "رصاص Pb",
+        "sources_ar": [
+          "عوادم سيارات قرب الطرق الرئيسية",
+          "مبيدات ومواد زراعية قديمة",
+          "مياه ري ملوثة صناعياً",
+          "دهانات قديمة في المنشآت",
+          "رماد المحارق القريبة"
+        ],
+        "health_effects_ar": {
+          "chronic_ar": "سمية شديدة للجهاز العصبي المركزي — ضرر دائم للدماغ عند الأطفال",
+          "hematopoietic_ar": "يثبط تكوين الهيموجلوبين — أنيميا",
+          "renal_ar": "تلف كلوي مزمن",
+          "cancer_ar": "Group 2A — محتمل مسرطن"
+        },
+        "eu_food_limits": {
+          "leafy_veg": "0.3 mg/kg",
+          "root_veg": "0.1 mg/kg",
+          "fruit": "0.1 mg/kg",
+          "cereals": "0.2 mg/kg"
+        },
+        "high_risk_crops_ar": [
+          "خضروات ورقية قرب الطرق",
+          "جذور وبصيلات"
+        ],
+        "soil_remediation_ar": "تجيير التربة يقلل تحرك الرصاص — زراعة نباتات ماصة للرصاص (Phytoremediation)"
+      },
+      {
+        "metal_ar": "كاديوم Cd",
+        "sources_ar": [
+          "سوبر فوسفات منخفض الجودة (أكبر مصدر في الزراعة)",
+          "مياه ري ملوثة صناعياً",
+          "حمأة الصرف الصحي",
+          "مبيدات فطرية قديمة تحتوي Cd"
+        ],
+        "health_effects_ar": {
+          "renal_ar": "يتراكم في الكلى — تلف أنبوبي كلوي مزمن — مرض Itai-itai في اليابان",
+          "bone_ar": "يتنافس مع الكالسيوم — هشاشة عظام",
+          "cancer_ar": "Group 1 — مسرطن مؤكد — سرطان الرئة والكلى",
+          "note_ar": "نصف عمر الكاديوم في الجسم: 10-30 سنة — تراكم خطير جداً"
+        },
+        "eu_food_limits": {
+          "cereals": "0.1 mg/kg",
+          "leafy_veg": "0.2 mg/kg",
+          "root_veg": "0.1 mg/kg",
+          "potatoes": "0.1 mg/kg"
+        },
+        "prevention_ar": [
+          "استخدام سوبر فوسفات منخفض الكاديوم — تحقق من المواصفات",
+          "فحص الأسمدة العضوية من مصادر خارجية",
+          "رفع pH التربة فوق 6.5 يقلل امتصاص الكاديوم"
+        ]
+      },
+      {
+        "metal_ar": "زرنيخ As",
+        "sources_ar": [
+          "مياه جوفية طبيعية في مناطق معينة",
+          "مبيدات ومواد حافظة قديمة",
+          "تلوث صناعي"
+        ],
+        "health_effects_ar": {
+          "cancer_ar": "Group 1 — مسرطن مؤكد — سرطان جلد ورئة وكلى ومثانة",
+          "acute_ar": "تسمم حاد عند التعرض لكميات كبيرة",
+          "chronic_ar": "مرض الجلد (Arsenicosis) — أضرار عصبية"
+        },
+        "eu_food_limits": {
+          "water": "0.01 mg/L",
+          "rice": "0.2 mg/kg",
+          "baby_rice": "0.1 mg/kg"
+        },
+        "high_risk_ar": "الأرز يمتص الزرنيخ بكفاءة عالية بسبب ظروف الغمر — خاصة في التربة الحاوية على الزرنيخ",
+        "prevention_ar": [
+          "فحص المياه الجوفية قبل استخدامها للري",
+          "نظام ري الأرز التناوبي يقلل امتصاص الزرنيخ"
+        ]
+      },
+      {
+        "metal_ar": "زئبق Hg",
+        "sources_ar": [
+          "تلوث صناعي وبحري",
+          "مبيدات فطرية قديمة تحتوي زئبق (محظورة)",
+          "أحراق النفايات"
+        ],
+        "health_effects_ar": {
+          "neuro_ar": "سمية شديدة للجهاز العصبي المركزي — اضطرابات حركية وعقلية",
+          "methylmercury_ar": "الميثيل زئبق الأشد خطراً — يتراكم في الأسماك",
+          "fetal_ar": "خطر شديد على نمو الجنين وعقل الطفل"
+        },
+        "eu_food_limits": {
+          "fish": "0.5 mg/kg",
+          "predatory_fish": "1 mg/kg"
+        },
+        "high_risk_ar": "يتركز في الأسماك المفترسة — التلوث الزراعي نادر لكن ممكن قرب المناطق الصناعية"
+      },
+      {
+        "metal_ar": "نيكل Ni",
+        "sources_ar": [
+          "تلوث صناعي",
+          "أسمدة فوسفاتية",
+          "بعض مياه الري"
+        ],
+        "health_effects_ar": {
+          "allergy_ar": "تسبب حساسية جلدية — أكثر المعادن تسبباً في الحساسية",
+          "cancer_ar": "Group 1 — مسرطن مؤكد للرئة عند العمال"
+        },
+        "eu_food_limits": {
+          "various": "20-150 μg/kg حسب نوع الغذاء"
+        }
+      },
+      {
+        "metal_ar": "كروم Cr",
+        "sources_ar": [
+          "مياه ري ملوثة صناعياً",
+          "حمأة الصرف الصحي",
+          "تلوث صناعي"
+        ],
+        "health_effects_ar": {
+          "cr6_ar": "الكروم السداسي Cr(VI) مسرطن مؤكد — الثلاثي Cr(III) أقل خطورةً",
+          "cancer_ar": "Group 1 للكروم السداسي"
+        }
+      }
+    ],
+    "soil_testing_ar": {
+      "when_ar": "عند زراعة قرب مناطق صناعية أو طرق مزدحمة أو أراضٍ صناعية سابقة — قبل التقدم لـ GlobalGAP",
+      "frequency_ar": "كل 3-5 سنوات في الأراضي المعرضة للخطر",
+      "parameters_ar": [
+        "رصاص Pb",
+        "كاديوم Cd",
+        "زرنيخ As",
+        "زئبق Hg",
+        "نيكل Ni",
+        "كروم Cr"
+      ],
+      "labs_ar": "مختبرات معتمدة: SGS, Bureau Veritas, مختبرات وزارة الزراعة المصرية"
+    }
+  },
+  "packaging_labeling": {
+    "title_ar": "التعبئة والتغليف والتسمية",
+    "icon": "🏷️",
+    "grading_standards": {
+      "title_ar": "معايير التدريج والفرز الدولية",
+      "eu_unece_classes": [
+        {
+          "class": "Extra / Class Extra",
+          "description_ar": "درجة ممتازة — أعلى جودة — شكل مثالي — لا عيوب — أسعار أعلى 30-50% من Class I"
+        },
+        {
+          "class": "Class I",
+          "description_ar": "جودة جيدة — عيوب طفيفة جداً مسموحة — معظم صادرات مصر"
+        },
+        {
+          "class": "Class II",
+          "description_ar": "جودة مقبولة — عيوب أكثر — يُقبل في بعض الأسواق وللتصنيع"
+        },
+        {
+          "class": "Class III / Industrial",
+          "description_ar": "للتصنيع الغذائي فقط — لا يصلح للبيع الطازج"
+        }
+      ],
+      "grading_parameters_ar": [
+        "الحجم والوزن — يجب تجانسهما في نفس الصندوق",
+        "اللون — يجب مطابقة لون الصنف",
+        "الشكل — لا تشوه ولا تقرح ولا كدمات",
+        "العيوب السطحية — ضمن الحدود المسموحة حسب الدرجة",
+        "درجة النضج — موحدة في نفس الصندوق",
+        "الحشرات والأمراض — يجب غيابها التام",
+        "الرائحة — طبيعية بدون أي رائحة غريبة",
+        "النظافة — خالٍ من الأتربة والمواد الغريبة"
+      ]
+    },
+    "packaging_materials": [
+      {
+        "material_ar": "صناديق الكرتون المموج (Corrugated Carton)",
+        "properties_ar": "خفيف — قابل للتكديس — قابل للطباعة — قابل للتدوير",
+        "uses_ar": [
+          "فاكهة وخضروات عامة",
+          "تصدير الطماطم والبطاطس والبصل"
+        ],
+        "standards_ar": "مقاومة ضغط لا تقل عن 250 kg/m² للتكديس",
+        "notes_ar": "الأكثر استخداماً في تصدير الخضروات المصرية"
+      },
+      {
+        "material_ar": "صناديق البلاستيك المثقبة (Plastic Crates)",
+        "properties_ar": "متينة — قابلة لإعادة الاستخدام — تهوية جيدة",
+        "uses_ar": [
+          "فراولة",
+          "عنب",
+          "خضروات ورقية"
+        ],
+        "notes_ar": "تعقيمها قبل كل استخدام إلزامي — تتراكم فيها الأمراض إذا لم تُنظف"
+      },
+      {
+        "material_ar": "شبك البلاستيك (Net Bags)",
+        "properties_ar": "اقتصادية — تهوية ممتازة — خفيفة الوزن",
+        "uses_ar": [
+          "بصل",
+          "ثوم",
+          "برتقال",
+          "ليمون"
+        ],
+        "notes_ar": "مناسبة للمنتجات ذات القشرة الصلبة"
+      },
+      {
+        "material_ar": "أكياس بولي إيثيلين مثقبة (Perforated PE Bags)",
+        "properties_ar": "تحافظ على الرطوبة — اقتصادية",
+        "uses_ar": [
+          "خضروات ورقية",
+          "جرجير",
+          "سبانخ"
+        ],
+        "notes_ar": "الثقوب ضرورية — بدونها يتراكم CO₂ ويتلف المنتج"
+      },
+      {
+        "material_ar": "التغليف بالجو المعدل MAP",
+        "properties_ar": "يطيل العمر 2-3 أضعاف — يحافظ على النضارة",
+        "gas_mix_ar": "خضار ورقية: 5% O₂ + 10% CO₂ | فراولة: 5% O₂ + 15-20% CO₂",
+        "uses_ar": [
+          "جرجير وأعشاب",
+          "فراولة",
+          "خضروات مقطعة",
+          "سلطات جاهزة"
+        ],
+        "notes_ar": "الأفضل للخضروات الطازجة المصدرة لأوروبا"
+      },
+      {
+        "material_ar": "علب الفوم والبلاستيك الشفاف",
+        "uses_ar": [
+          "فراولة فاخرة",
+          "طماطم كرز",
+          "خضروات ممتازة للبيع المباشر"
+        ],
+        "notes_ar": "تعبئة للمستهلك النهائي — ارتفاع سعر التعبئة = ارتفاع السعر"
+      }
+    ],
+    "labeling_requirements": {
+      "mandatory_eu_ar": [
+        "اسم المنتج بوضوح",
+        "بلد المنشأ: Egypt / Made in Egypt",
+        "اسم وعنوان المُعبّئ أو المُصدِّر",
+        "درجة الجودة (Extra / Class I / Class II)",
+        "الوزن الصافي بالكيلوجرام",
+        "تاريخ الحصاد أو التعبئة",
+        "ظروف التخزين الموصى بها",
+        "رقم الدُّفعة (LOT Number) للتتبع",
+        "Barcode/EAN"
+      ],
+      "optional_value_add_ar": [
+        "شهادة GlobalGAP مع رقم GGN",
+        "شهادة عضوية مع رقم شهادة العضوية",
+        "QR Code للتتبع الكامل",
+        "معلومات التغذية",
+        "وصفات الطبخ"
+      ],
+      "prohibited_ar": [
+        "معلومات كاذبة أو مضللة",
+        "ادعاءات صحية غير مثبتة",
+        "تظليل عن المنشأ أو الجودة"
+      ]
+    },
+    "traceability": {
+      "title_ar": "نظام التتبع الكامل (Traceability)",
+      "definition_ar": "القدرة على تتبع أي منتج غذائي من المستهلك وصولاً للحقل الأصلي خلال 4 ساعات — مطلوب في GlobalGAP وتشريعات EU",
+      "why_important_ar": [
+        "عند وجود مشكلة صحية — تحديد المصدر بسرعة",
+        "سحب المنتجات المشكوك فيها بدقة بدلاً من سحب الكل",
+        "حماية المصدر الملتزم من تبعات المخالف",
+        "بناء الثقة مع المشتري"
+      ],
+      "system_components_ar": [
+        {
+          "component_ar": "Farm ID",
+          "description_ar": "رقم تسجيل الحقل في GlobalGAP أو السجل الحكومي"
+        },
+        {
+          "component_ar": "Field Map",
+          "description_ar": "خريطة تحدد كل حقل بمساحته وموقعه"
+        },
+        {
+          "component_ar": "Harvest Record",
+          "description_ar": "تاريخ الحصاد + الكمية + الحقل + العمال"
+        },
+        {
+          "component_ar": "Batch/LOT Number",
+          "description_ar": "رقم فريد على كل صندوق ممكن تتبعه"
+        },
+        {
+          "component_ar": "Dispatch Record",
+          "description_ar": "من أُرسل إليه + تاريخ الشحن + رقم الدفعة"
+        }
+      ],
+      "simple_system_ar": "أبسط نظام يعمل: رقم الحقل + تاريخ الحصاد = رقم الدفعة المكتوب على كل صندوق — مع الاحتفاظ بنسخة في الدفتر وصورة على الهاتف"
+    }
+  },
+  "organic_farming": {
+    "title_ar": "الزراعة العضوية ومعايير الشهادة",
+    "icon": "🌿",
+    "market_overview_ar": {
+      "global_market_ar": "السوق العالمي للغذاء العضوي: فوق 180 مليار دولار سنوياً — ينمو بمعدل 10-15% سنوياً",
+      "eu_market_ar": "أوروبا: أكبر سوق عضوي — 15% من مساحة الأراضي الزراعية عضوية (هدف 2030: 25%)",
+      "price_premium_ar": "المنتج العضوي يباع بسعر أعلى 30-100% من التقليدي",
+      "egypt_status_ar": "مصر تمتلك حوالي 500,000 فدان زراعة عضوية معتمدة — صادرات تفوق 300 مليون دولار سنوياً"
+    },
+    "principles_ar": [
+      "لا مبيدات كيميائية تركيبية",
+      "لا أسمدة كيميائية تركيبية (ازوت، فوسفات، بوتاس صناعي)",
+      "لا كائنات محورة وراثياً (GMO)",
+      "الحفاظ على صحة التربة وتحسينها بالطرق الطبيعية",
+      "الدورة الزراعية إلزامية",
+      "دعم التنوع الحيوي والتوازن البيئي",
+      "رفاهية الحيوان (للإنتاج الحيواني)"
+    ],
+    "conversion_period_ar": {
+      "annual_crops": "سنتان",
+      "perennial_crops": "ثلاث سنوات",
+      "during_conversion_ar": "يُطبق كل المعايير لكن لا يُباع كـ 'عضوي' — يُباع كـ 'في التحول إلى العضوي'",
+      "land_requirement_ar": "الأرض يجب أن تكون خالية من المواد الكيميائية المحظورة طوال فترة التحول"
+    },
+    "allowed_inputs": {
+      "fertilizers_ar": [
+        "سماد حيواني (بلدي) متخمر جيداً — يجب اختبار E. coli",
+        "كمبوست نباتي وحيواني",
+        "رايزوبيوم وبكتيريا تثبيت النيتروجين",
+        "ميكوريزا وأسمدة حيوية",
+        "هيوميك أسيد وفولفيك أسيد",
+        "طحين العظام وطحين الأسماك (حسب المواصفة)",
+        "كبريت معدني طبيعي",
+        "روك فوسفات (محدود)",
+        "كبريتات البوتاسيوم الطبيعية",
+        "مستخلصات الأعشاب البحرية"
+      ],
+      "pest_disease_control_ar": [
+        "Bacillus thuringiensis Bt — أمراض حشرية",
+        "Spinosad — مشتق طبيعي فعال",
+        "Beauveria bassiana وMetarhizium — فطريات ممرضة للحشرات",
+        "مستخلص النيم Azadirachtin",
+        "بيرثرين طبيعي (Pyrethrin) — لا الاصطناعي",
+        "نحاسيات محدودة (Copper hydroxide, Bordeaux mixture)",
+        "كبريت رش وكبريت ميكروني",
+        "مصائد الفيرومون الحشرية",
+        "لاصقات حشرية",
+        "Bacillus subtilis لمكافحة الأمراض الفطرية",
+        "Trichoderma لمكافحة أمراض التربة"
+      ],
+      "prohibited_ar": [
+        "كل المبيدات الكيميائية التركيبية",
+        "الأسمدة الكيميائية التركيبية",
+        "GMO وأي مشتقاتها",
+        "الهرمونات المصنعة",
+        "المضادات الحيوية للوقاية",
+        "الطين التعقيمي الاصطناعي",
+        "الإشعاع المؤين"
+      ]
+    },
+    "certification_bodies_egypt": [
+      {
+        "name": "IMO (Institute for Marketecology)",
+        "origin": "سويسرية",
+        "egypt_office": "نعم",
+        "accepts_ar": "EU Organic, USDA Organic, JAS, IMOcert",
+        "website": "www.imo.ch"
+      },
+      {
+        "name": "Control Union",
+        "origin": "هولندية",
+        "egypt_office": "نعم",
+        "accepts_ar": "EU Organic, USDA NOP, GlobalGAP, Rainforest Alliance",
+        "website": "www.controlunion.com"
+      },
+      {
+        "name": "CERES",
+        "origin": "ألمانية",
+        "egypt_office": "نعم",
+        "accepts_ar": "EU Organic, USDA NOP, JAS",
+        "website": "www.ceres-cert.com"
+      },
+      {
+        "name": "Egyptian Center for Organic Agriculture (ECOA)",
+        "origin": "مصرية",
+        "egypt_office": "نعم",
+        "accepts_ar": "الشهادة المصرية + معادلة بعض الشهادات الدولية",
+        "website": "ecoa.org.eg"
+      }
+    ]
+  },
+  "worker_safety": {
+    "title_ar": "صحة وسلامة العمال الزراعيين",
+    "icon": "👷",
+    "importance_ar": "GlobalGAP ومعايير التصدير تشترط بيئة عمل آمنة وصحية للعمال — هذا حق إنساني وشرط تجاري",
+    "ppe_requirements": {
+      "title_ar": "معدات الحماية الشخصية عند التعامل مع المبيدات",
+      "mandatory_ar": [
+        "قفازات مطاط أو نيتريل — يجب تغييرها عند التمزق",
+        "نظارات واقية مغلقة أو شيلد وجه كامل",
+        "سترة أو ملابس واقية طويلة الأكمام",
+        "بنطلون طويل",
+        "أحذية مطاطية طويلة",
+        "كمامة — N95 للمبيدات الخطرة — مع صمام للراحة",
+        "غطاء رأس"
+      ],
+      "after_spraying_ar": [
+        "خلع الملابس الواقية خارج المنزل",
+        "غسل الملابس المستخدمة منفصلة فوراً",
+        "استحمام كامل قبل مغادرة الحقل أو الأكل",
+        "لا تأكل أو تشرب أو تدخن أثناء الرش وبعده مباشرة"
+      ],
+      "medical_surveillance_ar": "فحص دوري لمستوى إنزيم الكولينستيراز لعمال رش الفوسفات العضوي — نقصه يدل على تسمم"
+    },
+    "first_aid_pesticide_poisoning_ar": {
+      "general_ar": "اتصل بطوارئ الطب الفوراً — احتفظ بعبوة المبيد لإظهارها للطبيب",
+      "skin_ar": "اخلع الملابس فوراً — اغسل بالماء والصابون لمدة 15-20 دقيقة",
+      "eyes_ar": "اغسل بمياه جارية نظيفة لمدة 15-20 دقيقة — لا تفرك العين",
+      "ingestion_ar": "لا تحاول الإقياء — اتصل بمركز السموم فوراً",
+      "inhalation_ar": "أخرج المصاب للهواء النقي فوراً — تنفس اصطناعي إذا لزم",
+      "egypt_poison_center": "مركز علاج التسمم — مستشفى قصر العيني — القاهرة"
+    },
+    "worker_welfare_globalgap": [
+      "مياه شرب نظيفة متاحة في الحقل طوال اليوم",
+      "مراحيض صحية نظيفة قريبة من الحقل (1 لكل 20 عامل)",
+      "أماكن لغسل الأيدي بالصابون قرب المراحيض",
+      "حقيبة إسعاف أولي مكتملة في الحقل",
+      "تدريب سنوي على استخدام المبيدات بأمان",
+      "سجلات تدريب موقعة من كل عامل",
+      "لا عمالة أطفال تحت 15 سنة في الأعمال الخطرة",
+      "أجر عادل وظروف عمل قانونية",
+      "تأمين اجتماعي وصحي"
+    ],
+    "re_entry_intervals_ar": {
+      "definition_ar": "الوقت الواجب انتظاره بعد الرش قبل دخول الحقل بدون معدات حماية كاملة",
+      "examples": [
+        {
+          "group_ar": "فوسفات عضوي (Organophosphates)",
+          "rei": "24-48 ساعة",
+          "examples": "Chlorpyrifos, Dimethoate, Malathion"
+        },
+        {
+          "group_ar": "كاربامات",
+          "rei": "12-48 ساعة",
+          "examples": "Carbaryl, Carbofuran"
+        },
+        {
+          "group_ar": "بيريثرويد",
+          "rei": "12-24 ساعة",
+          "examples": "Cypermethrin, Lambda-cyhalothrin"
+        },
+        {
+          "group_ar": "نيونيكوتينويد",
+          "rei": "12-24 ساعة",
+          "examples": "Imidacloprid, Acetamiprid"
+        },
+        {
+          "group_ar": "مبيدات فطرية جهازية",
+          "rei": "24-48 ساعة",
+          "examples": "Tebuconazole, Azoxystrobin"
+        },
+        {
+          "group_ar": "نحاسيات",
+          "rei": "24-48 ساعة",
+          "examples": "Copper hydroxide, Bordeaux"
+        },
+        {
+          "group_ar": "كبريت رش",
+          "rei": "24 ساعة",
+          "examples": "Sulfur"
+        },
+        {
+          "group_ar": "مبيدات بيولوجية Bt/Spinosad",
+          "rei": "4-8 ساعات",
+          "examples": "Bt, Spinosad"
+        },
+        {
+          "group_ar": "مبيدات نباتية",
+          "rei": "0-4 ساعات",
+          "examples": "Pyrethrin, Neem/Azadirachtin"
+        }
+      ]
+    }
+  },
+  "farm_records": {
+    "title_ar": "التوثيق والسجلات الزراعية",
+    "icon": "📋",
+    "importance_ar": "السجلات ليست بيروقراطية — هي أداة لحماية المزارع قانونياً وتحسين قراراته وفتح أسواق التصدير وتحقيق أعلى الأسعار",
+    "required_records": [
+      {
+        "record_ar": "سجل العمليات الزراعية اليومي",
+        "what_to_record_ar": [
+          "تاريخ العملية",
+          "نوع العملية (حرث، زراعة، ري، تسميد، رش، حصاد)",
+          "الحقل أو المنطقة",
+          "من قام بها"
+        ],
+        "frequency_ar": "يومي",
+        "required_for_ar": [
+          "GlobalGAP",
+          "HACCP",
+          "تتبع المنتج"
+        ]
+      },
+      {
+        "record_ar": "سجل المبيدات",
+        "what_to_record_ar": [
+          "تاريخ الرش",
+          "اسم المبيد التجاري",
+          "المادة الفعالة",
+          "رقم تسجيل المبيد",
+          "الجرعة المستخدمة (مل أو جم/لتر + الكمية الكلية)",
+          "المحصول والحقل المعالج",
+          "سبب الرش (المرض أو الآفة)",
+          "PHI (فترة الأمان)",
+          "تاريخ أقرب حصاد مسموح",
+          "من قام بالرش"
+        ],
+        "frequency_ar": "عند كل رشة — الأهم والأخطر",
+        "legal_note_ar": "هذا السجل مطلوب قانونياً في التصدير — تزوير بياناته جريمة",
+        "required_for_ar": [
+          "GlobalGAP",
+          "تصدير EU",
+          "تصدير خليج",
+          "HACCP"
+        ]
+      },
+      {
+        "record_ar": "سجل التسميد",
+        "what_to_record_ar": [
+          "تاريخ التسميد",
+          "نوع السماد (اسم تجاري + مادة فعالة)",
+          "الكمية",
+          "طريقة التطبيق (تنقيط/رش/إضافة)",
+          "الحقل"
+        ],
+        "frequency_ar": "عند كل عملية تسميد",
+        "required_for_ar": [
+          "GlobalGAP",
+          "الزراعة العضوية"
+        ]
+      },
+      {
+        "record_ar": "سجل الري",
+        "what_to_record_ar": [
+          "تاريخ الري",
+          "مصدر المياه",
+          "الكمية أو المدة",
+          "الحقل",
+          "ملاحظات جودة الماء"
+        ],
+        "frequency_ar": "أسبوعي أو عند كل رية",
+        "required_for_ar": [
+          "GlobalGAP"
+        ]
+      },
+      {
+        "record_ar": "سجل الحصاد",
+        "what_to_record_ar": [
+          "تاريخ الحصاد",
+          "الحقل",
+          "الكمية المحصودة",
+          "درجة الجودة",
+          "رقم الدفعة (LOT)",
+          "المشتري أو الوجهة",
+          "ظروف النقل"
+        ],
+        "frequency_ar": "عند كل حصاد",
+        "required_for_ar": [
+          "GlobalGAP",
+          "تتبع المنتج",
+          "HACCP"
+        ]
+      },
+      {
+        "record_ar": "سجل تدريب العمال",
+        "what_to_record_ar": [
+          "أسماء العمال المتدربين",
+          "تاريخ التدريب",
+          "موضوع التدريب",
+          "المدرب",
+          "توقيعات الحاضرين"
+        ],
+        "frequency_ar": "عند كل تدريب — سنوياً على الأقل",
+        "required_for_ar": [
+          "GlobalGAP",
+          "IFS",
+          "BRC"
+        ]
+      },
+      {
+        "record_ar": "سجل نتائج التحاليل",
+        "what_to_record_ar": [
+          "تحليل مياه الري",
+          "تحليل التربة",
+          "فحص متبقيات المبيدات",
+          "تحليل السماد العضوي",
+          "أي تحاليل ميكروبيولوجية"
+        ],
+        "frequency_ar": "عند إجراء كل تحليل",
+        "required_for_ar": [
+          "GlobalGAP",
+          "HACCP",
+          "ISO 22000"
+        ]
+      },
+      {
+        "record_ar": "سجل الحوادث والشكاوى",
+        "what_to_record_ar": [
+          "تاريخ الحادثة أو الشكوى",
+          "الوصف",
+          "الإجراء التصحيحي",
+          "من أبلغ ومن تصرف"
+        ],
+        "frequency_ar": "عند كل حادثة",
+        "required_for_ar": [
+          "GlobalGAP",
+          "ISO 22000",
+          "BRC"
+        ]
+      }
+    ],
+    "digital_solutions_ar": [
+      {
+        "tool": "HefnoPlant App",
+        "description_ar": "سجلات رقمية متكاملة مصممة للمزارع المصري — باللغة العربية",
+        "type": "تطبيق موبايل"
+      },
+      {
+        "tool": "Excel / Google Sheets",
+        "description_ar": "قوالب جاهزة يمكن تخصيصها — مجانية وسهلة",
+        "type": "جداول بيانات"
+      },
+      {
+        "tool": "Farmote",
+        "description_ar": "تطبيق إدارة مزرعة متكامل",
+        "type": "SaaS"
+      },
+      {
+        "tool": "AgriWebb",
+        "description_ar": "متخصص في الإنتاج الحيواني والمزارع المتكاملة",
+        "type": "SaaS"
+      },
+      {
+        "tool": "Agrivi",
+        "description_ar": "نظام إدارة مزرعة شامل",
+        "type": "SaaS"
+      }
+    ]
+  },
+  "export_requirements": {
+    "title_ar": "اشتراطات التصدير من مصر",
+    "icon": "🚢",
+    "eu_requirements": {
+      "title_ar": "متطلبات التصدير للاتحاد الأوروبي",
+      "mandatory_documents_ar": [
+        {
+          "document_ar": "شهادة الصحة النباتية (Phytosanitary Certificate)",
+          "issuer_ar": "هيئة الصحة النباتية — وزارة الزراعة المصرية",
+          "purpose_ar": "تثبت أن المنتج خالٍ من الآفات والأمراض المحجورة"
+        },
+        {
+          "document_ar": "شهادة GlobalGAP أو ما يعادلها",
+          "issuer_ar": "جهات تدقيق معتمدة دولياً",
+          "purpose_ar": "تثبت التزام المزرعة بالممارسات الزراعية الجيدة"
+        },
+        {
+          "document_ar": "تقرير تحليل متبقيات المبيدات",
+          "issuer_ar": "مختبر معتمد بـ ISO 17025",
+          "purpose_ar": "التحقق من أن المتبقيات ضمن حدود MRL الأوروبية"
+        },
+        {
+          "document_ar": "فاتورة تجارية (Commercial Invoice)",
+          "issuer_ar": "المصدر",
+          "purpose_ar": "تفاصيل الصفقة التجارية"
+        },
+        {
+          "document_ar": "بوليصة الشحن (Bill of Lading / Air Waybill)",
+          "issuer_ar": "شركة الشحن",
+          "purpose_ar": "إثبات الشحن والملكية"
+        },
+        {
+          "document_ar": "قائمة التعبئة (Packing List)",
+          "issuer_ar": "المصدر",
+          "purpose_ar": "تفاصيل محتوى كل صندوق"
+        },
+        {
+          "document_ar": "شهادة المنشأ EUR.1 أو Form A",
+          "issuer_ar": "غرفة التجارة أو الجمارك المصرية",
+          "purpose_ar": "إثبات المنشأ المصري للاستفادة من اتفاقية الشراكة"
+        }
+      ],
+      "high_risk_products_ar": [
+        "فراولة — أعلى نسبة RASFF",
+        "عنب — تنبيهات متكررة",
+        "طماطم كرز — رقابة مشددة",
+        "فلفل — متبقيات متكررة",
+        "جرجير وبقدونس — صعوبة مقاومة الآفات بدون مبيدات",
+        "ورق العنب — منتج مخاطر عالية"
+      ],
+      "rasff_alerts_egypt_ar": "مصر على قائمة المراقبة المعززة في EU — أي مخالفة في شحنة تؤدي لفحص 50-100% من الشحنات التالية — حافظ على سجلك النظيف",
+      "main_entry_ports_ar": [
+        "روتردام — هولندا (الأكبر في أوروبا)",
+        "هامبورج — ألمانيا",
+        "مارسيليا — فرنسا",
+        "لانكوين — بلجيكا"
+      ]
+    },
+    "gcc_requirements": {
+      "title_ar": "متطلبات التصدير لدول الخليج",
+      "mandatory_documents_ar": [
+        "شهادة صحة نباتية",
+        "شهادة منشأ من غرفة التجارة",
+        "فاتورة تجارية وبوليصة شحن",
+        "شهادة حلال (للمنتجات ذات الصلة)",
+        "تحليل متبقيات مبيدات (تطبيق متزايد)"
+      ],
+      "country_specifics": [
+        {
+          "country_ar": "المملكة العربية السعودية",
+          "authority": "SFDA",
+          "notes_ar": "الأصعب خليجياً — اشتراطات تسجيل منتج للمستحضرات الغذائية المعبأة"
+        },
+        {
+          "country_ar": "الإمارات",
+          "authority": "ESMA + MOH",
+          "notes_ar": "بوابة إعادة تصدير — أسهل استيراداً — تشدد متزايد"
+        },
+        {
+          "country_ar": "الكويت",
+          "authority": "PAFN",
+          "notes_ar": "تشدد متزايد — اشتراطات ملصقات عربية"
+        },
+        {
+          "country_ar": "قطر",
+          "authority": "MOPH",
+          "notes_ar": "متطلبات صحة غذاء صارمة — هيئة MOPH تفحص المستوردات"
+        },
+        {
+          "country_ar": "البحرين",
+          "authority": "NFSA",
+          "notes_ar": "أقل تشدداً — اتحاد جمركي مع السعودية"
+        }
+      ]
+    },
+    "egypt_main_exports": [
+      {
+        "product_ar": "بطاطس",
+        "markets_ar": [
+          "EU",
+          "خليج",
+          "روسيا"
+        ],
+        "season_ar": "يناير-أبريل",
+        "annual_volume_ar": "أكثر من 500,000 طن"
+      },
+      {
+        "product_ar": "فراولة",
+        "markets_ar": [
+          "EU",
+          "خليج"
+        ],
+        "season_ar": "نوفمبر-مارس",
+        "annual_volume_ar": "80,000+ طن"
+      },
+      {
+        "product_ar": "عنب",
+        "markets_ar": [
+          "EU",
+          "خليج",
+          "روسيا"
+        ],
+        "season_ar": "يونيو-أغسطس",
+        "annual_volume_ar": "150,000+ طن"
+      },
+      {
+        "product_ar": "برتقال وحمضيات",
+        "markets_ar": [
+          "EU",
+          "خليج",
+          "روسيا"
+        ],
+        "season_ar": "نوفمبر-مارس",
+        "annual_volume_ar": "أكبر مصدر للبرتقال في العالم"
+      },
+      {
+        "product_ar": "جرجير وبقدونس وأعشاب",
+        "markets_ar": [
+          "EU",
+          "خليج"
+        ],
+        "season_ar": "أكتوبر-مايو"
+      },
+      {
+        "product_ar": "ثوم",
+        "markets_ar": [
+          "EU",
+          "خليج",
+          "USA",
+          "آسيا"
+        ],
+        "season_ar": "أبريل-يوليو"
+      },
+      {
+        "product_ar": "بصل",
+        "markets_ar": [
+          "EU",
+          "خليج",
+          "آسيا"
+        ],
+        "season_ar": "أبريل-يوليو"
+      },
+      {
+        "product_ar": "نباتات طبية وعطرية",
+        "markets_ar": [
+          "EU",
+          "خليج",
+          "USA"
+        ],
+        "season_ar": "طوال السنة"
+      },
+      {
+        "product_ar": "فاصوليا خضراء",
+        "markets_ar": [
+          "EU"
+        ],
+        "season_ar": "أغسطس-نوفمبر"
+      }
+    ]
+  },
+  "quality_indicators": {
+    "title_ar": "مؤشرات الجودة التفصيلية لأهم المنتجات",
+    "icon": "📊",
+    "products": [
+      {
+        "product_ar": "برتقال وحمضيات",
+        "parameters": {
+          "size_ar": "قطر 53-100 مم — تدريج حسب الحجم (56/60/64/70/80)",
+          "color_ar": "برتقالي موحد — لا خضرة مرئية للتصدير — degreening عند الحاجة",
+          "brix_ar": "نسبة سكر (TSS): 8-14% Brix",
+          "acid_ar": "حموضة: 0.5-1.5%",
+          "ratio_brix_acid": "نسبة سكر:حموضة 8:1 أو أكثر = ناضج",
+          "juice_content_ar": "نسبة عصير: 40%+ للتصدير",
+          "defects_ar": "لا تقرح — لا حروق — لا عفن — لا تشوه شديد",
+          "eu_class1_ar": "عيوب جلد: لا تتجاوز 15% من السطح الكلي — لا تؤثر على اللب"
+        },
+        "maturity_index_ar": "نسبة TSS/TA = 8 أو أكثر = ناضج للتصدير",
+        "storage_ar": "3-9°م + رطوبة 85-90% + تهوية جيدة — 1-4 أشهر"
+      },
+      {
+        "product_ar": "فراولة",
+        "parameters": {
+          "size_ar": "قطر: 25+ مم للدرجة الأولى — 18+ مم للثانية",
+          "color_ar": "أحمر 75%+ من السطح الخارجي",
+          "firmness_ar": "صلابة: 15-25 N/cm² — تتحمل الشحن بدون تكسر",
+          "brix_ar": "سكر: 7% Brix كحد أدنى — أفضل 8-10%",
+          "shape_ar": "مخروطية منتظمة — كأس يانع أخضر ملتصق",
+          "defects_ar": "لا عفن رمادي — لا كدمات — لا ضغط — لا ثمار رخوة أو مجوفة",
+          "shelf_life_ar": "5-10 أيام عند 0-2°م و90-95% رطوبة"
+        },
+        "critical_note_ar": "تبريد فوري بعد الحصاد حرج جداً — كل ساعة تأخير تقلل العمر التسويقي بيوم كامل"
+      },
+      {
+        "product_ar": "عنب طازج للتصدير",
+        "parameters": {
+          "cluster_weight_ar": "200-500 جم للعنقود",
+          "berry_size_ar": "قطر الحبة: 18-26 مم حسب الصنف",
+          "brix_ar": "سكر: 16-18% Brix للتصدير — 14% كحد أدنى مطلق",
+          "color_ar": "موحد وكامل حسب الصنف",
+          "texture_ar": "حبات صلبة — لا رخاوة",
+          "defects_ar": "لا تساقط حبات — لا عفن رمادي — لا حروق شمس — لا تشقق",
+          "so2_treatment_ar": "SO₂ الشرائح لمنع Botrytis أثناء التخزين والشحن"
+        }
+      },
+      {
+        "product_ar": "بطاطس للتصدير",
+        "parameters": {
+          "size_ar": "وزن: 80-250 جم للتصدير الأوروبي",
+          "dry_matter_ar": "مادة جافة: 20-22% للقلي — 17-19% للسلق والبخار",
+          "defects_ar": "لا جرب — لا تخضير — لا بادرات — لا تشوه — لا جروح",
+          "storage_ar": "4-8°م للتصدير EU — تجنب الضوء تماماً",
+          "sugar_content_ar": "سكر مختزل أقل من 0.2% — يمنع التسمر عند القلي"
+        },
+        "grading_ar": "تدريج بالقطر أو الوزن — الاتساق مهم جداً"
+      },
+      {
+        "product_ar": "طماطم كرز للتصدير",
+        "parameters": {
+          "size_ar": "قطر: 20-40 مم (كرز) — يجب التجانس في الصندوق",
+          "color_ar": "أحمر موحد — أو الصنف المناسب",
+          "firmness_ar": "صلابة جيدة — لا تنكسر عند الضغط الخفيف",
+          "brix_ar": "سكر: 6-8% Brix كحد أدنى",
+          "defects_ar": "لا تشقق — لا عفن — لا آثار آفات — خالٍ من ذباب الفاكهة",
+          "pesticide_ar": "رقابة صارمة جداً في EU — انتبه جيداً لـ MRL"
+        }
+      },
+      {
+        "product_ar": "جرجير وأعشاب طازجة",
+        "parameters": {
+          "freshness_ar": "ناضر تماماً — لا اصفرار — لا ذبول — لا تلوث",
+          "cleanliness_ar": "خالٍ من الأتربة والحشرات والأجسام الغريبة",
+          "pesticide_ar": "متبقيات صفر عملياً — EU صارم جداً للخضروات الورقية",
+          "packaging_ar": "MAP (تغليف جو معدل) لإطالة العمر",
+          "shelf_life_ar": "7-14 يوم عند 0-2°م بـ MAP",
+          "cold_chain_ar": "تبريد فوري بعد الحصاد — Vacuum cooling الأفضل"
+        }
+      },
+      {
+        "product_ar": "ثوم مصري للتصدير",
+        "parameters": {
+          "size_ar": "قطر الرأس: 40-60 مم للتصدير الأوروبي",
+          "color_ar": "أبيض لامع — قشرة خارجية سليمة جافة",
+          "defects_ar": "لا عفن — لا بادرات — لا جروح — لا جذور طويلة",
+          "curing_ar": "تجفيف 3-4 أسابيع قبل التصدير إلزامي",
+          "storage_ar": "0°م + رطوبة 65-70% — 6-8 أشهر"
+        },
+        "market_advantage_ar": "الثوم المصري يتميز بحدة عالية وزيوت عطرية — مفضل في أسواق كثيرة"
+      }
+    ]
+  },
+  "checklists": {
+    "title_ar": "قوائم المراجعة السريعة",
+    "icon": "✅",
+    "pre_harvest": {
+      "title_ar": "قبل الحصاد",
+      "items_ar": [
+        {
+          "check_ar": "انتهت فترة أمان آخر مبيد (PHI) بالكامل + هامش 20%؟",
+          "critical": true
+        },
+        {
+          "check_ar": "لا أعراض أمراض نشطة على الثمار؟",
+          "critical": true
+        },
+        {
+          "check_ar": "حجم ولون الثمار مطابق للمواصفات المتفق عليها؟",
+          "critical": true
+        },
+        {
+          "check_ar": "درجة النضج مناسبة للسوق المستهدف؟",
+          "critical": true
+        },
+        {
+          "check_ar": "أدوات الحصاد (مقصات، عربات، صناديق) نظيفة ومعقمة؟",
+          "critical": false
+        },
+        {
+          "check_ar": "العمال يرتدون قفازات نظيفة وملابس مناسبة؟",
+          "critical": false
+        },
+        {
+          "check_ar": "لا عمال مرضى أو لديهم جروح مكشوفة يتعاملون مع المنتج؟",
+          "critical": false
+        },
+        {
+          "check_ar": "مياه غسيل أيدي العمال نظيفة ومتاحة؟",
+          "critical": false
+        },
+        {
+          "check_ar": "صناديق التعبئة نظيفة ومعقمة وجديدة أو مغسولة؟",
+          "critical": false
+        },
+        {
+          "check_ar": "سيارة التبريد جاهزة وتعمل بالدرجة الصحيحة؟",
+          "critical": true
+        },
+        {
+          "check_ar": "سجل الحصاد جاهز مع رقم الدفعة المخصص؟",
+          "critical": false
+        },
+        {
+          "check_ar": "سجلات المبيدات والتسميد محدثة؟",
+          "critical": false
+        }
+      ]
+    },
+    "pre_export": {
+      "title_ar": "قبل الشحن",
+      "items_ar": [
+        {
+          "check_ar": "شهادة الصحة النباتية صادرة وصالحة؟",
+          "critical": true
+        },
+        {
+          "check_ar": "تقرير تحليل متبقيات المبيدات من مختبر معتمد؟",
+          "critical": true
+        },
+        {
+          "check_ar": "النتيجة: كل المتبقيات ضمن حدود MRL لسوق الاستيراد؟",
+          "critical": true
+        },
+        {
+          "check_ar": "الدرجة (Class) ومواصفات المنتج مطابقة للتعاقد؟",
+          "critical": true
+        },
+        {
+          "check_ar": "التسمية (Label) صحيحة ومكتملة بكل البيانات المطلوبة؟",
+          "critical": true
+        },
+        {
+          "check_ar": "رقم الدفعة (LOT) مكتوب على كل صندوق؟",
+          "critical": true
+        },
+        {
+          "check_ar": "درجة حرارة الحاوية/الشاحنة مضبوطة بالدرجة الصحيحة؟",
+          "critical": true
+        },
+        {
+          "check_ar": "سجلات المزرعة الكاملة جاهزة للتفتيش المحتمل؟",
+          "critical": false
+        },
+        {
+          "check_ar": "شهادة GlobalGAP سارية وغير منتهية؟",
+          "critical": false
+        },
+        {
+          "check_ar": "وثائق الشحن كاملة (فاتورة + بوليصة + قائمة تعبئة + شهادة منشأ)؟",
+          "critical": true
+        },
+        {
+          "check_ar": "أُخطر المستورد بتفاصيل الشحنة؟",
+          "critical": false
+        }
+      ]
+    },
+    "globalgap_readiness": {
+      "title_ar": "جاهزية شهادة GlobalGAP",
+      "items_ar": [
+        {
+          "check_ar": "خريطة واضحة لكل الحقول مع أرقام وأسماء؟",
+          "critical": true
+        },
+        {
+          "check_ar": "سجل المبيدات محدث بكل الرشات؟",
+          "critical": true
+        },
+        {
+          "check_ar": "سجل التسميد محدث؟",
+          "critical": true
+        },
+        {
+          "check_ar": "نتيجة فحص مياه الري خلال آخر 12 شهر؟",
+          "critical": true
+        },
+        {
+          "check_ar": "مخزن مبيدات مقفول ومهوى ومنظم؟",
+          "critical": true
+        },
+        {
+          "check_ar": "حقيبة إسعاف أولي موجودة ومكتملة؟",
+          "critical": true
+        },
+        {
+          "check_ar": "مراحيض وغسيل أيدي للعمال؟",
+          "critical": true
+        },
+        {
+          "check_ar": "سجلات تدريب العمال على السلامة والمبيدات؟",
+          "critical": true
+        },
+        {
+          "check_ar": "قائمة المبيدات المسموحة والمحظورة معلقة في المخزن؟",
+          "critical": false
+        },
+        {
+          "check_ar": "إجراءات الطوارئ والحوادث موثقة؟",
+          "critical": false
+        },
+        {
+          "check_ar": "نتيجة تحليل متبقيات مبيدات من موسم سابق؟",
+          "critical": false
+        }
+      ]
+    }
+  },
+  "egypt_contacts": {
+    "title_ar": "جهات الاتصال المهمة في مصر",
+    "contacts": [
+      {
+        "name_ar": "هيئة سلامة الغذاء المصرية (EFSA)",
+        "role_ar": "الهيئة العليا لتنظيم سلامة الغذاء في مصر",
+        "website": "www.efsa.gov.eg"
+      },
+      {
+        "name_ar": "الإدارة المركزية للصحة النباتية",
+        "role_ar": "إصدار شهادات الصحة النباتية للتصدير",
+        "parent": "وزارة الزراعة"
+      },
+      {
+        "name_ar": "هيئة تنمية الصادرات الزراعية (HEIA)",
+        "role_ar": "دعم GlobalGAP وتطوير الصادرات",
+        "website": "heia.gov.eg"
+      },
+      {
+        "name_ar": "الجهاز المصري للتقييس والجودة (EOS)",
+        "role_ar": "المعايير والمواصفات الغذائية المصرية",
+        "website": "www.eos.org.eg"
+      },
+      {
+        "name_ar": "هيئة الرقابة على الصادرات والواردات (GOEIC)",
+        "role_ar": "فحص ومراقبة الصادرات والواردات"
+      },
+      {
+        "name_ar": "المركز المصري للتصدير (EPC)",
+        "role_ar": "دعم المصدرين المصريين",
+        "website": "www.epc.gov.eg"
+      },
+      {
+        "name_ar": "مختبر SGS Egypt",
+        "role_ar": "تحليل متبقيات مبيدات معتمد دولياً",
+        "accreditation": "ISO 17025"
+      },
+      {
+        "name_ar": "مختبر Bureau Veritas Egypt",
+        "role_ar": "تحليل شامل معتمد دولياً",
+        "accreditation": "ISO 17025"
+      },
+      {
+        "name_ar": "مركز علاج التسمم — مستشفى قصر العيني",
+        "role_ar": "طوارئ تسمم مبيدات",
+        "phone": "19789"
+      }
+    ]
+  },
+  "iso_standards_index": {
+    "title_ar": "دليل معايير ISO ذات الصلة بالغذاء",
+    "standards": [
+      {
+        "number": "ISO 22000:2018",
+        "title_ar": "نظام إدارة سلامة الغذاء",
+        "scope_ar": "لكل مراحل السلسلة الغذائية"
+      },
+      {
+        "number": "ISO 22002-1",
+        "title_ar": "برامج المتطلبات الأساسية — التصنيع الغذائي",
+        "scope_ar": "للمصانع الغذائية"
+      },
+      {
+        "number": "ISO 22002-3",
+        "title_ar": "برامج المتطلبات الأساسية — الزراعة",
+        "scope_ar": "للمزارع"
+      },
+      {
+        "number": "ISO 22003",
+        "title_ar": "متطلبات جهات التدقيق",
+        "scope_ar": "لجهات منح الشهادات"
+      },
+      {
+        "number": "ISO 17025:2017",
+        "title_ar": "متطلبات كفاءة المختبرات",
+        "scope_ar": "لمختبرات الاختبار والمعايرة"
+      },
+      {
+        "number": "ISO 9001:2015",
+        "title_ar": "نظام إدارة الجودة الأساسي",
+        "scope_ar": "لأي منظمة"
+      },
+      {
+        "number": "ISO 14001:2015",
+        "title_ar": "نظام الإدارة البيئية",
+        "scope_ar": "لإدارة التأثيرات البيئية"
+      },
+      {
+        "number": "ISO 45001:2018",
+        "title_ar": "نظام الصحة والسلامة المهنية",
+        "scope_ar": "لحماية العمال"
+      },
+      {
+        "number": "ISO 50001:2018",
+        "title_ar": "نظام إدارة الطاقة",
+        "scope_ar": "لترشيد استهلاك الطاقة"
+      },
+      {
+        "number": "ISO 28000",
+        "title_ar": "سلسلة الإمداد الآمنة",
+        "scope_ar": "لأمن سلسلة التوريد"
+      },
+      {
+        "number": "FSSC 22000 v6",
+        "title_ar": "مخطط شهادة نظام سلامة الغذاء",
+        "scope_ar": "ISO 22000 + متطلبات إضافية — مطلوب لكبار المشترين"
+      }
+    ]
+  },
+  "metadata": {
+    "total_sections": 12,
+    "total_standards_covered": 10,
+    "total_mycotoxins": 7,
+    "total_storage_products": 18,
+    "total_heavy_metals": 6,
+    "total_checklists": 3,
+    "language": "ar",
+    "version": "2.0.0",
+    "target_users_ar": [
+      "مزارعون مصدرون",
+      "مهندسون زراعيون",
+      "شركات تعبئة وتغليف",
+      "مفتشو جودة",
+      "طلاب زراعة"
+    ],
+    "notes_ar": "هذا الملف يمثل قاعدة البيانات الشاملة لسلامة الغذاء في HefnoPlant — يمكن التوسع فيه بإضافة أقسام للتغذية البشرية وسلامة العبوات والتشريعات المصرية التفصيلية"
+  }
+}

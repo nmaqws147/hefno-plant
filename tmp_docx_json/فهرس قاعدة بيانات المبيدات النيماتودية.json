@@ -1,0 +1,157 @@
+{
+  "id": "nematicide_master_index",
+  "name_ar": "فهرس قاعدة بيانات المبيدات النيماتودية",
+  "name_en": "Nematicide Database Master Index — Egypt & Arab World",
+  "version": "1.0.0",
+  "status": "production_ready",
+  "source": "IRAC MoA Classification v10.4 + FAO/WHO + Egyptian Pesticide Register 2024",
+  "scope": "مصر والوطن العربي",
+  "quality_checks": {
+    "commercial_brands": false,
+    "ids_unique": true,
+    "all_ai_have_nematodes": true,
+    "all_ai_have_doses": true,
+    "rotation_programs_complete": true
+  },
+  "summary": {
+    "total_groups": 8,
+    "total_active_ingredients": 26,
+    "total_relationships": 149,
+    "total_rotation_programs": 7,
+    "total_nematode_species": 12,
+    "total_size_kb": 203
+  },
+  "files": [
+    {
+      "file": "nem_01_groups.json",
+      "key": "groups",
+      "count": 8,
+      "description": "مجموعات المبيدات النيماتودية — آلية العمل وخطر المقاومة"
+    },
+    {
+      "file": "nem_02_active_ingredients.json",
+      "key": "items",
+      "count": 26,
+      "description": "المواد الفعالة — كيميائية وبيولوجية ونباتية"
+    },
+    {
+      "file": "nem_03_relationships.json",
+      "key": "relationships",
+      "count": 149,
+      "description": "جدول علاقات مبيد↔نيماتودا — بحث في الاتجاهين"
+    },
+    {
+      "file": "nem_04_rotation_programs.json",
+      "key": "programs",
+      "count": 7,
+      "description": "برامج المكافحة المتكاملة للمحاصيل الرئيسية"
+    }
+  ],
+  "nematode_species_covered": [
+    {
+      "id": "nem-01",
+      "name_ar": "نيماتودا تعقد الجذور",
+      "scientific": "Meloidogyne spp. (M. incognita, M. javanica, M. arenaria, M. hapla)"
+    },
+    {
+      "id": "nem-02",
+      "name_ar": "نيماتودا تقرح الجذور",
+      "scientific": "Pratylenchus spp. (P. penetrans, P. coffeae, P. brachyurus)"
+    },
+    {
+      "id": "nem-03",
+      "name_ar": "نيماتودا الساق والبصيلات",
+      "scientific": "Ditylenchus dipsaci"
+    },
+    {
+      "id": "nem-04",
+      "name_ar": "نيماتودا الأوراق والبراعم",
+      "scientific": "Aphelenchoides spp. (A. besseyi, A. fragariae, A. ritzemabosi)"
+    },
+    {
+      "id": "nem-05",
+      "name_ar": "نيماتودا الخراجات",
+      "scientific": "Heterodera spp. / Globodera spp. (H. schachtii, H. avenae, G. rostochiensis, G. pallida)"
+    },
+    {
+      "id": "nem-06",
+      "name_ar": "نيماتودا اللنف",
+      "scientific": "Rotylenchulus reniformis"
+    },
+    {
+      "id": "nem-07",
+      "name_ar": "نيماتودا الإبرة",
+      "scientific": "Trichodorus spp. / Paratrichodorus spp."
+    },
+    {
+      "id": "nem-08",
+      "name_ar": "نيماتودا الحلزون",
+      "scientific": "Helicotylenchus spp."
+    },
+    {
+      "id": "nem-09",
+      "name_ar": "نيماتودا الخنجر",
+      "scientific": "Xiphinema spp. (X. index, X. americanum)"
+    },
+    {
+      "id": "nem-10",
+      "name_ar": "نيماتودا الدبوس",
+      "scientific": "Paratylenchus spp."
+    },
+    {
+      "id": "nem-11",
+      "name_ar": "نيماتودا اللثة",
+      "scientific": "Belonolaimus spp."
+    },
+    {
+      "id": "nem-12",
+      "name_ar": "نيماتودا الزيتون",
+      "scientific": "Meloidogyne arenaria + Pratylenchus vulnus"
+    }
+  ],
+  "use_cases": {
+    "search_by_ai": "items.find(a => a.id === 'nai-001')  // فوسثيازات",
+    "search_by_nematode": "relationships.filter(r => r.nematode_id === 'nem-01').sort((a,b) => b.efficacy_level - a.efficacy_level)",
+    "resistance_warning": "ai.resistance.risk_level >= 3",
+    "organic_approved": "items.filter(a => ['nem-grp-bio','nem-grp-bio2','nem-grp-bio3','nem-grp-bot'].includes(a.nematicide_group_id))",
+    "chemical_nematicides": "items.filter(a => ['nem-grp-op','nem-grp-cb','nem-grp-fum','nem-grp-sdhi'].includes(a.nematicide_group_id))",
+    "rotation_program": "programs.find(p => p.crop.includes('طماطم'))",
+    "safe_alternatives": "items.filter(a => a.resistance.risk_level === 1)",
+    "soil_fumigants": "items.filter(a => a.nematicide_group_id === 'nem-grp-fum')"
+  },
+  "groups_by_risk": {
+    "high_3": [
+      "nem-grp-op",
+      "nem-grp-cb"
+    ],
+    "medium_2": [
+      "nem-grp-sdhi"
+    ],
+    "low_1": [
+      "nem-grp-fum",
+      "nem-grp-bio",
+      "nem-grp-bio2",
+      "nem-grp-bio3",
+      "nem-grp-bot"
+    ]
+  },
+  "crops_with_programs": [
+    "بصل وثوم",
+    "بطاطس",
+    "جميع المحاصيل — نظام عضوي",
+    "طماطم وخيار وفلفل وباذنجان",
+    "فراولة",
+    "قمح وشعير وقطن وذرة",
+    "موز وحمضيات"
+  ],
+  "key_ipm_rules": [
+    "التناوب المحصولي — أهم أداة للتحكم في النيماتودا",
+    "فحص التربة قبل كل موسم لتحديد الكثافة والنوع",
+    "أصناف مقاومة Mi للطماطم والخيار — أفضل وأرخص وسيلة",
+    "لا تكرر نفس المبيد الكيميائي في موسمين متتاليين",
+    "البيولوجي يُكمل الكيميائي ويُطيل تأثيره",
+    "تعقيم بالشمس (Solarization) في الصيف بديل آمن للفيومجانت",
+    "فلوبيرام SDHI أحدث وأأمن بديل للأورجانوفوسفات والكاربامات",
+    "الشتلات الموبوءة هي المصدر الرئيسي — اشترِ شتلات معتمدة فقط"
+  ]
+}

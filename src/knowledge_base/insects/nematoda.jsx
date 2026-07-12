@@ -1,587 +1,774 @@
-// components/knowledge/NematodaPage.jsx
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { ChevronRight, ChevronLeft, X, AlertTriangle, Bug, Shield, Calendar, Info, Sprout, Thermometer, FlaskConical, Search, Layers, Star, BookOpen, Clock } from 'lucide-react';
 import nematodaData from '../../insects-folder/nematoda.json';
-import './nematoda.css';
+
+const ITEMS_PER_PAGE = 5;
+
+const getSeverityClass = (sev) => {
+  if (!sev) return 'bg-gray-500 text-white';
+  if (sev.includes('شديد جداً') || sev.includes('very high')) return 'bg-red-500 text-white';
+  if (sev.includes('شديد') || sev.includes('عالية') || sev.includes('high')) return 'bg-orange-500 text-white';
+  if (sev.includes('متوسط') || sev.includes('moderate')) return 'bg-yellow-500 text-white';
+  if (sev.includes('خفيف') || sev.includes('low')) return 'bg-emerald-500 text-white';
+  return 'bg-gray-500 text-white';
+};
+
+const getSeverityText = (sev) => {
+  if (!sev) return 'غير محدد';
+  if (sev.includes('شديد جداً') || sev.includes('very high')) return 'شديد جداً';
+  if (sev.includes('شديد') || sev.includes('عالية') || sev.includes('high')) return 'شديد';
+  if (sev.includes('متوسط') || sev.includes('moderate')) return 'متوسط';
+  if (sev.includes('خفيف') || sev.includes('low')) return 'خفيف';
+  return 'غير محدد';
+};
+
+const tabs = [
+  { id: 'species', emoji: '🐛', label: 'الأنواع' },
+  { id: 'overview', emoji: '📋', label: 'نظرة عامة' },
+  { id: 'classification', emoji: '📂', label: 'التصنيف' },
+  { id: 'diagnosis', emoji: '🔬', label: 'التشخيص' },
+  { id: 'management', emoji: '🛡️', label: 'المكافحة المتكاملة' },
+  { id: 'beneficial', emoji: '✨', label: 'النيماتودا النافعة' },
+  { id: 'susceptibility', emoji: '📊', label: 'حساسية المحاصيل' },
+];
+
+const modalTabs = [
+  { id: 'description', label: 'الوصف والأعراض' },
+  { id: 'cycle', label: 'دورة الحياة' },
+  { id: 'management', label: 'المكافحة' },
+];
 
 const NematodaPage = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState(null);
-  const [selectedSpecies, setSelectedSpecies] = useState(null);
+  const [activeSection, setActiveSection] = useState('species');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selected, setSelected] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [activeSpeciesTab, setActiveSpeciesTab] = useState('overview');
-  const [activeCategory, setActiveCategory] = useState('all'); // all, dangerous, beneficial
+  const [activeTab, setActiveTab] = useState('description');
 
-  useEffect(() => {
-    setData(nematodaData);
-  }, []);
-
-  const handleSpeciesClick = (species, isBeneficial = false) => {
-    setSelectedSpecies({ ...species, isBeneficial });
-    setShowModal(true);
-    setActiveSpeciesTab('overview');
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-    setSelectedSpecies(null);
-  };
-
-  const getDangerClass = (level) => {
-    switch (level) {
-      case 'عالية جداً': return 'danger-critical';
-      case 'عالية': return 'danger-high';
-      case 'عالية - متوسطة': return 'danger-medium';
-      case 'متوسطة': return 'danger-mid';
-      default: return 'danger-mid';
-    }
-  };
-
-  const getFilteredSpecies = () => {
-    if (!data) return [];
-    
-    if (activeCategory === 'dangerous') {
-      // الضارة: اللي عندها danger_level
-      return data.species?.filter(s => s.danger_level) || [];
-    }
-    
-    if (activeCategory === 'beneficial') {
-      // النافعة من القسم الخاص بها
-      return data.beneficial_nematodes?.species || [];
-    }
-    
-    // الكل (ضارة + نافعة)
-    const allDangerous = data.species || [];
-    const allBeneficial = data.beneficial_nematodes?.species || [];
-    return [...allDangerous, ...allBeneficial];
-  };
+  const data = nematodaData;
 
   if (!data) {
     return (
-      <div className="nematoda-page loading" dir="rtl">
-        <div className="loader-container">
-          <div className="loader-spinner"></div>
-          <p>جاري تحميل بيانات النيماتودا...</p>
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 flex items-center justify-center min-h-[60vh]">
+          <div className="text-center">
+            <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-4 border-emerald-200 dark:border-emerald-900 border-t-emerald-600 dark:border-t-emerald-400" />
+            <p className="text-sm text-gray-500 dark:text-gray-400">جاري تحميل بيانات النيماتودا...</p>
+          </div>
         </div>
       </div>
     );
   }
 
-  const filteredSpecies = getFilteredSpecies();
-  
-  // إحصائيات سريعة من البيانات المتاحة
-  const highlightStats = [
-    { value_ar: data.general_overview?.size_ar || "0.1 - 5 مم", label_ar: "حجم الدودة" },
-    { value_ar: data.general_overview?.economic_losses_egypt_ar?.yield_loss_percent || "10-80%", label_ar: "نسبة الخسارة" },
-    { value_ar: data.metadata?.warning_ar?.split('—')[0] || "10-25%", label_ar: "خسائر عالمية" }
-  ];
+  const species = data.species || [];
+  const totalPages = Math.max(1, Math.ceil(species.length / ITEMS_PER_PAGE));
+  const paginatedSpecies = species.slice(
+    (currentPage - 1) * ITEMS_PER_PAGE,
+    currentPage * ITEMS_PER_PAGE
+  );
 
-  // نصائح سريعة من بيانات الخطر
-  const quickTips = data.general_overview?.why_dangerous_ar?.slice(0, 4) || [
-    "تمتص عصارة الجذور وتضعف النبات",
-    "تحدث جروحاً في الجذور لدخول الفطريات",
-    "تخل بامتصاص الماء والعناصر الغذائية",
-    "لا ترى بالعين المجردة — التشخيص صعب"
-  ];
+  const openModal = (s) => {
+    setSelected(s);
+    setShowModal(true);
+    setActiveTab('description');
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelected(null);
+  };
+
+  const getHostsPreview = (s) => {
+    if (s.host_plants_ar?.highly_susceptible_ar?.length > 0) return s.host_plants_ar.highly_susceptible_ar[0];
+    return 'متعدد العوائل';
+  };
+
+  const getSymptomsList = (s) => {
+    const list = [];
+    if (s.symptoms?.underground_ar) list.push(...s.symptoms.underground_ar);
+    if (s.symptoms?.aboveground_ar) list.push(...s.symptoms.aboveground_ar);
+    return list;
+  };
 
   return (
-    <div className="nematoda-page" dir="rtl" style={{ '--danger-color': '#8B0000' }}>
-
-      {/* رأس الصفحة */}
-      <div className="nematoda-header special-page-header">
-        <button className="back-button" onClick={() => navigate('/knowledge-base')}>
-          <span>←</span> العودة
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
+      <Helmet>
+        <title>النيماتودا | Hefno-Plant</title>
+        <meta name="description" content="قاعدة بيانات متكاملة للنيماتودا — الأنواع، دورة الحياة، التشخيص، المكافحة المتكاملة، والنيماتودا النافعة مع دليل حساسية المحاصيل" />
+      </Helmet>
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <button
+          onClick={() => navigate('/knowledge-base/insects')}
+          className="mb-5 inline-flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-400 transition-colors hover:bg-emerald-100 dark:hover:bg-emerald-950/80"
+        >
+          <ChevronRight size={16} />
+          <span>العودة</span>
         </button>
-        <div className="header-content">
-          <div className="header-icon" style={{ background: '#8B000015' }}>
-            <span>🐛</span>
-          </div>
-          <div className="header-text">
-            <h1>{data.metadata.name_ar}</h1>
-            <p className="header-en">{data.metadata.name_en}</p>
-            <div className="warning-banner">
-              <span className="warning-icon">⚠️</span>
-              <span className="warning-text">{data.metadata.warning_ar}</span>
+
+        <div className="mb-6 rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-5 sm:p-6 shadow-sm">
+          <div className="flex items-center gap-5">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-lg shrink-0">
+              <span className="text-2xl">🐛</span>
+            </div>
+            <div>
+              <h1 className="text-2xl font-black text-gray-900 dark:text-white">{data.metadata.name_ar}</h1>
+              <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">{data.metadata.name_en}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{data.metadata.warning_ar}</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-xl border border-orange-100/40 dark:border-orange-900/40 bg-orange-50 dark:bg-orange-950/40 px-3 py-1.5 text-xs font-bold text-orange-700 dark:text-orange-400">
+                  <Layers size={14} />
+                  {species.length} نوع
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-xl border border-amber-100/40 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/40 px-3 py-1.5 text-xs font-bold text-amber-700 dark:text-amber-400">
+                  <Shield size={14} />
+                  دليل متكامل
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* إحصائيات سريعة */}
-      <div className="stats-container-glass">
-        {highlightStats.map((stat, idx) => (
-          <div key={idx} className="stat-item-premium">
-            <div className="stat-icon-wrapper">
-              {/* يمكنك إضافة أيقونة ديناميكية بناءً على نوع الإحصائية */}
-              {idx === 0 ? '📉' : idx === 1 ? '⚠️' : '🎯'}
-            </div>
-            <div className="stat-info">
-              <h4 className="stat-value-highlight">{stat.value_ar}</h4>
-              <p className="stat-label-sub">{stat.label_ar}</p>
-            </div>
-            {/* تأثير ضوئي خلفي */}
-            <div className="stat-card-glow"></div>
-          </div>
-        ))}
-      </div>
+        <div className="mb-6 flex flex-wrap gap-2">
+          {tabs.map(tab => (
+            <button
+              key={tab.id}
+              onClick={() => { setActiveSection(tab.id); setCurrentPage(1); }}
+              className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition-all ${
+                activeSection === tab.id
+                  ? 'bg-orange-500 text-white shadow-md'
+                  : 'bg-gray-50 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/50'
+              }`}
+            >
+              <span>{tab.emoji}</span>
+              {tab.label}
+            </button>
+          ))}
+        </div>
 
-      {/* نظرة عامة */}
-      <div className="overview-section">
-        <h2 className="section-title">📌 نظرة عامة</h2>
-        <div className="overview-grid">
-          <div className="overview-card">
-            <h3>تعريف النيماتودا</h3>
-            <p>{data.general_overview.definition_ar}</p>
-            {data.general_overview.size_ar && <p><strong>الحجم:</strong> {data.general_overview.size_ar}</p>}
-            {data.general_overview.shape_ar && <p><strong>الشكل:</strong> {data.general_overview.shape_ar}</p>}
-          </div>
-          <div className="overview-card">
-            <h3>لماذا خطيرة؟</h3>
-            <ul>
-              {data.general_overview.why_dangerous_ar?.map((item, idx) => (
-                <li key={idx}>{item}</li>
+        {activeSection === 'species' && (
+          <>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {paginatedSpecies.map((s) => (
+                <div
+                  key={s.id}
+                  onClick={() => openModal(s)}
+                  className="group cursor-pointer rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md border-r-[3px] border-orange-500"
+                >
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-base font-bold text-gray-900 dark:text-white">{s.name_ar}</h3>
+                      <p className="text-[11px] italic text-gray-500 dark:text-gray-400">{s.name_scientific}</p>
+                    </div>
+                    <span className={`shrink-0 inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${getSeverityClass(s.danger_level)}`}>
+                      {getSeverityText(s.danger_level)}
+                    </span>
+                  </div>
+
+                  <p className="text-xs leading-relaxed line-clamp-2 text-gray-600 dark:text-gray-400 mb-3">
+                    {s.description_ar ? s.description_ar.substring(0, 100) + '...' : ''}
+                  </p>
+
+                  <div className="flex items-center justify-between border-t border-gray-100 dark:border-gray-700/50 pt-3 mt-2">
+                    <div className="flex flex-wrap gap-1">
+                      {s.feeding_type_ar && (
+                        <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-[10px] text-gray-500">
+                          {s.feeding_type_ar.split('—')[0]?.trim()}
+                        </span>
+                      )}
+                      <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-[10px] text-gray-500">
+                        {getHostsPreview(s)}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1 text-xs font-medium text-orange-600 dark:text-orange-400">
+                      التفاصيل <ChevronLeft size={14} />
+                    </div>
+                  </div>
+                </div>
               ))}
-            </ul>
-          </div>
-          <div className="overview-card">
-            <h3>الخسائر الاقتصادية في مصر</h3>
-            <div className="loss-stat">
-              <span className="loss-value">{data.general_overview.economic_losses_egypt_ar.annual_losses_egp}</span>
-              <span className="loss-label">خسائر سنوية</span>
             </div>
-            <p className="loss-detail">نسبة الخسارة: {data.general_overview.economic_losses_egypt_ar.yield_loss_percent}</p>
-            <div className="affected-crops">
-              <strong>أكثر المحاصيل تضرراً:</strong>
-              <div className="crops-tags">
-                {data.general_overview.economic_losses_egypt_ar.most_affected_crops_ar?.map((crop, idx) => (
-                  <span key={idx} className="crop-tag">{crop}</span>
+
+            {totalPages > 1 && (
+              <div className="mt-8 flex items-center justify-center gap-2">
+                <button
+                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                  disabled={currentPage === 1}
+                  className="flex h-8 w-8 items-center justify-center rounded-xl text-xs font-bold transition-all disabled:opacity-30 enabled:hover:bg-orange-50 dark:enabled:hover:bg-orange-900/30 text-gray-600 dark:text-gray-400"
+                >
+                  <ChevronRight size={14} />
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`flex h-8 w-8 items-center justify-center rounded-xl text-xs font-bold transition-all ${
+                      currentPage === page
+                        ? 'bg-orange-500 text-white shadow-md shadow-orange-200/50 dark:shadow-orange-900/30'
+                        : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
+                <button
+                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                  disabled={currentPage === totalPages}
+                  className="flex h-8 w-8 items-center justify-center rounded-xl text-xs font-bold transition-all disabled:opacity-30 enabled:hover:bg-orange-50 dark:enabled:hover:bg-orange-900/30 text-gray-600 dark:text-gray-400"
+                >
+                  <ChevronLeft size={14} />
+                </button>
+              </div>
+            )}
+
+            {showModal && selected && (
+              <div
+                className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+                onClick={closeModal}
+              >
+                <div
+                  className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-900 shadow-2xl animate-modal-in"
+                  onClick={e => e.stopPropagation()}
+                >
+                  <div className="sticky top-0 z-10 flex items-center gap-4 border-b border-gray-100 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md px-5 py-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 shrink-0 text-xl">
+                      <span>🐛</span>
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-base font-bold text-gray-900 dark:text-white">{selected.name_ar}</h2>
+                      <p className="text-[11px] italic text-gray-500 dark:text-gray-400">{selected.name_scientific}</p>
+                    </div>
+                    <button
+                      onClick={closeModal}
+                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-400 transition-all hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-500"
+                    >
+                      <X size={16} />
+                    </button>
+                  </div>
+
+                  <div className="flex gap-1 border-b border-gray-100 dark:border-gray-800 px-5 pt-2 overflow-x-auto">
+                    {modalTabs.map((tab) => (
+                      <button
+                        key={tab.id}
+                        onClick={() => setActiveTab(tab.id)}
+                        className={`inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-2 text-[11px] font-bold transition-all rounded-t-xl ${
+                          activeTab === tab.id
+                            ? 'bg-orange-50 dark:bg-orange-950/40 text-orange-700 dark:text-orange-400'
+                            : 'text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                        }`}
+                      >
+                        {tab.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  <div className="p-5 space-y-4">
+                    {activeTab === 'description' && (
+                      <>
+                        <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                          <div className="grid grid-cols-2 gap-3 text-xs">
+                            <div>
+                              <span className="text-gray-500 dark:text-gray-400">مستوى الخطورة</span>
+                              <p className={`mt-0.5 inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${getSeverityClass(selected.danger_level)}`}>{getSeverityText(selected.danger_level)}</p>
+                            </div>
+                            <div>
+                              <span className="text-gray-500 dark:text-gray-400">نوع التغذية</span>
+                              <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.feeding_type_ar?.split('—')[0]?.trim() || '-'}</p>
+                            </div>
+                            <div className="col-span-2">
+                              <span className="text-gray-500 dark:text-gray-400">الانتشار في مصر</span>
+                              <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.prevalence_egypt || 'غير محدد'}</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {selected.description_ar && (
+                          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                            <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Info size={12} />الوصف</h3>
+                            <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-400">{selected.description_ar}</p>
+                          </div>
+                        )}
+
+                        {selected.common_species?.length > 0 && (
+                          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                            <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><Layers size={12} />الأنواع الشائعة</h3>
+                            <div className="flex flex-wrap gap-1.5">
+                              {selected.common_species.map((s, i) => (
+                                <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{s}</span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {getSymptomsList(selected).length > 0 && (
+                          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                            <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><AlertTriangle size={12} />الأعراض</h3>
+                            <ul className="space-y-1.5">
+                              {getSymptomsList(selected).map((s, i) => (
+                                <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                  <span className="text-orange-500 mt-0.5 shrink-0">•</span>
+                                  {s}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {selected.host_plants_ar?.highly_susceptible_ar?.length > 0 && (
+                          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                            <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300"><Sprout size={12} />العوائل النباتية</h3>
+                            <div className="mb-2">
+                              <span className="text-[10px] font-bold text-red-600 dark:text-red-400">شديدة الحساسية: </span>
+                              <div className="flex flex-wrap gap-1 mt-1">
+                                {selected.host_plants_ar.highly_susceptible_ar.map((h, i) => (
+                                  <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-0.5 text-[10px] text-gray-700 dark:text-gray-300">{h}</span>
+                                ))}
+                              </div>
+                            </div>
+                            {selected.host_plants_ar.moderately_susceptible_ar?.length > 0 && (
+                              <div>
+                                <span className="text-[10px] font-bold text-amber-600 dark:text-amber-400">متوسطة الحساسية: </span>
+                                <div className="flex flex-wrap gap-1 mt-1">
+                                  {selected.host_plants_ar.moderately_susceptible_ar.map((h, i) => (
+                                    <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-0.5 text-[10px] text-gray-700 dark:text-gray-300">{h}</span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        )}
+                      </>
+                    )}
+
+                    {activeTab === 'cycle' && selected.lifecycle && (
+                      <>
+                        <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                          <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Clock size={12} />دورة الحياة</h3>
+                          <div className="space-y-2">
+                            {selected.lifecycle.total_days_at_25c && (
+                              <div className="flex justify-between text-xs">
+                                <span className="text-gray-500 dark:text-gray-400">المدة الكاملة عند 25°م:</span>
+                                <span className="font-bold text-gray-900 dark:text-white">{selected.lifecycle.total_days_at_25c}</span>
+                              </div>
+                            )}
+                            {selected.lifecycle.generations_per_year && (
+                              <div className="flex justify-between text-xs">
+                                <span className="text-gray-500 dark:text-gray-400">الأجيال في السنة:</span>
+                                <span className="font-bold text-gray-900 dark:text-white">{selected.lifecycle.generations_per_year}</span>
+                              </div>
+                            )}
+                            {selected.lifecycle.optimal_temp_c && (
+                              <div className="flex justify-between text-xs">
+                                <span className="text-gray-500 dark:text-gray-400">درجة الحرارة المثلى:</span>
+                                <span className="font-bold text-gray-900 dark:text-white">{selected.lifecycle.optimal_temp_c}°م</span>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+
+                        {selected.lifecycle.stages_ar?.length > 0 && (
+                          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                            <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><Layers size={12} />مراحل دورة الحياة</h3>
+                            <div className="space-y-2">
+                              {selected.lifecycle.stages_ar.map((stage, i) => (
+                                <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
+                                  <div className="flex items-center justify-between">
+                                    <span className="text-[11px] font-bold text-gray-900 dark:text-white">{stage.stage}</span>
+                                    <span className="text-[10px] text-orange-600 dark:text-orange-400">{stage.duration_ar}</span>
+                                  </div>
+                                  {stage.notes_ar && <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{stage.notes_ar}</p>}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {selected.spread_methods_ar?.length > 0 && (
+                          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                            <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><Search size={12} />طرق الانتشار</h3>
+                            <ul className="space-y-1">
+                              {selected.spread_methods_ar.map((m, i) => (
+                                <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                  <span className="text-orange-500 mt-0.5 shrink-0">•</span>
+                                  {m}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                      </>
+                    )}
+
+                    {activeTab === 'management' && selected.management && (
+                      <>
+                        <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                          <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><Shield size={12} />المكافحة</h3>
+                          {selected.management.cultural_ar?.length > 0 && (
+                            <div className="mb-3">
+                              <h4 className="text-[11px] font-bold text-gray-700 dark:text-gray-300 mb-1.5 flex items-center gap-1"><Bug size={11} />المكافحة الزراعية</h4>
+                              <div className="space-y-1.5">
+                                {selected.management.cultural_ar.map((item, i) => (
+                                  <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
+                                    <div className="flex items-center justify-between">
+                                      <span className="text-[11px] font-bold text-gray-900 dark:text-white">{item.method_ar}</span>
+                                      {item.effectiveness && (
+                                        <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${item.effectiveness.includes('عالية') ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300' : 'bg-gray-100 dark:bg-gray-700 text-gray-500'}`}>{item.effectiveness}</span>
+                                      )}
+                                    </div>
+                                    {item.details_ar && <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{item.details_ar}</p>}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {selected.management.biological_ar?.length > 0 && (
+                            <div className="mb-3">
+                              <h4 className="text-[11px] font-bold text-gray-700 dark:text-gray-300 mb-1.5 flex items-center gap-1"><FlaskConical size={11} />المكافحة الحيوية</h4>
+                              <div className="space-y-1.5">
+                                {selected.management.biological_ar.map((item, i) => (
+                                  <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
+                                    <span className="text-[11px] font-bold text-gray-900 dark:text-white">{item.agent_ar}</span>
+                                    {item.details_ar && <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{item.details_ar}</p>}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                          {selected.management.chemical_ar?.length > 0 && (
+                            <div>
+                              <h4 className="text-[11px] font-bold text-gray-700 dark:text-gray-300 mb-1.5 flex items-center gap-1"><FlaskConical size={11} />المكافحة الكيميائية</h4>
+                              <div className="space-y-1.5">
+                                {selected.management.chemical_ar.map((item, i) => (
+                                  <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
+                                    <span className="text-[11px] font-bold text-gray-900 dark:text-white">{item.active_ingredient_ar}</span>
+                                    {item.trade_names_ar && (
+                                      <div className="flex flex-wrap gap-1 mt-1">
+                                        {item.trade_names_ar.map((tn, j) => (
+                                          <span key={j} className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-[9px] text-gray-500">{tn}</span>
+                                        ))}
+                                      </div>
+                                    )}
+                                    <div className="flex flex-wrap gap-1 mt-1">
+                                      {item.dose_ar && <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-[9px] text-gray-500">الجرعة: {item.dose_ar}</span>}
+                                      {item.method_ar && <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-[9px] text-gray-500">{item.method_ar}</span>}
+                                      {item.preharvest_interval_days && <span className="px-2 py-0.5 bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 rounded text-[9px]">فترة الأمان: {item.preharvest_interval_days} يوم</span>}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {selected.soil_preferences_ar && (
+                          <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                            <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Thermometer size={12} />تفضيلات التربة</h3>
+                            <div className="grid grid-cols-2 gap-3 text-xs">
+                              <div>
+                                <span className="text-gray-500 dark:text-gray-400">الظروف المثلى</span>
+                                <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.soil_preferences_ar.best_conditions_ar?.split('—')[0]?.trim() || '-'}</p>
+                              </div>
+                              {selected.soil_preferences_ar.worst_conditions_ar && (
+                                <div>
+                                  <span className="text-gray-500 dark:text-gray-400">الظروف غير المناسبة</span>
+                                  <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.soil_preferences_ar.worst_conditions_ar?.split('—')[0]?.trim() || '-'}</p>
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </>
+        )}
+
+        {activeSection === 'overview' && data.general_overview && (
+          <div className="space-y-4">
+            <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+              <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Info size={12} />تعريف النيماتودا</h3>
+              <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-400">{data.general_overview.definition_ar}</p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><Thermometer size={12} />الحجم</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{data.general_overview.size_ar}</p>
+              </div>
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><Info size={12} />الشكل</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{data.general_overview.shape_ar}</p>
+              </div>
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><Calendar size={12} />ملخص دورة الحياة</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{data.general_overview.lifecycle_summary_ar}</p>
+              </div>
+            </div>
+
+            {data.general_overview.habitat_ar?.length > 0 && (
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300"><Sprout size={12} />الموائل</h3>
+                <div className="flex flex-wrap gap-1.5">
+                  {data.general_overview.habitat_ar.map((h, i) => (
+                    <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{h}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {data.general_overview.why_dangerous_ar?.length > 0 && (
+              <div className="rounded-xl border border-red-200/60 dark:border-red-900/40 bg-red-50 dark:bg-red-950/20 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-red-700 dark:text-red-300"><AlertTriangle size={12} />لماذا خطيرة؟</h3>
+                <ul className="space-y-1">
+                  {data.general_overview.why_dangerous_ar.map((w, i) => (
+                    <li key={i} className="text-xs text-red-700 dark:text-red-400 flex items-start gap-2">
+                      <span className="text-red-500 mt-0.5 shrink-0">•</span>
+                      {w}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {data.general_overview.economic_losses_egypt_ar && (
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300"><Shield size={12} />الخسائر الاقتصادية في مصر</h3>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div>
+                    <span className="text-[10px] text-gray-500 dark:text-gray-400">الخسائر السنوية</span>
+                    <p className="text-sm font-bold text-gray-900 dark:text-white">{data.general_overview.economic_losses_egypt_ar.annual_losses_egp}</p>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-gray-500 dark:text-gray-400">نسبة فقدان المحصول</span>
+                    <p className="text-sm font-bold text-gray-900 dark:text-white">{data.general_overview.economic_losses_egypt_ar.yield_loss_percent}</p>
+                  </div>
+                </div>
+                {data.general_overview.economic_losses_egypt_ar.most_affected_crops_ar?.length > 0 && (
+                  <div className="mt-3">
+                    <span className="text-[10px] text-gray-500 dark:text-gray-400">المحاصيل الأكثر تضرراً:</span>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {data.general_overview.economic_losses_egypt_ar.most_affected_crops_ar.map((c, i) => (
+                        <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{c}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeSection === 'classification' && data.classification && (
+          <div className="space-y-4">
+            {data.classification.note_ar && (
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <p className="text-xs text-gray-600 dark:text-gray-400">{data.classification.note_ar}</p>
+              </div>
+            )}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {data.classification.main_groups_ar?.map((g, i) => (
+                <div key={i} className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 shrink-0">
+                      <BookOpen size={14} />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-gray-900 dark:text-white">{g.group_ar}</h3>
+                      <p className="text-[10px] italic text-gray-500 dark:text-gray-400">{g.group_en}</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-relaxed">{g.description_ar}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeSection === 'diagnosis' && data.diagnosis_guide && (
+          <div className="space-y-4">
+            <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+              <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Search size={12} />خطوات التشخيص الميداني</h3>
+              <div className="space-y-2">
+                {data.diagnosis_guide.field_diagnosis_steps_ar?.map((step, i) => (
+                  <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30 text-[9px] font-bold text-orange-600 dark:text-orange-400 shrink-0">{step.step}</span>
+                      <div>
+                        <span className="text-[11px] font-bold text-gray-900 dark:text-white">{step.action_ar}</span>
+                        <p className="text-[10px] text-gray-500 dark:text-gray-400">{step.details_ar}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {data.diagnosis_guide.lab_methods_ar?.length > 0 && (
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-orange-700 dark:text-orange-300"><FlaskConical size={12} />طرق التحليل المخبري</h3>
+                <div className="space-y-2">
+                  {data.diagnosis_guide.lab_methods_ar.map((method, i) => (
+                    <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
+                      <span className="text-[11px] font-bold text-gray-900 dark:text-white">{method.method_ar}</span>
+                      {method.use_ar && <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{method.use_ar}</p>}
+                      {method.steps_ar?.length > 0 && (
+                        <ul className="mt-1 space-y-0.5">
+                          {method.steps_ar.map((step, j) => (
+                            <li key={j} className="text-[10px] text-gray-600 dark:text-gray-400 flex items-start gap-1.5">
+                              <span className="text-orange-500 mt-0.5 shrink-0">•</span>
+                              {step}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {data.diagnosis_guide.identification_key_ar && (
+              <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300"><BookOpen size={12} />مفتاح التشخيص السريع</h3>
+                <div className="space-y-1.5">
+                  {Object.entries(data.diagnosis_guide.identification_key_ar).map(([key, value]) => (
+                    <div key={key} className="rounded-lg bg-white dark:bg-gray-700/50 p-2">
+                      <p className="text-[10px] text-gray-600 dark:text-gray-400">{value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeSection === 'management' && data.integrated_management_plan && (
+          <div className="space-y-4">
+            <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+              <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Shield size={12} />{data.integrated_management_plan.title_ar}</h3>
+              <div className="space-y-3">
+                {data.integrated_management_plan.phases?.map((phase, i) => (
+                  <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-3">
+                    <div className="flex items-center justify-between mb-1.5">
+                      <span className="text-xs font-bold text-gray-900 dark:text-white flex items-center gap-1.5">
+                        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30 text-[9px] font-bold text-orange-600 dark:text-orange-400">{phase.phase}</span>
+                        {phase.name_ar}
+                      </span>
+                      <span className="text-[10px] text-orange-600 dark:text-orange-400">{phase.timing_ar}</span>
+                    </div>
+                    <ul className="space-y-1">
+                      {phase.actions_ar?.map((action, j) => (
+                        <li key={j} className="text-[10px] text-gray-600 dark:text-gray-400 flex items-start gap-1.5">
+                          <span className="text-orange-500 mt-0.5 shrink-0">•</span>
+                          {action}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        )}
 
-      {/* تبويبات الأنواع */}
-      <div className="categories-tabs">
-        <button
-          className={`species-tab ${activeCategory === 'all' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('all')}
-        >
-          <span>🐛</span> جميع الأنواع
-        </button>
-        <button
-          className={`species-tab ${activeCategory === 'dangerous' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('dangerous')}
-        >
-          <span>🔴</span> الأنواع الخطيرة
-        </button>
-        <button
-          className={`species-tab ${activeCategory === 'beneficial' ? 'active' : ''}`}
-          onClick={() => setActiveCategory('beneficial')}
-        >
-          <span>✅</span> النيماتودا المفيدة
-        </button>
-      </div>
-
-      {/* شبكة الأنواع */}
-      <div className="species-grid">
-        {filteredSpecies.map((species, idx) => {
-          // التحقق إذا كانت النيماتودا نافعة
-          const isBeneficial = species.how_it_works_ar !== undefined;
-          
-          return (
-            <div
-              key={species.id || idx}
-              className={`species-card ${isBeneficial ? 'beneficial' : 'dangerous'}`}
-              onClick={() => handleSpeciesClick(species, isBeneficial)}
-            >
-              <div className="card-glass"></div>
-              
-              <div className="card-content">
-                <div className="card-header">
-                  {!isBeneficial && species.danger_level && (
-                    <span className={`danger-badge ${getDangerClass(species.danger_level)}`}>
-                      {species.danger_icon || '🔴'} {species.danger_level}
-                    </span>
-                  )}
-                  {isBeneficial && (
-                    <span className="beneficial-badge">
-                      ✅ مفيد
-                    </span>
-                  )}
-                </div>
-
-                <h3 className="species-name">{species.name_ar}</h3>
-                <p className="scientific-name">{species.name_en || species.name_scientific}</p>
-
-                {/* وصف مختلف حسب النوع */}
-                <p className="species-description">
-                  {isBeneficial 
-                    ? (species.how_it_works_ar?.substring(0, 100) || species.description_ar?.substring(0, 100))
-                    : (species.description_ar?.substring(0, 100))}...
-                </p>
-
-                {/* الأهداف (للنيماتودا النافعة) أو العوائل (للضارة) */}
-                {isBeneficial && species.target_insects_ar && (
-                  <div className="host-preview">
-                    <span className="host-icon">🐛</span>
-                    <span className="host-text">
-                      يستهدف: {species.target_insects_ar.slice(0, 3).join(', ')}
-                    </span>
-                  </div>
-                )}
-                
-                {!isBeneficial && species.host_plants_ar && (
-                  <div className="host-preview">
-                    <span className="host-icon">🌱</span>
-                    <span className="host-text">
-                      {species.host_plants_ar?.highly_susceptible_ar?.slice(0, 3).join(', ') || 'محاصيل متنوعة'}
-                    </span>
-                  </div>
-                )}
-
-                <div className="card-footer">
-                  <div className="card-link">
-                    عرض التفاصيل
-                    <span className="link-arrow">←</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card-hover-effect"></div>
-              <div className="card-shine"></div>
+        {activeSection === 'beneficial' && data.beneficial_nematodes && (
+          <div className="space-y-4">
+            <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+              <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300"><Shield size={12} />{data.beneficial_nematodes.title_ar}</h3>
+              <p className="text-xs text-gray-600 dark:text-gray-400">{data.beneficial_nematodes.description_ar}</p>
             </div>
-          );
-        })}
-      </div>
-
-      {/* نصائح سريعة */}
-      <div className="quick-tips-section">
-        <h2 className="section-title">💡 نصائح سريعة</h2>
-        <div className="tips-grid">
-          {quickTips.map((tip, idx) => (
-            <div key={idx} className="tip-card">
-              <span className="tip-icon">📌</span>
-              <p>{tip}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Modal لعرض تفاصيل النوع */}
-      {showModal && selectedSpecies && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="species-modal glass" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <div className="modal-icon">
-                <span>{selectedSpecies.isBeneficial ? '✅' : '🐛'}</span>
-              </div>
-              <div className="modal-title">
-                <h2>{selectedSpecies.name_ar}</h2>
-                <p className="modal-scientific">{selectedSpecies.name_en || selectedSpecies.name_scientific}</p>
-                {!selectedSpecies.isBeneficial && selectedSpecies.danger_level && (
-                  <span className={`modal-danger ${getDangerClass(selectedSpecies.danger_level)}`}>
-                    {selectedSpecies.danger_icon || '🔴'} {selectedSpecies.danger_level}
-                  </span>
-                )}
-                {selectedSpecies.isBeneficial && (
-                  <span className="modal-beneficial">
-                    ✅ نيماتودا مفيدة - مكافحة بيولوجية
-                  </span>
-                )}
-              </div>
-              <button className="modal-close" onClick={closeModal}>✕</button>
-            </div>
-
-            <div className="modal-body">
-              {/* تبويبات داخلية */}
-              <div className="modal-tabs">
-                <button
-                  className={`modal-tab ${activeSpeciesTab === 'overview' ? 'active' : ''}`}
-                  onClick={() => setActiveSpeciesTab('overview')}
-                >
-                  📋 نظرة عامة
-                </button>
-                
-                {!selectedSpecies.isBeneficial && (
-                  <>
-                    <button
-                      className={`modal-tab ${activeSpeciesTab === 'lifecycle' ? 'active' : ''}`}
-                      onClick={() => setActiveSpeciesTab('lifecycle')}
-                    >
-                      🔄 دورة الحياة
-                    </button>
-                    <button
-                      className={`modal-tab ${activeSpeciesTab === 'symptoms' ? 'active' : ''}`}
-                      onClick={() => setActiveSpeciesTab('symptoms')}
-                    >
-                      🔍 الأعراض
-                    </button>
-                    <button
-                      className={`modal-tab ${activeSpeciesTab === 'management' ? 'active' : ''}`}
-                      onClick={() => setActiveSpeciesTab('management')}
-                    >
-                      💊 المكافحة
-                    </button>
-                  </>
-                )}
-                
-                {selectedSpecies.isBeneficial && (
-                  <>
-                    <button
-                      className={`modal-tab ${activeSpeciesTab === 'howitworks' ? 'active' : ''}`}
-                      onClick={() => setActiveSpeciesTab('howitworks')}
-                    >
-                      ⚙️ آلية العمل
-                    </button>
-                    <button
-                      className={`modal-tab ${activeSpeciesTab === 'application' ? 'active' : ''}`}
-                      onClick={() => setActiveSpeciesTab('application')}
-                    >
-                      💧 طريقة الاستخدام
-                    </button>
-                  </>
-                )}
-              </div>
-
-              {/* محتوى نظرة عامة */}
-              {activeSpeciesTab === 'overview' && (
-                <div className="tab-content">
-                  <div className="modal-section">
-                    <h3>📝 الوصف</h3>
-                    <p>{selectedSpecies.description_ar || selectedSpecies.how_it_works_ar || 'لا يوجد وصف متاح'}</p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {data.beneficial_nematodes.species?.map((b, i) => (
+                <div key={b.id || i} className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 shrink-0">
+                      <Star size={14} />
+                    </div>
+                    <div>
+                      <h3 className="text-xs font-bold text-gray-900 dark:text-white">{b.name_ar}</h3>
+                      <p className="text-[10px] italic text-gray-500 dark:text-gray-400">{b.name_en}</p>
+                    </div>
                   </div>
-                  
-                  {!selectedSpecies.isBeneficial && selectedSpecies.prevalence_egypt && (
-                    <div className="info-grid">
-                      <div className="info-item">
-                        <span className="info-label">الانتشار في مصر:</span>
-                        <span className="info-value">{selectedSpecies.prevalence_egypt}</span>
-                      </div>
-                      <div className="info-item">
-                        <span className="info-label">طريقة التغذية:</span>
-                        <span className="info-value">{selectedSpecies.feeding_type_ar}</span>
-                      </div>
-                      <div className="info-item">
-                        <span className="info-label">درجة الحرارة المثلى:</span>
-                        <span className="info-value">{selectedSpecies.lifecycle?.optimal_temp_c}°C</span>
-                      </div>
-                      <div className="info-item">
-                        <span className="info-label">عدد الأجيال سنوياً:</span>
-                        <span className="info-value">{selectedSpecies.lifecycle?.generations_per_year}</span>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {selectedSpecies.isBeneficial && selectedSpecies.common_species && (
-                    <div className="info-grid">
-                      <div className="info-item full-width">
-                        <span className="info-label">الأنواع الشائعة:</span>
-                        <span className="info-value">{selectedSpecies.common_species.join('، ')}</span>
-                      </div>
-                    </div>
-                  )}
-                  
-                  {/* العوائل النباتية (للضارة) */}
-                  {!selectedSpecies.isBeneficial && selectedSpecies.host_plants_ar && (
-                    <div className="host-section">
-                      <h3>🌱 العوائل النباتية</h3>
-                      <div className="host-group">
-                        <strong>شديدة الحساسية:</strong>
-                        <div className="host-tags">
-                          {selectedSpecies.host_plants_ar?.highly_susceptible_ar?.map((host, idx) => (
-                            <span key={idx} className="host-tag">{host}</span>
-                          ))}
-                        </div>
-                      </div>
-                      {selectedSpecies.host_plants_ar?.moderately_susceptible_ar && (
-                        <div className="host-group">
-                          <strong>متوسطة الحساسية:</strong>
-                          <div className="host-tags">
-                            {selectedSpecies.host_plants_ar.moderately_susceptible_ar.map((host, idx) => (
-                              <span key={idx} className="host-tag medium">{host}</span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                  
-                  {/* الأهداف (للنيماتودا النافعة) */}
-                  {selectedSpecies.isBeneficial && selectedSpecies.target_insects_ar && (
-                    <div className="host-section">
-                      <h3>🐛 الآفات المستهدفة</h3>
-                      <div className="host-tags">
-                        {selectedSpecies.target_insects_ar.map((insect, idx) => (
-                          <span key={idx} className="host-tag beneficial">{insect}</span>
+                  <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-relaxed mb-2">{b.how_it_works_ar}</p>
+                  {b.target_insects_ar?.length > 0 && (
+                    <div className="mb-2">
+                      <span className="text-[10px] font-bold text-red-600 dark:text-red-400">الآفات المستهدفة: </span>
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {b.target_insects_ar.map((t, j) => (
+                          <span key={j} className="rounded-full bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-2 py-0.5 text-[9px] text-red-600 dark:text-red-400">{t}</span>
                         ))}
                       </div>
                     </div>
                   )}
-                </div>
-              )}
-
-              {/* محتوى دورة الحياة (للضارة فقط) */}
-              {activeSpeciesTab === 'lifecycle' && selectedSpecies.lifecycle && !selectedSpecies.isBeneficial && (
-                <div className="tab-content">
-                  <div className="lifecycle-timeline">
-                    {selectedSpecies.lifecycle.stages_ar?.map((stage, idx) => (
-                      <div key={idx} className="lifecycle-stage">
-                        <div className="stage-header">
-                          <span className="stage-icon">
-                            {stage.stage.includes('بيضة') ? '🥚' : 
-                             stage.stage.includes('يرقة') ? '🐛' : 
-                             stage.stage.includes('عذراء') ? '🦋' : '🪰'}
-                          </span>
-                          <span className="stage-name">{stage.stage}</span>
-                          <span className="stage-duration">{stage.duration_ar}</span>
-                        </div>
-                        <p className="stage-notes">{stage.notes_ar}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="lifecycle-summary">
-                    <p><strong>مدة الدورة الكاملة:</strong> {selectedSpecies.lifecycle.total_days_at_25c}</p>
-                    <p><strong>درجة الحرارة المثلى:</strong> {selectedSpecies.lifecycle.optimal_temp_c}°C</p>
-                    {selectedSpecies.lifecycle.survival_years && (
-                      <p><strong>البقاء في التربة:</strong> {selectedSpecies.lifecycle.survival_years}</p>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* محتوى الأعراض (للضارة فقط) */}
-              {activeSpeciesTab === 'symptoms' && selectedSpecies.symptoms && !selectedSpecies.isBeneficial && (
-                <div className="tab-content">
-                  <div className="symptoms-section modal-section">
-                    <div className="symptom-group underground">
-                      <h3>🌿 الأعراض تحت الأرض</h3>
-                      <ul>
-                        {selectedSpecies.symptoms?.underground_ar?.map((sym, idx) => (
-                          <li key={idx}>{sym}</li>
-                        ))}
-                      </ul>
+                  <div className="grid grid-cols-2 gap-2 text-[10px] mt-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+                    <div>
+                      <span className="text-gray-500 dark:text-gray-400">الاستخدام:</span>
+                      <p className="font-bold text-gray-900 dark:text-white">{b.application_ar}</p>
                     </div>
-                    <div className="symptom-group aboveground">
-                      <h3>🍃 الأعراض فوق الأرض</h3>
-                      <ul>
-                        {selectedSpecies.symptoms?.aboveground_ar?.map((sym, idx) => (
-                          <li key={idx}>{sym}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    {selectedSpecies.symptoms?.confusion_with_ar && (
-                      <div className="confusion-box">
-                        <h3>⚠️ يتشابه مع</h3>
-                        <ul>
-                          {selectedSpecies.symptoms.confusion_with_ar.map((conf, idx) => (
-                            <li key={idx}>{conf}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* محتوى المكافحة (للضارة فقط) */}
-              {activeSpeciesTab === 'management' && selectedSpecies.management && !selectedSpecies.isBeneficial && (
-                <div className="tab-content">
-                  <div className="management-section modal-section">
-                    {selectedSpecies.management.cultural_ar && (
-                      <div className="management-group">
-                        <h3>🌾 المكافحة الزراعية</h3>
-                        {selectedSpecies.management.cultural_ar.map((method, idx) => (
-                          <div key={idx} className="method-card">
-                            <span className="method-name">{method.method_ar}</span>
-                            <p className="method-details">{method.details_ar}</p>
-                            <span className={`method-effectiveness ${method.effectiveness === 'عالية' ? 'high' : method.effectiveness === 'متوسطة' ? 'medium' : 'low'}`}>
-                              الفعالية: {method.effectiveness}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {selectedSpecies.management.biological_ar && (
-                      <div className="management-group">
-                        <h3>🐞 المكافحة الحيوية</h3>
-                        {selectedSpecies.management.biological_ar.map((bio, idx) => (
-                          <div key={idx} className="method-card">
-                            <span className="method-name">{bio.agent_ar}</span>
-                            <p className="method-details">{bio.details_ar}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {selectedSpecies.management.chemical_ar && (
-                      <div className="management-group">
-                        <h3>🧪 المكافحة الكيميائية</h3>
-                        {selectedSpecies.management.chemical_ar.map((chem, idx) => (
-                          <div key={idx} className="method-card chemical">
-                            <span className="method-name">{chem.active_ingredient_ar}</span>
-                            <p className="method-details">الجرعة: {chem.dose_ar}</p>
-                            <p className="method-details">طريقة الاستخدام: {chem.method_ar}</p>
-                            {chem.preharvest_interval_days && (
-                              <p className="method-details">فترة الأمان: {chem.preharvest_interval_days} يوم</p>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {/* محتوى آلية العمل (للنيماتودا النافعة) */}
-              {activeSpeciesTab === 'howitworks' && selectedSpecies.isBeneficial && (
-                <div className="tab-content">
-                  <div className="modal-section">
-                    <h3>⚙️ آلية العمل</h3>
-                    <p>{selectedSpecies.how_it_works_ar}</p>
-                  </div>
-                  <div className="info-grid">
-                    <div className="info-item">
-                      <span className="info-label">الأنواع الشائعة:</span>
-                      <span className="info-value">{selectedSpecies.common_species?.join('، ')}</span>
-                    </div>
-                    <div className="info-item">
-                      <span className="info-label">السلامة:</span>
-                      <span className="info-value">{selectedSpecies.safety_ar}</span>
+                    <div>
+                      <span className="text-gray-500 dark:text-gray-400">التوفر:</span>
+                      <p className="font-bold text-gray-900 dark:text-white">{b.availability_ar}</p>
                     </div>
                   </div>
+                  {b.safety_ar && (
+                    <p className="text-[10px] text-emerald-600 dark:text-emerald-400 mt-2 flex items-center gap-1">
+                      <Shield size={10} />
+                      {b.safety_ar}
+                    </p>
+                  )}
                 </div>
-              )}
-
-              {/* محتوى طريقة الاستخدام (للنيماتودا النافعة) */}
-              {activeSpeciesTab === 'application' && selectedSpecies.isBeneficial && (
-                <div className="tab-content">
-                  <div className="modal-section">
-                    <h3>💧 طريقة الاستخدام</h3>
-                    <p>{selectedSpecies.application_ar}</p>
-                  </div>
-                  <div className="info-grid">
-                    <div className="info-item">
-                      <span className="info-label">التوفر في مصر:</span>
-                      <span className="info-value">{selectedSpecies.availability_ar}</span>
-                    </div>
-                    <div className="info-item">
-                      <span className="info-label">الآفات المستهدفة:</span>
-                      <span className="info-value">{selectedSpecies.target_insects_ar?.join('، ')}</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="modal-footer">
-              <button className="close-modal-btn" onClick={closeModal}>إغلاق</button>
+              ))}
             </div>
           </div>
-        </div>
-      )}
+        )}
+
+        {activeSection === 'susceptibility' && data.crops_susceptibility_matrix && (
+          <div className="space-y-4">
+            <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+              <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><BookOpen size={12} />{data.crops_susceptibility_matrix.title_ar}</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-gray-200 dark:border-gray-700">
+                      <th className="text-right py-2 px-2 font-bold text-gray-900 dark:text-white">المحصول</th>
+                      {Object.keys(data.crops_susceptibility_matrix.matrix[0] || {}).filter(k => k !== 'crop_ar').map((key) => (
+                        <th key={key} className="text-center py-2 px-2 font-bold text-gray-700 dark:text-gray-300">{key}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.crops_susceptibility_matrix.matrix?.map((row, i) => (
+                      <tr key={i} className="border-b border-gray-100 dark:border-gray-700/50 hover:bg-gray-100 dark:hover:bg-gray-700/30">
+                        <td className="py-2 px-2 font-bold text-gray-900 dark:text-white">{row.crop_ar}</td>
+                        {Object.entries(row).filter(([key]) => key !== 'crop_ar').map(([key, val]) => (
+                          <td key={key} className="text-center py-2 px-2">
+                            <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-[10px] font-bold ${
+                              val === 4 ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400' :
+                              val === 3 ? 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400' :
+                              val === 2 ? 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-400' :
+                              val === 1 ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400' :
+                              'bg-gray-100 dark:bg-gray-700/50 text-gray-500'
+                            }`}>{val}</span>
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <style>{`
+        @keyframes modalIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-modal-in { animation: modalIn 0.3s ease; }
+      `}</style>
     </div>
   );
 };

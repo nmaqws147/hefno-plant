@@ -1,258 +1,173 @@
-// components/knowledge/FungalClassificationPage.jsx
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ChevronRight } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import pathogensData from '../disease-folder/fungi.json';
-import './fungi.css';
+
+const classConfig = {
+  oomy: {
+    emoji: '💧',
+    border: 'border-r-[3px] border-blue-500',
+    badge: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400',
+    gradient: 'from-blue-500 to-blue-600',
+    bg: 'bg-blue-50 dark:bg-blue-950/30',
+    text: 'text-blue-600 dark:text-blue-400',
+    borderLight: 'border-blue-200/60 dark:border-blue-900/40',
+    hover: 'group-hover:text-blue-600 dark:group-hover:text-blue-400',
+  },
+  zygo: {
+    emoji: '🧫',
+    border: 'border-r-[3px] border-purple-500',
+    badge: 'bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400',
+    gradient: 'from-purple-500 to-purple-600',
+    bg: 'bg-purple-50 dark:bg-purple-950/30',
+    text: 'text-purple-600 dark:text-purple-400',
+    borderLight: 'border-purple-200/60 dark:border-purple-900/40',
+    hover: 'group-hover:text-purple-600 dark:group-hover:text-purple-400',
+  },
+  asco: {
+    emoji: '🍄',
+    border: 'border-r-[3px] border-orange-500',
+    badge: 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400',
+    gradient: 'from-orange-500 to-orange-600',
+    bg: 'bg-orange-50 dark:bg-orange-950/30',
+    text: 'text-orange-600 dark:text-orange-400',
+    borderLight: 'border-orange-200/60 dark:border-orange-900/40',
+    hover: 'group-hover:text-orange-600 dark:group-hover:text-orange-400',
+  },
+  basi: {
+    emoji: '🌿',
+    border: 'border-r-[3px] border-red-500',
+    badge: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400',
+    gradient: 'from-red-500 to-red-600',
+    bg: 'bg-red-50 dark:bg-red-950/30',
+    text: 'text-red-600 dark:text-red-400',
+    borderLight: 'border-red-200/60 dark:border-red-900/40',
+    hover: 'group-hover:text-red-600 dark:group-hover:text-red-400',
+  },
+};
 
 const FungalClassificationPage = () => {
   const navigate = useNavigate();
-  const [selectedGroup, setSelectedGroup] = useState(null);
-  const [showModal, setShowModal] = useState(false);
 
-  // تجميع التصنيفات الفطرية
- const fungalGroups = [
-    {
-      ...pathogensData.oomyPro,
-      color: '#3b82f6',
-      lightColor: '#eff6ff',
-      icon: '💧',
-      borderColor: '#3b82f6',
-      id: 'oomy' // المعرف للتحويل لصفحة التفاصيل
-    },
-    {
-      ...pathogensData.zygoPro,
-      color: '#8b5cf6',
-      lightColor: '#f5f0ff',
-      icon: '🧫',
-      borderColor: '#8b5cf6',
-      id: 'zygo'
-    },
-    {
-      ...pathogensData.ascoPro,
-      color: '#10b981',
-      lightColor: '#ecfdf5',
-      icon: '🍄',
-      borderColor: '#10b981',
-      id: 'asco'
-    },
-    {
-      ...pathogensData.basiPro,
-      color: '#f59e0b',
-      lightColor: '#fffbeb',
-      icon: '🌾',
-      borderColor: '#f59e0b',
-      id: 'basi'
-    }
+  const classGroups = [
+    { ...pathogensData.oomyPro, key: 'oomy' },
+    { ...pathogensData.zygoPro, key: 'zygo' },
+    { ...pathogensData.ascoPro, key: 'asco' },
+    { ...pathogensData.basiPro, key: 'basi' },
   ];
 
-  const handleGroupClick = (group) => {
-    setSelectedGroup(group);
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-    setSelectedGroup(null);
-  };
+  const totalDiseases = classGroups.reduce((sum, g) => sum + (g.pathogens_count || 0), 0);
 
   return (
-    <div className="fungal-classification-page  " dir="rtl">
-      {/* خلفية زخرفية */}
-      <div className="fungal-class-bg">
-        <div className="bg-glow-multi"></div>
-        <div className="bg-particles"></div>
-        <div className="bg-mushroom-shapes"></div>
-      </div>
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
+      <Helmet>
+        <title>تصنيف الفطريات الممرضة | Hefno-Plant</title>
+        <meta name="description" content="دليل تصنيف الفطريات الممرضة للنبات — الفطريات البيضية، الأسكية، البازيدية، والزيجية." />
+      </Helmet>
 
-      {/* رأس الصفحة */}
-      <div className="fungal-class-header special-page-header">
-        <button className="back-button" onClick={() => navigate('/knowledge-base/diseases')}>
-          <span>←</span> العودة
+      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <button
+          onClick={() => navigate('/knowledge-base/diseases')}
+          className="mb-5 inline-flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-400 transition-colors hover:bg-emerald-100 dark:hover:bg-emerald-950/80"
+        >
+          <ChevronRight size={16} />
+          <span>العودة</span>
         </button>
-        <div className="header-content">
-          <div className="header-icon">
-            <span>🍄</span>
-          </div>
-          <div className="header-text">
-            <h1>تصنيف الفطريات الممرضة</h1>
-            <p className="header-en">Fungal Classification</p>
-            <p className="header-description">
-              الفطريات من أهم مسببات الأمراض النباتية. تنقسم إلى عدة شعب رئيسية تختلف في تركيبها وطرق تكاثرها
-              واستجابتها للمبيدات. فهم التصنيف يساعد في اختيار استراتيجية المكافحة المناسبة.
-            </p>
-            <div className="stats-badge">
-              <span className="stat-badge">📊 4 شعب رئيسية</span>
-              <span className="stat-badge">🍄 58+ نوع ممرض</span>
-              <span className="stat-badge">🔬 تصنيف علمي دقيق</span>
+
+        <div className="mb-6 rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-5 sm:p-6 shadow-sm">
+          <div className="flex items-center gap-5">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-200/50 dark:shadow-emerald-900/30 shrink-0">
+              <span className="text-3xl">🍄</span>
+            </div>
+            <div className="flex-1">
+              <h1 className="text-2xl font-black text-gray-900 dark:text-white">تصنيف الفطريات الممرضة</h1>
+              <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">Fungal Classification</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-100/40 dark:border-emerald-900/40 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-400">
+                  <span className="text-sm">🦠</span>
+                  {totalDiseases} مرض
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-xl border border-amber-100/40 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/40 px-3 py-1.5 text-xs font-bold text-amber-700 dark:text-amber-400">
+                  <span className="text-sm">🧬</span>
+                  {classGroups.length} شعب رئيسية
+                </span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* شبكة التصنيفات */}
-      <div className="classification-grid">
-        {fungalGroups.map((group, index) => (
-          <div
-            key={group.id}
-            className="classification-card"
-            style={{ '--card-color': group.color, '--card-light': group.lightColor }}
-          >
-            <div className="card-glass"></div>
-            
-            <div className="card-content" onClick={() => navigate(`/knowledge-base/diseases/fungi/${group.id}`)}>
-              {/* رأس البطاقة */}
-              <div className="card-header">
-                <div className="card-icon-wrapper" style={{ background: `${group.color}15` }}>
-                  <span className="card-icon">{group.icon}</span>
+        <div className="mb-6 rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-5 shadow-sm">
+          <div>
+            <h2 className="text-base font-black text-emerald-700 dark:text-emerald-400">مسببات الأمراض الفطرية</h2>
+            <p className="text-xs text-gray-500 dark:text-gray-400">Fungal Plant Pathogens</p>
+          </div>
+          <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            الفطريات من أهم مسببات الأمراض النباتية. تنقسم إلى عدة شعب رئيسية تختلف في تركيبها وطرق تكاثرها واستجابتها للمبيدات. فهم التصنيف يساعد في اختيار استراتيجية المكافحة المناسبة.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {classGroups.map((group) => {
+            const cc = classConfig[group.key];
+            const totalInClass = pathogensData[group.key]?.length || 0;
+            return (
+              <div
+                key={group.key}
+                onClick={() => navigate(`/knowledge-base/diseases/fungi/${group.key}`)}
+                className={`group cursor-pointer rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md ${cc.border}`}
+              >
+                <span className={`rounded-full px-2.5 py-1 text-[10px] font-bold ${cc.bg} ${cc.text}`}>
+                  {totalInClass} مرض
+                </span>
+
+                <div className="flex items-center gap-3 mt-2 mb-1">
+                  <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${cc.bg} text-xl shrink-0`}>
+                    <span>{cc.emoji}</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-base font-bold text-gray-900 dark:text-white">{group.group_ar}</h3>
+                    <p className="text-[11px] italic text-gray-500 dark:text-gray-400">{group.group_en}</p>
+                  </div>
                 </div>
-                <div className="card-badge" style={{ background: `${group.color}10`, color: group.color }}>
-                  {group.pathogens_count} مسبب
-                </div>
-              </div>
 
-              {/* العنوان */}
-              <h3 className="card-title">{group.group_ar}</h3>
-              <p className="card-title-en">{group.group_en}</p>
+                <p className="mb-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2">
+                  {group.group_description?.substring(0, 120)}...
+                </p>
 
-              {/* الوصف المختصر */}
-              <p className="card-description">
-                {group.group_description.substring(0, 120)}...
-              </p>
-
-              {/* المميزات الرئيسية (أول 3) */}
-              <div className="features-preview">
-                <div className="features-title">
-                  <span>✨</span> المميزات الرئيسية
-                </div>
-                <ul className="features-list">
-                  {group.distinguishing_features.slice(0, 3).map((feature, idx) => (
-                    <li key={idx}>
-                      <span className="feature-dot" style={{ background: group.color }}></span>
-                      <span className="feature-text">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                {group.distinguishing_features.length > 3 && (
-                  <div className="more-features">+{group.distinguishing_features.length - 3} مميزات أخرى</div>
-                )}
-              </div>
-
-              {/* المسببات */}
-              <div className="causal-preview">
-                <span className="causal-label">أهم الأجناس:</span>
-                <div className="causal-tags">
-                  {group.causalAgents.split(',').slice(0, 3).map((agent, idx) => (
-                    <span key={idx} className="causal-tag" style={{ background: `${group.color}08` }}>
-                      {agent.trim()}
-                    </span>
-                  ))}
-                  {group.causalAgents.split(',').length > 3 && (
-                    <span className="causal-tag more">+{group.causalAgents.split(',').length - 3}</span>
+                  {group.causalAgents && (
+                    <div className="space-y-1.5 border-t border-gray-100 dark:border-gray-700 pt-3 text-[11px]">
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                          <span className="text-sm">🔬</span>
+                          الأجناس:
+                        </span>
+                        <span className="font-medium text-gray-700 dark:text-gray-300 text-left line-clamp-1 max-w-[60%]">
+                          {group.causalAgents.split(',').slice(0, 3).join('، ')}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+                          <span className="text-sm">📋</span>
+                          المميزات:
+                        </span>
+                        <span className="font-medium text-gray-700 dark:text-gray-300">
+                          {group.distinguishing_features?.length || 0} صفة
+                        </span>
+                      </div>
+                    </div>
                   )}
+
+                <div className="mt-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3">
+                  <span className={`flex items-center gap-1 text-[11px] font-bold ${cc.text}`}>
+                    عرض التفاصيل
+                    <ChevronRight size={12} />
+                  </span>
                 </div>
               </div>
-
-              {/* تذييل البطاقة */}
-              <div className="card-footer" onClick={() => handleGroupClick(group)}>
-                <div className="card-link">
-                  عرض التفاصيل
-                  <span className="link-arrow">←</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="card-hover-effect"></div>
-            <div className="card-shine"></div>
-          </div>
-        ))}
-      </div>
-
-      {/* إحصائيات سريعة */}
-      <div className="classification-stats">
-        <div className="stat-card">
-          <span className="stat-number">58+</span>
-          <span className="stat-label">نوع فطري ممرض</span>
-        </div>
-        <div className="stat-divider"></div>
-        <div className="stat-card">
-          <span className="stat-number">4</span>
-          <span className="stat-label">شعب رئيسية</span>
-        </div>
-        <div className="stat-divider"></div>
-        <div className="stat-card">
-          <span className="stat-number">🌍</span>
-          <span className="stat-label">منتشرة عالمياً</span>
+            );
+          })}
         </div>
       </div>
-
-      {/* Modal لعرض التفاصيل الكاملة */}
-      {showModal && selectedGroup && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="fungal-modal glass" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <div className="modal-icon" style={{ background: `${selectedGroup.color}15` }}>
-                <span>{selectedGroup.icon}</span>
-              </div>
-              <div className="modal-title">
-                <h2>{selectedGroup.group_ar}</h2>
-                <p className="modal-scientific">{selectedGroup.group_en}</p>
-              </div>
-              <button className="modal-close" onClick={closeModal}>✕</button>
-            </div>
-
-            <div className="modal-body">
-              {/* الوصف الكامل */}
-              <div className="modal-section">
-                <h3 style={{ borderRightColor: selectedGroup.color }}>📝 الوصف العلمي</h3>
-                <p>{selectedGroup.group_description}</p>
-              </div>
-
-              {/* المميزات التفريقية */}
-              <div className="modal-section">
-                <h3 style={{ borderRightColor: selectedGroup.color }}>✨ المميزات التفريقية</h3>
-                <ul className="modal-features-list">
-                  {selectedGroup.distinguishing_features.map((feature, idx) => (
-                    <li key={idx}>
-                      <span className="feature-bullet" style={{ background: selectedGroup.color }}></span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* المسببات المرضية */}
-              <div className="modal-section">
-                <h3 style={{ borderRightColor: selectedGroup.color }}>🔬 المسببات المرضية</h3>
-                <div className="causal-grid">
-                  {selectedGroup.causalAgents.split(',').map((agent, idx) => (
-                    <span key={idx} className="causal-badge" style={{ background: `${selectedGroup.color}10`, color: selectedGroup.color }}>
-                      {agent.trim()}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* إحصائيات */}
-              <div className="modal-info-footer" style={{ background: `${selectedGroup.color}05` }}>
-                <div className="footer-item">
-                  <span>📊 عدد المسببات:</span>
-                  <strong style={{ color: selectedGroup.color }}>{selectedGroup.pathogens_count}</strong>
-                </div>
-                <div className="footer-item">
-                  <span>🏷️ التصنيف:</span>
-                  <strong style={{ color: selectedGroup.color }}>{selectedGroup.group_ar}</strong>
-                </div>
-              </div>
-            </div>
-
-            <div className="modal-footer">
-              <button className="close-modal-btn" style={{ background: selectedGroup.color }} onClick={closeModal}>
-                إغلاق
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

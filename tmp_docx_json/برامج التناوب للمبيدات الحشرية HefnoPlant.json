@@ -1,0 +1,842 @@
+{
+  "id": "irac_rotation_programs",
+  "name_ar": "برامج التناوب الجاهزة للمحاصيل الرئيسية — IRAC",
+  "name_en": "IRAC Ready-made Rotation Programs",
+  "description_ar": "برامج تناوب علمية لمكافحة المقاومة في المحاصيل الرئيسية — مبنية على مبادئ IRAC",
+  "principles_ar": [
+    "لا تكرر نفس مجموعة IRAC في رشتين متتاليتين",
+    "الحد الأقصى رشتان من نفس المجموعة في الموسم",
+    "احفظ مجموعة 28 (الدايامايد) للمراحل الحرجة فقط",
+    "أدرج Bt والكائنات الحيوية في كل برنامج",
+    "راقب فاعلية المبيد — انخفاض الفاعلية = مقاومة"
+  ],
+  "total_programs": 10,
+  "programs": [
+    {
+      "id": "irot-001",
+      "name_ar": "برنامج تناوب القطن — ديدان القطن",
+      "crop": "قطن",
+      "season_ar": "يونيو–أكتوبر",
+      "target_pests_ids": [
+        "pest-08",
+        "pest-09",
+        "pest-10",
+        "pest-01",
+        "pest-02",
+        "pest-21"
+      ],
+      "target_pests_ar": [
+        "دودة ورق القطن",
+        "دودة اللوز الأمريكية",
+        "دودة اللوز الصغرى",
+        "المن",
+        "الذبابة البيضاء",
+        "العنكبوت الأحمر"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند 2-3 مجاميع بيض / نبات أو أولى يرقات الجيل الأول",
+          "irac_group_id": "irac-11a",
+          "example_ai_ids": [
+            "iai-041"
+          ],
+          "example_ai_ar": "Bt kurstaki أو Bta",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "Bt 2 جم/لتر — يُرش على المساء",
+          "notes_ar": "أساس البرنامج — آمن ومؤثر ضد اليرقات الصغيرة"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ارتفاع الكثافة فوق العتبة الاقتصادية",
+          "irac_group_id": "irac-28",
+          "example_ai_ids": [
+            "iai-059"
+          ],
+          "example_ai_ar": "كلوراثيانيليبرول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "كلوراثيانيليبرول 0.3 مل/لتر",
+          "notes_ar": "28 — الأقوى ضد ديدان القطن — احفظه للضغط العالي"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 14 يوم — تناوب",
+          "irac_group_id": "irac-3a",
+          "example_ai_ids": [
+            "iai-014"
+          ],
+          "example_ai_ar": "لامبدا سيهالوثرين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "لامبدا سيهالوثرين 0.4 مل/لتر",
+          "notes_ar": "3A — صاعق سريع ضد اليرقات الكبيرة"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "بعد 10-14 يوم — تناوب",
+          "irac_group_id": "irac-5",
+          "example_ai_ids": [
+            "iai-031"
+          ],
+          "example_ai_ar": "سبينيتورام",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبينيتورام 0.3 مل/لتر",
+          "notes_ar": "5 — لا مقاومة متبادلة مع 3A أو 28"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "ضد الحشرات الماصة (المن، ذبابة بيضاء)",
+          "irac_group_id": "irac-4a",
+          "example_ai_ids": [
+            "iai-024"
+          ],
+          "example_ai_ar": "أسيتامبريد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "أسيتامبريد 0.3 جم/لتر",
+          "notes_ar": "4A — جهازي ضد الحشرات الماصة — تناوب مع 28"
+        }
+      ],
+      "rotation_summary_ar": "11A → 28 → 3A → 5 → 4A",
+      "resistance_notes_ar": "طفرة kdr في 3A منتشرة في مصر — تحقق من الفاعلية دورياً — 28 للضغط العالي فقط",
+      "general_notes_ar": "رصد الكثافة أسبوعياً — استخدام الأعداء الطبيعية (Trichogramma) — الزراعة في التواريخ الموصى بها"
+    },
+    {
+      "id": "irot-002",
+      "name_ar": "برنامج تناوب الطماطم — التوتا والعنكبوت الأحمر",
+      "crop": "طماطم",
+      "season_ar": "طوال العام في البيوت المحمية",
+      "target_pests_ids": [
+        "pest-12",
+        "pest-09",
+        "pest-01",
+        "pest-02",
+        "pest-03",
+        "pest-21"
+      ],
+      "target_pests_ar": [
+        "التوتا",
+        "دودة اللوز",
+        "المن",
+        "الذبابة البيضاء",
+        "التربس",
+        "العنكبوت الأحمر"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً كل 7-10 أيام ضد التوتا",
+          "irac_group_id": "irac-11a",
+          "example_ai_ids": [
+            "iai-041"
+          ],
+          "example_ai_ar": "Bt kurstaki",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "Bt 2 جم/لتر",
+          "notes_ar": "أساس وقائي — آمن على الحشرات المفيدة"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند أولى أنفاق التوتا أو عتبة 1 نفق/ورقة",
+          "irac_group_id": "irac-28",
+          "example_ai_ids": [
+            "iai-060"
+          ],
+          "example_ai_ar": "سايانترانيليبرول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سايانترانيليبرول 0.3 مل/لتر",
+          "notes_ar": "28 — الأقوى ضد التوتا + فعّال على التربس"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 10-14 يوم — تناوب",
+          "irac_group_id": "irac-5",
+          "example_ai_ids": [
+            "iai-031"
+          ],
+          "example_ai_ar": "سبينيتورام",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبينيتورام 0.3 مل/لتر",
+          "notes_ar": "5 — لا مقاومة متبادلة مع 28"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "بعد 10-14 يوم",
+          "irac_group_id": "irac-13",
+          "example_ai_ids": [
+            "iai-044"
+          ],
+          "example_ai_ar": "كلورفينابير",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "كلورفينابير 0.7 مل/لتر",
+          "notes_ar": "13 — لا مقاومة متبادلة — ضد التوتا المقاومة"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "ضد العنكبوت الأحمر عند عتبة 2-3 أكاروس/ورقة",
+          "irac_group_id": "irac-6",
+          "example_ai_ids": [
+            "iai-032"
+          ],
+          "example_ai_ar": "أبامكتين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "أبامكتين 0.75 مل/لتر",
+          "notes_ar": "6 — الأهم ضد الأكاروس"
+        },
+        {
+          "spray_number": 6,
+          "timing_ar": "تناوب ضد الأكاروس بعد أبامكتين",
+          "irac_group_id": "irac-23",
+          "example_ai_ids": [
+            "iai-058"
+          ],
+          "example_ai_ar": "سبيروميسيفن",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبيروميسيفن 0.7 مل/لتر",
+          "notes_ar": "23 — لا مقاومة متبادلة مع 6"
+        }
+      ],
+      "rotation_summary_ar": "11A → 28 → 5 → 13 — للتوتا | 6 → 23 → 10 — للأكاروس",
+      "resistance_notes_ar": "التوتا طورت مقاومة لـ 1A و3A في مصر — 28 و13 و5 الأهم الآن",
+      "general_notes_ar": "الأعداء الطبيعية (Nesidiocoris, Macrolophus) أساسية في البيوت المحمية — لا تستخدم مبيدات تضر بها"
+    },
+    {
+      "id": "irot-003",
+      "name_ar": "برنامج تناوب الخيار والقرعيات — أبيض ريشي وتربس وعنكبوت",
+      "crop": "خيار وقرعيات",
+      "season_ar": "طوال العام في البيوت المحمية",
+      "target_pests_ids": [
+        "pest-02",
+        "pest-03",
+        "pest-21",
+        "pest-01",
+        "pest-24"
+      ],
+      "target_pests_ar": [
+        "الذبابة البيضاء",
+        "التربس",
+        "العنكبوت الأحمر",
+        "المن",
+        "الأكاروس العريض"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً عند بدء الزراعة",
+          "irac_group_id": "irac-7",
+          "example_ai_ids": [
+            "iai-035"
+          ],
+          "example_ai_ar": "بيريبروكسيفن",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "بيريبروكسيفن 0.75 مل/لتر",
+          "notes_ar": "7 — يُوقف تكاثر الذبابة البيضاء — وقائي ممتاز"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظهور الذبابة البيضاء",
+          "irac_group_id": "irac-4a",
+          "example_ai_ids": [
+            "iai-023"
+          ],
+          "example_ai_ar": "إيميداكلوبريد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "إيميداكلوبريد 0.4 مل/لتر",
+          "notes_ar": "4A — جهازي ضد الذبابة البيضاء — تحقق من حساسية السلالات"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "تناوب — بعد 14 يوم",
+          "irac_group_id": "irac-28",
+          "example_ai_ids": [
+            "iai-060"
+          ],
+          "example_ai_ar": "سايانترانيليبرول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سايانترانيليبرول 0.3 مل/لتر",
+          "notes_ar": "28 — ضد الذبابة البيضاء + التربس + التوتا"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "عند ظهور التربس فوق العتبة",
+          "irac_group_id": "irac-5",
+          "example_ai_ids": [
+            "iai-030"
+          ],
+          "example_ai_ar": "سبينوساد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبينوساد 0.4 مل/لتر",
+          "notes_ar": "5 — الأفضل ضد التربس — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "ضد العنكبوت الأحمر عند العتبة",
+          "irac_group_id": "irac-6",
+          "example_ai_ids": [
+            "iai-032"
+          ],
+          "example_ai_ar": "أبامكتين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "أبامكتين 0.75 مل/لتر",
+          "notes_ar": "6 — نافذ ضد الأكاروس"
+        }
+      ],
+      "rotation_summary_ar": "7 → 4A → 28 → 5 (تربس) | 6 → 23 → 10 (أكاروس)",
+      "resistance_notes_ar": "الذبابة البيضاء مقاومة للـ 4A في كثير من المناطق المصرية — ابدأ بـ 7 و28 و9C",
+      "general_notes_ar": "الأكاروس المفترس Phytoseiulus persimilis فعّال جداً ضد العنكبوت الأحمر في البيوت المحمية"
+    },
+    {
+      "id": "irot-004",
+      "name_ar": "برنامج تناوب الحبوب — المن ودودة الساق",
+      "crop": "قمح وشعير",
+      "season_ar": "نوفمبر–أبريل",
+      "target_pests_ids": [
+        "pest-01",
+        "pest-08",
+        "pest-09",
+        "pest-18"
+      ],
+      "target_pests_ar": [
+        "المن",
+        "دودة القلب",
+        "دودة القطن",
+        "الجراد"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند وصول المن للعتبة (5 حشرات/ساق أو 25% نباتات مصابة)",
+          "irac_group_id": "irac-1b",
+          "example_ai_ids": [
+            "iai-011"
+          ],
+          "example_ai_ar": "بيريميكارب",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "بيريميكارب 0.75 جم/لتر",
+          "notes_ar": "انتقائي ضد المن فقط — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند تكرار الإصابة أو ظهور ديدان الساق",
+          "irac_group_id": "irac-4a",
+          "example_ai_ids": [
+            "iai-028"
+          ],
+          "example_ai_ar": "فلونيكاميد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "فلونيكاميد 0.4 جم/لتر",
+          "notes_ar": "9C — لا مقاومة متبادلة مع 4A — ضد المن والنطاط"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "ضد الجراد أو الديدان القارضة",
+          "irac_group_id": "irac-3a",
+          "example_ai_ids": [
+            "iai-015"
+          ],
+          "example_ai_ar": "ديلتامثرين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "ديلتامثرين 0.4 مل/لتر أو طُعم مسموم",
+          "notes_ar": "3A — صاعق سريع ضد الجراد والديدان"
+        }
+      ],
+      "rotation_summary_ar": "1B (انتقائي) → 9C → 3A (ضغط عالٍ)",
+      "resistance_notes_ar": "المن في الحبوب لا يزال حساساً للـ 1B — احفظ 4A و3A للضغط العالٍ",
+      "general_notes_ar": "معاملة البذور بكلوثيانيدين + فلودايوكسونيل تُقلل الضغط المرضي الأولي بشكل كبير"
+    },
+    {
+      "id": "irot-005",
+      "name_ar": "برنامج تناوب الحمضيات — أكاروس وحشرات قشرية",
+      "crop": "حمضيات",
+      "season_ar": "مارس–أكتوبر",
+      "target_pests_ids": [
+        "pest-05",
+        "pest-06",
+        "pest-07",
+        "pest-14",
+        "pest-22",
+        "pest-25",
+        "pest-26"
+      ],
+      "target_pests_ar": [
+        "حشرة قشرية",
+        "بق دقيقي",
+        "بق أبيض",
+        "حافرة ورق حمضيات",
+        "أكاروس أحمر",
+        "أكاروس صدأ",
+        "نطاط ناقل HLB"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً عند بداية موسم النمو (مارس–أبريل)",
+          "irac_group_id": "irac-7",
+          "example_ai_ids": [
+            "iai-035"
+          ],
+          "example_ai_ar": "بيريبروكسيفن",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "بيريبروكسيفن 0.75 مل/لتر",
+          "notes_ar": "7 — يُوقف تكاثر الحشرات القشرية والبق الدقيقي"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظهور الأكاروس الأحمر فوق عتبة 2-3/ورقة",
+          "irac_group_id": "irac-21a",
+          "example_ai_ids": [
+            "iai-053"
+          ],
+          "example_ai_ar": "بيريداين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "بيريداين 0.5 مل/لتر",
+          "notes_ar": "21A — ممتاز ضد أكاروس الحمضيات"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "بعد 21 يوم — تناوب ضد الأكاروس",
+          "irac_group_id": "irac-6",
+          "example_ai_ids": [
+            "iai-032"
+          ],
+          "example_ai_ar": "أبامكتين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "أبامكتين 0.75 مل/لتر",
+          "notes_ar": "6 — لا مقاومة متبادلة مع 21A"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "ضد الحشرات القشرية والبق الدقيقي",
+          "irac_group_id": "irac-23",
+          "example_ai_ids": [
+            "iai-057"
+          ],
+          "example_ai_ar": "سبيروتيترامات",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبيروتيترامات 0.4 مل/لتر",
+          "notes_ar": "23 — جهازي ثنائي الاتجاه — الأفضل ضد البق الدقيقي"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "ضد نطاط ناقل HLB (Diaphorina citri) عند الطرود",
+          "irac_group_id": "irac-4a",
+          "example_ai_ids": [
+            "iai-023"
+          ],
+          "example_ai_ar": "إيميداكلوبريد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "إيميداكلوبريد 0.5 مل/لتر صب جذري",
+          "notes_ar": "4A صب جذري — طويل الأمد ضد نطاط HLB"
+        }
+      ],
+      "rotation_summary_ar": "7 → 21A → 6 → 23 (أكاروس+حشرات ماصة) | 4A صب جذري ضد HLB",
+      "resistance_notes_ar": "لا تتجاوز رشتين من 21A في الموسم — تناوب مع 6 و23 و10",
+      "general_notes_ar": "مكافحة نطاط HLB حساسة جداً — فور ظهور الطرود الخضراء — المصيدة الصفراء للرصد"
+    },
+    {
+      "id": "irot-006",
+      "name_ar": "برنامج تناوب الفراولة — تربس وأكاروس وذبابة بيضاء",
+      "crop": "فراولة",
+      "season_ar": "أكتوبر–مارس",
+      "target_pests_ids": [
+        "pest-03",
+        "pest-02",
+        "pest-21",
+        "pest-24",
+        "pest-01"
+      ],
+      "target_pests_ar": [
+        "التربس",
+        "الذبابة البيضاء",
+        "العنكبوت الأحمر",
+        "الأكاروس العريض",
+        "المن"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً كل 5-7 أيام ضد التربس",
+          "irac_group_id": "irac-5",
+          "example_ai_ids": [
+            "iai-031"
+          ],
+          "example_ai_ar": "سبينيتورام",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبينيتورام 0.3 مل/لتر",
+          "notes_ar": "5 — الأفضل ضد التربس — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "تناوب ضد التربس — بعد 7-10 أيام",
+          "irac_group_id": "irac-28",
+          "example_ai_ids": [
+            "iai-060"
+          ],
+          "example_ai_ar": "سايانترانيليبرول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سايانترانيليبرول 0.3 مل/لتر",
+          "notes_ar": "28 — ضد التربس + الذبابة البيضاء + التوتا"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "ضد العنكبوت الأحمر والأكاروس العريض",
+          "irac_group_id": "irac-6",
+          "example_ai_ids": [
+            "iai-032"
+          ],
+          "example_ai_ar": "أبامكتين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "أبامكتين 0.75 مل/لتر",
+          "notes_ar": "6 — الأهم ضد الأكاروس"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "تناوب ضد الأكاروس",
+          "irac_group_id": "irac-10",
+          "example_ai_ids": [
+            "iai-040"
+          ],
+          "example_ai_ar": "إيتوكسازول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "إيتوكسازول 0.4 مل/لتر",
+          "notes_ar": "10 — لا مقاومة متبادلة مع 6"
+        }
+      ],
+      "rotation_summary_ar": "5 → 28 (تربس) | 6 → 10 → 23 (أكاروس) | 4A/9C (ذبابة بيضاء)",
+      "resistance_notes_ar": "التربس على الفراولة يُطور مقاومة للـ 3A و1A — 5 و28 الأهم",
+      "general_notes_ar": "المفترس Neoseiulus cucumeris ضد التربس — Phytoseiulus persimilis ضد العنكبوت الأحمر"
+    },
+    {
+      "id": "irot-007",
+      "name_ar": "برنامج تناوب العنب — تربس وعنكبوت وذبابة بيضاء",
+      "crop": "عنب",
+      "season_ar": "مارس–سبتمبر",
+      "target_pests_ids": [
+        "pest-03",
+        "pest-21",
+        "pest-22",
+        "pest-01",
+        "pest-04"
+      ],
+      "target_pests_ar": [
+        "التربس",
+        "العنكبوت الأحمر",
+        "أكاروس الحمضيات",
+        "المن",
+        "نطاط الأوراق"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند بداية تفتح الأوراق — وقائياً",
+          "irac_group_id": "irac-23",
+          "example_ai_ids": [
+            "iai-057"
+          ],
+          "example_ai_ar": "سبيروتيترامات",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبيروتيترامات 0.4 مل/لتر",
+          "notes_ar": "23 — جهازي ضد الأكاروس + المن + الذبابة البيضاء"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند ظهور التربس فوق العتبة",
+          "irac_group_id": "irac-5",
+          "example_ai_ids": [
+            "iai-030"
+          ],
+          "example_ai_ar": "سبينوساد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبينوساد 0.4 مل/لتر",
+          "notes_ar": "5 — الأفضل ضد التربس على العنب"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "ضد الأكاروس الأحمر فوق العتبة",
+          "irac_group_id": "irac-6",
+          "example_ai_ids": [
+            "iai-032"
+          ],
+          "example_ai_ar": "أبامكتين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "أبامكتين 0.75 مل/لتر",
+          "notes_ar": "6 — نافذ ضد الأكاروس"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "تناوب ضد الأكاروس",
+          "irac_group_id": "irac-21a",
+          "example_ai_ids": [
+            "iai-053"
+          ],
+          "example_ai_ar": "بيريداين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "بيريداين 0.5 مل/لتر",
+          "notes_ar": "21A — تناوب مع 6"
+        }
+      ],
+      "rotation_summary_ar": "23 (وقائي) → 5 (تربس) | 6 → 21A → 10 (أكاروس)",
+      "resistance_notes_ar": "لا تستخدم 3A وحده ضد التربس — مقاومة kdr منتشرة",
+      "general_notes_ar": "المفترس Typhlodromus pyri وNeoseiulus californicus فعّالان ضد الأكاروس في العنب"
+    },
+    {
+      "id": "irot-008",
+      "name_ar": "برنامج تناوب أشجار الفاكهة — عث وتربس وحشرات قشرية",
+      "crop": "تفاح وكمثرى وخوخ ومشمش",
+      "season_ar": "مارس–سبتمبر",
+      "target_pests_ids": [
+        "pest-05",
+        "pest-06",
+        "pest-15",
+        "pest-21",
+        "pest-23",
+        "pest-17"
+      ],
+      "target_pests_ar": [
+        "حشرة قشرية",
+        "بق دقيقي",
+        "دودة ثمار التفاح",
+        "عنكبوت أحمر",
+        "أكاروس البقعة الحمراء",
+        "ذبابة الفاكهة"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "بعد تفتح البراعم مباشرةً — وقائياً",
+          "irac_group_id": "irac-10",
+          "example_ai_ids": [
+            "iai-038"
+          ],
+          "example_ai_ar": "كلوفينتيزين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "كلوفينتيزين 0.4 مل/لتر",
+          "notes_ar": "10 — يمنع تضاعف الأكاروس من البداية"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "ضد دودة ثمار التفاح عند أولى الأزهار",
+          "irac_group_id": "irac-28",
+          "example_ai_ids": [
+            "iai-059"
+          ],
+          "example_ai_ar": "كلوراثيانيليبرول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "كلوراثيانيليبرول 0.3 مل/لتر",
+          "notes_ar": "28 — الأقوى ضد دودة ثمار التفاح"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "تناوب بعد 14-21 يوم",
+          "irac_group_id": "irac-18a",
+          "example_ai_ids": [
+            "iai-050"
+          ],
+          "example_ai_ar": "ميثوكسيفينوزيد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "ميثوكسيفينوزيد 0.75 مل/لتر",
+          "notes_ar": "18A — لا مقاومة متبادلة مع 28 — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "ضد الأكاروس فوق العتبة",
+          "irac_group_id": "irac-21a",
+          "example_ai_ids": [
+            "iai-055"
+          ],
+          "example_ai_ar": "تيبوفنبيراد",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "تيبوفنبيراد 0.7 مل/لتر",
+          "notes_ar": "21A — ممتاز ضد عناكب الفاكهة"
+        },
+        {
+          "spray_number": 5,
+          "timing_ar": "تناوب ضد الأكاروس وللحشرات القشرية",
+          "irac_group_id": "irac-23",
+          "example_ai_ids": [
+            "iai-057"
+          ],
+          "example_ai_ar": "سبيروتيترامات",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبيروتيترامات 0.4 مل/لتر",
+          "notes_ar": "23 — جهازي ثنائي الاتجاه — الأكاروس + البق الدقيقي"
+        }
+      ],
+      "rotation_summary_ar": "10 (وقائي) → 28 → 18A (دودة ثمار) | 21A → 23 → 6 (أكاروس)",
+      "resistance_notes_ar": "لا تستخدم 3A وحده ضد دودة التفاح — مقاومة منتشرة — 28 و18A الأهم",
+      "general_notes_ar": "المفترسات الطبيعية (Typhlodromus) مهمة جداً — لا تستخدم مبيدات تقضي عليها"
+    },
+    {
+      "id": "irot-009",
+      "name_ar": "برنامج تناوب الفلفل — تربس وعنكبوت أبيض ريشي وذبابة بيضاء",
+      "crop": "فلفل",
+      "season_ar": "طوال العام في البيوت المحمية",
+      "target_pests_ids": [
+        "pest-03",
+        "pest-24",
+        "pest-02",
+        "pest-01",
+        "pest-21"
+      ],
+      "target_pests_ar": [
+        "التربس",
+        "الأكاروس العريض",
+        "الذبابة البيضاء",
+        "المن",
+        "العنكبوت الأحمر"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "وقائياً كل 7 أيام ضد التربس والأكاروس",
+          "irac_group_id": "irac-6",
+          "example_ai_ids": [
+            "iai-032"
+          ],
+          "example_ai_ar": "أبامكتين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "أبامكتين 0.75 مل/لتر",
+          "notes_ar": "6 — ممتاز ضد الأكاروس العريض والتربس"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "تناوب بعد 7-10 أيام",
+          "irac_group_id": "irac-5",
+          "example_ai_ids": [
+            "iai-031"
+          ],
+          "example_ai_ar": "سبينيتورام",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبينيتورام 0.3 مل/لتر",
+          "notes_ar": "5 — ضد التربس — لا مقاومة متبادلة مع 6"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "ضد الذبابة البيضاء والمن",
+          "irac_group_id": "irac-28",
+          "example_ai_ids": [
+            "iai-060"
+          ],
+          "example_ai_ar": "سايانترانيليبرول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سايانترانيليبرول 0.3 مل/لتر",
+          "notes_ar": "28 — واسع الطيف — ضد الذبابة البيضاء والتربس"
+        },
+        {
+          "spray_number": 4,
+          "timing_ar": "تناوب ضد الذبابة البيضاء",
+          "irac_group_id": "irac-9c",
+          "example_ai_ids": [
+            "iai-037"
+          ],
+          "example_ai_ar": "بيريميترازين",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "بيريميترازين 0.4 جم/لتر",
+          "notes_ar": "9C — لا مقاومة متبادلة مع 4A — آمن على الأعداء الطبيعية"
+        }
+      ],
+      "rotation_summary_ar": "6 → 5 (تربس + أكاروس) | 28 → 9C → 7 (ذبابة بيضاء)",
+      "resistance_notes_ar": "الأكاروس العريض حساس جداً لأبامكتين — لكن تناوب مع 5 و10 ضروري",
+      "general_notes_ar": "المفترس Amblyseius cucumeris فعّال جداً ضد التربس والأكاروس العريض في الفلفل"
+    },
+    {
+      "id": "irot-010",
+      "name_ar": "برنامج تناوب الأرز — دودة الساق وموت الغمد",
+      "crop": "أرز",
+      "season_ar": "يونيو–سبتمبر",
+      "target_pests_ids": [
+        "pest-08",
+        "pest-09",
+        "pest-18"
+      ],
+      "target_pests_ar": [
+        "دودة الساق",
+        "دودة القلب",
+        "الجراد"
+      ],
+      "sprays": [
+        {
+          "spray_number": 1,
+          "timing_ar": "عند الإشتال أو بدء التفريغ — وقائياً ضد دودة الساق",
+          "irac_group_id": "irac-28",
+          "example_ai_ids": [
+            "iai-059"
+          ],
+          "example_ai_ar": "كلوراثيانيليبرول",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "كلوراثيانيليبرول معاملة بذور أو 0.3 مل/لتر",
+          "notes_ar": "28 — الأقوى ضد دودة ساق الأرز"
+        },
+        {
+          "spray_number": 2,
+          "timing_ar": "عند الطرد — الرشة الأهم",
+          "irac_group_id": "irac-5",
+          "example_ai_ids": [
+            "iai-031"
+          ],
+          "example_ai_ar": "سبينيتورام",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "سبينيتورام 0.3 مل/لتر",
+          "notes_ar": "5 — تناوب مع 28 — لا مقاومة متبادلة"
+        },
+        {
+          "spray_number": 3,
+          "timing_ar": "ضد الجراد أو الضغط العالٍ",
+          "irac_group_id": "irac-2b",
+          "example_ai_ids": [
+            "iai-013"
+          ],
+          "example_ai_ar": "فيبرونيل",
+          "must_mix_with_id": null,
+          "mix_ai_ar": null,
+          "dose_note_ar": "فيبرونيل 0.3 مل/لتر",
+          "notes_ar": "2B — الأقوى ضد الجراد وحشرات التربة"
+        }
+      ],
+      "rotation_summary_ar": "28 (بذور) → 5 (طرد) | 2B (جراد وضغط عالٍ)",
+      "resistance_notes_ar": "Bt في الأرز أقل فاعلية ضد دودة الساق — 28 هو الحل الأمثل",
+      "general_notes_ar": "معاملة بذور بكلوراثيانيليبرول تُوفر رشة كاملة — الأعداء الطبيعية مهمة في الأرز"
+    }
+  ]
+}

@@ -1,0 +1,742 @@
+[
+ {
+      "id": "nema-1",
+      "name_ar": "نيماتودا تعقد الجذور (Root-Knot Nematode)",
+      "scientificName": "Meloidogyne incognita (Kofoid & White) Chitwood / Meloidogyne javanica (Treub) Chitwood / Meloidogyne arenaria (Neal) Chitwood",
+      "family_ar": "ميلويدوجينيداي — Meloidogynidae",
+      "family_en": "Meloidogynidae",
+      "severity": "very high",
+      "type": "نيماتودا ثابتة داخلية — تُصيب الجذور وتُسبب تعقدات مميزة",
+      "fullDescription": "أكثر نيماتودا النبات خطورةً وانتشارًا في العالم. تُسبب تعقدات (Galls) مميزة على الجذور بسهولة التعرف عليها. تُصيب أكثر من 2000 نوع نباتي. في مصر تُعد M. incognita وM. javanica الأكثر شيوعًا وخطورةً. الإناث الثابتة داخل جذور تضع 200-1000 بيضة في كيس بيض جيلاتيني. تُخسر المحاصيل المصرية ما يُقدَّر بـ 15-30% سنويًا في الأراضي الملوثة.",
+      "symptoms": [
+        "تعقدات (Galls/Knots) كروية-غير منتظمة على الجذور — العرض التشخيصي الحاسم",
+        "تضخم الجذور الرئيسية والثانوية مع تشوهها",
+        "ذبول وتقزم النباتات وضعف نموها رغم توافر الماء والغذاء",
+        "اصفرار الأوراق السفلية مشابه لنقص الحديد أو الآزوت",
+        "انخفاض حاد في الإنتاج وضعف جودة الثمار",
+        "بقع دائرية في الحقل حيث النباتات ضعيفة النمو",
+        "تحلل الجذور المتعقدة ودخول الفطريات والبكتيريا"
+      ],
+      "infectionCycle": "اليرقات J2 تفقس من البيض وتنتقل في التربة للجذور الفتية. تخترق القشرة وتُحفّز تكوين خلايا عملاقة (Giant Cells) بجوارها للتغذية. الأنثى تتحول لكيسة كمثرية ثابتة وتضع البيض. دورة الحياة 25-30 يومًا عند 25°م.",
+      "favorableConditions": "تربة رملية خفيفة، درجات حرارة 25-30°م، رطوبة تربة معتدلة، زراعة متكررة للعوائل",
+      "hostPlants": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "خيار",
+        "كوسة",
+        "بطيخ",
+        "بطاطس",
+        "فول",
+        "فاصوليا",
+        "بنجر سكري",
+        "جزر",
+        "خس",
+        "بصل",
+        "ثوم",
+        "2000+ نوع"
+      ],
+      "economicThreshold": "500 يرقة J2 / 200 جم تربة = تدخل ضروري",
+      "naturalEnemies": [
+        "Paecilomyces lilacinus — فطر يُصيب بيض Meloidogyne",
+        "Pochonia chlamydosporia — فطر يُصيب البيض",
+        "Bacillus firmus — بكتيريا ممرضة للنيماتودا",
+        "Trichoderma harzianum — يُقلل كثافة النيماتودا",
+        "Purpureocillium lilacinum"
+      ],
+      "management": {
+        "cultural": [
+          "تعقيم التربة بالشمس (Solarization): نايلون شفاف 4-6 أسابيع صيفًا — يُقلل الكثافة 80-95%",
+          "دورة زراعية: إدخال محاصيل غير عائلة (نجيليات، قمح، ذرة) لمدة 2-3 سنوات",
+          "زراعة محاصيل طاردة: القطيفة Tagetes spp. تُنتج ثيوفين يقتل Meloidogyne",
+          "إضافة مادة عضوية: كمبوست + بقايا نباتية تُشجع أعداء النيماتودا الطبيعية",
+          "استخدام أصناف مقاومة تحمل جين Mi (طماطم مقاومة لـ M. incognita)",
+          "التطعيم على أسماك مقاومة للنيماتودا في الطماطم والباذنجان"
+        ],
+        "biological": [
+          "Paecilomyces lilacinus (كيس بيض) بمعدل 2-4 كجم/فدان — خلط مع التربة",
+          "Bacillus firmus بمعدل 5 كجم/فدان — إضافة قبل الزراعة",
+          "Pochonia chlamydosporia بمعدل 3 كجم/فدان",
+          "Trichoderma harzianum بمعدل 3 كجم/فدان",
+          "نيماتودا مفترسة: Steinernema carpocapsae بمعدل 5×10⁹/فدان"
+        ],
+        "chemical": [
+          "أوكساميل (Oxamyl) بمعدل 1-2 لتر/فدان — صب في التربة أو رش خطوط الزراعة",
+          "كادوسافوس بمعدل 1-1.5 كجم مادة فعالة/فدان — خلط بالتربة",
+          "فينامي فوس بمعدل 1 كجم مادة فعالة/فدان",
+          "كلوروبيكرين — تبخير قبل الزراعة في الحالات الشديدة",
+          "ميثام الصوديوم — تبخير التربة (30-40 لتر/فدان مخفف)"
+        ]
+      },
+      "solarization_protocol": "نايلون شفاف 0.04 مم، تربة رطبة، صيف مصر (يونيو-أغسطس)، 45-60 يومًا = 95% قضاء على J2",
+      "effectiveness": "75–95% بحسب الطريقة المستخدمة",
+      "season": "طوال العام — ذروة الربيع والصيف عند دفء التربة",
+      "resistanceRisk": "منخفض للنيماتيسيدات — مراقبة الجرعات مهمة",
+      "references": "Sasser, J.N. & Freckman, D.W. (1987). World perspective on nematology. In: Vistas on Nematology. | Gozel, U. et al. (2006). Meloidogyne spp. in Egypt. Nematologia Mediterranea"
+    },
+    {
+      "id": "nema-2",
+      "name_ar": "نيماتودا الكيس في القمح والبقوليات (Cyst Nematode)",
+      "scientificName": "Heterodera avenae Wollenweber / Heterodera glycines Ichinohe / Globodera rostochiensis (Wollenweber) Behrens",
+      "family_ar": "هيتيروديريداي — Heteroderidae",
+      "family_en": "Heteroderidae",
+      "severity": "very high",
+      "type": "نيماتودا ثابتة داخلية — تُكوّن أكياسًا (Cysts) مميزة",
+      "fullDescription": "نيماتودا الكيس من أخطر مسببات الأمراض في محاصيل الحبوب والبقوليات. H. avenae تُصيب القمح والشعير. H. glycines تُصيب فول الصويا (Soybean Cyst Nematode — SCN) وتُسبب خسائر بمليارات الدولارات. G. rostochiensis (Potato Cyst Nematode — PCN) تُصيب البطاطس وتخضع لحجر صحي صارم. الكيس (الأنثى الميتة المليئة بالبيض) يبقى في التربة 10-20 سنة بعد موته.",
+      "symptoms": [
+        "تقزم وضعف النمو في بقع دائرية بالحقل (Patch Symptoms)",
+        "اصفرار وذبول النباتات في مجموعات",
+        "جذور متقصرة ومتفرعة بشكل مفرط (Bushy Root)",
+        "إناث بيضاء-كريمية مميزة مرئية بالعين على الجذور في الموسم الأول",
+        "أكياس (Cysts) بنية-ذهبية صلبة على الجذور والتربة بعد موت الإناث",
+        "سنابل فارغة وانخفاض حاد في الوزن الهكتولتري في الحبوب"
+      ],
+      "infectionCycle": "البيض داخل الكيس يفقس حين يستشعر إفرازات جذور العائل. يرقات J2 تخترق الجذور. الإناث تتحول لأكياس صلبة مليئة بمئات البيضات. الأكياس تبقى في التربة عشرات السنوات.",
+      "favorableConditions": "تربة خفيفة جيدة الصرف، درجات حرارة 15-20°م، زراعة متكررة للعائل، pH 6-7",
+      "hostPlants": [
+        "H. avenae: قمح، شعير، شيلم، حشائش نجيلية",
+        "H. glycines: فول الصويا، فاصوليا",
+        "G. rostochiensis: بطاطس، طماطم، باذنجان"
+      ],
+      "economicThreshold": "5 أكياس/200 جم تربة لـ G. rostochiensis = تدخل ضروري",
+      "naturalEnemies": [
+        "Pochonia chlamydosporia — يُصيب بيض الكيس بفاعلية عالية",
+        "Paecilomyces lilacinus",
+        "Verticillium chlamydosporium"
+      ],
+      "management": {
+        "cultural": [
+          "دورة زراعية طويلة 4-6 سنوات — الحل الأمثل لـ H. avenae",
+          "زراعة محاصيل طاردة: القطيفة لـ G. rostochiensis",
+          "استخدام أصناف مقاومة: أصناف قمح مقاومة لـ H. avenae، أصناف بطاطس مقاومة لـ G. rostochiensis",
+          "تعقيم التربة قبل زراعة البطاطس في المناطق الموبوءة"
+        ],
+        "biological": [
+          "Pochonia chlamydosporia بمعدل 3-5 كجم/فدان — إضافة للتربة",
+          "Paecilomyces lilacinus بمعدل 2-4 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1-2 لتر/فدان — صب في التربة",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان",
+          "ميثام الصوديوم — تبخير التربة قبل البطاطس",
+          "كلوروبيكرين — تبخير في الأراضي الشديدة الإصابة"
+        ]
+      },
+      "important_note": "G. rostochiensis مُدرجة في قوائم الكائنات المحجورة صحيًا في كثير من الدول — إبلاغ السلطات الزراعية إلزامي عند اكتشافها",
+      "effectiveness": "70–88%",
+      "season": "نوفمبر–مارس في موسم القمح — طوال العام في البطاطس",
+      "resistanceRisk": "منخفض للنيماتيسيدات"
+    },
+    {
+      "id": "nema-3",
+      "name_ar": "نيماتودا الجذور المتقرحة (Root Lesion Nematode)",
+      "scientificName": "Pratylenchus penetrans (Cobb) Filipjev & Schuurmans Stekhoven / Pratylenchus thornei Sher & Allen / Pratylenchus zeae Graham",
+      "family_ar": "براتيلينكيداي — Pratylenchidae",
+      "family_en": "Pratylenchidae",
+      "severity": "high",
+      "type": "نيماتودا متحركة داخلية — تُسبب تقرحات بنية في الجذور",
+      "fullDescription": "جنس Pratylenchus من أكثر نيماتودا التربة انتشارًا وأوسعها مدى في العوائل. تتحرك داخل قشرة الجذر محدثةً تقرحات نخرية بنية مميزة. P. penetrans خطير على البطاطس ومحاصيل كثيرة في المناخات المعتدلة. P. thornei أهم أنواع القمح خاصةً في مصر. P. zeae متخصص في الذرة. تنتشر داخل قشرة الجذر محدثةً مسارات بنية تُضعف امتصاص الماء والغذاء.",
+      "symptoms": [
+        "تقرحات بنية داكنة-سوداء على قشرة الجذر (Lesions) — تشخيص بالفحص المجهري",
+        "تحلل الجذور من الخارج مع بقاء الاسطوانة الوعائية المركزية سليمة في البداية",
+        "تقصر الجذور وتشعبها المفرط",
+        "ذبول وتقزم النباتات مشابه لنقص الغذاء",
+        "دخول الفطريات من الجنس Fusarium وRhizoctonia عبر التقرحات (مركب مرضي)",
+        "بقع دائرية متفرقة في الحقل بنباتات ضعيفة النمو"
+      ],
+      "infectionCycle": "كل مراحل دورة الحياة (ما عدا البيض) تدخل وتخرج من الجذور. تعيش في التربة وتنتشر بمياه الري والأدوات. دورة 25-45 يومًا.",
+      "favorableConditions": "تربة متوسطة القوام، درجات حرارة 15-25°م، زراعة متكررة للعائل",
+      "hostPlants": [
+        "قمح",
+        "شعير",
+        "ذرة",
+        "بطاطس",
+        "بصل",
+        "طماطم",
+        "فلفل",
+        "فراولة",
+        "أشجار فاكهة"
+      ],
+      "economicThreshold": "200 نيماتودا / 200 جم تربة أو 1000 / 5 جم جذر",
+      "naturalEnemies": [
+        "Trichoderma harzianum",
+        "Bacillus firmus",
+        "Paecilomyces lilacinus"
+      ],
+      "management": {
+        "cultural": [
+          "دورة زراعية مع محاصيل غير عائلة أو مقاومة",
+          "تعقيم التربة بالشمس",
+          "إضافة مادة عضوية لتشجيع أعداء النيماتودا",
+          "زراعة القطيفة كمحصول طارد"
+        ],
+        "biological": [
+          "Bacillus firmus بمعدل 5 كجم/فدان",
+          "Trichoderma harzianum بمعدل 3 كجم/فدان",
+          "Paecilomyces lilacinus بمعدل 2 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1.5 لتر/فدان",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان",
+          "فينامي فوس بمعدل 1 كجم م.ف/فدان"
+        ]
+      },
+      "effectiveness": "72–85%",
+      "season": "طوال العام — ذروة الشتاء في القمح",
+      "resistanceRisk": "منخفض",
+      "references": "Loof, P.A.A. (1978). The genus Pratylenchus Filipjev, 1936. A review of its anatomy. Meded. Landbouwhogesch. Wageningen"
+    },
+    {
+      "id": "nema-4",
+      "name_ar": "نيماتودا الحمضيات (Citrus Nematode)",
+      "scientificName": "Tylenchulus semipenetrans Cobb",
+      "family_ar": "تيلينكيولوداي — Tylenchulidae",
+      "family_en": "Tylenchulidae",
+      "severity": "high",
+      "type": "نيماتودا شبه ثابتة خارجية — تُصيب جذور الحمضيات",
+      "fullDescription": "المسبب الرئيسي لمرض 'الإرهاق البطيء' (Slow Decline) في الحمضيات — من أهم أمراض بساتين الحمضيات في مصر ومنطقة البحر المتوسط. الأنثى تنغرز جزئيًا في قشرة الجذور الرفيعة وتُفرز مادة جيلاتينية. تُسبب تدهورًا تدريجيًا في الأشجار على مدى سنوات. تُقدَّر خسائرها في بساتين الحمضيات المصرية بـ 20-40%.",
+      "symptoms": [
+        "تدهور تدريجي وبطيء للأشجار على مدى سنوات",
+        "تساقط مبكر وغير طبيعي للأوراق",
+        "اصفرار الأوراق وتقزم الأشجار تدريجيًا",
+        "انخفاض الإنتاج تدريجيًا على مدى 3-5 سنوات",
+        "جذور رفيعة متعفنة ذات لون بني",
+        "إناث أصغر حجمًا من Meloidogyne مرئية على الجذور بتكبير بسيط"
+      ],
+      "infectionCycle": "اليرقات J2 في التربة تخترق قشرة الجذور الرفيعة. الأنثى تثبت جزئيًا وتضع بيضًا في كيس جيلاتيني خارجي. دورة الحياة 6-8 أسابيع.",
+      "favorableConditions": "تربة رملية خفيفة، درجات حرارة 25-35°م، بساتين قديمة، ري زائد",
+      "hostPlants": [
+        "برتقال",
+        "ليمون",
+        "يوسفي",
+        "جريب فروت",
+        "جميع الحمضيات",
+        "عنب (بدرجة أقل)"
+      ],
+      "economicThreshold": "1000 نيماتودا / 250 مل تربة أو 1000 / 5 جم جذر",
+      "naturalEnemies": [
+        "Paecilomyces lilacinus",
+        "Bacillus firmus",
+        "Pochonia chlamydosporia"
+      ],
+      "management": {
+        "cultural": [
+          "زراعة أصناف حمضيات مطعمة على أسماك متحملة (Trifoliate Orange, Troyer Citrange)",
+          "تحسين صرف التربة وتجنب الري الزائد",
+          "إضافة مادة عضوية منتظمة",
+          "تعقيم تربة المشتل قبل إنبات البذور"
+        ],
+        "biological": [
+          "Paecilomyces lilacinus بمعدل 3-5 كجم/فدان — إضافة تحت خط الري",
+          "Bacillus firmus بمعدل 5 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 2-3 لتر/فدان — صب في منطقة الجذور",
+          "فينامي فوس بمعدل 1-1.5 كجم م.ف/فدان",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان",
+          "إيثوبروب — صب في التربة"
+        ]
+      },
+      "treatment_protocol": "معالجة في أوائل الربيع وأوائل الخريف عند بداية موسمَي النمو الجديدَين — أفضل توقيت",
+      "effectiveness": "72–83%",
+      "season": "طوال العام — ذروة الربيع والخريف مع بداية النمو الجديد",
+      "resistanceRisk": "منخفض",
+      "references": "Baines, R.C. et al. (1969). Nematode parasites of citrus. In: Nematodes of Tropical Crops"
+    },
+    {
+      "id": "nema-5",
+      "name_ar": "نيماتودا الموز الثاقبة (Burrowing Nematode)",
+      "scientificName": "Radopholus similis (Cobb) Thorne",
+      "family_ar": "براتيلينكيداي — Pratylenchidae",
+      "family_en": "Pratylenchidae",
+      "severity": "very high",
+      "type": "نيماتودا متحركة داخلية — تثقب وتُدمر الجذور الكبيرة",
+      "fullDescription": "أشد نيماتودا الموز تدميرًا عالميًا. تُسبب 'الانهيار الطوباوي' (Toppling Disease) — الموز يسقط بسبب تدمير الجذور. تُسبب كذلك عفن الجذور في الحمضيات. مُدرجة في قوائم الكائنات المحجورة صحيًا في كثير من الدول. في مصر تُعد تهديدًا حقيقيًا لمزارع الموز.",
+      "symptoms": [
+        "تدهور سريع لجهاز جذر الموز — نخر بني واسع في الجذور الكبيرة",
+        "سقوط الموز (Toppling) — النبات ينكسر عند قاعدته لضعف الجذور",
+        "تقزم النبات وضعف الخلفات",
+        "مشط ثمار صغير وغير مكتمل",
+        "في الحمضيات: تعفن الجذور الرفيعة والإصابة مع Phytophthora"
+      ],
+      "infectionCycle": "كل مراحل دورة الحياة تخترق وتتحرك داخل قشرة الجذور مُسببةً تدميرًا واسعًا. تنتشر بالخلفات الملوثة والتربة والمياه.",
+      "favorableConditions": "مناخ استوائي أو شبه استوائي، رطوبة عالية، تربة ثقيلة",
+      "hostPlants": [
+        "موز (الأساسي)",
+        "حمضيات",
+        "فلفل",
+        "جزر",
+        "جنجل"
+      ],
+      "economicThreshold": "100 نيماتودا / 5 جم جذر",
+      "naturalEnemies": [
+        "Paecilomyces lilacinus",
+        "Bacillus firmus"
+      ],
+      "management": {
+        "cultural": [
+          "استخدام خلفات خالية من النيماتودا (In vitro)",
+          "معاملة الخلفات بالماء الساخن 55°م / 20 دقيقة",
+          "إزالة واستئصال كامل للخلفات المصابة",
+          "دورة زراعية مع محاصيل غير عائلة"
+        ],
+        "biological": [
+          "Paecilomyces lilacinus بمعدل 5 كجم/فدان",
+          "Bacillus firmus بمعدل 5 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 2-3 لتر/فدان",
+          "فينامي فوس بمعدل 1-1.5 كجم م.ف/فدان",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان",
+          "معاملة الخلفات: كلوربيريفوس 0.05% لمدة 30 دقيقة"
+        ]
+      },
+      "important_note": "مرض محجور صحيًا في بعض الدول — فحص الخلفات الواردة إلزامي قبل الزراعة",
+      "effectiveness": "68–78%",
+      "season": "طوال العام",
+      "resistanceRisk": "منخفض"
+    },
+    {
+      "id": "nema-6",
+      "name_ar": "نيماتودا التقرح الرنقي (Reniform Nematode)",
+      "scientificName": "Rotylenchulus reniformis Linford & Oliveira",
+      "family_ar": "هوبلولايميداي — Hoplolaimidae",
+      "family_en": "Hoplolaimidae",
+      "severity": "high",
+      "type": "نيماتودا شبه ثابتة خارجية — تُصيب جذور طيف واسع من المحاصيل",
+      "fullDescription": "تُسبب خسائر كبيرة في القطن وفول الصويا والخضروات في المناطق الاستوائية وشبه الاستوائية. الأنثى تنغرز جزئيًا في قشرة الجذر ورأسها داخل الخلايا. تُسبب تضخمات صغيرة وتحلل في الجذور. في مصر شائعة في القطن والخضروات.",
+      "symptoms": [
+        "ذبول وتقزم النبات وضعف النمو",
+        "اصفرار الأوراق وبقع دائرية ضعيفة في الحقل",
+        "تحلل وتقصر الجذور",
+        "إناث كريمية-بيضاء صغيرة مرئية على الجذور بالتكبير"
+      ],
+      "infectionCycle": "اليرقات J4 والإناث الصغيرة تخترق الجذور. الأنثى الناضجة تثبت جزئيًا وتضع بيضًا في كيس جيلاتيني. دورة الحياة 3-4 أسابيع.",
+      "favorableConditions": "درجات حرارة 25-32°م، تربة خفيفة، رطوبة معتدلة",
+      "hostPlants": [
+        "قطن",
+        "فول الصويا",
+        "بطاطا حلوة",
+        "طماطم",
+        "فلفل",
+        "خيار",
+        "موز"
+      ],
+      "economicThreshold": "1000 نيماتودا / 250 مل تربة",
+      "naturalEnemies": [
+        "Paecilomyces lilacinus",
+        "Bacillus firmus"
+      ],
+      "management": {
+        "cultural": [
+          "دورة زراعية مع الحبوب النجيلية",
+          "تعقيم التربة بالشمس",
+          "إضافة مادة عضوية"
+        ],
+        "biological": [
+          "Paecilomyces lilacinus بمعدل 3 كجم/فدان",
+          "Bacillus firmus بمعدل 5 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1.5 لتر/فدان",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان",
+          "فينامي فوس بمعدل 1 كجم م.ف/فدان"
+        ]
+      },
+      "effectiveness": "73–82%",
+      "season": "أبريل–أكتوبر في القطن والخضروات الصيفية",
+      "resistanceRisk": "منخفض"
+    },
+    {
+      "id": "nema-7",
+      "name_ar": "نيماتودا اللانس (Lance Nematode)",
+      "scientificName": "Hoplolaimus columbus Sher / Hoplolaimus galeatus (Cobb) Thorne",
+      "family_ar": "هوبلولايميداي — Hoplolaimidae",
+      "family_en": "Hoplolaimidae",
+      "severity": "high",
+      "type": "نيماتودا متحركة داخلية وخارجية — تُصيب جذور الحبوب والخضروات",
+      "fullDescription": "نيماتودا ذات ستيليه (Stylet) قوي وطويل يشبه الرمح — ومن هنا جاء اسمها. تُسبب خسائر كبيرة في فول الصويا وذرة الحبة والأرز في المناطق الاستوائية. تعيش داخل وخارج الجذور وتتغذى على الأنسجة القشرية. تُضعف الجذور وتجعلها عُرضة للفطريات.",
+      "symptoms": [
+        "نخر بني في قشرة الجذور",
+        "تقصر الجذور وضعفها",
+        "بقع دائرية ضعيفة النمو في الحقل",
+        "ذبول وتقزم النباتات"
+      ],
+      "infectionCycle": "تتحرك داخل وخارج قشرة الجذور. كل مراحل دورة الحياة في التربة والجذور.",
+      "favorableConditions": "تربة رملية، درجات حرارة 25-30°م",
+      "hostPlants": [
+        "فول الصويا",
+        "ذرة",
+        "أرز",
+        "قمح",
+        "قطن"
+      ],
+      "economicThreshold": "500 نيماتودا / 200 جم تربة",
+      "naturalEnemies": [
+        "Paecilomyces lilacinus",
+        "Trichoderma harzianum"
+      ],
+      "management": {
+        "cultural": [
+          "دورة زراعية",
+          "تعقيم التربة",
+          "مادة عضوية"
+        ],
+        "biological": [
+          "Paecilomyces lilacinus بمعدل 3 كجم/فدان",
+          "Trichoderma harzianum بمعدل 3 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1.5 لتر/فدان",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان"
+        ]
+      },
+      "effectiveness": "70–80%",
+      "season": "يونيو–سبتمبر",
+      "resistanceRisk": "منخفض",
+      "references": "Robbins, R.T. (1982). Hoplolaimus columbus. In: Descriptions of Plant-Parasitic Nematodes. CAB International"
+    },
+    {
+      "id": "nema-8",
+      "name_ar": "نيماتودا الإبرة (Needle Nematode)",
+      "scientificName": "Longidorus elongatus (de Man) Thorne & Swanger / Longidorus africanus Merny",
+      "family_ar": "لونجيدوريداي — Longidoridae",
+      "family_en": "Longidoridae",
+      "severity": "high",
+      "type": "نيماتودا متحركة خارجية — تُصيب الجذور وتنقل فيروسات",
+      "fullDescription": "من أطول نيماتودا النبات (3-12 مم). تُصيب الجذور خارجيًا وتُسبب تضخمات في أطراف الجذور. الأهمية الكبرى لـ Longidorus تكمن في كونها ناقلة لفيروسات Nepoviruses الخطيرة. L. africanus شائع في مصر في التربة الرملية ويُصيب محاصيل متعددة.",
+      "symptoms": [
+        "تضخم وتقصر أطراف الجذور (Stubby Root)",
+        "تشعب مفرط للجذور عند نقاط الإصابة",
+        "ذبول وتقزم عام للنبات",
+        "نقل فيروسات Nepoviruses كـ TRSV وRRV"
+      ],
+      "infectionCycle": "تعيش في التربة وتتغذى على أطراف الجذور. دورة حياة طويلة 3-4 أشهر. تنتشر بمياه الري والأدوات.",
+      "favorableConditions": "تربة رملية خفيفة، درجات حرارة 18-25°م",
+      "hostPlants": [
+        "خيار",
+        "طماطم",
+        "فلفل",
+        "عنب",
+        "خس",
+        "جزر",
+        "بنجر سكري"
+      ],
+      "economicThreshold": "50 نيماتودا / 500 مل تربة",
+      "naturalEnemies": [
+        "Steinernema carpocapsae",
+        "Heterorhabditis bacteriophora"
+      ],
+      "management": {
+        "cultural": [
+          "تعقيم التربة بالشمس — فعّال جدًا",
+          "دورة زراعية",
+          "تجنب نقل التربة الملوثة"
+        ],
+        "biological": [
+          "Steinernema carpocapsae بمعدل 5×10⁹/فدان",
+          "Heterorhabditis bacteriophora بمعدل 5×10⁹/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 2 لتر/فدان",
+          "كادوسافوس بمعدل 1.5 كجم م.ف/فدان"
+        ]
+      },
+      "effectiveness": "68–78%",
+      "season": "طوال العام في التربة الرملية",
+      "resistanceRisk": "منخفض",
+      "references": "Taylor, C.E. & Brown, D.J.F. (1997). Nematode Vectors of Plant Viruses. CAB International"
+    },
+    {
+      "id": "nema-9",
+      "name_ar": "نيماتودا الخنجر (Dagger Nematode — ناقل GFLV)",
+      "scientificName": "Xiphinema index Thorne & Allen / Xiphinema americanum Cobb",
+      "family_ar": "لونجيدوريداي — Longidoridae",
+      "family_en": "Longidoridae",
+      "severity": "very high",
+      "type": "نيماتودا خارجية ناقلة لفيروسات Nepoviruses",
+      "fullDescription": "X. index من أهم نيماتودا التربة عالميًا لسببين: 1) تُصيب جذور العنب مُسببةً تضخمات في الأطراف. 2) هي الناقل الوحيد لفيروس الورقة المروحية GFLV الأخطر على العنب. تبقى ناقلة للفيروس طوال حياتها (4+ سنوات). تبقى في التربة 10+ سنوات. في مصر تُعد تهديدًا رئيسيًا لبساتين العنب.",
+      "symptoms": [
+        "تضخم وتشوه أطراف جذور العنب (Tip Galls)",
+        "ضعف نمو الكرمة وتراجع الإنتاج",
+        "أعراض فيروس GFLV: تشوه الأوراق المروحي + تشوه العناقيد",
+        "تدهور تدريجي على مدى سنوات"
+      ],
+      "infectionCycle": "تتغذى على أطراف جذور العنب وتنقل GFLV خلال التغذية. تعيش في التربة عمرًا طويلًا. تنتشر ببطء في التربة لكن سريعًا بنقل التربة والشتلات.",
+      "favorableConditions": "تربة رملية خفيفة، درجات حرارة 15-25°م، بساتين عنب قديمة",
+      "hostPlants": [
+        "عنب (الأساسي)",
+        "تين",
+        "توت",
+        "بعض الأعشاب"
+      ],
+      "economicThreshold": "1 نيماتودا / 500 مل تربة في بساتين الزراعة الجديدة",
+      "naturalEnemies": [],
+      "management": {
+        "cultural": [
+          "ترك الأرض بورًا 3-5 سنوات بعد اقتلاع كروم مصابة — الجذور المتبقية مستودع",
+          "استخدام شتلات خالية من النيماتودا والفيروس",
+          "تعقيم التربة قبل الزراعة الجديدة",
+          "زراعة على أسماك مقاومة لـ Xiphinema"
+        ],
+        "biological": [],
+        "chemical": [
+          "ميثام الصوديوم — تبخير التربة قبل الزراعة الجديدة",
+          "أوكساميل بمعدل 2-3 لتر/فدان لتقليل الكثافة",
+          "فينامي فوس بمعدل 1.5 كجم م.ف/فدان"
+        ]
+      },
+      "important_note": "تعقيم التربة قبل زراعة كروم جديدة إلزامي في الأراضي التي سبق زراعتها بعنب",
+      "effectiveness": "65–78%",
+      "season": "طوال العام",
+      "resistanceRisk": "منخفض",
+      "references": "Raski, D.J. & Hewitt, W.B. (1963). Plant-parasitic nematodes as vectors of plant viruses. Phytopathology"
+    },
+    {
+      "id": "nema-10",
+      "name_ar": "نيماتودا ساق البصل والثوم (Stem and Bulb Nematode)",
+      "scientificName": "Ditylenchus dipsaci (Kühn) Filipjev",
+      "family_ar": "أنجيوناسيه — Anguinidae",
+      "family_en": "Anguinidae",
+      "severity": "high",
+      "type": "نيماتودا متحركة داخلية — تُصيب السيقان والبصيلات والبذور",
+      "fullDescription": "من أخطر نيماتودا الخضروات — تتميز بإصابة الأجزاء الهوائية وليس الجذور فقط. تُصيب الساق والأوراق والبصلات مُسببةً تضخمات وعفنًا. يصعب مكافحتها في التربة لأنها تتحمل الجفاف لسنوات كاملة. تنتقل بالبذور والبصيلات الملوثة. في مصر تُسبب خسائر في البصل والثوم وبعض الخضروات.",
+      "symptoms": [
+        "تضخم وتشوه الساق والأوراق (Bloat or Spikelet Symptoms)",
+        "تشقق وتقصر وتشوه أوراق البصل الأنبوبية",
+        "عفن طري رخو في قاعدة ساق البصل والثوم",
+        "تكسر وانبطاح النباتات المصابة",
+        "تقزم وتشوه النباتات الصغيرة"
+      ],
+      "infectionCycle": "تعيش في الأنسجة النباتية الرطبة. تنتقل بالبذور والبصيلات الملوثة. تتحمل الجفاف الكامل لسنوات في حالة سكون.",
+      "favorableConditions": "درجات حرارة 10-20°م، رطوبة عالية في النبات، بذور وبصيلات ملوثة",
+      "hostPlants": [
+        "بصل",
+        "ثوم",
+        "بنجر سكري",
+        "خيار",
+        "فراولة",
+        "بطاطا حلوة"
+      ],
+      "economicThreshold": "1 نيماتودا / 10 بذور",
+      "naturalEnemies": [
+        "Steinernema feltiae"
+      ],
+      "management": {
+        "cultural": [
+          "معاملة البصيلات بالماء الساخن 45°م / 4 ساعات",
+          "دورة زراعية 4+ سنوات",
+          "استخدام بذور وبصيلات معتمدة سليمة"
+        ],
+        "biological": [
+          "Steinernema feltiae بمعدل 5×10⁹/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1.5 لتر/فدان",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان",
+          "معاملة البذور بـ فينامي فوس"
+        ]
+      },
+      "effectiveness": "70–80%",
+      "season": "أكتوبر–مارس في موسم البصل والثوم",
+      "resistanceRisk": "منخفض",
+      "references": "Sturhan, D. & Brzeski, M.W. (1991). Stem and bulb nematodes, Ditylenchus spp. In: Manual of Agricultural Nematology"
+    },
+    {
+      "id": "nema-11",
+      "name_ar": "نيماتودا تعقد جذور الفراولة (Strawberry Root Nematode Complex)",
+      "scientificName": "Meloidogyne hapla Chitwood / Pratylenchus penetrans",
+      "family_ar": "ميلويدوجينيداي / براتيلينكيداي",
+      "family_en": "Meloidogynidae / Pratylenchidae",
+      "severity": "high",
+      "type": "مركب نيماتودي — إصابة مشتركة تُسبب عفن التاج والجذور",
+      "fullDescription": "الفراولة عُرضة لإصابة مشتركة من M. hapla (نيماتودا التعقد الشمالية — أصغر تعقدات) وP. penetrans (تقرحات بنية). المركب المرضي خطير جدًا لأن P. penetrans يُهيئ مداخل لـ Phytophthora fragariae وFusarium. M. hapla تُفضل التربة الباردة (15-20°م) مما يجعلها مناسبة لموسم الفراولة المصري.",
+      "symptoms": [
+        "M. hapla: تعقدات صغيرة دقيقة على الجذور الرفيعة",
+        "P. penetrans: تقرحات بنية طولية في قشرة الجذور",
+        "ذبول وتقزم النباتات وضعف الإنتاج",
+        "دخول Phytophthora وFusarium عبر الجروح — عفن التاج"
+      ],
+      "infectionCycle": "كلا النوعين يعيشان في التربة ويُصيبان الجذور. المركب المرضي يُسرّع التدهور.",
+      "favorableConditions": "تربة ثقيلة، درجات حرارة 10-22°م، رطوبة عالية",
+      "hostPlants": [
+        "فراولة"
+      ],
+      "economicThreshold": "200 نيماتودا / 200 جم تربة",
+      "naturalEnemies": [
+        "Paecilomyces lilacinus",
+        "Pochonia chlamydosporia"
+      ],
+      "management": {
+        "cultural": [
+          "تعقيم التربة بالشمس أو البخار",
+          "شتلات خالية من النيماتودا",
+          "ملشة بلاستيك تُقلل التلوث"
+        ],
+        "biological": [
+          "Paecilomyces lilacinus بمعدل 3 كجم/فدان",
+          "Pochonia chlamydosporia بمعدل 3 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1.5 لتر/فدان",
+          "ميثام الصوديوم — تبخير قبل الزراعة"
+        ]
+      },
+      "effectiveness": "72–83%",
+      "season": "أكتوبر–فبراير في موسم الفراولة",
+      "resistanceRisk": "منخفض",
+      "references": "Greco, N. (1993). Nematode diseases of vegetable crops. In: Plant Parasitic Nematodes in Subtropical and Tropical Agriculture"
+    },
+    {
+      "id": "nema-12",
+      "name_ar": "نيماتودا تعقد جذور الخضروات في البيوت المحمية (Greenhouse Root-Knot)",
+      "scientificName": "Meloidogyne incognita race 1, 2, 3 / Meloidogyne arenaria",
+      "family_ar": "ميلويدوجينيداي — Meloidogynidae",
+      "family_en": "Meloidogynidae",
+      "severity": "very high",
+      "type": "نيماتودا ثابتة داخلية — خاصة بالبيوت المحمية المكثفة",
+      "fullDescription": "البيوت المحمية المكثفة تُشكّل بيئة مثالية لتكاثر نيماتودا التعقد: حرارة مناسبة دائمًا، زراعة متكررة لنفس المحاصيل الحساسة، تربة محدودة. كثافتها ترتفع للأضعاف مقارنة بالحقل المكشوف. تصبح مشكلة مزمنة صعبة الحل في البيوت المحمية التي لم تُعقَّم سنواتها الأولى.",
+      "symptoms": [
+        "نفس أعراض Meloidogyne لكن بشدة أعلى ودورة أسرع",
+        "تعقدات على 90-100% من الجذور في الإصابات الشديدة",
+        "انهيار كامل لنباتات طماطم أو خيار البيوت المحمية",
+        "تحول التربة لبيئة غير صالحة للزراعة"
+      ],
+      "infectionCycle": "دورة الحياة تتكرر 6-8 مرات سنويًا في البيوت المحمية الدافئة.",
+      "favorableConditions": "درجات حرارة ثابتة 22-28°م، زراعة مستمرة، تربة خفيفة",
+      "hostPlants": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "باذنجان",
+        "كوسة"
+      ],
+      "economicThreshold": "200 يرقة J2 / 200 جم تربة",
+      "naturalEnemies": [
+        "Paecilomyces lilacinus",
+        "Bacillus firmus",
+        "Pochonia chlamydosporia"
+      ],
+      "management": {
+        "cultural": [
+          "تعقيم التربة بالبخار (98°م / 30 دقيقة) بين كل موسمَين — الأفضل",
+          "تعقيم بالشمس في فصل الصيف",
+          "التطعيم على أسماك مقاومة للنيماتودا — فعّال جدًا في الطماطم",
+          "الزراعة المائية (Hydroponics) أو البيرليت بدلًا من التربة"
+        ],
+        "biological": [
+          "Bacillus firmus بمعدل 5 كجم/فدان — إضافة قبل الزراعة",
+          "Paecilomyces lilacinus بمعدل 3 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1.5 لتر/فدان",
+          "ميثام الصوديوم — تبخير بين المواسم",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان"
+        ]
+      },
+      "effectiveness": "80–95% بتعقيم البخار",
+      "season": "طوال العام في البيوت المحمية",
+      "resistanceRisk": "منخفض"
+    },
+    {
+      "id": "nema-13",
+      "name_ar": "نيماتودا الخراجة في فول الصويا والقمح (Soybean Cyst Nematode Complex)",
+      "scientificName": "Heterodera glycines Ichinohe / Heterodera schachtii A. Schmidt",
+      "family_ar": "هيتيروديريداي — Heteroderidae",
+      "family_en": "Heteroderidae",
+      "severity": "very high",
+      "type": "نيماتودا ثابتة داخلية — تُكوّن أكياسًا في الجذور",
+      "fullDescription": "H. glycines الأهم اقتصاديًا على فول الصويا في مصر. H. schachtii مسبب 'مرض الأوراق الشاحبة' في بنجر السكر — من أخطر أمراض البنجر وأصعبها مكافحةً. تبقى الأكياس في التربة 15-20 سنة بعد الموت مليئة بالبيض الساكن. تُسبب خسائر 10-70% في الأصناف الحساسة.",
+      "symptoms": [
+        "H. glycines: بقع صفراء أو بنية في حقل فول الصويا (Sudden Death Syndrome مشابه)",
+        "H. schachtii: اصفرار الأوراق وتقزم بنجر السكر مع تشعب الجذور الكبيرة",
+        "إناث بيضاء-كريمية مرئية على الجذور",
+        "أكياس ذهبية-بنية الشهيرة على جذور بنجر السكر"
+      ],
+      "infectionCycle": "مشابهة لـ Heterodera avenae — البيض في الكيس يفقس حين يستشعر إفرازات الجذور.",
+      "favorableConditions": "تربة خفيفة رملية-طينية، pH 6-7، زراعة متكررة، درجات حرارة 20-28°م",
+      "hostPlants": [
+        "H. glycines: فول الصويا (الأساسي)، فاصوليا",
+        "H. schachtii: بنجر السكر (الأساسي)، سبانخ، خردل"
+      ],
+      "economicThreshold": "1 كيس / 200 مل تربة",
+      "naturalEnemies": [
+        "Pochonia chlamydosporia",
+        "Paecilomyces lilacinus"
+      ],
+      "management": {
+        "cultural": [
+          "دورة زراعية طويلة 4-6 سنوات — الأهم والأفعل لـ H. schachtii",
+          "زراعة أصناف مقاومة لـ H. glycines",
+          "زراعة فخ: نباتات تُحفز الفقس ثم تُقتلع قبل نضج الإناث"
+        ],
+        "biological": [
+          "Pochonia chlamydosporia بمعدل 5 كجم/فدان",
+          "Paecilomyces lilacinus بمعدل 3 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 2 لتر/فدان",
+          "كادوسافوس بمعدل 1 كجم م.ف/فدان",
+          "ميثام الصوديوم — تبخير في حالات شديدة"
+        ]
+      },
+      "effectiveness": "65–80%",
+      "season": "يوليو–أكتوبر في فول الصويا — أكتوبر–مارس في بنجر السكر",
+      "resistanceRisk": "منخفض",
+      "references": "Riggs, R.D. & Schmitt, D.P. (1988). Complete characterization of the race scheme in Heterodera glycines. Journal of Nematology"
+    },
+    {
+
+      "id": "nema-14",
+      "name_ar": "مركب نيماتودا — فطريات الجذور (Nematode-Fungal Complex)",
+      "scientificName": "Meloidogyne spp. + Fusarium oxysporum / Pratylenchus spp. + Rhizoctonia solani",
+      "family_ar": "مركب متعدد المسببات",
+      "family_en": "Disease Complex",
+      "severity": "very high",
+      "type": "مركب مرضي — النيماتودا تُهيئ مداخل للفطريات",
+      "fullDescription": "من أهم المفاهيم في علم أمراض النبات: النيماتودا والفطريات تعملان معًا في مركب مرضي (Disease Complex) أشد تدميرًا من أي منهما منفردًا. الجروح التي تُحدثها النيماتودا في الجذور تُشكّل مداخل مثالية لـ Fusarium وRhizoctonia وPhytophthora. الإصابة المشتركة تُسبب أعراضًا أشد بكثير من الإصابة المنفردة. هذا المركب شائع جدًا في التربة المصرية.",
+      "symptoms": [
+        "ذبول وعائي سريع مع وجود تعقدات نيماتودية",
+        "عفن التاج والجذور المشترك مع تعقدات Meloidogyne",
+        "تحلل جذور أسرع وأشمل من الإصابة الفطرية المنفردة",
+        "مقاومة أصناف القمح للفيوزاريوم تتراجع بوجود Pratylenchus"
+      ],
+      "infectionCycle": "النيماتودا تُكوّن تقرحات → الفطريات تدخل عبر التقرحات → التفاعل المشترك يُضاعف الضرر.",
+      "favorableConditions": "أي ظروف تُناسب كلا المسببَين معًا، تربة ثقيلة رطبة دافئة",
+      "hostPlants": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قمح",
+        "قطن",
+        "فراولة"
+      ],
+      "economicThreshold": "وجود كلا المسببَين في نفس التربة = مكافحة إلزامية",
+      "naturalEnemies": [
+        "Trichoderma harzianum — يُقاوم الفطريات ويُقلل النيماتودا",
+        "Bacillus subtilis — يُقاوم الفطريات",
+        "Bacillus firmus — يُقاوم النيماتودا",
+        "Paecilomyces lilacinus"
+      ],
+      "management": {
+        "cultural": [
+          "تعقيم التربة الشامل قبل الزراعة — يُعالج المسببَين معًا",
+          "دورة زراعية",
+          "استخدام أصناف مقاومة لكلا المسببَين",
+          "تغذية متوازنة لتقوية الجذور"
+        ],
+        "biological": [
+          "Trichoderma harzianum + Bacillus firmus — مزيج بمعدل 3+3 كجم/فدان",
+          "Paecilomyces lilacinus بمعدل 3 كجم/فدان"
+        ],
+        "chemical": [
+          "أوكساميل بمعدل 1.5 لتر/فدان (للنيماتودا) + ثيوفانات ميثيل بمعدل 1 جم/لتر (للفطريات)",
+          "ميثام الصوديوم — يُعالج المسببَين معًا",
+          "كادوسافوس + مانكوزيب"
+        ]
+      },
+      "effectiveness": "75–90% بالمعالجة المشتركة",
+      "season": "طوال العام",
+      "resistanceRisk": "منخفض"
+    }
+]

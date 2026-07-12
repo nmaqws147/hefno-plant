@@ -1,9 +1,11 @@
 // components/HomeScreen.jsx
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import {
+  Shield, Bug, Thermometer, FlaskConical,
+  Activity, AlertTriangle, Bookmark, Share2, Printer, ArrowRight, X
+} from 'lucide-react';
 import ContactSection from '../component/contact';
-import { Devider } from '../component/divider';
-import FeaturesSection from '../component/fetures';
+import Services from '../component/services';
 import HeroSection from '../component/hero';
 import KnowledgePreview from '../component/knowledgePreview';
 import agricultureData from '../data';
@@ -11,7 +13,6 @@ import './homeScreen.css';
 import { Helmet } from 'react-helmet-async';
 
 const HomeScreen = ({ id }) => {
-  const [isLoading, setIsLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -27,43 +28,41 @@ const HomeScreen = ({ id }) => {
     setSelectedCategory(null);
   };
 
-  if (isLoading) {
-    return (
-      <div className="home-screen" id={id}>
-        <div className="skeleton-loader" style={{height: '100px', borderRadius: '20px', marginBottom: '30px'}}></div>
-        <div className="quick-actions">
-          {[1,2,3,4].map(i => (
-            <div key={i} className="skeleton-loader feature-card" style={{height: '200px'}}></div>
-          ))}
-        </div>
-      </div>
-    );
-  }
+  const categoryIcon = (cat) => {
+    if (cat === 'pesticides') return <Shield size={20} className="text-emerald-600" />;
+    if (cat === 'insects') return <Bug size={20} className="text-emerald-600" />;
+    return <Thermometer size={20} className="text-emerald-600" />;
+  };
 
-  // صفحة التفاصيل الخاصة بكل فئة
+  const categoryTitle = (cat) => {
+    if (cat === 'pesticides') return 'المبيدات الزراعية';
+    if (cat === 'insects') return 'الحشرات الضارة';
+    return 'الأمراض النباتية';
+  };
+
+  const categorySubtitle = (cat) => {
+    if (cat === 'pesticides') return 'مجموعة شاملة من المبيدات الزراعية وطرق استخدامها';
+    if (cat === 'insects') return 'تعرف على الحشرات الضارة وطرق مكافحتها';
+    return 'تشخيص وعلاج الأمراض النباتية المختلفة';
+  };
+
   if (selectedCategory) {
     return (
-      <div className={`home-screen`} id={id} dir="rtl">
+      <div className="home-screen" id={id} dir="rtl">
         <div className="category-detail-page">
           <div className="page-header">
             <button className="back-button" onClick={handleBackToCategories}>
-              ← العودة
+              <ArrowRight size={16} className="inline ml-1" /> العودة
             </button>
-            <h2 className="page-title">
-              {selectedCategory === 'pesticides' && '🛡️ المبيدات الزراعية'}
-              {selectedCategory === 'insects' && '🐛 الحشرات الضارة'}
-              {selectedCategory === 'diseases' && '🌡️ الأمراض النباتية'}
+            <h2 className="page-title inline-flex items-center gap-2">
+              {categoryIcon(selectedCategory)} {categoryTitle(selectedCategory)}
             </h2>
-            <p className="page-subtitle">
-              {selectedCategory === 'pesticides' && 'مجموعة شاملة من المبيدات الزراعية وطرق استخدامها'}
-              {selectedCategory === 'insects' && 'تعرف على الحشرات الضارة وطرق مكافحتها'}
-              {selectedCategory === 'diseases' && 'تشخيص وعلاج الأمراض النباتية المختلفة'}
-            </p>
+            <p className="page-subtitle">{categorySubtitle(selectedCategory)}</p>
           </div>
 
           <div className="items-grid">
             {agricultureData[selectedCategory].map((item, index) => (
-              <div 
+              <div
                 key={item.id}
                 className="item-card"
                 onClick={() => handleItemClick(item, selectedCategory)}
@@ -71,9 +70,7 @@ const HomeScreen = ({ id }) => {
               >
                 <div className="card-header">
                   <div className="card-icon">
-                    {selectedCategory === 'pesticides' && '🛡️'}
-                    {selectedCategory === 'insects' && '🐛'}
-                    {selectedCategory === 'diseases' && '🌡️'}
+                    {categoryIcon(selectedCategory)}
                   </div>
                   <div className="card-title-section">
                     <h3 className="card-title">{item.name}</h3>
@@ -82,106 +79,102 @@ const HomeScreen = ({ id }) => {
                     </span>
                   </div>
                 </div>
-                
+
                 <p className="card-description">{item.description}</p>
-                
+
                 <div className="card-footer">
                   <div className="treatment-preview">
                     {item.treatment}
                   </div>
-                  <div className="card-arrow">→</div>
+                  <div className="card-arrow"><ArrowRight size={14} /></div>
                 </div>
-                
-                <div className="card-hover-effect"></div>
+
+                <div className="card-hover-effect" />
               </div>
             ))}
           </div>
-        </div>
 
-        {/* Modal للتفاصيل الكاملة */}
-        {selectedItem && (
-          <div className="modal-overlay" onClick={handleCloseModal}>
-            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="modal-close" onClick={handleCloseModal}>×</button>
-              
-              <div className="modal-header">
-                <div className="modal-icon">
-                  {selectedItem.category === 'pesticides' && '🛡️'}
-                  {selectedItem.category === 'insects' && '🐛'}
-                  {selectedItem.category === 'diseases' && '🌡️'}
-                </div>
-                <div className="modal-title-section">
-                  <h2>{selectedItem.name}</h2>
-                  <span className={`modal-severity severity-${selectedItem.severity}`}>
-                    {selectedItem.severity === 'high' ? 'خطورة عالية' : selectedItem.severity === 'medium' ? 'خطورة متوسطة' : 'خطورة منخفضة'}
-                  </span>
-                </div>
-              </div>
+          {selectedItem && (
+            <div className="modal-overlay" onClick={handleCloseModal}>
+              <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                <button className="modal-close" onClick={handleCloseModal}><X size={20} /></button>
 
-              <div className="modal-body">
-                <div className="info-section">
-                  <h3>📝 الوصف</h3>
-                  <p>{selectedItem.fullDescription}</p>
-                </div>
-
-                <div className="info-section">
-                  <h3>💊 طريقة العلاج</h3>
-                  <p>{selectedItem.treatment}</p>
-                </div>
-
-                {selectedItem.usage && (
-                  <div className="info-section">
-                    <h3>⚡ طريقة الاستخدام</h3>
-                    <p>{selectedItem.usage}</p>
+                <div className="modal-header">
+                  <div className="modal-icon">
+                    {categoryIcon(selectedItem.category)}
                   </div>
-                )}
-
-                {selectedItem.precautions && (
-                  <div className="info-section">
-                    <h3>⚠️ الاحتياطات</h3>
-                    <p>{selectedItem.precautions}</p>
+                  <div className="modal-title-section">
+                    <h2>{selectedItem.name}</h2>
+                    <span className={`modal-severity severity-${selectedItem.severity}`}>
+                      {selectedItem.severity === 'high' ? 'خطورة عالية' : selectedItem.severity === 'medium' ? 'خطورة متوسطة' : 'خطورة منخفضة'}
+                    </span>
                   </div>
-                )}
+                </div>
 
-                {selectedItem.effectiveness && (
-                  <div className="info-grid">
+                <div className="modal-body">
+                  <div className="info-section">
+                    <h3 className="flex items-center gap-1.5"><Activity size={16} /> الوصف</h3>
+                    <p>{selectedItem.fullDescription}</p>
+                  </div>
+
+                  <div className="info-section">
+                    <h3 className="flex items-center gap-1.5"><FlaskConical size={16} /> طريقة العلاج</h3>
+                    <p>{selectedItem.treatment}</p>
+                  </div>
+
+                  {selectedItem.usage && (
+                    <div className="info-section">
+                      <h3 className="flex items-center gap-1.5"><AlertTriangle size={16} /> طريقة الاستخدام</h3>
+                      <p>{selectedItem.usage}</p>
+                    </div>
+                  )}
+
+                  {selectedItem.precautions && (
+                    <div className="info-section">
+                      <h3 className="flex items-center gap-1.5"><AlertTriangle size={16} /> الاحتياطات</h3>
+                      <p>{selectedItem.precautions}</p>
+                    </div>
+                  )}
+
+                  {selectedItem.effectiveness && (
+                    <div className="info-grid">
                       <div className="info-item">
                         <span className="info-label">الفعالية</span>
                         <span className="info-value">{selectedItem.effectiveness}</span>
                       </div>
-                  </div>
-                )}
+                    </div>
+                  )}
 
-                {selectedItem.lifecycle && (
-                  <div className="info-section">
-                    <h3>🔄 دورة الحياة</h3>
-                    <p>{selectedItem.lifecycle}</p>
-                  </div>
-                )}
+                  {selectedItem.lifecycle && (
+                    <div className="info-section">
+                      <h3 className="flex items-center gap-1.5"><Activity size={16} /> دورة الحياة</h3>
+                      <p>{selectedItem.lifecycle}</p>
+                    </div>
+                  )}
 
-                {selectedItem.symptoms && (
-                  <div className="info-section">
-                    <h3>🔍 الأعراض</h3>
-                    <p>{selectedItem.symptoms}</p>
-                  </div>
-                )}
+                  {selectedItem.symptoms && (
+                    <div className="info-section">
+                      <h3 className="flex items-center gap-1.5"><AlertTriangle size={16} /> الأعراض</h3>
+                      <p>{selectedItem.symptoms}</p>
+                    </div>
+                  )}
 
-                <div className="action-buttons">
-                  <button className="action-btn primary">حفظ في المفضلة</button>
-                  <button className="action-btn secondary">مشاركة</button>
-                  <button className="action-btn outline">طباعة</button>
+                  <div className="action-buttons flex gap-2 mt-4">
+                    <button className="action-btn primary inline-flex items-center gap-1.5"><Bookmark size={14} /> حفظ في المفضلة</button>
+                    <button className="action-btn secondary inline-flex items-center gap-1.5"><Share2 size={14} /> مشاركة</button>
+                    <button className="action-btn outline inline-flex items-center gap-1.5"><Printer size={14} /> طباعة</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     );
   }
 
-  // الصفحة الرئيسية
   return (
-    <div className={`home-screen`} id={id} dir="rtl">
+    <div className="home-screen" id={id} dir="rtl">
       <Helmet>
         <title>Hefno-Plant | خبيرك الزراعي الذكي</title>
         <meta name="description" content="منصة زراعية متكاملة لتشخيص أمراض النباتات بالذكاء الاصطناعي — دليل المبيدات، التقويم الزراعي، الطقس، وأكثر." />
@@ -189,15 +182,9 @@ const HomeScreen = ({ id }) => {
 
       <HeroSection />
 
-      <Devider/>
-
-      <FeaturesSection />
-
-      <Devider />
+      <Services />
 
       <KnowledgePreview />
-
-      <Devider />
 
       <ContactSection />
     </div>

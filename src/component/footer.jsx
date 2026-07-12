@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Phone, Mail, MapPin, Star } from 'lucide-react';
 import './footer.css';
 
 const Footer = () => {
@@ -23,9 +24,9 @@ const Footer = () => {
   ];
 
   const contactItems = [
-    { icon: '✦', label: 'هاتف', text: '+20 11 02118765' },
-    { icon: '✦', label: 'بريد', text: 'elhfnaweedowidar21@gmail.com' },
-    { icon: '✦', label: 'عنوان', text: 'المنوفيه . مصر - تلا' },
+    { icon: Phone, label: 'هاتف', text: '+20 11 02118765' },
+    { icon: Mail, label: 'بريد', text: 'elhfnaweedowidar21@gmail.com' },
+    { icon: MapPin, label: 'عنوان', text: 'المنوفيه . مصر - تلا' },
   ];
 
   const handleNav = (path) => {
@@ -35,7 +36,9 @@ const Footer = () => {
 
   return (
     <footer className="hefno-footer">
-      <div className="hefno-footer-ornament">✦ ✦ ✦ ✦ ✦</div>
+      <div className="hefno-footer-ornament flex justify-center gap-3 text-primary/35 py-8 text-sm">
+        {[1,2,3,4,5].map(i => <Star key={i} className="size-3.5" />)}
+      </div>
 
       <div className="hefno-footer-container">
         <div className="hefno-footer-grid">
@@ -78,15 +81,17 @@ const Footer = () => {
           <div>
             <h3 className="hefno-footer-title">تواصل</h3>
             <ul className="hefno-footer-contact-list">
-              {contactItems.map((item, i) => (
+              {contactItems.map((item, i) => {
+                const IconComp = item.icon;
+                return (
                 <li key={i} className="hefno-footer-contact-item">
-                  <span className="hefno-footer-contact-icon">{item.icon}</span>
+                  <span className="hefno-footer-contact-icon"><IconComp size={14} /></span>
                   <span className="hefno-footer-contact-text">
                     <span className="hefno-footer-contact-label">{item.label}</span>
                     {item.text}
                   </span>
                 </li>
-              ))}
+              );})}
             </ul>
 
             <div className="hefno-footer-social">

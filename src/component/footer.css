@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
-
 .hefno-footer {
   position: relative;
   background: #0c0c0a;
   color: rgba(255, 255, 255, 0.7);
   overflow: hidden;
   direction: rtl;
-  font-family: 'Cairo', sans-serif;
 }
 
 .hefno-footer::before {
@@ -19,15 +16,7 @@
   background: linear-gradient(90deg, transparent, rgba(45, 106, 79, 0.4), transparent);
 }
 
-.hefno-footer-ornament {
-  display: flex;
-  justify-content: center;
-  padding: 3rem 0 2rem;
-  color: rgba(45, 106, 79, 0.35);
-  font-size: 1.2rem;
-  letter-spacing: 1rem;
-  user-select: none;
-}
+
 
 .hefno-footer-container {
   max-width: 1300px;
@@ -48,7 +37,6 @@
 }
 
 .hefno-footer-tagline {
-  font-family: 'Cairo', sans-serif;
   font-size: 1.15rem;
   font-weight: 300;
   color: rgba(45, 106, 79, 0.65);
@@ -65,7 +53,6 @@
 }
 
 .hefno-footer-title {
-  font-family: 'Cairo', sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: #2d6a4f;

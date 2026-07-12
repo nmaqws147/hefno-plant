@@ -18,7 +18,7 @@
 }
 
 @font-face {
-  font-family: '/LemonadaCustom';
+  font-family: 'LemonadaCustom';
   src: url('./assets/fonts/Lemonada-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
@@ -157,7 +157,7 @@
   border-radius: 6px;
   margin-left: 8px; /* مسافة عن المحتوى */
   display: inline-block;
-  border-right: 3px solid var(--card-accent); /* خط ملون جانبي يعطي أناقة */
+  border-right: 3px solid var(--card-accent, #52b788); /* خط ملون جانبي يعطي أناقة */
 }
 
 .info-item {
