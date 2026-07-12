@@ -108,25 +108,25 @@ const KnowledgePreview = () => {
                 loading="lazy"
                 className="absolute inset-0 w-full h-full object-cover dark:opacity-40 group-hover:scale-105 transition-all duration-700"
               />
-              <div className="relative p-6 flex flex-col h-full bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+              <div className="relative p-6 flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="size-9 rounded-xl bg-primary/20 border border-primary/40 grid place-items-center">
                     <c.icon className="size-4 text-primary" />
                   </div>
-                  <h3 className="text-lg font-bold text-white">{c.title}</h3>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">{c.title}</h3>
                 </div>
-                <p className="text-[12px] text-white/80 dark:text-gray-400 leading-relaxed mb-4 max-w-[70%]">
+                <p className="text-[12px] text-gray-500 dark:text-gray-400 leading-relaxed mb-4 max-w-[70%]">
                   {c.desc}
                 </p>
                 <div className="mb-4">
                   <div className="text-4xl font-black text-primary leading-none">{c.count}</div>
-                  <div className="text-[11px] text-white/70 dark:text-gray-400 mt-1">{c.countLabel}</div>
+                  <div className="text-[11px] text-gray-500 dark:text-gray-400 mt-1">{c.countLabel}</div>
                 </div>
                 <div className="flex flex-wrap gap-1.5 mb-5">
                   {c.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-[11px] px-2.5 py-1 rounded-md glass border border-white/10 text-white/70 dark:text-gray-300"
+                      className="text-[11px] px-2.5 py-1 rounded-md glass border border-white/10 text-gray-600 dark:text-gray-300"
                     >
                       {t}
                     </span>
