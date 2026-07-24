@@ -102,10 +102,11 @@ module.exports = async (req, res) => {
           const excerpt = post.excerpt || post.body?.replace(/<[^>]+>/g, '').replace(/#{1,6}\s/g, '').slice(0, 160).trim() || OG_DEFAULT_DESC;
           res.setHeader('Content-Type', 'text/html; charset=utf-8');
           res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+          const coverUrl = (post.cover_url && typeof post.cover_url === 'string' && post.cover_url.startsWith('https://')) ? post.cover_url : OG_DEFAULT_IMAGE;
           res.end(ogHtml({
             title: post.title,
             description: excerpt,
-            image: (post.cover_url && !post.cover_url.startsWith('data:')) ? post.cover_url : OG_DEFAULT_IMAGE,
+            image: coverUrl,
             url: `${SITE_URL}/blog/${slug}`,
             type: 'article',
           }));

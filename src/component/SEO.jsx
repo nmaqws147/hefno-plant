@@ -21,7 +21,7 @@ const SEO = ({
 }) => {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | خبيرك الزراعي الذكي`;
   const desc = description || DEFAULT_DESC;
-  const ogImage = image || DEFAULT_IMAGE;
+  const ogImage = (image && image.startsWith('https://')) ? image : DEFAULT_IMAGE;
   const canonical = url ? `${SITE_URL}${url}` : SITE_URL;
 
   const combinedLd = [];

@@ -114,7 +114,7 @@ const BlogPostPage = () => {
       <SEO
         title={post.title}
         description={excerpt}
-        image={post.cover_url}
+        image={post.cover_url?.startsWith('https://') ? post.cover_url : ''}
         url={`/blog/${post.slug}`}
         type="article"
         publishedTime={post.created_at}
@@ -131,7 +131,7 @@ const BlogPostPage = () => {
 
       {/* Hero Section */}
       <div className="relative w-full h-[50vh] min-h-[400px] sm:min-h-[500px] lg:min-h-[60vh] overflow-hidden">
-        {post.cover_url && !heroImgError ? (
+        {post.cover_url?.startsWith('https://') && !heroImgError ? (
           <img
             src={post.cover_url}
             alt={post.title}
