@@ -28,8 +28,10 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
   const [formatting, setFormatting] = useState(false);
   const [formatError, setFormatError] = useState('');
   const [uploadingCover, setUploadingCover] = useState(false);
+  const [insertingImg, setInsertingImg] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const rawInputRef = useRef(null);
+  const bodyFileInputRef = useRef(null);
 
   useEffect(() => {
     if (post) {
@@ -141,6 +143,51 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
     }
   };
 
+  const handleBodyImageSelect = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setInsertingImg(true);
+    const img = new Image();
+    img.src = URL.createObjectURL(file);
+    await new Promise(resolve => { img.onload = resolve; });
+    let w = img.width, h = img.height;
+    if (w > 1920) { h = h * 1920 / w; w = 1920; }
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, w, h);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
+    try {
+      const token = await user.getIdToken();
+      const res = await fetch('/api/blog/image/upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify({ dataUrl }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      const ta = rawInputRef.current;
+      if (ta) {
+        const start = ta.selectionStart;
+        const end = ta.selectionEnd;
+        const before = rawText.slice(0, start);
+        const after = rawText.slice(end);
+        const alt = file.name.replace(/\.[^.]+$/, '').replace(/[_-]/g, ' ');
+        const markdown = `![${alt}](${data.url})\n`;
+        setRawText(before + markdown + after);
+        setTimeout(() => {
+          ta.focus();
+          ta.selectionStart = ta.selectionEnd = start + markdown.length;
+        }, 0);
+      }
+    } catch (err) {
+      toast.error('Failed to upload image: ' + err.message);
+    }
+    if (bodyFileInputRef.current) bodyFileInputRef.current.value = '';
+    setInsertingImg(false);
+  };
+
   const clearCover = () => {
     setCoverUrl('');
     setCoverPreview('');
@@ -180,6 +227,17 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
             <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
               Write your article
             </label>
+            <div className="flex items-center gap-1 mb-2">
+              <button
+                type="button"
+                onClick={() => bodyFileInputRef.current?.click()}
+                disabled={insertingImg}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors disabled:opacity-50"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                {insertingImg ? 'Uploading...' : 'Insert Image'}
+              </button>
+            </div>
             <textarea
               ref={rawInputRef}
               value={rawText}
@@ -303,6 +361,7 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
               </button>
             )}
             <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileSelect} className="hidden" />
+            <input ref={bodyFileInputRef} type="file" accept="image/*" onChange={handleBodyImageSelect} className="hidden" />
           </div>
 
           {/* HTML Preview */}
