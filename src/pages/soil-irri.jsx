@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import {
   X, ArrowLeft, ChevronLeft, ChevronRight, Globe, MapPin, Droplets,
   ClipboardList, Sprout, Info, FlaskConical, Settings,
@@ -138,10 +139,7 @@ const SoilsPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>التربة والري | Hefno-Plant</title>
-        <meta name="description" content="دليل التربة والري — أنواع التربة، تحليل التربة، طرق الري، وإدارة الموارد المائية." />
-      </Helmet>
+      <SEO title="التربة والري" description="دليل التربة والري — أنواع التربة، تحليل التربة، طرق الري، وإدارة الموارد المائية." url="/knowledge-base/soil-irri" keywords="أنواع التربة, تحليل التربة, طرق الري, الري الزراعي, إدارة الموارد المائية" breadcrumbs={makeBreadcrumbs('/knowledge-base/soil-irri')} />
 
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         {/* Header */}

@@ -3,8 +3,6 @@
   "name_ar": "المواد الفعالة للمبيدات الحشرية والأكاروسية",
   "name_en": "Insecticide & Acaricide Active Ingredients — IRAC Classified",
   "source": "IRAC MoA Classification v10.4 (2024)",
-  "version": "1.0.0",
-  "total_count": 72,
   "items": [
     {
       "id": "iai-001",
@@ -1962,7 +1960,11 @@
       "special_use_ar": "الأوسع استخداماً من النيونيكوتينويدات — معاملة بذور وصب جذري ورش",
       "regulatory_ar": "محظور على محاصيل مزهرة في الاتحاد الأوروبي — مسجل في مصر",
       "safety_notes_ar": "خطير جداً على النحل — لا تستخدم أثناء الإزهار",
-      "references": "IRAC MoA Classification v10.4 (2024)"
+      "references": "IRAC MoA Classification v10.4 (2024)",
+      "trade_names_ar": [
+        "كونفيدور"
+      ],
+      "phi_days": 21
     },
     {
       "id": "iai-024",
@@ -2143,7 +2145,11 @@
       "special_use_ar": "يتحول لكلوثيانيدين — طويل الأمد كمعاملة بذور",
       "regulatory_ar": "محظور في الاتحاد الأوروبي على المزهرة — مسجل في مصر",
       "safety_notes_ar": "خطير جداً على النحل",
-      "references": "IRAC MoA Classification v10.4 (2024)"
+      "references": "IRAC MoA Classification v10.4 (2024)",
+      "trade_names_ar": [
+        "أكتارا"
+      ],
+      "phi_days": 7
     },
     {
       "id": "iai-026",
@@ -2721,7 +2727,12 @@
       "special_use_ar": "الأهم ضد الأكاروس في مصر — ينفذ داخل الورقة — ممتاز ضد صانع الأنفاق والتربس",
       "regulatory_ar": "مسجل ومتاح",
       "safety_notes_ar": "خطير جداً على الأسماك — تأكد من فترة الانتظار",
-      "references": "IRAC MoA Classification v10.4 (2024)"
+      "references": "IRAC MoA Classification v10.4 (2024)",
+      "trade_names_ar": [
+        "فيرتيميك",
+        "أجريميك"
+      ],
+      "phi_days": 7
     },
     {
       "id": "iai-033",
@@ -5088,6 +5099,2213 @@
       "references": "IRAC MoA Classification v10.4 (2024)"
     },
     {
+      "id": "iai-063",
+      "name_ar": "ميتافلوميزون",
+      "name_en": "Metaflumizone",
+      "irac_group_id": "irac-22b",
+      "irac_code": "22B",
+      "chemical_class_ar": "السيماكاربوزونات",
+      "chemical_class_en": "Semicarbazones",
+      "systemic": false,
+      "type_ar": "ملامسة وجهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "فعال ضد المقاومة للبيرثرويدات – تناوب مع 28"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "ديدان ورق القطن والخضر والفواكه"
+        },
+        {
+          "id": "pest-auto",
+          "name_ar": "الحشرات القارضة والزاحفة"
+        }
+      ],
+      "target_crops": [
+        "المحاصيل الحقلية, القطن والخضر"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "ملامسة وجهازي — Voltage-dependent sodium channel blockers – مشابهة للأوكساديازينات لكن بموقع ارتباط مختلف.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-064",
+      "name_ar": "إندوسلفان",
+      "name_en": "Endosulfan",
+      "irac_group_id": "irac-2a",
+      "irac_code": "2A",
+      "chemical_class_ar": "السيكلوديين العضوية الكلورية",
+      "chemical_class_en": "Cyclodiene Organochlorines",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "محظور في معظم الدول بما فيها مصر – لا تستخدم"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "الحشرات القارضة وصانعات الأنفاق"
+        },
+        {
+          "id": "pest-auto",
+          "name_ar": "المن والذبابة البيضاء"
+        }
+      ],
+      "target_crops": [
+        "الخضر والفاكهة, الخضروات"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "ملامسة ومعدة — تثبيط قنوات كلوريد GABA في الأعصاب، مما يؤدي إلى فرط تنبيه وتشنجات ثم موت.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: محظور في مصر",
+      "safety_notes_ar": "محظور أو محدود الاستخدام – استبدل بمبيدات حديثة.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-065",
+      "name_ar": "كلوردين",
+      "name_en": "Chlordane",
+      "irac_group_id": "irac-2a",
+      "irac_code": "2A",
+      "chemical_class_ar": "السيكلوديين العضوية الكلورية",
+      "chemical_class_en": "Cyclodiene Organochlorines",
+      "systemic": false,
+      "type_ar": "ملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "محظور في معظم الدول بما فيها مصر – لا تستخدم"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "الآفات الطائرة والزاحفة"
+        },
+        {
+          "id": "pest-auto",
+          "name_ar": "الحشرات القارضة في الحبوب"
+        }
+      ],
+      "target_crops": [
+        "المحاصيل الحقلية, المخازن"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "ملامسة — تثبيط قنوات كلوريد GABA في الأعصاب، مما يؤدي إلى فرط تنبيه وتشنجات ثم موت.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: محظور في مصر",
+      "safety_notes_ar": "محظور – استبدل بمبيدات حديثة.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-066",
+      "name_ar": "ميثوكسيكلور",
+      "name_en": "Methoxychlor",
+      "irac_group_id": "irac-3b",
+      "irac_code": "3B",
+      "chemical_class_ar": "الكلور العضوية (مشتقات DDT)",
+      "chemical_class_en": "Organochlorines - DDT derivatives",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "قلل الاستخدام بسبب الثبات البيئي"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "المن والذبابة البيضاء"
+        },
+        {
+          "id": "pest-auto",
+          "name_ar": "الحشرات القارضة والزاحفة"
+        }
+      ],
+      "target_crops": [
+        "الخضر والمحاصيل الحقلية, الخضر والفاكهة"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "ملامسة ومعدة — إطالة فتح قنوات الصوديوم في الأعصاب، مع ثبات بيئي طويل.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: مقيد",
+      "safety_notes_ar": "تجنب القرب من المياه + تقليل الاستخدام بسبب التراكم البيئي.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-067",
+      "name_ar": "نيكوتين",
+      "name_en": "Nicotine",
+      "irac_group_id": "irac-4b",
+      "irac_code": "4B",
+      "chemical_class_ar": "النيكوتين",
+      "chemical_class_en": "Nicotine",
+      "systemic": false,
+      "type_ar": "جهازي وملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "استخدام محدود لتقليل المقاومة"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "النمل الأبيض والصراصير"
+        },
+        {
+          "id": "pest-auto",
+          "name_ar": "المن والذبابة البيضاء والتربس"
+        }
+      ],
+      "target_crops": [
+        "الخضر والفاكهة, الزاحفة"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "جهازي وملامسة — تنشيط مستقبلات nAChR، سريع التأثير ويستهدف الحشرات الماصة والزاحفة.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد بحذر",
+      "safety_notes_ar": "سام جدًا للبشر – معدات وقاية كاملة + تجنب القرب من المياه.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-068",
+      "name_ar": "فلوبيراديفور",
+      "name_en": "Flupyradifurone",
+      "irac_group_id": "irac-4d",
+      "irac_code": "4D",
+      "chemical_class_ar": "البيوتينواليدز",
+      "chemical_class_en": "Butenolides",
+      "systemic": false,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "فعال ضد الحشرات الماصة"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "الحشرات الماصة"
+        },
+        {
+          "id": "pest-auto",
+          "name_ar": "المن الأبيض والذبابة البيضاء والتربس"
+        }
+      ],
+      "target_crops": [
+        "القطن والذرة, الخضر والفواكه"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "جهازي — تنشيط nAChR، جهازي وينتشر داخل النبات.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + تجنب الخلط غير المتوافق.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-069",
+      "name_ar": "فلوبيريمين",
+      "name_en": "Flupyrimin",
+      "irac_group_id": "irac-4e",
+      "irac_code": "4E",
+      "chemical_class_ar": "البيريديلدينات",
+      "chemical_class_en": "Pyridylidenes",
+      "systemic": false,
+      "type_ar": "جهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع مجموعات أخرى"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "الحشرات الماصة"
+        },
+        {
+          "id": "pest-auto",
+          "name_ar": "المن الأبيض والذبابة البيضاء والتربس"
+        }
+      ],
+      "target_crops": [
+        "القطن والذرة, الخضر والفواكه"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "جهازي — تثبيط nAChR، جهازي وينتشر داخل النبات.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + مراقبة النباتات.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-073",
+      "name_ar": "تيبوفينزويد",
+      "name_en": "Tebufenozide",
+      "irac_group_id": "irac-18",
+      "irac_code": "18",
+      "chemical_class_ar": "محفزات الانسلاخ (Diacylhydrazines)",
+      "chemical_class_en": "Ecdysone receptor agonists",
+      "systemic": false,
+      "type_ar": "معدة وملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع مجموعات أخرى"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "ديدان ورق القطن وديدان الأوراق"
+        }
+      ],
+      "target_crops": [
+        "الخضر والفاكهة"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "معدة وملامسة — محاكاة هرمون الانسلاخ → انسلاخ مبكر غير طبيعي → موت اليرقات.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "يؤثر على اليرقات الصغيرة + IPM.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-075",
+      "name_ar": "هالوفينوزيد",
+      "name_en": "Halofenozide",
+      "irac_group_id": "irac-18",
+      "irac_code": "18",
+      "chemical_class_ar": "محفزات الانسلاخ (Diacylhydrazines)",
+      "chemical_class_en": "Ecdysone receptor agonists",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع مجموعات أخرى"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "يرقات الحشرات القارضة"
+        }
+      ],
+      "target_crops": [
+        "المحاصيل الحقلية"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "ملامسة ومعدة — محاكاة هرمون الانسلاخ → انسلاخ مبكر غير طبيعي → موت اليرقات.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "يؤثر على اليرقات الصغيرة + IPM.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-076",
+      "name_ar": "بيفينازات",
+      "name_en": "Bifenazate",
+      "irac_group_id": "irac-20d",
+      "irac_code": "20D",
+      "chemical_class_ar": "مثبطات نقل الإلكترون في الميتوكوندريا – موقع I",
+      "chemical_class_en": "Mite growth inhibitors (Bifenazate)",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 10A أو 23"
+      },
+      "target_pests": [
+        {
+          "id": "pest-auto",
+          "name_ar": "العنكبوت الأحمر والأكاروسات"
+        }
+      ],
+      "target_crops": [
+        "الخضر والفاكهة والموالح"
+      ],
+      "spectrum_ar": "متخصص — حشرات محددة",
+      "activity_ar": "ملامسة ومعدة — تثبيط نقل الإلكترونات (Complex I) → إيقاف ATP → موت الأكاروسات.",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "متخصص للأكاروسات – تناوب مع أكاروسات أخرى.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-077",
+      "name_ar": "تربوفوس",
+      "name_en": "Terbufos",
+      "irac_group_id": "irac-22a",
+      "irac_code": "1B",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "جهازي وملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "جهازي وملامسة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار نفس المجموعة + مراعاة فترة الأمان قبل الحصاد + تجنب الرش في الحرارة أو الرياح.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-078",
+      "name_ar": "دايزينون",
+      "name_en": "Diazinon",
+      "irac_group_id": "irac-22a",
+      "irac_code": "1B",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة ومعدة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-079",
+      "name_ar": "فوسالون",
+      "name_en": "Phosalone",
+      "irac_group_id": "irac-22a",
+      "irac_code": "1B",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة ومعدة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-080",
+      "name_ar": "فورميتانيت",
+      "name_en": "Formetanate",
+      "irac_group_id": "irac-22a",
+      "irac_code": "1A",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة - سم معوي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة - سم معوي",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-081",
+      "name_ar": "كاربارييل",
+      "name_en": "Carbaryl",
+      "irac_group_id": "irac-22a",
+      "irac_code": "1A",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة ومعدة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-082",
+      "name_ar": "بنديوكارب",
+      "name_en": "Bendiocarb",
+      "irac_group_id": "irac-22a",
+      "irac_code": "1A",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة ومعدة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-083",
+      "name_ar": "ميثوكارب",
+      "name_en": "Methocarb",
+      "irac_group_id": "irac-22a",
+      "irac_code": "1A",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-084",
+      "name_ar": "برومثرين",
+      "name_en": "Bromothrin",
+      "irac_group_id": "irac-22a",
+      "irac_code": "3A",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة ومعدة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة ومعدة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "تجنب الرش في النهار الحار + معدات وقاية + فترة أمان.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-085",
+      "name_ar": "إيثيبرويل",
+      "name_en": "Ethiprole",
+      "irac_group_id": "irac-22a",
+      "irac_code": "2B",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة وجهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة وجهازي",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تجنب الخلط غير المتوافق.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-086",
+      "name_ar": "تيترانيلبرول",
+      "name_en": "Tetraniliprole",
+      "irac_group_id": "irac-22a",
+      "irac_code": "28",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "جهازي وملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "جهازي وملامسة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-087",
+      "name_ar": "سيكالنيلبرول",
+      "name_en": "Cyclaniliprole",
+      "irac_group_id": "irac-22a",
+      "irac_code": "28",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "جهازي وملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "جهازي وملامسة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-088",
+      "name_ar": "سبيروديكولفين",
+      "name_en": "Spirodiclofen",
+      "irac_group_id": "irac-22a",
+      "irac_code": "23",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة وجهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة وجهازي",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-089",
+      "name_ar": "سبيروبيديون",
+      "name_en": "Spiropidion",
+      "irac_group_id": "irac-22a",
+      "irac_code": "23",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة وجهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة وجهازي",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-090",
+      "name_ar": "سبيدوكسامات",
+      "name_en": "Spidoxamat",
+      "irac_group_id": "irac-22a",
+      "irac_code": "23",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "جهازي وملامسة",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "جهازي وملامسة",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "id": "iai-091",
+      "name_ar": "بيرادبين",
+      "name_en": "Pyradaben",
+      "irac_group_id": "irac-22a",
+      "irac_code": "21A",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "ملامسة وجهازي",
+      "application": {
+        "dose_spray_ar": "0.3–0.5 جم م.ف/لتر",
+        "dose_feddan_ar": "200–350 جم م.ف/فدان",
+        "dose_soil_ar": null,
+        "methods_ar": [
+          "رش ورقي"
+        ],
+        "timing_ar": "عند بلوغ العتبة أو الفقس",
+        "max_applications_season": 2,
+        "interval_days": 10,
+        "preharvest_interval_ar": "3–14 يوم",
+        "water_volume_ar": "200–400 لتر/فدان"
+      },
+      "resistance": {
+        "risk_ar": "منخفض إلى متوسط",
+        "risk_level": 2,
+        "risk_color": "yellow",
+        "mechanism_ar": "تضخيم CYP450 — بطيء",
+        "cross_resistance_groups": [],
+        "cross_resistance_note_ar": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+        "resistance_reported_in": [
+          "التوتا (نادر)"
+        ]
+      },
+      "rotation": {
+        "group_id": "irac-22a",
+        "max_consecutive": 1,
+        "must_rotate_after": 2,
+        "note_ar": "تناوب مع 28 أو 5 أو 1A"
+      },
+      "target_pests": [
+        {
+          "id": "pest-08",
+          "name_ar": "دودة ورق القطن"
+        },
+        {
+          "id": "pest-09",
+          "name_ar": "دودة اللوز الأمريكية"
+        },
+        {
+          "id": "pest-10",
+          "name_ar": "دودة اللوز الصغرى"
+        },
+        {
+          "id": "pest-11",
+          "name_ar": "الدودة القارضة"
+        },
+        {
+          "id": "pest-12",
+          "name_ar": "التوتا — حافرة أوراق الطماطم"
+        },
+        {
+          "id": "pest-13",
+          "name_ar": "دودة الحشد الخريفية"
+        },
+        {
+          "id": "pest-15",
+          "name_ar": "دودة ثمار التفاح"
+        }
+      ],
+      "target_crops": [
+        "طماطم",
+        "فلفل",
+        "باذنجان",
+        "قطن",
+        "تفاح",
+        "ملفوف"
+      ],
+      "spectrum_ar": "متوسط — يرقات الحراشف",
+      "activity_ar": "ملامسة وجهازي",
+      "special_use_ar": "فعّال ضد الحراشف المقاومة للبيريثرويدات — آمن نسبياً على النحل",
+      "regulatory_ar": "حالة التسجيل في مصر: معتمد",
+      "safety_notes_ar": "رش صباحًا أو مساءً + معدات وقاية + تناوب.",
+      "references": "IRAC MoA Classification v10.4 (2024)"
+    },
+    {
+      "irac_code": "1B",
+      "irac_name_en": "Organophosphates",
+      "name_ar": "الفسفورية العضوية",
+      "mode_of_action_ar": "تعمل على تثبيط إنزيم الأستيل كولين إستريز في الجهاز العصبي للحشرة، مما يؤدي إلى تراكم الأستيل كولين وحدوث تنبيه عصبي مستمر يعقبه تشنجات ثم شلل فالموت.",
+      "active_ingredients": [
+        {
+          "name_ar": "تربوفوس",
+          "name_en": "Terbufos",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "حشرات التربة والديدان القارضة",
+              "crop_ar": "الذرة"
+            },
+            {
+              "pest_ar": "نيماتودا التربة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار نفس المجموعة + مراعاة فترة الأمان قبل الحصاد + تجنب الرش في الحرارة أو الرياح."
+        },
+        {
+          "name_ar": "دايزينون",
+          "name_en": "Diazinon",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الحشرات الأرضية ويرقات التربة",
+              "crop_ar": "الخضر والمحاصيل الحقلية"
+            },
+            {
+              "pest_ar": "الذباب والآفات الحشرية",
+              "crop_ar": "المشاتل"
+            }
+          ],
+          "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان."
+        },
+        {
+          "name_ar": "كلوربيريفوس",
+          "name_en": "Chlorpyrifos",
+          "nature_of_action_ar": "ملامسة ومعدة ويخاري",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الديدان القارضة والحفار",
+              "crop_ar": "الخضر والمحاصيل الحقلية"
+            },
+            {
+              "pest_ar": "النمل الأبيض وحشرات التربة",
+              "crop_ar": "المحاصيل"
+            }
+          ],
+          "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان."
+        },
+        {
+          "name_ar": "مالاثيون",
+          "name_en": "Malathion",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن والذباب والآفات الثاقبة الماصة",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "آفات المخازن والحبوب",
+              "crop_ar": "الحبوب"
+            }
+          ],
+          "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان."
+        },
+        {
+          "name_ar": "فوسالون",
+          "name_en": "Phosalone",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان الأوراق والحشرات القارضة",
+              "crop_ar": "الخضر وأشجار الفاكهة"
+            }
+          ],
+          "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان."
+        },
+        {
+          "name_ar": "بروفينوفوس",
+          "name_en": "Profenofos",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "دودة ورق القطن ودودة الحشد الخريفية",
+              "crop_ar": "المحاصيل الحقلية والخضر"
+            }
+          ],
+          "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان."
+        },
+        {
+          "name_ar": "دايمثويت",
+          "name_en": "Dimethoate",
+          "nature_of_action_ar": "جهازي وملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "صانعات الأنفاق",
+              "crop_ar": "الخضر"
+            },
+            {
+              "pest_ar": "الحشرات الثاقبة الماصة",
+              "crop_ar": "القطن والمحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "التزام بمعدات الوقاية + عدم تكرار + فترة أمان."
+        }
+      ],
+      "irac_rotation_advice": "لا تكرر استخدام 1B لأكثر من جيل واحد – تناوب مع 28 أو 5 أو 22A",
+      "irac_group_id": "irac-1b"
+    },
+    {
+      "irac_code": "1A",
+      "irac_name_en": "Carbamates",
+      "name_ar": "الكربامات",
+      "mode_of_action_ar": "تعمل على تثبيط إنزيم الأستيل كولين إستريز، مما يؤدي إلى تراكم الأستيل كولين وتنبيه عصبي شديد يليه ارتجافات وشلل ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "فورميتانيت",
+          "name_en": "Formetanate",
+          "nature_of_action_ar": "ملامسة - سم معوي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "التربس",
+              "crop_ar": "البصل"
+            }
+          ],
+          "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "ميثوميل",
+          "name_en": "Methomyl",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "دودة ورق القطن",
+              "crop_ar": "الطماطم والبطاطس"
+            },
+            {
+              "pest_ar": "دودة اللوز القرنفلية والشوكية",
+              "crop_ar": "القطن"
+            }
+          ],
+          "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "كاربارييل",
+          "name_en": "Carbaryl",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان الأوراق والخنافس",
+              "crop_ar": "الخضر وأشجار الفاكهة"
+            }
+          ],
+          "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "بنديوكارب",
+          "name_en": "Bendiocarb",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الحشرات المنزلية وحشرات الصحة العامة",
+              "crop_ar": "المنازل"
+            }
+          ],
+          "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "بيريميكارب",
+          "name_en": "Pirimicarb",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن",
+              "crop_ar": "الخضر والمحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "ميثوكارب",
+          "name_en": "Methocarb",
+          "nature_of_action_ar": "ملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الحشرات الزاحفة والديدان القارضة",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "التناوب + معدات وقاية + فترة أمان."
+        }
+      ],
+      "irac_rotation_advice": "تناوب مع مجموعات أخرى مثل 3A أو 28 لتجنب المقاومة",
+      "irac_group_id": "irac-1a"
+    },
+    {
+      "irac_code": "3A",
+      "irac_name_en": "Pyrethroids",
+      "name_ar": "البيرثرويدات",
+      "mode_of_action_ar": "تعمل على إطالة فتح قنوات الصوديوم في الأعصاب، مسببة تنبيه عصبي شديد، ارتجافات، شلل ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "سايبرمثرين",
+          "name_en": "Cypermethrin",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان الأوراق والآفات القارضة",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "الحشرات الطائرة",
+              "crop_ar": "المحاصيل"
+            }
+          ],
+          "safety_notes_ar": "تجنب الرش في النهار الحار + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "دلتامثرين",
+          "name_en": "Deltamethrin",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان القطن",
+              "crop_ar": "القطن والخضر"
+            },
+            {
+              "pest_ar": "النمل الأبيض",
+              "crop_ar": "المزارع"
+            }
+          ],
+          "safety_notes_ar": "تجنب الرش في النهار الحار + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "لامبدا سايهالوثرين",
+          "name_en": "Lambda-cyhalothrin",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الذبابة البيضاء والمن",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "تجنب الرش في النهار الحار + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "ألفا سايبرمثرين",
+          "name_en": "Alpha-cypermethrin",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن",
+              "crop_ar": "القطن والخضر"
+            }
+          ],
+          "safety_notes_ar": "تجنب الرش في النهار الحار + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "بيفينثرين",
+          "name_en": "Bifenthrin",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان القطن والحشرات القارضة",
+              "crop_ar": "الخضر"
+            },
+            {
+              "pest_ar": "النمل الأبيض",
+              "crop_ar": "التربة"
+            }
+          ],
+          "safety_notes_ar": "تجنب الرش في النهار الحار + معدات وقاية + فترة أمان."
+        },
+        {
+          "name_ar": "برومثرين",
+          "name_en": "Bromothrin",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الآفات الطائرة والزاحفة",
+              "crop_ar": "المحاصيل الحقلية والخضر"
+            }
+          ],
+          "safety_notes_ar": "تجنب الرش في النهار الحار + معدات وقاية + فترة أمان."
+        }
+      ],
+      "irac_rotation_advice": "لا تكرر 3A لفترات طويلة – تناوب مع 28 أو 5",
+      "irac_group_id": "irac-3a"
+    },
+    {
+      "irac_code": "22A",
+      "irac_name_en": "Oxadiazines",
+      "name_ar": "الأوكساديازينات",
+      "mode_of_action_ar": "غلق قنوات الصوديوم (Sodium Channel Blockers) مما يمنع توليد النبضات العصبية، مسببة شلل سريع ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "إندوكساكارب",
+          "name_en": "Indoxacarb",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن وديدان التفاح",
+              "crop_ar": "الخضر والفاكهة والقطن"
+            },
+            {
+              "pest_ar": "الحشرات القارضة والزاحفة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + تجنب الإفراط."
+        }
+      ],
+      "irac_rotation_advice": "ممتاز ضد الحشرات المقاومة للبيرثرويدات والكربامات – تناوب مع 28 أو 5",
+      "irac_group_id": "irac-22a"
+    },
+    {
       "irac_code": "22B",
       "irac_name_en": "Semicarbazones",
       "name_ar": "السيماكاربوزونات",
@@ -5111,7 +7329,8 @@
           "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً."
         }
       ],
-      "irac_rotation_advice": "فعال ضد المقاومة للبيرثرويدات – تناوب مع 28"
+      "irac_rotation_advice": "فعال ضد المقاومة للبيرثرويدات – تناوب مع 28",
+      "irac_group_id": "irac-22b"
     },
     {
       "irac_code": "2A",
@@ -5154,7 +7373,56 @@
           "safety_notes_ar": "محظور – استبدل بمبيدات حديثة."
         }
       ],
-      "irac_rotation_advice": "محظور في معظم الدول بما فيها مصر – لا تستخدم"
+      "irac_rotation_advice": "محظور في معظم الدول بما فيها مصر – لا تستخدم",
+      "irac_group_id": "irac-2a"
+    },
+    {
+      "irac_code": "2B",
+      "irac_name_en": "Phenylpyrazoles",
+      "name_ar": "فينيل بيرازولات",
+      "mode_of_action_ar": "تثبيط قنوات كلوريد GABA، مما يؤدي إلى فرط تنبيه وتشنجات ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "فيبرونيل",
+          "name_en": "Fipronil",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "النمل الأبيض والصراصير",
+              "crop_ar": "آفات الصحة العامة"
+            },
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الحشرات القارضة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تجنب الخلط غير المتوافق."
+        },
+        {
+          "name_ar": "إيثيبرويل",
+          "name_en": "Ethiprole",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان القطن وأوراق الخضر",
+              "crop_ar": "القطن والخضر"
+            },
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "الخضر والفواكه"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تجنب الخلط غير المتوافق."
+        }
+      ],
+      "irac_rotation_advice": "فعال ضد المقاومة للفسفورية والكربامات",
+      "irac_group_id": "irac-2b"
     },
     {
       "irac_code": "3B",
@@ -5180,7 +7448,86 @@
           "safety_notes_ar": "تجنب القرب من المياه + تقليل الاستخدام بسبب التراكم البيئي."
         }
       ],
-      "irac_rotation_advice": "قلل الاستخدام بسبب الثبات البيئي"
+      "irac_rotation_advice": "قلل الاستخدام بسبب الثبات البيئي",
+      "irac_group_id": "irac-3b"
+    },
+    {
+      "irac_code": "4A",
+      "irac_name_en": "Neonicotinoids",
+      "name_ar": "النيونيكوتينويدات",
+      "mode_of_action_ar": "تنشيط مستقبلات الأسيتيل كولين النيكوتينية (nAChR)، جهازي وفعال ضد الحشرات الماصة.",
+      "active_ingredients": [
+        {
+          "name_ar": "إيميداكلوبريد",
+          "name_en": "Imidacloprid",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن الأبيض والذباب الأبيض",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الحشرات الثاقبة الماصة",
+              "crop_ar": "القطن والمحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + مراقبة النباتات."
+        },
+        {
+          "name_ar": "ثياميثوكسام",
+          "name_en": "Thiamethoxam",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الحشرات الثاقبة الماصة",
+              "crop_ar": "القطن والذرة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "كلوثيانيدين",
+          "name_en": "Clothianidin",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الآفات الماصة",
+              "crop_ar": "الذرة والقمح"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "أسيتاميبريد",
+          "name_en": "Acetamiprid",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "الأشجار المثمرة والخضر"
+            },
+            {
+              "pest_ar": "الحشرات الماصة",
+              "crop_ar": "القطن والخضر"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        }
+      ],
+      "irac_rotation_advice": "مراقبة النباتات لتحديد أفضل وقت للرش – فعال ضد الحشرات الماصة",
+      "irac_group_id": "irac-4a"
     },
     {
       "irac_code": "4B",
@@ -5206,7 +7553,35 @@
           "safety_notes_ar": "سام جدًا للبشر – معدات وقاية كاملة + تجنب القرب من المياه."
         }
       ],
-      "irac_rotation_advice": "استخدام محدود لتقليل المقاومة"
+      "irac_rotation_advice": "استخدام محدود لتقليل المقاومة",
+      "irac_group_id": "irac-4b"
+    },
+    {
+      "irac_code": "4C",
+      "irac_name_en": "Sulfoximines",
+      "name_ar": "السولفوكسيمينات",
+      "mode_of_action_ar": "تنشيط nAChR، جهازي وفعال ضد الحشرات الماصة.",
+      "active_ingredients": [
+        {
+          "name_ar": "سولفوكسافلور",
+          "name_en": "Sulfoxaflor",
+          "nature_of_action_ar": "جهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفواكه"
+            },
+            {
+              "pest_ar": "الحشرات الماصة",
+              "crop_ar": "القطن والذرة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + مراقبة النباتات."
+        }
+      ],
+      "irac_rotation_advice": "تناوب مع مجموعات أخرى",
+      "irac_group_id": "irac-4c"
     },
     {
       "irac_code": "4D",
@@ -5232,7 +7607,8 @@
           "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + تجنب الخلط غير المتوافق."
         }
       ],
-      "irac_rotation_advice": "فعال ضد الحشرات الماصة"
+      "irac_rotation_advice": "فعال ضد الحشرات الماصة",
+      "irac_group_id": "irac-4d"
     },
     {
       "irac_code": "4E",
@@ -5258,7 +7634,170 @@
           "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + مراقبة النباتات."
         }
       ],
-      "irac_rotation_advice": "تناوب مع مجموعات أخرى"
+      "irac_rotation_advice": "تناوب مع مجموعات أخرى",
+      "irac_group_id": "irac-4e"
+    },
+    {
+      "irac_code": "5",
+      "irac_name_en": "Spinosyns",
+      "name_ar": "السبينوسينات",
+      "mode_of_action_ar": "تأثير مزدوج على nAChR وGABA – فعال ضد المقاومة للكربامات والنيونيكوتينويدات.",
+      "active_ingredients": [
+        {
+          "name_ar": "سبينوساد",
+          "name_en": "Spinosad",
+          "nature_of_action_ar": "ملامسة ومعدة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن ودودة التفاح",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "المن والذبابة البيضاء",
+              "crop_ar": "المحاصيل"
+            },
+            {
+              "pest_ar": "الآفات القارضة والزاحفة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + رش صباحًا أو مساءً."
+        }
+      ],
+      "irac_rotation_advice": "ممتاز للمقاومة – تناوب مع 28 أو 3A",
+      "irac_group_id": "irac-5"
+    },
+    {
+      "irac_code": "6",
+      "irac_name_en": "Avermectins",
+      "name_ar": "الأفيرميكتينات",
+      "mode_of_action_ar": "زيادة نفاذية أغشية GABA وGluCl → شلل عضلي ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "أبايمكتين",
+          "name_en": "Abamectin",
+          "nature_of_action_ar": "ملامسة ومعدة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الأكاروس",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "المن والذبابة البيضاء والتربس",
+              "crop_ar": "المحاصيل الحقلية"
+            },
+            {
+              "pest_ar": "نيماتودا التربة",
+              "crop_ar": "البطاطس والطماطم"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "إيمامكتين بنزوات",
+          "name_en": "Emamectin Benzoate",
+          "nature_of_action_ar": "جهازي وملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن وديدان التفاح",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "الحشرات القارضة والزاحفة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        }
+      ],
+      "irac_rotation_advice": "فعال ضد المقاومة للكربامات والبيرثرويدات",
+      "irac_group_id": "irac-6"
+    },
+    {
+      "irac_code": "28",
+      "irac_name_en": "Diamides",
+      "name_ar": "الدياميدات",
+      "mode_of_action_ar": "تنشيط مستقبلات الريانودين (RyR) → تسرب كالسيوم مستمر → شلل ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "كلورانترانيليبول",
+          "name_en": "Chlorantraniliprole",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن ودودة الحشد الخريفية",
+              "crop_ar": "القطن والخضر"
+            },
+            {
+              "pest_ar": "ذبابة الفاكهة",
+              "crop_ar": "الفواكه"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً."
+        },
+        {
+          "name_ar": "فلوبندياميد",
+          "name_en": "Flubendiamide",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان القطن وأوراق الخضر",
+              "crop_ar": "القطن والخضر"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "سيانترانيلبرول",
+          "name_en": "Cyantraniliprole",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن وديدان التفاح",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "ذبابة الفاكهة",
+              "crop_ar": "الفواكه"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "تيترانيلبرول",
+          "name_en": "Tetraniliprole",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان القطن والخضر",
+              "crop_ar": "القطن والخضر"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "سيكالنيلبرول",
+          "name_en": "Cyclaniliprole",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "ديدان ورق القطن وديدان التفاح",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        }
+      ],
+      "irac_rotation_advice": "من أقوى المجموعات ضد الحشرات القارضة – تناوب مع 5 أو 22A",
+      "irac_group_id": "irac-28"
     },
     {
       "irac_code": "29",
@@ -5284,7 +7823,83 @@
           "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً."
         }
       ],
-      "irac_rotation_advice": "فعال ضد المقاومة للنيونيكوتينويدات"
+      "irac_rotation_advice": "فعال ضد المقاومة للنيونيكوتينويدات",
+      "irac_group_id": "irac-29"
+    },
+    {
+      "irac_code": "23",
+      "irac_name_en": "Tetronic and Tetramic Acid Derivatives",
+      "name_ar": "مشتقات حمض التترونيك والتتراميك",
+      "mode_of_action_ar": "تثبيط إنزيم Acetyl-CoA carboxylase (ACCase) → منع تكوين الأحماض الدهنية → شلل.",
+      "active_ingredients": [
+        {
+          "name_ar": "سبيروديكولفين",
+          "name_en": "Spirodiclofen",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الأكاروس والحشرات القارضة",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب + رش صباحًا أو مساءً."
+        },
+        {
+          "name_ar": "سبيروميسيفين",
+          "name_en": "Spiromesifen",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الأكاروس والمن والذبابة البيضاء",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "سبيروبيديون",
+          "name_en": "Spiropidion",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الأكاروس والحشرات الماصة",
+              "crop_ar": "المحاصيل الحقلية والخضر"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "سبيروتيترامات",
+          "name_en": "Spirotetramat",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن الأبيض والذبابة البيضاء والتربس",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        },
+        {
+          "name_ar": "سبيدوكسامات",
+          "name_en": "Spidoxamat",
+          "nature_of_action_ar": "جهازي وملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "المن الأبيض والذبابة البيضاء",
+              "crop_ar": "الخضر والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "معدات وقاية + فترة أمان + تناوب."
+        }
+      ],
+      "irac_rotation_advice": "ممتاز ضد الأكاروس والحشرات الماصة المقاومة",
+      "irac_group_id": "irac-23"
     },
     {
       "irac_code": "7C",
@@ -5327,7 +7942,97 @@
           "safety_notes_ar": "استخدم عند وجود البيض واليرقات + IPM."
         }
       ],
-      "irac_rotation_advice": "مناسب لبرامج IPM – يؤثر على الأجيال التالية"
+      "irac_rotation_advice": "مناسب لبرامج IPM – يؤثر على الأجيال التالية",
+      "irac_group_id": "irac-7c"
+    },
+    {
+      "irac_code": "10A",
+      "irac_name_en": "Mite growth inhibitors",
+      "name_ar": "مثبطات نمو البيض واليرقات",
+      "mode_of_action_ar": "تثبيط تطور البيض والأطوار غير الكاملة (Hexythiazox).",
+      "active_ingredients": [
+        {
+          "name_ar": "هيكسايثيازوكس",
+          "name_en": "Hexythiazox",
+          "nature_of_action_ar": "ملامسة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "بيض وأطوار العنكبوت الأحمر والأكاروسات",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "العناكب",
+              "crop_ar": "الموالح والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "يؤثر على البيض والمبكرة – استخدم في بداية الإصابة + IPM."
+        }
+      ],
+      "irac_rotation_advice": "تناوب مع 20D أو 23",
+      "irac_group_id": "irac-10a"
+    },
+    {
+      "irac_code": "13",
+      "irac_name_en": "Pyrroles",
+      "name_ar": "البيروالت",
+      "mode_of_action_ar": "فصل عملية الفسفرة التأكسدية → تعطيل إنتاج ATP → شلل بطيء ثم موت.",
+      "active_ingredients": [
+        {
+          "name_ar": "كلورفينابير",
+          "name_en": "Chlorfenapyr",
+          "nature_of_action_ar": "ملامسة ومعدة",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "العنكبوت الأحمر والأكاروسات",
+              "crop_ar": "الخضر والفاكهة"
+            },
+            {
+              "pest_ar": "التربس والمن والذبابة البيضاء",
+              "crop_ar": "الخضر والزينة"
+            },
+            {
+              "pest_ar": "الحشرات القارضة والزاحفة",
+              "crop_ar": "المحاصيل الحقلية"
+            }
+          ],
+          "safety_notes_ar": "بطيء التأثير – استخدم في IPM + معدات وقاية."
+        }
+      ],
+      "irac_rotation_advice": "لا تستخدم بكثرة في الرشات المتتالية",
+      "irac_group_id": "irac-13"
+    },
+    {
+      "irac_code": "16",
+      "irac_name_en": "Buprofezin (Chitin biosynthesis inhibitor)",
+      "name_ar": "مثبطات تكوين الكيتين",
+      "mode_of_action_ar": "تثبيط تكوين الكيتين → فشل الانسلاخ → موت الأطوار غير الكاملة.",
+      "active_ingredients": [
+        {
+          "name_ar": "بوبروفزين",
+          "name_en": "Buprofezin",
+          "nature_of_action_ar": "ملامسة وجهازي محدود",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "الذبابة البيضاء",
+              "crop_ar": "الخضر والقطن"
+            },
+            {
+              "pest_ar": "نطاطات الأوراق",
+              "crop_ar": "الأرز"
+            },
+            {
+              "pest_ar": "الحشرات القشرية والبق الدقيقي",
+              "crop_ar": "الموالح والفاكهة"
+            }
+          ],
+          "safety_notes_ar": "يؤثر على غير الكاملة – استخدم في المراحل المبكرة + IPM."
+        }
+      ],
+      "irac_rotation_advice": "تناوب مع مجموعات أخرى",
+      "irac_group_id": "irac-16"
     },
     {
       "irac_code": "18",
@@ -5375,7 +8080,8 @@
           "safety_notes_ar": "يؤثر على اليرقات الصغيرة + IPM."
         }
       ],
-      "irac_rotation_advice": "تناوب مع مجموعات أخرى"
+      "irac_rotation_advice": "تناوب مع مجموعات أخرى",
+      "irac_group_id": "irac-18"
     },
     {
       "irac_code": "20D",
@@ -5397,7 +8103,31 @@
           "safety_notes_ar": "متخصص للأكاروسات – تناوب مع أكاروسات أخرى."
         }
       ],
-      "irac_rotation_advice": "تناوب مع 10A أو 23"
+      "irac_rotation_advice": "تناوب مع 10A أو 23",
+      "irac_group_id": "irac-20d"
+    },
+    {
+      "irac_code": "21A",
+      "irac_name_en": "METI acaricides and insecticides",
+      "name_ar": "مثبطات ميكانيكية للميتوكوندريا (Pyridaben)",
+      "mode_of_action_ar": "تثبيط إنزيم NADH:ubiquinone oxidoreductase (Complex I).",
+      "active_ingredients": [
+        {
+          "name_ar": "بيرادبين",
+          "name_en": "Pyradaben",
+          "nature_of_action_ar": "ملامسة وجهازي",
+          "egypt_status": "معتمد",
+          "recommendations": [
+            {
+              "pest_ar": "العنكبوت الأحمر والأكاروسات",
+              "crop_ar": "الخضر والفاكهة والموالح"
+            }
+          ],
+          "safety_notes_ar": "رش صباحًا أو مساءً + معدات وقاية + تناوب."
+        }
+      ],
+      "irac_rotation_advice": "فعال ضد الأكاروسات المقاومة",
+      "irac_group_id": "irac-21a"
     }
   ]
 }

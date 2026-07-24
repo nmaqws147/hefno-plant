@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Bot, CloudSun, BookOpen, Camera, ArrowUpLeft, ArrowLeft, Leaf } from 'lucide-react';
-import mascotAi from './mascot-ai.png';
+import { CloudSun, BookOpen, Camera, ArrowLeft, Leaf, ArrowUpLeft, Bot } from 'lucide-react';
 import mascotWeather from './mascot-weather.png';
 import mascotBooks from './mascot-books.png';
 import mascotScan from './mascot-scan.png';
+import mascotAi from './mascot-ai.png';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -47,17 +47,6 @@ function SectionHeader({ eyebrow, title, subtitle }) {
 function Services() {
   const services = [
     {
-      icon: Bot,
-      title: "التحدث مع الذكاء الاصطناعي",
-      desc: "استشارات فورية والتحقق من المعلومات الزراعية بواسطة المساعد الذكي.",
-      cta: "افتح المساعد",
-      mascot: mascotAi,
-      to: "/ai-chat",
-      hue: "from-emerald-500/30 to-transparent",
-      badgeColor: "bg-emerald-50 border-emerald-300 dark:bg-emerald-500/15 dark:border-emerald-400/30",
-      iconColor: "text-emerald-600 dark:text-white",
-    },
-    {
       icon: CloudSun,
       title: "الطقس",
       desc: "تحديثات الطقس اليومية وتأثيرها على المحاصيل الزراعية.",
@@ -90,6 +79,18 @@ function Services() {
       badgeColor: "bg-green-50 border-green-300 dark:bg-primary/15 dark:border-primary/30",
       iconColor: "text-green-600 dark:text-white",
     },
+    {
+      icon: Bot,
+      title: "المساعد الذكي",
+      desc: "اسأل Hefno AI عن أي استفسار زراعي واحصل على إجابات فورية.",
+      cta: "تحدث الآن",
+      mascot: mascotAi,
+      to: null,
+      action: 'chat',
+      hue: "from-amber-500/30 to-transparent",
+      badgeColor: "bg-amber-50 border-amber-300 dark:bg-amber-500/15 dark:border-amber-400/30",
+      iconColor: "text-amber-600 dark:text-white",
+    },
   ];
   return (
     <SectionShell id="services" className="py-12 sm:py-16 lg:py-20 px-3 sm:px-6 lg:px-14">
@@ -104,8 +105,13 @@ function Services() {
         subtitle="أدوات ذكاء اصطناعي قوية مصمّمة لدعمك في كل خطوة من رحلتك الزراعية."
       />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
-        {services.map((s, i) => (
-          <Link to={s.to} key={s.title} className="block h-full">
+        {services.map((s, i) => {
+          const Wrapper = s.action === 'chat' ? 'div' : Link;
+          const wrapperProps = s.action === 'chat'
+            ? { onClick: () => window.__chatWidgetOpen?.(), className: 'block h-full cursor-pointer' }
+            : { to: s.to, className: 'block h-full' };
+          return (
+          <Wrapper key={s.title} {...wrapperProps}>
           <motion.div
             custom={i}
             initial="hidden"
@@ -153,8 +159,9 @@ function Services() {
               </div>
             </div>
           </motion.div>
-          </Link>
-        ))}
+          </Wrapper>
+          );
+        })}
       </div>
     </SectionShell>
   );

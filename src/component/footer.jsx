@@ -10,7 +10,6 @@ const Footer = () => {
     { name: 'قاعدة المعرفة', path: '/knowledge-base' },
     { name: 'تشخيص الأمراض', path: '/diagnose' },
     { name: 'الطقس', path: '/weather' },
-    { name: 'المساعد الذكي', path: '/ai-chat' },
     { name: 'المدونة', path: '/blog' },
   ];
 
@@ -38,6 +37,17 @@ const Footer = () => {
     <footer className="hefno-footer">
       <div className="hefno-footer-ornament flex justify-center gap-3 text-primary/35 py-8 text-sm">
         {[1,2,3,4,5].map(i => <Star key={i} className="size-3.5" />)}
+      </div>
+
+      <div className="hefno-attribution">
+        <div className="hefno-attribution-lines">
+          <span className="hefno-attribution-line" />
+          <span className="hefno-attribution-label">المدير التنفيذي</span>
+          <span className="hefno-attribution-line" />
+        </div>
+        <div className="hefno-attribution-title-ar">المهندس الزراعي</div>
+        <div className="hefno-attribution-name-ar">الحفناوي محمد دويدار</div>
+        <div className="hefno-attribution-name-en">Agriculture Engineer Elhefnawy Mohamed Dwedar</div>
       </div>
 
       <div className="hefno-footer-container">

@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import { ChevronRight, ChevronLeft, Bug, Layers } from 'lucide-react';
 import data from '../knowledge_base/insects/insects-folder/data.json';
 
@@ -61,10 +62,7 @@ const InsectsPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>آفات الحشرات والديدان | Hefno-Plant</title>
-        <meta name="description" content="دليل شامل للآفات الحشرية والنيماتودا وآفات الصحة العامة وطرق إدارتها" />
-      </Helmet>
+      <SEO title="آفات الحشرات والديدان" description="دليل شامل للآفات الحشرية والنيماتودا وآفات الصحة العامة وطرق إدارتها." url="/knowledge-base/insects" keywords="آفات حشرية, الحشرات الزراعية, ديدان النباتات, النيماتودا, مكافحة الحشرات" breadcrumbs={makeBreadcrumbs('/knowledge-base/insects')} />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

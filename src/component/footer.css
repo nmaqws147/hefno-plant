@@ -18,6 +18,76 @@
 
 
 
+.hefno-attribution {
+  text-align: center;
+  padding: 24px 5% 8px;
+}
+
+.hefno-attribution-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hefno-attribution-line {
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45, 106, 79, 0.15), transparent);
+}
+
+.hefno-attribution-label {
+  font-size: 0.625rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hefno-attribution-title-ar {
+  font-size: 1.15rem;
+  color: #d4b87a;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.hefno-attribution-name-ar {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.hefno-attribution-name-en {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 640px) {
+  .hefno-attribution {
+    padding: 20px 5% 6px;
+  }
+  .hefno-attribution-line {
+    width: 32px;
+  }
+  .hefno-attribution-title-ar {
+    font-size: 1rem;
+  }
+  .hefno-attribution-name-ar {
+    font-size: 0.95rem;
+  }
+  .hefno-attribution-name-en {
+    font-size: 0.6rem;
+  }
+}
+
 .hefno-footer-container {
   max-width: 1300px;
   margin: 0 auto;

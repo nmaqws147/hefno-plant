@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /admin-panel/
 Disallow: /api/
 
-Sitemap: https://hefno-plant.vercel.app/sitemap.xml
+Sitemap: https://hefnoplant.site/sitemap.xml

@@ -52,7 +52,8 @@
       ]
     },
     "scientificName": "Nitrogen (N) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-2",
@@ -107,7 +108,8 @@
       ]
     },
     "scientificName": "Phosphorus (P) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-3",
@@ -163,7 +165,8 @@
       ]
     },
     "scientificName": "Potassium (K) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-4",
@@ -219,7 +222,8 @@
       ]
     },
     "scientificName": "Calcium (Ca) deficiency / Blossom End Rot (BER)",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-5",
@@ -270,7 +274,8 @@
       ]
     },
     "scientificName": "Magnesium (Mg) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-6",
@@ -328,7 +333,8 @@
       ]
     },
     "scientificName": "Iron (Fe) deficiency / Lime-induced chlorosis",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-7",
@@ -382,7 +388,8 @@
       ]
     },
     "scientificName": "Manganese (Mn) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-8",
@@ -436,7 +443,8 @@
       ]
     },
     "scientificName": "Zinc (Zn) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-9",
@@ -494,7 +502,8 @@
       ]
     },
     "scientificName": "Boron (B) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-10",
@@ -547,7 +556,17 @@
       ]
     },
     "scientificName": "Copper (Cu) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": [
+      {
+        "category": "bact",
+        "id": "bai-008"
+      },
+      {
+        "category": "bact",
+        "id": "bai-011"
+      }
+    ]
   },
   {
     "id": "physio-11",
@@ -598,7 +617,8 @@
       ]
     },
     "scientificName": "Sulfur (S) deficiency",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-12",
@@ -655,7 +675,8 @@
       ]
     },
     "scientificName": "Soil salinity / Salt stress",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-13",
@@ -715,7 +736,8 @@
       ]
     },
     "scientificName": "Heat stress / Sunscald",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-14",
@@ -772,7 +794,8 @@
       ]
     },
     "scientificName": "Chilling injury / Frost damage",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-15",
@@ -826,7 +849,8 @@
       ]
     },
     "scientificName": "Drought stress / Waterlogging",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-16",
@@ -884,7 +908,8 @@
       ]
     },
     "scientificName": "Fruit cracking due to irregular water supply",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-17",
@@ -942,7 +967,8 @@
       ]
     },
     "scientificName": "Pesticide phytotoxicity",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-18",
@@ -992,7 +1018,8 @@
       ]
     },
     "scientificName": "Blotchy ripening / Uneven ripening",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-19",
@@ -1043,7 +1070,8 @@
       ]
     },
     "scientificName": "Light deficiency / Etiolation",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "physio-20",
@@ -1095,7 +1123,8 @@
       ]
     },
     "scientificName": "Boron toxicity",
-    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري"
+    "economicThreshold": "أعراض ظاهرة تستدعي التصحيح الفوري",
+    "active_ingredients": []
   },
   {
     "id": "fin-18",
@@ -1112,7 +1141,17 @@
       "توقف نمو القمم"
     ],
     "season": "في موسم النمو في التربة الحامضية",
-    "references": ""
+    "references": "",
+    "active_ingredients": [],
+    "scientificName": "غير محدد — نقص عنصر الموليبدنيوم (Mo)",
+    "hostPlants": [
+      "كرنب (الأكثر حساسية)",
+      "قرنبيط",
+      "بروكلي",
+      "فول",
+      "فاصوليا",
+      "قمح"
+    ]
   },
   {
     "id": "fin-19",
@@ -1130,7 +1169,13 @@
       "الكشف بالنقر: صوت أجوف مميز"
     ],
     "season": "يونيو–أغسطس في موسم البطيخ الصيفي",
-    "references": ""
+    "references": "",
+    "active_ingredients": [],
+    "scientificName": "غير محدد — اضطراب فسيولوجي داخلي (Hollow Heart)",
+    "hostPlants": [
+      "بطيخ (الأساسي)",
+      "شمام (بدرجة أقل)"
+    ]
   },
   {
     "id": "fin-20",
@@ -1148,7 +1193,15 @@
       "في الطماطم: تشوه الأوراق وتقزمها"
     ],
     "season": "طوال العام — أشد في الشتاء البارد",
-    "references": ""
+    "references": "",
+    "active_ingredients": [],
+    "scientificName": "غير محدد — سمية عنصر الأمونيا (NH₄⁺)",
+    "hostPlants": [
+      "طماطم (الأكثر حساسية)",
+      "خيار",
+      "فلفل",
+      "خس"
+    ]
   },
   {
     "id": "fin-21",
@@ -1166,7 +1219,15 @@
       "اصفرار وضعف عام للنمو"
     ],
     "season": "يظهر 3-6 أسابيع بعد الزراعة الميدانية",
-    "references": ""
+    "references": "",
+    "active_ingredients": [],
+    "scientificName": "غير محدد — عدم توافق جيني بين الطعم والأصل",
+    "hostPlants": [
+      "طماطم مطعومة",
+      "خيار مطعوم",
+      "بطيخ مطعوم",
+      "فلفل مطعوم"
+    ]
   },
   {
     "id": "fin-22",
@@ -1184,6 +1245,11 @@
       "نمو جذور هوائية (Adventitious Roots) فوق سطح التربة في بعض النباتات"
     ],
     "season": "أمطار الشتاء والري الزائد في أي موسم",
-    "references": ""
+    "references": "",
+    "active_ingredients": [],
+    "scientificName": "غير محدد — اضطراب بيئي (نقص الأكسجين)",
+    "hostPlants": [
+      "جميع المحاصيل — الطماطم والفلفل الأكثر حساسية"
+    ]
   }
 ]

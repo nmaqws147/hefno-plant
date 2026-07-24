@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
 import { AlertTriangle, Bug, ChevronLeft, ChevronRight, Clock, FlaskConical, Heart, Info, Search, Shield, X } from 'lucide-react';
 import paraData from '../disease-folder/para.json';
 
@@ -63,10 +63,7 @@ const ParasiticPlantsPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>النباتات الطفيلية | Hefno-Plant</title>
-        <meta name="description" content="دليل النباتات الطفيلية — معلومات شاملة عن النباتات المتطفلة على المحاصيل." />
-      </Helmet>
+      <SEO title="النباتات الطفيلية" description="دليل النباتات الطفيلية — معلومات شاملة عن النباتات المتطفلة على المحاصيل." url="/knowledge-base/diseases/parasitic_plants" />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

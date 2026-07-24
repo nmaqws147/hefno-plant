@@ -1,14 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Bot, Mic, Square, Search, X,
+  Bot, Mic, Square, Search, X, Menu,
   Pill, Sun, Lightbulb, Sparkles, ArrowUp, MessageSquare, Plus,
   ChevronLeft, Sprout
 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { toast } from 'sonner';
 import useTracking from '../hooks/useTracking';
-import { Helmet } from 'react-helmet-async';
+import SEO from './SEO';
+import { makeBreadcrumbs, makeWebApp } from './structuredData';
 
 const CATEGORIES = [
   { id: 'diseases', name: 'تشخيص الأمراض', icon: Search },
@@ -314,7 +315,7 @@ const AIAssistant = () => {
   const handleTouchEnd = useCallback((e) => {
     if (touchStartX.current === null) return;
     const diff = e.changedTouches[0].clientX - touchStartX.current;
-    const threshold = 80;
+    const threshold = 40;
     if (diff > threshold && !sidebarOpen) setSidebarOpen(true);
     if (diff < -threshold && sidebarOpen) setSidebarOpen(false);
     touchStartX.current = null;
@@ -465,10 +466,7 @@ const AIAssistant = () => {
 
   return (
     <div className="h-screen overflow-hidden bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100" dir="rtl" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-      <Helmet>
-        <title>Hefno AI — المساعد الزراعي الذكي</title>
-        <meta name="description" content="المساعد الزراعي الذكي Hefno AI — إجابات فورية عن أمراض النباتات والمبيدات والتسميد." />
-      </Helmet>
+      <SEO title="Hefno AI — المساعد الزراعي الذكي" description="المساعد الزراعي الذكي Hefno AI — إجابات فورية عن أمراض النباتات والمبيدات والتسميد." url="/ai-chat" keywords="مساعد زراعي ذكي, AI زراعي, اسأل عن النباتات, استشارات زراعية, ذكاء اصطناعي للمزارعين" breadcrumbs={makeBreadcrumbs('/ai-chat')} jsonLd={makeWebApp('المساعد الزراعي الذكي', '/ai-chat', 'المساعد الزراعي بالذكاء الاصطناعي — إجابات فورية عن النباتات والمبيدات والتسميد')} />
 
       <style>{`
         @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
@@ -498,10 +496,10 @@ const AIAssistant = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setSidebarOpen(prev => !prev)}
-                className="size-10 sm:size-9 rounded-xl bg-white/10 border border-white/20 grid place-items-center text-white hover:bg-white/20 transition-all shrink-0 cursor-pointer"
+                className="size-10 sm:size-9 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 shadow-md grid place-items-center text-white hover:bg-white/30 transition-all shrink-0 cursor-pointer active:scale-95"
                 aria-label={sidebarOpen ? 'إغلاق القائمة' : 'فتح القائمة'}
               >
-                {sidebarOpen ? <X size={16} /> : <ChevronLeft size={16} />}
+                {sidebarOpen ? <X size={16} /> : <Menu size={16} />}
               </button>
                     <div className="size-10 rounded-xl overflow-hidden border-2 border-white/30 ring-2 ring-white/10 shrink-0 shadow-sm bg-emerald-600">
                       <HeaderAvatar />
@@ -555,6 +553,13 @@ const AIAssistant = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <div className="relative flex gap-4 h-[calc(100dvh-200px)] sm:h-[calc(100vh-180px)] landscape:h-[calc(100dvh-130px)]">
+
+          {/* ─── Swipe Hint (mobile, sidebar closed) ─── */}
+          {!sidebarOpen && (
+            <div className="fixed right-0 top-1/2 -translate-y-1/2 z-30 lg:hidden pointer-events-none">
+              <div className="h-16 w-1 rounded-r-full bg-emerald-400/60 animate-pulse shadow-lg shadow-emerald-500/20" />
+            </div>
+          )}
 
           {/* ─── Sidebar Overlay (mobile) ─── */}
           {sidebarOpen && (

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
 import pathogensData from '../disease-folder/fungi.json';
 
 const classConfig = {
@@ -60,10 +60,7 @@ const FungalClassificationPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>تصنيف الفطريات الممرضة | Hefno-Plant</title>
-        <meta name="description" content="دليل تصنيف الفطريات الممرضة للنبات — الفطريات البيضية، الأسكية، البازيدية، والزيجية." />
-      </Helmet>
+      <SEO title="تصنيف الفطريات الممرضة" description="دليل تصنيف الفطريات الممرضة للنبات — الفطريات البيضية، الأسكية، البازيدية، والزيجية." url="/knowledge-base/diseases/fungi" />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

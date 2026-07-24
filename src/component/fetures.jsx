@@ -23,21 +23,13 @@ const FeaturesSection = () => {
       page: '/knowledge-base'
     },
     {
-      id: 'hefno-weather',
-      icon: '🌤️',
-      title: 'الطقس',
-      description: 'تحديثات الطقس اليومية وتأثيرها على المحاصيل الزراعية',
-      color: '#64d2ff',
-      page: '/weather'
+      id: 'hefno-knowledge',
+      icon: '📚',
+      title: 'قاعدة المعرفة الزراعية',
+      description: 'موسوعة شاملة للمبيدات والحشرات والأمراض',
+      color: '#22c55e',
+      page: '/knowledge-base'
     },
-    {
-      id: 'hefno-ai-chat',
-      icon: '🤖',
-      title: 'التحدث مع الذكاء الاصطناعي',
-      description: 'استشارات فورية والتحقق من المعلومات الزراعية',
-      color: '#9c6bff',
-      page: '/ai-chat'
-    }
   ];
 
   const handleFeatureClick = (page) => {

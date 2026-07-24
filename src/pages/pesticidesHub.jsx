@@ -1,114 +1,35 @@
-import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
-import { Search, X, FolderOpen, FlaskConical, Bug, Leaf, Sprout, Shield, AlertTriangle, Droplets, RefreshCw, BarChart3, Hospital, ChevronRight } from 'lucide-react';
-import publicHealthData from '../pesticides-folder/pesti-items/phg.json';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
+import { Bug, Shield, Leaf, Sprout, FlaskConical, Hospital, ChevronLeft, Layers, ChevronRight } from 'lucide-react';
 import { getGroups } from '../pesticides-folder/buildGroups';
 
-const categoryMeta = {
-  insecticides: { label: 'المبيدات الحشرية', labelEn: 'Insecticides — IRAC Classification', Comp: Bug, color: 'text-red-600 dark:text-red-400', bg: 'bg-red-50 dark:bg-red-950/30', border: 'border-red-200/60 dark:border-red-900/40', gradient: 'from-red-500 to-red-600', tabBg: 'bg-red-50 dark:bg-red-950/20' },
-  fungicides: { label: 'المبيدات الفطرية', labelEn: 'Fungicides — FRAC Classification', Comp: Shield, color: 'text-purple-600 dark:text-purple-400', bg: 'bg-purple-50 dark:bg-purple-950/30', border: 'border-purple-200/60 dark:border-purple-900/40', gradient: 'from-purple-500 to-purple-600', tabBg: 'bg-purple-50 dark:bg-purple-950/20' },
-  herbicides: { label: 'مبيدات الحشائش', labelEn: 'Herbicides — HRAC Classification', Comp: Leaf, color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/30', border: 'border-emerald-200/60 dark:border-emerald-900/40', gradient: 'from-emerald-500 to-emerald-600', tabBg: 'bg-emerald-50 dark:bg-emerald-950/20' },
-  nematicides: { label: 'المبيدات النيماتودية', labelEn: 'Nematicides — Mode of Action', Comp: Sprout, color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-200/60 dark:border-amber-900/40', gradient: 'from-amber-500 to-amber-600', tabBg: 'bg-amber-50 dark:bg-amber-950/20' },
-  bactericides: { label: 'المبيدات البكتيرية', labelEn: 'Bactericides', Comp: FlaskConical, color: 'text-cyan-600 dark:text-cyan-400', bg: 'bg-cyan-50 dark:bg-cyan-950/30', border: 'border-cyan-200/60 dark:border-cyan-900/40', gradient: 'from-cyan-500 to-cyan-600', tabBg: 'bg-cyan-50 dark:bg-cyan-950/20' },
-  publicHealth: { label: 'مبيدات الصحة العامة', labelEn: 'Public Health Pesticides', Comp: Hospital, color: 'text-amber-700 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/30', border: 'border-amber-200/60 dark:border-amber-900/40', gradient: 'from-amber-600 to-amber-700', tabBg: 'bg-amber-50 dark:bg-amber-950/20' },
+const categories = [
+  { id: 'insecticides', nameAr: 'المبيدات الحشرية', nameEn: 'Insecticides', emoji: '🐛', desc: 'مبيدات مكافحة الحشرات الضارة التي تصيب المحاصيل الزراعية — تصنيف IRAC لآلية العمل', color: 'red', count: getGroups('irac-grp').length },
+  { id: 'fungicides', nameAr: 'المبيدات الفطرية', nameEn: 'Fungicides', emoji: '🍄', desc: 'مبيدات مكافحة الأمراض الفطرية التي تصيب النباتات — تصنيف FRAC لآلية العمل', color: 'purple', count: getGroups('frac-grp').length },
+  { id: 'herbicides', nameAr: 'مبيدات الحشائش', nameEn: 'Herbicides', emoji: '🌿', desc: 'مبيدات مكافحة الحشائش والنباتات غير المرغوب فيها — تصنيف HRAC لآلية العمل', color: 'emerald', count: getGroups('hrac-grp').length },
+  { id: 'nematicides', nameAr: 'المبيدات النيماتودية', nameEn: 'Nematicides', emoji: '🪱', desc: 'مبيدات مكافحة النيماتودا المتطفلة على جذور النباتات — آلية العمل', color: 'amber', count: getGroups('nema-grp').length },
+  { id: 'bactericides', nameAr: 'المبيدات البكتيرية', nameEn: 'Bactericides', emoji: '🦠', desc: 'مبيدات مكافحة الأمراض البكتيرية التي تصيب المحاصيل الزراعية', color: 'cyan', count: getGroups('bact-grp').length },
+  { id: 'publicHealth', nameAr: 'مبيدات الصحة العامة', nameEn: 'Public Health Pesticides', emoji: '🏥', desc: 'مبيدات تستخدم في مكافحة ناقلات الأمراض والحشرات ذات الأهمية الصحية العامة', color: 'amber', count: 6 },
+];
+
+const categoryColors = {
+  red: { bg: 'bg-red-50 dark:bg-red-950/30', text: 'text-red-700 dark:text-red-400', border: 'border-red-500', gradient: 'from-red-500 to-red-600', badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400' },
+  purple: { bg: 'bg-purple-50 dark:bg-purple-950/30', text: 'text-purple-700 dark:text-purple-400', border: 'border-purple-500', gradient: 'from-purple-500 to-purple-600', badge: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400' },
+  emerald: { bg: 'bg-emerald-50 dark:bg-emerald-950/30', text: 'text-emerald-700 dark:text-emerald-400', border: 'border-emerald-500', gradient: 'from-emerald-500 to-emerald-600', badge: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400' },
+  amber: { bg: 'bg-amber-50 dark:bg-amber-950/30', text: 'text-amber-700 dark:text-amber-400', border: 'border-amber-500', gradient: 'from-amber-500 to-amber-600', badge: 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400' },
+  cyan: { bg: 'bg-cyan-50 dark:bg-cyan-950/30', text: 'text-cyan-700 dark:text-cyan-400', border: 'border-cyan-500', gradient: 'from-cyan-500 to-cyan-600', badge: 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400' },
 };
 
 const PesticidesHub = () => {
   const navigate = useNavigate();
-  const [activeCategory, setActiveCategory] = useState(() => {
-    return localStorage.getItem('activePesticideCategory') || 'insecticides';
-  });
-  const [searchQuery, setSearchQuery] = useState('');
-
-  useEffect(() => {
-    localStorage.setItem('activePesticideCategory', activeCategory);
-  }, [activeCategory]);
-
-  const getPublicHealthGroups = () => {
-    if (!publicHealthData?.groups) return [];
-    return publicHealthData.groups.map(group => ({
-      id: group.id,
-      code: group.code,
-      irac_code: group.irac_code,
-      name_ar: group.ar_name,
-      name_en: group.name_en,
-      chemical_class_ar: group.chemical_class_ar,
-      MoA_ar: group.ar_MoA,
-      application_method_ar: group.ar_method_application,
-      spectrum_ar: group.ar_spectrum,
-      resistance_risk_ar: group.ar_risk_resistance,
-      resistance_risk_level: group.resistance_risk_level,
-      resistance_mechanism_ar: group.ar_mechanism_resistance,
-      rotation_rule_ar: group.ar_rule_rotation,
-      max_applications_season: group.max_applications_season,
-      importance_egypt: group.egypt_importance,
-      safety_class_ar: group.ar_class_safety,
-      ai_count: group.ai_count,
-      active_ingredients: group.active_ingredients,
-      isPublicHealth: true
-    }));
-  };
-
-  const categories = {
-    insecticides: { ...categoryMeta.insecticides, groups: getGroups('irac-grp') },
-    fungicides: { ...categoryMeta.fungicides, groups: getGroups('frac-grp') },
-    herbicides: { ...categoryMeta.herbicides, groups: getGroups('hrac-grp') },
-    nematicides: { ...categoryMeta.nematicides, groups: getGroups('nema-grp') },
-    bactericides: { ...categoryMeta.bactericides, groups: getGroups('bact-grp') },
-    publicHealth: { ...categoryMeta.publicHealth, groups: getPublicHealthGroups() },
-  };
-
-  const currentCat = categories[activeCategory];
-  const IconComp = currentCat.Comp;
-
-  const filteredGroups = useMemo(() => {
-    if (!searchQuery.trim()) return currentCat.groups;
-    const q = searchQuery.toLowerCase();
-    return currentCat.groups.filter(group =>
-      group.name_ar?.toLowerCase().includes(q) ||
-      group.name_en?.toLowerCase().includes(q) ||
-      group.code?.toLowerCase().includes(q) ||
-      group.irac_code?.toLowerCase().includes(q) ||
-      group.chemical_class_ar?.toLowerCase().includes(q)
-    );
-  }, [searchQuery, currentCat.groups]);
-
-  const handleGroupClick = (group) => {
-    localStorage.setItem('selectedPesticideGroup', JSON.stringify({
-      category: activeCategory,
-      group: group,
-    }));
-    navigate(`/knowledge-base/pesticides/group/${group.id}`);
-  };
-
-  const getRiskColor = (level) => {
-    if (level === 4 || level === 'very high' || level === 'عالٍ جدا') return '#dc2626';
-    if (level === 3 || level === 'high' || level === 'عالٍ' || level === 'عالية') return '#f59e0b';
-    if (level === 2 || level === 'medium' || level === 'متوسط') return '#eab308';
-    if (level === 1 || level === 'low' || level === 'منخفض') return '#10b981';
-    return '#10b981';
-  };
-
-  const getRiskText = (risk) => {
-    if (risk?.includes('عالٍ جدا') || risk?.includes('عالي جدا') || risk === 'very high') return 'شديد جداً';
-    if (risk?.includes('عالٍ') || risk?.includes('عالي') || risk === 'high') return 'شديد';
-    if (risk?.includes('متوسط') || risk === 'medium') return 'متوسط';
-    if (risk?.includes('منخفض') || risk === 'low') return 'منخفض';
-    return 'متوسط';
-  };
-
-  const totalGroups = Object.values(categories).reduce((sum, cat) => sum + cat.groups.length, 0);
+  const totalGroups = categories.reduce((sum, c) => sum + c.count, 0);
 
   return (
-    <div className="min-h-screen w-full bg-white dark:bg-gray-900 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>دليل المبيدات الزراعية | Hefno-Plant</title>
-        <meta name="description" content="دليل المبيدات الزراعية الشامل — مبيدات حشرية وفطرية وأعشاب، الجرعات وطرق الاستخدام." />
-      </Helmet>
+    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
+      <SEO title="مركز المبيدات الزراعية" description="دليل المبيدات الزراعية الشامل — مبيدات حشرية وفطرية وأعشاب، الجرعات وطرق الاستخدام." url="/knowledge-base/pesticides" keywords="دليل المبيدات, مبيدات زراعية, مبيدات حشرية, مبيدات فطرية, مبيدات أعشاب, مكافحة الآفات" breadcrumbs={makeBreadcrumbs('/knowledge-base/pesticides')} />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        {/* Back Button */}
         <button
           onClick={() => navigate('/knowledge-base')}
           className="mb-5 inline-flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-400 transition-colors hover:bg-emerald-100 dark:hover:bg-emerald-950/80"
@@ -117,243 +38,64 @@ const PesticidesHub = () => {
           <span>العودة</span>
         </button>
 
-        {/* Header */}
         <div className="mb-6 rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-5 sm:p-6 shadow-sm">
           <div className="flex items-center gap-5">
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-200/50 dark:shadow-emerald-900/30 shrink-0">
-              <FlaskConical size={28} />
+              <span className="text-2xl">🧪</span>
             </div>
             <div>
               <h1 className="text-2xl font-black text-gray-900 dark:text-white">مركز المبيدات الزراعية</h1>
               <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">Pesticides Center</p>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">اختر القسم ثم المجموعة لعرض المواد الفعالة</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">دليل شامل للمبيدات الزراعية، مقسمة حسب النوع والتصنيف الكيميائي</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-100/40 dark:border-emerald-900/40 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-400">
+                  <Layers size={14} />
+                  {categories.length} تصنيفات
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-xl border border-amber-100/40 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/40 px-3 py-1.5 text-xs font-bold text-amber-700 dark:text-amber-400">
                   <FlaskConical size={14} />
-                  {totalGroups} مجموعة مبيدات
+                  {totalGroups}+ مجموعة مبيدات
                 </span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Category Tabs */}
-        <div className="mb-6 flex flex-wrap gap-2">
-          {Object.entries(categories).map(([key, cat]) => {
-            const TabIcon = cat.Comp;
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {categories.map((cat) => {
+            const c = categoryColors[cat.color];
             return (
-              <button
-                key={key}
-                onClick={() => setActiveCategory(key)}
-                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition-all ${
-                  activeCategory === key
-                    ? 'bg-emerald-500 text-white shadow-md shadow-emerald-200/50 dark:shadow-emerald-900/30'
-                    : `${cat.tabBg} text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/50 hover:shadow-sm`
-                }`}
+              <div
+                key={cat.id}
+                onClick={() => navigate(`/knowledge-base/pesticides/${cat.id}`)}
+                className={`group cursor-pointer rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md border-r-[3px] ${c.border}`}
               >
-                <TabIcon size={16} />
-                <span>{cat.label}</span>
-                <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                  activeCategory === key
-                    ? 'bg-white/20 text-white'
-                    : 'bg-white dark:bg-gray-700/50 text-gray-500 dark:text-gray-400'
-                }`}>
-                  {cat.groups.length}
-                </span>
-              </button>
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <div className="flex items-center gap-2">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center text-lg shrink-0 ${c.badge}`}>
+                      <span>{cat.emoji}</span>
+                    </div>
+                    <div>
+                      <h3 className="text-base font-bold text-gray-900 dark:text-white">{cat.nameAr}</h3>
+                      <p className="text-[11px] italic text-gray-500 dark:text-gray-400">{cat.nameEn}</p>
+                    </div>
+                  </div>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 shrink-0">{cat.count} مجموعة</span>
+                </div>
+
+                <p className="text-xs leading-relaxed line-clamp-2 text-gray-500 dark:text-gray-400 mb-3">{cat.desc}</p>
+
+                <div className="flex items-center justify-between border-t border-gray-100 dark:border-gray-700/50 pt-3 mt-2">
+                  <div className="flex items-center gap-3 text-[11px] text-gray-500 dark:text-gray-400">
+                    <span className="inline-flex items-center gap-1"><FlaskConical size={12} /> {cat.count} مجموعة</span>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                    عرض التفاصيل <ChevronLeft size={14} />
+                  </div>
+                </div>
+              </div>
             );
           })}
-        </div>
-
-        {/* Category Info */}
-        <div className={`mb-6 flex items-center gap-4 rounded-2xl border ${currentCat.border} ${currentCat.bg} p-5`}>
-          <div className={`flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br ${currentCat.gradient} text-white shadow-lg shrink-0`}>
-            <IconComp size={20} />
-          </div>
-          <div>
-            <h2 className={`text-lg font-black ${currentCat.color}`}>{currentCat.label}</h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400">{currentCat.labelEn}</p>
-          </div>
-          <div className="mr-auto">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/70 dark:bg-gray-800/50 px-3 py-1.5 text-xs font-bold text-gray-600 dark:text-gray-400">
-              <BarChart3 size={12} />
-              {currentCat.groups.length} مجموعة
-            </span>
-          </div>
-        </div>
-
-        {/* Search */}
-        <div className="mb-6">
-          <div className="flex items-center gap-3 rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 px-4 py-3 shadow-sm">
-            <Search size={18} className="text-gray-400 shrink-0" />
-            <input
-              type="text"
-              placeholder="ابحث عن مجموعة مبيدات..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-1 bg-transparent text-sm text-gray-900 dark:text-white outline-none placeholder:text-gray-400"
-            />
-            {searchQuery && (
-              <button onClick={() => setSearchQuery('')} className="rounded-full p-1 text-gray-400 transition-colors hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-600 dark:hover:text-gray-300">
-                <X size={16} />
-              </button>
-            )}
-          </div>
-        </div>
-
-        {/* Section Header */}
-        <div className="mb-4 flex items-center gap-2">
-          <FolderOpen size={18} className="text-emerald-500" />
-          <h3 className="text-base font-black text-gray-900 dark:text-white">مجموعات المبيدات</h3>
-          <span className="rounded-full bg-emerald-500 px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
-            {filteredGroups.length}
-          </span>
-        </div>
-
-        {/* Groups Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredGroups.map((group, idx) => (
-            <div
-              key={group.id || idx}
-              onClick={() => handleGroupClick(group)}
-              className="group cursor-pointer rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-            >
-              <div className="mb-3 flex items-center justify-between">
-                <span
-                  className="rounded-full px-3 py-1 text-[11px] font-bold"
-                  style={{ background: `${activeCategory === 'insecticides' ? '#ef4444' : activeCategory === 'fungicides' ? '#8b5cf6' : activeCategory === 'herbicides' ? '#10b981' : activeCategory === 'nematicides' ? '#f59e0b' : activeCategory === 'bactericides' ? '#06b6d4' : '#8b5a2b'}15`, color: activeCategory === 'insecticides' ? '#ef4444' : activeCategory === 'fungicides' ? '#8b5cf6' : activeCategory === 'herbicides' ? '#10b981' : activeCategory === 'nematicides' ? '#f59e0b' : activeCategory === 'bactericides' ? '#06b6d4' : '#8b5a2b' }}
-                >
-                  {group.code || group.irac_code || group.id?.split('-').pop()}
-                </span>
-                <span
-                  className="h-3 w-3 rounded-full ring-2 ring-white dark:ring-gray-800"
-                  style={{ background: getRiskColor(group.resistance_risk_level) }}
-                  title={group.resistance_risk_ar || 'مخاطر المقاومة'}
-                />
-              </div>
-
-              <h4 className="text-base font-bold text-gray-900 dark:text-white">{group.name_ar}</h4>
-              <p className="mb-3 text-[11px] text-gray-500 dark:text-gray-400">{group.name_en}</p>
-
-              <div className="mb-2 text-xs text-gray-500 dark:text-gray-400">
-                <span className="font-bold text-gray-700 dark:text-gray-300">المجموعة الكيميائية:</span>{' '}
-                {group.chemical_class_ar || '—'}
-              </div>
-
-              <p className="mb-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2">
-                {group.MoA_ar?.substring(0, 100)}...
-              </p>
-
-              {group.application_method_ar && (
-                <div className="mb-2 flex items-center gap-1.5 text-[11px] text-gray-500 dark:text-gray-400">
-                  <Droplets size={12} />
-                  <span>{group.application_method_ar}</span>
-                </div>
-              )}
-
-              {group.spectrum_ar && (
-                <div className="mb-2 text-[11px] text-gray-500 dark:text-gray-400">
-                  <Shield size={12} className="ml-1 inline" />
-                  {group.spectrum_ar}
-                </div>
-              )}
-
-              <div className="mb-2 flex items-center justify-between text-[11px]">
-                <span className="text-gray-500 dark:text-gray-400">
-                  <AlertTriangle size={11} className="ml-1 inline" />
-                  مخاطر المقاومة:
-                </span>
-                <span className="font-bold" style={{ color: getRiskColor(group.resistance_risk_level) }}>
-                  {getRiskText(group.resistance_risk_ar)}
-                </span>
-              </div>
-
-              {group.resistance_mechanism_ar && (
-                <div className="mb-2 text-[10px] text-gray-400 dark:text-gray-500 line-clamp-1">
-                  آلية المقاومة: {group.resistance_mechanism_ar.substring(0, 60)}...
-                </div>
-              )}
-
-              {group.rotation_rule_ar && (
-                <div className="mb-2 flex items-start gap-1.5 text-[11px] text-gray-500 dark:text-gray-400">
-                  <RefreshCw size={11} className="mt-0.5 shrink-0" />
-                  <span>{group.rotation_rule_ar}</span>
-                </div>
-              )}
-
-              <div className="mb-2 space-y-1 text-[11px]">
-                {group.max_applications_season && (
-                  <div className="text-gray-500 dark:text-gray-400">
-                    <BarChart3 size={11} className="ml-1 inline" />
-                    الحد الأقصى: {group.max_applications_season} مرة/موسم
-                  </div>
-                )}
-                {group.importance_egypt && (
-                  <div className="text-gray-500 dark:text-gray-400">
-                    الأهمية في مصر: {group.importance_egypt}
-                  </div>
-                )}
-                {group.safety_class_ar && (
-                  <div className="flex items-center gap-1 text-amber-600 dark:text-amber-400">
-                    <AlertTriangle size={11} />
-                    <span>{group.safety_class_ar}</span>
-                  </div>
-                )}
-                {group.isPublicHealth && (
-                  <div className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
-                    <Hospital size={11} />
-                    <span>صحة عامة</span>
-                  </div>
-                )}
-              </div>
-
-              <div className="mt-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3">
-                <span className="flex items-center gap-1.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
-                  <FlaskConical size={12} />
-                  {group.ai_count || group.active_ingredients?.length || 'متعدد'} مادة فعالة
-                </span>
-                <span className="flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
-                  عرض المواد
-                  <ChevronRight size={12} />
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* No Results */}
-        {filteredGroups.length === 0 && (
-          <div className="mt-8 rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-12 text-center shadow-sm">
-            <Search size={48} className="mx-auto mb-4 text-gray-300 dark:text-gray-600" />
-            <h3 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">لا توجد نتائج مطابقة</h3>
-            <p className="mb-6 text-sm text-gray-500 dark:text-gray-400">
-              لم نتمكن من العثور على مجموعة تطابق "{searchQuery}"
-            </p>
-            <button
-              onClick={() => setSearchQuery('')}
-              className="rounded-xl bg-emerald-500 px-6 py-2.5 text-xs font-bold text-white transition-all hover:bg-emerald-600 shadow-md"
-            >
-              مسح البحث
-            </button>
-          </div>
-        )}
-
-        {/* Stats */}
-        <div className="mt-8 flex items-center justify-center gap-6 rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 px-6 py-4 shadow-sm">
-          <div className="text-center">
-            <div className="text-xl font-black text-emerald-500">{totalGroups}</div>
-            <div className="text-[11px] text-gray-500 dark:text-gray-400">مجموعة مبيدات</div>
-          </div>
-          <div className="h-8 w-px bg-gray-200 dark:bg-gray-700" />
-          <div className="text-center">
-            <div className="text-xl font-black text-emerald-500">6</div>
-            <div className="text-[11px] text-gray-500 dark:text-gray-400">أقسام رئيسية</div>
-          </div>
-          <div className="h-8 w-px bg-gray-200 dark:bg-gray-700" />
-          <div className="text-center">
-            <FlaskConical size={20} className="mx-auto text-emerald-500" />
-            <div className="text-[11px] text-gray-500 dark:text-gray-400">مواد فعالة متنوعة</div>
-          </div>
         </div>
       </div>
     </div>

@@ -71,7 +71,17 @@
     "effectiveness": "60–80% بالإدارة المتكاملة — لا حل سحري",
     "season": "نوفمبر–مارس في مصر — يظهر مع نمو البقوليات الشتوية",
     "resistanceRisk": "منخفض للمبيدات المحدودة المستخدمة",
-    "references": "Parker, C. (2009). Observations on the current status of Orobanche and Striga problems worldwide. Pest Management Science | Khalid, S. (2002). Broomrape (Orobanche) in Egypt. FAO Report"
+    "references": "Parker, C. (2009). Observations on the current status of Orobanche and Striga problems worldwide. Pest Management Science | Khalid, S. (2002). Broomrape (Orobanche) in Egypt. FAO Report",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      },
+      {
+        "category": "hrac",
+        "id": "hai-058"
+      }
+    ]
   },
   {
     "id": "para-2",
@@ -135,7 +145,13 @@
     "effectiveness": "55–75%",
     "season": "أكتوبر–مارس في الخضروات الشتوية",
     "resistanceRisk": "منخفض",
-    "references": "Dor, E. & Hershenhorn, J. (2009). P. aegyptiaca management. Pest Management Science"
+    "references": "Dor, E. & Hershenhorn, J. (2009). P. aegyptiaca management. Pest Management Science",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      }
+    ]
   },
   {
     "id": "para-3",
@@ -200,7 +216,17 @@
     "effectiveness": "65–85% بالإدارة المتكاملة IR Maize + مبيدات",
     "season": "مايو–أكتوبر مع موسم الذرة والسورجم",
     "resistanceRisk": "منخفض حاليًا للإيمازابير",
-    "references": "Ejeta, G. (2007). Striga devastation of Africa's crops. Plant Physiology | Khan, Z.R. et al. (2011). Push-pull technology. Journal of Pest Science"
+    "references": "Ejeta, G. (2007). Striga devastation of Africa's crops. Plant Physiology | Khan, Z.R. et al. (2011). Push-pull technology. Journal of Pest Science",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      },
+      {
+        "category": "hrac",
+        "id": "hai-050"
+      }
+    ]
   },
   {
     "id": "para-4",
@@ -270,7 +296,21 @@
     "effectiveness": "75–88%",
     "season": "طوال العام — ذروة الربيع والخريف في البرسيم",
     "resistanceRisk": "منخفض",
-    "references": "Dawson, J.H. et al. (1994). Biology and control of Cuscuta. Reviews in Weed Science"
+    "references": "Dawson, J.H. et al. (1994). Biology and control of Cuscuta. Reviews in Weed Science",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      },
+      {
+        "category": "hrac",
+        "id": "hai-038"
+      },
+      {
+        "category": "hrac",
+        "id": "hai-039"
+      }
+    ]
   },
   {
     "id": "para-5",
@@ -319,7 +359,8 @@
     "effectiveness": "80–90% بالإزالة الجراحية المبكرة",
     "season": "طوال العام — ملحوظ أكثر في الشتاء عند تساقط أوراق الأشجار المضيفة",
     "resistanceRisk": "لا ينطبق",
-    "references": "Calder, D.M. & Bernhardt, P. (1983). The Biology of Mistletoes. Academic Press"
+    "references": "Calder, D.M. & Bernhardt, P. (1983). The Biology of Mistletoes. Academic Press",
+    "active_ingredients": []
   },
   {
     "id": "para-6",
@@ -363,7 +404,8 @@
     "effectiveness": "75–85% بالإزالة المنتظمة",
     "season": "طوال العام",
     "resistanceRisk": "لا ينطبق",
-    "references": "Zuber, D. (2004). Biological flora of Central Europe: Viscum album. Flora"
+    "references": "Zuber, D. (2004). Biological flora of Central Europe: Viscum album. Flora",
+    "active_ingredients": []
   },
   {
     "id": "para-7",
@@ -402,7 +444,13 @@
     "effectiveness": "65–75%",
     "season": "مارس–مايو في الصحراء",
     "resistanceRisk": "لا ينطبق",
-    "references": "Těšitel, J. et al. (2010). The functional biology of hemiparasitic plants. Preslia"
+    "references": "Těšitel, J. et al. (2010). The functional biology of hemiparasitic plants. Preslia",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      }
+    ]
   },
   {
     "id": "para-8",
@@ -452,7 +500,13 @@
     "effectiveness": "65–78%",
     "season": "نوفمبر–مارس مع زراعة البرسيم",
     "resistanceRisk": "منخفض",
-    "references": "Heap, I. (2014). Global incidence of herbicide resistant weeds. Pest Management Science"
+    "references": "Heap, I. (2014). Global incidence of herbicide resistant weeds. Pest Management Science",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      }
+    ]
   },
   {
     "id": "para-9",
@@ -492,7 +546,17 @@
     "effectiveness": "70–80%",
     "season": "طوال العام في المناطق الدافئة",
     "resistanceRisk": "لا ينطبق",
-    "references": "Machado, M.A. & Zetsche, K. (1990). A structural, functional and molecular analysis of plastids of holoparasitic plants of the genera Cuscuta and Cassytha. Planta"
+    "references": "Machado, M.A. & Zetsche, K. (1990). A structural, functional and molecular analysis of plastids of holoparasitic plants of the genera Cuscuta and Cassytha. Planta",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      },
+      {
+        "category": "hrac",
+        "id": "hai-039"
+      }
+    ]
   },
   {
     "id": "para-10",
@@ -538,6 +602,12 @@
     },
     "effectiveness": "60–75%",
     "season": "أكتوبر–مارس",
-    "resistanceRisk": "منخفض"
+    "resistanceRisk": "منخفض",
+    "active_ingredients": [
+      {
+        "category": "hrac",
+        "id": "hai-036"
+      }
+    ]
   }
 ]

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
 import { Link } from 'react-router-dom';
 import './NotFoundPage.css';
 
@@ -10,10 +10,7 @@ const NotFoundPage = () => {
 
   return (
     <div className="hefno-notfound">
-      <Helmet>
-        <title>404 - الصفحة غير موجودة | Hefno-Plant</title>
-        <meta name="description" content="الصفحة التي تبحث عنها غير موجودة." />
-      </Helmet>
+      <SEO title="404 - الصفحة غير موجودة" description="الصفحة التي تبحث عنها غير موجودة." noindex />
 
       <div className="hefno-notfound-container">
         <div className="hefno-notfound-code">404</div>

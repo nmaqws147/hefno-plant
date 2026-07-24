@@ -13,10 +13,42 @@
       }
     }
   ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://hefnoplant.site/$1",
+      "statusCode": 301,
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hefnoplant.site"
+        }
+      ]
+    }
+  ],
   "routes": [
+    {
+      "src": "/api/blog/(.*)",
+      "dest": "api/blog.js"
+    },
+    {
+      "src": "/sitemap.xml",
+      "dest": "api/sitemap.js"
+    },
     {
       "src": "/api/(.*)",
       "dest": "api/$1.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "api/blog.js",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(Twitterbot|facebookexternalhit|LinkedInBot|WhatsApp|TelegramBot|Discordbot|Slack|Discourse|Facebot)"
+        }
+      ]
     },
     {
       "handle": "filesystem"

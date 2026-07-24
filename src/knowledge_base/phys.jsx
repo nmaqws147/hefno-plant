@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
 import { AlertTriangle, Bug, Calendar, ChevronLeft, ChevronRight, Info, Layers, Search, Shield, Sprout, X } from 'lucide-react';
 import physData from '../disease-folder/pysh.json';
 
@@ -46,10 +46,7 @@ const PhysiologicalPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>الأمراض الفسيولوجية | Hefno-Plant</title>
-        <meta name="description" content="دليل الأمراض الفسيولوجية — معلومات شاملة عن الاضطرابات غير المعدية في النبات." />
-      </Helmet>
+      <SEO title="الأمراض الفسيولوجية" description="دليل الأمراض الفسيولوجية — معلومات شاملة عن الاضطرابات غير المعدية في النبات." url="/knowledge-base/diseases/physiological_disorders" />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

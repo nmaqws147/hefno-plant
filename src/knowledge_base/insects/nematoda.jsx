@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../component/SEO';
 import { ChevronRight, ChevronLeft, X, AlertTriangle, Bug, Shield, Calendar, Info, Sprout, Thermometer, FlaskConical, Search, Layers, Star, BookOpen, Clock } from 'lucide-react';
 import nematodaData from '../../insects-folder/nematoda.json';
 
@@ -95,10 +95,7 @@ const NematodaPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>النيماتودا | Hefno-Plant</title>
-        <meta name="description" content="قاعدة بيانات متكاملة للنيماتودا — الأنواع، دورة الحياة، التشخيص، المكافحة المتكاملة، والنيماتودا النافعة مع دليل حساسية المحاصيل" />
-      </Helmet>
+      <SEO title="النيماتودا" description="قاعدة بيانات متكاملة للنيماتودا — الأنواع، دورة الحياة، التشخيص، المكافحة المتكاملة، والنيماتودا النافعة مع دليل حساسية المحاصيل" url="/knowledge-base/insects/nematoda" />
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button
           onClick={() => navigate('/knowledge-base/insects')}

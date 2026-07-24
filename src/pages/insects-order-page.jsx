@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import { ChevronRight, ChevronLeft, X, AlertTriangle, Search, Bug, Layers, Info, Shield, Sprout, Calendar, FlaskConical, RefreshCw, Thermometer } from 'lucide-react';
 
 const ITEMS_PER_PAGE = 5;
@@ -138,10 +139,7 @@ const InsectOrderPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>{order.order_ar} | رتب الحشرات | Hefno-Plant</title>
-        <meta name="description" content={`دليل رتبة ${order.order_ar} — معلومات شاملة عن الآفات الحشرية.`} />
-      </Helmet>
+      <SEO title={`${order.order_ar} | رتب الحشرات`} description={`دليل رتبة ${order.order_ar} — معلومات شاملة عن الآفات الحشرية.`} url={`/knowledge-base/insects/${orderId}`} keywords={`${order.order_ar}, حشرات, آفات حشرية, رتب الحشرات, مكافحة الحشرات`} breadcrumbs={makeBreadcrumbs(`/knowledge-base/insects/${orderId}`)} />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

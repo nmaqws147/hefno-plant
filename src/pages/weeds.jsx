@@ -5,6 +5,8 @@ import {
   Search, Info, Sprout, Leaf, ShieldCheck, FlaskConical,
   BookOpen, RefreshCw, AlertCircle
 } from 'lucide-react';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import weedsData from '../knowledge_base/Weeds/data.json';
 
 const ITEMS_PER_PAGE = 5;
@@ -93,6 +95,7 @@ const WeedsPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900" dir="rtl">
+      <SEO title="الحشائش الضارة" description="دليل الحشائش الضارة في الزراعة — أنواعها، طرق مكافحتها، وإدارتها المتكاملة." url="/knowledge-base/weeds" keywords="الحشائش الضارة, مكافحة الحشائش, أنواع الحشائش, مبيدات الحشائش, weeds" breadcrumbs={makeBreadcrumbs('/knowledge-base/weeds')} />
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
 
         <button onClick={() => navigate('/knowledge-base')}

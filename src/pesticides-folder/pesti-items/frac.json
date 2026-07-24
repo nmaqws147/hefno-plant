@@ -4326,7 +4326,11 @@
           "id": "fin-7",
           "name_ar": "عفن الجذور البنفسجي (Violet Root Rot)"
         }
-      ]
+      ],
+      "trade_names_ar": [
+        "كابتان"
+      ],
+      "phi_days": 7
     },
     {
       "id": "ai-034",
@@ -4812,7 +4816,11 @@
           "id": "oomy-12",
           "name_ar": "عفن الجذور في الحمضيات (Gummosis / Collar Rot)"
         }
-      ]
+      ],
+      "trade_names_ar": [
+        "ريدوميل جولد"
+      ],
+      "phi_days": 14
     },
     {
       "id": "ai-039",

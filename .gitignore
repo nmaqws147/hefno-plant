@@ -31,3 +31,4 @@ yarn-error.log*
 
 # API dependencies
 api/node_modules
+.env*

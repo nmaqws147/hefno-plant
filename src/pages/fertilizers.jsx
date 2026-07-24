@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import {
   X, ChevronRight, ChevronLeft, FlaskConical, Beaker, Droplets, Leaf, Dna,
   Info, Sprout, Heart, Package, Crosshair, Coins, AlertTriangle,
@@ -129,10 +130,7 @@ const FertilizersPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>الأسمدة الزراعية | Hefno-Plant</title>
-        <meta name="description" content="دليل الأسمدة الزراعية — أنواع الأسمدة العضوية والمعدنية وطرق استخدامها لكل محصول." />
-      </Helmet>
+      <SEO title="الأسمدة الزراعية" description="دليل الأسمدة الزراعية — أنواع الأسمدة العضوية والمعدنية وطرق استخدامها لكل محصول." url="/knowledge-base/fertilizer" keywords="أسمدة زراعية, أسمدة عضوية, أسمدة معدنية, تسميد المحاصيل, أنواع الأسمدة" breadcrumbs={makeBreadcrumbs('/knowledge-base/fertilizer')} />
 
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         {/* Header */}

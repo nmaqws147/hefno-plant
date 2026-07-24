@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import { ChevronRight, ChevronLeft, Wheat, Apple, Leaf, Flower2, Sprout, Info, Calendar, Droplets, FlaskConical, MapPin, Clock, Sun, X, Shield, AlertTriangle, Heart } from 'lucide-react';
 import plantsData from '../knowledge_base/crops/data.json';
 
@@ -146,10 +147,7 @@ const PlantsPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>المحاصيل الزراعية | Hefno-Plant</title>
-        <meta name="description" content="دليل المحاصيل الزراعية — معلومات شاملة عن أنواع المحاصيل وطرق زراعتها ورعايتها." />
-      </Helmet>
+      <SEO title="المحاصيل الزراعية" description="دليل المحاصيل الزراعية — معلومات شاملة عن أنواع المحاصيل وطرق زراعتها ورعايتها." url="/knowledge-base/plants-crops" keywords="محاصيل زراعية, أنواع المحاصيل, زراعة المحاصيل, رعاية المحاصيل, محصول القمح, محصول الأرز" breadcrumbs={makeBreadcrumbs('/knowledge-base/plants-crops')} />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         {/* Back Button */}

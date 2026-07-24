@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import './about.css';
 
 const AboutPage = () => {
@@ -9,10 +10,7 @@ const AboutPage = () => {
 
   return (
     <div className="hefno-about">
-      <Helmet>
-        <title>من نحن | Hefno-Plant</title>
-        <meta name="description" content="منصة Hefno-Plant — منصة زراعية متكاملة تجمع بين المعرفة العلمية والذكاء الاصطناعي لخدمة المزارعين." />
-      </Helmet>
+      <SEO title="من نحن" description="منصة Hefno-Plant — منصة زراعية متكاملة تجمع بين المعرفة العلمية والذكاء الاصطناعي لخدمة المزارعين." url="/about" keywords="Hefno-Plant, من نحن, منصة زراعية, ذكاء اصطناعي زراعي" breadcrumbs={makeBreadcrumbs('/about')} />
       <div className="hefno-about-hero">
         <div className="hefno-about-hero-inner">
           <div className="hefno-about-hero-label">من نحن</div>

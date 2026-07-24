@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Search, X, FlaskConical, AlertTriangle, Droplets, Shield, BookOpen, Bug, Leaf, Sprout, Wheat, ClipboardList, Star, Hospital, ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -37,8 +39,8 @@ const PesticideGroupPage = () => {
       case 'fungicides': return item.frac_group_id || '';
       case 'insecticides': return item.irac_group_id || '';
       case 'herbicides': return item.hrac_group_id || '';
-      case 'nematicides': return item.nema_group_id || '';
-      case 'bactericides': return item.bact_group_id || '';
+      case 'nematicides': return item.nematicide_group_id || '';
+      case 'bactericides': return item.bactericide_group_id || '';
       case 'publicHealth': return item.group_code || item.code || item.id || '';
       default: return item.group_code || item.code || item.id || '';
     }
@@ -49,7 +51,7 @@ const PesticideGroupPage = () => {
     name_ar: item.ar_name || item.name_ar || item.name || 'غير معروف',
     name_en: item.name_en || item.name || '',
     type_ar: item.type_ar || item.ar_type || (item.systemic ? 'جهازي' : 'ملامسي'),
-    chemical_class_ar: item.chemical_class_ar || item.chemical_class_en || '—',
+    chemical_class_ar: item.chemical_class_en || item.chemical_class_ar || '—',
     group_code_display: extractGroupCode(item, category) || group?.code,
     group_name_ar: item.group_name_ar || group?.name_ar || group?.ar_name,
     resistance_risk: item.resistance?.risk_ar || item.resistance?.ar_risk || item.resistance_risk,
@@ -234,8 +236,24 @@ const PesticideGroupPage = () => {
     { id: 'targets', label: 'أهداف وسلامة' },
   ];
 
+  const categoryNames = {
+    insecticides: 'مبيدات حشرية',
+    fungicides: 'مبيدات فطرية',
+    herbicides: 'مبيدات أعشاب',
+    nematicides: 'مبيدات نيماتودا',
+    bactericides: 'مبيدات بكتيرية',
+    publicHealth: 'مبيدات صحة عامة',
+  };
+
   return (
     <div className="min-h-screen w-full bg-white dark:bg-gray-900" dir="rtl">
+      <SEO
+        title={categoryNames[currentCategory] || currentCategory || 'مجموعة مبيدات'}
+        description={`دليل مجموعة ${categoryNames[currentCategory] || currentCategory || 'المبيدات'} — قائمة شاملة بالمبيدات وتصنيفاتها وطرق استخدامها.`}
+        url={`/knowledge-base/pesticides/group/${groupCode}`}
+        keywords={`${categoryNames[currentCategory] || currentCategory}, مبيدات, مجموعة مبيدات, مكافحة الآفات, المبيدات الزراعية`}
+        breadcrumbs={makeBreadcrumbs(`/knowledge-base/pesticides/group/${groupCode}`)}
+      />
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 pt-24">
         {/* Back Button */}
         <button
@@ -255,8 +273,8 @@ const PesticideGroupPage = () => {
               <CatIcon size={24} />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">{currentGroup.name_ar || currentGroup.ar_name}</h1>
-              <p className="text-xs text-gray-500 dark:text-gray-400">{currentGroup.name_en}</p>
+              <h1 className="text-xl font-bold text-gray-900 dark:text-white">{currentGroup.chemical_class_en || currentGroup.name_ar || currentGroup.ar_name}</h1>
+              <p className="text-xs text-gray-500 dark:text-gray-400">{currentGroup.name_en || currentGroup.chemical_class_ar}</p>
               <div className="mt-2 flex flex-wrap gap-2">
                 <span
                   className="rounded-full px-3 py-1 text-[11px] font-bold"
@@ -265,7 +283,7 @@ const PesticideGroupPage = () => {
                   {currentGroup.code || currentGroup.id}
                 </span>
                 <span className="rounded-full bg-gray-100 dark:bg-gray-700 px-3 py-1 text-[11px] text-gray-600 dark:text-gray-300">
-                  {currentGroup.chemical_class_ar || 'مبيد'}
+                  {currentGroup.chemical_class_en || currentGroup.chemical_class_ar || 'Pesticide'}
                 </span>
                 <span className="rounded-full bg-gray-100 dark:bg-gray-700 px-3 py-1 text-[11px] text-gray-600 dark:text-gray-300">
                   {items.length} مادة فعالة
@@ -343,10 +361,17 @@ const PesticideGroupPage = () => {
               }}
               className="group cursor-pointer rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
             >
-              <div className="mb-2 flex items-center justify-between">
-                <h4 className="text-base font-bold text-gray-900 dark:text-white">{item.name_ar}</h4>
+              <div className="mb-2 flex items-start justify-between">
+                <h4 className="text-base font-bold text-gray-900 dark:text-white">{item.name_en}</h4>
               </div>
-              <p className="mb-3 text-[11px] text-gray-500 dark:text-gray-400">{item.name_en}</p>
+
+              {item.trade_names_ar?.length > 0 && (
+                <div className="flex flex-wrap gap-1 mb-2">
+                  {item.trade_names_ar.map((tn, i) => (
+                    <span key={i} className="rounded-full bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 px-2 py-0.5 text-[9px] font-bold text-amber-700 dark:text-amber-400">{tn}</span>
+                  ))}
+                </div>
+              )}
 
               <div className="mb-2 space-y-1.5 border-t border-gray-100 dark:border-gray-700 pt-3 text-[11px]">
                 <div className="flex justify-between">
@@ -486,14 +511,20 @@ const PesticideGroupPage = () => {
                   <CatIcon size={20} />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-base font-bold text-gray-900 dark:text-white">{selectedItem.name_ar}</h2>
-                  <p className="text-[11px] text-gray-500 dark:text-gray-400">{selectedItem.name_en}</p>
+                  <h2 className="text-base font-bold text-gray-900 dark:text-white">{selectedItem.name_en}</h2>
                   {selectedItem.who_class && (
                     <p className="text-[10px] text-amber-600 dark:text-amber-400">تصنيف منظمة الصحة العالمية: {selectedItem.who_class}</p>
                   )}
                   <p className="text-[10px] text-emerald-600 dark:text-emerald-400">
-                    {selectedItem.group_name_ar || currentGroup.name_ar}
+                    {selectedItem.chemical_class_ar || selectedItem.group_name_ar || currentGroup.name_ar}
                   </p>
+                  {selectedItem.trade_names_ar?.length > 0 && (
+                    <div className="mt-1 flex flex-wrap gap-1">
+                      {selectedItem.trade_names_ar.map((tn, i) => (
+                        <span key={i} className="rounded-full bg-amber-100 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800 px-2 py-0.5 text-[9px] font-bold text-amber-700 dark:text-amber-400">{tn}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <button
                   onClick={() => setShowModal(false)}
@@ -528,7 +559,7 @@ const PesticideGroupPage = () => {
                     <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                       <div className="space-y-3">
                         <div className="flex justify-between text-xs">
-                          <span className="text-gray-500 dark:text-gray-400">التركيب الكيميائي:</span>
+                          <span className="text-gray-500 dark:text-gray-400">المجموعة الكيميائية:</span>
                           <span className="font-bold text-gray-900 dark:text-white">{selectedItem.chemical_class_ar}</span>
                         </div>
                         <div className="flex justify-between text-xs">

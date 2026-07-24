@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs, makeFAQ } from '../component/structuredData';
 import {
   ChevronRight, CalendarDays, Calendar, Wheat, Sprout, Apple, Leaf,
   FlaskConical, AlertTriangle, Lightbulb, Wrench, Sun, Droplets,
@@ -94,10 +95,7 @@ const AgriculturalCalendarPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>التقويم الزراعي | Hefno-Plant</title>
-        <meta name="description" content="التقويم الزراعي الشهري — مواعيد الزراعة والحصاد والعمليات الزراعية حسب كل شهر." />
-      </Helmet>
+      <SEO title="التقويم الزراعي" description="التقويم الزراعي الشهري — مواعيد الزراعة والحصاد والعمليات الزراعية حسب كل شهر." url="/knowledge-base/calendar" keywords="تقويم زراعي, مواعيد الزراعة, مواعيد الحصاد, الزراعة حسب الشهر, العمليات الزراعية الشهرية" breadcrumbs={makeBreadcrumbs('/knowledge-base/calendar')} />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
 

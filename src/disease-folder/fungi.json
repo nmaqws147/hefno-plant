@@ -75,7 +75,29 @@
       "effectiveness": "92–96% عند التدخل المبكر",
       "season": "طوال العام — ذروة الشتاء والربيع (أكتوبر–مارس) في مصر",
       "resistanceRisk": "متوسط — تناوب ميتالاكسيل مع بروباموكارب وفوسيت ألومنيوم",
-      "references": "Agrios, G.N. (2005). Plant Pathology, 5th ed. | Abo-Elyousr, K.A.M. (2009). Egyptian Journal of Phytopathology"
+      "references": "Agrios, G.N. (2005). Plant Pathology, 5th ed. | Abo-Elyousr, K.A.M. (2009). Egyptian Journal of Phytopathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-053"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     },
     {
       "id": "oomy-2",
@@ -138,7 +160,45 @@
       "effectiveness": "93–97%",
       "season": "أكتوبر–فبراير في مصر — الإصابة تتوقف عند 25°م+",
       "resistanceRisk": "عالي جدًا — تناوب إلزامي بين FRAC groups مختلفة (Group 4: Metalaxyl، Group 27: Cymoxanil، Group 11: Azoxystrobin، Group 49: Fluopicolide)",
-      "references": "Fry, W.E. et al. (2015). Phytophthora infestans, the plant destructor. MPMI | Hatem, A. et al. (2018). Egyptian J. Plant Protection"
+      "references": "Fry, W.E. et al. (2015). Phytophthora infestans, the plant destructor. MPMI | Hatem, A. et al. (2018). Egyptian J. Plant Protection",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-007"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-034"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "frac",
+          "id": "ai-040"
+        },
+        {
+          "category": "frac",
+          "id": "ai-053"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     },
     {
       "id": "oomy-3",
@@ -190,7 +250,17 @@
       "effectiveness": "85–91%",
       "season": "طوال العام — ذروة في الشتاء والربيع",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Stevenson, W.R. et al. (2001). Compendium of Potato Diseases, APS Press"
+      "references": "Stevenson, W.R. et al. (2001). Compendium of Potato Diseases, APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        }
+      ]
     },
     {
       "id": "oomy-4",
@@ -255,7 +325,25 @@
       "effectiveness": "87–93%",
       "season": "مايو–سبتمبر في الخضروات الصيفية — طوال العام في البيوت المحمية",
       "resistanceRisk": "متوسط–عالي في الفلفل",
-      "references": "Babadoost, M. (2004). Phytophthora Blight of Cucurbits. Extension Report, Univ. of Illinois"
+      "references": "Babadoost, M. (2004). Phytophthora Blight of Cucurbits. Extension Report, Univ. of Illinois",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "frac",
+          "id": "ai-053"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     },
     {
       "id": "oomy-5",
@@ -307,7 +395,21 @@
       },
       "effectiveness": "78–88% — الوقاية أهم بكثير من العلاج",
       "season": "أكتوبر–فبراير في موسم الفراولة المصري",
-      "resistanceRisk": "منخفض–متوسط"
+      "resistanceRisk": "منخفض–متوسط",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     },
     {
       "id": "oomy-6",
@@ -362,7 +464,33 @@
       "spray_program": "ابدأ من انتفاخ البراعم — رش كل 7 أيام إبان موسم الأمطار، كل 10-14 يومًا في الجفاف",
       "effectiveness": "90–95% في البرامج المتكاملة",
       "season": "مارس–يونيو في مناطق الأمطار — طوال موسم النمو في الأماكن الرطبة",
-      "resistanceRisk": "عالي جدًا للـ Metalaxyl — تناوب إلزامي بين FRAC groups مختلفة"
+      "resistanceRisk": "عالي جدًا للـ Metalaxyl — تناوب إلزامي بين FRAC groups مختلفة",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-034"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "frac",
+          "id": "ai-040"
+        },
+        {
+          "category": "frac",
+          "id": "ai-053"
+        },
+        {
+          "category": "bact",
+          "id": "bai-003"
+        }
+      ]
     },
     {
       "id": "oomy-7",
@@ -421,7 +549,29 @@
       "effectiveness": "88–94%",
       "season": "سبتمبر–نوفمبر (خريف) ومارس–مايو (ربيع) في مصر",
       "resistanceRisk": "عالي جدًا للـ Strobilurins (FRAC 11) في الخيار — تناوب إلزامي",
-      "references": "Cohen, Y. et al. (2015). Pseudoperonospora cubensis: The Pathogen and its Hosts. Phytopathology"
+      "references": "Cohen, Y. et al. (2015). Pseudoperonospora cubensis: The Pathogen and its Hosts. Phytopathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-053"
+        }
+      ]
     },
     {
       "id": "oomy-8",
@@ -471,7 +621,29 @@
       "effectiveness": "85–91%",
       "season": "نوفمبر–مارس في البيوت المحمية والحقل المكشوف",
       "resistanceRisk": "عالي لـ Metalaxyl في بعض السلالات",
-      "references": "Crute, I.R. & Johnson, A.G. (1976). The genetic relationship between races of Bremia lactucae. Ann. Appl. Biol."
+      "references": "Crute, I.R. & Johnson, A.G. (1976). The genetic relationship between races of Bremia lactucae. Ann. Appl. Biol.",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     },
     {
       "id": "oomy-9",
@@ -522,7 +694,29 @@
       "effectiveness": "85–91%",
       "season": "ديسمبر–مارس في موسم البصل المصري",
       "resistanceRisk": "متوسط",
-      "references": "Schwartz, H.F. & Mohan, S.K. (2008). Compendium of Onion & Garlic Diseases, APS Press"
+      "references": "Schwartz, H.F. & Mohan, S.K. (2008). Compendium of Onion & Garlic Diseases, APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "frac",
+          "id": "ai-053"
+        }
+      ]
     },
     {
       "id": "oomy-10",
@@ -566,7 +760,25 @@
       "effectiveness": "83–90%",
       "season": "نوفمبر–فبراير",
       "resistanceRisk": "عالي لـ Metalaxyl في بعض السلالات",
-      "references": "Inaba, T. & Morinaka, T. (1984). Races of Peronospora spinaciae. Plant Disease"
+      "references": "Inaba, T. & Morinaka, T. (1984). Races of Peronospora spinaciae. Plant Disease",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        }
+      ]
     },
     {
       "id": "oomy-11",
@@ -616,7 +828,25 @@
       "effectiveness": "82–88%",
       "season": "نوفمبر–فبراير — المحاصيل الشتوية الصليبية",
       "resistanceRisk": "منخفض",
-      "references": "Saharan, G.S. & Mehta, N. (2008). Sclerotinia Diseases of Crop Plants. Springer"
+      "references": "Saharan, G.S. & Mehta, N. (2008). Sclerotinia Diseases of Crop Plants. Springer",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "frac",
+          "id": "ai-053"
+        }
+      ]
     },
     {
       "id": "oomy-12",
@@ -675,7 +905,21 @@
       "spray_program": "كشط اللحاء المصاب + دهان فوري بمانكوزيب 10% + صب فوسيت ألومنيوم في التربة كل شهر لمدة 3 أشهر",
       "effectiveness": "75–85% في علاج الأشجار المصابة — الوقاية أهم بكثير",
       "season": "طوال العام — تزداد في الصيف الرطب",
-      "resistanceRisk": "منخفض"
+      "resistanceRisk": "منخفض",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     }
   ],
   "zygo": [
@@ -754,7 +998,25 @@
       "effectiveness": "88–95% مع التبريد الفوري",
       "season": "طوال العام — ذروة في الصيف (يونيو-سبتمبر) في مصر",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Snowdon, A.L. (1990). A Colour Atlas of Post-Harvest Diseases & Disorders of Fruits & Vegetables. | Kassem, H.A. (2004). Post-harvest losses of strawberry in Egypt."
+      "references": "Snowdon, A.L. (1990). A Colour Atlas of Post-Harvest Diseases & Disorders of Fruits & Vegetables. | Kassem, H.A. (2004). Post-harvest losses of strawberry in Egypt.",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        }
+      ]
     },
     {
       "id": "zygo-2",
@@ -818,7 +1080,21 @@
       "effectiveness": "90–97% بالتجفيف الصحيح",
       "season": "طوال العام في المخازن — ذروة صيف مصر الرطب",
       "resistanceRisk": "منخفض",
-      "references": "Christensen, C.M. & Kaufmann, H.H. (1969). Grain Storage: The Role of Fungi in Quality Loss. Univ. of Minnesota Press"
+      "references": "Christensen, C.M. & Kaufmann, H.H. (1969). Grain Storage: The Role of Fungi in Quality Loss. Univ. of Minnesota Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        }
+      ]
     },
     {
       "id": "zygo-3",
@@ -877,7 +1153,25 @@
       "effectiveness": "82–90%",
       "season": "يونيو–سبتمبر — ذروة الحرارة والرطوبة في مصر",
       "resistanceRisk": "منخفض",
-      "references": "Kuo, K.C. (1999). Choanephora cucurbitarum on cucurbit crops in Taiwan. Plant Pathology Bulletin"
+      "references": "Kuo, K.C. (1999). Choanephora cucurbitarum on cucurbit crops in Taiwan. Plant Pathology Bulletin",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        }
+      ]
     },
     {
       "id": "zygo-4",
@@ -933,7 +1227,25 @@
       "effectiveness": "85–93%",
       "season": "أغسطس–أكتوبر — موسم حصاد البطاطا الحلوة في مصر",
       "resistanceRisk": "منخفض",
-      "references": "Clark, C.A. & Moyer, J.W. (1988). Compendium of Sweet Potato Diseases. APS Press"
+      "references": "Clark, C.A. & Moyer, J.W. (1988). Compendium of Sweet Potato Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        }
+      ]
     },
     {
       "id": "zygo-5",
@@ -981,7 +1293,13 @@
       "effectiveness": "75–85%",
       "season": "يوليو–سبتمبر في موسم عباد الشمس المصري",
       "resistanceRisk": "منخفض",
-      "references": "Gulya, T.J. et al. (1997). Compendium of Sunflower Diseases. APS Press"
+      "references": "Gulya, T.J. et al. (1997). Compendium of Sunflower Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        }
+      ]
     },
     {
       "id": "zygo-6",
@@ -1035,7 +1353,17 @@
       },
       "effectiveness": "88–94%",
       "season": "طوال العام في المخازن",
-      "resistanceRisk": "منخفض"
+      "resistanceRisk": "منخفض",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     },
     {
       "id": "zygo-7",
@@ -1078,7 +1406,17 @@
       },
       "effectiveness": "70–80% — يتحسن مع معالجة العامل الأساسي",
       "season": "طوال العام",
-      "resistanceRisk": "منخفض"
+      "resistanceRisk": "منخفض",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     }
   ],
   "asco": [
@@ -1143,7 +1481,33 @@
       "effectiveness": "88–95%",
       "season": "طوال العام في البيوت المحمية — ذروة الخريف والربيع",
       "resistanceRisk": "عالي جدًا للـ DMIs و Strobilurins — تناوب إلزامي",
-      "references": "McGrath, M.T. (2001). Fungicide resistance in cucurbit powdery mildew. Plant Disease"
+      "references": "McGrath, M.T. (2001). Fungicide resistance in cucurbit powdery mildew. Plant Disease",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-006"
+        },
+        {
+          "category": "frac",
+          "id": "ai-014"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-022"
+        }
+      ]
     },
     {
       "id": "asco-2",
@@ -1197,7 +1561,45 @@
       "effectiveness": "85–93%",
       "season": "فبراير–أبريل في موسم القمح المصري",
       "resistanceRisk": "متوسط–عالي للـ DMIs",
-      "references": "Everts, K.L. & Leath, S. (1992). Powdery Mildew on Small Grains. Plant Disease"
+      "references": "Everts, K.L. & Leath, S. (1992). Powdery Mildew on Small Grains. Plant Disease",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-007"
+        },
+        {
+          "category": "frac",
+          "id": "ai-008"
+        },
+        {
+          "category": "frac",
+          "id": "ai-012"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-024"
+        }
+      ]
     },
     {
       "id": "asco-3",
@@ -1252,7 +1654,25 @@
       "effectiveness": "88–94%",
       "season": "مارس–يونيو وسبتمبر–نوفمبر",
       "resistanceRisk": "متوسط",
-      "references": "Horst, R.K. (1983). Compendium of Rose Diseases. APS Press"
+      "references": "Horst, R.K. (1983). Compendium of Rose Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-005"
+        },
+        {
+          "category": "frac",
+          "id": "ai-006"
+        },
+        {
+          "category": "frac",
+          "id": "ai-012"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        }
+      ]
     },
     {
       "id": "asco-4",
@@ -1320,7 +1740,37 @@
       "effectiveness": "85–93%",
       "season": "نوفمبر–مارس في البيوت المحمية — طوال العام في الفراولة",
       "resistanceRisk": "عالي جدًا — Botrytis تطور مقاومة لإيبروديون وبنزيميدازولات",
-      "references": "Williamson, B. et al. (2007). Botrytis cinerea: the cause of grey mould disease. Molecular Plant Pathology"
+      "references": "Williamson, B. et al. (2007). Botrytis cinerea: the cause of grey mould disease. Molecular Plant Pathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-023"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        },
+        {
+          "category": "frac",
+          "id": "ai-050"
+        }
+      ]
     },
     {
       "id": "asco-5",
@@ -1384,7 +1834,49 @@
       "effectiveness": "85–92%",
       "season": "طوال العام — ذروة الخريف والربيع",
       "resistanceRisk": "متوسط للـ Strobilurins",
-      "references": "Jones, J.B. et al. (1991). Compendium of Tomato Diseases. APS Press"
+      "references": "Jones, J.B. et al. (1991). Compendium of Tomato Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-011"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-6",
@@ -1438,7 +1930,37 @@
       "effectiveness": "85–92%",
       "season": "مارس–يونيو وسبتمبر–نوفمبر",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Rotem, J. (1994). The Genus Alternaria. APS Press"
+      "references": "Rotem, J. (1994). The Genus Alternaria. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        }
+      ]
     },
     {
       "id": "asco-7",
@@ -1503,7 +2025,33 @@
       "effectiveness": "80–90%",
       "season": "نوفمبر–مارس في الخضروات الشتوية",
       "resistanceRisk": "متوسط للبنزيميدازولات وDicarboximides",
-      "references": "Purdy, L.H. (1979). Sclerotinia sclerotiorum: History, diseases and symptomatology. Phytopathology"
+      "references": "Purdy, L.H. (1979). Sclerotinia sclerotiorum: History, diseases and symptomatology. Phytopathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-044"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-8",
@@ -1567,7 +2115,33 @@
       "effectiveness": "85–92%",
       "season": "مارس–يوليو في موسم المانجو المصري",
       "resistanceRisk": "متوسط للبنزيميدازولات",
-      "references": "Bailey, J.A. & Jeger, M.J. (1992). Colletotrichum: Biology, Pathology and Control. CAB International"
+      "references": "Bailey, J.A. & Jeger, M.J. (1992). Colletotrichum: Biology, Pathology and Control. CAB International",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        }
+      ]
     },
     {
       "id": "asco-9",
@@ -1635,7 +2209,33 @@
       "effectiveness": "60–75% علاجيًا — 90%+ وقائيًا بالأصناف المقاومة",
       "season": "طوال العام — ذروة الصيف عند ارتفاع حرارة التربة",
       "resistanceRisk": "عالٍ للبنزيميدازولات في بعض السلالات",
-      "references": "Nelson, P.E. et al. (1994). Fusarium Species: An Illustrated Manual. Penn State Univ. Press"
+      "references": "Nelson, P.E. et al. (1994). Fusarium Species: An Illustrated Manual. Penn State Univ. Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-044"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-10",
@@ -1687,7 +2287,45 @@
       "effectiveness": "90–96%",
       "season": "فبراير–أبريل في موسم القمح المصري",
       "resistanceRisk": "متوسط للـ DMIs — مراقبة مستمرة للسلالات الجديدة ضرورية",
-      "references": "Roelfs, A.P. et al. (1992). Rust Diseases of Wheat: Concepts and Methods. CIMMYT"
+      "references": "Roelfs, A.P. et al. (1992). Rust Diseases of Wheat: Concepts and Methods. CIMMYT",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-007"
+        },
+        {
+          "category": "frac",
+          "id": "ai-008"
+        },
+        {
+          "category": "frac",
+          "id": "ai-009"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-024"
+        }
+      ]
     },
     {
       "id": "asco-11",
@@ -1734,7 +2372,33 @@
       "effectiveness": "97–99% بمعاملة البذور",
       "season": "الإصابة عند إنبات القمح أكتوبر–نوفمبر — الأعراض عند النضج مارس–أبريل",
       "resistanceRisk": "منخفض — معاملة البذور فعّالة جداً",
-      "references": "Bonde, M.R. et al. (1997). Karnal bunt of wheat. Plant Disease"
+      "references": "Bonde, M.R. et al. (1997). Karnal bunt of wheat. Plant Disease",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-12",
@@ -1790,7 +2454,33 @@
       "effectiveness": "85–91%",
       "season": "يوليو–أكتوبر في بنجر السكر المصري",
       "resistanceRisk": "متوسط للبنزيميدازولات",
-      "references": "Ruppel, E.G. (1986). Cercospora Leaf Spot of Sugar Beet. APS Press"
+      "references": "Ruppel, E.G. (1986). Cercospora Leaf Spot of Sugar Beet. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        }
+      ]
     },
     {
       "id": "asco-13",
@@ -1835,7 +2525,37 @@
       "effectiveness": "85–92%",
       "season": "فبراير–أبريل",
       "resistanceRisk": "عالٍ للـ Strobilurins — تناوب مع DMIs إلزامي",
-      "references": "Shaw, M.W. & Royle, D.J. (1993). Factors determining the severity of epidemics of Mycosphaerella graminicola. Plant Pathology"
+      "references": "Shaw, M.W. & Royle, D.J. (1993). Factors determining the severity of epidemics of Mycosphaerella graminicola. Plant Pathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-007"
+        },
+        {
+          "category": "frac",
+          "id": "ai-008"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        },
+        {
+          "category": "frac",
+          "id": "ai-024"
+        }
+      ]
     },
     {
       "id": "asco-14",
@@ -1894,7 +2614,37 @@
       "effectiveness": "88–95%",
       "season": "مارس–مايو في موسم الخوخ والمشمش المصري",
       "resistanceRisk": "متوسط–عالٍ للبنزيميدازولات",
-      "references": "Byrde, R.J.W. & Willetts, H.J. (1977). The Brown Rot Fungi of Fruit. Pergamon Press"
+      "references": "Byrde, R.J.W. & Willetts, H.J. (1977). The Brown Rot Fungi of Fruit. Pergamon Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-15",
@@ -1942,7 +2692,33 @@
       "effectiveness": "88–95%",
       "season": "مارس–مايو إبان موسم الأمطار",
       "resistanceRisk": "عالٍ للبنزيميدازولات وبعض الـ DMIs",
-      "references": "MacHardy, W.E. (1996). Apple Scab: Biology, Epidemiology and Management. APS Press"
+      "references": "MacHardy, W.E. (1996). Apple Scab: Biology, Epidemiology and Management. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-006"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-033"
+        }
+      ]
     },
     {
       "id": "asco-16",
@@ -1985,7 +2761,25 @@
       "effectiveness": "97–99% بمعاملة البذور",
       "season": "الإصابة في التزهير — الأعراض عند إطلاق السنبلة",
       "resistanceRisk": "منخفض",
-      "references": "Sheppard, J.W. (1992). Seed treatment for the control of loose smut. Canadian Plant Disease Survey"
+      "references": "Sheppard, J.W. (1992). Seed treatment for the control of loose smut. Canadian Plant Disease Survey",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     },
     {
       "id": "asco-17",
@@ -2039,7 +2833,25 @@
       "effectiveness": "70–85% — التزهير الموحد يُقلل الإصابة",
       "season": "مارس–أبريل أثناء تزهير القمح",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Parry, D.W. et al. (1995). Fusarium ear blight (scab) in small grain cereals. Plant Pathology"
+      "references": "Parry, D.W. et al. (1995). Fusarium ear blight (scab) in small grain cereals. Plant Pathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-008"
+        },
+        {
+          "category": "frac",
+          "id": "ai-009"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        }
+      ]
     },
     {
       "id": "asco-18",
@@ -2092,7 +2904,33 @@
       "effectiveness": "88–95%",
       "season": "يونيو–سبتمبر في موسم الأرز المصري",
       "resistanceRisk": "عالٍ للبنزيميدازولات — تريسيكلازول لا مقاومة حتى الآن",
-      "references": "Ou, S.H. (1985). Rice Diseases, 2nd ed. CMI, Kew, UK"
+      "references": "Ou, S.H. (1985). Rice Diseases, 2nd ed. CMI, Kew, UK",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-047"
+        },
+        {
+          "category": "frac",
+          "id": "ai-048"
+        }
+      ]
     },
     {
       "id": "asco-19",
@@ -2140,7 +2978,29 @@
       "effectiveness": "65–80% — الوقاية بالشتلات السليمة الأهم",
       "season": "أكتوبر–فبراير في موسم الفراولة",
       "resistanceRisk": "متوسط",
-      "references": "Gullino, M.L. et al. (2002). Fusarium Wilts of Ornamental Crops. APS Press"
+      "references": "Gullino, M.L. et al. (2002). Fusarium Wilts of Ornamental Crops. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-044"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-20",
@@ -2186,7 +3046,25 @@
       "effectiveness": "82–89%",
       "season": "يوليو–سبتمبر في موسم القطن المصري",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Hillocks, R.J. (1992). Cotton Diseases. CAB International, Wallingford"
+      "references": "Hillocks, R.J. (1992). Cotton Diseases. CAB International, Wallingford",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        }
+      ]
     },
     {
       "id": "asco-21",
@@ -2239,7 +3117,33 @@
       "effectiveness": "83–90%",
       "season": "سبتمبر–نوفمبر في البقوليات الخريفية",
       "resistanceRisk": "منخفض",
-      "references": "Pastor-Corrales, M.A. & Tu, J.C. (1989). Anthracnose. In: Bean Production Problems. CIAT"
+      "references": "Pastor-Corrales, M.A. & Tu, J.C. (1989). Anthracnose. In: Bean Production Problems. CIAT",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-22",
@@ -2289,7 +3193,33 @@
       "effectiveness": "78–87%",
       "season": "أكتوبر–ديسمبر عند زراعة القمح",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Smiley, R.W. et al. (1996). Compendium of Turfgrass Diseases. APS Press"
+      "references": "Smiley, R.W. et al. (1996). Compendium of Turfgrass Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "asco-23",
@@ -2333,7 +3263,25 @@
       "effectiveness": "82–89%",
       "season": "مارس–يونيو",
       "resistanceRisk": "منخفض",
-      "references": "Jones, A.L. & Aldwinckle, H.S. (1990). Compendium of Apple and Pear Diseases. APS Press"
+      "references": "Jones, A.L. & Aldwinckle, H.S. (1990). Compendium of Apple and Pear Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-033"
+        }
+      ]
     },
     {
       "id": "asco-24",
@@ -2391,7 +3339,21 @@
       "effectiveness": "55–70% علاجيًا — 88%+ بالأصناف المقاومة",
       "season": "طوال العام — ذروة الربيع والخريف",
       "resistanceRisk": "متوسط للبنزيميدازولات",
-      "references": "Pegg, G.F. & Brady, B.L. (2002). Verticillium Wilts. CABI Publishing"
+      "references": "Pegg, G.F. & Brady, B.L. (2002). Verticillium Wilts. CABI Publishing",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     },
     {
       "id": "asco-25",
@@ -2446,7 +3408,25 @@
       },
       "effectiveness": "75–85%",
       "season": "نوفمبر–مارس في التربة الباردة",
-      "resistanceRisk": "منخفض"
+      "resistanceRisk": "منخفض",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     },
     {
       "id": "add-16",
@@ -2496,7 +3476,33 @@
       "effectiveness": "80–89%",
       "season": "نوفمبر–مارس في البقوليات الشتوية",
       "resistanceRisk": "منخفض",
-      "references": "Hawthorne, W. et al. (2004). Ascochyta blight management in faba bean. Proceedings, CLIMA"
+      "references": "Hawthorne, W. et al. (2004). Ascochyta blight management in faba bean. Proceedings, CLIMA",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "add-17",
@@ -2546,7 +3552,21 @@
       "effectiveness": "85–92%",
       "season": "طوال العام في البيوت المحمية",
       "resistanceRisk": "متوسط للـ Strobilurins",
-      "references": "Kiss, L. et al. (2001). Widespread occurrence of powdery mildew on tomato caused by Oidium neolycopersici. Plant Pathology"
+      "references": "Kiss, L. et al. (2001). Widespread occurrence of powdery mildew on tomato caused by Oidium neolycopersici. Plant Pathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        }
+      ]
     },
     {
       "id": "add-18",
@@ -2599,7 +3619,13 @@
       "effectiveness": "40–60% بالإدارة المتكاملة — الوقاية 90%+ بالخلفات السليمة",
       "season": "طوال العام",
       "resistanceRisk": "منخفض للمبيدات — مقاومة الأصناف المشكلة الأساسية",
-      "references": "Ploetz, R.C. (2015). Fusarium wilt of banana. Phytopathology | Stover, R.H. & Buddenhagen, I.W. (1986). Banana breeding. Tropical Agriculture"
+      "references": "Ploetz, R.C. (2015). Fusarium wilt of banana. Phytopathology | Stover, R.H. & Buddenhagen, I.W. (1986). Banana breeding. Tropical Agriculture",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        }
+      ]
     },
     {
       "id": "add-19",
@@ -2641,7 +3667,33 @@
       "effectiveness": "85–92%",
       "season": "يناير–أبريل في موسم الشعير",
       "resistanceRisk": "متوسط للـ DMIs",
-      "references": "Mathre, D.E. (1997). Compendium of Barley Diseases, 2nd ed. APS Press"
+      "references": "Mathre, D.E. (1997). Compendium of Barley Diseases, 2nd ed. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     },
     {
       "id": "add-20",
@@ -2691,7 +3743,29 @@
       },
       "effectiveness": "82–90%",
       "season": "نوفمبر–مارس في موسم الفول المصري",
-      "resistanceRisk": "متوسط للديكاربوكسيميدات (إيبروديون) في بعض السلالات"
+      "resistanceRisk": "متوسط للديكاربوكسيميدات (إيبروديون) في بعض السلالات",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        }
+      ]
     },
     {
       "id": "fin-1",
@@ -2739,7 +3813,29 @@
       "effectiveness": "83–90%",
       "season": "مارس–يونيو مع موسم نمو العنب",
       "resistanceRisk": "منخفض",
-      "references": "Emmett, R.W. et al. (1992). Grape diseases and vineyard protection. In: Viticulture Vol. 2, Winetitles"
+      "references": "Emmett, R.W. et al. (1992). Grape diseases and vineyard protection. In: Viticulture Vol. 2, Winetitles",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-033"
+        }
+      ]
     },
     {
       "id": "fin-2",
@@ -2793,7 +3889,33 @@
       "effectiveness": "82–89%",
       "season": "طوال العام في البيوت المحمية",
       "resistanceRisk": "متوسط للـ Strobilurins",
-      "references": "Jones, J.B. et al. (1997). Corynespora target spot of tomato. Plant Disease"
+      "references": "Jones, J.B. et al. (1997). Corynespora target spot of tomato. Plant Disease",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-011"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        }
+      ]
     },
     {
       "id": "fin-3",
@@ -2844,7 +3966,33 @@
       "effectiveness": "82–89%",
       "season": "أكتوبر–مارس في موسم الجزر المصري",
       "resistanceRisk": "منخفض",
-      "references": "Pryor, B.M. & Gilbertson, R.L. (2002). Relationship and distinguishing characteristics between Alternaria radicina and A. carotiincultae. Mycological Research"
+      "references": "Pryor, B.M. & Gilbertson, R.L. (2002). Relationship and distinguishing characteristics between Alternaria radicina and A. carotiincultae. Mycological Research",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "fin-4",
@@ -2894,7 +4042,29 @@
       "effectiveness": "78–86%",
       "season": "يونيو–سبتمبر في فول الصويا ودوار الشمس",
       "resistanceRisk": "منخفض",
-      "references": "Sinclair, J.B. (1999). Diaporthe-Phomopsis diseases of soybean. Plant Disease"
+      "references": "Sinclair, J.B. (1999). Diaporthe-Phomopsis diseases of soybean. Plant Disease",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "fin-5",
@@ -2945,7 +4115,29 @@
       "effectiveness": "83–91%",
       "season": "أكتوبر–فبراير في موسم الفراولة",
       "resistanceRisk": "متوسط للبنزيميدازولات",
-      "references": "Sreenivasaprasad, S. & Talhinhas, P. (2005). Genotypic and phenotypic diversity in Colletotrichum acutatum. Molecular Plant Pathology"
+      "references": "Sreenivasaprasad, S. & Talhinhas, P. (2005). Genotypic and phenotypic diversity in Colletotrichum acutatum. Molecular Plant Pathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "add-1",
@@ -2964,7 +4156,7 @@
         "تعفن الثمار الملامسة للتربة مع نمو أبيض حريري عليها",
         "موت بقع دائرية متوسعة في الحقل"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر يعيش في التربة لسنوات على هيئة سكليروتيا. يصيب قاعدة الساق والثمار الملامسة للتربة عند توفر الرطوبة والحرارة (25-35°م). ينتقل بمياه الري والأدوات الملوثة والتربة الملوثة.",
       "favorableConditions": "درجات حرارة 25-35°م، رطوبة تربة عالية، pH 3-5 (حامضي)، تربة عضوية، أواخر الصيف",
       "hostPlants": [
         "فول سوداني",
@@ -3005,7 +4197,29 @@
       "effectiveness": "",
       "season": "مايو–أكتوبر — الصيف الحار الرطب",
       "resistanceRisk": "متوسط للديكاربوكسيميدات",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        }
+      ]
     },
     {
       "id": "add-2",
@@ -3023,7 +4237,7 @@
         "ذبول وموت الأجزاء المصابة في الإصابات الشديدة",
         "نقاط سوداء صغيرة (Pycnidia) داخل البقع"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر يبقى في البذور الملوثة وبقايا النباتات المصابة في التربة. تنتشر الجراثيم بالرياح والأمطار. تنشط في درجات حرارة 20-25°م ورطوبة نسبية أعلى من 80%. تدخل الجراثيم عبر الثغور والجروح.",
       "favorableConditions": "درجات حرارة 20-25°م، رطوبة نسبية >80%، أمطار، بذور ملوثة",
       "hostPlants": [
         "حمص (متخصص)"
@@ -3051,7 +4265,33 @@
       "effectiveness": "",
       "season": "يناير–مارس في موسم الحمص",
       "resistanceRisk": "منخفض",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "add-3",
@@ -3069,7 +4309,7 @@
         "تعفن ثمار البطيخ من الداخل مع بقاء القشرة سليمة ظاهريًا",
         "ذبول وانهيار الساق فوق موضع الإصابة"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر يبقى في البذور الملوثة وبقايا المحصول في التربة. تنتشر الجراثيم بالرياح والأمطار ومياه الري. تدخل الجروح في الساق والأوراق. تنشط في الرطوبة العالية (أعلى من 85%) ودرجات حرارة 20-30°م.",
       "favorableConditions": "رطوبة نسبية >85%، درجات حرارة 20-30°م، جروح في الساق، بذور ملوثة",
       "hostPlants": [
         "بطيخ (الأكثر حساسية)",
@@ -3102,7 +4342,25 @@
       "effectiveness": "",
       "season": "طوال العام في البيوت المحمية",
       "resistanceRisk": "متوسط للبنزيميدازولات",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-029"
+        }
+      ]
     },
     {
       "id": "add-4",
@@ -3119,7 +4377,7 @@
         "تحول البقع للبني وجفاف الأوراق وتساقطها",
         "في الإصابات الشديدة: تساقط واسع للأوراق يُعري النبات"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر متخصص في الطماطم في البيوت المحمية. تنتشر الجراثيم بالهواء ضمن الرطوبة العالية. تنشط في الرطوبة النسبية أعلى من 85% ودرجات حرارة 22-25°م مع ضعف التهوية.",
       "favorableConditions": "رطوبة نسبية >85%، درجات حرارة 22-25°م، تهوية ضعيفة في البيوت المحمية",
       "hostPlants": [
         "طماطم (متخصص تمامًا)"
@@ -3147,7 +4405,33 @@
       "effectiveness": "",
       "season": "طوال العام في البيوت المحمية — ذروة الشتاء",
       "resistanceRisk": "متوسط للـ Strobilurins",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-003"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        }
+      ]
     },
     {
       "id": "add-5",
@@ -3165,7 +4449,7 @@
         "اسوداد وجفاف الأوراق الكاملة في الإصابات الشديدة",
         "تقزم المشط وصغر الثمار"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر يبقى في بقايا الأوراق المصابة في التربة. تنتشر الجراثيم بالرياح ومياه الأمطار. تنشط في الرطوبة العالية (أعلى من 80%) ودرجات حرارة 24-28°م. تدخل الجراثيم عبر الثغور.",
       "favorableConditions": "رطوبة نسبية >80%، درجات حرارة 24-28°م، أمطار متكررة",
       "hostPlants": [
         "موز — جميع الأصناف التجارية حساسة",
@@ -3194,7 +4478,29 @@
       "effectiveness": "",
       "season": "طوال العام — ذروة الصيف الرطب",
       "resistanceRisk": "عالٍ للـ DMIs و Strobilurins في المناطق التي تُستخدم فيها كثيرًا",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        }
+      ]
     }
   ],
   "basi": [
@@ -3253,7 +4559,45 @@
       "effectiveness": "90–96%",
       "season": "مارس–أبريل في موسم القمح المصري",
       "resistanceRisk": "متوسط للـ DMIs — خطر Ug99 يستوجب مراقبة مستمرة للسلالات",
-      "references": "Singh, R.P. et al. (2011). The emergence of Ug99 races of the stem rust fungus. Annual Review of Phytopathology | Stakman, E.C. & Harrar, J.G. (1957). Principles of Plant Pathology."
+      "references": "Singh, R.P. et al. (2011). The emergence of Ug99 races of the stem rust fungus. Annual Review of Phytopathology | Stakman, E.C. & Harrar, J.G. (1957). Principles of Plant Pathology.",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-007"
+        },
+        {
+          "category": "frac",
+          "id": "ai-008"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        },
+        {
+          "category": "frac",
+          "id": "ai-024"
+        }
+      ]
     },
     {
       "id": "basi-2",
@@ -3298,7 +4642,41 @@
       "effectiveness": "90–95%",
       "season": "فبراير–أبريل في مصر",
       "resistanceRisk": "متوسط للـ DMIs — رصد مستمر للسلالات",
-      "references": "Roelfs, A.P. et al. (1992). Rust Diseases of Wheat. CIMMYT, Mexico"
+      "references": "Roelfs, A.P. et al. (1992). Rust Diseases of Wheat. CIMMYT, Mexico",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-007"
+        },
+        {
+          "category": "frac",
+          "id": "ai-008"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-024"
+        }
+      ]
     },
     {
       "id": "basi-3",
@@ -3344,7 +4722,33 @@
       "effectiveness": "90–96%",
       "season": "يناير–مارس في مصر — أبرد فترات الموسم",
       "resistanceRisk": "منخفض–متوسط حاليًا — مراقبة مستمرة لـ Warrior ضرورية",
-      "references": "Chen, W.Q. et al. (2009). Pathogenicity of yellow rust fungus in China. Phytopathology"
+      "references": "Chen, W.Q. et al. (2009). Pathogenicity of yellow rust fungus in China. Phytopathology",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-007"
+        },
+        {
+          "category": "frac",
+          "id": "ai-008"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        }
+      ]
     },
     {
       "id": "basi-4",
@@ -3398,7 +4802,33 @@
       "effectiveness": "87–93%",
       "season": "نوفمبر–مارس في الفول والبقوليات الشتوية المصرية",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Agrios, G.N. (2005). Plant Pathology, 5th ed. Elsevier Academic Press"
+      "references": "Agrios, G.N. (2005). Plant Pathology, 5th ed. Elsevier Academic Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-005"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        }
+      ]
     },
     {
       "id": "basi-5",
@@ -3443,7 +4873,29 @@
       "effectiveness": "85–92%",
       "season": "يونيو–أغسطس في موسم الذرة المصري",
       "resistanceRisk": "منخفض",
-      "references": "White, D.G. (1999). Compendium of Corn Diseases, 3rd ed. APS Press"
+      "references": "White, D.G. (1999). Compendium of Corn Diseases, 3rd ed. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        }
+      ]
     },
     {
       "id": "basi-6",
@@ -3496,7 +4948,33 @@
       "effectiveness": "85–92%",
       "season": "يوليو–سبتمبر في موسم فول الصويا",
       "resistanceRisk": "عالٍ للـ Strobilurins في بعض مناطق العالم — تناوب مع DMIs",
-      "references": "Yorinori, J.T. et al. (2005). Epidemics of soybean rust in Brazil and Paraguay. Plant Disease"
+      "references": "Yorinori, J.T. et al. (2005). Epidemics of soybean rust in Brazil and Paraguay. Plant Disease",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-011"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-017"
+        }
+      ]
     },
     {
       "id": "basi-7",
@@ -3544,7 +5022,29 @@
       "effectiveness": "60–75% — الوقاية بمعاملة البذور والأصناف المقاومة أهم",
       "season": "يونيو–سبتمبر في الذرة الصيفية المصرية",
       "resistanceRisk": "منخفض",
-      "references": "White, D.G. (1999). Compendium of Corn Diseases. APS Press"
+      "references": "White, D.G. (1999). Compendium of Corn Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "basi-8",
@@ -3605,7 +5105,33 @@
       "effectiveness": "83–91%",
       "season": "يونيو–سبتمبر في موسم الأرز المصري",
       "resistanceRisk": "منخفض للـ Validamycin — متوسط لباقي المجموعات",
-      "references": "Ou, S.H. (1985). Rice Diseases. CMI | Agrios, G.N. (2005). Plant Pathology, 5th ed."
+      "references": "Ou, S.H. (1985). Rice Diseases. CMI | Agrios, G.N. (2005). Plant Pathology, 5th ed.",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-005"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-022"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        }
+      ]
     },
     {
       "id": "basi-9",
@@ -3664,7 +5190,29 @@
       "effectiveness": "80–88%",
       "season": "طوال العام — ذروة الصيف وأوائل الخريف",
       "resistanceRisk": "منخفض–متوسط",
-      "references": "Parmeter, J.R. (1970). Rhizoctonia solani, Biology and Pathology. UC Press"
+      "references": "Parmeter, J.R. (1970). Rhizoctonia solani, Biology and Pathology. UC Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-043"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     },
     {
       "id": "basi-10",
@@ -3719,7 +5267,17 @@
       "effectiveness": "40–60% — مرض صعب المكافحة",
       "season": "طوال العام — الأعراض تزداد وضوحًا في الخريف",
       "resistanceRisk": "لا ينطبق",
-      "references": "Fox, R.T.V. (2000). Armillaria Root Rot: Biology and Control of Honey Fungus. Intercept Ltd."
+      "references": "Fox, R.T.V. (2000). Armillaria Root Rot: Biology and Control of Honey Fungus. Intercept Ltd.",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     },
     {
       "id": "basi-11",
@@ -3769,7 +5327,21 @@
       "effectiveness": "30–50% — إبطاء التقدم فقط لا شفاء",
       "season": "طوال العام — الأجسام الثمرية تظهر في الخريف والربيع",
       "resistanceRisk": "لا ينطبق",
-      "references": "Turner, P.D. (1981). Oil Palm Diseases and Disorders. Oxford Univ. Press"
+      "references": "Turner, P.D. (1981). Oil Palm Diseases and Disorders. Oxford Univ. Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-005"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "bact",
+          "id": "bai-014"
+        }
+      ]
     },
     {
       "id": "basi-12",
@@ -3809,7 +5381,25 @@
       "effectiveness": "96–99% بمعاملة البذور",
       "season": "الإصابة في التزهير — الأعراض عند إطلاق السنبلة",
       "resistanceRisk": "منخفض",
-      "references": "Smiley, R.W. et al. (1996). Compendium of Turfgrass Diseases. APS Press"
+      "references": "Smiley, R.W. et al. (1996). Compendium of Turfgrass Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     },
     {
       "id": "basi-13",
@@ -3849,7 +5439,21 @@
       "effectiveness": "75–85%",
       "season": "يوليو–أغسطس في الذرة الصيفية",
       "resistanceRisk": "منخفض",
-      "references": "White, D.G. (1999). Compendium of Corn Diseases. APS Press"
+      "references": "White, D.G. (1999). Compendium of Corn Diseases. APS Press",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        }
+      ]
     },
     {
       "id": "basi-14",
@@ -3898,7 +5502,33 @@
       "spray_program": "ابدأ الرش عند إغلاق المظلة الخضراء — كل 14 يومًا حتى ما قبل الحصاد بشهر",
       "effectiveness": "85–92%",
       "season": "يوليو–أكتوبر في موسم الفول السوداني المصري",
-      "resistanceRisk": "منخفض–متوسط"
+      "resistanceRisk": "منخفض–متوسط",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        },
+        {
+          "category": "frac",
+          "id": "ai-031"
+        }
+      ]
     },
     {
       "id": "add-15",
@@ -3916,7 +5546,7 @@
         "تكاثر الأفرخ الجانبية (Tiller) المصابة بكثافة",
         "في الإصابات الشديدة: معظم الكمائن تُنتج أسواطًا لا سيقانًا"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر جهازي — يصيب العقل الملوثة وينتقل للنباتات الجديدة. يُحول القمة النامية إلى سوط جرثومي أسود مليء بالجراثيم. تنتشر الجراثيم بالرياح لمسافات بعيدة. تنشط في درجات حرارة 25-35°م.",
       "favorableConditions": "درجات حرارة 25-35°م، رطوبة معتدلة، أصناف حساسة، قضبان (العقل) ملوثة",
       "hostPlants": [
         "قصب السكر (متخصص)"
@@ -3940,7 +5570,25 @@
       "effectiveness": "",
       "season": "طوال موسم نمو القصب — أبريل–سبتمبر",
       "resistanceRisk": "منخفض للـ DMIs",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        }
+      ]
     },
     {
       "id": "fin-6",
@@ -3957,7 +5605,7 @@
         "جفاف الأوراق من الطرف عند الإصابة الشديدة",
         "تقزم البصلات"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر يبقى في بقايا النباتات المصابة وفي بذور البصل الملوثة. تنتشر الجراثيم بالرياح. تنشط في الرطوبة العالية ودرجات حرارة 10-20°م مع ندى ليلي.",
       "favorableConditions": "رطوبة عالية، درجات حرارة 10-20°م، ندى ليلي",
       "hostPlants": [
         "بصل",
@@ -3985,7 +5633,25 @@
       "effectiveness": "",
       "season": "ديسمبر–مارس في موسم البصل",
       "resistanceRisk": "منخفض",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-001"
+        },
+        {
+          "category": "frac",
+          "id": "ai-015"
+        },
+        {
+          "category": "frac",
+          "id": "ai-016"
+        },
+        {
+          "category": "frac",
+          "id": "ai-030"
+        }
+      ]
     },
     {
       "id": "fin-7",
@@ -4002,7 +5668,7 @@
         "ذبول وتقزم النباتات",
         "تصلب وتشقق سطح الجذور"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "الفطر يعيش في التربة لسنوات. يُغطي جذور النباتات المعرضة بخيوط بنفسجية. ينتشر في التربة بالتماس المباشر بين الجذور وبمياه الري. تنشط في التربة الحامضية (pH أقل من 6) ودرجات حرارة 15-20°م.",
       "favorableConditions": "تربة حامضية pH < 6، رطوبة متوسطة، درجات حرارة 15-20°م",
       "hostPlants": [
         "بنجر سكري",
@@ -4030,7 +5696,17 @@
       "effectiveness": "",
       "season": "طوال موسم النمو في التربة الحامضية",
       "resistanceRisk": "منخفض",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-020"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        }
+      ]
     },
     {
       "id": "fin-8",
@@ -4047,7 +5723,7 @@
         "رائحة سمك فاسد كريهة جدًا في الحقل عند النضج",
         "السنابل المصابة أصغر من الطبيعية"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "فطر تفحم محجور صحيًا — يصيب الشتلات عند الإنبات في التربة الباردة. يبقى الفطر في التربة والبذور الملوثة. ينتقل داخل النبات جهازيًا حتى يصل السنابل مُحولًا الحبوب إلى كتل تفحمية.",
       "favorableConditions": "درجات حرارة منخفضة جدًا خلال الإنبات، بذور ملوثة، تربة رطبة",
       "hostPlants": [
         "قمح (الأساسي)",
@@ -4070,7 +5746,33 @@
       "effectiveness": "",
       "season": "الإصابة في الإنبات — الأعراض عند النضج",
       "resistanceRisk": "منخفض",
-      "references": ""
+      "references": "",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-004"
+        },
+        {
+          "category": "frac",
+          "id": "ai-026"
+        },
+        {
+          "category": "frac",
+          "id": "ai-032"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-046"
+        }
+      ]
     }
   ],
   "oomyPro": {
@@ -4154,7 +5856,7 @@
         "بقع دائرية ذات نباتات ضعيفة في الحقل",
         "الرؤوس (في الكرنب والقرنبيط) صغيرة وذات جودة منخفضة"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "يعيش المسبب في التربة على هيئة جراثيم ساكنة لسنوات طويلة. تدخل الجذور عبر الشعيرات الجذرية. تُحفز انقسام الخلايا الجذرية مُكونة تدرنات (Clubs). تنتشر في التربة بمياه الري والأدوات الملوثة. تنشط في التربة الحامضية (pH أقل من 6.5) والرطوبة العالية.",
       "favorableConditions": "تربة حامضية pH < 6.5، رطوبة تربة عالية، درجات حرارة 18-25°م، تربة ثقيلة سيئة الصرف",
       "hostPlants": [
         "كرنب",
@@ -4193,7 +5895,21 @@
       "season": "أكتوبر–مارس في الصليبيات الشتوية",
       "resistanceRisk": "منخفض للمبيدات المحدودة",
       "references": "",
-      "group": "Plasmodiophoromycota & Chytridiomycota"
+      "group": "Plasmodiophoromycota & Chytridiomycota",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-051"
+        },
+        {
+          "category": "frac",
+          "id": "ai-061"
+        }
+      ]
     },
     {
       "id": "plasm-2",
@@ -4210,7 +5926,7 @@
         "تضخمات صغيرة على الجذور",
         "أعراض PMTV الفيروسية: خطوط نخرية داخلية في الدرنة (عند الإصابة المزدوجة)"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "يعيش المسبب في التربة على الدرنات الملوثة. يُصيب الجذور والدرنات. ينتشر في التربة بمياه الري. تنشط في التربة الرطبة الباردة (12-18°م) وpH من 5-6.",
       "favorableConditions": "تربة رطبة باردة، pH 5-6، درجات حرارة 12-18°م، تربة ثقيلة",
       "hostPlants": [
         "بطاطس (الأساسي)",
@@ -4237,7 +5953,25 @@
       "season": "أكتوبر–فبراير في موسم البطاطس الشتوي",
       "resistanceRisk": "منخفض",
       "references": "",
-      "group": "Plasmodiophoromycota & Chytridiomycota"
+      "group": "Plasmodiophoromycota & Chytridiomycota",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-002"
+        },
+        {
+          "category": "frac",
+          "id": "ai-028"
+        },
+        {
+          "category": "frac",
+          "id": "ai-045"
+        },
+        {
+          "category": "frac",
+          "id": "ai-051"
+        }
+      ]
     },
     {
       "id": "plasm-3",
@@ -4255,7 +5989,7 @@
         "إصابة السيقان والأوراق في الحالات الشديدة",
         "الدرنات غير قابلة للاستهلاك أو البيع تمامًا"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "فطر محجور صحيًا — يصيب الدرنات عبر العيون والجروح. يُسبب أورامًا ضخمة. ينتشر في التربة بالتماس وبمياه الري. تنشط في التربة الباردة الرطبة (10-18°م).",
       "favorableConditions": "تربة رطبة باردة، pH 4.5-6.5، درجات حرارة 10-18°م، تربة ثقيلة",
       "hostPlants": [
         "بطاطس (متخصص — Race 1 يصيب معظم الأصناف)"
@@ -4280,7 +6014,8 @@
       "season": "طوال موسم البطاطس",
       "resistanceRisk": "لا ينطبق",
       "references": "",
-      "group": "Plasmodiophoromycota & Chytridiomycota"
+      "group": "Plasmodiophoromycota & Chytridiomycota",
+      "active_ingredients": []
     },
     {
       "id": "plasm-4",
@@ -4297,7 +6032,7 @@
         "أوراق ضيقة مجعدة مبرقشة",
         "نمو بياض زغبي على السطح السفلي للأوراق"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "ينتشر المسبب في التربة المغرقة. يُصيب البادرات عند غرق التربة بعد الزراعة. ينتقل داخل النبات جهازيًا. تنتشر الجراثيم بمياه الري. تنشط عند غرق التربة ودرجات حرارة 20-30°م.",
       "favorableConditions": "غرق التربة في مراحل البادرات، درجات حرارة 20-30°م",
       "hostPlants": [
         "ذرة",
@@ -4325,7 +6060,13 @@
       "season": "مايو–يونيو مع غرق التربة",
       "resistanceRisk": "منخفض",
       "references": "",
-      "group": "Plasmodiophoromycota & Chytridiomycota"
+      "group": "Plasmodiophoromycota & Chytridiomycota",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-039"
+        }
+      ]
     },
     {
       "id": "plasm-5",
@@ -4342,7 +6083,7 @@
         "تقزم وتنكرز الشمام (MNSV)",
         "اصفرار عام ضعيف في الجذور المصابة شديدًا"
       ],
-      "infectionCycle": "",
+      "infectionCycle": "يعيش المسبب في التربة على بقايا النباتات. يُصيب شعيرات الجذر ويمكنه نقل فيروسات التربة. ينتشر في التربة بمياه الري. تنشط في التربة الرطبة الباردة.",
       "favorableConditions": "تربة رطبة باردة، بيوت محمية",
       "hostPlants": [
         "خس (LBVV)",
@@ -4370,7 +6111,17 @@
       "season": "طوال العام في البيوت المحمية الباردة",
       "resistanceRisk": "منخفض",
       "references": "",
-      "group": "Plasmodiophoromycota & Chytridiomycota"
+      "group": "Plasmodiophoromycota & Chytridiomycota",
+      "active_ingredients": [
+        {
+          "category": "frac",
+          "id": "ai-039"
+        },
+        {
+          "category": "frac",
+          "id": "ai-051"
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import {
   BookMarked, Sprout, FunctionSquare, Library, Zap,
   Search, X, FileText, Link2, Tag, ClipboardList, BarChart3,
@@ -186,10 +187,7 @@ const AcademicPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>المصطلحات الأكاديمية | Hefno-Plant</title>
-        <meta name="description" content="قاموس المصطلحات الأكاديمية في العلوم الزراعية — تعريفات ومفاهيم بأسلوب مبسط." />
-      </Helmet>
+      <SEO title="المصطلحات الأكاديمية" description="قاموس المصطلحات الأكاديمية في العلوم الزراعية — تعريفات ومفاهيم بأسلوب مبسط." url="/knowledge-base/academic" keywords="مصطلحات زراعية, مصطلحات أكاديمية, علوم زراعية, تعريفات زراعية, مفاهيم زراعية" breadcrumbs={makeBreadcrumbs('/knowledge-base/academic')} />
 
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         {/* Header */}

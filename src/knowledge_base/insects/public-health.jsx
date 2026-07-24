@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../component/SEO';
 import { ChevronRight, ChevronLeft, X, Bug, AlertTriangle, Shield, Calendar, Info, FlaskConical, Layers, Activity, MapPin } from 'lucide-react';
 import afatData from '../../afat-folder/afat.json';
 
@@ -50,10 +50,7 @@ const PublicHealthPestsPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>آفات الصحة العامة | Hefno-Plant</title>
-        <meta name="description" content="قاعدة بيانات شاملة لآفات الصحة العامة — البعوض، الذباب، القوارض، والآفات الناقلة للأمراض وطرق مكافحتها" />
-      </Helmet>
+      <SEO title="آفات الصحة العامة" description="قاعدة بيانات شاملة لآفات الصحة العامة — البعوض، الذباب، القوارض، والآفات الناقلة للأمراض وطرق مكافحتها" url="/knowledge-base/insects/public-health-pests" />
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <button onClick={() => navigate('/knowledge-base/insects')}
           className="mb-5 inline-flex items-center gap-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 px-4 py-2 text-sm font-medium text-emerald-700 dark:text-emerald-400 transition-colors hover:bg-emerald-100 dark:hover:bg-emerald-950/80">

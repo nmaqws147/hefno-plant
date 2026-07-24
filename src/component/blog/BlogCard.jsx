@@ -1,26 +1,31 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ImagePlaceholder from '../ImagePlaceholder';
 
 const BlogCard = ({ post }) => {
-  const words = post.body ? post.body.split(/\s+/).length : 0;
+  const [imgError, setImgError] = useState(false);
+  const plainText = post.body ? post.body.replace(/<[^>]+>/g, '') : '';
+  const words = plainText.split(/\s+/).filter(Boolean).length;
   const readTime = Math.max(1, Math.ceil(words / 200));
 
   return (
     <Link
       to={`/blog/${post.slug}`}
       className="group block bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-sm hover:shadow-xl border border-[#e8e3d8] dark:border-[#2a2a2a] hover:border-gold/30 dark:hover:border-gold/30 transition-all duration-500 overflow-hidden hover:-translate-y-1"
-      style={{ breakInside: 'avoid' }}
     >
       <div className="h-1 bg-forest dark:bg-forest-light transition-colors duration-300" />
       <div className="relative aspect-[16/9] overflow-hidden bg-gray-100 dark:bg-[#222]">
-        {post.cover_url ? (
+        {post.cover_url && !imgError ? (
           <img
             src={post.cover_url}
             alt={post.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             loading="lazy"
+            decoding="async"
+            onError={() => setImgError(true)}
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-forest to-gold" />
+          <ImagePlaceholder className="w-full h-full" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
       </div>

@@ -62,7 +62,29 @@
     "effectiveness": "50–70% علاجيًا — 85%+ وقائيًا بالأصناف والتطعيم",
     "season": "مايو–أكتوبر — ذروة الصيف الحار في مصر",
     "resistanceRisk": "مقاومة للمضادات الحيوية شائعة — لا تُوصى للمكافحة",
-    "references": "Hayward, A.C. (1991). Biology and epidemiology of bacterial wilt caused by Pseudomonas solanacearum. Annual Review of Phytopathology | Abdel-Kader, M.M. et al. (2012). Egyptian J. Phytopathology"
+    "references": "Hayward, A.C. (1991). Biology and epidemiology of bacterial wilt caused by Pseudomonas solanacearum. Annual Review of Phytopathology | Abdel-Kader, M.M. et al. (2012). Egyptian J. Phytopathology",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-032"
+      },
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-005"
+      }
+    ]
   },
   {
     "id": "bact-2",
@@ -126,7 +148,29 @@
     "effectiveness": "75–88% بالإدارة المتكاملة",
     "season": "طوال العام — ذروة الصيف في المخازن غير المبردة",
     "resistanceRisk": "متوسط",
-    "references": "Pérombelon, M.C.M. & Kelman, A. (1980). Ecology of the soft rot Erwinias. Annual Review of Phytopathology"
+    "references": "Pérombelon, M.C.M. & Kelman, A. (1980). Ecology of the soft rot Erwinias. Annual Review of Phytopathology",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-032"
+      },
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-005"
+      }
+    ]
   },
   {
     "id": "bact-3",
@@ -178,7 +222,33 @@
     "effectiveness": "78–88%",
     "season": "أكتوبر–مارس في البيوت المحمية — طوال العام في الحقل المكشوف",
     "resistanceRisk": "متوسط للنحاسيات في بعض المناطق",
-    "references": "Jones, J.B. et al. (1991). Compendium of Tomato Diseases. APS Press"
+    "references": "Jones, J.B. et al. (1991). Compendium of Tomato Diseases. APS Press",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-030"
+      },
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-005"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-4",
@@ -238,7 +308,25 @@
     "effectiveness": "80–90% بالمكافحة المتكاملة",
     "season": "مارس–مايو أثناء الإزهار",
     "resistanceRisk": "مقاومة للستربتومايسين مُسجَّلة في بعض المناطق",
-    "references": "van der Zwet, T. & Beer, S.V. (1995). Fire Blight: Its Nature, Prevention, and Control. USDA Bull."
+    "references": "van der Zwet, T. & Beer, S.V. (1995). Fire Blight: Its Nature, Prevention, and Control. USDA Bull.",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-5",
@@ -292,7 +380,29 @@
     "effectiveness": "75–85% بالمكافحة المتكاملة مع Leaf Miner",
     "season": "مارس–يونيو وسبتمبر–نوفمبر مع الطرد الخضري الجديد",
     "resistanceRisk": "منخفض للنحاسيات حتى الآن",
-    "references": "Gottwald, T.R. et al. (2002). Citrus canker: The pathogen and its impact. Plant Health Progress"
+    "references": "Gottwald, T.R. et al. (2002). Citrus canker: The pathogen and its impact. Plant Health Progress",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-005"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-6",
@@ -345,7 +455,25 @@
     "effectiveness": "75–85%",
     "season": "أكتوبر–مارس في الجو البارد الرطب",
     "resistanceRisk": "منخفض للنحاسيات",
-    "references": "Kennelly, M.M. et al. (2007). Pseudomonas syringae diseases of fruit trees. Plant Disease"
+    "references": "Kennelly, M.M. et al. (2007). Pseudomonas syringae diseases of fruit trees. Plant Disease",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-7",
@@ -403,7 +531,17 @@
     "effectiveness": "85–95% وقائيًا بـ K84 — لا علاج للأورام المتكونة",
     "season": "طوال العام — الإصابة تحدث عند الزراعة والتطعيم",
     "resistanceRisk": "منخفض — K84 يفقد فاعليته ضد بعض السلالات (لذلك طُوِّر K1026)",
-    "references": "Kerr, A. (1980). Biological control of crown gall through production of Agrocin 84. Plant Disease"
+    "references": "Kerr, A. (1980). Biological control of crown gall through production of Agrocin 84. Plant Disease",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      }
+    ]
   },
   {
     "id": "bact-8",
@@ -458,7 +596,33 @@
     "effectiveness": "72–83% — تحميض التربة الأفعل",
     "season": "طوال موسم نمو الدرنات — أشد في التربة الجافة القلوية",
     "resistanceRisk": "منخفض",
-    "references": "Loria, R. et al. (1997). Thaxtomin production in Streptomyces species. Phytopathology"
+    "references": "Loria, R. et al. (1997). Thaxtomin production in Streptomyces species. Phytopathology",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-026"
+      },
+      {
+        "category": "frac",
+        "id": "ai-028"
+      },
+      {
+        "category": "frac",
+        "id": "ai-030"
+      },
+      {
+        "category": "frac",
+        "id": "ai-032"
+      },
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      }
+    ]
   },
   {
     "id": "bact-9",
@@ -499,7 +663,21 @@
     "effectiveness": "80–90% بمكافحة الناقل",
     "season": "مايو–يونيو في موسم الذرة",
     "resistanceRisk": "منخفض",
-    "references": "Nault, L.R. et al. (1970). Stewart's wilt of corn. Plant Disease Reporter"
+    "references": "Nault, L.R. et al. (1970). Stewart's wilt of corn. Plant Disease Reporter",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "bact-10",
@@ -549,7 +727,29 @@
     "effectiveness": "78–86%",
     "season": "طوال العام في البيوت المحمية — ذروة الشتاء والخريف",
     "resistanceRisk": "منخفض",
-    "references": "Zitter, T.A. et al. (1996). Compendium of Cucurbit Diseases. APS Press"
+    "references": "Zitter, T.A. et al. (1996). Compendium of Cucurbit Diseases. APS Press",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-030"
+      },
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-11",
@@ -599,7 +799,21 @@
     "effectiveness": "85–93% بمكافحة الناقل",
     "season": "مايو–سبتمبر في موسم القرعيات",
     "resistanceRisk": "لا ينطبق على المبيدات النباتية",
-    "references": "Rand, F.V. & Enlows, E.M.A. (1916). Transmission and Control of Bacterial Wilt of Cucurbits. USDA"
+    "references": "Rand, F.V. & Enlows, E.M.A. (1916). Transmission and Control of Bacterial Wilt of Cucurbits. USDA",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "bact-12",
@@ -644,7 +858,25 @@
     "effectiveness": "75–83%",
     "season": "سبتمبر–نوفمبر في الفاصوليا الخريفية",
     "resistanceRisk": "منخفض للنحاسيات",
-    "references": "Saettler, A.W. (1991). Common bacterial blight. In: Bean Production Problems. CIAT"
+    "references": "Saettler, A.W. (1991). Common bacterial blight. In: Bean Production Problems. CIAT",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-13",
@@ -695,7 +927,25 @@
     "effectiveness": "78–86%",
     "season": "مارس–يونيو في موسم نمو الأشجار",
     "resistanceRisk": "منخفض",
-    "references": "Ritchie, D.F. (1995). Bacterial spot of peach and nectarine. Plant Disease"
+    "references": "Ritchie, D.F. (1995). Bacterial spot of peach and nectarine. Plant Disease",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-14",
@@ -735,7 +985,21 @@
     "effectiveness": "65–75% — الأصناف المقاومة الأفعل",
     "season": "يونيو–أغسطس بعد العواصف",
     "resistanceRisk": "منخفض",
-    "references": "Nutter, F.W. et al. (1995). Goss's bacterial wilt and leaf blight of corn. Plant Disease"
+    "references": "Nutter, F.W. et al. (1995). Goss's bacterial wilt and leaf blight of corn. Plant Disease",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-15",
@@ -783,7 +1047,21 @@
     "effectiveness": "60–75% — الوقاية بالبذور السليمة الأهم",
     "season": "طوال العام في البيوت المحمية",
     "resistanceRisk": "مقاومة للستربتومايسين مُسجَّلة",
-    "references": "Gleason, M.L. et al. (1993). Compendium of Tomato Diseases. APS Press"
+    "references": "Gleason, M.L. et al. (1993). Compendium of Tomato Diseases. APS Press",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-16",
@@ -837,7 +1115,29 @@
     "effectiveness": "78–87%",
     "season": "أكتوبر–مارس في الصليبيات الشتوية",
     "resistanceRisk": "منخفض",
-    "references": "Williams, P.H. (1980). Black rot: A continuing threat to world crucifers. Plant Disease"
+    "references": "Williams, P.H. (1980). Black rot: A continuing threat to world crucifers. Plant Disease",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-030"
+      },
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "bact-17",
@@ -879,7 +1179,17 @@
     "effectiveness": "75–83%",
     "season": "أبريل–يونيو قرب حصاد البصل المصري",
     "resistanceRisk": "منخفض",
-    "references": "Schwartz, H.F. & Mohan, S.K. (2008). Compendium of Onion and Garlic Diseases. APS Press"
+    "references": "Schwartz, H.F. & Mohan, S.K. (2008). Compendium of Onion and Garlic Diseases. APS Press",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      }
+    ]
   },
   {
     "id": "bact-18",
@@ -924,7 +1234,25 @@
     "effectiveness": "76–84%",
     "season": "أكتوبر–فبراير في موسم الفراولة المصري",
     "resistanceRisk": "منخفض",
-    "references": "Legard, D.E. et al. (2000). Angular Leaf Spot of Strawberry. Plant Disease"
+    "references": "Legard, D.E. et al. (2000). Angular Leaf Spot of Strawberry. Plant Disease",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "add-7",
@@ -977,7 +1305,25 @@
     "effectiveness": "لا علاج — الوقاية 85-95% بمكافحة الناقل",
     "season": "طوال العام",
     "resistanceRisk": "عالٍ لـ Neonicotinoids في Diaphorina — تناوب إلزامي",
-    "references": "Bové, J.M. (2006). Huanglongbing: A destructive, newly-emerging, century-old disease of citrus. Journal of Plant Pathology"
+    "references": "Bové, J.M. (2006). Huanglongbing: A destructive, newly-emerging, century-old disease of citrus. Journal of Plant Pathology",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-025"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "add-8",
@@ -1029,7 +1375,25 @@
     "effectiveness": "72–82% — الوقاية بالبذور السليمة أهم",
     "season": "مايو–أغسطس في موسم البطيخ المصري",
     "resistanceRisk": "منخفض للنحاسيات",
-    "references": "Schaad, N.W. et al. (2008). Acidovorax avenae subsp. citrulli. In: Plant Pathogenic Bacteria. Springer"
+    "references": "Schaad, N.W. et al. (2008). Acidovorax avenae subsp. citrulli. In: Plant Pathogenic Bacteria. Springer",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "add-9",
@@ -1079,7 +1443,25 @@
     "effectiveness": "78–88% بالأصناف المقاومة",
     "season": "يوليو–سبتمبر في موسم الأرز المصري",
     "resistanceRisk": "منخفض",
-    "references": "Nino-Liu, D.O. et al. (2006). Xanthomonas oryzae pathovars: model pathogens of a model crop. Molecular Plant Pathology"
+    "references": "Nino-Liu, D.O. et al. (2006). Xanthomonas oryzae pathovars: model pathogens of a model crop. Molecular Plant Pathology",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "add-10",
@@ -1132,7 +1514,25 @@
     "effectiveness": "65–78% وقائيًا بمكافحة الناقل",
     "season": "طوال العام",
     "resistanceRisk": "متوسط لـ Neonicotinoids في النطاط",
-    "references": "Bertaccini, A. & Duduk, B. (2009). Phytoplasma and phytoplasma diseases. Phytopathologia Mediterranea"
+    "references": "Bertaccini, A. & Duduk, B. (2009). Phytoplasma and phytoplasma diseases. Phytopathologia Mediterranea",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-025"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "fin-9",
@@ -1177,7 +1577,21 @@
     "effectiveness": "72–80%",
     "season": "طوال العام في البيوت المحمية — ذروة الشتاء",
     "resistanceRisk": "منخفض",
-    "references": "Catara, V. et al. (2002). Bacterial pith necrosis of tomato. EPPO Bulletin"
+    "references": "Catara, V. et al. (2002). Bacterial pith necrosis of tomato. EPPO Bulletin",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "fin-10",
@@ -1226,7 +1640,13 @@
     "effectiveness": "55–70% — لا علاج كامل",
     "season": "طوال العام",
     "resistanceRisk": "منخفض",
-    "references": "Bové, J.M. & Garnier, M. (2003). Phloem- and xylem-restricted plant pathogenic bacteria. Plant Science"
+    "references": "Bové, J.M. & Garnier, M. (2003). Phloem- and xylem-restricted plant pathogenic bacteria. Plant Science",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "add-6",
@@ -1244,7 +1664,7 @@
       "تقزم النمو وانخفاض الإنتاج تدريجيًا",
       "اسمرار الأنسجة الوعائية داخل الورم"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "البكتيريا تدخل عبر الجروح الناتجة عن التقليم أو الاحتكاك أو الجروح الطبيعية في الأغصان. تنتشر بوساطة مياه الأمطار وأدوات التقليم الملوثة. تبقى في الأورام القديمة والتقرحات لأعوام.",
     "favorableConditions": "أمطار وجروح متزامنة، 20-30°م، زراعات قديمة",
     "hostPlants": [
       "زيتون (متخصص)",
@@ -1273,7 +1693,25 @@
     "season": "طوال العام — الدخول أثناء الأمطار والتقليم",
     "resistanceRisk": "منخفض",
     "references": "",
-    "group": "Critical Additions — High Priority Pathogens"
+    "group": "Critical Additions — High Priority Pathogens",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-003"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "fin-24",
@@ -1290,7 +1728,7 @@
       "تحول الخطوط للبني الجاف",
       "لا تأثير على الأوعية الوعائية (يميزه عن BLB)"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "تنتقل البكتيريا عبر البذور الملوثة وبقايا النباتات المصابة في التربة. تنتشر برذاذ المطر والرياح والري بالرش. تدخل الثغور والجروح في الأوراق. تفضل درجات الحرارة 25-30°م والرطوبة العالية.",
     "favorableConditions": "رطوبة عالية، درجات حرارة 25-30°م",
     "hostPlants": [
       "أرز"
@@ -1314,7 +1752,21 @@
     "season": "يوليو–سبتمبر",
     "resistanceRisk": "منخفض",
     "references": "",
-    "group": "Final Additions — Remaining Pathogens"
+    "group": "Final Additions — Remaining Pathogens",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "fin-25",
@@ -1331,7 +1783,7 @@
       "بذور فارغة أو نصف مملوءة",
       "على القنابع: بقع بنية مع هالة صفراء"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "تنتقل البكتيريا عبر البذور الملوثة والشتلات المصابة. تنتشر بالرياح والأمطار والحشرات. تنشط في درجات حرارة ليلية أعلى من 25°م أثناء مرحلة طرد السنابل.",
     "favorableConditions": "درجات حرارة ليلية >25°م أثناء الطرد، رطوبة عالية",
     "hostPlants": [
       "أرز"
@@ -1356,7 +1808,25 @@
     "season": "يوليو–أغسطس أثناء طرد الأرز",
     "resistanceRisk": "منخفض",
     "references": "",
-    "group": "Final Additions — Remaining Pathogens"
+    "group": "Final Additions — Remaining Pathogens",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      },
+      {
+        "category": "bact",
+        "id": "bai-010"
+      },
+      {
+        "category": "bact",
+        "id": "bai-027"
+      }
+    ]
   },
   {
     "id": "fin-23",
@@ -1373,7 +1843,7 @@
       "ذبول وانهيار النباتات بسرعة",
       "عفن الجزر المخزون مع سيولة كاملة"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "تنتقل البكتيريا عبر التربة الملوثة وبقايا النباتات المصابة ومياه الري. تدخل الجذور والدرنات عبر الجروح. تنشط بقوة في درجات الحرارة العالية (28-35°م). تنتشر في الحقل بمياه الري والأدوات الملوثة.",
     "favorableConditions": "درجات حرارة أعلى من Pectobacterium (28-35°م)، جروح، رطوبة",
     "hostPlants": [
       "بطاطس",
@@ -1401,6 +1871,16 @@
     "season": "الصيف الحار — أعلى درجات الحرارة",
     "resistanceRisk": "منخفض",
     "references": "",
-    "group": "Final Additions — Remaining Pathogens"
+    "group": "Final Additions — Remaining Pathogens",
+    "active_ingredients": [
+      {
+        "category": "frac",
+        "id": "ai-036"
+      },
+      {
+        "category": "bact",
+        "id": "bai-001"
+      }
+    ]
   }
 ]

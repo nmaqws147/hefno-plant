@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import { X, ChevronRight, ChevronLeft, FlaskConical, AlertTriangle, Info, Droplets, Thermometer, Heart, Shield } from 'lucide-react';
 import nutrientsData from '../knowledge_base/planet-elements/plants-elements.json';
 import './plant-elements.css';
@@ -72,10 +73,7 @@ const PlantNutrientsPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>العناصر الغذائية | Hefno-Plant</title>
-        <meta name="description" content="دليل شامل للعناصر الغذائية الأساسية للنبات — الوظائف، أعراض النقص، المكافحة" />
-      </Helmet>
+      <SEO title="العناصر الغذائية للنبات" description="دليل شامل للعناصر الغذائية الأساسية للنبات — الوظائف، أعراض النقص، طرق المكافحة." url="/knowledge-base/plant-elements" keywords="العناصر الغذائية للنبات, نقص العناصر, أسمدة, تسميد النباتات, عناصر كبرى وصغرى" breadcrumbs={makeBreadcrumbs('/knowledge-base/plant-elements')} />
 
       <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         {/* Header */}

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import './terms.css';
 
 const TermsPage = () => {
@@ -63,10 +64,7 @@ const TermsPage = () => {
 
   return (
     <div className="hefno-terms">
-      <Helmet>
-        <title>الشروط والأحكام | Hefno-Plant</title>
-        <meta name="description" content="الشروط والأحكام الخاصة باستخدام منصة Hefno-Plant — قواعد الاستخدام والحقوق والمسؤوليات." />
-      </Helmet>
+      <SEO title="الشروط والأحكام" description="الشروط والأحكام الخاصة باستخدام منصة Hefno-Plant — قواعد الاستخدام والحقوق والمسؤوليات." url="/terms" keywords="شروط وأحكام, Hefno-Plant, قواعد الاستخدام" breadcrumbs={makeBreadcrumbs('/terms')} />
       <div className="hefno-terms-hero">
         <div className="hefno-terms-hero-inner">
           <div className="hefno-terms-hero-label">الشروط والأحكام</div>

@@ -48,7 +48,8 @@
     "effectiveness": "85–92% وقائيًا بالأصناف المقاومة والنظافة",
     "season": "طوال العام — خاصةً في البيوت المحمية",
     "resistanceRisk": "لا ينطبق — لا علاج كيميائي",
-    "references": "Scholthof, K.B.G. (2004). Tobacco mosaic virus: A model system for plant biology. Annual Review of Phytopathology"
+    "references": "Scholthof, K.B.G. (2004). Tobacco mosaic virus: A model system for plant biology. Annual Review of Phytopathology",
+    "active_ingredients": []
   },
   {
     "id": "viru-2",
@@ -110,7 +111,13 @@
     "effectiveness": "70–85% وقائيًا بالمكافحة المتكاملة",
     "season": "طوال العام — ذروة الربيع والخريف مع تكاثر المن",
     "resistanceRisk": "لا ينطبق",
-    "references": "Palukaitis, P. & García-Arenal, F. (2003). Cucumoviruses. Advances in Virus Research"
+    "references": "Palukaitis, P. & García-Arenal, F. (2003). Cucumoviruses. Advances in Virus Research",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "viru-3",
@@ -175,7 +182,29 @@
     "effectiveness": "80–95% بالأصناف المقاومة + مكافحة Bemisia",
     "season": "مايو–أكتوبر في مصر — ذروة الصيف مع تكاثر Bemisia",
     "resistanceRisk": "عالٍ جدًا لـ Neonicotinoids في Bemisia — تناوب إلزامي",
-    "references": "Czosnek, H. (2007). Tomato Yellow Leaf Curl Virus Disease. Springer | Abou-Jawdah, Y. (2014). TYLCV in the Arab world. Phytoparasitica"
+    "references": "Czosnek, H. (2007). Tomato Yellow Leaf Curl Virus Disease. Springer | Abou-Jawdah, Y. (2014). TYLCV in the Arab world. Phytoparasitica",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-057"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      },
+      {
+        "category": "irac",
+        "id": "iai-071"
+      }
+    ]
   },
   {
     "id": "viru-4",
@@ -235,7 +264,21 @@
     "effectiveness": "75–88% بمكافحة التربس والأصناف المقاومة",
     "season": "طوال العام في البيوت المحمية — ذروة الخريف والشتاء",
     "resistanceRisk": "عالٍ جدًا لسبينوساد في التربس — تناوب إلزامي",
-    "references": "Pappu, H.R. et al. (2009). Global status of tospovirus epidemics. Virus Research"
+    "references": "Pappu, H.R. et al. (2009). Global status of tospovirus epidemics. Virus Research",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-030"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "viru-5",
@@ -286,7 +329,21 @@
     "effectiveness": "80–90% بالتقاوي السليمة + مكافحة Myzus",
     "season": "أكتوبر–مارس في موسم البطاطس المصري",
     "resistanceRisk": "عالٍ لـ Neonicotinoids في Myzus في بعض مناطق العالم",
-    "references": "Taliansky, M.E. et al. (2003). Potato leafroll virus. CMI/AAB Descriptions of Plant Viruses"
+    "references": "Taliansky, M.E. et al. (2003). Potato leafroll virus. CMI/AAB Descriptions of Plant Viruses",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "viru-6",
@@ -340,7 +397,21 @@
     "effectiveness": "70–82% بالملشات العاكسة والزيت المعدني",
     "season": "مارس–يونيو وسبتمبر–نوفمبر في القرعيات",
     "resistanceRisk": "لا ينطبق",
-    "references": "Lecoq, H. et al. (1991). Zucchini yellow mosaic virus in Europe. Plant Pathology"
+    "references": "Lecoq, H. et al. (1991). Zucchini yellow mosaic virus in Europe. Plant Pathology",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "viru-7",
@@ -389,7 +460,21 @@
     "effectiveness": "78–87% بالتقاوي السليمة",
     "season": "أكتوبر–مارس في موسم البطاطس",
     "resistanceRisk": "لا ينطبق",
-    "references": "Hooker, W.J. (1981). Compendium of Potato Diseases. APS Press"
+    "references": "Hooker, W.J. (1981). Compendium of Potato Diseases. APS Press",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "viru-8",
@@ -432,7 +517,8 @@
     "effectiveness": "72–80% بالمكافحة المتكاملة",
     "season": "أكتوبر–فبراير في موسم القمح",
     "resistanceRisk": "لا ينطبق",
-    "references": "Niblett, C.L. & Claflin, L.E. (1978). Wheat streak mosaic — a review. Cereal Research Communications"
+    "references": "Niblett, C.L. & Claflin, L.E. (1978). Wheat streak mosaic — a review. Cereal Research Communications",
+    "active_ingredients": []
   },
   {
     "id": "viru-9",
@@ -484,7 +570,25 @@
     "effectiveness": "75–85% بمعاملة البذور ومكافحة المن",
     "season": "أكتوبر–فبراير في موسم الحبوب",
     "resistanceRisk": "متوسط لـ Neonicotinoids في بعض أنواع المن",
-    "references": "D'Arcy, C.J. & Burnett, P.A. (1995). Barley Yellow Dwarf: 40 Years of Progress. APS Press"
+    "references": "D'Arcy, C.J. & Burnett, P.A. (1995). Barley Yellow Dwarf: 40 Years of Progress. APS Press",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-025"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "viru-10",
@@ -535,7 +639,21 @@
     "effectiveness": "70–80%",
     "season": "نوفمبر–مارس في موسم الفول المصري",
     "resistanceRisk": "لا ينطبق",
-    "references": "Edwardson, J.R. & Christie, R.G. (1991). Viruses infecting forage legumes. Monograph Series, Fla. Agr. Exp. Stations"
+    "references": "Edwardson, J.R. & Christie, R.G. (1991). Viruses infecting forage legumes. Monograph Series, Fla. Agr. Exp. Stations",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "viru-11",
@@ -579,7 +697,13 @@
     "effectiveness": "70–80%",
     "season": "مايو–يوليو في موسم الذرة المبكر",
     "resistanceRisk": "لا ينطبق",
-    "references": "Louie, R. (1980). Sugarcane mosaic virus in Kenya. Plant Disease"
+    "references": "Louie, R. (1980). Sugarcane mosaic virus in Kenya. Plant Disease",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "viru-12",
@@ -625,7 +749,8 @@
     "effectiveness": "60–75% — الوقاية بالشتلات الخالية الأنجح",
     "season": "طوال العام — الأعراض تظهر في موسم النمو الربيعي",
     "resistanceRisk": "لا ينطبق",
-    "references": "Martelli, G.P. (1993). Grapevine Fanleaf Virus. CMI/AAB Descriptions of Plant Viruses"
+    "references": "Martelli, G.P. (1993). Grapevine Fanleaf Virus. CMI/AAB Descriptions of Plant Viruses",
+    "active_ingredients": []
   },
   {
     "id": "viru-13",
@@ -664,7 +789,8 @@
     "effectiveness": "60–70% بالأصناف المقاومة",
     "season": "نوفمبر–فبراير في التربة الباردة الرطبة",
     "resistanceRisk": "لا ينطبق",
-    "references": "Slykhuis, J.T. (1970). Spindle streak mosaic and yellow mosaic viruses in wheat. Phytopathology"
+    "references": "Slykhuis, J.T. (1970). Spindle streak mosaic and yellow mosaic viruses in wheat. Phytopathology",
+    "active_ingredients": []
   },
   {
     "id": "viru-14",
@@ -709,7 +835,17 @@
     "effectiveness": "72–82%",
     "season": "طوال العام في الموز",
     "resistanceRisk": "لا ينطبق",
-    "references": "Lockhart, B.E.L. (1990). Evidence for a double-stranded circular DNA genome in a second group of plant viruses. Phytopathology"
+    "references": "Lockhart, B.E.L. (1990). Evidence for a double-stranded circular DNA genome in a second group of plant viruses. Phytopathology",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-001"
+      },
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "viru-15",
@@ -756,7 +892,17 @@
     "effectiveness": "55–70% — الوقاية بخلفات نظيفة الأنجح",
     "season": "طوال العام",
     "resistanceRisk": "متوسط لـ Neonicotinoids في P. nigronervosa في بعض المناطق",
-    "references": "Thomas, J.E. & Iskra-Caruana, M.L. (2000). Bunchy top disease. FAO Plant Production and Protection Paper"
+    "references": "Thomas, J.E. & Iskra-Caruana, M.L. (2000). Bunchy top disease. FAO Plant Production and Protection Paper",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-002"
+      },
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "viru-16",
@@ -804,7 +950,21 @@
     "effectiveness": "68–80%",
     "season": "مارس–يونيو وسبتمبر–نوفمبر",
     "resistanceRisk": "لا ينطبق",
-    "references": "Purcifull, D.E. & Hiebert, E. (1982). Watermelon mosaic virus-2. CMI/AAB Descriptions of Plant Viruses"
+    "references": "Purcifull, D.E. & Hiebert, E. (1982). Watermelon mosaic virus-2. CMI/AAB Descriptions of Plant Viruses",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "viru-17",
@@ -845,7 +1005,8 @@
     "effectiveness": "80–88% بالبذور السليمة والأصناف المقاومة",
     "season": "طوال العام في البيوت المحمية",
     "resistanceRisk": "لا ينطبق",
-    "references": "Wetter, C. et al. (1984). Pepper mild mottle virus. CMI/AAB Descriptions of Plant Viruses"
+    "references": "Wetter, C. et al. (1984). Pepper mild mottle virus. CMI/AAB Descriptions of Plant Viruses",
+    "active_ingredients": []
   },
   {
     "id": "viru-18",
@@ -895,7 +1056,29 @@
     "effectiveness": "75–85% بمكافحة Bemisia",
     "season": "أبريل–أكتوبر في القرعيات",
     "resistanceRisk": "عالٍ لـ Neonicotinoids في Bemisia",
-    "references": "Cohen, S. et al. (1983). Squash leaf curl virus: Purification, serology. Phytopathology"
+    "references": "Cohen, S. et al. (1983). Squash leaf curl virus: Purification, serology. Phytopathology",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-057"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      },
+      {
+        "category": "irac",
+        "id": "iai-071"
+      }
+    ]
   },
   {
     "id": "viru-19",
@@ -944,7 +1127,25 @@
     "effectiveness": "70–80% بمكافحة الناقل",
     "season": "طوال العام في البيوت المحمية",
     "resistanceRisk": "عالٍ للـ Neonicotinoids",
-    "references": "Verbeek, M. et al. (2007). Torradovirus: a new plant virus genus. Phytopathology"
+    "references": "Verbeek, M. et al. (2007). Torradovirus: a new plant virus genus. Phytopathology",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-025"
+      },
+      {
+        "category": "irac",
+        "id": "iai-057"
+      },
+      {
+        "category": "irac",
+        "id": "iai-071"
+      }
+    ]
   },
   {
     "id": "viru-20",
@@ -989,7 +1190,21 @@
     },
     "effectiveness": "72–82% بالبذور السليمة",
     "season": "أبريل–يوليو في موسم الفول السوداني",
-    "resistanceRisk": "لا ينطبق"
+    "resistanceRisk": "لا ينطبق",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "add-11",
@@ -1007,7 +1222,7 @@
       "تقزم الثمار وانخفاض جودتها وإنتاجيتها",
       "موت الأشجار الكبيرة في أسابيع (Quick Decline)"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس تريستيزا الحمضيات بالمن القطن الأسود الحمضي (Toxoptera citricida) بنمط شبه مستديم. ينتقل أيضًا بالتطعيم بأصول أو طرز مصابة. لا ينتقل ميكانيكيًا أو بالبذور.",
     "favorableConditions": "تكاثر Toxoptera citricida، وجود أشجار مصابة بالقرب",
     "hostPlants": [
       "جميع الحمضيات — البرتقال على أصل الليمون الحامض الأكثر حساسية للانهيار السريع"
@@ -1033,7 +1248,13 @@
     "effectiveness": "",
     "season": "طوال العام",
     "resistanceRisk": "متوسط للـ Neonicotinoids في مناطق كثيرة الاستخدام",
-    "references": ""
+    "references": "",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "add-12",
@@ -1051,7 +1272,7 @@
       "في المشمش: لب الثمرة يتلون بالأحمر حول النواة",
       "تساقط الثمار المبكر"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس شارقا (PPV) بأنواع متعددة من المن بنمط غير مستديم. ينتقل بالتطعيم بأفرع أو أصول مصابة. يبقى في أشجار الفاكهة ذات النواة المصابة كمصدر للعدوى.",
     "favorableConditions": "تكاثر المن، وجود أشجار مصابة بالقرب",
     "hostPlants": [
       "خوخ (الأكثر حساسية)",
@@ -1080,7 +1301,13 @@
     "effectiveness": "",
     "season": "طوال العام — الانتشار في موسم المن",
     "resistanceRisk": "لا ينطبق",
-    "references": ""
+    "references": "",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      }
+    ]
   },
   {
     "id": "add-13",
@@ -1097,7 +1324,7 @@
       "تبرقش الثمار وانخفاض جودتها",
       "في درجات حرارة عالية: نخر في بعض الأصناف"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس ToMV بالتلامس الميكانيكي عبر الأيدي الملوثة والأدوات الزراعية والتبغ المدخن. ينتقل أيضًا بالبذور الملوثة. يبقى في بقايا النباتات والتربة لسنوات.",
     "favorableConditions": "بذور ملوثة، تلامس ميكانيكي متكرر في البيوت المحمية",
     "hostPlants": [
       "طماطم (الأساسي)",
@@ -1121,7 +1348,8 @@
     "effectiveness": "",
     "season": "طوال العام في البيوت المحمية",
     "resistanceRisk": "لا ينطبق",
-    "references": ""
+    "references": "",
+    "active_ingredients": []
   },
   {
     "id": "fin-11",
@@ -1139,7 +1367,7 @@
       "تأخر نضج العناقيد وانخفاض نسبة السكر",
       "تقزم العناقيد وحبات عنب أصغر"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس GLRaV بالبق الدقيقي (Mealybugs) بنمط شبه مستديم. ينتقل أيضًا بالتطعيم بأصول مصابة. لا ينتقل ميكانيكيًا أو بالبذور.",
     "favorableConditions": "تكاثر البق الدقيقي، كروم قديمة، أصول مصابة",
     "hostPlants": [
       "عنب جميع الأصناف"
@@ -1164,7 +1392,21 @@
     "effectiveness": "",
     "season": "طوال العام — الأعراض أوضح في الخريف",
     "resistanceRisk": "متوسط لـ Neonicotinoids",
-    "references": ""
+    "references": "",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-001"
+      },
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-057"
+      }
+    ]
   },
   {
     "id": "fin-12",
@@ -1181,7 +1423,7 @@
       "تقزم الرأس وعدم اكتماله",
       "في الأصناف الحساسة: نخر شديد (Necrotic LMV)"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس موزاييك الخس (LMV) بالمن بنمط غير مستديم. ينتقل بالبذور الملوثة بنسبة تصل إلى 10%. يبقى في العوائل البديلة (الخس البري والمرارة).",
     "favorableConditions": "بذور ملوثة، تكاثر المن، بيوت محمية",
     "hostPlants": [
       "خس (متخصص تقريبًا)"
@@ -1205,7 +1447,21 @@
     "effectiveness": "",
     "season": "طوال العام في البيوت المحمية",
     "resistanceRisk": "لا ينطبق",
-    "references": ""
+    "references": "",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "fin-14",
@@ -1223,7 +1479,7 @@
       "تشوه الثمار وفقدانها القيمة التجارية",
       "تقزم النبات وانخفاض الإنتاج بشكل كبير"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس PRSV بأنواع متعددة من المن بنمط غير مستديم. لا ينتقل بالبذور أو التطعيم. يبقى في العوائل البديلة (القرعيات) كمصدر للعدوى.",
     "favorableConditions": "تكاثر المن، غياب أصناف مقاومة",
     "hostPlants": [
       "ببايا (PRSV-P + W)",
@@ -1249,7 +1505,21 @@
     "effectiveness": "",
     "season": "طوال العام — ذروة تكاثر المن",
     "resistanceRisk": "لا ينطبق",
-    "references": ""
+    "references": "",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   },
   {
     "id": "fin-15",
@@ -1267,7 +1537,7 @@
       "موت مبكر للنباتات في الإصابات الشديدة",
       "في الطماطم: تجعد وتشوه الأوراق مع نخر"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس BCTV بنطاط البنجر (Circulifer tenellus) بنمط مستديم دوراني. يبقى الفيروس في النطاط مدى الحياة. ينتشر مع هجرة النطاط للحقول.",
     "favorableConditions": "موجات حرارة + جفاف تُشجع هجرة النطاط للمحاصيل، غياب الأعشاب",
     "hostPlants": [
       "بنجر سكري (الأساسي)",
@@ -1295,7 +1565,17 @@
     "effectiveness": "",
     "season": "يونيو–سبتمبر في موسم بنجر السكر الصيفي",
     "resistanceRisk": "منخفض",
-    "references": ""
+    "references": "",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-023"
+      },
+      {
+        "category": "irac",
+        "id": "iai-025"
+      }
+    ]
   },
   {
     "id": "fin-13",
@@ -1312,7 +1592,7 @@
       "ذبول وجفاف الأوراق المصابة",
       "تقزم البصلات وضعف الجفاف"
     ],
-    "infectionCycle": "",
+    "infectionCycle": "ينتقل فيروس IYSV بتربس البصل (Thrips tabaci) بنمط مستديم تكاثري. يبقى التربس ناقلًا مدى الحياة. ينتشر مع هجرة التربس بين حقول البصل.",
     "favorableConditions": "تكاثر T. tabaci، بصل، جو جاف دافئ",
     "hostPlants": [
       "بصل (الأساسي)",
@@ -1340,6 +1620,20 @@
     "effectiveness": "",
     "season": "أبريل–يونيو في موسم حصاد البصل",
     "resistanceRisk": "عالٍ لسبينوساد في مناطق الاستخدام الكثيف",
-    "references": ""
+    "references": "",
+    "active_ingredients": [
+      {
+        "category": "irac",
+        "id": "iai-028"
+      },
+      {
+        "category": "irac",
+        "id": "iai-030"
+      },
+      {
+        "category": "irac",
+        "id": "iai-070"
+      }
+    ]
   }
 ]

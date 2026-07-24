@@ -21,7 +21,7 @@ function Hero() {
     { v: "150+", l: "مبيد زراعي", i: FlaskConical },
   ];
   return (
-    <section id="home" className="relative dark:bg-[#0a1f15] bg-[#0a1f15]">
+    <section id="home" className="relative overflow-x-hidden dark:bg-[#0a1f15] bg-[#0a1f15]">
       <div
         className="relative w-full bg-cover bg-center bg-no-repeat shadow-[0_60px_140px_-30px_oklch(0.05_0.02_150/0.95)]"
         style={{ backgroundImage: `url(${heroBg})` }}
@@ -55,26 +55,24 @@ function Hero() {
               variants={fadeUp}
               className="text-[15px] text-gray-300/90 max-w-lg leading-relaxed"
             >
-              حيث تلتقي التكنولوجيا بالطبيعة، تمنحك{" "}
-              <span className="text-primary font-semibold">أدوات الذكاء الاصطناعي</span>
-              {" "}لتشخيص نباتاتك واتخاذ{" "}
-              <span className="text-primary font-semibold">أفضل قراراتك الزراعية</span>.
+              حيث تلتقي التكنولوجيا بالطبيعة — تشخيص دقيق، معرفة شاملة،{" "}
+              <span className="text-primary font-semibold">أفضل القرارات الزراعية</span>.
             </motion.p>
             <motion.div custom={3} variants={fadeUp} className="flex flex-wrap gap-3 pt-1">
               <Link
-                to="/ai-chat"
+                to="/knowledge-base"
                 className="group inline-flex items-center gap-2 rounded-lg bg-gradient-to-b from-emerald-400 to-primary text-primary-foreground px-5 py-3 font-bold text-sm shadow-[0_10px_30px_-8px_oklch(0.78_0.19_148/0.6)] hover:brightness-110 transition-all"
               >
-                جرب المساعد الذكي
+                استكشف قاعدة المعرفة
                 <span className="size-6 rounded-md bg-white/20 grid place-items-center">
                   <ArrowLeft className="size-3.5" />
                 </span>
               </Link>
               <Link
-                to="/knowledge-base"
+                to="/diagnose"
                 className="inline-flex items-center gap-2 rounded-lg bg-[rgba(10,31,21,0.8)] border border-white/10 px-5 py-3 font-bold text-sm hover:bg-white/5 transition-all text-white"
               >
-                استكشف قاعدة المعرفة
+                تشخيص نباتك الآن
               </Link>
             </motion.div>
           </motion.div>

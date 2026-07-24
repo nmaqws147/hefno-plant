@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
 import { AlertTriangle, Bug, ChevronLeft, ChevronRight, Clock, FlaskConical, Info, Layers, Search, Shield, Sprout, X } from 'lucide-react';
 import nemaData from '../disease-folder/nema.json';
 
@@ -60,10 +60,7 @@ const NematodesPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>أمراض النيماتودا | Hefno-Plant</title>
-        <meta name="description" content="دليل أمراض النيماتودا — معلومات شاملة عن الديدان الخيطية المسببة لأمراض النبات." />
-      </Helmet>
+      <SEO title="أمراض النيماتودا" description="دليل أمراض النيماتودا — معلومات شاملة عن الديدان الخيطية المسببة لأمراض النبات." url="/knowledge-base/diseases/nematodes" />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

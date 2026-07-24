@@ -251,6 +251,54 @@ function getFarmingTips(current, forecast) {
   return tips;
 }
 
+const CROP_CONDITIONS = {
+  'قمح':     { min_temp: 10, max_temp: 30, wind_sensitive: false, frost_sensitive: false },
+  'شعير':    { min_temp: 10, max_temp: 30, wind_sensitive: false, frost_sensitive: false },
+  'ذرة':     { min_temp: 18, max_temp: 35, wind_sensitive: true, frost_sensitive: true },
+  'أرز':     { min_temp: 20, max_temp: 35, wind_sensitive: false, frost_sensitive: true },
+  'طماطم':   { min_temp: 15, max_temp: 32, wind_sensitive: false, frost_sensitive: true },
+  'بطاطس':   { min_temp: 12, max_temp: 28, wind_sensitive: false, frost_sensitive: true },
+  'فلفل':    { min_temp: 16, max_temp: 32, wind_sensitive: false, frost_sensitive: true },
+  'خيار':    { min_temp: 18, max_temp: 32, wind_sensitive: false, frost_sensitive: true },
+  'باذنجان': { min_temp: 18, max_temp: 35, wind_sensitive: false, frost_sensitive: true },
+  'كوسة':    { min_temp: 16, max_temp: 30, wind_sensitive: false, frost_sensitive: true },
+  'فراولة':  { min_temp: 10, max_temp: 28, wind_sensitive: false, frost_sensitive: false },
+  'عنب':     { min_temp: 12, max_temp: 35, wind_sensitive: false, frost_sensitive: false },
+  'تفاح':    { min_temp: 5, max_temp: 28, wind_sensitive: false, frost_sensitive: false },
+  'كمثرى':   { min_temp: 5, max_temp: 28, wind_sensitive: false, frost_sensitive: false },
+  'خوخ':     { min_temp: 8, max_temp: 30, wind_sensitive: false, frost_sensitive: false },
+  'مشمش':    { min_temp: 8, max_temp: 30, wind_sensitive: false, frost_sensitive: false },
+  'حمضيات':  { min_temp: 10, max_temp: 35, wind_sensitive: true, frost_sensitive: true },
+  'زيتون':   { min_temp: 8, max_temp: 35, wind_sensitive: false, frost_sensitive: false },
+  'بصل':     { min_temp: 10, max_temp: 28, wind_sensitive: false, frost_sensitive: false },
+  'ثوم':     { min_temp: 8, max_temp: 28, wind_sensitive: false, frost_sensitive: false },
+  'فول':     { min_temp: 8, max_temp: 25, wind_sensitive: false, frost_sensitive: false },
+  'فاصوليا': { min_temp: 15, max_temp: 28, wind_sensitive: false, frost_sensitive: true },
+};
+
+function evaluateCropSuitability(cropName, current, forecast24h) {
+  const conditions = CROP_CONDITIONS[cropName];
+  if (!conditions) return { suitable: true, reason: 'غير متوفر' };
+
+  const temp = current.temperature_c;
+  const wind = current.wind_speed_kmh;
+
+  if (temp < conditions.min_temp) {
+    return { suitable: false, reason: `❄️ بارد جداً — الأنسب ${conditions.min_temp}-${conditions.max_temp}°م` };
+  }
+  if (temp > conditions.max_temp) {
+    return { suitable: false, reason: `🔥 حار جداً — الأنسب ${conditions.min_temp}-${conditions.max_temp}°م` };
+  }
+  if (conditions.wind_sensitive && wind > 25) {
+    return { suitable: false, reason: '💨 الرياح القوية تؤثر على المحصول' };
+  }
+  if (conditions.frost_sensitive && forecast24h.min_temp_c < 2) {
+    return { suitable: false, reason: '❄️ خطر الصقيع يهدد المحصول' };
+  }
+
+  return { suitable: true, reason: 'مناسب' };
+}
+
 function buildWeatherResponse(weatherData, alerts, userCrops) {
   const current = weatherData.current || {};
   const forecast24h = weatherData.forecast_24h || {};
@@ -310,6 +358,11 @@ function buildWeatherResponse(weatherData, alerts, userCrops) {
     alerts: alerts,
     recommendations: getTopRecommendations(alerts, current, forecast24h),
     user_crops: userCrops,
+    crop_suitability: userCrops.map(crop => ({
+      crop,
+      suitable: evaluateCropSuitability(crop, current, forecast24h).suitable,
+      reason: evaluateCropSuitability(crop, current, forecast24h).reason
+    })),
     farming_tips: getFarmingTips(current, forecast24h)
   };
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../../component/SEO';
 import { ChevronRight, ChevronLeft, X, Bug, AlertTriangle, Shield, Calendar, Info, Clock, FlaskConical, Sprout, Heart, Layers } from 'lucide-react';
 import pathogensData from '../../disease-folder/fungi.json';
 
@@ -106,10 +106,7 @@ const BasidiomycotaDiseasesPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>الفطريات البازيدية | Hefno-Plant</title>
-        <meta name="description" content="قائمة أمراض الفطريات البازيدية — الصدأ، التفحم، وأمراض الحبوب." />
-      </Helmet>
+      <SEO title="الفطريات البازيدية" description="قائمة أمراض الفطريات البازيدية — الصدأ، التفحم، وأمراض الحبوب." url="/knowledge-base/diseases/fungi/basi" />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

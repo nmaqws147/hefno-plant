@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
 import { ChevronRight, ChevronLeft, Bug, Layers } from 'lucide-react';
 
 const categories = [
@@ -27,10 +27,7 @@ const DiseasesPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>الأمراض النباتية | Hefno-Plant</title>
-        <meta name="description" content="دليل شامل للأمراض النباتية مقسمة حسب نوع المسبب المرضي - بكتيريا، فيروسات، نيماتودا، فطريات، طفيليات، واضطرابات فسيولوجية" />
-      </Helmet>
+      <SEO title="الأمراض النباتية" description="دليل شامل للأمراض النباتية مقسمة حسب نوع المسبب المرضي - بكتيريا، فيروسات، نيماتودا، فطريات، طفيليات، واضطرابات فسيولوجية" url="/knowledge-base/diseases" />
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button
           onClick={() => navigate('/knowledge-base')}

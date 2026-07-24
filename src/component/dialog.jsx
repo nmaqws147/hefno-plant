@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
 import useTracking from '../hooks/useTracking';
-import { Helmet } from 'react-helmet-async';
+import SEO from './SEO';
+import { makeBreadcrumbs, makeWebApp } from './structuredData';
 import {
   Upload, Camera, Zap, Target, Lightbulb, Smartphone, Scan,
   Leaf, Sprout, Bug, FlaskConical, AlertTriangle, Check,
@@ -410,10 +411,7 @@ const DiagnoseScreen = ({ id }) => {
         .dark .shimmer-bg { background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%); background-size: 200% 100%; }
       `}</style>
 
-      <Helmet>
-        <title>تشخيص أمراض النبات | Hefno-Plant</title>
-        <meta name="description" content="شخص نباتك بالذكاء الاصطناعي — حمّل صورة ورقة نباتك للحصول على تشخيص فوري للحالة والعلاج المقترح." />
-      </Helmet>
+      <SEO title="تشخيص أمراض النبات" description="شخص نباتك بالذكاء الاصطناعي — حمّل صورة ورقة نباتك للحصول على تشخيص فوري للحالة والعلاج المقترح." url="/diagnose" keywords="تشخيص أمراض النبات, تشخيص النباتات بالصور, ذكاء اصطناعي زراعي, كشف أمراض النباتات, علاج أمراض النبات" breadcrumbs={makeBreadcrumbs('/diagnose')} jsonLd={makeWebApp('تشخيص أمراض النبات', '/diagnose', 'تشخيص أمراض النباتات بالذكاء الاصطناعي — حمّل صورة واحصل على تشخيص فوري')} />
 
       <div className="relative max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-6">
 

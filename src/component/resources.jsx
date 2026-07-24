@@ -2,7 +2,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './resources.css';
-import { Helmet } from 'react-helmet-async';
+import SEO from './SEO';
+import { makeBreadcrumbs } from './structuredData';
 
 const ResourcesPage = () => {
   const navigate = useNavigate();
@@ -215,10 +216,7 @@ const ResourcesPage = () => {
 
   return (
     <div className="resources-page" dir="rtl">
-      <Helmet>
-        <title>الموارد الزراعية | Hefno-Plant</title>
-        <meta name="description" content="الموارد والأدوات الزراعية المساعدة — روابط مفيدة، منشورات، ومواد تعليمية للمزارعين والمهتمين." />
-      </Helmet>
+      <SEO title="الموارد الزراعية" description="الموارد والأدوات الزراعية المساعدة — روابط مفيدة، منشورات، ومواد تعليمية للمزارعين والمهتمين." url="/knowledge-base/resources" keywords="موارد زراعية, أدوات زراعية, روابط مفيدة, تعليم زراعي" breadcrumbs={makeBreadcrumbs('/knowledge-base/resources')} />
 
       {/* رأس الصفحة */}
       <div className="resources-header special-page-header">

@@ -50,6 +50,7 @@ const KnowledgeBase = () => {
     'plants-crops': Leaf,
     academic: BookOpen,
     'fertilizer-planner': Brain,
+    'nematoda-species': Bug,
     'food-safety': ShieldCheck,
     'honey-bees': Hexagon,
   };

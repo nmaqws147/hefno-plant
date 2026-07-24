@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
 import './privacy.css';
 
 const PrivacyPage = () => {
@@ -68,10 +69,7 @@ const PrivacyPage = () => {
 
   return (
     <div className="hefno-privacy">
-      <Helmet>
-        <title>سياسة الخصوصية | Hefno-Plant</title>
-        <meta name="description" content="سياسة الخصوصية لمنصة Hefno-Plant — كيف نحمي بياناتك وكيف نستخدم المعلومات التي نجمعها." />
-      </Helmet>
+      <SEO title="سياسة الخصوصية" description="سياسة الخصوصية لمنصة Hefno-Plant — كيف نحمي بياناتك وكيف نستخدم المعلومات التي نجمعها." url="/privacy" keywords="سياسة الخصوصية, Hefno-Plant, حماية البيانات" breadcrumbs={makeBreadcrumbs('/privacy')} />
       <div className="hefno-privacy-hero">
         <div className="hefno-privacy-hero-inner">
           <div className="hefno-privacy-hero-label">سياسة الخصوصية</div>

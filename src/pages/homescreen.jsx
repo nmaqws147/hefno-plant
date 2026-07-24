@@ -10,9 +10,12 @@ import HeroSection from '../component/hero';
 import KnowledgePreview from '../component/knowledgePreview';
 import agricultureData from '../data';
 import './homeScreen.css';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
+import { makeBreadcrumbs } from '../component/structuredData';
+import useRequireAuth from '../hooks/useRequireAuth';
 
 const HomeScreen = ({ id }) => {
+  const requireAuth = useRequireAuth();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -160,7 +163,7 @@ const HomeScreen = ({ id }) => {
                   )}
 
                   <div className="action-buttons flex gap-2 mt-4">
-                    <button className="action-btn primary inline-flex items-center gap-1.5"><Bookmark size={14} /> حفظ في المفضلة</button>
+                    <button className="action-btn primary inline-flex items-center gap-1.5" onClick={() => requireAuth()}><Bookmark size={14} /> حفظ في المفضلة</button>
                     <button className="action-btn secondary inline-flex items-center gap-1.5"><Share2 size={14} /> مشاركة</button>
                     <button className="action-btn outline inline-flex items-center gap-1.5"><Printer size={14} /> طباعة</button>
                   </div>
@@ -175,10 +178,7 @@ const HomeScreen = ({ id }) => {
 
   return (
     <div className="home-screen" id={id} dir="rtl">
-      <Helmet>
-        <title>Hefno-Plant | خبيرك الزراعي الذكي</title>
-        <meta name="description" content="منصة زراعية متكاملة لتشخيص أمراض النباتات بالذكاء الاصطناعي — دليل المبيدات، التقويم الزراعي، الطقس، وأكثر." />
-      </Helmet>
+      <SEO description="منصة زراعية متكاملة لتشخيص أمراض النباتات بالذكاء الاصطناعي — دليل المبيدات، التقويم الزراعي، الطقس، وأكثر." keywords="Hefno-Plant, منصة زراعية, تشخيص أمراض النبات, ذكاء اصطناعي زراعي, دليل المبيدات, آفات النبات, الزراعة الرقمية" breadcrumbs={makeBreadcrumbs('/')} />
 
       <HeroSection />
 

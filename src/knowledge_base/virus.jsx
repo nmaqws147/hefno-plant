@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../component/SEO';
 import { AlertTriangle, Bug, ChevronLeft, ChevronRight, Clock, FlaskConical, Info, Search, Shield, X } from 'lucide-react';
 import viruses from '../disease-folder/viruses.json';
 
@@ -46,10 +46,7 @@ const VirusesPage = () => {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
-      <Helmet>
-        <title>الأمراض الفيروسية | Hefno-Plant</title>
-        <meta name="description" content="دليل الأمراض الفيروسية — معلومات شاملة عن الفيروسات المسببة لأمراض النبات." />
-      </Helmet>
+      <SEO title="الأمراض الفيروسية" description="دليل الأمراض الفيروسية — معلومات شاملة عن الفيروسات المسببة لأمراض النبات." url="/knowledge-base/diseases/viruses" />
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <button

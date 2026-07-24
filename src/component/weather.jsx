@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import useTracking from '../hooks/useTracking';
-import { Helmet } from 'react-helmet-async';
+import SEO from './SEO';
+import { makeBreadcrumbs, makeWebApp } from './structuredData';
 import {
   MapPin, Clock, RefreshCw, CloudSun, CloudRain, Wind,
   Droplets, Eye, Sun, Gauge,
@@ -260,11 +261,11 @@ const WeatherScreen = ({ id }) => {
           }
           .dark .skeleton-shimmer::after { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
         `}</style>
-        <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-6 flex-1 overflow-y-auto">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6 flex-1 overflow-y-auto">
           {/* Location bar skeleton */}
-          <div className="flex items-center justify-between gap-4 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl">
+          <div className="flex items-center justify-between gap-4 p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl">
             <div className="flex items-center gap-3">
-              <SkeletonCircle size="40px" />
+              <SkeletonCircle size="36px" />
               <div className="space-y-2">
                 <SkeletonLine w="120px" h="16px" />
                 <SkeletonLine w="80px" h="11px" />
@@ -276,28 +277,28 @@ const WeatherScreen = ({ id }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6">
+          <div className="md:grid md:grid-cols-2 lg:grid-cols-[1.5fr_1fr] gap-3 md:gap-6">
             {/* Hero skeleton */}
-            <div className="p-5 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-4">
+            <div className="p-3 sm:p-5 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-3 sm:space-y-4">
               <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  <SkeletonCircle size="44px" />
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <SkeletonCircle size="36px" />
                   <div className="space-y-2">
                     <SkeletonLine w="100px" h="14px" />
                     <SkeletonLine w="70px" h="11px" />
                   </div>
                 </div>
                 <div className="space-y-2 text-left">
-                  <SkeletonLine w="80px" h="48px" />
+                  <SkeletonLine w="60px" h="36px" />
                   <SkeletonLine w="90px" h="12px" />
                 </div>
               </div>
-              <div className="pt-3 border-t border-gray-100 dark:border-gray-700/50 space-y-2">
+              <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50 space-y-2">
                 <SkeletonLine w="80px" h="12px" />
                 <SkeletonLine w="100%" h="36px" className="rounded-xl" />
                 <SkeletonLine w="90%" h="36px" className="rounded-xl" />
               </div>
-              <div className="pt-3 border-t border-gray-100 dark:border-gray-700/50">
+              <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50">
                 <div className="flex items-center justify-between mb-3">
                   <SkeletonLine w="100px" h="12px" />
                   <SkeletonLine w="50px" h="22px" className="rounded-lg" />
@@ -310,8 +311,21 @@ const WeatherScreen = ({ id }) => {
               </div>
             </div>
 
-            {/* Sidebar skeleton */}
-            <div className="space-y-3">
+            {/* Sidebar skeleton - mobile */}
+            <div className="md:hidden grid grid-cols-2 gap-2">
+              {[1,2,3,4,5].map(i => (
+                <div key={i} className="flex items-center gap-2 p-2.5 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-xl">
+                  <SkeletonCircle size="28px" />
+                  <div className="space-y-1.5 flex-1 min-w-0">
+                    <SkeletonLine w="40px" h="10px" />
+                    <SkeletonLine w="60px" h="14px" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Sidebar skeleton - desktop */}
+            <div className="hidden md:block space-y-3">
               {[1,2,3,4,5].map(i => (
                 <div key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl">
                   <SkeletonCircle size="40px" />
@@ -326,10 +340,10 @@ const WeatherScreen = ({ id }) => {
           </div>
 
           {/* Hourly skeleton */}
-          <div className="p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-3">
+          <div className="p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-2 sm:space-y-3">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2.5">
-                <SkeletonCircle size="32px" />
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <SkeletonCircle size="28px" />
                 <div className="space-y-1">
                   <SkeletonLine w="90px" h="14px" />
                   <SkeletonLine w="70px" h="11px" />
@@ -339,9 +353,9 @@ const WeatherScreen = ({ id }) => {
             </div>
             <div className="flex gap-0 overflow-hidden">
               {[1,2,3,4,5,6,7,8].map(i => (
-                <div key={i} className="flex flex-col items-center gap-2 py-3 px-3 min-w-[72px]">
+                  <div key={i} className="flex flex-col items-center gap-2 py-2.5 sm:py-3 px-2 sm:px-3 min-w-[56px] sm:min-w-[72px]">
                   <SkeletonLine w="28px" h="11px" />
-                  <SkeletonCircle size="22px" />
+                  <SkeletonCircle size="20px" />
                   <SkeletonLine w="20px" h="16px" />
                 </div>
               ))}
@@ -349,17 +363,17 @@ const WeatherScreen = ({ id }) => {
           </div>
 
           {/* Weekly skeleton */}
-          <div className="p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-3">
-            <div className="flex items-center gap-2.5">
-              <SkeletonCircle size="32px" />
+          <div className="p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-2 sm:space-y-3">
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <SkeletonCircle size="28px" />
               <SkeletonLine w="110px" h="14px" />
               <SkeletonLine w="50px" h="22px" className="rounded-full" />
             </div>
             <div className="flex gap-2 overflow-hidden">
               {[1,2,3,4,5,6,7].map(i => (
-                <div key={i} className="flex flex-col items-center gap-2 py-3 px-4 min-w-[88px]">
+                  <div key={i} className="flex flex-col items-center gap-2 py-2.5 sm:py-3 px-3 sm:px-4 min-w-[68px] sm:min-w-[88px]">
                   <SkeletonLine w="35px" h="12px" />
-                  <SkeletonCircle size="26px" />
+                  <SkeletonCircle size="22px" />
                   <SkeletonLine w="32px" h="11px" />
                   <SkeletonLine w="40px" h="16px" />
                 </div>
@@ -430,18 +444,15 @@ const WeatherScreen = ({ id }) => {
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         .scroll-fade-r { mask-image: linear-gradient(to left, transparent, black 20px, black calc(100% - 20px), transparent); -webkit-mask-image: linear-gradient(to left, transparent, black 20px, black calc(100% - 20px), transparent); }
       `}</style>
-      <Helmet>
-        <title>الطقس الزراعي | Hefno-Plant</title>
-        <meta name="description" content="توقعات الطقس الزراعي اليومية — درجة الحرارة، الرطوبة، سرعة الرياح، ومؤشرات مناسبة للزراعة." />
-      </Helmet>
+      <SEO title="الطقس الزراعي" description="توقعات الطقس الزراعي اليومية — درجة الحرارة، الرطوبة، سرعة الرياح، ومؤشرات مناسبة للزراعة." url="/weather" keywords="طقس زراعي, حالة الطقس للمزارعين, درجة الحرارة للمحاصيل, رطوبة التربة, الطقس المناسب للزراعة" breadcrumbs={makeBreadcrumbs('/weather')} jsonLd={makeWebApp('الطقس الزراعي', '/weather', 'توقعات الطقس الزراعي اليومية مع مؤشرات مناسبة للزراعة')} />
 
-      <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8 space-y-6 flex-1 overflow-y-auto">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6 flex-1 overflow-y-auto">
 
         {/* ─── Location Bar ─── */}
-        <div className="sticky top-0 z-10 flex items-center justify-between gap-4 flex-wrap p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl fade-in" style={{ animationDelay: '0s' }}>
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-4 flex-wrap p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl fade-in" style={{ animationDelay: '0s' }}>
           <div className="flex items-center gap-3">
-            <div className="size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
-              <MapPin size={18} className="text-blue-500" />
+            <div className="size-9 sm:size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
+              <MapPin size={16} className="text-blue-500" />
             </div>
             <div>
               <div className="text-base font-bold text-gray-900 dark:text-white">{location?.name || '—'}</div>
@@ -464,16 +475,16 @@ const WeatherScreen = ({ id }) => {
           </div>
         </div>
 
-        {/* ─── Main Grid ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6">
+        {/* ─── Main Content ─── */}
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-[1.5fr_1fr] gap-3 md:gap-6">
 
           {/* ─── Hero Card ─── */}
-          <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-4 lg:p-5 fade-in" style={{ animationDelay: '0.1s' }}>
-            <div className="flex items-start justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-3">
-                {getWeatherIcon(heroIcon, 44)}
+          <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-3 sm:p-4 lg:p-5 fade-in" style={{ animationDelay: '0.1s' }}>
+            <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between gap-3 xs:gap-4">
+              <div className="flex items-center gap-2 sm:gap-3">
+                {getWeatherIcon(heroIcon, 36)}
                 <div>
-                  <div className="text-base font-medium text-gray-900 dark:text-white">{cw?.description || '—'}</div>
+                  <div className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">{cw?.description || '—'}</div>
                   {weatherData?.general_status && (
                     <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1 mt-0.5">
                       {(() => {
@@ -487,7 +498,7 @@ const WeatherScreen = ({ id }) => {
                 </div>
               </div>
               <div className="text-left">
-                <span className="text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                <span className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                   {cw ? Math.round(cw.temperature) : '—'}
                   <span className="text-xl font-light text-gray-400 dark:text-gray-500 align-super">°C</span>
                 </span>
@@ -501,7 +512,7 @@ const WeatherScreen = ({ id }) => {
             </div>
 
             {weatherData?.farming_tips && weatherData.farming_tips.length > 0 && (
-              <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700/50">
+              <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50">
                 <div className="flex items-center gap-2 mb-2">
                   <Leaf size={14} className="text-primary" />
                   <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">نصائح زراعية</span>
@@ -517,7 +528,7 @@ const WeatherScreen = ({ id }) => {
               </div>
             )}
 
-            <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-700/50">
+            <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <Wheat size={14} className="text-amber-500" />
@@ -529,12 +540,17 @@ const WeatherScreen = ({ id }) => {
                 </button>
               </div>
               {userCrops.length > 0 ? (
-                <div className="flex flex-wrap gap-1.5">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5">
                   {userCrops.map((crop, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/30">
+                    <div key={idx} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/30 min-w-0">
                       <Sprout size={12} className="text-primary" />
                       <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{crop}</span>
-                      <span className="text-[10px] font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700/30 px-1.5 py-0.5 rounded">{'—'}</span>
+                      {(() => {
+                        const suit = weatherData?.crop_suitability?.find(s => s.crop === crop);
+                        return suit
+                          ? <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${suit.suitable ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20' : 'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20'}`} title={suit.reason}>{suit.suitable ? 'مناسب' : 'غير مناسب'}</span>
+                          : <span className="text-[10px] font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700/30 px-1.5 py-0.5 rounded">{'—'}</span>;
+                      })()}
                     </div>
                   ))}
                 </div>
@@ -547,7 +563,62 @@ const WeatherScreen = ({ id }) => {
           </div>
 
           {/* ─── Details Sidebar ─── */}
-          <div className="space-y-3 fade-in" style={{ animationDelay: '0.2s' }}>
+          {/* Mobile: compact 2-col stat badges */}
+          <div className="md:hidden grid grid-cols-2 gap-2 fade-in" style={{ animationDelay: '0.2s' }}>
+            {cw?.humidity !== undefined && (
+              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
+                <Droplets size={14} className="text-blue-500 shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-[10px] text-gray-400">الرطوبة</div>
+                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw.humidity}% · {cw.humidity > 70 ? 'مرتفعة' : cw.humidity > 40 ? 'متوسطة' : 'منخفضة'}</div>
+                </div>
+              </div>
+            )}
+            {cw?.wind_speed !== undefined && (
+              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
+                <Wind size={14} className="text-gray-500 shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-[10px] text-gray-400">الرياح</div>
+                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw.wind_speed} كم/س · {cw.wind_speed > 30 ? 'قوية' : cw.wind_speed > 15 ? 'متوسطة' : 'خفيفة'}</div>
+                </div>
+              </div>
+            )}
+            {fc?.avg_humidity !== undefined && (
+              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
+                <Gauge size={14} className="text-blue-500 shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-[10px] text-gray-400">رطوبة متوقعة</div>
+                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{fc.avg_humidity}%</div>
+                </div>
+              </div>
+            )}
+            {fc?.rain_probability !== undefined && (
+              <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
+                <CloudRain size={14} className="text-blue-500 shrink-0" />
+                <div className="min-w-0">
+                  <div className="text-[10px] text-gray-400">الأمطار</div>
+                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{fc.rain_probability}% · {fc.rain_probability > 70 ? 'مرتفع' : fc.rain_probability > 30 ? 'متوسط' : 'منخفض'}</div>
+                </div>
+              </div>
+            )}
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
+              <Eye size={14} className="text-blue-500 shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[10px] text-gray-400">الرؤية</div>
+                <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw?.visibility != null ? `${cw.visibility} كم` : '—'} · {cw?.visibility == null ? '—' : cw.visibility > 10 ? 'واضحة جداً' : cw.visibility > 5 ? 'متوسطة' : 'محدودة'}</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
+              <Sun size={14} className="text-amber-500 shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[10px] text-gray-400">UV</div>
+                <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw?.uv_index != null ? `${cw.uv_index}/11` : '—'} · {cw?.uv_index == null ? '—' : cw.uv_index > 7 ? 'مرتفع جداً' : cw.uv_index > 4 ? 'مرتفع' : 'منخفض'}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop: original sidebar cards */}
+          <div className="hidden md:block space-y-3 fade-in" style={{ animationDelay: '0.2s' }}>
             {cw?.humidity !== undefined && (
               <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl">
                 <div className="size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center shrink-0">
@@ -603,15 +674,15 @@ const WeatherScreen = ({ id }) => {
               </div>
             )}
             <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl">
-                <div className="size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center shrink-0">
-                  <Eye size={18} className="text-blue-500" />
+              <div className="size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center shrink-0">
+                <Eye size={18} className="text-blue-500" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[11px] font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide">الرؤية</div>
                 <div className="text-base font-bold text-gray-900 dark:text-white">{cw?.visibility != null ? `${cw.visibility} كم` : '—'}</div>
                 <div className="text-[11px] text-gray-500 dark:text-gray-400">
-                {cw?.visibility == null ? 'غير متوفر' : cw.visibility > 10 ? 'واضحة جداً' : cw.visibility > 5 ? 'متوسطة' : 'محدودة'}
-              </div>
+                  {cw?.visibility == null ? 'غير متوفر' : cw.visibility > 10 ? 'واضحة جداً' : cw.visibility > 5 ? 'متوسطة' : 'محدودة'}
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl">
@@ -631,26 +702,26 @@ const WeatherScreen = ({ id }) => {
 
         {/* ─── Hourly Forecast ─── */}
         {hourlyData.length > 0 && (
-          <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-4 fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2.5">
-                <div className="size-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
-                  <Clock size={16} className="text-blue-500" />
+          <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-3 sm:p-4 min-w-0 fade-in" style={{ animationDelay: '0.3s' }}>
+            <div className="flex items-center justify-between mb-2 sm:mb-3">
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <div className="size-8 sm:size-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
+                  <Clock size={14} className="text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">توقعات اليوم</h3>
-                  <p className="text-[11px] text-gray-400 dark:text-gray-500">الـ 12 ساعة القادمة</p>
+                  <h3 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">توقعات اليوم</h3>
+                  <p className="text-[10px] sm:text-[11px] text-gray-400 dark:text-gray-500">الـ 12 ساعة القادمة</p>
                 </div>
               </div>
-              <span className="text-[10px] font-medium px-2.5 py-1 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700">تقديري</span>
+              <span className="text-[10px] font-medium px-2 py-1 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700">تقديري</span>
             </div>
-            <div className="overflow-x-auto scrollbar-none scroll-fade-r">
-              <div className="flex gap-0 min-w-max">
+            <div className="md:overflow-x-auto md:scrollbar-none md:scroll-fade-r">
+              <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-6 gap-2 md:flex md:gap-0 md:min-w-max">
                 {hourlyData.map((h, i) => (
-                  <div key={i} className={`flex flex-col items-center gap-1.5 py-3 px-3 min-w-[72px] rounded-xl transition-colors ${i === 0 ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30' : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'}`}>
-                    <span className={`text-[11px] font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-400 dark:text-gray-500'}`}>{h.label}</span>
-                    {getWeatherIcon(h.icon, 22)}
-                    <span className="text-sm font-bold text-gray-900 dark:text-white">{h.temp}°</span>
+                  <div key={i} className={`flex flex-col items-center gap-1.5 py-2 sm:py-3 px-2 md:min-w-[72px] rounded-xl transition-colors ${i === 0 ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30' : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'}`}>
+                    <span className={`text-[10px] sm:text-[11px] font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-400 dark:text-gray-500'}`}>{h.label}</span>
+                    {getWeatherIcon(h.icon, 20)}
+                    <span className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">{h.temp}°</span>
                     {h.rain > 15 && (
                       <span className="text-[9px] text-blue-500 flex items-center gap-0.5">
                         <CloudRain size={9} />{h.rain}%
@@ -665,28 +736,28 @@ const WeatherScreen = ({ id }) => {
 
         {/* ─── 7-Day Forecast ─── */}
         {weeklyData.length > 0 && (
-          <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-4 fade-in" style={{ animationDelay: '0.4s' }}>
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2.5">
-                <div className="size-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
-                  <CalendarDays size={16} className="text-blue-500" />
+          <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-3 sm:p-4 min-w-0 fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex items-center mb-2 sm:mb-3">
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <div className="size-8 sm:size-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
+                  <CalendarDays size={14} className="text-blue-500" />
                 </div>
-                <h3 className="text-sm font-bold text-gray-900 dark:text-white">توقعات 7 أيام</h3>
-                <span className="text-[10px] font-medium px-2.5 py-1 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700">تقديري</span>
+                <h3 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">توقعات 7 أيام</h3>
+                <span className="text-[10px] font-medium px-2 py-1 rounded-full bg-gray-50 dark:bg-gray-800 text-gray-400 dark:text-gray-500 border border-gray-200 dark:border-gray-700">تقديري</span>
               </div>
             </div>
-            <div className="overflow-x-auto scrollbar-none scroll-fade-r">
-              <div className="flex gap-2 min-w-max sm:justify-between">
+            <div className="md:overflow-x-auto md:scrollbar-none md:scroll-fade-r">
+              <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-2 md:flex md:gap-2 md:min-w-max md:justify-between">
                 {weeklyData.map((d, i) => (
-                  <div key={i} className={`flex flex-col items-center gap-2 py-3 px-4 min-w-[88px] rounded-xl transition-colors ${i === 0 ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30' : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'}`}>
-                    <span className={`text-xs font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-700 dark:text-gray-300'}`}>{d.day}</span>
-                    {getWeatherIcon(d.icon, 26)}
+                  <div key={i} className={`flex flex-col items-center gap-2 py-2.5 sm:py-3 px-3 sm:px-4 md:min-w-[88px] rounded-xl transition-colors ${i === 0 ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30' : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'}`}>
+                    <span className={`text-[11px] sm:text-xs font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-700 dark:text-gray-300'}`}>{d.day}</span>
+                    {getWeatherIcon(d.icon, 22)}
                     <div className="flex items-center gap-1 text-[10px] text-blue-500 font-medium">
                       <CloudRain size={9} /><span>{d.rain}%</span>
                     </div>
                     <div className="flex gap-1.5 items-center">
-                      <span className="text-sm font-bold text-gray-900 dark:text-white">{d.high}°</span>
-                      <span className="text-xs font-medium text-gray-400 dark:text-gray-500">{d.low}°</span>
+                      <span className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">{d.high}°</span>
+                      <span className="text-[11px] sm:text-xs font-medium text-gray-400 dark:text-gray-500">{d.low}°</span>
                     </div>
                   </div>
                 ))}
@@ -699,14 +770,14 @@ const WeatherScreen = ({ id }) => {
         <div className="space-y-6 fade-in" style={{ animationDelay: '0.5s' }}>
           {weatherData?.alerts && weatherData.alerts.length > 0 && (
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <div className="size-9 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 grid place-items-center">
-                    <AlertTriangle size={16} className="text-red-500" />
+              <div className="flex items-center justify-between mb-2 sm:mb-3">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="size-8 sm:size-9 rounded-lg bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 grid place-items-center">
+                    <AlertTriangle size={14} className="text-red-500" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-gray-900 dark:text-white">تحذيرات زراعية</h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                    <h3 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">تحذيرات زراعية</h3>
+                    <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400">
                       {weatherData.alerts.length === 1
                         ? 'تحذير واحد يتطلب انتباهك'
                         : `${weatherData.alerts.length} تحذيرات تتطلب انتباهك`}
@@ -762,14 +833,14 @@ const WeatherScreen = ({ id }) => {
 
           {weatherData?.recommendations && weatherData.recommendations.length > 0 && (
             <div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <div className="size-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
-                    <Lightbulb size={16} className="text-blue-500" />
+              <div className="flex items-center justify-between mb-2 sm:mb-3">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="size-8 sm:size-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
+                    <Lightbulb size={14} className="text-blue-500" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-gray-900 dark:text-white">توصيات</h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                    <h3 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">توصيات</h3>
+                    <p className="text-[11px] sm:text-xs text-gray-500 dark:text-gray-400">
                       {weatherData.recommendations.length === 1
                         ? 'توصية واحدة بناءً على حالة الطقس'
                         : `${weatherData.recommendations.length} توصيات بناءً على حالة الطقس`}
