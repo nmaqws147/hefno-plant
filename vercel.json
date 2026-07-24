@@ -46,7 +46,7 @@
         {
           "type": "header",
           "key": "user-agent",
-          "value": "(Twitterbot|facebookexternalhit|LinkedInBot|WhatsApp|TelegramBot|Discordbot|Slack|Discourse|Facebot)"
+          "value": ".*(Twitterbot|facebookexternalhit|LinkedInBot|WhatsApp|TelegramBot|Discordbot|Slack|Discourse|Facebot).*"
         }
       ]
     },
