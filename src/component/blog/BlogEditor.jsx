@@ -32,6 +32,7 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const rawInputRef = useRef(null);
   const bodyFileInputRef = useRef(null);
+  const cursorPosRef = useRef(null);
 
   useEffect(() => {
     if (post) {
@@ -169,16 +170,17 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
       if (!res.ok) throw new Error(data.error || 'Upload failed');
       const ta = rawInputRef.current;
       if (ta) {
-        const start = ta.selectionStart;
-        const end = ta.selectionEnd;
-        const before = rawText.slice(0, start);
-        const after = rawText.slice(end);
+        const insertAt = cursorPosRef.current ?? rawText.length;
+        const before = rawText.slice(0, insertAt);
+        const after = rawText.slice(insertAt);
         const alt = file.name.replace(/\.[^.]+$/, '').replace(/[_-]/g, ' ');
         const markdown = `![${alt}](${data.url})\n`;
         setRawText(before + markdown + after);
+        cursorPosRef.current = null;
         setTimeout(() => {
           ta.focus();
-          ta.selectionStart = ta.selectionEnd = start + markdown.length;
+          const newPos = insertAt + markdown.length;
+          ta.selectionStart = ta.selectionEnd = newPos;
         }, 0);
       }
     } catch (err) {
@@ -231,7 +233,11 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
             <div className="flex items-center gap-1 mb-2">
               <button
                 type="button"
-                onClick={() => bodyFileInputRef.current?.click()}
+                onClick={() => {
+                  const ta = rawInputRef.current;
+                  cursorPosRef.current = ta ? ta.selectionStart : rawText.length;
+                  bodyFileInputRef.current?.click();
+                }}
                 disabled={insertingImg}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors disabled:opacity-50"
               >
