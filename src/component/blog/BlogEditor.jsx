@@ -202,6 +202,7 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
 
   return (
     <div>
+      <input ref={bodyFileInputRef} type="file" accept="image/*" onChange={handleBodyImageSelect} className="hidden" />
       <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-6">
         {post?.id ? 'Edit Post' : 'New Post'}
       </h3>
@@ -361,7 +362,6 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
               </button>
             )}
             <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileSelect} className="hidden" />
-            <input ref={bodyFileInputRef} type="file" accept="image/*" onChange={handleBodyImageSelect} className="hidden" />
           </div>
 
           {/* HTML Preview */}
