@@ -1,6 +1,6 @@
 // App.jsx
 import { lazy, Suspense, useEffect } from 'react';
-import { Route, BrowserRouter as Router, Routes, useLocation } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes, useLocation, Outlet } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from './component/SEO';
 import { Toaster } from 'sonner';
@@ -85,6 +85,14 @@ const Loader = () => (
   </div>
 );
 
+const PublicContentLayout = () => (
+  <main className="main-content main-background">
+    <ErrorBoundary>
+      <Outlet />
+    </ErrorBoundary>
+  </main>
+);
+
 // 📦 Main Content
 const AppContent = () => {
   const { loading, isAdmin } = useAuth();
@@ -158,73 +166,62 @@ const AppContent = () => {
           <Route path="/admin-panel" element={<ProtectedRoute adminOnly><AdminPanel /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
 
-          {/* باقي الصفحات المحمية */}
-          <Route
-            path="*"
-            element={
-              <ProtectedRoute>
-                <main className="main-content main-background">
-                    <ErrorBoundary>
-                      <Routes>
-                      <Route path="/diagnose" element={<DiagnoseScreen />} />
-                      <Route path="/weather" element={<WeatherScreen />} />
-                      <Route path="/knowledge-base/resources" element={<ResourcesPage />} />
-                      <Route path="/program-planner" element={<FertilizerPlanner />} />
+          {/* Public content pages (no login required) wrapped in layout */}
+          <Route element={<PublicContentLayout />}>
+            <Route path="/diagnose" element={<DiagnoseScreen />} />
+            <Route path="/weather" element={<WeatherScreen />} />
+            <Route path="/knowledge-base/resources" element={<ResourcesPage />} />
+            <Route path="/program-planner" element={<FertilizerPlanner />} />
 
-                      {/* Knowledge Base */}
-                      <Route path="/knowledge-base" element={<KnowledgeLayout />}>
-                        <Route index element={<KnowledgeBase />} />
-                        <Route path="calendar" element={<AgriculturalCalendarPage />} />
-                        <Route path="plant-elements" element={<PlantNutrientsPage />} />
-                        <Route path="fertilizer" element={<FertilizersPage />} />
-                        <Route path="soil-irri" element={<SoilsPage />} />
-                        <Route path="weeds" element={<WeedsPage />} />
-                        <Route path="plants-crops" element={<PlantsPage />} />
-                        <Route path="academic" element={<AcademicPage />} />
-                        <Route path="food-safety" element={<FoodSafetyPage />} />
-                        <Route path="honey-bees" element={<HoneyBeesPage />} />
-                        <Route path="diseases" element={<DiseasesPage />} />
+            {/* Knowledge Base */}
+            <Route path="/knowledge-base" element={<KnowledgeLayout />}>
+              <Route index element={<KnowledgeBase />} />
+              <Route path="calendar" element={<AgriculturalCalendarPage />} />
+              <Route path="plant-elements" element={<PlantNutrientsPage />} />
+              <Route path="fertilizer" element={<FertilizersPage />} />
+              <Route path="soil-irri" element={<SoilsPage />} />
+              <Route path="weeds" element={<WeedsPage />} />
+              <Route path="plants-crops" element={<PlantsPage />} />
+              <Route path="academic" element={<AcademicPage />} />
+              <Route path="food-safety" element={<FoodSafetyPage />} />
+              <Route path="honey-bees" element={<HoneyBeesPage />} />
+              <Route path="diseases" element={<DiseasesPage />} />
 
-                        {/* الأمراض */}
-                        <Route path="diseases/bacteria" element={<BacteriaDiseasesPage />} />
-                        <Route path="diseases/viruses" element={<VirusesDiseasesPage />} />
-                        <Route path="diseases/nematodes" element={<NematodesDiseasesPage />} />
-                        <Route path="diseases/parasitic_plants" element={<ParasiticPlantsPage />} />
-                        <Route path="diseases/physiological_disorders" element={<PhysiologicalDisordersPage />} />
-                        <Route path="diseases/fungi" element={<FungalClassificationPage />} />
-                        <Route path="diseases/fungi/oomy" element={<OomycotaDiseasesPage />} />
-                        <Route path="diseases/fungi/zygo" element={<ZygomycotaDiseasesPage />} />
-                        <Route path="diseases/fungi/asco" element={<AscomycotaDiseasesPage />} />
-                        <Route path="diseases/fungi/basi" element={<BasidiomycotaDiseasesPage />} />
+              {/* الأمراض */}
+              <Route path="diseases/bacteria" element={<BacteriaDiseasesPage />} />
+              <Route path="diseases/viruses" element={<VirusesDiseasesPage />} />
+              <Route path="diseases/nematodes" element={<NematodesDiseasesPage />} />
+              <Route path="diseases/parasitic_plants" element={<ParasiticPlantsPage />} />
+              <Route path="diseases/physiological_disorders" element={<PhysiologicalDisordersPage />} />
+              <Route path="diseases/fungi" element={<FungalClassificationPage />} />
+              <Route path="diseases/fungi/oomy" element={<OomycotaDiseasesPage />} />
+              <Route path="diseases/fungi/zygo" element={<ZygomycotaDiseasesPage />} />
+              <Route path="diseases/fungi/asco" element={<AscomycotaDiseasesPage />} />
+              <Route path="diseases/fungi/basi" element={<BasidiomycotaDiseasesPage />} />
 
-                        {/* الحشرات */}
-                        <Route path="insects" element={<InsectsPageNew />} />
-                        <Route path="insects/:orderId" element={<InsectOrderPage />} />
-                        <Route path="insects/public-health-pests" element={<PublicHealthPestsPage />} />
-                        <Route path="insects/nematoda" element={<NematodaPage />} />
+              {/* الحشرات */}
+              <Route path="insects" element={<InsectsPageNew />} />
+              <Route path="insects/:orderId" element={<InsectOrderPage />} />
+              <Route path="insects/public-health-pests" element={<PublicHealthPestsPage />} />
+              <Route path="insects/nematoda" element={<NematodaPage />} />
 
-                        {/* النيماتودا */}
-                        <Route path="nematoda-species" element={<NematodaSpeciesListPage />} />
-                        <Route path="nematoda-species/:speciesId" element={<NematodaSpeciesDetailPage />} />
+              {/* النيماتودا */}
+              <Route path="nematoda-species" element={<NematodaSpeciesListPage />} />
+              <Route path="nematoda-species/:speciesId" element={<NematodaSpeciesDetailPage />} />
 
-                        {/* المبيدات */}
-                        <Route path="pesticides" element={<PesticidesHub />} />
-                        <Route path="pesticides/group/:groupCode" element={<PesticideGroupPage />} />
-                        <Route path="pesticides/:categoryId" element={<PesticidesCategoryPage />} />
-                      </Route>
-                      <Route path="/blog" element={<BlogPage />} />
-                      <Route path="/blog/:slug" element={<BlogPostPage />} />
+              {/* المبيدات */}
+              <Route path="pesticides" element={<PesticidesHub />} />
+              <Route path="pesticides/group/:groupCode" element={<PesticideGroupPage />} />
+              <Route path="pesticides/:categoryId" element={<PesticidesCategoryPage />} />
+            </Route>
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
 
-                      <Route path="/privacy" element={<PrivacyPage />} />
-                      <Route path="/terms" element={<TermsPage />} />
-                      <Route path="/about" element={<AboutPage />} />
-                      <Route path="*" element={<NotFoundPage />} />
-                    </Routes>
-                    </ErrorBoundary>
-                </main>
-              </ProtectedRoute>
-            }
-          />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
         </Routes>
       </Suspense>
 

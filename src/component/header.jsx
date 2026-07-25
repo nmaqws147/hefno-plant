@@ -98,18 +98,14 @@ const Header = () => {
 
   const { user, isAdmin, logout } = useAuth();
 
-  const navLinks = user
-    ? [
-        { name: 'الرئيسية', path: '/', isInternal: false, sectionId: null },
-        { name: 'قاعدة المعرفة', path: '/knowledge-base', isInternal: false, sectionId: null },
-        { name: 'تشخيص النبات', path: '/diagnose', isInternal: false },
-        { name: 'الطقس', path: '/weather', isInternal: false },
-        { name: 'المقالات', path: '/blog', isInternal: false },
-        ...(isAdmin ? [{ name: 'لوحة التحكم', path: '/admin-panel', isInternal: false }] : []),
-      ]
-    : [
-        { name: 'الرئيسية', path: '/', isInternal: false, sectionId: null },
-      ];
+  const navLinks = [
+    { name: 'الرئيسية', path: '/', isInternal: false, sectionId: null },
+    { name: 'قاعدة المعرفة', path: '/knowledge-base', isInternal: false, sectionId: null },
+    { name: 'تشخيص النبات', path: '/diagnose', isInternal: false },
+    { name: 'الطقس', path: '/weather', isInternal: false },
+    { name: 'المقالات', path: '/blog', isInternal: false },
+    ...(isAdmin ? [{ name: 'لوحة التحكم', path: '/admin-panel', isInternal: false }] : []),
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
