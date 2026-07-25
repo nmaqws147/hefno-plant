@@ -19,8 +19,12 @@ function getResend() {
 
 async function sendViaResend(to, replyTo, subject, html) {
   const resend = getResend();
-  const from = `Hefno-Plant <${process.env.RESEND_FROM || 'noreply@hefnoplant.site'}>`;
+  const from = `Hefno-Plant <${process.env.RESEND_FROM || process.env.EMAIL_USER || 'noreply@hefnoplant.site'}>`;
   const result = await resend.emails.send({ from, to, replyTo, subject, html });
+  if (result.error) {
+    log('resend_error_response', { to, error: result.error });
+    throw new Error(typeof result.error === 'string' ? result.error : result.error.message || 'Resend returned an error');
+  }
   log('resend_sent', { to, messageId: result?.data?.id });
   return result;
 }
