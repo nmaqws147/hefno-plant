@@ -2,7 +2,51 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/*.js",
+      "src": "api/billing.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/ai.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/analyze-image.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/blog.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/contact.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/fertilizer-planner.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/knowledge-base.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/otp.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/sitemap.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/stats.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/upload-image.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/weather.js",
       "use": "@vercel/node"
     },
     {
@@ -36,8 +80,24 @@
       "dest": "api/sitemap.js"
     },
     {
-      "src": "/api/(.*)",
+      "src": "/api/(create-checkout-session|stripe-webhook|check-quota|check-expired|subscription|vodafone-cash/initiate|vodafone-cash/verify|billing)(/.*)?",
+      "dest": "api/billing.js"
+    },
+    {
+      "src": "/api/([^/]+)",
       "dest": "api/$1.js"
+    },
+    {
+      "src": "/api/otp/(send|verify)",
+      "dest": "api/otp.js"
+    },
+    {
+      "src": "/api/send-otp",
+      "dest": "api/otp.js"
+    },
+    {
+      "src": "/api/verify-otp",
+      "dest": "api/otp.js"
     },
     {
       "src": "/(.*)",

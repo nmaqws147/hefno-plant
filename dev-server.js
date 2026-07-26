@@ -40,37 +40,20 @@ const server = http.createServer((req, res) => {
       if (path === '/api/analyze-image' && method === 'POST') return await analyzeImageHandler(req, wr);
       if (path === '/.netlify/functions/fertilizer-planner') return fertilizerPlannerHandler(req, wr);
 
-      // Subscription & Payment routes
-      if (path === '/api/create-checkout-session' && method === 'POST') {
-        const h = require('./api/create-checkout-session');
-        return h(req, wr);
-      }
-      if (path === '/api/stripe-webhook' && method === 'POST') {
-        const h = require('./api/stripe-webhook');
-        return h(req, wr);
-      }
-      if (path === '/api/vodafone-cash/initiate' && method === 'POST') {
-        const h = require('./api/vodafone-cash/initiate');
-        return h(req, wr);
-      }
-      if (path === '/api/vodafone-cash/verify' && method === 'POST') {
-        const h = require('./api/vodafone-cash/verify');
-        return h(req, wr);
-      }
-      if (path === '/api/subscription' && method === 'GET') {
-        const h = require('./api/subscription');
-        return h(req, wr);
-      }
-      if (path === '/api/check-expired') {
-        const h = require('./api/check-expired');
+      // Subscription & Payment routes — consolidated in billing.js
+      if (path === '/api/create-checkout-session' || path === '/api/stripe-webhook' ||
+          path === '/api/vodafone-cash/initiate' || path === '/api/vodafone-cash/verify' ||
+          path === '/api/subscription' || path === '/api/check-expired' ||
+          path === '/api/check-quota' || path === '/api/billing') {
+        const h = require('./api/billing');
         return h(req, wr);
       }
       if (path === '/api/knowledge-base' && method === 'POST') {
         const h = require('./api/knowledge-base');
         return h(req, wr);
       }
-      if (path === '/api/check-quota' && method === 'POST') {
-        const h = require('./api/check-quota');
+      if (path === '/api/send-otp' || path === '/api/verify-otp') {
+        const h = require('./api/otp');
         return h(req, wr);
       }
 
