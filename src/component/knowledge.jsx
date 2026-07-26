@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Calendar, Beaker, FlaskConical, Sprout, Bug, BookOpen, Leaf, Brain, Sparkles, ShieldCheck, Grid3x3, ArrowLeft, Hexagon } from 'lucide-react';
 import QuotaBadge from './QuotaBadge';
+import QuotaModal from './QuotaModal';
 import heroLeaf from '../images/hero-leaf.jpeg';
 import kbCalendar from '../images/kb-calendar.jpeg';
 import kbNutrients from '../images/kb-nutrients.jpeg';
@@ -39,6 +41,7 @@ const StatCard = ({ value, label, icon: Icon }) => (
 );
 
 const KnowledgeBase = () => {
+  const [quotaFeature, setQuotaFeature] = useState(null);
   const sectionIcons = {
     diseases: Leaf,
     insects: Bug,
@@ -292,8 +295,9 @@ const KnowledgeBase = () => {
           </motion.section>
 
         <div className="flex justify-center mt-8">
-          <QuotaBadge featureId="knowledge_base" />
+          <QuotaBadge featureId="knowledge_base" onExhausted={() => setQuotaFeature('knowledge_base')} />
         </div>
+        <QuotaModal open={!!quotaFeature} featureId={quotaFeature} onClose={() => setQuotaFeature(null)} />
 
         {/* CATEGORY GRID */}
           <section className="mt-12 sm:mt-16 mb-12 sm:mb-16">
