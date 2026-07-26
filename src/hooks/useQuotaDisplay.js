@@ -9,7 +9,7 @@ const LABELS = {
 
 export function useQuotaDisplay(featureId) {
   const { isElite } = useAuth();
-  const { allowed, remaining, limit, loading, error, refresh, isPackageQuota } = useFeatureAccess(featureId);
+  const { allowed, remaining, limit, loading, error, refresh } = useFeatureAccess(featureId);
   const label = LABELS[featureId] || { name: featureId, unit: 'استخدام', period: '' };
 
   if (isElite || remaining === Infinity) {
@@ -31,9 +31,7 @@ export function useQuotaDisplay(featureId) {
   const exhausted = !loading && !allowed && remaining === 0;
 
   let displayText;
-  if (isPackageQuota) {
-    displayText = `${remaining} / ${limit} ${label.unit}`;
-  } else if (limit > 0) {
+  if (limit > 0) {
     displayText = `${remaining} / ${limit} ${label.unit}`;
   } else {
     displayText = `${limit} ${label.unit}`;

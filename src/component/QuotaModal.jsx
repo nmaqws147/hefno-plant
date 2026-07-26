@@ -1,16 +1,18 @@
 import { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { useFeatureAccess } from '../hooks/useFeatureAccess';
 
-const FEATURES = [
-  { id: 'ai_chatbot', name: 'المساعد الذكي', limit: 5, period: 'يومي' },
-  { id: 'knowledge_base', name: 'قاعدة المعرفة', limit: 5, period: 'أسبوعي' },
-  { id: 'disease_diagnosis', name: 'تشخيص الأمراض', limit: 1, period: 'أسبوعي' },
-];
+const FEATURE_INFO = {
+  ai_chatbot: { name: 'المساعد الذكي', unit: 'رسالة', period: 'يومي' },
+  knowledge_base: { name: 'قاعدة المعرفة', unit: 'استخدام', period: 'أسبوعي' },
+  disease_diagnosis: { name: 'تشخيص الأمراض', unit: 'تشخيص', period: 'أسبوعي' },
+};
 
 export default function QuotaModal({ open, onClose, featureId }) {
   const { user, isPremium } = useAuth();
   const navigate = useNavigate();
+  const { limit } = useFeatureAccess(featureId || '__none__');
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden';
@@ -20,7 +22,8 @@ export default function QuotaModal({ open, onClose, featureId }) {
 
   if (!open) return null;
 
-  const current = FEATURES.find((f) => f.id === featureId);
+  const info = FEATURE_INFO[featureId];
+  const displayLimit = Number.isFinite(limit) ? limit : (info?.period === 'يومي' ? 5 : 5);
 
   return (
     <div
@@ -56,9 +59,9 @@ export default function QuotaModal({ open, onClose, featureId }) {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1f2937', margin: 0 }}>
             لقد استنفذت حصتك
           </h2>
-          {current && (
+          {info && (
             <p style={{ fontSize: 14, color: '#6b7280', marginTop: 8 }}>
-              {current.name} — {current.limit} {current.period === 'يومي' ? 'رسائل' : 'استخدامات'} في {current.period === 'يومي' ? 'اليوم' : 'الأسبوع'}
+              {info.name} — {displayLimit} {info.period === 'يومي' ? 'رسائل' : 'استخدامات'} في {info.period === 'يومي' ? 'اليوم' : 'الأسبوع'}
             </p>
           )}
         </div>

@@ -4,7 +4,7 @@ import { getGuestId } from '../services/guestId';
 import { checkQuota } from '../services/quotaService';
 
 export function useFeatureAccess(featureId) {
-  const { user, isPremium, isElite, subscription } = useAuth();
+  const { user } = useAuth();
   const [quota, setQuota] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -37,34 +37,8 @@ export function useFeatureAccess(featureId) {
     }
   }, [cacheKey, refresh]);
 
-  if (isElite) {
-    return {
-      allowed: true,
-      remaining: Infinity,
-      limit: Infinity,
-      loading: false,
-      error: null,
-      refresh,
-      isElite: true,
-    };
-  }
-
-  if (isPremium && subscription?.packageQuotas?.[featureId]) {
-    const pq = subscription.packageQuotas[featureId];
-    return {
-      allowed: pq.remaining > 0,
-      remaining: pq.remaining,
-      limit: pq.total,
-      loading: false,
-      error: null,
-      refresh,
-      isPremium: true,
-      isPackageQuota: true,
-    };
-  }
-
   return {
-    allowed: isPremium || quota?.allowed,
+    allowed: quota?.allowed ?? false,
     remaining: quota?.remaining ?? 0,
     limit: quota?.limit ?? 0,
     loading,

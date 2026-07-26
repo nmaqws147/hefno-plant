@@ -87,21 +87,33 @@ async function getSubscription(userId) {
 
 async function consumePackageQuota(userId, featureId) {
   const db = getDb();
-  const sub = await getSubscription(userId);
-  if (!sub || sub.plan !== 'premium' || sub.status !== 'active' || !sub.packageQuotas) {
-    return { allowed: false, reason: 'no_active_premium' };
-  }
-  const quota = sub.packageQuotas[featureId];
-  if (!quota) return { allowed: false, reason: 'feature_not_in_package' };
-  if (quota.remaining <= 0) return { allowed: false, reason: 'quota_exhausted', total: quota.total, remaining: 0 };
+  const subRef = db.collection('subscriptions').doc(userId);
 
-  const remaining = quota.remaining - 1;
-  const updatePath = `packageQuotas.${featureId}.remaining`;
-  await db.collection('subscriptions').doc(userId).update({
-    [updatePath]: remaining,
-    updatedAt: new Date(),
-  });
-  return { allowed: true, remaining, total: quota.total };
+  try {
+    return await db.runTransaction(async (transaction) => {
+      const snap = await transaction.get(subRef);
+      if (!snap.exists) return { allowed: false, reason: 'no_active_premium' };
+
+      const sub = snap.data();
+      if (sub.plan !== 'premium' || sub.status !== 'active' || !sub.packageQuotas) {
+        return { allowed: false, reason: 'no_active_premium' };
+      }
+
+      const quota = sub.packageQuotas[featureId];
+      if (!quota) return { allowed: false, reason: 'feature_not_in_package' };
+      if (quota.remaining <= 0) return { allowed: false, reason: 'quota_exhausted', total: quota.total, remaining: 0 };
+
+      const remaining = quota.remaining - 1;
+      transaction.update(subRef, {
+        [`packageQuotas.${featureId}.remaining`]: remaining,
+        updatedAt: new Date(),
+      });
+      return { allowed: true, remaining, total: quota.total };
+    });
+  } catch (err) {
+    console.error('consumePackageQuota transaction failed:', err);
+    return { allowed: false, reason: 'transaction_failed' };
+  }
 }
 
 async function logEvent({ userId, event, plan, billingCycle, paymentProvider, details = {} }) {

@@ -21,6 +21,7 @@ const server = http.createServer((req, res) => {
   let body = '';
   req.on('data', c => body += c);
   req.on('end', async () => {
+    req.rawBody = body;
     try {
       req.body = body ? JSON.parse(body) : undefined;
     } catch {

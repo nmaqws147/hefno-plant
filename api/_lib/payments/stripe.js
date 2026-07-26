@@ -48,9 +48,10 @@ const provider = {
 
   async handleWebhook(req) {
     const sig = req.headers['stripe-signature'];
+    const rawBody = req.rawBody || (typeof req.body === 'string' ? req.body : JSON.stringify(req.body));
     let event;
     try {
-      event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+      event = stripe.webhooks.constructEvent(rawBody, sig, process.env.STRIPE_WEBHOOK_SECRET);
     } catch (err) {
       throw new Error(`Webhook signature verification failed: ${err.message}`);
     }

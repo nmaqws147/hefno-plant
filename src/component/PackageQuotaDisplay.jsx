@@ -45,7 +45,7 @@ export default function PackageQuotaDisplay({ featureId, onUpgrade }) {
             cursor: 'pointer',
           }}
         >
-          Upgrade
+          ترقية
         </button>
       )}
     </div>

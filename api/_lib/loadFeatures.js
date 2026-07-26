@@ -1,17 +1,21 @@
 const { getDb } = require('./firebaseAdmin');
 
-const db = getDb();
-
 let cache = null;
 let cacheTime = 0;
 const CACHE_TTL = 60000;
+
+function getFeaturesDb() {
+  const db = getDb();
+  if (!db) throw new Error('Firestore not available — Firebase not configured');
+  return db;
+}
 
 async function loadFeature(featureId) {
   const now = Date.now();
   if (cache && now - cacheTime < CACHE_TTL && cache[featureId]) {
     return cache[featureId];
   }
-  const doc = await db.collection('features').doc(featureId).get();
+  const doc = await getFeaturesDb().collection('features').doc(featureId).get();
   if (!doc.exists) return null;
   const feature = { id: doc.id, ...doc.data() };
   if (!cache) cache = {};
@@ -23,7 +27,7 @@ async function loadFeature(featureId) {
 async function loadAllFeatures() {
   const now = Date.now();
   if (cache && now - cacheTime < CACHE_TTL) return cache;
-  const snapshot = await db.collection('features').get();
+  const snapshot = await getFeaturesDb().collection('features').get();
   cache = {};
   snapshot.forEach(doc => { cache[doc.id] = { id: doc.id, ...doc.data() }; });
   cacheTime = now;

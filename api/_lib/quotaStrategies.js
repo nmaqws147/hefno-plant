@@ -50,22 +50,15 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
           return { allowed: true, remaining: Infinity, limit: Infinity };
         }
         if (sub.plan === 'premium' && sub.status === 'active') {
-          if (incrementIfAllowed) {
-            const result = await consumePackageQuota(userId, featureId);
-            if (!result.allowed) {
-              if (result.reason === 'quota_exhausted') {
-                return { allowed: false, remaining: 0, limit: result.total, error: 'quota_exhausted', isPremium: true };
-              }
-              if (result.reason === 'feature_not_in_package') {
-                if (feature.premiumUnlimited) {
-                  return { allowed: true, remaining: Infinity, limit: Infinity };
-                }
-              }
-            }
-            return { allowed: true, remaining: result.remaining, limit: result.total };
-          }
           const quota = sub.packageQuotas?.[featureId];
           if (quota) {
+            if (incrementIfAllowed) {
+              const result = await consumePackageQuota(userId, featureId);
+              if (!result.allowed) {
+                return { allowed: false, remaining: 0, limit: result.total, error: 'quota_exhausted', isPremium: true };
+              }
+              return { allowed: true, remaining: result.remaining, limit: result.total };
+            }
             return { allowed: quota.remaining > 0, remaining: quota.remaining, limit: quota.total };
           }
           if (feature.premiumUnlimited) {
@@ -74,13 +67,15 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
         }
         if (sub.plan === 'premium' && (sub.status === 'expired' || sub.status === 'cancelled')) {
           if (sub.expirationDate && new Date(sub.expirationDate.toDate?.() || sub.expirationDate) > new Date()) {
-            if (incrementIfAllowed) {
-              const result = await consumePackageQuota(userId, featureId);
-              if (!result.allowed) return { allowed: false, remaining: 0, limit: result.total, error: 'quota_exhausted', isPremium: true };
-              return { allowed: true, remaining: result.remaining, limit: result.total };
-            }
             const quota = sub.packageQuotas?.[featureId];
-            if (quota) return { allowed: quota.remaining > 0, remaining: quota.remaining, limit: quota.total };
+            if (quota) {
+              if (incrementIfAllowed) {
+                const result = await consumePackageQuota(userId, featureId);
+                if (!result.allowed) return { allowed: false, remaining: 0, limit: result.total, error: 'quota_exhausted', isPremium: true };
+                return { allowed: true, remaining: result.remaining, limit: result.total };
+              }
+              return { allowed: quota.remaining > 0, remaining: quota.remaining, limit: quota.total };
+            }
           }
         }
         if (!isPremium && sub.status === 'active' && sub.plan === 'premium') {
