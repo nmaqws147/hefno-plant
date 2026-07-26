@@ -1,4 +1,6 @@
-const { db } = require('./firebaseAdmin');
+const { getDb } = require('./firebaseAdmin');
+
+const db = getDb();
 
 let cache = null;
 let cacheTime = 0;

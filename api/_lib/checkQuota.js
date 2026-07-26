@@ -1,16 +1,20 @@
-const { Redis } = require('@upstash/redis');
 const { loadFeature } = require('./loadFeatures');
-const { db } = require('./firebaseAdmin');
+const { getDb } = require('./firebaseAdmin');
 
-const redis = new Redis({
-  url: process.env.REDIS_URL,
-  token: process.env.TOKEN,
-});
+let redis = null;
+try {
+  const { Redis } = require('@upstash/redis');
+  if (process.env.REDIS_URL && process.env.TOKEN) {
+    redis = new Redis({ url: process.env.REDIS_URL, token: process.env.TOKEN });
+  }
+} catch (_) {}
+
+const db = getDb();
 
 const UUID_V4_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 function fmtDate(d) {
-  return d.toISOString().split('T')[0];
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
 
 function getWeekStart(date) {
@@ -19,11 +23,6 @@ function getWeekStart(date) {
   d.setDate(d.getDate() - day + (day === 0 ? -6 : 1));
   d.setHours(0, 0, 0, 0);
   return fmtDate(d);
-}
-
-function resetDate(fromDate, hours) {
-  if (!fromDate) return new Date(Date.now() + hours * 3600000).toISOString();
-  return new Date(new Date(fromDate).getTime() + hours * 3600000).toISOString();
 }
 
 async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAllowed = false }) {
@@ -60,29 +59,25 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
 
     let dailyUsed = data.dailyUsed || 0;
     let weeklyUsed = data.weeklyUsed || 0;
-    let dailyReset = data.dailyResetAt?.toDate ? data.dailyResetAt.toDate() : null;
-    let weeklyReset = data.weeklyResetAt?.toDate ? data.weeklyResetAt.toDate() : null;
+    let dailyDate = data.dailyDate || null;
+    let weeklyDate = data.weeklyDate || null;
 
-    if (hasDaily && dailyReset) {
-      const hoursElapsed = (now - dailyReset) / 3600000;
-      if (hoursElapsed >= 24) { dailyUsed = 0; dailyReset = now; }
-    }
-    if (hasWeekly && weeklyReset) {
-      const daysElapsed = (now - weeklyReset) / 86400000;
-      if (daysElapsed >= 7) { weeklyUsed = 0; weeklyReset = now; }
-    }
+    if (hasDaily && dailyDate !== today) { dailyUsed = 0; dailyDate = today; }
+    if (hasWeekly && weeklyDate !== weekStart) { weeklyUsed = 0; weeklyDate = weekStart; }
 
     if (hasDaily && dailyUsed >= feature.dailyLimit) {
-      return { allowed: false, remaining: 0, limit: feature.dailyLimit, error: 'quota_exhausted', resetDate: resetDate(dailyReset, 24) };
+      const nextReset = dailyDate ? new Date(new Date(dailyDate).getTime() + 86400000).toISOString() : new Date(Date.now() + 86400000).toISOString();
+      return { allowed: false, remaining: 0, limit: feature.dailyLimit, error: 'quota_exhausted', resetDate: nextReset };
     }
     if (hasWeekly && weeklyUsed >= feature.weeklyLimit) {
-      return { allowed: false, remaining: 0, limit: feature.weeklyLimit, error: 'quota_exhausted', resetDate: resetDate(weeklyReset, 168) };
+      const nextReset = weeklyDate ? new Date(new Date(weeklyDate).getTime() + 604800000).toISOString() : new Date(Date.now() + 604800000).toISOString();
+      return { allowed: false, remaining: 0, limit: feature.weeklyLimit, error: 'quota_exhausted', resetDate: nextReset };
     }
 
     if (incrementIfAllowed) {
-      const update = { updatedAt: now };
-      if (hasDaily) { update.dailyUsed = dailyUsed + 1; update.dailyResetAt = dailyReset || now; }
-      if (hasWeekly) { update.weeklyUsed = weeklyUsed + 1; update.weeklyResetAt = weeklyReset || now; }
+      const update = { updatedAt: new Date().toISOString() };
+      if (hasDaily) { update.dailyUsed = dailyUsed + 1; update.dailyDate = today; }
+      if (hasWeekly) { update.weeklyUsed = weeklyUsed + 1; update.weeklyDate = weekStart; }
       await ref.set(update, { merge: true });
     }
 
@@ -93,6 +88,9 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
   } else if (guestId) {
     if (!UUID_V4_REGEX.test(guestId)) {
       return { allowed: false, error: 'invalid_guest_id' };
+    }
+    if (!redis) {
+      return { allowed: false, error: 'quota_unavailable' };
     }
     const key = `guest:${guestId}:usage`;
     const usage = (await redis.hgetall(key)) || {};
@@ -110,10 +108,10 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
     }
 
     if (hasDaily && dailyUsed >= feature.dailyLimit) {
-      return { allowed: false, remaining: 0, limit: feature.dailyLimit, error: 'quota_exhausted' };
+      return { allowed: false, remaining: 0, limit: feature.dailyLimit, error: 'quota_exhausted', resetDate: new Date(Date.now() + 86400000).toISOString() };
     }
     if (hasWeekly && weeklyUsed >= feature.weeklyLimit) {
-      return { allowed: false, remaining: 0, limit: feature.weeklyLimit, error: 'quota_exhausted' };
+      return { allowed: false, remaining: 0, limit: feature.weeklyLimit, error: 'quota_exhausted', resetDate: new Date(Date.now() + 604800000).toISOString() };
     }
 
     if (incrementIfAllowed) {

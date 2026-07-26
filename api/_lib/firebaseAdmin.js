@@ -51,4 +51,10 @@ async function isAdmin(token) {
   }
 }
 
-module.exports = { init, verifyToken, isAdmin, admin };
+function getDb() {
+  const fb = init();
+  if (!fb) return null;
+  return fb.firestore();
+}
+
+module.exports = { init, verifyToken, isAdmin, admin, getDb };
