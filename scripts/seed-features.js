@@ -29,11 +29,11 @@ const FEATURES = [
     displayName: 'Knowledge Base',
     order: 2,
     dailyLimit: null,
-    weeklyLimit: 5,
+    weeklyLimit: null,
     monthlyLimit: null,
     premiumUnlimited: true,
     premiumMonthlyQuota: 70,
-    isPublic: false,
+    isPublic: true,
     isEnabled: true,
   },
   {
