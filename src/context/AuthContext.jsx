@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState, useMemo } from 'react';
+import { createContext, useContext, useEffect, useState, useMemo, useCallback } from 'react';
 import { onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
 import { doc, setDoc, updateDoc, getDoc, serverTimestamp } from 'firebase/firestore';
 import { auth, db } from '../firebase';
@@ -14,6 +14,21 @@ export const AuthProvider = ({ children }) => {
   const isPremium = useMemo(() => {
     return subscription?.status === 'active' && subscription?.plan === 'premium';
   }, [subscription]);
+
+  const isElite = useMemo(() => {
+    return subscription?.status === 'active' && subscription?.plan === 'elite';
+  }, [subscription]);
+
+  const refreshSubscription = useCallback(async () => {
+    if (!user) return;
+    try {
+      const { getSubscription } = await import('../services/subscriptionService');
+      const sub = await getSubscription();
+      setSubscription(sub);
+    } catch {
+      setSubscription(null);
+    }
+  }, [user]);
 
   useEffect(() => {
     const unsubAuth = onAuthStateChanged(auth, async (firebaseUser) => {
@@ -93,7 +108,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, userProfile, role, isAdmin, loading, login, signup, logout, isPremium, subscription }}>
+    <AuthContext.Provider value={{ user, userProfile, role, isAdmin, loading, login, signup, logout, isPremium, isElite, subscription, refreshSubscription }}>
       {children}
     </AuthContext.Provider>
   );

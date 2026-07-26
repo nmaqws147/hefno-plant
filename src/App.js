@@ -77,6 +77,7 @@ const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AdminStats = lazy(() => import('./component/admin-stats'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
+const PricingPage = lazy(() => import('./pages/PricingPage'));
 
 const Loader = () => (
   <div className="page-loader">
@@ -165,6 +166,7 @@ const AppContent = () => {
           {/* الصفحات المحمية (تتطلب تسجيل دخول) */}
           <Route path="/admin-panel" element={<ProtectedRoute adminOnly><AdminPanel /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+          <Route path="/pricing" element={<PricingPage />} />
 
           {/* Public content pages (no login required) wrapped in layout */}
           <Route element={<PublicContentLayout />}>
