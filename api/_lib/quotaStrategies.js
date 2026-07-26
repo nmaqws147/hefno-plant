@@ -1,6 +1,6 @@
 const { getDb } = require('./firebaseAdmin');
 const { loadFeature } = require('./loadFeatures');
-const { consumePackageQuota } = require('./subscriptionService');
+const { consumePackageQuota, PREMIUM_MONTHLY_QUOTAS, getSubscription } = require('./subscriptionService');
 
 const UUID_V4_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -60,6 +60,24 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
               return { allowed: true, remaining: result.remaining, limit: result.total };
             }
             return { allowed: quota.remaining > 0, remaining: quota.remaining, limit: quota.total };
+          }
+          if (PREMIUM_MONTHLY_QUOTAS[featureId]) {
+            const defaultMonthly = PREMIUM_MONTHLY_QUOTAS[featureId];
+            const total = sub.billingCycle === 'yearly' ? defaultMonthly * 12 : defaultMonthly;
+            const now = new Date();
+            const db = getDb();
+            await db.collection('subscriptions').doc(userId).update({
+              [`packageQuotas.${featureId}`]: { total, remaining: total, resetDate: now },
+              updatedAt: now,
+            });
+            if (incrementIfAllowed) {
+              const result = await consumePackageQuota(userId, featureId);
+              if (!result.allowed) {
+                return { allowed: false, remaining: 0, limit: result.total, error: 'quota_exhausted', isPremium: true };
+              }
+              return { allowed: true, remaining: result.remaining, limit: result.total };
+            }
+            return { allowed: total > 0, remaining: total, limit: total };
           }
           if (feature.premiumUnlimited) {
             return { allowed: true, remaining: Infinity, limit: Infinity };

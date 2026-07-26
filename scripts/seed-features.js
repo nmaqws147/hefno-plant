@@ -43,7 +43,7 @@ const FEATURES = [
     dailyLimit: null,
     weeklyLimit: 1,
     monthlyLimit: null,
-    premiumUnlimited: true,
+    premiumUnlimited: false,
     premiumMonthlyQuota: 2,
     isPublic: false,
     isEnabled: true,
