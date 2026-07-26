@@ -38,6 +38,15 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
     return { allowed: true, remaining: Infinity, limit: Infinity };
   }
 
+  if (userId) {
+    try {
+      const userSnap = await db.collection('users').doc(userId).get();
+      if (userSnap.exists && userSnap.data().role === 'admin') {
+        return { allowed: true, remaining: Infinity, limit: Infinity };
+      }
+    } catch (_) {}
+  }
+
   const hasDaily = feature.dailyLimit != null;
   const hasWeekly = feature.weeklyLimit != null;
   const now = new Date();
