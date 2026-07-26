@@ -1,63 +1,7 @@
 
-const { Redis } = require('@upstash/redis');
-const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-
-//  Redis
-const redis = new Redis({
-  url: process.env.REDIS_URL,
-  token: process.env.TOKEN
-});
-
-// دالة الـ Rate Limit
-async function checkRateLimit(fingerprint, limit = 20) {
-  const today = new Date().toISOString().slice(0, 10);
-  const key = `chat:${fingerprint}:${today}`;
-  const count = (await redis.get(key)) || 0;
-
-  if (count >= limit) {
-    return {
-      allowed: false,
-      remaining: 0,
-      reset: 86400,
-      limit: limit
-    };
-  }
-
-  await redis.incr(key);
-  await redis.expire(key, 86400);
-
-  return {
-    allowed: true,
-    remaining: limit - count - 1,
-    reset: 86400,
-    limit: limit
-  };
-}
-
-// دالة للحصول على FingerPrint المستخدم
-function getFingerprint(req) {
-  const headers = req.headers;
-  
-  const ip = headers["x-forwarded-for"] || 
-             headers["client-ip"] || 
-             headers["x-real-ip"] || 
-             "unknown";
-  
-  const userAgent = headers["user-agent"] || "unknown";
-  
-  let bodyFingerprint = "";
-  try {
-    bodyFingerprint = req.body?.userId || req.body?.sessionId || "";
-  } catch(e) {}
-  
-  const fingerprint = bodyFingerprint 
-    ? `session:${bodyFingerprint}`
-    : `ip:${ip}:${userAgent.substring(0, 30)}`;
-  
-  return crypto.createHash('md5').update(fingerprint).digest('hex');
-}
+const { checkQuota } = require('./_lib/checkQuota');
 
 // ==========  التعامل مع JSON ==========
 
@@ -581,19 +525,32 @@ module.exports = async function handler(req, res) {
             return res.status(405).json({ error: "Method Not Allowed" });
         }
 
-        // ✅ الحصول على البصمة
-        const fingerprint = getFingerprint(req);
-        const rateLimit = await checkRateLimit(fingerprint, 10);
-        
-        if (!rateLimit.allowed) {
+        // ✅ التحقق من الحصة (quota)
+        const authHeader = req.headers.authorization;
+        let userId = null;
+        let isPremium = false;
+        if (authHeader?.startsWith('Bearer ')) {
+            try {
+                const { verifyToken } = require('./_lib/firebaseAdmin');
+                const decoded = await verifyToken(authHeader.slice(7));
+                userId = decoded.uid;
+            } catch (_) {}
+        }
+        const guestId = req.headers['x-guest-id'] || null;
+
+        const quota = await checkQuota({
+            featureId: 'ai_chatbot',
+            userId,
+            guestId,
+            isPremium,
+            incrementIfAllowed: true,
+        });
+
+        if (!quota.allowed) {
             return res.status(429).json({
                 error: true,
-                message: `❌ تجاوزت الحد المسموح به (${rateLimit.limit} سؤال/يوم). الرجاء المحاولة غداً.`,
-                rateLimit: {
-                    remaining: rateLimit.remaining,
-                    limit: rateLimit.limit,
-                    resetInHours: Math.ceil(rateLimit.reset / 3600)
-                }
+                message: `❌ وصلت للحد المسموح به (${quota.limit}). الرجاء المحاولة لاحقاً أو ترقية حسابك.`,
+                quota,
             });
         }
 

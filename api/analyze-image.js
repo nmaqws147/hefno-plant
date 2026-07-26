@@ -1,11 +1,5 @@
 
-const { Redis } = require('@upstash/redis');
-const crypto = require('crypto');
-
-const redis = new Redis({
-  url: process.env.REDIS_URL,
-  token: process.env.TOKEN
-});
+const { checkQuota } = require('./_lib/checkQuota');
 
 const API_KEYS = [
   process.env.IMAGE_AI1,
@@ -125,53 +119,6 @@ const PROMPT = `أنت خبير عالمي متخصص في تشخيص أمراض
 ⚡ قواعد صارمة:
 1. الرد JSON فقط - لا شيء خارجه مطلقاً.
 2. إذا كان النبات سليماً: اجعل healthStatus="سليم" و المصفوفات فارغة.`;
-
-async function checkAndConsumeRateLimit(fingerprint, limit = 2) {
-  const today = new Date().toISOString().slice(0, 10);
-  const key = `hefno:analyze:${fingerprint}:${today}`;
-  const count = (await redis.get(key)) || 0;
-
-  if (count >= limit) {
-    return {
-      allowed: false,
-      remaining: 0,
-      reset: 86400,
-      limit: limit,
-      used: parseInt(count)
-    };
-  }
-
-  return {
-    allowed: true,
-    remaining: limit - count,
-    limit: limit,
-    used: parseInt(count),
-    key: key,
-    reset: 86400
-  };
-}
-
-async function consumeRateLimit(key) {
-  await redis.incr(key);
-  await redis.expire(key, 86400);
-}
-
-function getFingerprint(req) {
-  const headers = req.headers;
-  const ip = headers["x-forwarded-for"] || headers["client-ip"] || headers["x-real-ip"] || "unknown";
-  const userAgent = headers["user-agent"] || "unknown";
-  
-  let bodyFingerprint = "";
-  try {
-    bodyFingerprint = req.body?.userId || req.body?.sessionId || "";
-  } catch(e) {}
-  
-  const fingerprint = bodyFingerprint 
-    ? `session:${bodyFingerprint}`
-    : `ip:${ip}:${userAgent.substring(0, 30)}`;
-  
-  return crypto.createHash('md5').update(fingerprint).digest('hex');
-}
 
 async function callGeminiSingle(modelConfig, apiKey, base64Image, retries = 1) {
   const controller = new AbortController();
@@ -303,16 +250,31 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    const fingerprint = getFingerprint(req);
-    const rateLimitCheck = await checkAndConsumeRateLimit(fingerprint, 2);
-    
-    if (!rateLimitCheck.allowed) {
+    const authHeader = req.headers.authorization;
+    let userId = null;
+    let isPremium = false;
+    if (authHeader?.startsWith('Bearer ')) {
+      try {
+        const { verifyToken } = require('./_lib/firebaseAdmin');
+        const decoded = await verifyToken(authHeader.slice(7));
+        userId = decoded.uid;
+      } catch (_) {}
+    }
+    const guestId = req.headers['x-guest-id'] || null;
+
+    const quota = await checkQuota({
+      featureId: 'disease_diagnosis',
+      userId,
+      guestId,
+      isPremium,
+      incrementIfAllowed: true,
+    });
+
+    if (!quota.allowed) {
       return res.status(429).json({
-        error: "تجاوزت الحد المسموح به اليوم",
-        message: `يمكنك تحليل صورتين فقط في اليوم مجاناً.`,
-        limit: rateLimitCheck.limit,
-        remaining: rateLimitCheck.remaining,
-        resetInHours: Math.ceil(rateLimitCheck.reset / 3600)
+        error: "وصلت للحد المسموح به",
+        message: `يمكنك استخدام التشخيص ${quota.limit} مرة في الأسبوع.`,
+        quota,
       });
     }
 
@@ -326,8 +288,6 @@ module.exports = async function handler(req, res) {
       });
     }
 
-    await consumeRateLimit(rateLimitCheck.key);
-    
     const totalDuration = Date.now() - startTime;
 
     const validatedResult = {
@@ -348,11 +308,10 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({
       ...validatedResult,
-      rateLimit: {
-        remaining: rateLimitCheck.remaining - 1,
-        limit: rateLimitCheck.limit,
-        resetInHours: Math.ceil(rateLimitCheck.reset / 3600),
-        used: rateLimitCheck.used + 1
+      quota: {
+        remaining: quota.remaining,
+        limit: quota.limit,
+        resetIn: quota.resetIn,
       },
       metadata: {
         processingTime: totalDuration,
