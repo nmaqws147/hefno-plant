@@ -24,6 +24,7 @@ function assertEq(actual, expected, msg) {
 // ========== IN-MEMORY STORES ==========
 const featureStore = {};
 const userStore = {};
+const subscriptionStore = {};
 
 class MockRedis {
   constructor() { this.store = {}; }
@@ -61,6 +62,7 @@ function resetAll() {
   // Only clear runtime user and usage data.
   Object.keys(userStore).forEach(k => delete userStore[k]);
   Object.keys(usageStore).forEach(k => delete usageStore[k]);
+  Object.keys(subscriptionStore).forEach(k => delete subscriptionStore[k]);
 }
 
 // ========== FEATURE CONFIG ==========
@@ -99,7 +101,14 @@ async function testCheckQuota({ featureId, userId, guestId, isPremium, increment
 
   if (userId) {
     const userData = userStore[userId];
+    const subData = subscriptionStore[userId];
     if (userData && userData.role === 'admin') {
+      return { allowed: true, remaining: Infinity, limit: Infinity };
+    }
+    if (!isPremium && subData && subData.status === 'active' && subData.plan === 'premium') {
+      isPremium = true;
+    }
+    if (isPremium && feature.premiumUnlimited) {
       return { allowed: true, remaining: Infinity, limit: Infinity };
     }
   }
@@ -376,8 +385,8 @@ async function runTests() {
     }
   }
 
-  // ---- SECTION 14: PREMIUM BYPASS ----
-  console.log('\n--- 14. PREMIUM BYPASS ---');
+  // ---- SECTION 14: PREMIUM BYPASS (via isPremium param) ----
+  console.log('\n--- 14. PREMIUM BYPASS (param) ---');
   {
     const r = await testCheckQuota({ featureId: 'ai_chatbot', userId: premiumUserId, isPremium: true, incrementIfAllowed: true }, mockRedis);
     assertEq(r.allowed, true, 'Premium bypass works for chatbot');
@@ -385,6 +394,35 @@ async function runTests() {
     const r2 = await testCheckQuota({ featureId: 'disease_diagnosis', userId: premiumUserId, isPremium: true, incrementIfAllowed: true }, mockRedis);
     assertEq(r2.allowed, true, 'Premium bypass works for diagnosis');
     assertEq(r2.remaining, Infinity, 'Premium bypass returns Infinity');
+  }
+
+  // ---- SECTION 14b: PREMIUM AUTO-DETECTION (subscription doc) ----
+  console.log('\n--- 14b. PREMIUM AUTO-DETECTION ---');
+  {
+    resetAll(); mockRedis._reset();
+    subscriptionStore[premiumUserId] = { status: 'active', plan: 'premium', startDate: new Date().toISOString() };
+    const r = await testCheckQuota({ featureId: 'ai_chatbot', userId: premiumUserId, incrementIfAllowed: true }, mockRedis);
+    assertEq(r.allowed, true, 'Premium auto-detection works without isPremium param');
+    assertEq(r.remaining, Infinity, 'Premium auto-detection returns Infinity');
+
+    const r2 = await testCheckQuota({ featureId: 'disease_diagnosis', userId: premiumUserId, incrementIfAllowed: true }, mockRedis);
+    assertEq(r2.allowed, true, 'Premium auto-detection works for diagnosis');
+    assertEq(r2.remaining, Infinity, 'Premium auto-detection returns Infinity');
+  }
+
+  // ---- SECTION 14c: EXPIRED SUBSCRIPTION ----
+  console.log('\n--- 14c. EXPIRED SUBSCRIPTION ---');
+  {
+    resetAll(); mockRedis._reset();
+    userStore[authUserId] = { role: 'user' };
+    subscriptionStore[authUserId] = { status: 'expired', plan: 'premium', endDate: new Date().toISOString() };
+    for (let i = 1; i <= 5; i++) {
+      const r = await testCheckQuota({ featureId: 'ai_chatbot', userId: authUserId, incrementIfAllowed: true }, mockRedis);
+      assertEq(r.allowed, true, `Expired sub user can use chatbot ${i}/5`);
+      assertEq(r.remaining, 5 - i, `Expired sub user has ${5 - i} remaining after ${i} uses`);
+    }
+    const r6 = await testCheckQuota({ featureId: 'ai_chatbot', userId: authUserId, incrementIfAllowed: true }, mockRedis);
+    assertEq(r6.allowed, false, 'Expired sub user blocked after 5 uses');
   }
 
   // ---- SECTION 15: UNIDENTIFIED USER ----

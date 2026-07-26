@@ -39,11 +39,20 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
 
   if (userId) {
     try {
-      const userSnap = await db.collection('users').doc(userId).get();
+      const [userSnap, subSnap] = await Promise.all([
+        db.collection('users').doc(userId).get(),
+        db.collection('subscriptions').doc(userId).get(),
+      ]);
       if (userSnap.exists && userSnap.data().role === 'admin') {
         return { allowed: true, remaining: Infinity, limit: Infinity };
       }
+      if (!isPremium && subSnap.exists && subSnap.data().status === 'active' && subSnap.data().plan === 'premium') {
+        isPremium = true;
+      }
     } catch (_) {}
+    if (isPremium && feature.premiumUnlimited) {
+      return { allowed: true, remaining: Infinity, limit: Infinity };
+    }
   }
 
   const hasDaily = feature.dailyLimit != null;

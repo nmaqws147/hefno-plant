@@ -324,6 +324,7 @@ const ChatWidget = () => {
                   <h3 className="text-sm font-bold text-forest dark:text-[#f5f5f4]">Hefno AI</h3>
                   <p className="text-[10px] text-[#8a8580] dark:text-gray-500">المساعد الزراعي الذكي</p>
                 </div>
+                <QuotaBadge featureId="ai_chatbot" onExhausted={() => setQuotaFeature('ai_chatbot')} />
               </div>
               <div className="flex items-center gap-1">
                 <button
