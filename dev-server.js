@@ -7,10 +7,21 @@ const weatherHandler = require('./api/weather');
 const fertilizerPlannerHandler = require('./api/fertilizer-planner.js');
 const analyzeImageHandler = require('./api/analyze-image');
 
+function wrapRes(res) {
+  return Object.assign(res, {
+    status(code) { this.statusCode = code; return this; },
+    json(data) {
+      this.setHeader('Content-Type', 'application/json');
+      this.end(JSON.stringify(data));
+    }
+  });
+}
+
 const server = http.createServer((req, res) => {
   let body = '';
   req.on('data', c => body += c);
   req.on('end', async () => {
+    req.rawBody = body;
     try {
       req.body = body ? JSON.parse(body) : undefined;
     } catch {
@@ -18,69 +29,56 @@ const server = http.createServer((req, res) => {
     }
 
     const url = new URL(req.url, `http://${req.headers.host}`);
+    const wr = wrapRes(res);
 
-    if (url.pathname === '/api/ai') {
-      const wrappedRes = Object.assign(res, {
-        status(code) { this.statusCode = code; return this; },
-        json(data) {
-          this.setHeader('Content-Type', 'application/json');
-          this.end(JSON.stringify(data));
-        }
-      });
-      return aiHandler(req, wrappedRes);
-    }
+    try {
+      const method = req.method;
+      const path = url.pathname;
 
-    if (url.pathname === '/api/weather') {
-      req.query = Object.fromEntries(url.searchParams.entries());
-      const wrappedRes = Object.assign(res, {
-        status(code) { this.statusCode = code; return this; },
-        json(data) {
-          this.setHeader('Content-Type', 'application/json');
-          this.end(JSON.stringify(data));
-        }
-      });
-      try {
-        return await weatherHandler(req, wrappedRes);
-      } catch (err) {
-        console.error('Weather handler error:', err);
-        wrappedRes.status(500).json({ error: 'Internal server error' });
+      if (path === '/api/ai') return aiHandler(req, wr);
+      if (path === '/api/weather') { req.query = Object.fromEntries(url.searchParams.entries()); return await weatherHandler(req, wr); }
+      if (path === '/api/analyze-image' && method === 'POST') return await analyzeImageHandler(req, wr);
+      if (path === '/.netlify/functions/fertilizer-planner') return fertilizerPlannerHandler(req, wr);
+
+      // Subscription & Payment routes
+      if (path === '/api/create-checkout-session' && method === 'POST') {
+        const h = require('./api/create-checkout-session');
+        return h(req, wr);
       }
-      return;
-    }
-
-    if (url.pathname === '/api/analyze-image' && req.method === 'POST') {
-      const wrappedRes = Object.assign(res, {
-        status(code) { this.statusCode = code; return this; },
-        json(data) {
-          this.setHeader('Content-Type', 'application/json');
-          this.end(JSON.stringify(data));
-        }
-      });
-      try {
-        return await analyzeImageHandler(req, wrappedRes);
-      } catch (err) {
-        console.error('Analyze image handler error:', err);
-        wrappedRes.status(500).json({ error: 'Internal server error' });
+      if (path === '/api/stripe-webhook' && method === 'POST') {
+        const h = require('./api/stripe-webhook');
+        return h(req, wr);
       }
-      return;
-    }
-
-    if (url.pathname === '/.netlify/functions/fertilizer-planner') {
-      if (!fertilizerPlannerHandler) {
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        return res.end(JSON.stringify({ error: 'Handler not loaded yet, try again' }));
+      if (path === '/api/vodafone-cash/initiate' && method === 'POST') {
+        const h = require('./api/vodafone-cash/initiate');
+        return h(req, wr);
       }
-      const wrappedRes = Object.assign(res, {
-        status(code) { this.statusCode = code; return this; },
-        json(data) {
-          this.setHeader('Content-Type', 'application/json');
-          this.end(JSON.stringify(data));
-        }
-      });
-      return fertilizerPlannerHandler(req, wrappedRes);
-    }
+      if (path === '/api/vodafone-cash/verify' && method === 'POST') {
+        const h = require('./api/vodafone-cash/verify');
+        return h(req, wr);
+      }
+      if (path === '/api/subscription' && method === 'GET') {
+        const h = require('./api/subscription');
+        return h(req, wr);
+      }
+      if (path === '/api/check-expired') {
+        const h = require('./api/check-expired');
+        return h(req, wr);
+      }
+      if (path === '/api/knowledge-base' && method === 'POST') {
+        const h = require('./api/knowledge-base');
+        return h(req, wr);
+      }
+      if (path === '/api/check-quota' && method === 'POST') {
+        const h = require('./api/check-quota');
+        return h(req, wr);
+      }
 
-    blogHandler(req, res);
+      blogHandler(req, res);
+    } catch (err) {
+      console.error('Server error:', err);
+      wr.status(500).json({ error: err.message || 'Internal server error' });
+    }
   });
 });
 

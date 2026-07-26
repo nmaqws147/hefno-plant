@@ -1,3 +1,4 @@
+import { useAuth } from '../context/AuthContext';
 import { useFeatureAccess } from './useFeatureAccess';
 
 const LABELS = {
@@ -7,8 +8,34 @@ const LABELS = {
 };
 
 export function useQuotaDisplay(featureId) {
+  const { isElite } = useAuth();
   const { allowed, remaining, limit, loading, error, refresh } = useFeatureAccess(featureId);
   const label = LABELS[featureId] || { name: featureId, unit: 'استخدام', period: '' };
+
+  if (isElite || remaining === Infinity) {
+    return {
+      allowed: true,
+      remaining: Infinity,
+      limit: Infinity,
+      loading: false,
+      error: null,
+      refresh,
+      label,
+      exhausted: false,
+      percent: 100,
+      displayText: 'غير محدود',
+      isUnlimited: true,
+    };
+  }
+
+  const exhausted = !loading && !allowed && remaining === 0;
+
+  let displayText;
+  if (limit > 0) {
+    displayText = `${remaining} / ${limit} ${label.unit}`;
+  } else {
+    displayText = `${limit} ${label.unit}`;
+  }
 
   return {
     allowed,
@@ -18,7 +45,9 @@ export function useQuotaDisplay(featureId) {
     error,
     refresh,
     label,
-    exhausted: !loading && !allowed && remaining === 0,
+    exhausted,
     percent: limit > 0 ? Math.round((remaining / limit) * 100) : 0,
+    displayText,
+    isUnlimited: false,
   };
 }

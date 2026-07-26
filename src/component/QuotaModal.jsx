@@ -1,14 +1,18 @@
 import { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { useFeatureAccess } from '../hooks/useFeatureAccess';
 
-const FEATURES = [
-  { id: 'ai_chatbot', name: 'المساعد الذكي', limit: 5, period: 'يومي' },
-  { id: 'knowledge_base', name: 'قاعدة المعرفة', limit: 5, period: 'أسبوعي' },
-  { id: 'disease_diagnosis', name: 'تشخيص الأمراض', limit: 1, period: 'أسبوعي' },
-];
+const FEATURE_INFO = {
+  ai_chatbot: { name: 'المساعد الذكي', unit: 'رسالة', period: 'يومي' },
+  knowledge_base: { name: 'قاعدة المعرفة', unit: 'استخدام', period: 'أسبوعي' },
+  disease_diagnosis: { name: 'تشخيص الأمراض', unit: 'تشخيص', period: 'أسبوعي' },
+};
 
 export default function QuotaModal({ open, onClose, featureId }) {
   const { user, isPremium } = useAuth();
+  const navigate = useNavigate();
+  const { limit } = useFeatureAccess(featureId || '__none__');
 
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden';
@@ -18,7 +22,8 @@ export default function QuotaModal({ open, onClose, featureId }) {
 
   if (!open) return null;
 
-  const current = FEATURES.find((f) => f.id === featureId);
+  const info = FEATURE_INFO[featureId];
+  const displayLimit = Number.isFinite(limit) ? limit : (info?.period === 'يومي' ? 5 : 5);
 
   return (
     <div
@@ -54,9 +59,9 @@ export default function QuotaModal({ open, onClose, featureId }) {
           <h2 style={{ fontSize: 20, fontWeight: 700, color: '#1f2937', margin: 0 }}>
             لقد استنفذت حصتك
           </h2>
-          {current && (
+          {info && (
             <p style={{ fontSize: 14, color: '#6b7280', marginTop: 8 }}>
-              {current.name} — {current.limit} {current.period === 'يومي' ? 'رسائل' : 'استخدامات'} في {current.period === 'يومي' ? 'اليوم' : 'الأسبوع'}
+              {info.name} — {displayLimit} {info.period === 'يومي' ? 'رسائل' : 'استخدامات'} في {info.period === 'يومي' ? 'اليوم' : 'الأسبوع'}
             </p>
           )}
         </div>
@@ -88,11 +93,42 @@ export default function QuotaModal({ open, onClose, featureId }) {
             </button>
           </div>
         ) : isPremium ? (
-          <p style={{ fontSize: 14, color: '#4b5563', textAlign: 'center' }}>
-            أنت مشترك في الباقة المميزة. إذا استمرت المشكلة، حاول مرة أخرى لاحقاً.
-          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <p style={{ fontSize: 14, color: '#4b5563', textAlign: 'center', margin: 0 }}>
+              لقد استنفذت حصتك الشهرية. انتقل إلى الباقة الفريدة للاستخدام غير المحدود.
+            </p>
+            <button
+              onClick={() => { navigate('/pricing'); }}
+              style={{
+                padding: '12px 24px', borderRadius: 12, border: 'none',
+                background: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
+                color: '#fff', fontSize: 16, fontWeight: 600, cursor: 'pointer',
+              }}
+            >
+              الانتقال إلى Elite
+            </button>
+            <button
+              onClick={onClose}
+              style={{
+                padding: '12px 24px', borderRadius: 12, border: 'none',
+                background: '#f3f4f6', color: '#374151', fontSize: 14, cursor: 'pointer',
+              }}
+            >
+              لاحقاً
+            </button>
+          </div>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <button
+              onClick={() => { navigate('/pricing'); }}
+              style={{
+                padding: '12px 24px', borderRadius: 12, border: 'none',
+                background: '#4a7c59', color: '#fff', fontSize: 16,
+                fontWeight: 600, cursor: 'pointer',
+              }}
+            >
+              ترقية الباقة
+            </button>
             <button
               onClick={onClose}
               style={{
@@ -108,7 +144,7 @@ export default function QuotaModal({ open, onClose, featureId }) {
 
         <div style={{ marginTop: 24, borderTop: '1px solid #e5e7eb', paddingTop: 16 }}>
           <p style={{ fontSize: 13, color: '#9ca3af', textAlign: 'center', margin: 0 }}>
-            جميع الميزات الأساسية مجانية. الباقة المميزة (قريباً) تمنحك استخدام غير محدود.
+            الباقة المميزة تمنحك 100 رسالة / 70 بحث / 2 تشخيص شهرياً. الباقة الفريدة غير محدودة.
           </p>
         </div>
       </div>

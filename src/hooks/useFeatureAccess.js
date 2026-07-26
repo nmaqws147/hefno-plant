@@ -4,7 +4,7 @@ import { getGuestId } from '../services/guestId';
 import { checkQuota } from '../services/quotaService';
 
 export function useFeatureAccess(featureId) {
-  const { user, isPremium } = useAuth();
+  const { user } = useAuth();
   const [quota, setQuota] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,7 +38,7 @@ export function useFeatureAccess(featureId) {
   }, [cacheKey, refresh]);
 
   return {
-    allowed: isPremium || quota?.allowed,
+    allowed: quota?.allowed ?? false,
     remaining: quota?.remaining ?? 0,
     limit: quota?.limit ?? 0,
     loading,
