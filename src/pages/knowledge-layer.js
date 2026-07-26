@@ -50,7 +50,7 @@ const KnowledgeLayout = () => {
     return (
       <div className="knowledge-base-container">
         <main className="kb-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 400 }}>
-          <div style={{ color: '#4a7c59', fontSize: 18 }}>جاري التحقق من الحصة...</div>
+          <div style={{ color: '#4a7c59', fontSize: 18 }}></div>
         </main>
       </div>
     );
