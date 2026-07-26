@@ -4,6 +4,9 @@ import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import { Sparkles, X, Plus, MessageSquare, Search, ArrowUp, Sprout, Bot } from 'lucide-react';
+import { getGuestId } from '../services/guestId';
+import QuotaBadge from './QuotaBadge';
+import QuotaModal from './QuotaModal';
 
 const SUGGESTIONS = [
   { text: 'كيف أعتني بنبات الطماطم؟', icon: Sprout },
@@ -115,6 +118,7 @@ const ChatWidget = () => {
 
   const { user } = useAuth();
   const navigate = useNavigate();
+  const [quotaFeature, setQuotaFeature] = useState(null);
 
   useEffect(() => {
     window.__chatWidgetOpen = () => {
@@ -147,9 +151,14 @@ const ChatWidget = () => {
     abortControllerRef.current = controller;
     const timeoutId = setTimeout(() => controller.abort(), 30000);
     try {
+      const headers = { 'Content-Type': 'application/json' };
+      if (!user) headers['X-Guest-Id'] = getGuestId();
+      else {
+        try { headers['Authorization'] = `Bearer ${await user.getIdToken()}`; } catch (_) {}
+      }
       const response = await fetch('/api/ai', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           userMessage: textToSend, category: 'general',
           conversationHistory: conversationHistory.slice(-10)
@@ -157,6 +166,10 @@ const ChatWidget = () => {
         signal: controller.signal
       });
       clearTimeout(timeoutId);
+      if (response.status === 429) {
+        setQuotaFeature('ai_chatbot');
+        throw new Error('تم تجاوز الحد المسموح');
+      }
       if (!response.ok) throw new Error(`خطأ في الخادم (${response.status})`);
       const data = await response.json();
       if (data.error) throw new Error(data.message);
@@ -556,6 +569,8 @@ const ChatWidget = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <QuotaModal open={!!quotaFeature} featureId={quotaFeature} onClose={() => setQuotaFeature(null)} />
     </>
   );
 };

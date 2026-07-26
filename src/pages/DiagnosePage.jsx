@@ -13,8 +13,12 @@ import DiagnosisResults from '../component/diagnose/DiagnosisResults';
 import DiagnosisHistory from '../component/diagnose/DiagnosisHistory';
 import { fadeUpStagger } from '../component/diagnose/motionVariants';
 import { validateImage, compressImage, formatDate } from '../component/diagnose/DiagnosisUtils';
+import { useAuth } from '../context/AuthContext';
+import { getGuestId } from '../services/guestId';
+import QuotaModal from '../component/QuotaModal';
 
 export default function DiagnosePage({ id }) {
+  const { user, isPremium } = useAuth();
   const { trackAction } = useTracking();
   const [image, setImage] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -25,6 +29,7 @@ export default function DiagnosePage({ id }) {
   const [source, setSource] = useState(null);
   const [recentDiagnoses, setRecentDiagnoses] = useState([]);
   const [showClearConfirm, setShowClearConfirm] = useState(false);
+  const [quotaExhausted, setQuotaExhausted] = useState(false);
 
   const handleError = useCallback((message, status = null) => {
     setAnalysisResult({ error: true, message, isRateLimit: status === 429, resetInHours: status === 429 ? 24 : null });
@@ -65,11 +70,21 @@ export default function DiagnosePage({ id }) {
     setRateLimit(null);
     try {
       const base64Image = image.split(',')[1];
+      const headers = { 'Content-Type': 'application/json' };
+      if (!user) headers['X-Guest-Id'] = getGuestId();
+      else {
+        try { headers['Authorization'] = `Bearer ${await user.getIdToken()}`; } catch (_) {}
+      }
       const response = await fetch('/api/analyze-image', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({ base64Image }),
       });
+      if (response.status === 429) {
+        setQuotaExhausted(true);
+        handleError('لقد استنفذت حصتك الأسبوعية للتشخيص', 429);
+        return;
+      }
       const remaining = response.headers.get('X-RateLimit-Remaining');
       const limit = response.headers.get('X-RateLimit-Limit');
       const reset = response.headers.get('X-RateLimit-Reset');
@@ -321,6 +336,8 @@ export default function DiagnosePage({ id }) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <QuotaModal open={quotaExhausted} featureId="disease_diagnosis" onClose={() => setQuotaExhausted(false)} />
     </motion.div>
   );
 }
