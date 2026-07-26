@@ -76,7 +76,7 @@ function ActionButtons({ user, isPremium, onClose, navigate }) {
     return (
       <div className="space-y-3 mt-6">
         <button
-          onClick={() => navigate('/pricing')}
+          onClick={() => { onClose(); navigate('/pricing'); }}
           className="w-full h-12 rounded-xl bg-gradient-to-r from-violet-500 to-purple-600 text-white font-semibold text-sm hover:from-violet-400 hover:to-purple-500 active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-violet-500/50"
         >
           الانتقال إلى Elite
@@ -94,7 +94,7 @@ function ActionButtons({ user, isPremium, onClose, navigate }) {
   return (
     <div className="space-y-3 mt-6">
       <button
-        onClick={() => navigate('/pricing')}
+        onClick={() => { onClose(); navigate('/pricing'); }}
         className="w-full h-12 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold text-sm hover:from-emerald-400 hover:to-emerald-500 active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/50"
       >
         ترقية الباقة
