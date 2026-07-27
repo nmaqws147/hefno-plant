@@ -109,7 +109,7 @@ function HeroSection() {
         </div>
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.55] max-w-3xl mx-auto">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400 dark:from-emerald-400 dark:to-emerald-300">
-            لرحلة زراعية ذكية
+            اختر باقتك المثالية
           </span>
         </h1>
         <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto leading-relaxed">
