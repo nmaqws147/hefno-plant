@@ -119,8 +119,9 @@ const provider = {
       const rawBody = req.rawBody || (typeof req.body === 'string' ? req.body : JSON.stringify(req.body));
       const body = typeof rawBody === 'string' ? JSON.parse(rawBody) : rawBody;
 
+      const hmacInput = typeof rawBody === 'string' ? rawBody : JSON.stringify(body);
       const calculatedHmac = crypto.createHmac('sha512', process.env.PAYMOB_HMAC_SECRET)
-        .update(JSON.stringify(body))
+        .update(hmacInput)
         .digest('hex');
       const receivedHmac = req.headers['hmac'];
 
