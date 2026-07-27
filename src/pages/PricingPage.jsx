@@ -72,7 +72,7 @@ const FAQS = [
   { q: 'هل يمكنني الترقية لاحقاً؟', a: 'بالتأكيد. يمكنك الترقية من أي باقة في أي وقت. سيتم تطبيق الفرق بشكل تناسبي على باقي فترة الفوترة.' },
   { q: 'ما هي طرق الدفع المتاحة؟', a: 'ندعم الدفع عبر بطاقات الائتمان (فيزا، ماستركارد) عبر Stripe، وكذلك فودافون كاش للعملاء في مصر.' },
   { q: 'هل مدفوعاتي آمنة؟', a: 'جميع المدفوعات مشفرة ومحمية بواسطة Stripe، أحد أشهر مزودي خدمات الدفع الرقمي في العالم والمعتمد عالمياً.' },
-  { q: 'هل بياناتي آمنة؟', a: 'نعم، نستخدم أحدث معايير التشفير لحماية بياناتك. جميع المعلومات مخزنة بشكل آمن على خوادم Firebase المعتمدة.' },
+
 ];
 
 const PAYMENT_METHODS = [
@@ -108,9 +108,9 @@ function HeroSection() {
           خطط بأسعار تنافسية
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.15] max-w-3xl mx-auto">
-          اختر الباقة المناسبة{' '}
+          اختر باقتك المثالية{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-400 dark:from-emerald-400 dark:to-emerald-300">
-            لرحلتك الزراعية
+            لرحلة زراعية ذكية
           </span>
         </h1>
         <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-400 max-w-xl mx-auto leading-relaxed">
