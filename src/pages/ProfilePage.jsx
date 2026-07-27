@@ -10,6 +10,8 @@ import ProfileHeader from '../component/ProfileHeader';
 import ProfileInfoCard from '../component/ProfileInfoCard';
 import ProfileField from '../component/ProfileField';
 import ProfileSkeleton from '../component/ProfileSkeleton';
+import { getSubscription, getPayments } from '../services/subscriptionService';
+import { Crown, Sparkles, CreditCard, Calendar, TrendingUp } from 'lucide-react';
 
 export default function ProfilePage() {
   const { user, logout } = useAuth();
@@ -22,6 +24,13 @@ export default function ProfilePage() {
   const [uploading, setUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [previewUrl, setPreviewUrl] = useState(null);
+  const [subscription, setSubscription] = useState(null);
+  const [paymentHistory, setPaymentHistory] = useState([]);
+
+  useEffect(() => {
+    getSubscription().then(setSubscription).catch(console.error);
+    getPayments({ limit: 10 }).then(d => setPaymentHistory(d.payments || [])).catch(console.error);
+  }, []);
 
   const [form, setForm] = useState({ fullName: '', phoneNumber: '', specialization: '' });
   const [errors, setErrors] = useState({});
@@ -199,6 +208,48 @@ export default function ProfilePage() {
           onCancelImage={handleCancelImage}
         />
 
+        {/* Subscription Card */}
+        <div className="mt-6 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-5">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">خطتك الحالية</p>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                {subscription?.plan === 'elite' ? <Crown className="w-5 h-5 text-amber-500" /> :
+                 subscription?.plan === 'premium' ? <Sparkles className="w-5 h-5 text-emerald-500" /> :
+                 <CreditCard className="w-5 h-5 text-gray-400" />}
+                {subscription?.plan === 'elite' ? 'Elite' : subscription?.plan === 'premium' ? 'Premium' : 'مجاني'}
+              </h3>
+            </div>
+            <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+              subscription?.status === 'active' ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400' :
+              subscription?.status === 'cancelled' ? 'bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400' :
+              'bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400'
+            }`}>
+              {subscription?.status === 'active' ? 'نشط' : subscription?.status === 'cancelled' ? 'ملغي' : 'مجاني'}
+            </span>
+          </div>
+
+          {subscription?.plan !== 'free' && subscription?.expirationDate && (
+            <div className="mt-3 flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+              <span className="flex items-center gap-1.5">
+                <Calendar className="w-4 h-4" />
+                {new Date(subscription.expirationDate).toLocaleDateString('ar-EG')}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <TrendingUp className="w-4 h-4" />
+                {subscription.billingCycle === 'monthly' ? 'شهري' : 'سنوي'}
+              </span>
+            </div>
+          )}
+
+          {(!subscription || subscription.plan === 'free') && (
+            <button onClick={() => navigate('/pricing')}
+              className="mt-3 w-full h-10 rounded-xl bg-gradient-to-l from-emerald-500 to-emerald-600 text-white text-sm font-semibold hover:from-emerald-400 hover:to-emerald-500 transition-all">
+              ترقية الآن
+            </button>
+          )}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-6">
           <ProfileInfoCard
             icon={
@@ -255,6 +306,35 @@ export default function ProfilePage() {
             <ProfileField label="الدور" value={profile?.role === 'user' ? 'مستخدم' : profile?.role} />
           </ProfileInfoCard>
         </div>
+
+        {/* Payment History */}
+        {paymentHistory.length > 0 && (
+          <div className="mt-6">
+            <h3 className="text-base font-bold text-gray-900 dark:text-gray-100 mb-3">سجل المدفوعات</h3>
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 divide-y divide-gray-100 dark:divide-gray-800">
+              {paymentHistory.map((p) => (
+                <div key={p.id} className="flex items-center justify-between p-4">
+                  <div>
+                    <p className="text-sm font-medium text-gray-900 dark:text-white">
+                      {p.plan === 'elite' ? 'Elite' : 'Premium'} — {p.billingCycle === 'monthly' ? 'شهري' : 'سنوي'}
+                    </p>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      {new Date(p.createdAt).toLocaleDateString('ar-EG')}
+                    </p>
+                  </div>
+                  <div className="text-left">
+                    <p className="text-sm font-bold text-gray-900 dark:text-white">{p.amount} ج.م</p>
+                    <span className={`text-xs font-medium ${
+                      p.status === 'paid' ? 'text-emerald-600' : p.status === 'failed' ? 'text-red-500' : 'text-amber-500'
+                    }`}>
+                      {p.status === 'paid' ? 'مكتملة' : p.status === 'failed' ? 'فاشلة' : 'معلقة'}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
           {editing ? (
