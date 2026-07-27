@@ -14,16 +14,14 @@ export async function getSubscription() {
   return authFetch('/subscription');
 }
 
-export async function createCheckoutSession(plan, billingCycle) {
-  return authFetch('/create-checkout-session', {
+export async function createPaymobIntent(plan, billingCycle) {
+  return authFetch('/paymob/intent', {
     method: 'POST',
     body: JSON.stringify({ plan, billingCycle }),
   });
 }
 
-export async function initiateVodafoneCash(plan, billingCycle) {
-  return authFetch('/vodafone-cash/initiate', {
-    method: 'POST',
-    body: JSON.stringify({ plan, billingCycle }),
-  });
+export async function getPayments(params = {}) {
+  const qs = new URLSearchParams(params).toString();
+  return authFetch(`/paymob/payments${qs ? '?' + qs : ''}`);
 }
