@@ -80,7 +80,7 @@
       "dest": "api/sitemap.js"
     },
     {
-      "src": "/api/(create-checkout-session|stripe-webhook|check-quota|check-expired|subscription|vodafone-cash/initiate|vodafone-cash/verify|billing)(/.*)?",
+      "src": "/api/(create-checkout-session|stripe-webhook|check-quota|check-expired|subscription|vodafone-cash/initiate|vodafone-cash/verify|paymob/intent|paymob/webhook|paymob/payments|billing)(/.*)?",
       "dest": "api/billing.js"
     },
     {
