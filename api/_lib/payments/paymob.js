@@ -2,6 +2,13 @@ const { registerProvider } = require('./provider');
 const { getDb } = require('../firebaseAdmin');
 const crypto = require('crypto');
 
+const REQUIRED_ENV_VARS = ['PAYMOB_API_KEY', 'PAYMOB_INTEGRATION_ID', 'PAYMOB_IFRAME_ID', 'PAYMOB_HMAC_SECRET', 'PAYMOB_MERCHANT_ID'];
+for (const v of REQUIRED_ENV_VARS) {
+  if (!process.env[v]) {
+    console.warn(`Paymob: missing env var ${v} — provider will fail at runtime`);
+  }
+}
+
 const PRICES = {
   premium: { monthly: 5000, yearly: 50000 },
   elite: { monthly: 8000, yearly: 80000 },
@@ -15,60 +22,70 @@ function getAmountCents(plan, billingCycle) {
 
 const provider = {
   async createCheckoutSession({ plan, billingCycle, userId, customerEmail }) {
-    const amountCents = getAmountCents(plan, billingCycle);
+    try {
+      const amountCents = getAmountCents(plan, billingCycle);
 
-    const authRes = await fetch('https://accept.paymob.com/api/auth/tokens', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ api_key: process.env.PAYMOB_API_KEY }),
-    });
-    const authData = await authRes.json();
-    const authToken = authData.token;
+      const authRes = await fetch('https://accept.paymob.com/api/auth/tokens', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_key: process.env.PAYMOB_API_KEY }),
+      });
+      const authData = await authRes.json();
+      if (!authRes.ok) {
+        throw new Error(`Paymob auth failed: ${authData.message || authRes.statusText}`);
+      }
+      const authToken = authData.token;
 
-    const orderRes = await fetch('https://accept.paymob.com/api/ecommerce/orders', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        auth_token: authToken,
-        delivery_needed: false,
-        amount_cents: amountCents,
-        currency: 'EGP',
-        items: [],
-      }),
-    });
-    const orderData = await orderRes.json();
+      const orderRes = await fetch('https://accept.paymob.com/api/ecommerce/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          auth_token: authToken,
+          delivery_needed: false,
+          amount_cents: amountCents,
+          currency: 'EGP',
+          items: [],
+        }),
+      });
+      const orderData = await orderRes.json();
+      if (!orderRes.ok) {
+        throw new Error(`Paymob order creation failed: ${orderData.message || orderRes.statusText}`);
+      }
 
-    const billingData = {
-      apartment: 'N/A',
-      email: customerEmail || 'N/A',
-      floor: 'N/A',
-      first_name: userId || 'N/A',
-      street: 'N/A',
-      building: 'N/A',
-      phone_number: 'N/A',
-      shipping_method: 'N/A',
-      postal_code: 'N/A',
-      city: 'N/A',
-      country: 'N/A',
-      last_name: 'N/A',
-      state: 'N/A',
-    };
+      const billingData = {
+        apartment: 'N/A',
+        email: customerEmail || 'N/A',
+        floor: 'N/A',
+        first_name: userId || 'N/A',
+        street: 'N/A',
+        building: 'N/A',
+        phone_number: 'N/A',
+        shipping_method: 'N/A',
+        postal_code: 'N/A',
+        city: 'N/A',
+        country: 'N/A',
+        last_name: 'N/A',
+        state: 'N/A',
+      };
 
-    const paymentKeyRes = await fetch('https://accept.paymob.com/api/acceptance/payments_keys', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        auth_token: authToken,
-        amount_cents: amountCents,
-        expiration: 3600,
-        order_id: orderData.id,
-        billing_data: billingData,
-        currency: 'EGP',
-        integration_id: parseInt(process.env.PAYMOB_INTEGRATION_ID),
-        lock_order_when_paid: true,
-      }),
-    });
-    const paymentKeyData = await paymentKeyRes.json();
+      const paymentKeyRes = await fetch('https://accept.paymob.com/api/acceptance/payments_keys', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          auth_token: authToken,
+          amount_cents: amountCents,
+          expiration: 3600,
+          order_id: orderData.id,
+          billing_data: billingData,
+          currency: 'EGP',
+          integration_id: parseInt(process.env.PAYMOB_INTEGRATION_ID),
+          lock_order_when_paid: true,
+        }),
+      });
+      const paymentKeyData = await paymentKeyRes.json();
+      if (!paymentKeyRes.ok) {
+        throw new Error(`Paymob payment key failed: ${paymentKeyData.message || paymentKeyRes.statusText}`);
+      }
 
     const db = getDb();
     const orderId = String(orderData.id);
@@ -92,6 +109,9 @@ const provider = {
       amount: amountCents,
       currency: 'EGP',
     };
+    } catch (err) {
+      throw new Error(`Paymob createCheckoutSession failed: ${err.message}`);
+    }
   },
 
   async handleWebhook(req) {
@@ -197,7 +217,7 @@ const provider = {
       const snap = await db.collection('payment_events').doc(String(paymentId)).get();
       if (!snap.exists) return { verified: false, paymentDetails: null };
       const payment = snap.data();
-      if (payment.event === 'checkout.session.completed') {
+      if (payment.event === 'checkout.session.completed' || payment.event === 'subscription_activated') {
         return { verified: true, paymentDetails: payment };
       }
       return { verified: false, paymentDetails: null };
