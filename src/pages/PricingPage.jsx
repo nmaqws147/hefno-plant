@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { createCheckoutSession, initiateVodafoneCash } from '../services/subscriptionService';
+import { createPaymobIntent } from '../services/subscriptionService';
 import { toast } from 'sonner';
 import {
-  Leaf, Sparkles, Crown, Check, Minus, CreditCard, Smartphone,
+  Leaf, Sparkles, Crown, Check, Minus, CreditCard,
   ShieldCheck, RefreshCw, Headphones, ChevronDown, ChevronLeft,
   Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap,
 } from 'lucide-react';
@@ -70,19 +70,18 @@ const PLANS = [
 const FAQS = [
   { q: 'هل يمكنني الإلغاء في أي وقت؟', a: 'نعم، يمكنك إلغاء اشتراكك في أي وقت. ستظل الميزات المدفوعة متاحة حتى نهاية فترة الفوترة دون أي رسوم إضافية.' },
   { q: 'هل يمكنني الترقية لاحقاً؟', a: 'بالتأكيد. يمكنك الترقية من أي باقة في أي وقت. سيتم تطبيق الفرق بشكل تناسبي على باقي فترة الفوترة.' },
-  { q: 'ما هي طرق الدفع المتاحة؟', a: 'ندعم الدفع عبر بطاقات الائتمان (فيزا، ماستركارد) عبر Stripe، وكذلك فودافون كاش للعملاء في مصر.' },
+  { q: 'ما هي طرق الدفع المتاحة؟', a: 'ندعم جميع طرق الدفع المتاحة في مصر عبر Paymob: بطاقات الائتمان (فيزا، ماستركارد)، فودافون كاش، محافظ إلكترونية، وغيرها.' },
   { q: 'هل مدفوعاتي آمنة؟', a: 'جميع المدفوعات مشفرة ومحمية بواسطة Stripe، أحد أشهر مزودي خدمات الدفع الرقمي في العالم والمعتمد عالمياً.' },
 
 ];
 
 const PAYMENT_METHODS = [
-  { id: 'stripe', name: 'بطاقة ائتمان', icon: CreditCard },
-  { id: 'vodafone_cash', name: 'فودافون كاش', icon: Smartphone },
+  { id: 'paymob', name: 'فيزا / ماستركارد / فودافون كاش', icon: CreditCard },
 ];
 
 const TRUST_ITEMS = [
   { icon: ShieldCheck, title: 'مدفوعات آمنة', desc: 'مشفرة بالكامل عبر Stripe' },
-  { icon: CreditCard, title: 'بوابات دفع عالمية', desc: 'فيزا، ماستركارد، فودافون كاش' },
+  { icon: CreditCard, title: 'بوابات دفع متعددة', desc: 'فيزا، ماستركارد، فودافون كاش، محافظ إلكترونية' },
   { icon: RefreshCw, title: 'إلغاء في أي وقت', desc: 'بدون رسوم إضافية' },
   { icon: Headphones, title: 'دعم فني', desc: 'فريق متخصص لمساعدتك' },
 ];
@@ -279,37 +278,7 @@ function PricingCard({ plan, index, billingCycle, getPlanPrice, isCurrentPlan, h
   );
 }
 
-function PaymentSelector({ paymentMethod, setPaymentMethod }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
-      className="flex flex-col items-center gap-4 mt-10"
-    >
-      <p className="text-sm text-zinc-500 dark:text-zinc-400">طريقة الدفع:</p>
-      <div className="flex items-center gap-3">
-        {PAYMENT_METHODS.map((pm) => {
-          const selected = paymentMethod === pm.id;
-          return (
-            <button
-              key={pm.id}
-              onClick={() => setPaymentMethod(pm.id)}
-              className={`flex items-center gap-2.5 px-5 py-3 rounded-xl text-sm font-medium transition-all duration-200 border ${
-                selected
-                  ? 'bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 border-zinc-900 dark:border-white shadow-sm'
-                  : 'bg-white dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-zinc-600'
-              }`}
-            >
-              <pm.icon className="w-4 h-4" />
-              {pm.name}
-            </button>
-          );
-        })}
-      </div>
-    </motion.div>
-  );
-}
+
 
 function TrustSection() {
   return (
@@ -434,7 +403,6 @@ export default function PricingPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [billingCycle, setBillingCycle] = useState('monthly');
-  const [paymentMethod, setPaymentMethod] = useState('stripe');
   const [loading, setLoading] = useState(null);
 
   useEffect(() => {
@@ -456,14 +424,8 @@ export default function PricingPage() {
     }
     setLoading(planId);
     try {
-      if (paymentMethod === 'stripe') {
-        const { sessionUrl } = await createCheckoutSession(planId, billingCycle);
-        window.location.href = sessionUrl;
-      } else {
-        const result = await initiateVodafoneCash(planId, billingCycle);
-        toast.success(`تم إنشاء طلب الدفع: ${result.paymentReference}`);
-        alert(result.instructions);
-      }
+      const { sessionUrl } = await createPaymobIntent(planId, billingCycle);
+      window.location.href = sessionUrl;
     } catch (err) {
       toast.error(err.message);
     } finally {
@@ -504,7 +466,6 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <PaymentSelector paymentMethod={paymentMethod} setPaymentMethod={setPaymentMethod} />
       </div>
 
       <TrustSection />
