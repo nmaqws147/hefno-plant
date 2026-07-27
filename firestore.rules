@@ -43,6 +43,10 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    match /vodafone_payments/{document=**} {
+      allow read, write: if false;
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }
