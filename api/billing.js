@@ -3,6 +3,7 @@ const { getSubscription, checkQuota: checkQuotaService, expireSubscription } = r
 const { createPayment, handleWebhook } = require('./_lib/payments/provider');
 require('./_lib/payments/stripe');
 require('./_lib/payments/vodafoneCash');
+require('./_lib/payments/paymob');
 const { checkQuota } = require('./_lib/checkQuota');
 
 function parseUrl(req) {
@@ -145,6 +146,124 @@ async function handleVodafoneVerify(req, res) {
   return res.status(200).json({ success: true, subscription: sub });
 }
 
+async function handlePaymobIntent(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
+  const decoded = await verifyToken(authHeader.slice(7));
+  const { plan, billingCycle } = req.body;
+  if (!plan || !['premium', 'elite'].includes(plan)) return res.status(400).json({ error: 'Invalid plan' });
+  if (!billingCycle || !['monthly', 'yearly'].includes(billingCycle)) return res.status(400).json({ error: 'Invalid billing cycle' });
+  const result = await createPayment({
+    provider: 'paymob',
+    plan,
+    billingCycle,
+    userId: decoded.uid,
+    customerEmail: decoded.firebase?.identities?.email?.[0] || req.body.email,
+  });
+  return res.status(200).json(result);
+}
+
+async function handlePaymobWebhook(req, res) {
+  const chunks = [];
+  await new Promise((resolve, reject) => {
+    req.on('data', (c) => chunks.push(c));
+    req.on('end', () => {
+      req.rawBody = Buffer.concat(chunks).toString('utf8');
+      try { req.body = JSON.parse(req.rawBody); } catch { req.body = {}; }
+      resolve();
+    });
+    req.on('error', reject);
+  });
+
+  const { event, data } = await handleWebhook({ provider: 'paymob', req });
+
+  if (event === 'invalid_hmac') return res.status(400).json({ error: 'Invalid HMAC' });
+  if (event === 'invalid_merchant') return res.status(400).json({ error: 'Invalid merchant' });
+  if (event === 'invalid_integration') return res.status(400).json({ error: 'Invalid integration' });
+  if (event === 'invalid_payload') return res.status(400).json({ error: 'Invalid payload' });
+  if (event === 'order_not_found') return res.status(400).json({ error: 'Order not found' });
+  if (event === 'amount_mismatch') return res.status(400).json({ error: 'Amount mismatch' });
+  if (event === 'currency_mismatch') return res.status(400).json({ error: 'Currency mismatch' });
+  if (event === 'duplicate') return res.status(200).json({ received: true, duplicate: true });
+  if (event === 'payment_failed') {
+    await require('./_lib/subscriptionService').logEvent({
+      userId: data?.userId || 'unknown', event: 'payment_failed',
+      plan: null, billingCycle: null, paymentProvider: 'paymob',
+      details: { transactionId: data?.id, orderId: data?.order?.id },
+    });
+    return res.status(200).json({ received: true, status: 'failed' });
+  }
+
+  if (event === 'checkout.session.completed') {
+    const { userId, plan, billingCycle, transactionId, orderId, amountCents, currency } = data;
+    const sub = await require('./_lib/subscriptionService').activateSubscription({
+      userId, plan, billingCycle, paymentProvider: 'paymob',
+    });
+
+    const db = getDb();
+    await db.collection('payments').doc(transactionId).set({
+      userId, transactionId, orderId, plan, billingCycle,
+      amount: amountCents / 100, currency,
+      status: 'paid', paymentMethod: 'paymob',
+      provider: 'paymob', createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    });
+
+    await db.collection('payment_events').doc(transactionId).set({
+      event: 'subscription_activated',
+      processedAt: new Date().toISOString(),
+    }, { merge: true });
+
+    await require('./_lib/subscriptionService').logEvent({
+      userId, event: 'subscription_activated', plan, billingCycle,
+      paymentProvider: 'paymob',
+      details: { transactionId, orderId, amount: amountCents / 100, currency },
+    });
+
+    return res.status(200).json({ received: true, status: 'activated' });
+  }
+
+  return res.status(200).json({ received: true });
+}
+
+async function handlePaymobPayments(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
+
+  const url = parseUrl(req);
+  const searchUserId = url.searchParams.get('userId');
+  const status = url.searchParams.get('status');
+  const page = Math.max(1, parseInt(url.searchParams.get('page')) || 1);
+  const limit = Math.min(parseInt(url.searchParams.get('limit')) || 20, 100);
+
+  const decoded = await verifyToken(authHeader.slice(7));
+  const isAdminUser = await isAdmin(authHeader.slice(7));
+
+  if (searchUserId && searchUserId !== decoded.uid && !isAdminUser) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
+
+  const targetUserId = searchUserId || (isAdminUser ? null : decoded.uid);
+
+  const db = getDb();
+  let query = db.collection('payments').orderBy('createdAt', 'desc');
+
+  if (targetUserId) query = query.where('userId', '==', targetUserId);
+  if (status) query = query.where('status', '==', status);
+
+  const snap = await query.limit(limit).offset((page - 1) * limit).get();
+  const payments = [];
+  snap.forEach((d) => payments.push({ id: d.id, ...d.data() }));
+
+  let countQuery = db.collection('payments');
+  if (targetUserId) countQuery = countQuery.where('userId', '==', targetUserId);
+  if (status) countQuery = countQuery.where('status', '==', status);
+  const countSnap = await countQuery.get();
+  const total = countSnap.size;
+
+  return res.status(200).json({ payments, total, page, limit });
+}
+
 module.exports = async (req, res) => {
   try {
     const url = parseUrl(req);
@@ -177,6 +296,18 @@ module.exports = async (req, res) => {
     if (path === '/api/vodafone-cash/verify' || path === '/api/billing/vodafone/verify') {
       if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
       return await handleVodafoneVerify(req, res);
+    }
+    if (path === '/api/paymob/intent') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handlePaymobIntent(req, res);
+    }
+    if (path === '/api/paymob/webhook') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handlePaymobWebhook(req, res);
+    }
+    if (path === '/api/paymob/payments') {
+      if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
+      return await handlePaymobPayments(req, res);
     }
 
     return res.status(404).json({ error: 'Not found' });
