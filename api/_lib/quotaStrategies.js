@@ -12,16 +12,24 @@ try {
   }
 } catch (_) {}
 
+const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
+
 function fmtDate(d) {
   return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
 }
 
-function getWeekStart(date) {
-  const d = new Date(date);
-  const day = d.getDay();
-  d.setDate(d.getDate() - day + (day === 0 ? -6 : 1));
-  d.setHours(0, 0, 0, 0);
-  return fmtDate(d);
+function toTimestamp(val) {
+  if (val == null) return null;
+  if (typeof val === 'number') return val;
+  if (typeof val === 'string') return new Date(val).getTime();
+  if (val.toDate) return val.toDate().getTime();
+  if (val instanceof Date) return val.getTime();
+  return null;
+}
+
+function isExpired(stored) {
+  const ts = toTimestamp(stored);
+  return ts === null || Date.now() - ts > WEEK_MS;
 }
 
 async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAllowed = false }) {
@@ -111,7 +119,6 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
   const hasWeekly = feature.weeklyLimit != null;
   const now = new Date();
   const today = fmtDate(now);
-  const weekStart = getWeekStart(now);
 
   if (userId) {
     const ref = db.collection('usage').doc(userId).collection('features').doc(featureId);
@@ -124,21 +131,22 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
     let weeklyDate = data.weeklyDate || null;
 
     if (hasDaily && dailyDate !== today) { dailyUsed = 0; dailyDate = today; }
-    if (hasWeekly && weeklyDate !== weekStart) { weeklyUsed = 0; weeklyDate = weekStart; }
+    if (hasWeekly && isExpired(weeklyDate)) { weeklyUsed = 0; weeklyDate = Date.now(); }
 
     if (hasDaily && dailyUsed >= feature.dailyLimit) {
       const nextReset = dailyDate ? new Date(new Date(dailyDate).getTime() + 86400000).toISOString() : new Date(Date.now() + 86400000).toISOString();
       return { allowed: false, remaining: 0, limit: feature.dailyLimit, error: 'quota_exhausted', resetDate: nextReset };
     }
     if (hasWeekly && weeklyUsed >= feature.weeklyLimit) {
-      const nextReset = weeklyDate ? new Date(new Date(weeklyDate).getTime() + 604800000).toISOString() : new Date(Date.now() + 604800000).toISOString();
+      const weeklyTs = toTimestamp(weeklyDate);
+      const nextReset = weeklyTs ? new Date(weeklyTs + WEEK_MS).toISOString() : new Date(Date.now() + WEEK_MS).toISOString();
       return { allowed: false, remaining: 0, limit: feature.weeklyLimit, error: 'quota_exhausted', resetDate: nextReset };
     }
 
     if (incrementIfAllowed) {
       const update = { updatedAt: new Date().toISOString() };
       if (hasDaily) { update.dailyUsed = dailyUsed + 1; update.dailyDate = today; }
-      if (hasWeekly) { update.weeklyUsed = weeklyUsed + 1; update.weeklyDate = weekStart; }
+      if (hasWeekly) { update.weeklyUsed = weeklyUsed + 1; update.weeklyDate = weeklyDate; }
       await ref.set(update, { merge: true });
     }
 
@@ -165,20 +173,31 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
     }
     if (hasWeekly) {
       weeklyUsed = parseInt(usage[`${featureId}_weekly`] || '0', 10);
-      if (usage[`${featureId}_weekly_start`] !== weekStart) weeklyUsed = 0;
+      const weeklyRaw = usage[`${featureId}_weekly_start`];
+      if (isExpired(weeklyRaw ? Number(weeklyRaw) : null)) { weeklyUsed = 0; }
     }
 
     if (hasDaily && dailyUsed >= feature.dailyLimit) {
       return { allowed: false, remaining: 0, limit: feature.dailyLimit, error: 'quota_exhausted', resetDate: new Date(Date.now() + 86400000).toISOString() };
     }
     if (hasWeekly && weeklyUsed >= feature.weeklyLimit) {
-      return { allowed: false, remaining: 0, limit: feature.weeklyLimit, error: 'quota_exhausted', resetDate: new Date(Date.now() + 604800000).toISOString() };
+      const weeklyRaw = usage[`${featureId}_weekly_start`];
+      const weeklyTs = Number(weeklyRaw) || null;
+      const nextReset = weeklyTs ? new Date(weeklyTs + WEEK_MS).toISOString() : new Date(Date.now() + WEEK_MS).toISOString();
+      return { allowed: false, remaining: 0, limit: feature.weeklyLimit, error: 'quota_exhausted', resetDate: nextReset };
     }
 
     if (incrementIfAllowed) {
+      const nowMs = Date.now();
       const updates = {};
       if (hasDaily) { updates[`${featureId}_daily`] = String(dailyUsed + 1); updates[`${featureId}_daily_date`] = today; }
-      if (hasWeekly) { updates[`${featureId}_weekly`] = String(weeklyUsed + 1); updates[`${featureId}_weekly_start`] = weekStart; }
+      if (hasWeekly) {
+        const raw = usage[`${featureId}_weekly_start`];
+        const existingTs = Number(raw) || 0;
+        const isWindowExpired = existingTs === 0 || Date.now() - existingTs > WEEK_MS;
+        updates[`${featureId}_weekly`] = String(weeklyUsed + 1);
+        updates[`${featureId}_weekly_start`] = isWindowExpired ? String(nowMs) : raw;
+      }
       await redis.hset(key, updates);
       await redis.expire(key, 604800);
     }
