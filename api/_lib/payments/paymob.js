@@ -14,6 +14,10 @@ const PRICES = {
   elite: { monthly: 8000, yearly: 80000 },
 };
 
+function getBaseUrl() {
+  return process.env.PAYMOB_BASE_URL || 'https://accept.paymob.com';
+}
+
 function getAmountCents(plan, billingCycle) {
   const amount = PRICES[plan]?.[billingCycle];
   if (!amount) throw new Error(`Invalid plan/billingCycle: ${plan}/${billingCycle}`);
@@ -100,7 +104,7 @@ const provider = {
       timestamp: new Date().toISOString(),
     });
 
-    const iframeUrl = `https://accept.paymob.com/api/acceptance/iframes/${process.env.PAYMOB_IFRAME_ID}?payment_token=${paymentKeyData.token}`;
+    const iframeUrl = `${getBaseUrl()}/api/acceptance/iframes/${process.env.PAYMOB_IFRAME_ID}?payment_token=${paymentKeyData.token}`;
 
     return {
       sessionId: orderId,
