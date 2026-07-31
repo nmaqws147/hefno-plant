@@ -81,7 +81,7 @@ async function handleForgotPassword(req, res) {
     if (!fb) throw new Error('Firebase Admin not initialized');
     const resetLink = await fb.auth().generatePasswordResetLink(normalizedEmail, {
       url: RESET_URL,
-      handleCodeInApp: false,
+      handleCodeInApp: true,
     });
     await sendEmail(normalizedEmail, 'إعادة تعيين كلمة المرور - Hefno-Plant', buildForgotEmail(resetLink));
   } catch (err) {
