@@ -88,6 +88,10 @@
       "dest": "api/otp.js"
     },
     {
+      "src": "/api/forgot-password",
+      "dest": "api/otp.js"
+    },
+    {
       "src": "/api/send-otp",
       "dest": "api/otp.js"
     },

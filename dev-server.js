@@ -52,7 +52,7 @@ const server = http.createServer((req, res) => {
         const h = require('./api/knowledge-base');
         return h(req, wr);
       }
-      if (path === '/api/send-otp' || path === '/api/verify-otp') {
+      if (path === '/api/send-otp' || path === '/api/verify-otp' || path === '/api/forgot-password') {
         const h = require('./api/otp');
         return h(req, wr);
       }
