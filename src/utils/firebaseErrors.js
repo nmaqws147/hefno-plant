@@ -12,6 +12,8 @@ const errorMap = {
   'auth/requires-recent-login': 'يرجى تسجيل الخروج وإعادة تسجيل الدخول',
   'auth/invalid-action-code': 'رمز التحقق غير صالح',
   'auth/expired-action-code': 'انتهت صلاحية رمز التحقق',
+  'auth/missing-email': 'البريد الإلكتروني مطلوب',
+  'auth/missing-password': 'كلمة المرور مطلوبة',
 };
 
 export const getFirebaseErrorMessage = (err) => {

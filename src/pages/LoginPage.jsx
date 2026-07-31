@@ -164,6 +164,12 @@ const LoginPage = () => {
                 </div>
               </motion.div>
 
+              <motion.div variants={fadeUp} className="text-left">
+                <Link to="/forgot-password" className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline transition-colors">
+                  نسيت كلمة المرور؟
+                </Link>
+              </motion.div>
+
               <motion.div variants={fadeUp}>
                 <button
                   type="submit"

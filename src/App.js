@@ -73,6 +73,8 @@ const TermsPage = lazy(() => import('./pages/terms'));
 const AboutPage = lazy(() => import('./pages/about'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const SignUpPage = lazy(() => import('./pages/SignUpPage'));
+const ForgotPasswordPage = lazy(() => import('./pages/ForgotPasswordPage'));
+const ResetPasswordPage = lazy(() => import('./pages/ResetPasswordPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AdminStats = lazy(() => import('./component/admin-stats'));
@@ -159,6 +161,8 @@ const AppContent = () => {
           {/* الصفحات العامة (بدون تسجيل دخول) */}
           <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} />
           <Route path="/signup" element={<PublicRoute><SignUpPage /></PublicRoute>} />
+          <Route path="/forgot-password" element={<PublicRoute><ForgotPasswordPage /></PublicRoute>} />
+          <Route path="/reset-password" element={<PublicRoute><ResetPasswordPage /></PublicRoute>} />
 
           {/* الصفحة الرئيسية — عامة للزوار */}
           <Route path="/" element={<HomeScreen />} />
