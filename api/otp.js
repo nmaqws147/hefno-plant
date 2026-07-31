@@ -77,7 +77,9 @@ async function handleForgotPassword(req, res) {
   }
 
   try {
-    const resetLink = await firebaseAdmin.admin.auth().generatePasswordResetLink(normalizedEmail, {
+    const fb = firebaseAdmin.init();
+    if (!fb) throw new Error('Firebase Admin not initialized');
+    const resetLink = await fb.auth().generatePasswordResetLink(normalizedEmail, {
       url: RESET_URL,
       handleCodeInApp: false,
     });

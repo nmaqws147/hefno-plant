@@ -164,9 +164,16 @@ const LoginPage = () => {
                 </div>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="text-left">
-                <Link to="/forgot-password" className="text-xs text-emerald-600 dark:text-emerald-400 hover:underline transition-colors">
+              <motion.div variants={fadeUp} className="text-center">
+                <Link
+                  to="/forgot-password"
+                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-emerald-600/30 dark:border-emerald-400/30 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-600/10 dark:hover:bg-emerald-400/10 hover:border-emerald-600/50 dark:hover:border-emerald-400/50 transition-all duration-300"
+                >
                   نسيت كلمة المرور؟
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </motion.div>
 
