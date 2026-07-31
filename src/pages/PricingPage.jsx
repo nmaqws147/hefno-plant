@@ -408,7 +408,13 @@ export default function PricingPage() {
   useEffect(() => {
     if (searchParams.get('success') === 'true') {
       toast.success('تم تفعيل الاشتراك بنجاح!');
-      refreshSubscription?.();
+      let attempt = 0;
+      const poll = async () => {
+        await refreshSubscription?.();
+        attempt += 1;
+        if (attempt < 5) setTimeout(poll, 2000);
+      };
+      poll();
     }
     if (searchParams.get('canceled') === 'true') {
       toast.error('تم إلغاء عملية الدفع');

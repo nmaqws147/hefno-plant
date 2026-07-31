@@ -84,10 +84,6 @@
       "dest": "api/billing.js"
     },
     {
-      "src": "/api/([^/]+)",
-      "dest": "api/$1.js"
-    },
-    {
       "src": "/api/otp/(send|verify)",
       "dest": "api/otp.js"
     },
@@ -98,6 +94,10 @@
     {
       "src": "/api/verify-otp",
       "dest": "api/otp.js"
+    },
+    {
+      "src": "/api/([^/]+)",
+      "dest": "api/$1.js"
     },
     {
       "src": "/(.*)",

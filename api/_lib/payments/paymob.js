@@ -24,12 +24,48 @@ function getAmountCents(plan, billingCycle) {
   return amount;
 }
 
+const HMAC_FIELDS = [
+  'amount_cents',
+  'created_at',
+  'currency',
+  'error_occured',
+  'has_parent_transaction',
+  'id',
+  'integration_id',
+  'is_3d_secure',
+  'is_auth',
+  'is_capture',
+  'is_refunded',
+  'is_standalone_payment',
+  'is_voided',
+  'order.id',
+  'owner',
+  'pending',
+  'source_data.pan',
+  'source_data.sub_type',
+  'source_data.type',
+  'success',
+];
+
+function resolvePath(obj, path) {
+  return path.split('.').reduce((acc, key) => (acc == null ? acc : acc[key]), obj);
+}
+
+function computeTransactionHmac(obj, secret) {
+  const str = HMAC_FIELDS.map((field) => {
+    const val = resolvePath(obj, field);
+    if (val === undefined || val === null) return '';
+    return String(val);
+  }).join('');
+  return crypto.createHmac('sha512', secret).update(str).digest('hex');
+}
+
 const provider = {
   async createCheckoutSession({ plan, billingCycle, userId, customerEmail }) {
     try {
       const amountCents = getAmountCents(plan, billingCycle);
 
-      const authRes = await fetch('https://accept.paymob.com/api/auth/tokens', {
+      const authRes = await fetch(`${getBaseUrl()}/api/auth/tokens`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ api_key: process.env.PAYMOB_API_KEY }),
@@ -40,7 +76,7 @@ const provider = {
       }
       const authToken = authData.token;
 
-      const orderRes = await fetch('https://accept.paymob.com/api/ecommerce/orders', {
+      const orderRes = await fetch(`${getBaseUrl()}/api/ecommerce/orders`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -72,7 +108,7 @@ const provider = {
         state: 'N/A',
       };
 
-      const paymentKeyRes = await fetch('https://accept.paymob.com/api/acceptance/payments_keys', {
+      const paymentKeyRes = await fetch(`${getBaseUrl()}/api/acceptance/payment_keys`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -84,6 +120,7 @@ const provider = {
           currency: 'EGP',
           integration_id: parseInt(process.env.PAYMOB_INTEGRATION_ID),
           lock_order_when_paid: true,
+          redirect_url: process.env.PAYMOB_REDIRECT_URL || 'https://hefnoplant.site/pricing?success=true',
         }),
       });
       const paymentKeyData = await paymentKeyRes.json();
@@ -121,31 +158,35 @@ const provider = {
   async handleWebhook(req) {
     try {
       const rawBody = req.rawBody || (typeof req.body === 'string' ? req.body : JSON.stringify(req.body));
-      const body = typeof rawBody === 'string' ? JSON.parse(rawBody) : rawBody;
+      let parsed = {};
+      try { parsed = typeof rawBody === 'string' ? JSON.parse(rawBody) : rawBody; } catch { parsed = {}; }
+      const body = parsed.obj && typeof parsed.obj === 'object' ? parsed.obj : parsed;
 
-      const hmacInput = typeof rawBody === 'string' ? rawBody : JSON.stringify(body);
-      const calculatedHmac = crypto.createHmac('sha512', process.env.PAYMOB_HMAC_SECRET)
-        .update(hmacInput)
-        .digest('hex');
-      const receivedHmac = req.headers['hmac'];
+      const url = req.url ? new URL(req.url, 'https://hefnoplant.site') : null;
+      const receivedHmac = url?.searchParams.get('hmac') || req.headers['hmac'];
+      const calculatedHmac = computeTransactionHmac(body, process.env.PAYMOB_HMAC_SECRET);
 
-      if (calculatedHmac !== receivedHmac) {
+      if (!receivedHmac || calculatedHmac !== receivedHmac) {
+        console.error('Paymob webhook: invalid_hmac', { receivedHmac, calculatedHmac, body: JSON.stringify(body) });
         return { event: 'invalid_hmac', data: null };
       }
 
       if (!body || !body.id || !body.order || !body.order.id) {
+        console.error('Paymob webhook: invalid_payload', JSON.stringify(body));
         return { event: 'invalid_payload', data: null };
       }
 
-      if (body.merchant_id && String(body.merchant_id) !== String(process.env.PAYMOB_MERCHANT_ID)) {
+      if (body.order.merchant?.id && String(body.order.merchant.id) !== String(process.env.PAYMOB_MERCHANT_ID)) {
+        console.error('Paymob webhook: invalid_merchant', { received: body.order.merchant.id, expected: process.env.PAYMOB_MERCHANT_ID });
         return { event: 'invalid_merchant', data: null };
       }
 
       if (body.integration_id && String(body.integration_id) !== String(process.env.PAYMOB_INTEGRATION_ID)) {
+        console.error('Paymob webhook: invalid_integration', { received: body.integration_id, expected: process.env.PAYMOB_INTEGRATION_ID });
         return { event: 'invalid_integration', data: null };
       }
 
-      if (!body.success || body.is_refund) {
+      if (!body.success || body.is_refunded || body.is_refund) {
         const transactionId = String(body.id);
         const db = getDb();
         await db.collection('payment_events').doc(transactionId).set({
@@ -171,16 +212,19 @@ const provider = {
 
       const orderSnap = await db.collection('payment_events').doc(orderId).get();
       if (!orderSnap.exists) {
+        console.error('Paymob webhook: order_not_found', { orderId });
         return { event: 'order_not_found', data: body };
       }
 
       const orderData = orderSnap.data();
 
       if (body.amount_cents !== orderData.amountCents) {
+        console.error('Paymob webhook: amount_mismatch', { received: body.amount_cents, expected: orderData.amountCents });
         return { event: 'amount_mismatch', data: body };
       }
 
       if (body.currency !== orderData.currency) {
+        console.error('Paymob webhook: currency_mismatch', { received: body.currency, expected: orderData.currency });
         return { event: 'currency_mismatch', data: body };
       }
 
@@ -233,4 +277,4 @@ const provider = {
 };
 
 registerProvider('paymob', provider);
-module.exports = { provider, PRICES };
+module.exports = { provider, PRICES, computeTransactionHmac };

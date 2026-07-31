@@ -1,7 +1,9 @@
+import { auth } from '../firebase';
+
 const API_BASE = '/api';
 
 async function authFetch(path, options = {}) {
-  const token = localStorage.getItem('firebaseToken');
+  const token = auth.currentUser ? await auth.currentUser.getIdToken() : null;
   const headers = { 'Content-Type': 'application/json', ...options.headers };
   if (token) headers['Authorization'] = `Bearer ${token}`;
   const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
