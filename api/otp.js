@@ -1,6 +1,8 @@
 import { Redis } from '@upstash/redis';
 import nodemailer from 'nodemailer';
 import { Resend } from 'resend';
+import { buildForgotEmail, RESET_URL } from './_lib/resetEmail.js';
+import firebaseAdmin from './_lib/firebaseAdmin.js';
 
 const redis = new Redis({ url: process.env.REDIS_URL, token: process.env.TOKEN });
 const OTP_TTL = 300;
@@ -52,6 +54,42 @@ function buildOtpEmail(otp) {
     <p style="font-size:12px;color:#9ca3af;text-align:center;margin:24px 0 0;">إذا لم تطلب هذا الرمز، تجاهل هذه الرسالة.</p></div>`;
 }
 
+const FORGOT_COOLDOWN_TTL = 60;
+const FORGOT_HOURLY_TTL = 3600;
+const FORGOT_HOURLY_LIMIT = 5;
+
+async function handleForgotPassword(req, res) {
+  const { email } = req.body;
+  if (!email || !VALID_EMAIL.test(email)) {
+    return res.status(400).json({ success: false, message: 'البريد الإلكتروني غير صالح' });
+  }
+  const normalizedEmail = email.toLowerCase().trim();
+
+  const remaining = await redis.ttl(`forgot_cooldown:${normalizedEmail}`);
+  if (remaining > 0) {
+    return res.status(429).json({ success: false, message: `انتظر ${remaining} ثانية قبل طلب رابط جديد` });
+  }
+
+  const hourCount = await redis.incr(`forgot_hour:${normalizedEmail}`);
+  if (hourCount === 1) await redis.expire(`forgot_hour:${normalizedEmail}`, FORGOT_HOURLY_TTL);
+  if (hourCount > FORGOT_HOURLY_LIMIT) {
+    return res.status(429).json({ success: false, message: 'لقد تجاوزت الحد المسموح، حاول لاحقاً' });
+  }
+
+  try {
+    const resetLink = await firebaseAdmin.admin.auth().generatePasswordResetLink(normalizedEmail, {
+      url: RESET_URL,
+      handleCodeInApp: false,
+    });
+    await sendEmail(normalizedEmail, 'إعادة تعيين كلمة المرور - Hefno-Plant', buildForgotEmail(resetLink));
+  } catch (err) {
+    log('forgot_link_failed', { to: normalizedEmail, error: err.message });
+  }
+
+  await redis.set(`forgot_cooldown:${normalizedEmail}`, '1', { ex: FORGOT_COOLDOWN_TTL });
+  return res.status(200).json({ success: true });
+}
+
 async function handleSend(req, res) {
   const { email } = req.body;
   if (!email || !VALID_EMAIL.test(email)) return res.status(400).json({ success: false, message: 'البريد الإلكتروني غير صالح' });
@@ -95,6 +133,10 @@ export default async function handler(req, res) {
   try {
     const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
     const path = url.pathname;
+    if (path === '/api/forgot-password') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
+      return await handleForgotPassword(req, res);
+    }
     if (path === '/api/send-otp' || path === '/api/otp/send') {
       if (req.method !== 'POST') return res.status(405).json({ error: 'Method Not Allowed' });
       return await handleSend(req, res);
