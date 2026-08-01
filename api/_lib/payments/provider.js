@@ -13,8 +13,12 @@ function getAvailableProviders() {
   return Object.keys(providers);
 }
 
-async function createPayment({ provider, plan, billingCycle, userId, customerEmail }) {
-  return getProvider(provider).createCheckoutSession({ plan, billingCycle, userId, customerEmail });
+async function createPayment({ provider, plan, billingCycle, userId, customerEmail, phoneNumber }) {
+  const impl = getProvider(provider);
+  if (phoneNumber && typeof impl.createWalletSession === 'function') {
+    return impl.createWalletSession({ plan, billingCycle, userId, customerEmail, phoneNumber });
+  }
+  return impl.createCheckoutSession({ plan, billingCycle, userId, customerEmail });
 }
 
 async function verifyPayment({ provider, paymentId, data }) {

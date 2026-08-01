@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { createPaymobIntent } from '../services/subscriptionService';
+import { initiateVodafoneCash, confirmVodafoneCash } from '../services/subscriptionService';
 import { toast } from 'sonner';
 import {
-  Leaf, Sparkles, Crown, Check, Minus, CreditCard,
+  Leaf, Sparkles, Crown, Check, Minus, CreditCard, Smartphone, Copy,
   ShieldCheck, RefreshCw, Headphones, ChevronDown, ChevronLeft,
-  Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap,
+  Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap, X,
 } from 'lucide-react';
 
 const PLANS = [
@@ -70,18 +70,14 @@ const PLANS = [
 const FAQS = [
   { q: 'هل يمكنني الإلغاء في أي وقت؟', a: 'نعم، يمكنك إلغاء اشتراكك في أي وقت. ستظل الميزات المدفوعة متاحة حتى نهاية فترة الفوترة دون أي رسوم إضافية.' },
   { q: 'هل يمكنني الترقية لاحقاً؟', a: 'بالتأكيد. يمكنك الترقية من أي باقة في أي وقت. سيتم تطبيق الفرق بشكل تناسبي على باقي فترة الفوترة.' },
-  { q: 'ما هي طرق الدفع المتاحة؟', a: 'ندعم جميع طرق الدفع المتاحة في مصر عبر Paymob: بطاقات الائتمان (فيزا، ماستركارد)، فودافون كاش، محافظ إلكترونية، وغيرها.' },
-  { q: 'هل مدفوعاتي آمنة؟', a: 'جميع المدفوعات مشفرة ومحمية بواسطة Stripe، أحد أشهر مزودي خدمات الدفع الرقمي في العالم والمعتمد عالمياً.' },
+  { q: 'ما هي طرق الدفع المتاحة؟', a: 'الدفع عبر فودافون كاش. حوّل المبلغ إلى رقم فودافون كاش المخصص ثم قم بتأكيد الدفع، وسيتم تفعيل اشتراكك بعد التحقق.' },
+  { q: 'هل مدفوعاتي آمنة؟', a: 'نعم. يتم التحقق من كل عملية دفع يدوياً قبل تفعيل الاشتراك، وبياناتك محمية بالكامل.' },
 
-];
-
-const PAYMENT_METHODS = [
-  { id: 'paymob', name: 'فيزا / ماستركارد / فودافون كاش', icon: CreditCard },
 ];
 
 const TRUST_ITEMS = [
-  { icon: ShieldCheck, title: 'مدفوعات آمنة', desc: 'مشفرة بالكامل عبر Stripe' },
-  { icon: CreditCard, title: 'بوابات دفع متعددة', desc: 'فيزا، ماستركارد، فودافون كاش، محافظ إلكترونية' },
+  { icon: ShieldCheck, title: 'دفع آمن', desc: 'تحقق يدوي قبل تفعيل الاشتراك' },
+  { icon: CreditCard, title: 'فودافون كاش', desc: 'حوّل بسهولة من تطبيق فودافون كاش' },
   { icon: RefreshCw, title: 'إلغاء في أي وقت', desc: 'بدون رسوم إضافية' },
   { icon: Headphones, title: 'دعم فني', desc: 'فريق متخصص لمساعدتك' },
 ];
@@ -398,12 +394,169 @@ function FinalCTA() {
   );
 }
 
+function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
+  const [step, setStep] = useState('pay');
+  const [reference, setReference] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [info, setInfo] = useState(null);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (open) {
+      setStep('pay');
+      setReference('');
+      setLoading(false);
+      setInfo(null);
+      setCopied(false);
+    }
+  }, [open]);
+
+  if (!open) return null;
+
+  const amount = billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice;
+
+  const copyNumber = async () => {
+    try {
+      await navigator.clipboard.writeText(info?.phoneNumber || '');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (_) {}
+  };
+
+  const handlePay = async () => {
+    setLoading(true);
+    try {
+      const data = await initiateVodafoneCash(plan.id, billingCycle);
+      setInfo(data);
+      setStep('confirm');
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleConfirm = async () => {
+    setLoading(true);
+    try {
+      await confirmVodafoneCash(plan.id, billingCycle, reference);
+      toast.success('تم استلام طلبك! بانتظار تأكيد الإدارة');
+      onActivated?.();
+      onClose();
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="relative w-full max-w-md rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-2xl p-6"
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 left-4 p-1.5 rounded-lg text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-11 h-11 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center">
+            <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-zinc-900 dark:text-white">الدفع عبر فودافون كاش</h3>
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">{plan.name} — {billingCycle === 'monthly' ? 'شهري' : 'سنوي'}</p>
+          </div>
+        </div>
+
+        {step === 'pay' && (
+          <div className="space-y-4">
+            <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-800/40 p-4">
+              <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1">المبلغ المطلوب</p>
+              <p className="text-3xl font-bold text-emerald-700 dark:text-emerald-300">{amount} ج.م</p>
+            </div>
+            <div className="space-y-2.5">
+              {[
+                { n: '1', t: 'افتح تطبيق فودافون كاش' },
+                { n: '2', t: 'اختر "حوّل لأي حساب فودافون كاش"' },
+                { n: '3', t: 'أدخل الرقم والمبلغ ثم أرسل' },
+                { n: '4', t: 'اضغط "أرسلت المبلغ" وأكمل البيانات' },
+              ].map((s) => (
+                <div key={s.n} className="flex items-center gap-3">
+                  <span className="shrink-0 w-6 h-6 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center">{s.n}</span>
+                  <span className="text-sm text-zinc-700 dark:text-zinc-300">{s.t}</span>
+                </div>
+              ))}
+            </div>
+            <button
+              onClick={handlePay}
+              disabled={loading}
+              className="w-full h-12 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-sm font-semibold shadow-lg shadow-emerald-500/25 hover:from-emerald-400 hover:to-emerald-500 active:scale-[0.98] transition-all disabled:opacity-60"
+            >
+              {loading ? 'جاري التحميل...' : 'المتابعة لإتمام الدفع'}
+            </button>
+          </div>
+        )}
+
+        {step === 'confirm' && (
+          <div className="space-y-4">
+            <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-800/40 p-4">
+              <p className="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1">حوّل المبلغ إلى رقم فودافون كاش</p>
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-2xl font-bold text-emerald-700 dark:text-emerald-300" dir="ltr">{info?.phoneNumber}</p>
+                <button
+                  onClick={copyNumber}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white dark:bg-zinc-800 border border-emerald-200 dark:border-emerald-700 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-zinc-700"
+                >
+                  {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                  {copied ? 'تم النسخ' : 'نسخ'}
+                </button>
+              </div>
+              <p className="mt-2 text-xs text-emerald-700 dark:text-emerald-400">
+                المبلغ: {amount} ج.م — باقة {plan.name} {billingCycle === 'monthly' ? 'شهري' : 'سنوي'}
+              </p>
+            </div>
+            <input
+              type="text"
+              dir="ltr"
+              value={reference}
+              onChange={(e) => setReference(e.target.value)}
+              placeholder="رقم العملية (اختياري)"
+              className="w-full h-11 px-3 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900 text-sm text-zinc-900 dark:text-white placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+            <button
+              onClick={handleConfirm}
+              disabled={loading}
+              className="w-full h-12 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-sm font-semibold shadow-lg shadow-emerald-500/25 hover:from-emerald-400 hover:to-emerald-500 active:scale-[0.98] transition-all disabled:opacity-60"
+            >
+              {loading ? 'جاري التحميل...' : 'أرسلت المبلغ — أكد الآن'}
+            </button>
+            <button
+              onClick={() => setStep('pay')}
+              className="w-full text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300"
+            >
+              رجوع
+            </button>
+          </div>
+        )}
+      </motion.div>
+    </div>
+  );
+}
+
 export default function PricingPage() {
   const { user, isPremium, isElite, refreshSubscription } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [billingCycle, setBillingCycle] = useState('monthly');
   const [loading, setLoading] = useState(null);
+  const [vcModal, setVcModal] = useState(null);
 
   useEffect(() => {
     if (searchParams.get('success') === 'true') {
@@ -428,15 +581,12 @@ export default function PricingPage() {
       toast.info('أنت مشترك بالفعل في هذه الباقة');
       return;
     }
-    setLoading(planId);
-    try {
-      const { sessionUrl } = await createPaymobIntent(planId, billingCycle);
-      window.location.href = sessionUrl;
-    } catch (err) {
-      toast.error(err.message);
-    } finally {
-      setLoading(null);
-    }
+    const plan = PLANS.find((p) => p.id === planId);
+    setVcModal({ plan, billingCycle });
+  };
+
+  const handleVcActivated = async () => {
+    await refreshSubscription?.();
   };
 
   const getPlanPrice = (plan) => {
@@ -477,6 +627,16 @@ export default function PricingPage() {
       <TrustSection />
       <FAQSection />
       <FinalCTA />
+
+      {vcModal && (
+        <VodafoneCashModal
+          open={!!vcModal}
+          plan={vcModal.plan}
+          billingCycle={vcModal.billingCycle}
+          onClose={() => setVcModal(null)}
+          onActivated={handleVcActivated}
+        />
+      )}
     </div>
   );
 }

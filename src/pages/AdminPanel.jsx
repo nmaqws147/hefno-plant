@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { BarChart3, FileText, CreditCard, Search, DollarSign, CheckCircle, XCircle, Clock } from 'lucide-react';
-import { getPayments } from '../services/subscriptionService';
+import { BarChart3, FileText, CreditCard, Search, DollarSign, CheckCircle, XCircle, Clock, Check, Ban, Smartphone } from 'lucide-react';
+import { getPayments, activateVodafoneCashPayment, rejectVodafoneCashPayment } from '../services/subscriptionService';
+import { toast } from 'sonner';
 import AdminBlogPage from './blog/AdminBlogPage';
 import ActionStatsScreen from '../component/admin-stats';
 import SEO from '../component/SEO';
@@ -103,6 +104,26 @@ function PaymentsPanel() {
   const successCount = payments.filter(p => p.status === 'paid').length;
   const failedCount = payments.filter(p => p.status !== 'paid').length;
 
+  const handleReject = async (paymentId) => {
+    try {
+      await rejectVodafoneCashPayment(paymentId);
+      toast.success('تم إلغاء الطلب');
+      fetchPayments();
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
+  const handleActivate = async (paymentId) => {
+    try {
+      await activateVodafoneCashPayment(paymentId);
+      toast.success('تم تفعيل الاشتراك بنجاح');
+      fetchPayments();
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
   return (
     <div className="p-6 space-y-6 max-w-6xl mx-auto">
       <h2 className="text-xl font-bold text-zinc-900 dark:text-white">إدارة المدفوعات</h2>
@@ -164,16 +185,18 @@ function PaymentsPanel() {
               <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">المعاملات</th>
               <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">المستخدم</th>
               <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">الباقة</th>
+              <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">الطريقة</th>
               <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">المبلغ</th>
               <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">الحالة</th>
               <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">التاريخ</th>
+              <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">إجراءات</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
             {loading ? (
-              <tr><td colSpan="6" className="px-4 py-8 text-center text-zinc-400">جاري التحميل...</td></tr>
+              <tr><td colSpan="8" className="px-4 py-8 text-center text-zinc-400">جاري التحميل...</td></tr>
             ) : payments.length === 0 ? (
-              <tr><td colSpan="6" className="px-4 py-8 text-center text-zinc-400">لا توجد مدفوعات</td></tr>
+              <tr><td colSpan="8" className="px-4 py-8 text-center text-zinc-400">لا توجد مدفوعات</td></tr>
             ) : payments.map((p) => (
               <tr key={p.id} className="hover:bg-zinc-50 dark:hover:bg-zinc-900/50">
                 <td className="px-4 py-3 font-mono text-xs text-zinc-600 dark:text-zinc-400">{p.transactionId || p.id}</td>
@@ -185,6 +208,21 @@ function PaymentsPanel() {
                       : 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400'
                   }`}>
                     {p.plan} {p.billingCycle === 'monthly' ? 'شهري' : 'سنوي'}
+                  </span>
+                </td>
+                <td className="px-4 py-3">
+                  <span className="inline-flex items-center gap-1 text-xs text-zinc-600 dark:text-zinc-400">
+                    {p.paymentMethod === 'vodafone_cash' || p.provider === 'vodafone_cash' ? (
+                      <>
+                        <Smartphone className="w-3 h-3" />
+                        فودافون كاش
+                      </>
+                    ) : (
+                      <>
+                        <CreditCard className="w-3 h-3" />
+                        بطاقة
+                      </>
+                    )}
                   </span>
                 </td>
                 <td className="px-4 py-3 font-medium text-zinc-900 dark:text-white">{p.amount} ج.م</td>
@@ -202,6 +240,28 @@ function PaymentsPanel() {
                 </td>
                 <td className="px-4 py-3 text-xs text-zinc-500 dark:text-zinc-400">
                   {new Date(p.createdAt).toLocaleDateString('ar-EG')}
+                </td>
+                <td className="px-4 py-3">
+                  {p.status === 'pending' ? (
+                    <div className="flex items-center gap-1.5">
+                      <button
+                        onClick={() => handleActivate(p.id)}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700"
+                      >
+                        <Check className="w-3 h-3" />
+                        تفعيل
+                      </button>
+                      <button
+                        onClick={() => handleReject(p.id)}
+                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-xs font-semibold hover:bg-red-200 dark:hover:bg-red-900/50"
+                      >
+                        <Ban className="w-3 h-3" />
+                        إلغاء
+                      </button>
+                    </div>
+                  ) : (
+                    <span className="text-xs text-zinc-300 dark:text-zinc-600">—</span>
+                  )}
                 </td>
               </tr>
             ))}

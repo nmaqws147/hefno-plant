@@ -1,6 +1,7 @@
 const { verifyToken, getDb, isAdmin } = require('./_lib/firebaseAdmin');
 const { getSubscription, checkQuota: checkQuotaService, expireSubscription } = require('./_lib/subscriptionService');
 const { createPayment, handleWebhook } = require('./_lib/payments/provider');
+const { getAmountCents } = require('./_lib/payments/prices');
 require('./_lib/payments/paymob');
 const { checkQuota } = require('./_lib/checkQuota');
 
@@ -74,6 +75,163 @@ async function handlePaymobIntent(req, res) {
     customerEmail: decoded.firebase?.identities?.email?.[0] || req.body.email,
   });
   return res.status(200).json(result);
+}
+
+function getVodafoneCashNumber() {
+  return process.env.VODAFONE_CASH_NUMBER || '01010101010';
+}
+
+function validatePlanCycle(plan, billingCycle) {
+  if (!plan || !['premium', 'elite'].includes(plan)) return 'Invalid plan';
+  if (!billingCycle || !['monthly', 'yearly'].includes(billingCycle)) return 'Invalid billing cycle';
+  return null;
+}
+
+async function handleVodafoneCashInitiate(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
+  const decoded = await verifyToken(authHeader.slice(7));
+  const { plan, billingCycle } = req.body;
+  const invalid = validatePlanCycle(plan, billingCycle);
+  if (invalid) return res.status(400).json({ error: invalid });
+
+  const amountCents = getAmountCents(plan, billingCycle);
+  const phoneNumber = getVodafoneCashNumber();
+
+  return res.status(200).json({
+    paymentMethod: 'vodafone_cash',
+    phoneNumber,
+    amount: amountCents / 100,
+    currency: 'EGP',
+    plan,
+    billingCycle,
+  });
+}
+
+async function handleVodafoneCashConfirm(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
+  const decoded = await verifyToken(authHeader.slice(7));
+  const { plan, billingCycle, reference } = req.body;
+  const invalid = validatePlanCycle(plan, billingCycle);
+  if (invalid) return res.status(400).json({ error: invalid });
+
+  const amountCents = getAmountCents(plan, billingCycle);
+  const db = getDb();
+
+  const docRef = await db.collection('payments').add({
+    userId: decoded.uid,
+    plan,
+    billingCycle,
+    amount: amountCents / 100,
+    currency: 'EGP',
+    status: 'pending',
+    paymentMethod: 'vodafone_cash',
+    reference: typeof reference === 'string' && reference.trim() ? reference.trim() : null,
+    phoneNumber: getVodafoneCashNumber(),
+    provider: 'vodafone_cash',
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  });
+
+  await db.collection('payment_events').doc(docRef.id).set({
+    event: 'payment_pending',
+    userId: decoded.uid,
+    plan,
+    billingCycle,
+    amountCents,
+    currency: 'EGP',
+    paymentMethod: 'vodafone_cash',
+    timestamp: new Date().toISOString(),
+  });
+
+  await require('./_lib/subscriptionService').logEvent({
+    userId: decoded.uid,
+    event: 'payment_pending',
+    plan,
+    billingCycle,
+    paymentProvider: 'vodafone_cash',
+    details: { reference, amount: amountCents / 100 },
+  });
+
+  return res.status(200).json({ success: true, paymentId: docRef.id, status: 'pending' });
+}
+
+async function handleVodafoneCashActivate(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
+  if (!(await isAdmin(authHeader.slice(7)))) return res.status(403).json({ error: 'Admin access required' });
+
+  const { paymentId } = req.body;
+  if (!paymentId) return res.status(400).json({ error: 'paymentId required' });
+
+  const db = getDb();
+  const snap = await db.collection('payments').doc(String(paymentId)).get();
+  if (!snap.exists) return res.status(404).json({ error: 'Payment not found' });
+
+  const payment = snap.data();
+  if (payment.status === 'paid') return res.status(200).json({ success: true, alreadyActivated: true });
+  if (payment.status === 'failed') return res.status(400).json({ error: 'Payment already rejected' });
+
+  const sub = await require('./_lib/subscriptionService').activateSubscription({
+    userId: payment.userId,
+    plan: payment.plan,
+    billingCycle: payment.billingCycle,
+    paymentProvider: 'vodafone_cash',
+  });
+
+  await db.collection('payments').doc(String(paymentId)).update({
+    status: 'paid',
+    updatedAt: new Date().toISOString(),
+  });
+
+  await db.collection('payment_events').doc(String(paymentId)).set({
+    event: 'subscription_activated',
+    processedAt: new Date().toISOString(),
+  }, { merge: true });
+
+  await require('./_lib/subscriptionService').logEvent({
+    userId: payment.userId,
+    event: 'subscription_activated',
+    plan: payment.plan,
+    billingCycle: payment.billingCycle,
+    paymentProvider: 'vodafone_cash',
+    details: { paymentId, amount: payment.amount },
+  });
+
+  return res.status(200).json({ success: true, subscription: sub });
+}
+
+async function handleVodafoneCashReject(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
+  if (!(await isAdmin(authHeader.slice(7)))) return res.status(403).json({ error: 'Admin access required' });
+
+  const { paymentId } = req.body;
+  if (!paymentId) return res.status(400).json({ error: 'paymentId required' });
+
+  const db = getDb();
+  const snap = await db.collection('payments').doc(String(paymentId)).get();
+  if (!snap.exists) return res.status(404).json({ error: 'Payment not found' });
+
+  const payment = snap.data();
+  if (payment.status !== 'pending') return res.status(400).json({ error: 'Only pending payments can be rejected' });
+
+  await db.collection('payments').doc(String(paymentId)).update({
+    status: 'failed',
+    updatedAt: new Date().toISOString(),
+  });
+
+  await require('./_lib/subscriptionService').logEvent({
+    userId: payment.userId,
+    event: 'payment_failed',
+    plan: payment.plan,
+    billingCycle: payment.billingCycle,
+    paymentProvider: 'vodafone_cash',
+    details: { paymentId, reason: 'rejected_by_admin' },
+  });
+
+  return res.status(200).json({ success: true, status: 'failed' });
 }
 
 async function handlePaymobWebhook(req, res) {
@@ -198,11 +356,27 @@ module.exports = async (req, res) => {
       if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
       return await handlePaymobIntent(req, res);
     }
+    if (path === '/api/vodafone-cash/initiate') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handleVodafoneCashInitiate(req, res);
+    }
+    if (path === '/api/vodafone-cash/confirm') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handleVodafoneCashConfirm(req, res);
+    }
+    if (path === '/api/vodafone-cash/activate') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handleVodafoneCashActivate(req, res);
+    }
+    if (path === '/api/vodafone-cash/reject') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handleVodafoneCashReject(req, res);
+    }
     if (path === '/api/paymob/webhook') {
       if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
       return await handlePaymobWebhook(req, res);
     }
-    if (path === '/api/paymob/payments') {
+    if (path === '/api/paymob/payments' || path === '/api/billing/payments') {
       if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
       return await handlePaymobPayments(req, res);
     }

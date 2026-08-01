@@ -1,5 +1,6 @@
 const { registerProvider } = require('./provider');
 const { getDb } = require('../firebaseAdmin');
+const { getAmountCents } = require('./prices');
 const crypto = require('crypto');
 
 const REQUIRED_ENV_VARS = ['PAYMOB_API_KEY', 'PAYMOB_INTEGRATION_ID', 'PAYMOB_IFRAME_ID', 'PAYMOB_HMAC_SECRET', 'PAYMOB_MERCHANT_ID'];
@@ -8,20 +9,14 @@ for (const v of REQUIRED_ENV_VARS) {
     console.warn(`Paymob: missing env var ${v} — provider will fail at runtime`);
   }
 }
+if (!process.env.PAYMOB_WALLET_INTEGRATION_ID) {
+  console.warn('Paymob: missing env var PAYMOB_WALLET_INTEGRATION_ID — Vodafone Cash / wallet payments will fail at runtime');
+}
 
-const PRICES = {
-  premium: { monthly: 5000, yearly: 50000 },
-  elite: { monthly: 8000, yearly: 80000 },
-};
+const PRICES = require('./prices').PRICES;
 
 function getBaseUrl() {
   return process.env.PAYMOB_BASE_URL || 'https://accept.paymob.com';
-}
-
-function getAmountCents(plan, billingCycle) {
-  const amount = PRICES[plan]?.[billingCycle];
-  if (!amount) throw new Error(`Invalid plan/billingCycle: ${plan}/${billingCycle}`);
-  return amount;
 }
 
 const HMAC_FIELDS = [
@@ -60,76 +55,90 @@ function computeTransactionHmac(obj, secret) {
   return crypto.createHmac('sha512', secret).update(str).digest('hex');
 }
 
+async function createOrderAndPaymentKey({ amountCents, integrationId, orderId, customerEmail, phoneNumber }) {
+  const authRes = await fetch(`${getBaseUrl()}/api/auth/tokens`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ api_key: process.env.PAYMOB_API_KEY }),
+  });
+  const authData = await authRes.json();
+  if (!authRes.ok) {
+    throw new Error(`Paymob auth failed: ${authData.message || authRes.statusText}`);
+  }
+  const authToken = authData.token;
+
+  let paymobOrderId = orderId;
+  if (!paymobOrderId) {
+    const orderRes = await fetch(`${getBaseUrl()}/api/ecommerce/orders`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        auth_token: authToken,
+        delivery_needed: false,
+        amount_cents: amountCents,
+        currency: 'EGP',
+        items: [],
+      }),
+    });
+    const orderData = await orderRes.json();
+    if (!orderRes.ok) {
+      throw new Error(`Paymob order creation failed: ${orderData.message || orderRes.statusText}`);
+    }
+    paymobOrderId = orderData.id;
+  }
+
+  const billingData = {
+    apartment: 'N/A',
+    email: customerEmail || 'N/A',
+    floor: 'N/A',
+    first_name: 'HefnoPlant',
+    street: 'N/A',
+    building: 'N/A',
+    phone_number: phoneNumber || 'N/A',
+    shipping_method: 'N/A',
+    postal_code: 'N/A',
+    city: 'N/A',
+    country: 'N/A',
+    last_name: 'User',
+    state: 'N/A',
+  };
+
+  const paymentKeyRes = await fetch(`${getBaseUrl()}/api/acceptance/payment_keys`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      auth_token: authToken,
+      amount_cents: amountCents,
+      expiration: 3600,
+      order_id: paymobOrderId,
+      billing_data: billingData,
+      currency: 'EGP',
+      integration_id: parseInt(integrationId),
+      lock_order_when_paid: true,
+      redirect_url: process.env.PAYMOB_REDIRECT_URL || 'https://hefnoplant.site/pricing?success=true',
+    }),
+  });
+  const paymentKeyData = await paymentKeyRes.json();
+  if (!paymentKeyRes.ok) {
+    throw new Error(`Paymob payment key failed: ${paymentKeyData.message || paymentKeyRes.statusText}`);
+  }
+
+  return { authToken, paymobOrderId, paymentToken: paymentKeyData.token, billingData };
+}
+
 const provider = {
   async createCheckoutSession({ plan, billingCycle, userId, customerEmail }) {
     try {
       const amountCents = getAmountCents(plan, billingCycle);
 
-      const authRes = await fetch(`${getBaseUrl()}/api/auth/tokens`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ api_key: process.env.PAYMOB_API_KEY }),
+      const { paymobOrderId, paymentToken } = await createOrderAndPaymentKey({
+        amountCents,
+        integrationId: process.env.PAYMOB_INTEGRATION_ID,
+        customerEmail,
       });
-      const authData = await authRes.json();
-      if (!authRes.ok) {
-        throw new Error(`Paymob auth failed: ${authData.message || authRes.statusText}`);
-      }
-      const authToken = authData.token;
-
-      const orderRes = await fetch(`${getBaseUrl()}/api/ecommerce/orders`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          auth_token: authToken,
-          delivery_needed: false,
-          amount_cents: amountCents,
-          currency: 'EGP',
-          items: [],
-        }),
-      });
-      const orderData = await orderRes.json();
-      if (!orderRes.ok) {
-        throw new Error(`Paymob order creation failed: ${orderData.message || orderRes.statusText}`);
-      }
-
-      const billingData = {
-        apartment: 'N/A',
-        email: customerEmail || 'N/A',
-        floor: 'N/A',
-        first_name: userId || 'N/A',
-        street: 'N/A',
-        building: 'N/A',
-        phone_number: 'N/A',
-        shipping_method: 'N/A',
-        postal_code: 'N/A',
-        city: 'N/A',
-        country: 'N/A',
-        last_name: 'N/A',
-        state: 'N/A',
-      };
-
-      const paymentKeyRes = await fetch(`${getBaseUrl()}/api/acceptance/payment_keys`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          auth_token: authToken,
-          amount_cents: amountCents,
-          expiration: 3600,
-          order_id: orderData.id,
-          billing_data: billingData,
-          currency: 'EGP',
-          integration_id: parseInt(process.env.PAYMOB_INTEGRATION_ID),
-          lock_order_when_paid: true,
-          redirect_url: process.env.PAYMOB_REDIRECT_URL || 'https://hefnoplant.site/pricing?success=true',
-        }),
-      });
-      const paymentKeyData = await paymentKeyRes.json();
-      if (!paymentKeyRes.ok) {
-        throw new Error(`Paymob payment key failed: ${paymentKeyData.message || paymentKeyRes.statusText}`);
-      }
 
     const db = getDb();
-    const orderId = String(orderData.id);
+    const orderId = String(paymobOrderId);
     await db.collection('payment_events').doc(orderId).set({
       event: 'checkout_created',
       userId,
@@ -141,7 +150,7 @@ const provider = {
       timestamp: new Date().toISOString(),
     });
 
-    const iframeUrl = `${getBaseUrl()}/api/acceptance/iframes/${process.env.PAYMOB_IFRAME_ID}?payment_token=${paymentKeyData.token}`;
+    const iframeUrl = `${getBaseUrl()}/api/acceptance/iframes/${process.env.PAYMOB_IFRAME_ID}?payment_token=${paymentToken}`;
 
     return {
       sessionId: orderId,
@@ -152,6 +161,70 @@ const provider = {
     };
     } catch (err) {
       throw new Error(`Paymob createCheckoutSession failed: ${err.message}`);
+    }
+  },
+
+  async createWalletSession({ plan, billingCycle, userId, customerEmail, phoneNumber }) {
+    try {
+      const amountCents = getAmountCents(plan, billingCycle);
+      const walletIntegrationId = process.env.PAYMOB_WALLET_INTEGRATION_ID;
+      if (!walletIntegrationId) {
+        throw new Error('PAYMOB_WALLET_INTEGRATION_ID is not configured');
+      }
+
+      const { paymobOrderId, paymentToken } = await createOrderAndPaymentKey({
+        amountCents,
+        integrationId: walletIntegrationId,
+        customerEmail,
+        phoneNumber,
+      });
+
+      const payRes = await fetch(`${getBaseUrl()}/api/acceptance/payments/pay`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: {
+            identifier: phoneNumber,
+            subtype: 'WALLET',
+          },
+          payment_token: paymentToken,
+        }),
+      });
+      const payData = await payRes.json();
+      if (!payRes.ok) {
+        throw new Error(`Paymob wallet payment failed: ${payData.message || payRes.statusText}`);
+      }
+
+      const db = getDb();
+      const orderId = String(paymobOrderId);
+      await db.collection('payment_events').doc(orderId).set({
+        event: 'checkout_created',
+        userId,
+        plan,
+        billingCycle,
+        orderId,
+        amountCents,
+        currency: 'EGP',
+        paymentMethod: 'vodafone_cash',
+        phoneNumber,
+        timestamp: new Date().toISOString(),
+      });
+
+      const redirectUrl = payData.redirect_url || payData.redirection_url || null;
+      if (!redirectUrl) {
+        throw new Error(`Paymob wallet payment returned no redirect URL: ${JSON.stringify(payData)}`);
+      }
+
+      return {
+        sessionId: orderId,
+        sessionUrl: redirectUrl,
+        paymentReference: orderId,
+        amount: amountCents,
+        currency: 'EGP',
+        paymentMethod: 'vodafone_cash',
+      };
+    } catch (err) {
+      throw new Error(`Paymob createWalletSession failed: ${err.message}`);
     }
   },
 
@@ -181,9 +254,14 @@ const provider = {
         return { event: 'invalid_merchant', data: null };
       }
 
-      if (body.integration_id && String(body.integration_id) !== String(process.env.PAYMOB_INTEGRATION_ID)) {
-        console.error('Paymob webhook: invalid_integration', { received: body.integration_id, expected: process.env.PAYMOB_INTEGRATION_ID });
-        return { event: 'invalid_integration', data: null };
+      if (body.integration_id) {
+        const validIntegrations = [process.env.PAYMOB_INTEGRATION_ID, process.env.PAYMOB_WALLET_INTEGRATION_ID]
+          .filter(Boolean)
+          .map((id) => String(id));
+        if (!validIntegrations.includes(String(body.integration_id))) {
+          console.error('Paymob webhook: invalid_integration', { received: body.integration_id, expected: validIntegrations });
+          return { event: 'invalid_integration', data: null };
+        }
       }
 
       if (!body.success || body.is_refunded || body.is_refund) {
