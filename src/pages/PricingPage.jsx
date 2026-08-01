@@ -10,6 +10,13 @@ import {
   Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap, X,
 } from 'lucide-react';
 
+function getDeviceType() {
+  const ua = navigator.userAgent || '';
+  if (/Android/i.test(ua)) return 'android';
+  if (/iPhone|iPad|iPod/i.test(ua)) return 'ios';
+  return 'desktop';
+}
+
 const PLANS = [
   {
     id: 'free',
@@ -400,6 +407,7 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
   const [loading, setLoading] = useState(false);
   const [info, setInfo] = useState(null);
   const [copied, setCopied] = useState(false);
+  const [deviceType] = useState(() => getDeviceType());
 
   useEffect(() => {
     if (open) {
@@ -414,6 +422,9 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
   if (!open) return null;
 
   const amount = billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice;
+
+  const ussdCode = info?.phoneNumber ? `*9*7*${info.phoneNumber}*${amount}#` : '';
+  const ussdTelLink = info?.phoneNumber ? `tel:*9*7*${info.phoneNumber}*${amount}%23` : '';
 
   const copyNumber = async () => {
     try {
@@ -483,10 +494,9 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
             </div>
             <div className="space-y-2.5">
               {[
-                { n: '1', t: 'افتح تطبيق فودافون كاش' },
-                { n: '2', t: 'اختر "حوّل لأي حساب فودافون كاش"' },
-                { n: '3', t: 'أدخل الرقم والمبلغ ثم أرسل' },
-                { n: '4', t: 'اضغط "أرسلت المبلغ" وأكمل البيانات' },
+                { n: '1', t: deviceType === 'android' ? 'اضغط "اتصل الآن" — سيفتح الاتصال بالكود جاهزًا' : 'افتح تطبيق فودافون كاش أو اطلب الكود من الهاتف' },
+                { n: '2', t: 'أدخل الرقم السري (PIN) لتأكيد التحويل' },
+                { n: '3', t: 'ارجع و اضغط "أرسلت المبلغ" لإتمام الطلب' },
               ].map((s) => (
                 <div key={s.n} className="flex items-center gap-3">
                   <span className="shrink-0 w-6 h-6 rounded-full bg-emerald-500 text-white text-xs font-bold flex items-center justify-center">{s.n}</span>
@@ -522,6 +532,36 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
                 المبلغ: {amount} ج.م — باقة {plan.name} {billingCycle === 'monthly' ? 'شهري' : 'سنوي'}
               </p>
             </div>
+
+            {deviceType === 'android' && ussdTelLink && (
+              <a
+                href={ussdTelLink}
+                className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-sm font-semibold shadow-lg shadow-emerald-500/25 hover:from-emerald-400 hover:to-emerald-500 active:scale-[0.98] transition-all"
+              >
+                <Smartphone className="w-4 h-4" />
+                اتصل الآن لإتمام التحويل
+              </a>
+            )}
+
+            {(deviceType !== 'android' || !ussdTelLink) && (
+              <div className="rounded-xl bg-white dark:bg-zinc-800 border border-emerald-200 dark:border-emerald-800 p-4">
+                <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400 mb-1.5">كود التحويل السريع</p>
+                <div className="flex items-center justify-between gap-2">
+                  <code className="text-sm font-bold text-zinc-900 dark:text-white" dir="ltr">{ussdCode || 'جاري التحميل...'}</code>
+                  <button
+                    onClick={copyNumber}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 dark:bg-zinc-700 border border-emerald-200 dark:border-emerald-700 text-xs font-semibold text-emerald-700 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-zinc-600"
+                  >
+                    {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copied ? 'تم النسخ' : 'نسخ'}
+                  </button>
+                </div>
+                <p className="mt-2 text-[11px] text-zinc-500 dark:text-zinc-400">
+                  اطلب الكود من هاتفك، وأدخل الرقم السري لتأكيد التحويل
+                </p>
+              </div>
+            )}
+
             <input
               type="text"
               dir="ltr"
