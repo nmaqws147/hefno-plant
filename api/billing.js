@@ -317,20 +317,17 @@ async function handlePaymobPayments(req, res) {
   const targetUserId = searchUserId || (isAdminUser ? null : decoded.uid);
 
   const db = getDb();
-  let query = db.collection('payments').orderBy('createdAt', 'desc');
-
+  let query = db.collection('payments');
   if (targetUserId) query = query.where('userId', '==', targetUserId);
   if (status) query = query.where('status', '==', status);
 
-  const snap = await query.limit(limit).offset((page - 1) * limit).get();
-  const payments = [];
-  snap.forEach((d) => payments.push({ id: d.id, ...d.data() }));
+  const snap = await query.get();
+  const all = [];
+  snap.forEach((d) => all.push({ id: d.id, ...d.data() }));
 
-  let countQuery = db.collection('payments');
-  if (targetUserId) countQuery = countQuery.where('userId', '==', targetUserId);
-  if (status) countQuery = countQuery.where('status', '==', status);
-  const countSnap = await countQuery.get();
-  const total = countSnap.size;
+  all.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
+  const total = all.length;
+  const payments = all.slice((page - 1) * limit, (page - 1) * limit + limit);
 
   return res.status(200).json({ payments, total, page, limit });
 }
