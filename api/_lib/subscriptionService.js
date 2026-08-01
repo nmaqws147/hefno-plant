@@ -3,12 +3,13 @@ const { getDb } = require('./firebaseAdmin');
 const PREMIUM_MONTHLY_QUOTAS = {
   ai_chatbot: 100,
   knowledge_base: 70,
-  disease_diagnosis: 2,
+  disease_diagnosis: 14,
 };
 
 function calcYearlyQuotas() {
   const q = {};
   for (const [key, val] of Object.entries(PREMIUM_MONTHLY_QUOTAS)) {
+    if (key === 'disease_diagnosis') continue;
     q[key] = val * 12;
   }
   return q;
@@ -22,6 +23,19 @@ function getPackageQuotas(plan, billingCycle) {
   for (const [key, total] of Object.entries(quotas)) {
     pkg[key] = { total, remaining: total, resetDate: now };
   }
+  const diagEnd = new Date(now);
+  diagEnd.setMonth(diagEnd.getMonth() + 1);
+  pkg.disease_diagnosis = {
+    total: PREMIUM_MONTHLY_QUOTAS.disease_diagnosis,
+    remaining: PREMIUM_MONTHLY_QUOTAS.disease_diagnosis,
+    resetDate: now,
+    monthlyDiagnosisLimit: PREMIUM_MONTHLY_QUOTAS.disease_diagnosis,
+    diagnosisUsedThisMonth: 0,
+    diagnosisRemaining: PREMIUM_MONTHLY_QUOTAS.disease_diagnosis,
+    billingCycleStart: now,
+    billingCycleEnd: diagEnd,
+    lastResetDate: now,
+  };
   return pkg;
 }
 
@@ -141,4 +155,5 @@ module.exports = {
   consumePackageQuota,
   logEvent,
   PREMIUM_MONTHLY_QUOTAS,
+  getPackageQuotas,
 };

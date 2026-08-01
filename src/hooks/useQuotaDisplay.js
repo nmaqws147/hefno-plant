@@ -4,7 +4,7 @@ import { useFeatureAccess } from './useFeatureAccess';
 const LABELS = {
   ai_chatbot: { name: 'المساعد الذكي', unit: 'رسالة', period: 'اليوم' },
   knowledge_base: { name: 'قاعدة المعرفة', unit: 'بحث', period: 'الأسبوع' },
-  disease_diagnosis: { name: 'تشخيص الأمراض', unit: 'تشخيص', period: 'الأسبوع' },
+  disease_diagnosis: { name: 'تشخيص الأمراض', unit: 'تشخيص', period: 'الشهر' },
 };
 
 export function useQuotaDisplay(featureId) {

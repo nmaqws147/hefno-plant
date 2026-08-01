@@ -5,7 +5,7 @@ import DiagnosisError from './DiagnosisError';
 
 export default function ImagePreview({
   image, isAnalyzing, analysisResult, source,
-  onReplace, onRetake, onRemove, onAnalyze,
+  onReplace, onRetake, onRemove, onAnalyze, disabled,
 }) {
   if (!image) return null;
 
@@ -46,7 +46,11 @@ export default function ImagePreview({
               <Upload size={14} /> استبدال الصورة
             </button>
           )}
-          <button onClick={onAnalyze} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-b from-emerald-400 to-emerald-600 hover:shadow-lg hover:brightness-110 transition-all shadow-md">
+          <button onClick={onAnalyze} disabled={disabled} className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md ${
+            disabled
+              ? 'text-white bg-gray-300 dark:bg-gray-700 cursor-not-allowed'
+              : 'text-white bg-gradient-to-b from-emerald-400 to-emerald-600 hover:shadow-lg hover:brightness-110'
+          }`}>
             <Zap size={14} /> تحليل النبات
           </button>
         </div>
@@ -63,7 +67,11 @@ export default function ImagePreview({
               <Upload size={14} /> استبدال الصورة
             </button>
           )}
-          <button onClick={onAnalyze} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-b from-emerald-400 to-emerald-600 hover:shadow-lg hover:brightness-110 transition-all shadow-md">
+          <button onClick={onAnalyze} disabled={disabled} className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold transition-all shadow-md ${
+            disabled
+              ? 'text-white bg-gray-300 dark:bg-gray-700 cursor-not-allowed'
+              : 'text-white bg-gradient-to-b from-emerald-400 to-emerald-600 hover:shadow-lg hover:brightness-110'
+          }`}>
             <Zap size={14} /> إعادة المحاولة
           </button>
         </div>

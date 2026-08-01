@@ -29,7 +29,7 @@ const PLANS = {
 const FEATURES_LIST = [
   { id: 'ai_chatbot', name: 'المساعد الذكي', free: '5/يوم', premium: '100/شهر', elite: 'غير محدود' },
   { id: 'knowledge_base', name: 'قاعدة المعرفة', free: '5/أسبوع', premium: '70/شهر', elite: 'غير محدود' },
-  { id: 'disease_diagnosis', name: 'تشخيص الأمراض', free: '1/أسبوع', premium: '2/شهر', elite: 'غير محدود' },
+  { id: 'disease_diagnosis', name: 'تشخيص الأمراض', free: '1/أسبوع', premium: '14/شهر', elite: 'غير محدود' },
   { id: 'weather', name: 'الطقس', free: 'غير محدود', premium: 'غير محدود', elite: 'غير محدود' },
   { id: 'blog', name: 'المقالات', free: 'غير محدود', premium: 'غير محدود', elite: 'غير محدود' },
 ];

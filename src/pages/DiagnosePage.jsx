@@ -15,10 +15,13 @@ import { fadeUpStagger } from '../component/diagnose/motionVariants';
 import { validateImage, compressImage, formatDate } from '../component/diagnose/DiagnosisUtils';
 import { useAuth } from '../context/AuthContext';
 import { getGuestId } from '../services/guestId';
+import { useFeatureAccess } from '../hooks/useFeatureAccess';
 import QuotaModal from '../component/QuotaModal';
 
 export default function DiagnosePage({ id }) {
-  const { user, isPremium } = useAuth();
+  const { user, isPremium, isAdmin, isElite } = useAuth();
+  const diagnosisQuota = useFeatureAccess('disease_diagnosis');
+  const quotaLimitReached = !diagnosisQuota.loading && !isAdmin && !isElite && diagnosisQuota.limit > 0 && diagnosisQuota.remaining === 0;
   const { trackAction } = useTracking();
   const [image, setImage] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -65,6 +68,7 @@ export default function DiagnosePage({ id }) {
 
   const handleAnalyze = useCallback(async () => {
     if (!image) { toast.warning('يرجى رفع صورة أولاً'); return; }
+    if (quotaLimitReached) { setQuotaExhausted(true); return; }
     setIsAnalyzing(true);
     setAnalysisResult(null);
     setRateLimit(null);
@@ -82,7 +86,7 @@ export default function DiagnosePage({ id }) {
       });
       if (response.status === 429) {
         setQuotaExhausted(true);
-        handleError('لقد استنفذت حصتك الأسبوعية للتشخيص', 429);
+        handleError('لقد استنفذت حصتك الشهرية للتشخيص', 429);
         return;
       }
       const remaining = response.headers.get('X-RateLimit-Remaining');
@@ -108,9 +112,10 @@ export default function DiagnosePage({ id }) {
     } finally {
       setIsAnalyzing(false);
     }
-  }, [image, handleError, saveDiagnosisToLocalStorage, trackAction]);
+  }, [image, handleError, saveDiagnosisToLocalStorage, trackAction, quotaLimitReached]);
 
   const handleFileSelect = useCallback(async (file) => {
+    if (quotaLimitReached) { setQuotaExhausted(true); return; }
     if (file) {
       const validation = validateImage(file);
       if (!validation.valid) {
@@ -133,15 +138,16 @@ export default function DiagnosePage({ id }) {
         toast.error('فشل معالجة الصورة، يرجى تجربة التقاط صورة أخرى');
       }
     }
-  }, []);
+  }, [quotaLimitReached]);
 
   const handleCameraCapture = useCallback((dataUrl) => {
+    if (quotaLimitReached) { setQuotaExhausted(true); return; }
     setImage(dataUrl);
     setAnalysisResult(null);
     setRateLimit(null);
     setSource('camera');
     setShowCamera(false);
-  }, []);
+  }, [quotaLimitReached]);
 
   const resetImage = useCallback(() => {
     setImage(null);
@@ -257,6 +263,7 @@ export default function DiagnosePage({ id }) {
               isAnalyzing={isAnalyzing}
               analysisResult={analysisResult}
               source={source}
+              disabled={quotaLimitReached}
               onReplace={() => setShowCamera(false)}
               onRetake={() => setShowCamera(true)}
               onRemove={resetImage}
@@ -265,6 +272,7 @@ export default function DiagnosePage({ id }) {
           ) : (
             <ImageUploader
               isDragging={isDragging}
+              disabled={quotaLimitReached}
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}

@@ -1,6 +1,7 @@
 const { getDb } = require('./firebaseAdmin');
 const { loadFeature } = require('./loadFeatures');
 const { consumePackageQuota, PREMIUM_MONTHLY_QUOTAS, getSubscription } = require('./subscriptionService');
+const { getDiagnosisQuota, consumeDiagnosis } = require('./diagnosisQuotaService');
 
 const UUID_V4_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
@@ -58,6 +59,17 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
           return { allowed: true, remaining: Infinity, limit: Infinity };
         }
         if (sub.plan === 'premium' && sub.status === 'active') {
+          if (featureId === 'disease_diagnosis') {
+            if (incrementIfAllowed) {
+              const result = await consumeDiagnosis(userId);
+              if (!result.allowed) {
+                return { allowed: false, remaining: 0, limit: result.limit, error: 'quota_exhausted', isPremium: true, resetDate: result.resetAt };
+              }
+              return { allowed: true, remaining: result.remaining, limit: result.limit, usedThisMonth: result.usedThisMonth, resetDate: result.resetAt };
+            }
+            const status = await getDiagnosisQuota(userId);
+            return { allowed: status.allowed, remaining: status.remaining, limit: status.limit, usedThisMonth: status.usedThisMonth, resetDate: status.resetAt };
+          }
           const quota = sub.packageQuotas?.[featureId];
           if (quota) {
             if (incrementIfAllowed) {
@@ -93,6 +105,15 @@ async function checkQuota({ featureId, userId, guestId, isPremium, incrementIfAl
         }
         if (sub.plan === 'premium' && (sub.status === 'expired' || sub.status === 'cancelled')) {
           if (sub.expirationDate && new Date(sub.expirationDate.toDate?.() || sub.expirationDate) > new Date()) {
+            if (featureId === 'disease_diagnosis') {
+              if (incrementIfAllowed) {
+                const result = await consumeDiagnosis(userId);
+                if (!result.allowed) return { allowed: false, remaining: 0, limit: result.limit, error: 'quota_exhausted', isPremium: true, resetDate: result.resetAt };
+                return { allowed: true, remaining: result.remaining, limit: result.limit, usedThisMonth: result.usedThisMonth, resetDate: result.resetAt };
+              }
+              const status = await getDiagnosisQuota(userId);
+              return { allowed: status.allowed, remaining: status.remaining, limit: status.limit, usedThisMonth: status.usedThisMonth, resetDate: status.resetAt };
+            }
             const quota = sub.packageQuotas?.[featureId];
             if (quota) {
               if (incrementIfAllowed) {

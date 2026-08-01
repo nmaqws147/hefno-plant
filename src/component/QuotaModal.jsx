@@ -7,7 +7,7 @@ import { X, Bot, BookOpen, ScanSearch, Sparkles, Crown } from 'lucide-react';
 const FEATURE_INFO = {
   ai_chatbot: { name: 'المساعد الذكي', unit: 'رسالة', period: 'يومي' },
   knowledge_base: { name: 'قاعدة المعرفة', unit: 'استخدام', period: 'أسبوعي' },
-  disease_diagnosis: { name: 'تشخيص الأمراض', unit: 'تشخيص', period: 'أسبوعي' },
+  disease_diagnosis: { name: 'تشخيص الأمراض', unit: 'تشخيص', period: 'شهري' },
 };
 
 const FEATURE_ICONS = {
@@ -123,7 +123,7 @@ export default function QuotaLimitModal({ open, onClose, featureId }) {
 
   let title = 'تم استنفاد الحصة';
   let description = info
-    ? `لقد استنفدت حصتك ${info.period === 'يومي' ? 'اليومية' : 'الأسبوعية'} من ${info.name}. قم بالترقية للاستمرار.`
+    ? `لقد استنفدت حصتك ${info.period === 'يومي' ? 'اليومية' : info.period === 'شهري' ? 'الشهرية' : 'الأسبوعية'} من ${info.name}. قم بالترقية للاستمرار.`
     : 'لقد استنفدت حصتك الحالية. قم بالترقية للاستمرار.';
   let iconBg = 'from-emerald-500/20 to-emerald-600/10';
 
@@ -198,7 +198,7 @@ export default function QuotaLimitModal({ open, onClose, featureId }) {
 
         <div className="mt-6 pt-4 border-t border-zinc-800">
           <p className="text-xs text-zinc-600 text-center leading-relaxed">
-            الباقة المميزة تمنحك 100 رسالة / 70 بحث / 2 تشخيص شهرياً. الباقة الفريدة غير محدودة.
+            الباقة المميزة تمنحك 100 رسالة / 70 بحث / 14 تشخيص شهرياً. الباقة الفريدة غير محدودة.
           </p>
         </div>
 

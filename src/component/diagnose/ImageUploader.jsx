@@ -2,19 +2,19 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Upload, Camera, Zap, Target, Lightbulb, Smartphone } from 'lucide-react';
 
-export default function ImageUploader({ isDragging, onDragOver, onDragLeave, onDrop, onFileSelect, onCameraClick }) {
+export default function ImageUploader({ isDragging, onDragOver, onDragLeave, onDrop, onFileSelect, onCameraClick, disabled }) {
   const fileInputRef = useRef(null);
   const cameraInputRef = useRef(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
-    if (file) onFileSelect(file);
+    if (file && !disabled) onFileSelect(file);
     e.target.value = '';
   };
 
   const handleCameraChange = (e) => {
     const file = e.target.files?.[0];
-    if (file) onFileSelect(file);
+    if (file && !disabled) onFileSelect(file);
     e.target.value = '';
   };
 
@@ -23,7 +23,11 @@ export default function ImageUploader({ isDragging, onDragOver, onDragLeave, onD
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative p-8 sm:p-12 lg:p-16 text-center rounded-2xl sm:rounded-3xl border-2 border-dashed transition-all duration-300 cursor-pointer overflow-hidden ${
+      className={`relative p-8 sm:p-12 lg:p-16 text-center rounded-2xl sm:rounded-3xl border-2 border-dashed transition-all duration-300 ${
+        disabled
+          ? 'cursor-not-allowed border-red-300 dark:border-red-900/50 bg-red-50/30 dark:bg-red-950/10'
+          : 'cursor-pointer overflow-hidden'
+      } ${
         isDragging
           ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-900/10 scale-[0.99]'
           : 'border-gray-300 dark:border-white/[0.08] bg-white dark:bg-gray-800/40 dark:backdrop-blur-xl hover:border-emerald-400/60 hover:shadow-lg'
@@ -31,7 +35,7 @@ export default function ImageUploader({ isDragging, onDragOver, onDragLeave, onD
       onDragOver={onDragOver}
       onDragLeave={onDragLeave}
       onDrop={onDrop}
-      onClick={() => fileInputRef.current?.click()}
+      onClick={() => { if (!disabled) fileInputRef.current?.click(); }}
     >
       <input ref={fileInputRef} type="file" accept="image/jpeg,image/png,image/webp" onChange={handleFileChange} className="hidden" />
       <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" onChange={handleCameraChange} className="hidden" />
@@ -51,10 +55,12 @@ export default function ImageUploader({ isDragging, onDragOver, onDragLeave, onD
         </motion.div>
 
         <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white mb-1">
-          {isDragging ? 'أفلت الصورة هنا' : 'ارفع صورة نباتك للتحليل'}
+          {disabled ? 'لقد استنفدت حصتك الشهرية' : isDragging ? 'أفلت الصورة هنا' : 'ارفع صورة نباتك للتحليل'}
         </h3>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-          اسحب الصورة وأفلتها هنا أو انقر للاختيار من الجهاز
+          {disabled
+            ? 'حصتك الشهرية للتشخيص انتهت. قم بالترقية أو انتظر بداية الدورة الجديدة.'
+            : 'اسحب الصورة وأفلتها هنا أو انقر للاختيار من الجهاز'}
         </p>
 
         <div className="flex items-center justify-center gap-3 mb-6">
@@ -66,15 +72,25 @@ export default function ImageUploader({ isDragging, onDragOver, onDragLeave, onD
         <div className="flex justify-center gap-3 flex-wrap">
           <button
             type="button"
-            onClick={(e) => { e.stopPropagation(); fileInputRef.current?.click(); }}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all shadow-sm"
+            disabled={disabled}
+            onClick={(e) => { e.stopPropagation(); if (!disabled) fileInputRef.current?.click(); }}
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-bold transition-all shadow-sm ${
+              disabled
+                ? 'bg-gray-100 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
+                : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-emerald-300 dark:hover:border-emerald-700'
+            }`}
           >
             <Upload size={14} className="text-emerald-500" /> اختيار صورة
           </button>
           <button
             type="button"
-            onClick={(e) => { e.stopPropagation(); onCameraClick(); }}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all shadow-sm"
+            disabled={disabled}
+            onClick={(e) => { e.stopPropagation(); if (!disabled) onCameraClick(); }}
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs font-bold transition-all shadow-sm ${
+              disabled
+                ? 'bg-gray-100 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
+                : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-emerald-300 dark:hover:border-emerald-700'
+            }`}
           >
             <Camera size={14} className="text-emerald-500" /> تصوير مباشر
           </button>

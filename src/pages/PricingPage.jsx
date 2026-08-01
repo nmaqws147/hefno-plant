@@ -64,7 +64,7 @@ const PLANS = [
     features: [
       { name: 'المساعد الذكي', limit: '100/شهر', included: true },
       { name: 'قاعدة المعرفة', limit: '70/شهر', included: true },
-      { name: 'تشخيص الأمراض', limit: '2/شهر', included: true },
+      { name: 'تشخيص الأمراض', limit: '14/شهر', included: true },
       { name: 'الطقس', included: true, unlimited: true },
       { name: 'المقالات', included: true, unlimited: true },
       { name: 'دعم ذو أولوية', included: true },

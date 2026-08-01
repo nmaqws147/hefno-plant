@@ -273,7 +273,9 @@ module.exports = async function handler(req, res) {
     if (!quota.allowed) {
       return res.status(429).json({
         error: "وصلت للحد المسموح به",
-        message: `يمكنك استخدام التشخيص ${quota.limit} مرة في الأسبوع.`,
+        message: quota.isPremium
+          ? `لقد استنفدت حصتك الشهرية للتشخيص (${quota.limit} تشخيص). ستتجدد الحصة في بداية الدورة القادمة.`
+          : `يمكنك استخدام التشخيص ${quota.limit} مرة في الأسبوع.`,
         quota,
       });
     }
@@ -281,6 +283,10 @@ module.exports = async function handler(req, res) {
     const aiResult = await tryAllModels(base64Image);
     
     if (!aiResult.success) {
+      if (userId) {
+        const { refundDiagnosis } = require('./_lib/diagnosisQuotaService');
+        await refundDiagnosis(userId);
+      }
       return res.status(503).json({
         error: "خوادم المعالجة ممتلئة حالياً",
         message: "جميع محاولات الاتصال بخوادم التحليل فشلت. يرجى إعادة المحاولة بعد 30 ثانية.",
