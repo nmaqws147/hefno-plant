@@ -3,7 +3,7 @@
 // actual charged amount; these values are for UI display only.
 export const PLAN_PRICES = {
   premium: { monthly: 25, yearly: 250 },
-  elite: { monthly: 40, yearly: 400 },
+  elite: { monthly: 50, yearly: 500 },
 };
 
 export const CURRENCY = 'EGP';

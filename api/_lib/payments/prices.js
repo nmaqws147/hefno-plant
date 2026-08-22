@@ -5,13 +5,13 @@ const VALID_CYCLES = ['monthly', 'yearly'];
 // Yearly = exactly 10 × monthly.
 const PRICES_EGP = {
   premium: { monthly: 25, yearly: 250 },
-  elite: { monthly: 40, yearly: 400 },
+  elite: { monthly: 50, yearly: 500 },
 };
 
 // Cents (Paymob amounts) derived from EGP values.
 const PRICES = {
   premium: { monthly: 2500, yearly: 25000 },
-  elite: { monthly: 4000, yearly: 40000 },
+  elite: { monthly: 5000, yearly: 50000 },
 };
 
 function getPriceEgp(plan, billingCycle) {
