@@ -11,6 +11,7 @@ import ProfileInfoCard from '../component/ProfileInfoCard';
 import ProfileField from '../component/ProfileField';
 import ProfileSkeleton from '../component/ProfileSkeleton';
 import { getSubscription, getPayments } from '../services/subscriptionService';
+import { PLAN_PRICES } from '../constants/pricing';
 import { Crown, Sparkles, CreditCard, Calendar, TrendingUp } from 'lucide-react';
 
 export default function ProfilePage() {
@@ -239,6 +240,12 @@ export default function ProfilePage() {
                 <TrendingUp className="w-4 h-4" />
                 {subscription.billingCycle === 'monthly' ? 'شهري' : 'سنوي'}
               </span>
+              {subscription?.plan === 'premium' || subscription?.plan === 'elite' ? (
+                <span className="flex items-center gap-1.5">
+                  <CreditCard className="w-4 h-4" />
+                  {PLAN_PRICES[subscription.plan][subscription.billingCycle === 'monthly' ? 'monthly' : 'yearly']} ج.م/{subscription.billingCycle === 'monthly' ? 'شهر' : 'سنة'}
+                </span>
+              ) : null}
             </div>
           )}
 

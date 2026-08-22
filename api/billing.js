@@ -1,4 +1,5 @@
 const { verifyToken, getDb, isAdmin } = require('./_lib/firebaseAdmin');
+const usersRouter = require('./users');
 const { getSubscription, checkQuota: checkQuotaService, expireSubscription } = require('./_lib/subscriptionService');
 const { createPayment, handleWebhook } = require('./_lib/payments/provider');
 const { getAmountCents } = require('./_lib/payments/prices');
@@ -325,9 +326,26 @@ async function handlePaymobPayments(req, res) {
   const all = [];
   snap.forEach((d) => all.push({ id: d.id, ...d.data() }));
 
+  const userIds = [...new Set(all.map((p) => p.userId).filter(Boolean))];
+  const userMap = {};
+  if (userIds.length) {
+    const userSnaps = await Promise.all(userIds.map((uid) => db.collection('users').doc(uid).get()));
+    userSnaps.forEach((u, i) => {
+      if (u.exists) userMap[userIds[i]] = u.data();
+    });
+  }
+
   all.sort((a, b) => (b.createdAt || '').localeCompare(a.createdAt || ''));
   const total = all.length;
-  const payments = all.slice((page - 1) * limit, (page - 1) * limit + limit);
+  const payments = all.slice((page - 1) * limit, (page - 1) * limit + limit).map((p) => {
+    const u = userMap[p.userId] || {};
+    return {
+      ...p,
+      payerName: u.fullName || u.name || null,
+      payerEmail: u.email || null,
+      payerPhone: u.phoneNumber || null,
+    };
+  });
 
   return res.status(200).json({ payments, total, page, limit });
 }
@@ -336,6 +354,10 @@ module.exports = async (req, res) => {
   try {
     const url = parseUrl(req);
     const path = url.pathname;
+
+    if (path === '/api/users' || path.startsWith('/api/users/')) {
+      return await usersRouter(req, res);
+    }
 
     if (path === '/api/billing' || path === '/api/subscription') {
       if (req.method === 'GET') return await handleGetSubscription(req, res);

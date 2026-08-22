@@ -173,7 +173,7 @@ describe('Vodafone Cash - initiate', () => {
     expect(r.json).toMatchObject({
       paymentMethod: 'vodafone_cash',
       phoneNumber: '01004653117',
-      amount: 50,
+      amount: 25,
       currency: 'EGP',
       plan: 'premium',
       billingCycle: 'monthly',
@@ -181,12 +181,23 @@ describe('Vodafone Cash - initiate', () => {
   });
 
   test.each([
-    ['elite yearly', { plan: 'elite', billingCycle: 'yearly' }, 800],
-    ['premium yearly', { plan: 'premium', billingCycle: 'yearly' }, 500],
+    ['premium monthly', { plan: 'premium', billingCycle: 'monthly' }, 25],
+    ['premium yearly', { plan: 'premium', billingCycle: 'yearly' }, 250],
+    ['elite monthly', { plan: 'elite', billingCycle: 'monthly' }, 40],
+    ['elite yearly', { plan: 'elite', billingCycle: 'yearly' }, 400],
   ])('returns correct amount for %s', async (_name, body, expectedAmount) => {
     const r = await call('POST', '/api/vodafone-cash/initiate', { token: 'user-token', body });
     expect(r.status).toBe(200);
     expect(r.json.amount).toBe(expectedAmount);
+  });
+
+  test('ignores a client-provided price and uses the trusted amount', async () => {
+    const r = await call('POST', '/api/vodafone-cash/initiate', {
+      token: 'user-token',
+      body: { plan: 'premium', billingCycle: 'monthly', amount: 1, price: 1 },
+    });
+    expect(r.status).toBe(200);
+    expect(r.json.amount).toBe(25);
   });
 
   test.each([
@@ -219,7 +230,7 @@ describe('Vodafone Cash - confirm', () => {
       userId: 'user123',
       plan: 'premium',
       billingCycle: 'monthly',
-      amount: 50,
+      amount: 25,
       status: 'pending',
       paymentMethod: 'vodafone_cash',
       reference: 'VC12345',

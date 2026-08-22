@@ -35,21 +35,16 @@ export const AuthProvider = ({ children }) => {
       setUser(firebaseUser);
 
       if (firebaseUser) {
-        try {
-          const [userSnap, subSnap] = await Promise.all([
-            getDoc(doc(db, 'users', firebaseUser.uid)),
-            getDoc(doc(db, 'subscriptions', firebaseUser.uid)),
-          ]);
-          if (userSnap.exists()) {
-            setUserProfile(userSnap.data());
-          } else {
-            setUserProfile({ role: 'user', uid: firebaseUser.uid });
-          }
-          setSubscription(subSnap.exists() ? subSnap.data() : null);
-        } catch {
+        const [userSnap, subSnap] = await Promise.all([
+          getDoc(doc(db, 'users', firebaseUser.uid)).catch(() => null),
+          getDoc(doc(db, 'subscriptions', firebaseUser.uid)).catch(() => null),
+        ]);
+        if (userSnap?.exists && userSnap.exists()) {
+          setUserProfile(userSnap.data());
+        } else {
           setUserProfile({ role: 'user', uid: firebaseUser.uid });
-          setSubscription(null);
         }
+        setSubscription(subSnap?.exists && subSnap.exists() ? subSnap.data() : null);
       } else {
         setUserProfile(null);
         setSubscription(null);
@@ -69,11 +64,11 @@ export const AuthProvider = ({ children }) => {
     const userRef = doc(db, 'users', cred.user.uid);
     await updateDoc(userRef, { lastLoginAt: serverTimestamp() }).catch(() => {});
     const [userSnap, subSnap] = await Promise.all([
-      getDoc(userRef),
-      getDoc(doc(db, 'subscriptions', cred.user.uid)),
+      getDoc(userRef).catch(() => null),
+      getDoc(doc(db, 'subscriptions', cred.user.uid)).catch(() => null),
     ]);
-    if (userSnap.exists()) setUserProfile(userSnap.data());
-    setSubscription(subSnap.exists() ? subSnap.data() : null);
+    if (userSnap?.exists && userSnap.exists()) setUserProfile(userSnap.data());
+    setSubscription(subSnap?.exists && subSnap.exists() ? subSnap.data() : null);
     return cred;
   };
 

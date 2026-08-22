@@ -117,7 +117,7 @@ function ContactSection() {
   };
 
   const contactInfo = [
-    { icon: Mail, title: "البريد الإلكتروني", value: "elhfnaweedowidar21@gmail.com" },
+    { icon: Mail, title: "البريد الإلكتروني", value: "elhfnaweedowidar456@gmail.com" },
     { icon: Phone, title: "الهاتف", value: "+20 11 02118765" },
     { icon: MapPin, title: "العنوان", value: "المنوفيه . مصر" },
   ];

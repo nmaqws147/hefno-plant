@@ -16,7 +16,7 @@ function makeWebhookReq(overrides = {}) {
   const obj = {
     id: 192036465,
     pending: false,
-    amount_cents: 8000,
+    amount_cents: 4000,
     success: true,
     is_auth: false,
     is_capture: false,
@@ -98,9 +98,33 @@ describe('Paymob Provider', () => {
   describe('Price constants', () => {
     it('should have correct price values', () => {
       expect(PRICES).toEqual({
-        premium: { monthly: 5000, yearly: 50000 },
-        elite: { monthly: 8000, yearly: 80000 },
+        premium: { monthly: 2500, yearly: 25000 },
+        elite: { monthly: 4000, yearly: 40000 },
       });
+    });
+
+    it('should expose EGP prices with yearly = 10x monthly', () => {
+      const { PRICES_EGP, getPriceEgp, getAmountCents } = require('../../payments/prices');
+      expect(PRICES_EGP).toEqual({
+        premium: { monthly: 25, yearly: 250 },
+        elite: { monthly: 40, yearly: 400 },
+      });
+      expect(getPriceEgp('premium', 'monthly')).toBe(25);
+      expect(getPriceEgp('premium', 'yearly')).toBe(250);
+      expect(getPriceEgp('elite', 'monthly')).toBe(40);
+      expect(getPriceEgp('elite', 'yearly')).toBe(400);
+      expect(getAmountCents('premium', 'monthly')).toBe(2500);
+      expect(getAmountCents('premium', 'yearly')).toBe(25000);
+      expect(getAmountCents('elite', 'monthly')).toBe(4000);
+      expect(getAmountCents('elite', 'yearly')).toBe(40000);
+    });
+
+    it('should reject invalid plan and billing cycle', () => {
+      const { getPriceEgp, getAmountCents } = require('../../payments/prices');
+      expect(() => getPriceEgp('gold', 'monthly')).toThrow(/Invalid/);
+      expect(() => getPriceEgp('premium', 'weekly')).toThrow(/Invalid/);
+      expect(() => getAmountCents('gold', 'monthly')).toThrow(/Invalid/);
+      expect(() => getAmountCents('premium', 'weekly')).toThrow(/Invalid/);
     });
   });
 
@@ -153,7 +177,7 @@ describe('Paymob Provider', () => {
         .mockResolvedValueOnce({ exists: false })
         .mockResolvedValueOnce({
           exists: true,
-          data: () => ({ userId: 'u1', plan: 'elite', billingCycle: 'monthly', amountCents: 8000, currency: 'EGP' }),
+          data: () => ({ userId: 'u1', plan: 'elite', billingCycle: 'monthly', amountCents: 4000, currency: 'EGP' }),
         });
 
       const result = await provider.handleWebhook(makeWebhookReq());

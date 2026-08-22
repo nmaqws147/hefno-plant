@@ -1,12 +1,35 @@
-const PRICES = {
-  premium: { monthly: 5000, yearly: 50000 },
-  elite: { monthly: 8000, yearly: 80000 },
+const VALID_PLANS = ['premium', 'elite'];
+const VALID_CYCLES = ['monthly', 'yearly'];
+
+// Prices in EGP. Single source of truth for the payment system.
+// Yearly = exactly 10 × monthly.
+const PRICES_EGP = {
+  premium: { monthly: 25, yearly: 250 },
+  elite: { monthly: 40, yearly: 400 },
 };
 
-function getAmountCents(plan, billingCycle) {
-  const amount = PRICES[plan]?.[billingCycle];
+// Cents (Paymob amounts) derived from EGP values.
+const PRICES = {
+  premium: { monthly: 2500, yearly: 25000 },
+  elite: { monthly: 4000, yearly: 40000 },
+};
+
+function getPriceEgp(plan, billingCycle) {
+  const amount = PRICES_EGP[plan]?.[billingCycle];
   if (!amount) throw new Error(`Invalid plan/billingCycle: ${plan}/${billingCycle}`);
   return amount;
 }
 
-module.exports = { PRICES, getAmountCents };
+function getAmountCents(plan, billingCycle) {
+  return getPriceEgp(plan, billingCycle) * 100;
+}
+
+function isValidPlan(plan) {
+  return VALID_PLANS.includes(plan);
+}
+
+function isValidBillingCycle(billingCycle) {
+  return VALID_CYCLES.includes(billingCycle);
+}
+
+module.exports = { PRICES, PRICES_EGP, getAmountCents, getPriceEgp, isValidPlan, isValidBillingCycle, VALID_PLANS, VALID_CYCLES };

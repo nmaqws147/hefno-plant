@@ -100,6 +100,10 @@
       "dest": "api/otp.js"
     },
     {
+      "src": "/api/users(/.*)?",
+      "dest": "api/billing.js"
+    },
+    {
       "src": "/api/([^/]+)",
       "dest": "api/$1.js"
     },

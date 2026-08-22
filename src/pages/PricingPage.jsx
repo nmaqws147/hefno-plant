@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { initiateVodafoneCash, confirmVodafoneCash } from '../services/subscriptionService';
+import { PLAN_PRICES, BILLING_CYCLE_LABELS } from '../constants/pricing';
 import { toast } from 'sonner';
 import {
   Leaf, Sparkles, Crown, Check, Minus, CreditCard, Smartphone, Copy,
@@ -38,8 +39,8 @@ const PLANS = [
   {
     id: 'elite',
     name: 'Elite',
-    monthlyPrice: 80,
-    yearlyPrice: 800,
+    monthlyPrice: PLAN_PRICES.elite.monthly,
+    yearlyPrice: PLAN_PRICES.elite.yearly,
     description: 'الوصول الكامل غير المحدود لجميع الميزات',
     icon: Crown,
     features: [
@@ -57,8 +58,8 @@ const PLANS = [
   {
     id: 'premium',
     name: 'Premium',
-    monthlyPrice: 50,
-    yearlyPrice: 500,
+    monthlyPrice: PLAN_PRICES.premium.monthly,
+    yearlyPrice: PLAN_PRICES.premium.yearly,
     description: 'الميزات المتقدمة للمزارعين المحترفين',
     icon: Sparkles,
     features: [
@@ -129,7 +130,7 @@ function BillingToggle({ billingCycle, setBillingCycle }) {
               : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300'
           }`}
         >
-          شهري
+          {BILLING_CYCLE_LABELS.monthly}
         </button>
         <button
           onClick={() => setBillingCycle('yearly')}
@@ -139,7 +140,7 @@ function BillingToggle({ billingCycle, setBillingCycle }) {
               : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-300'
           }`}
         >
-          سنوي
+          {BILLING_CYCLE_LABELS.yearly}
         </button>
       </div>
       {billingCycle === 'yearly' && (
@@ -194,6 +195,9 @@ function MostPopularBadge() {
 function PricingCard({ plan, index, billingCycle, getPlanPrice, isCurrentPlan, handleSubscribe, loading }) {
   const price = getPlanPrice(plan);
   const isPopular = plan.popular;
+  const savingsPct = billingCycle === 'yearly'
+    ? Math.round((1 - price / (plan.monthlyPrice * 12)) * 100)
+    : 0;
 
   return (
     <motion.div
@@ -240,7 +244,7 @@ function PricingCard({ plan, index, billingCycle, getPlanPrice, isCurrentPlan, h
           </div>
           {plan.id !== 'free' && billingCycle === 'yearly' && (
             <p className="mt-1 text-xs text-emerald-600 dark:text-emerald-400">
-                  {Math.round((1 - price / (plan.monthlyPrice * 12)) * 100)}% توفير مقارنة بالشهري
+              فاتورة سنوية — توفير {savingsPct}% مقارنة بالدفع الشهري
             </p>
           )}
         </div>
@@ -482,7 +486,7 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
           </div>
           <div>
             <h3 className="text-lg font-bold text-zinc-900 dark:text-white">الدفع عبر فودافون كاش</h3>
-            <p className="text-xs text-zinc-500 dark:text-zinc-400">{plan.name} — {billingCycle === 'monthly' ? 'شهري' : 'سنوي'}</p>
+            <p className="text-xs text-zinc-500 dark:text-zinc-400">{plan.name} — {BILLING_CYCLE_LABELS[billingCycle]}</p>
           </div>
         </div>
 
@@ -529,7 +533,7 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
                 </button>
               </div>
               <p className="mt-2 text-xs text-emerald-700 dark:text-emerald-400">
-                المبلغ: {amount} ج.م — باقة {plan.name} {billingCycle === 'monthly' ? 'شهري' : 'سنوي'}
+                المبلغ: {amount} ج.م — باقة {plan.name} {BILLING_CYCLE_LABELS[billingCycle]}
               </p>
             </div>
 
@@ -631,7 +635,9 @@ export default function PricingPage() {
 
   const getPlanPrice = (plan) => {
     if (plan.id === 'free') return 0;
-    return billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice;
+    return plan.id === 'premium' || plan.id === 'elite'
+      ? (billingCycle === 'monthly' ? PLAN_PRICES[plan.id].monthly : PLAN_PRICES[plan.id].yearly)
+      : (billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice);
   };
 
   const isCurrentPlanFn = (planId) => {

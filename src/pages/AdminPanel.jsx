@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { BarChart3, FileText, CreditCard, Search, DollarSign, CheckCircle, XCircle, Clock, Check, Ban, Smartphone } from 'lucide-react';
+import { BarChart3, FileText, CreditCard, Search, Users, DollarSign, CheckCircle, XCircle, Clock, Check, Ban, Smartphone } from 'lucide-react';
 import { getPayments, activateVodafoneCashPayment, rejectVodafoneCashPayment } from '../services/subscriptionService';
 import { toast } from 'sonner';
 import AdminBlogPage from './blog/AdminBlogPage';
+import UsersPanel from './UsersPanel';
 import ActionStatsScreen from '../component/admin-stats';
 import SEO from '../component/SEO';
 
@@ -15,10 +16,10 @@ const AdminPanel = () => {
 
       <div className="shrink-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 overflow-x-auto whitespace-nowrap no-scrollbar">
             <button
               onClick={() => setTab('blog')}
-              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all ${
+              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all shrink-0 ${
                 tab === 'blog'
                   ? 'border-emerald-500 text-emerald-600 dark:text-emerald-400'
                   : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
@@ -29,7 +30,7 @@ const AdminPanel = () => {
             </button>
             <button
               onClick={() => setTab('stats')}
-              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all ${
+              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all shrink-0 ${
                 tab === 'stats'
                   ? 'border-emerald-500 text-emerald-600 dark:text-emerald-400'
                   : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
@@ -40,7 +41,7 @@ const AdminPanel = () => {
             </button>
             <button
               onClick={() => setTab('payments')}
-              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all ${
+              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all shrink-0 ${
                 tab === 'payments'
                   ? 'border-emerald-500 text-emerald-600 dark:text-emerald-400'
                   : 'border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300'
@@ -48,6 +49,17 @@ const AdminPanel = () => {
             >
               <CreditCard size={16} />
               المدفوعات
+            </button>
+            <button
+              onClick={() => setTab("users")}
+              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 transition-all shrink-0 ${
+                tab === "users"
+                  ? "border-emerald-500 text-emerald-600 dark:text-emerald-400"
+                  : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+              }`}
+            >
+              <Users size={16} />
+              المستخدمون
             </button>
           </div>
         </div>
@@ -58,6 +70,8 @@ const AdminPanel = () => {
           <AdminBlogPage inPanel />
         ) : tab === 'stats' ? (
           <ActionStatsScreen inPanel />
+        ) : tab === 'users' ? (
+          <UsersPanel inPanel />
         ) : (
           <PaymentsPanel />
         )}
@@ -179,7 +193,7 @@ function PaymentsPanel() {
       </div>
 
       <div className="overflow-x-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
-        <table className="w-full text-sm">
+        <table className="w-full text-sm min-w-[900px]">
           <thead className="bg-zinc-50 dark:bg-zinc-900">
             <tr>
               <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">المعاملات</th>
@@ -200,7 +214,12 @@ function PaymentsPanel() {
             ) : payments.map((p) => (
               <tr key={p.id} className="hover:bg-zinc-50 dark:hover:bg-zinc-900/50">
                 <td className="px-4 py-3 font-mono text-xs text-zinc-600 dark:text-zinc-400">{p.transactionId || p.id}</td>
-                <td className="px-4 py-3 text-zinc-700 dark:text-zinc-300" dir="ltr">{p.userId?.slice(0, 12)}..</td>
+                <td className="px-4 py-3 text-zinc-700 dark:text-zinc-300">
+                  <div className="font-medium text-zinc-900 dark:text-white" dir="rtl">{p.payerName || 'غير معروف'}</div>
+                  <div className="text-xs text-zinc-500 dark:text-zinc-400" dir="ltr">
+                    {p.payerEmail || p.payerPhone || ''}
+                  </div>
+                </td>
                 <td className="px-4 py-3">
                   <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
                     p.plan === 'elite'

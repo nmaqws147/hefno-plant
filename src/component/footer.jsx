@@ -24,7 +24,7 @@ const Footer = () => {
 
   const contactItems = [
     { icon: Phone, label: 'هاتف', text: '+20 11 02118765' },
-    { icon: Mail, label: 'بريد', text: 'elhfnaweedowidar21@gmail.com' },
+    { icon: Mail, label: 'بريد', text: 'elhfnaweedowidar456@gmail.com' },
     { icon: MapPin, label: 'عنوان', text: 'المنوفيه . مصر - تلا' },
   ];
 

@@ -6,6 +6,7 @@ const aiHandler = require('./api/ai');
 const weatherHandler = require('./api/weather');
 const fertilizerPlannerHandler = require('./api/fertilizer-planner.js');
 const analyzeImageHandler = require('./api/analyze-image');
+const usersHandler = require('./api/users');
 
 function wrapRes(res) {
   return Object.assign(res, {
@@ -55,6 +56,9 @@ const server = http.createServer((req, res) => {
       if (path === '/api/send-otp' || path === '/api/verify-otp' || path === '/api/forgot-password') {
         const h = require('./api/otp');
         return h(req, wr);
+      }
+      if (path === '/api/users' || path.startsWith('/api/users/')) {
+        return usersHandler(req, wr);
       }
 
       blogHandler(req, res);

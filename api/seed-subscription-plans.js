@@ -13,14 +13,14 @@ const db = getFirestore(app);
 
 const PLANS = {
   premium: {
-    monthly: { price: 50, currency: 'EGP', savings: null },
-    yearly: { price: 500, currency: 'EGP', savings: '17%' },
+    monthly: { price: 25, currency: 'EGP', savings: null },
+    yearly: { price: 250, currency: 'EGP', savings: '17%' },
     label: 'Premium',
     description: 'الميزات المتقدمة للمزارعين المحترفين',
   },
   elite: {
-    monthly: { price: 80, currency: 'EGP', savings: null },
-    yearly: { price: 800, currency: 'EGP', savings: '17%' },
+    monthly: { price: 40, currency: 'EGP', savings: null },
+    yearly: { price: 400, currency: 'EGP', savings: '17%' },
     label: 'Elite',
     description: 'الوصول الكامل لجميع الميزات',
   },
