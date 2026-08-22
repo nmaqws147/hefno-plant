@@ -413,6 +413,7 @@ const UsersPanel = ({ inPanel = false }) => {
                 <tr>
                   {clickableTh('المستخدم', 'name')}
                   <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">البريد الإلكتروني</th>
+                  <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">الهاتف</th>
                   <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">الدور</th>
                   <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">العضوية</th>
                   <th className="px-4 py-3 text-right font-medium text-zinc-500 dark:text-zinc-400">الحالة</th>
@@ -425,14 +426,14 @@ const UsersPanel = ({ inPanel = false }) => {
                 {loading ? (
                   Array.from({ length: 6 }).map((_, i) => (
                     <tr key={i}>
-                      <td colSpan={8} className="px-4 py-4">
+                      <td colSpan={9} className="px-4 py-4">
                         <div className="h-8 bg-zinc-100 dark:bg-zinc-800 animate-pulse rounded-lg" />
                       </td>
                     </tr>
                   ))
                 ) : users.length === 0 ? (
                   <tr>
-                    <td colSpan={8} className="px-4 py-16 text-center">
+                    <td colSpan={9} className="px-4 py-16 text-center">
                       <div className="flex flex-col items-center gap-3">
                         <Users className="w-10 h-10 text-zinc-300 dark:text-zinc-600" />
                         <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
@@ -461,6 +462,12 @@ const UsersPanel = ({ inPanel = false }) => {
                     </td>
                     <td className="px-4 py-3">
                       <span className="text-zinc-600 dark:text-zinc-300" dir="ltr">{u.email || '—'}</span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className="text-zinc-600 dark:text-zinc-300 flex items-center gap-1.5" dir="ltr">
+                        <Phone className="w-3 h-3 text-zinc-400 shrink-0" />
+                        {u.phoneNumber || '—'}
+                      </span>
                     </td>
                     <td className="px-4 py-3">
                       <Badge value={u.role} options={ROLE_OPTIONS} fallback="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300" />

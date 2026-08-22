@@ -138,9 +138,9 @@ const AppContent = () => {
               logo: 'https://hefnoplant.site/og-image.png',
               description: 'منصة زراعية متكاملة لتشخيص أمراض النباتات بالذكاء الاصطناعي',
               sameAs: [
-                'https://www.facebook.com/elhfnawee.dowidar.5',
-                'https://www.youtube.com/@Eng-elhefnawy',
-                'https://www.tiktok.com/@elhefnawyde',
+                'https://www.facebook.com/Elhefnawy.Dewidar.7',
+                'https://youtube.com/@eng-elhefnawy?si=wzYusXcA0_pup6zj',
+                'https://www.tiktok.com/@eng.elhefnawy?_r=1&_t=ZS-97f0DCmRdAa',
               ],
               contactPoint: {
                 '@type': 'ContactPoint',
