@@ -247,7 +247,7 @@ async function getAIProgram(crop, soilType, irrigationType, areaFeddan, planting
             "Authorization": `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
+            model: "qwen/qwen3.8-27b",
             messages: messages,
             temperature: 0.3,
             max_tokens: 2048,

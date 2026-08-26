@@ -149,7 +149,7 @@ module.exports = async (req, res) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${process.env.AI_KEY}` },
         body: JSON.stringify({
-          model: 'llama-3.3-70b-versatile',
+          model: 'qwen/qwen3.8-27b',
           messages: [
             { role: 'system', content: `أنت مساعد تنسيق مقالات زراعية متخصص. حول النص الخام إلى HTML دلالي منظم.
 
