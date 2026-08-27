@@ -369,8 +369,12 @@ async function handleDeleteAccount(req, res) {
   batch.delete(db.collection('usage').doc(uid));
 
   await batch.commit();
+  try {
+    await fb.auth().deleteUser(uid);
+  } catch (delErr) {
+    console.error('deleteUser failed:', delErr.message);
+  }
   return res.status(200).json({ success: true });
-  await fb.auth().deleteUser(uid).catch(() => {});
 }
 
 module.exports = async (req, res) => {
