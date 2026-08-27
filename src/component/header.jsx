@@ -111,7 +111,7 @@ const Header = () => {
   ];
 
   const navLinks = user
-    ? [...publicLinks.filter(l => l.path !== '/'), ...protectedLinks]
+    ? [publicLinks[0], ...protectedLinks, publicLinks[1]]
     : publicLinks;
 
   useEffect(() => {
