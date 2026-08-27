@@ -12,6 +12,7 @@ import CookieConsent from './component/cookieConsent';
 import ErrorBoundary from './component/ErrorBoundary';
 import useTracking from './hooks/useTracking';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import AppRouteGuard from './component/AppRouteGuard';
 import ProtectedRoute from './component/ProtectedRoute';
 import PublicRoute from './component/PublicRoute';
 import FullPageLoader from './component/FullPageLoader';
@@ -80,7 +81,6 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AdminStats = lazy(() => import('./component/admin-stats'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
 const PricingPage = lazy(() => import('./pages/PricingPage'));
-const SubscriptionOfferPage = lazy(() => import('./pages/SubscriptionOfferPage'));
 
 const Loader = () => (
   <div className="page-loader">
@@ -157,6 +157,7 @@ const AppContent = () => {
       <ScrollToTop />
 
       <Suspense fallback={<Loader />}>
+        <AppRouteGuard>
         <Routes>
 
           {/* الصفحات العامة (بدون تسجيل دخول) */}
@@ -168,11 +169,12 @@ const AppContent = () => {
           {/* الصفحة الرئيسية — عامة للزوار */}
           <Route path="/" element={<HomeScreen />} />
 
-          {/* الصفحات المحمية (تتطلب تسجيل دخول) */}
-          <Route path="/admin-panel" element={<ProtectedRoute adminOnly><AdminPanel /></ProtectedRoute>} />
-          <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
+          {/* Pricing — عام للزوار (عرض خطط التسويق) */}
           <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/subscription-offer" element={<ProtectedRoute><SubscriptionOfferPage /></ProtectedRoute>} />
+
+          {/* لوحة التحكم — محمية للمدير فقط */}
+          <Route path="/admin-panel" element={<ProtectedRoute adminOnly><AdminPanel /></ProtectedRoute>} />
+          <Route path="/profile" element={<ProfilePage />} />
 
           {/* Public content pages (no login required) wrapped in layout */}
           <Route element={<PublicContentLayout />}>
@@ -231,6 +233,7 @@ const AppContent = () => {
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
+        </AppRouteGuard>
       </Suspense>
 
       <Footer />

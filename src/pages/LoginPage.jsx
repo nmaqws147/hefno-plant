@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { auth } from '../firebase';
 import { useAuth } from '../context/AuthContext';
@@ -52,7 +52,6 @@ const LoginPage = () => {
   const [focusedField, setFocusedField] = useState(null);
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,8 +61,7 @@ const LoginPage = () => {
     setLoading(true);
     try {
       await login(email, password);
-      const redirect = searchParams.get('redirect') || '/';
-      navigate(decodeURIComponent(redirect));
+      navigate('/pricing');
     } catch (err) {
       setError(getFirebaseErrorMessage(err));
     }

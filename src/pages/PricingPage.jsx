@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 import {
   Leaf, Sparkles, Crown, Check, Minus, CreditCard, Smartphone, Copy,
   ShieldCheck, RefreshCw, Headphones, ChevronDown, ChevronLeft,
-  Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap, X,
+  Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap, X, ArrowLeft, Clock, AlertCircle,
 } from 'lucide-react';
 
 function getDeviceType() {
@@ -387,6 +387,7 @@ function FAQSection() {
 
 function FinalCTA() {
   const navigate = useNavigate();
+  const { user } = useAuth();
   return (
     <div className="relative px-4 pb-20">
       <motion.div
@@ -408,15 +409,117 @@ function FinalCTA() {
           <p className="text-white/40 text-base lg:text-lg max-w-lg mx-auto mb-8 leading-relaxed">
             انضم إلى HefnoPlant اليوم وابدأ رحلتك نحو زراعة أكثر ذكاءً وإنتاجية
           </p>
-          <button
-            onClick={() => navigate('/signup')}
-            className="inline-flex items-center gap-2 h-12 px-8 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light text-luxury-black font-bold text-sm shadow-[0_0_30px_-5px_rgba(212,168,67,0.3)] hover:shadow-[0_0_40px_-5px_rgba(212,168,67,0.4)] active:scale-[0.98] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
-          >
-            ابدأ الآن مجاناً
-            <ChevronLeft className="w-4 h-4" />
-          </button>
+          {!user ? (
+            <button
+              onClick={() => navigate('/signup')}
+              className="inline-flex items-center gap-2 h-12 px-8 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light text-luxury-black font-bold text-sm shadow-[0_0_30px_-5px_rgba(212,168,67,0.3)] hover:shadow-[0_0_40px_-5px_rgba(212,168,67,0.4)] active:scale-[0.98] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
+            >
+              ابدأ الآن مجاناً
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+          ) : (
+            <button
+              onClick={() => navigate('/')}
+              className="inline-flex items-center gap-2 h-12 px-8 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light text-luxury-black font-bold text-sm shadow-[0_0_30px_-5px_rgba(212,168,67,0.3)] hover:shadow-[0_0_40px_-5px_rgba(212,168,67,0.4)] active:scale-[0.98] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
+            >
+              الدخول إلى المنصة
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+          )}
         </div>
       </motion.div>
+    </div>
+  );
+}
+
+function SubscriptionStatusBanner({ subscription }) {
+  if (!subscription || subscription.status === 'cancelled') return null;
+
+  const isActive = subscription.status === 'active';
+  const isExpired = subscription.status === 'expired';
+  const planName = subscription.plan === 'elite' ? 'Elite' : subscription.plan === 'premium' ? 'Premium' : 'Free';
+  const expiryDate = subscription.expirationDate?.seconds
+    ? new Date(subscription.expirationDate.seconds * 1000)
+    : subscription.expirationDate
+      ? new Date(subscription.expirationDate)
+      : null;
+
+  const formattedExpiry = expiryDate
+    ? expiryDate.toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' })
+    : null;
+
+  return (
+    <div className="max-w-3xl mx-auto px-4 mb-10">
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+        className={`rounded-2xl border p-5 ${
+          isActive
+            ? 'bg-gold/5 border-gold/20'
+            : isExpired
+              ? 'bg-red-500/5 border-red-500/20'
+              : 'bg-white/5 border-white/10'
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
+            isActive ? 'bg-gold/10' : isExpired ? 'bg-red-500/10' : 'bg-white/5'
+          }`}>
+            {isActive ? (
+              <Crown className="w-5 h-5 text-gold" />
+            ) : isExpired ? (
+              <AlertCircle className="w-5 h-5 text-red-400" />
+            ) : (
+              <Clock className="w-5 h-5 text-white/40" />
+            )}
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center gap-2">
+              <span className={`text-sm font-bold ${isActive ? 'text-gold' : isExpired ? 'text-red-400' : 'text-white/70'}`}>
+                باقتك الحالية: {planName}
+              </span>
+              <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold ${
+                isActive
+                  ? 'bg-gold/10 text-gold'
+                  : isExpired
+                    ? 'bg-red-500/10 text-red-400'
+                    : 'bg-white/5 text-white/40'
+              }`}>
+                {isActive ? 'نشطة' : isExpired ? 'منتهية' : subscription.status}
+              </span>
+            </div>
+            {formattedExpiry && isActive && (
+              <p className="text-xs text-white/40 mt-0.5">
+                تنتهي في: {formattedExpiry}
+              </p>
+            )}
+            {isExpired && (
+              <p className="text-xs text-red-400/60 mt-0.5">
+                اشترك مرة أخرى للاستمرار في استخدام الميزات المتقدمة
+              </p>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+function ContinueToPlatformButton() {
+  const navigate = useNavigate();
+  return (
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+      <motion.button
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.4 }}
+        onClick={() => navigate('/')}
+        className="flex items-center gap-2 px-6 py-3 rounded-xl bg-luxury-card/90 backdrop-blur-md border border-gold/20 text-white/80 text-sm font-semibold shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-gold/40 hover:text-gold transition-all duration-300"
+      >
+        الدخول إلى المنصة
+        <ArrowLeft className="w-4 h-4" />
+      </motion.button>
     </div>
   );
 }
@@ -611,7 +714,7 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
 }
 
 export default function PricingPage() {
-  const { user, isPremium, isElite, refreshSubscription } = useAuth();
+  const { user, isPremium, isElite, subscription, refreshSubscription } = useAuth();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [billingCycle, setBillingCycle] = useState('monthly');
@@ -666,6 +769,9 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-luxury-black transition-colors duration-200">
       <HeroSection />
+
+      {user && <SubscriptionStatusBanner subscription={subscription} />}
+
       <BillingToggle billingCycle={billingCycle} setBillingCycle={setBillingCycle} />
 
       <div className="max-w-5xl mx-auto px-4 pb-8">
@@ -688,6 +794,8 @@ export default function PricingPage() {
       <TrustSection />
       <FAQSection />
       <FinalCTA />
+
+      {user && <ContinueToPlatformButton />}
 
       {vcModal && (
         <VodafoneCashModal

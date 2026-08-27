@@ -98,14 +98,21 @@ const Header = () => {
 
   const { user, isAdmin, logout } = useAuth();
 
-  const navLinks = [
+  const publicLinks = [
     { name: 'الرئيسية', path: '/', isInternal: false, sectionId: null },
+    { name: 'المقالات', path: '/blog', isInternal: false },
+  ];
+
+  const protectedLinks = [
     { name: 'قاعدة المعرفة', path: '/knowledge-base', isInternal: false, sectionId: null },
     { name: 'تشخيص النبات', path: '/diagnose', isInternal: false },
     { name: 'الطقس', path: '/weather', isInternal: false },
-    { name: 'المقالات', path: '/blog', isInternal: false },
     ...(isAdmin ? [{ name: 'لوحة التحكم', path: '/admin-panel', isInternal: false }] : []),
   ];
+
+  const navLinks = user
+    ? [...publicLinks.filter(l => l.path !== '/'), ...protectedLinks]
+    : publicLinks;
 
   useEffect(() => {
     const handleScroll = () => {
