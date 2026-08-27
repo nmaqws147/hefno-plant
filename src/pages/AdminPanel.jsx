@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { BarChart3, FileText, CreditCard, Search, Users, DollarSign, CheckCircle, XCircle, Clock, Check, Ban, Smartphone } from 'lucide-react';
+import { BarChart3, FileText, CreditCard, Search, Users, DollarSign, CheckCircle, XCircle, Clock, Check, Ban, Smartphone, ExternalLink } from 'lucide-react';
 import { getPayments, activateVodafoneCashPayment, rejectVodafoneCashPayment } from '../services/subscriptionService';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 import AdminBlogPage from './blog/AdminBlogPage';
 import UsersPanel from './UsersPanel';
 import ActionStatsScreen from '../component/admin-stats';
@@ -9,6 +10,7 @@ import SEO from '../component/SEO';
 
 const AdminPanel = () => {
   const [tab, setTab] = useState('blog');
+  const navigate = useNavigate();
 
   return (
     <div className="h-screen flex flex-col bg-gray-50 dark:bg-gray-900 pt-[80px]" dir="rtl">
@@ -61,6 +63,15 @@ const AdminPanel = () => {
               <Users size={16} />
               المستخدمون
             </button>
+            <a
+              href="/pricing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-3 text-sm font-medium border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-all shrink-0"
+            >
+              <ExternalLink size={14} />
+              الباقات
+            </a>
           </div>
         </div>
       </div>
