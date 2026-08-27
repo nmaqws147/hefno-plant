@@ -93,8 +93,8 @@ const FEATURE_ICONS = { ai_chatbot: Bot, knowledge_base: BookOpen, disease_diagn
 
 function HeroSection() {
   return (
-    <div className="relative text-center px-4 pt-20 pb-12 lg:pt-28 lg:pb-16 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
+    <div className="relative text-center px-4 pt-20 pb-8 lg:pt-28 lg:pb-10">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]" />
         <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px]" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/3 rounded-full blur-[150px]" />
