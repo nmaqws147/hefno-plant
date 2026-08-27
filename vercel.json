@@ -80,7 +80,7 @@
       "dest": "api/sitemap.js"
     },
     {
-      "src": "/api/(create-checkout-session|stripe-webhook|check-quota|check-expired|subscription|delete-account|vodafone-cash/initiate|vodafone-cash/verify|vodafone-cash/confirm|vodafone-cash/activate|vodafone-cash/reject|paymob/intent|paymob/webhook|paymob/payments|billing)(/.*)?",
+      "src": "/api/(create-checkout-session|stripe-webhook|check-quota|check-expired|subscription|delete-account|vodafone-cash/initiate|vodafone-cash/verify|vodafone-cash/confirm|vodafone-cash/activate|vodafone-cash/reject|manual-payment/initiate|manual-payment/confirm|paymob/intent|paymob/webhook|paymob/payments|billing)(/.*)?",
       "dest": "api/billing.js"
     },
     {

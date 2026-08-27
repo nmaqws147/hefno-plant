@@ -2,13 +2,14 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { initiateVodafoneCash, confirmVodafoneCash } from '../services/subscriptionService';
-import { PLAN_PRICES, BILLING_CYCLE_LABELS } from '../constants/pricing';
+import { initiateManualPayment, confirmManualPayment } from '../services/subscriptionService';
+import { PLAN_PRICES, BILLING_CYCLE_LABELS, PAYMENT_METHODS } from '../constants/pricing';
 import { toast } from 'sonner';
 import {
   Leaf, Sparkles, Crown, Check, Minus, CreditCard, Smartphone, Copy,
   ShieldCheck, RefreshCw, Headphones, ChevronDown, ChevronLeft,
   Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap, X, ArrowLeft, Clock, AlertCircle,
+  Banknote, Wallet,
 } from 'lucide-react';
 
 function getDeviceType() {
@@ -78,13 +79,13 @@ const PLANS = [
 const FAQS = [
   { q: 'هل يمكنني الإلغاء في أي وقت؟', a: 'نعم، يمكنك إلغاء اشتراكك في أي وقت. ستظل الميزات المدفوعة متاحة حتى نهاية فترة الفوترة دون أي رسوم إضافية.' },
   { q: 'هل يمكنني الترقية لاحقاً؟', a: 'بالتأكيد. يمكنك الترقية من أي باقة في أي وقت. سيتم تطبيق الفرق بشكل تناسقي على باقي فترة الفوترة.' },
-  { q: 'ما هي طرق الدفع المتاحة؟', a: 'الدفع عبر فودافون كاش. حوّل المبلغ إلى رقم فودافون كاش المخصص ثم قم بتأكيد الدفع، وسيتم تفعيل اشتراكك بعد التحقق.' },
+  { q: 'ما هي طرق الدفع المتاحة؟', a: 'الدفع عبر فودافون كاش أو Instapay أو PayPal. حوّل المبلغ إلى الرقم المخصص ثم قم بتأكيد الدفع، وسيتم تفعيل اشتراكك بعد التحقق يدوياً.' },
   { q: 'هل مدفوعاتي آمنة؟', a: 'نعم. يتم التحقق من كل عملية دفع يدوياً قبل تفعيل الاشتراك، وبياناتك محمية بالكامل.' },
 ];
 
 const TRUST_ITEMS = [
   { icon: ShieldCheck, title: 'دفع آمن', desc: 'تحقق يدوي قبل تفعيل الاشتراك' },
-  { icon: CreditCard, title: 'فودافون كاش', desc: 'حوّل بسهولة من تطبيق فودافون كاش' },
+  { icon: CreditCard, title: 'طرق دفع متعددة', desc: 'فودافون كاش — Instapay — PayPal' },
   { icon: RefreshCw, title: 'إلغاء في أي وقت', desc: 'بدون رسوم إضافية' },
   { icon: Headphones, title: 'دعم فني', desc: 'فريق متخصص لمساعدتك' },
 ];
@@ -292,7 +293,7 @@ function PricingCard({ plan, index, billingCycle, getPlanPrice, isCurrentPlan, h
 
         {plan.id !== 'free' && (
           <div className="mt-3 text-center">
-            <p className="text-[11px] text-white/25">ادفع عبر فودافون كاش</p>
+            <p className="text-[11px] text-white/25">فودافون كاش — Instapay — PayPal</p>
             <p className="text-xs text-gold/60 font-mono" dir="ltr">01004653117</p>
           </div>
         )}
@@ -524,8 +525,45 @@ function ContinueToPlatformButton() {
   );
 }
 
-function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
-  const [step, setStep] = useState('pay');
+const PAYMENT_METHOD_ICONS = {
+  vodafone_cash: Smartphone,
+  instapay: Banknote,
+  paypal: Wallet,
+};
+
+const PAYMENT_METHOD_INSTRUCTIONS = {
+  vodafone_cash: {
+    title: 'الدفع عبر فودافون كاش',
+    steps: (deviceType) => [
+      { n: '1', t: deviceType === 'android' ? 'اضغط "اتصل الآن" — سيفتح الاتصال بالكود جاهزًا' : 'افتح تطبيق فودافون كاش أو اطلب الكود من الهاتف' },
+      { n: '2', t: 'أدخل الرقم السري (PIN) لتأكيد التحويل' },
+      { n: '3', t: 'ارجع واضغط "أرسلت المبلغ" لإتمام الطلب' },
+    ],
+    hasUssd: true,
+  },
+  instapay: {
+    title: 'الدفع عبر Instapay',
+    steps: () => [
+      { n: '1', t: 'افتح تطبيق البنك واخترInstapay' },
+      { n: '2', t: 'أرسل المبلغ المطلوب إلى الرقم المحدد' },
+      { n: '3', t: 'ارجع واضغط "أرسلت المبلغ" لإتمام الطلب' },
+    ],
+    hasUssd: false,
+  },
+  paypal: {
+    title: 'الدفع عبر PayPal',
+    steps: () => [
+      { n: '1', t: 'افتح تطبيق PayPal أو موقعه الإلكتروني' },
+      { n: '2', t: 'أرسل المبلغ المطلوب إلى الرقم المحدد' },
+      { n: '3', t: 'ارجع واضغط "أرسلت المبلغ" لإتمام الطلب' },
+    ],
+    hasUssd: false,
+  },
+};
+
+function PaymentModal({ open, plan, billingCycle, onClose, onActivated }) {
+  const [selectedMethod, setSelectedMethod] = useState(null);
+  const [step, setStep] = useState('method');
   const [reference, setReference] = useState('');
   const [loading, setLoading] = useState(false);
   const [info, setInfo] = useState(null);
@@ -534,7 +572,8 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
 
   useEffect(() => {
     if (open) {
-      setStep('pay');
+      setSelectedMethod(null);
+      setStep('method');
       setReference('');
       setLoading(false);
       setInfo(null);
@@ -545,22 +584,30 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
   if (!open) return null;
 
   const amount = billingCycle === 'monthly' ? plan.monthlyPrice : plan.yearlyPrice;
+  const methodConfig = PAYMENT_METHOD_INSTRUCTIONS[selectedMethod] || {};
+  const MethodIcon = selectedMethod ? PAYMENT_METHOD_ICONS[selectedMethod] : Smartphone;
+  const identifier = info?.phoneNumber || PAYMENT_METHODS.find(m => m.id === selectedMethod)?.identifier || '';
 
-  const ussdCode = info?.phoneNumber ? `*9*7*${info.phoneNumber}*${amount}#` : '';
-  const ussdTelLink = info?.phoneNumber ? `tel:*9*7*${info.phoneNumber}*${amount}%23` : '';
+  const ussdCode = selectedMethod === 'vodafone_cash' && identifier ? `*9*7*${identifier}*${amount}#` : '';
+  const ussdTelLink = selectedMethod === 'vodafone_cash' && identifier ? `tel:*9*7*${identifier}*${amount}%23` : '';
 
   const copyNumber = async () => {
     try {
-      await navigator.clipboard.writeText(info?.phoneNumber || '');
+      await navigator.clipboard.writeText(identifier);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (_) {}
   };
 
+  const handleSelectMethod = (methodId) => {
+    setSelectedMethod(methodId);
+    setStep('pay');
+  };
+
   const handlePay = async () => {
     setLoading(true);
     try {
-      const data = await initiateVodafoneCash(plan.id, billingCycle);
+      const data = await initiateManualPayment(plan.id, billingCycle, selectedMethod);
       setInfo(data);
       setStep('confirm');
     } catch (err) {
@@ -573,7 +620,7 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
   const handleConfirm = async () => {
     setLoading(true);
     try {
-      await confirmVodafoneCash(plan.id, billingCycle, reference);
+      await confirmManualPayment(plan.id, billingCycle, selectedMethod, reference);
       toast.success('تم استلام طلبك! بانتظار تأكيد الإدارة');
       onActivated?.();
       onClose();
@@ -599,34 +646,70 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center">
-            <Smartphone className="w-5 h-5 text-gold" />
-          </div>
-          <div>
-            <h3 className="text-lg font-bold text-white">الدفع عبر فودافون كاش</h3>
-            <p className="text-xs text-white/40">{plan.name} — {BILLING_CYCLE_LABELS[billingCycle]}</p>
-          </div>
-        </div>
+        {step === 'method' && (
+          <>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-11 h-11 rounded-xl bg-gold/10 flex items-center justify-center">
+                <CreditCard className="w-5 h-5 text-gold" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white">اختر طريقة الدفع</h3>
+                <p className="text-xs text-white/40">{plan.name} — {BILLING_CYCLE_LABELS[billingCycle]}</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-4">
+              {PAYMENT_METHODS.map((method) => {
+                const Icon = PAYMENT_METHOD_ICONS[method.id];
+                return (
+                  <button
+                    key={method.id}
+                    onClick={() => handleSelectMethod(method.id)}
+                    className="w-full flex items-center gap-3 p-4 rounded-xl border border-white/[0.06] bg-white/[0.03] hover:border-gold/20 hover:bg-gold/5 transition-all duration-300 text-right"
+                  >
+                    <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-gold" />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-white">{method.name}</p>
+                      <p className="text-xs text-white/40">{method.nameEn}</p>
+                    </div>
+                    <ChevronDown className="w-4 h-4 text-white/30 -rotate-90" />
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="rounded-xl bg-gold/5 border border-gold/10 p-4 mt-4">
+              <p className="text-xs font-medium text-gold/70 mb-1">المبلغ المطلوب</p>
+              <p className="text-3xl font-serif font-bold text-gold">{amount} ج.م</p>
+            </div>
+          </>
+        )}
 
         {step === 'pay' && (
           <div className="space-y-4">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                <MethodIcon className="w-5 h-5 text-gold" />
+              </div>
+              <h3 className="text-base font-bold text-white">{methodConfig.title}</h3>
+            </div>
+
             <div className="rounded-xl bg-gold/5 border border-gold/10 p-4">
               <p className="text-xs font-medium text-gold/70 mb-1">المبلغ المطلوب</p>
               <p className="text-3xl font-serif font-bold text-gold">{amount} ج.م</p>
             </div>
+
             <div className="space-y-2.5">
-              {[
-                { n: '1', t: deviceType === 'android' ? 'اضغط "اتصل الآن" — سيفتح الاتصال بالكود جاهزًا' : 'افتح تطبيق فودافون كاش أو اطلب الكود من الهاتف' },
-                { n: '2', t: 'أدخل الرقم السري (PIN) لتأكيد التحويل' },
-                { n: '3', t: 'ارجع و اضغط "أرسلت المبلغ" لإتمام الطلب' },
-              ].map((s) => (
+              {(methodConfig.steps?.(deviceType) || []).map((s) => (
                 <div key={s.n} className="flex items-center gap-3">
                   <span className="shrink-0 w-6 h-6 rounded-full bg-gold/20 text-gold text-xs font-bold flex items-center justify-center">{s.n}</span>
                   <span className="text-sm text-white/70">{s.t}</span>
                 </div>
               ))}
             </div>
+
             <button
               onClick={handlePay}
               disabled={loading}
@@ -634,15 +717,29 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
             >
               {loading ? 'جاري التحميل...' : 'المتابعة لإتمام الدفع'}
             </button>
+
+            <button
+              onClick={() => { setStep('method'); setSelectedMethod(null); }}
+              className="w-full text-sm text-white/40 hover:text-white/60"
+            >
+              رجوع
+            </button>
           </div>
         )}
 
         {step === 'confirm' && (
           <div className="space-y-4">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                <MethodIcon className="w-5 h-5 text-gold" />
+              </div>
+              <h3 className="text-base font-bold text-white">{methodConfig.title}</h3>
+            </div>
+
             <div className="rounded-xl bg-gold/5 border border-gold/10 p-4">
-              <p className="text-xs font-medium text-gold/70 mb-1">حوّل المبلغ إلى رقم فودافون كاش</p>
+              <p className="text-xs font-medium text-gold/70 mb-1">حوّل المبلغ إلى</p>
               <div className="flex items-center justify-between gap-2">
-                <p className="text-2xl font-serif font-bold text-gold" dir="ltr">{info?.phoneNumber}</p>
+                <p className="text-2xl font-serif font-bold text-gold" dir="ltr">{identifier}</p>
                 <button
                   onClick={copyNumber}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-luxury-black border border-gold/20 text-xs font-semibold text-gold hover:bg-gold/10"
@@ -656,7 +753,7 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
               </p>
             </div>
 
-            {deviceType === 'android' && ussdTelLink && (
+            {selectedMethod === 'vodafone_cash' && deviceType === 'android' && ussdTelLink && (
               <a
                 href={ussdTelLink}
                 className="flex items-center justify-center gap-2 w-full h-12 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light text-luxury-black text-sm font-semibold shadow-[0_0_20px_-5px_rgba(212,168,67,0.3)] hover:shadow-[0_0_30px_-5px_rgba(212,168,67,0.4)] active:scale-[0.98] transition-all"
@@ -666,7 +763,7 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
               </a>
             )}
 
-            {(deviceType !== 'android' || !ussdTelLink) && (
+            {selectedMethod === 'vodafone_cash' && (deviceType !== 'android' || !ussdTelLink) && (
               <div className="rounded-xl bg-luxury-surface border border-white/[0.06] p-4">
                 <p className="text-xs font-medium text-white/40 mb-1.5">كود التحويل السريع</p>
                 <div className="flex items-center justify-between gap-2">
@@ -682,6 +779,22 @@ function VodafoneCashModal({ open, plan, billingCycle, onClose, onActivated }) {
                 <p className="mt-2 text-[11px] text-white/30">
                   اطلب الكود من هاتفك، وأدخل الرقم السري لتأكيد التحويل
                 </p>
+              </div>
+            )}
+
+            {selectedMethod !== 'vodafone_cash' && (
+              <div className="rounded-xl bg-luxury-surface border border-white/[0.06] p-4">
+                <p className="text-xs font-medium text-white/40 mb-1.5">رقم التحويل</p>
+                <div className="flex items-center justify-between gap-2">
+                  <code className="text-sm font-bold text-white" dir="ltr">{identifier}</code>
+                  <button
+                    onClick={copyNumber}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-gold/10 border border-gold/20 text-xs font-semibold text-gold hover:bg-gold/20"
+                  >
+                    {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
+                    {copied ? 'تم النسخ' : 'نسخ'}
+                  </button>
+                </div>
               </div>
             )}
 
@@ -719,7 +832,7 @@ export default function PricingPage() {
   const [searchParams] = useSearchParams();
   const [billingCycle, setBillingCycle] = useState('monthly');
   const [loading, setLoading] = useState(null);
-  const [vcModal, setVcModal] = useState(null);
+  const [paymentModal, setPaymentModal] = useState(null);
 
   useEffect(() => {
     if (searchParams.get('success') === 'true') {
@@ -745,7 +858,7 @@ export default function PricingPage() {
       return;
     }
     const plan = PLANS.find((p) => p.id === planId);
-    setVcModal({ plan, billingCycle });
+    setPaymentModal({ plan, billingCycle });
   };
 
   const handleVcActivated = async () => {
@@ -797,12 +910,12 @@ export default function PricingPage() {
 
       {user && <ContinueToPlatformButton />}
 
-      {vcModal && (
-        <VodafoneCashModal
-          open={!!vcModal}
-          plan={vcModal.plan}
-          billingCycle={vcModal.billingCycle}
-          onClose={() => setVcModal(null)}
+      {paymentModal && (
+        <PaymentModal
+          open={!!paymentModal}
+          plan={paymentModal.plan}
+          billingCycle={paymentModal.billingCycle}
+          onClose={() => setPaymentModal(null)}
           onActivated={handleVcActivated}
         />
       )}

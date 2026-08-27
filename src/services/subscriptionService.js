@@ -16,28 +16,28 @@ export async function getSubscription() {
   return authFetch('/subscription');
 }
 
-export async function initiateVodafoneCash(plan, billingCycle) {
-  return authFetch('/vodafone-cash/initiate', {
+export async function initiateManualPayment(plan, billingCycle, paymentMethod) {
+  return authFetch('/manual-payment/initiate', {
     method: 'POST',
-    body: JSON.stringify({ plan, billingCycle }),
+    body: JSON.stringify({ plan, billingCycle, paymentMethod }),
   });
 }
 
-export async function confirmVodafoneCash(plan, billingCycle, reference) {
-  return authFetch('/vodafone-cash/confirm', {
+export async function confirmManualPayment(plan, billingCycle, paymentMethod, reference) {
+  return authFetch('/manual-payment/confirm', {
     method: 'POST',
-    body: JSON.stringify({ plan, billingCycle, reference }),
+    body: JSON.stringify({ plan, billingCycle, paymentMethod, reference }),
   });
 }
 
-export async function activateVodafoneCashPayment(paymentId) {
+export async function activatePayment(paymentId) {
   return authFetch('/vodafone-cash/activate', {
     method: 'POST',
     body: JSON.stringify({ paymentId }),
   });
 }
 
-export async function rejectVodafoneCashPayment(paymentId) {
+export async function rejectPayment(paymentId) {
   return authFetch('/vodafone-cash/reject', {
     method: 'POST',
     body: JSON.stringify({ paymentId }),

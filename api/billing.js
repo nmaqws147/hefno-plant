@@ -79,9 +79,11 @@ async function handlePaymobIntent(req, res) {
   return res.status(200).json(result);
 }
 
-function getVodafoneCashNumber() {
-  return process.env.VODAFONE_CASH_NUMBER || '01010101010';
+function getPaymentIdentifier() {
+  return process.env.VODAFONE_CASH_NUMBER || process.env.PAYMENT_IDENTIFIER || '01004653117';
 }
+
+const VALID_MANUAL_METHODS = ['vodafone_cash', 'instapay', 'paypal'];
 
 function validatePlanCycle(plan, billingCycle) {
   if (!plan || !['premium', 'elite'].includes(plan)) return 'Invalid plan';
@@ -89,20 +91,23 @@ function validatePlanCycle(plan, billingCycle) {
   return null;
 }
 
-async function handleVodafoneCashInitiate(req, res) {
+async function handleManualPaymentInitiate(req, res) {
   const authHeader = req.headers.authorization;
   if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
   const decoded = await verifyToken(authHeader.slice(7));
-  const { plan, billingCycle } = req.body;
+  const { plan, billingCycle, paymentMethod } = req.body;
   const invalid = validatePlanCycle(plan, billingCycle);
   if (invalid) return res.status(400).json({ error: invalid });
+  if (!paymentMethod || !VALID_MANUAL_METHODS.includes(paymentMethod)) {
+    return res.status(400).json({ error: 'Invalid payment method' });
+  }
 
   const amountCents = getAmountCents(plan, billingCycle);
-  const phoneNumber = getVodafoneCashNumber();
+  const identifier = getPaymentIdentifier();
 
   return res.status(200).json({
-    paymentMethod: 'vodafone_cash',
-    phoneNumber,
+    paymentMethod,
+    phoneNumber: identifier,
     amount: amountCents / 100,
     currency: 'EGP',
     plan,
@@ -110,16 +115,20 @@ async function handleVodafoneCashInitiate(req, res) {
   });
 }
 
-async function handleVodafoneCashConfirm(req, res) {
+async function handleManualPaymentConfirm(req, res) {
   const authHeader = req.headers.authorization;
   if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ error: 'Authentication required' });
   const decoded = await verifyToken(authHeader.slice(7));
-  const { plan, billingCycle, reference } = req.body;
+  const { plan, billingCycle, paymentMethod, reference } = req.body;
   const invalid = validatePlanCycle(plan, billingCycle);
   if (invalid) return res.status(400).json({ error: invalid });
+  if (!paymentMethod || !VALID_MANUAL_METHODS.includes(paymentMethod)) {
+    return res.status(400).json({ error: 'Invalid payment method' });
+  }
 
   const amountCents = getAmountCents(plan, billingCycle);
   const db = getDb();
+  const identifier = getPaymentIdentifier();
 
   const docRef = await db.collection('payments').add({
     userId: decoded.uid,
@@ -128,10 +137,10 @@ async function handleVodafoneCashConfirm(req, res) {
     amount: amountCents / 100,
     currency: 'EGP',
     status: 'pending',
-    paymentMethod: 'vodafone_cash',
+    paymentMethod,
     reference: typeof reference === 'string' && reference.trim() ? reference.trim() : null,
-    phoneNumber: getVodafoneCashNumber(),
-    provider: 'vodafone_cash',
+    phoneNumber: identifier,
+    provider: paymentMethod,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   });
@@ -143,7 +152,7 @@ async function handleVodafoneCashConfirm(req, res) {
     billingCycle,
     amountCents,
     currency: 'EGP',
-    paymentMethod: 'vodafone_cash',
+    paymentMethod,
     timestamp: new Date().toISOString(),
   });
 
@@ -152,11 +161,21 @@ async function handleVodafoneCashConfirm(req, res) {
     event: 'payment_pending',
     plan,
     billingCycle,
-    paymentProvider: 'vodafone_cash',
+    paymentProvider: paymentMethod,
     details: { reference, amount: amountCents / 100 },
   });
 
   return res.status(200).json({ success: true, paymentId: docRef.id, status: 'pending' });
+}
+
+async function handleVodafoneCashInitiate(req, res) {
+  req.body.paymentMethod = 'vodafone_cash';
+  return handleManualPaymentInitiate(req, res);
+}
+
+async function handleVodafoneCashConfirm(req, res) {
+  req.body.paymentMethod = req.body.paymentMethod || 'vodafone_cash';
+  return handleManualPaymentConfirm(req, res);
 }
 
 async function handleVodafoneCashActivate(req, res) {
@@ -175,11 +194,13 @@ async function handleVodafoneCashActivate(req, res) {
   if (payment.status === 'paid') return res.status(200).json({ success: true, alreadyActivated: true });
   if (payment.status === 'failed') return res.status(400).json({ error: 'Payment already rejected' });
 
+  const method = payment.paymentMethod || payment.provider || 'vodafone_cash';
+
   const sub = await require('./_lib/subscriptionService').activateSubscription({
     userId: payment.userId,
     plan: payment.plan,
     billingCycle: payment.billingCycle,
-    paymentProvider: 'vodafone_cash',
+    paymentProvider: method,
   });
 
   await db.collection('payments').doc(String(paymentId)).update({
@@ -197,7 +218,7 @@ async function handleVodafoneCashActivate(req, res) {
     event: 'subscription_activated',
     plan: payment.plan,
     billingCycle: payment.billingCycle,
-    paymentProvider: 'vodafone_cash',
+    paymentProvider: method,
     details: { paymentId, amount: payment.amount },
   });
 
@@ -219,6 +240,8 @@ async function handleVodafoneCashReject(req, res) {
   const payment = snap.data();
   if (payment.status !== 'pending') return res.status(400).json({ error: 'Only pending payments can be rejected' });
 
+  const method = payment.paymentMethod || payment.provider || 'vodafone_cash';
+
   await db.collection('payments').doc(String(paymentId)).update({
     status: 'failed',
     updatedAt: new Date().toISOString(),
@@ -229,7 +252,7 @@ async function handleVodafoneCashReject(req, res) {
     event: 'payment_failed',
     plan: payment.plan,
     billingCycle: payment.billingCycle,
-    paymentProvider: 'vodafone_cash',
+    paymentProvider: method,
     details: { paymentId, reason: 'rejected_by_admin' },
   });
 
@@ -409,6 +432,14 @@ module.exports = async (req, res) => {
     if (path === '/api/vodafone-cash/confirm') {
       if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
       return await handleVodafoneCashConfirm(req, res);
+    }
+    if (path === '/api/manual-payment/initiate') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handleManualPaymentInitiate(req, res);
+    }
+    if (path === '/api/manual-payment/confirm') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handleManualPaymentConfirm(req, res);
     }
     if (path === '/api/vodafone-cash/activate') {
       if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
