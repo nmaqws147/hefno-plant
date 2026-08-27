@@ -1,4 +1,5 @@
 const { verifyToken, getDb, isAdmin } = require('./_lib/firebaseAdmin');
+const { init } = require('./_lib/firebaseAdmin');
 const usersRouter = require('./users');
 const { getSubscription, checkQuota: checkQuotaService, expireSubscription } = require('./_lib/subscriptionService');
 const { createPayment, handleWebhook } = require('./_lib/payments/provider');
@@ -350,6 +351,29 @@ async function handlePaymobPayments(req, res) {
   return res.status(200).json({ payments, total, page, limit });
 }
 
+async function handleDeleteAccount(req, res) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) return res.status(401).json({ success: false, message: 'غير مصرح' });
+  const decoded = await verifyToken(authHeader.slice(7));
+  const uid = decoded.uid;
+  const fb = init();
+  if (!fb) throw new Error('Firebase Admin not initialized');
+  const db = fb.firestore();
+
+  const batch = db.batch();
+  batch.delete(db.collection('users').doc(uid));
+  batch.delete(db.collection('subscriptions').doc(uid));
+
+  const usageSnap = await db.collection('usage').doc(uid).collection('features').get();
+  usageSnap.docs.forEach((doc) => batch.delete(doc.ref));
+  batch.delete(db.collection('usage').doc(uid));
+
+  await batch.commit();
+  await fb.auth().deleteUser(uid);
+
+  return res.status(200).json({ success: true });
+}
+
 module.exports = async (req, res) => {
   try {
     const url = parseUrl(req);
@@ -398,6 +422,10 @@ module.exports = async (req, res) => {
     if (path === '/api/paymob/payments' || path === '/api/billing/payments') {
       if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
       return await handlePaymobPayments(req, res);
+    }
+    if (path === '/api/delete-account') {
+      if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+      return await handleDeleteAccount(req, res);
     }
 
     return res.status(404).json({ error: 'Not found' });
