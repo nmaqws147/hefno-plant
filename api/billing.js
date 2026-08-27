@@ -83,7 +83,7 @@ function getPaymentIdentifier() {
   return process.env.VODAFONE_CASH_NUMBER || process.env.PAYMENT_IDENTIFIER || '01004653117';
 }
 
-const VALID_MANUAL_METHODS = ['vodafone_cash', 'instapay', 'paypal'];
+const VALID_MANUAL_METHODS = ['vodafone_cash', 'instapay'];
 
 function validatePlanCycle(plan, billingCycle) {
   if (!plan || !['premium', 'elite'].includes(plan)) return 'Invalid plan';

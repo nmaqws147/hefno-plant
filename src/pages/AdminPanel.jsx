@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BarChart3, FileText, CreditCard, Search, Users, DollarSign, CheckCircle, XCircle, Clock, Check, Ban, Smartphone, ExternalLink, Banknote, Wallet } from 'lucide-react';
+import { BarChart3, FileText, CreditCard, Search, Users, DollarSign, CheckCircle, XCircle, Clock, Check, Ban, Smartphone, ExternalLink, Banknote } from 'lucide-react';
 import { getPayments, activatePayment, rejectPayment } from '../services/subscriptionService';
 import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
@@ -251,11 +251,6 @@ function PaymentsPanel() {
                       <>
                         <Banknote className="w-3 h-3" />
                         Instapay
-                      </>
-                    ) : p.paymentMethod === 'paypal' || p.provider === 'paypal' ? (
-                      <>
-                        <Wallet className="w-3 h-3" />
-                        PayPal
                       </>
                     ) : (
                       <>

@@ -18,7 +18,6 @@ export const PAYMENT_IDENTIFIER = '01004653117';
 export const PAYMENT_METHODS = [
   { id: 'vodafone_cash', name: 'فودافون كاش', nameEn: 'Vodafone Cash', identifier: PAYMENT_IDENTIFIER },
   { id: 'instapay', name: 'Instapay', nameEn: 'Instapay', identifier: PAYMENT_IDENTIFIER },
-  { id: 'paypal', name: 'PayPal', nameEn: 'PayPal', identifier: PAYMENT_IDENTIFIER },
 ];
 
 export function getPlanPrice(planId, billingCycle) {

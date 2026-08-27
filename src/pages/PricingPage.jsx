@@ -9,7 +9,7 @@ import {
   Leaf, Sparkles, Crown, Check, Minus, CreditCard, Smartphone, Copy,
   ShieldCheck, RefreshCw, Headphones, ChevronDown, ChevronLeft,
   Bot, BookOpen, ScanSearch, Cloud, Newspaper, Zap, X, ArrowLeft, Clock, AlertCircle,
-  Banknote, Wallet,
+  Banknote,
 } from 'lucide-react';
 
 function getDeviceType() {
@@ -79,13 +79,13 @@ const PLANS = [
 const FAQS = [
   { q: 'هل يمكنني الإلغاء في أي وقت؟', a: 'نعم، يمكنك إلغاء اشتراكك في أي وقت. ستظل الميزات المدفوعة متاحة حتى نهاية فترة الفوترة دون أي رسوم إضافية.' },
   { q: 'هل يمكنني الترقية لاحقاً؟', a: 'بالتأكيد. يمكنك الترقية من أي باقة في أي وقت. سيتم تطبيق الفرق بشكل تناسقي على باقي فترة الفوترة.' },
-  { q: 'ما هي طرق الدفع المتاحة؟', a: 'الدفع عبر فودافون كاش أو Instapay أو PayPal. حوّل المبلغ إلى الرقم المخصص ثم قم بتأكيد الدفع، وسيتم تفعيل اشتراكك بعد التحقق يدوياً.' },
+  { q: 'ما هي طرق الدفع المتاحة؟', a: 'الدفع عبر فودافون كاش أو Instapay. حوّل المبلغ إلى الرقم المخصص ثم قم بتأكيد الدفع، وسيتم تفعيل اشتراكك بعد التحقق يدوياً.' },
   { q: 'هل مدفوعاتي آمنة؟', a: 'نعم. يتم التحقق من كل عملية دفع يدوياً قبل تفعيل الاشتراك، وبياناتك محمية بالكامل.' },
 ];
 
 const TRUST_ITEMS = [
   { icon: ShieldCheck, title: 'دفع آمن', desc: 'تحقق يدوي قبل تفعيل الاشتراك' },
-  { icon: CreditCard, title: 'طرق دفع متعددة', desc: 'فودافون كاش — Instapay — PayPal' },
+  { icon: CreditCard, title: 'طرق دفع متعددة', desc: 'فودافون كاش — Instapay' },
   { icon: RefreshCw, title: 'إلغاء في أي وقت', desc: 'بدون رسوم إضافية' },
   { icon: Headphones, title: 'دعم فني', desc: 'فريق متخصص لمساعدتك' },
 ];
@@ -293,7 +293,7 @@ function PricingCard({ plan, index, billingCycle, getPlanPrice, isCurrentPlan, h
 
         {plan.id !== 'free' && (
           <div className="mt-3 text-center">
-            <p className="text-[11px] text-white/25">فودافون كاش — Instapay — PayPal</p>
+            <p className="text-[11px] text-white/25">فودافون كاش — Instapay</p>
             <p className="text-xs text-gold/60 font-mono" dir="ltr">01004653117</p>
           </div>
         )}
@@ -528,7 +528,6 @@ function ContinueToPlatformButton() {
 const PAYMENT_METHOD_ICONS = {
   vodafone_cash: Smartphone,
   instapay: Banknote,
-  paypal: Wallet,
 };
 
 const PAYMENT_METHOD_INSTRUCTIONS = {
@@ -545,15 +544,6 @@ const PAYMENT_METHOD_INSTRUCTIONS = {
     title: 'الدفع عبر Instapay',
     steps: () => [
       { n: '1', t: 'افتح تطبيق البنك واخترInstapay' },
-      { n: '2', t: 'أرسل المبلغ المطلوب إلى الرقم المحدد' },
-      { n: '3', t: 'ارجع واضغط "أرسلت المبلغ" لإتمام الطلب' },
-    ],
-    hasUssd: false,
-  },
-  paypal: {
-    title: 'الدفع عبر PayPal',
-    steps: () => [
-      { n: '1', t: 'افتح تطبيق PayPal أو موقعه الإلكتروني' },
       { n: '2', t: 'أرسل المبلغ المطلوب إلى الرقم المحدد' },
       { n: '3', t: 'ارجع واضغط "أرسلت المبلغ" لإتمام الطلب' },
     ],
