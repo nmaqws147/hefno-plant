@@ -12,7 +12,9 @@ import ProfileField from '../component/ProfileField';
 import ProfileSkeleton from '../component/ProfileSkeleton';
 import { getSubscription, getPayments } from '../services/subscriptionService';
 import { PLAN_PRICES } from '../constants/pricing';
-import { Crown, Sparkles, CreditCard, Calendar, TrendingUp } from 'lucide-react';
+import { Crown, Sparkles, CreditCard, Calendar, TrendingUp, Trash2, AlertTriangle, X } from 'lucide-react';
+import { deleteUser, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
+import { auth } from '../firebase';
 
 export default function ProfilePage() {
   const { user, logout } = useAuth();
@@ -27,6 +29,10 @@ export default function ProfilePage() {
   const [previewUrl, setPreviewUrl] = useState(null);
   const [subscription, setSubscription] = useState(null);
   const [paymentHistory, setPaymentHistory] = useState([]);
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [deletePassword, setDeletePassword] = useState('');
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [deleteError, setDeleteError] = useState('');
 
   useEffect(() => {
     getSubscription().then(setSubscription).catch(console.error);
@@ -137,6 +143,39 @@ export default function ProfilePage() {
       toast.error('فشل تسجيل الخروج');
     }
   }, [logout, navigate]);
+
+  const handleDeleteAccount = useCallback(async () => {
+    if (!deletePassword.trim()) {
+      setDeleteError('أدخل كلمة المرور للتأكيد');
+      return;
+    }
+    setDeleteLoading(true);
+    setDeleteError('');
+    try {
+      const credential = EmailAuthProvider.credential(user.email, deletePassword);
+      await reauthenticateWithCredential(auth.currentUser, credential);
+
+      const token = await user.getIdToken();
+      const res = await fetch('/api/delete-account', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message);
+
+      await deleteUser(auth.currentUser);
+      toast.success('تم حذف الحساب بنجاح');
+      navigate('/');
+    } catch (err) {
+      if (err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+        setDeleteError('كلمة المرور غير صحيحة');
+      } else {
+        setDeleteError(err.message || 'حدث خطأ أثناء حذف الحساب');
+      }
+    } finally {
+      setDeleteLoading(false);
+    }
+  }, [user, deletePassword, navigate]);
 
   const formatDate = (ts) => {
     if (!ts) return '—';
@@ -371,18 +410,97 @@ export default function ProfilePage() {
           ) : (
             <div />
           )}
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 text-sm text-red-600 dark:text-red-400 font-medium hover:text-red-700 dark:hover:text-red-300 transition-colors"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-              <polyline points="16 17 21 12 16 7" />
-              <line x1="21" y1="12" x2="9" y2="12" />
-            </svg>
-            تسجيل الخروج
-          </button>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setDeleteModalOpen(true)}
+              className="flex items-center gap-2 text-sm text-red-600 dark:text-red-400 font-medium hover:text-red-700 dark:hover:text-red-300 transition-colors"
+            >
+              <Trash2 className="w-4 h-4" />
+              حذف الحساب
+            </button>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 font-medium hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+              </svg>
+              تسجيل الخروج
+            </button>
+          </div>
         </div>
+
+        {deleteModalOpen && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => { setDeleteModalOpen(false); setDeletePassword(''); setDeleteError(''); }} />
+            <div className="relative w-full max-w-md rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl p-6">
+              <button
+                onClick={() => { setDeleteModalOpen(false); setDeletePassword(''); setDeleteError(''); }}
+                className="absolute top-4 left-4 p-1.5 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-11 h-11 rounded-xl bg-red-50 dark:bg-red-900/20 flex items-center justify-center">
+                  <AlertTriangle className="w-5 h-5 text-red-600 dark:text-red-400" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">حذف الحساب</h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">هذا الإجراء لا يمكن التراجع عنه</p>
+                </div>
+              </div>
+
+              <div className="mb-4 p-3 rounded-xl bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800/30">
+                <p className="text-sm text-red-700 dark:text-red-400 leading-relaxed">
+                  سيتم حذف حسابك وجميع بياناتك نهائياً بما في ذلك ملفك الشخصي واشتراكك وسجل الاستخدام. لا يمكن التراجع عن هذا الإجراء.
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <label className="block text-xs font-medium text-gray-500 dark:text-gray-400 mb-1.5">
+                  أدخل كلمة المرور للتأكيد
+                </label>
+                <input
+                  type="password"
+                  value={deletePassword}
+                  onChange={(e) => { setDeletePassword(e.target.value); setDeleteError(''); }}
+                  placeholder="كلمة المرور"
+                  className="w-full h-11 px-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                {deleteError && (
+                  <p className="mt-1.5 text-xs text-red-600 dark:text-red-400">{deleteError}</p>
+                )}
+              </div>
+
+              <div className="flex gap-3">
+                <button
+                  onClick={() => { setDeleteModalOpen(false); setDeletePassword(''); setDeleteError(''); }}
+                  disabled={deleteLoading}
+                  className="flex-1 h-11 rounded-xl border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-60 transition-colors"
+                >
+                  إلغاء
+                </button>
+                <button
+                  onClick={handleDeleteAccount}
+                  disabled={deleteLoading || !deletePassword.trim()}
+                  className="flex-1 h-11 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-700 disabled:opacity-60 transition-colors"
+                >
+                  {deleteLoading ? (
+                    <span className="inline-flex items-center gap-2">
+                      <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" strokeDasharray="31.4 31.4" strokeLinecap="round" />
+                      </svg>
+                      جاري الحذف...
+                    </span>
+                  ) : 'حذف الحساب'}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
