@@ -13,7 +13,7 @@ import ProfileSkeleton from '../component/ProfileSkeleton';
 import { getSubscription, getPayments } from '../services/subscriptionService';
 import { PLAN_PRICES } from '../constants/pricing';
 import { Crown, Sparkles, CreditCard, Calendar, TrendingUp, Trash2, AlertTriangle, X } from 'lucide-react';
-import { deleteUser, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
+import { reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
 import { auth } from '../firebase';
 
 export default function ProfilePage() {
@@ -163,7 +163,7 @@ export default function ProfilePage() {
       const data = await res.json();
       if (!data.success) throw new Error(data.message);
 
-      await deleteUser(auth.currentUser);
+      await logout();
       toast.success('تم حذف الحساب بنجاح');
       navigate('/');
     } catch (err) {
