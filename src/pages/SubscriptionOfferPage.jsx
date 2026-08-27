@@ -236,6 +236,13 @@ export default function SubscriptionOfferPage() {
                 >
                   {plan.id === 'free' ? 'متابعة مجاناً' : `اشترك في ${plan.name}`}
                 </button>
+
+                {plan.id !== 'free' && (
+                  <div className="mt-3 text-center">
+                    <p className="text-[11px] text-white/25">ادفع عبر فودافون كاش</p>
+                    <p className="text-xs text-gold/60 font-mono" dir="ltr">01004653117</p>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
