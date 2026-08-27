@@ -110,9 +110,9 @@ function HeroSection() {
           <Zap className="w-3.5 h-3.5" />
           خطط بأسعار تنافسية
         </div>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight text-white leading-[1.55] max-w-3xl mx-auto">
-          <span className="bg-gradient-to-b from-white via-white to-white/70 bg-clip-text text-transparent">اختر باقتك</span>
-          <span className="block mt-2 bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">المثالية</span>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold tracking-tight leading-[1.55] max-w-4xl mx-auto">
+          <span className="bg-gradient-to-b from-white via-white to-white/70 bg-clip-text text-transparent">اختر باقتك </span>
+          <span className="bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent">المثالية</span>
         </h1>
         <div className="mt-6 mx-auto w-24 h-[2px] bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
       </motion.div>
