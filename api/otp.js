@@ -25,7 +25,7 @@ function getResend() {
 async function sendEmail(to, subject, html) {
   if (process.env.RESEND_API_KEY) {
     try {
-      const from = `Hefno-Plant <${process.env.RESEND_FROM || process.env.EMAIL_USER || 'noreply@hefnoplant.site'}>`;
+      const from = `Hefno-Plant <${process.env.RESEND_FROM || 'noreply@hefnoplant.site'}>`;
       const resend = getResend();
       const result = await resend.emails.send({ from, to, subject, html });
       if (result.error) throw new Error(typeof result.error === 'string' ? result.error : result.error.message || 'Resend error');
@@ -88,6 +88,7 @@ async function handleForgotPassword(req, res) {
     await sendEmail(normalizedEmail, 'إعادة تعيين كلمة المرور - Hefno-Plant', buildForgotEmail(resetLink));
   } catch (err) {
     log('forgot_link_failed', { to: normalizedEmail, error: err.message });
+    return res.status(500).json({ success: false, message: 'حدث خطأ أثناء إرسال البريد الإلكتروني' });
   }
 
   await redis.set(`forgot_cooldown:${normalizedEmail}`, '1', { ex: FORGOT_COOLDOWN_TTL });
@@ -101,9 +102,9 @@ async function handleSend(req, res) {
   const remaining = await redis.ttl(`otp_cooldown:${normalizedEmail}`);
   if (remaining > 0) return res.status(429).json({ success: false, message: `انتظر ${remaining} ثانية قبل طلب رمز جديد` });
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  await sendEmail(normalizedEmail, 'رمز التحقق - Hefno-Plant', buildOtpEmail(otp));
   await redis.set(`otp:${normalizedEmail}`, otp, { ex: OTP_TTL });
   await redis.set(`otp_cooldown:${normalizedEmail}`, '1', { ex: COOLDOWN_TTL });
-  await sendEmail(normalizedEmail, 'رمز التحقق - Hefno-Plant', buildOtpEmail(otp));
   return res.status(200).json({ success: true });
 }
 
