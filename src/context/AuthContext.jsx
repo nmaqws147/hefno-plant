@@ -86,6 +86,7 @@ export const AuthProvider = ({ children }) => {
       role: 'user',
       status: 'active',
       emailVerified: false,
+      onboardingCompleted: false,
       createdAt: now,
       updatedAt: now,
       lastLoginAt: now,

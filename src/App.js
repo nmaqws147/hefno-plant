@@ -80,6 +80,7 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AdminStats = lazy(() => import('./component/admin-stats'));
 const AdminPanel = lazy(() => import('./pages/AdminPanel'));
 const PricingPage = lazy(() => import('./pages/PricingPage'));
+const SubscriptionOfferPage = lazy(() => import('./pages/SubscriptionOfferPage'));
 
 const Loader = () => (
   <div className="page-loader">
@@ -171,6 +172,7 @@ const AppContent = () => {
           <Route path="/admin-panel" element={<ProtectedRoute adminOnly><AdminPanel /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/subscription-offer" element={<ProtectedRoute><SubscriptionOfferPage /></ProtectedRoute>} />
 
           {/* Public content pages (no login required) wrapped in layout */}
           <Route element={<PublicContentLayout />}>

@@ -182,7 +182,7 @@ const SignUpPage = () => {
       const data = await res.json();
       if (!data.success) throw new Error(data.message || 'رمز التحقق غير صحيح');
       await signup(email, password, fullName.trim(), phoneNumber.trim(), specialization);
-      navigate(decodeURIComponent(searchParams.get('redirect') || '/'));
+      navigate('/subscription-offer');
     } catch (err) {
       setOtpError(getFirebaseErrorMessage(err));
       setOtp(['', '', '', '', '', '']);
