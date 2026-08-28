@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ShieldCheck, Users, Sparkles, Sprout, FlaskConical, ArrowLeft } from 'lucide-react';
+import { ShieldCheck, Sparkles, Sprout, FlaskConical, ArrowLeft, Newspaper } from 'lucide-react';
 import heroBg from './hero-drone.jpeg';
 
 const fadeUp = {
@@ -14,11 +14,11 @@ const fadeUp = {
 
 function Hero() {
   const stats = [
-    { v: "97%", l: "دقة التشخيص", i: ShieldCheck },
-    { v: "50K+", l: "مزارع يثقون بنا", i: Users },
+    { v: "97%", l: "دقة تشخيص AI", i: ShieldCheck },
+    { v: "200+", l: "مرض نباتي موثق", i: Sprout },
+    { v: "150+", l: "مبيد ومرجع زراعي", i: FlaskConical },
     { v: "24/7", l: "مساعد ذكي", i: Sparkles },
-    { v: "200+", l: "مرض نباتي", i: Sprout },
-    { v: "150+", l: "مبيد زراعي", i: FlaskConical },
+    { v: "+", l: "مقالات متجددة", i: Newspaper },
   ];
   return (
     <section id="home" className="relative overflow-x-hidden dark:bg-[#0a1f15] bg-[#0a1f15]">

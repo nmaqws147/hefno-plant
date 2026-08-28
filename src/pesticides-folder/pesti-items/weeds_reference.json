@@ -1,0 +1,130 @@
+{
+  "id": "weeds_reference",
+  "name_ar": "دليل الحشائش المستهدفة بمبيدات الحشائش",
+  "name_en": "Herbicide Target Weeds Reference",
+  "source": "HefnoPlant Active Ingredients Database v1.0",
+  "version": "1.0.0",
+  "total_count": 24,
+  "items": [
+    {
+      "id": "weed-01",
+      "name_ar": "الفلاريس — الشوفان الكاذب",
+      "name_en": "Phalaris minor (Lesser canary grass)"
+    },
+    {
+      "id": "weed-02",
+      "name_ar": "الشوفان البري",
+      "name_en": "Avena fatua (Wild oat)"
+    },
+    {
+      "id": "weed-03",
+      "name_ar": "النجيل الثابت",
+      "name_en": "Sorghum halepense (Johnsongrass)"
+    },
+    {
+      "id": "weed-04",
+      "name_ar": "حشيشة الحمار — نجيل الريح",
+      "name_en": "Echinochloa colona (Jungle rice)"
+    },
+    {
+      "id": "weed-05",
+      "name_ar": "الذيل الثعلبي — سيتاريا",
+      "name_en": "Setaria viridis (Green foxtail)"
+    },
+    {
+      "id": "weed-06",
+      "name_ar": "العريش وحشيشة الأرز",
+      "name_en": "Cyperus rotundus (Purple nutsedge)"
+    },
+    {
+      "id": "weed-07",
+      "name_ar": "الحلفا — إيمبيراتا",
+      "name_en": "Imperata cylindrica (Cogon grass)"
+    },
+    {
+      "id": "weed-08",
+      "name_ar": "الذرة الجارة",
+      "name_en": "Sorghum bicolor (Sorghum)"
+    },
+    {
+      "id": "weed-09",
+      "name_ar": "السمير — الحشيشة الحامضة",
+      "name_en": "Sorghum halepense (Johnson grass)"
+    },
+    {
+      "id": "weed-10",
+      "name_ar": "الخردل البري",
+      "name_en": "Sinapis arvensis (Wild mustard)"
+    },
+    {
+      "id": "weed-11",
+      "name_ar": "الزبيبة — الهندباء",
+      "name_en": "Cichorium intybus (Chicory)"
+    },
+    {
+      "id": "weed-12",
+      "name_ar": "الرجلة",
+      "name_en": "Portulaca oleracea (Common purslane)"
+    },
+    {
+      "id": "weed-13",
+      "name_ar": "الحميضة — حشيشة الشين",
+      "name_en": "Convolvulus arvensis (Field bindweed)"
+    },
+    {
+      "id": "weed-14",
+      "name_ar": "البابونج",
+      "name_en": "Matricaria chamomilla (Wild chamomile)"
+    },
+    {
+      "id": "weed-15",
+      "name_ar": "الخبازة",
+      "name_en": "Malva neglecta (Common mallow)"
+    },
+    {
+      "id": "weed-16",
+      "name_ar": "الفصة البرية — البرسيم الحامض",
+      "name_en": "Medicago polymorpha (Burr medic)"
+    },
+    {
+      "id": "weed-17",
+      "name_ar": "الحنظل — الشيكران",
+      "name_en": "Citrullus colocynthis (Colocynth)"
+    },
+    {
+      "id": "weed-18",
+      "name_ar": "الهالوك (الدودر)",
+      "name_en": "Oxalis corniculata (Creeping woodsorrel)"
+    },
+    {
+      "id": "weed-19",
+      "name_ar": "الحشيشة الزرقاء — بولي جونوم",
+      "name_en": "Polygonum aviculare (Knotweed)"
+    },
+    {
+      "id": "weed-21",
+      "name_ar": "حشيشة الزاوية — النفل الحامض",
+      "name_en": "Oxalis pes-caprae (Bermuda buttercup)"
+    },
+    {
+      "id": "weed-22",
+      "name_ar": "البرهان — الشبث",
+      "name_en": "Solanum elaeagnifolium (Silverleaf nightshade)"
+    },
+    {
+      "id": "weed-23",
+      "name_ar": "الإسبير — النجم",
+      "name_en": "Amaranthus retroflexus (Redroot pigweed)"
+    },
+    {
+      "id": "weed-24",
+      "name_ar": "حشيشة الفجل — النزعة",
+      "name_en": "Raphanus raphanistrum (Wild radish)"
+    },
+    {
+      "id": "weed-25",
+      "name_ar": "العليق الشوكي — الحسك",
+      "name_en": "Salsola tragus (Russian thistle)"
+    }
+  ]
+}

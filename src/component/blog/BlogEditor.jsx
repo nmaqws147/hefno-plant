@@ -29,9 +29,11 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
   const [formatError, setFormatError] = useState('');
   const [uploadingCover, setUploadingCover] = useState(false);
   const [insertingImg, setInsertingImg] = useState(false);
+  const [insertingPreviewImg, setInsertingPreviewImg] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const rawInputRef = useRef(null);
   const bodyFileInputRef = useRef(null);
+  const previewBodyFileInputRef = useRef(null);
   const cursorPosRef = useRef(null);
 
   useEffect(() => {
@@ -190,6 +192,42 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
     setInsertingImg(false);
   };
 
+  const handlePreviewBodyImageSelect = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setInsertingPreviewImg(true);
+    const img = new Image();
+    img.src = URL.createObjectURL(file);
+    await new Promise(resolve => { img.onload = resolve; });
+    let w = img.width, h = img.height;
+    if (w > 1920) { h = h * 1920 / w; w = 1920; }
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(img, 0, 0, w, h);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
+    try {
+      const token = await user.getIdToken();
+      const res = await fetch('/api/blog/image/upload', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify({ dataUrl }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Upload failed');
+      const alt = file.name.replace(/\.[^.]+$/, '').replace(/[_-]/g, ' ');
+      const imgHtml = `<img src="${data.url}" alt="${alt}" class="article-image" loading="lazy" style="max-width:100%;height:auto;border-radius:12px;margin:1.5rem 0;" />`;
+      const newBody = body ? body + '\n' + imgHtml : imgHtml;
+      setBody(newBody);
+      toast.success('Image inserted successfully');
+    } catch (err) {
+      toast.error('Failed to upload image: ' + err.message);
+    }
+    if (previewBodyFileInputRef.current) previewBodyFileInputRef.current.value = '';
+    setInsertingPreviewImg(false);
+  };
+
   const clearCover = () => {
     setCoverUrl('');
     setCoverPreview('');
@@ -205,6 +243,7 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
   return (
     <div>
       <input ref={bodyFileInputRef} type="file" accept="image/*" onChange={handleBodyImageSelect} className="hidden" />
+      <input ref={previewBodyFileInputRef} type="file" accept="image/*" onChange={handlePreviewBodyImageSelect} className="hidden" />
       <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-6">
         {post?.id ? 'Edit Post' : 'New Post'}
       </h3>
@@ -296,12 +335,23 @@ const BlogEditor = ({ post, onSave, onDelete }) => {
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
               Formatted
             </span>
-            <button
-              onClick={() => setStep('write')}
-              className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 underline"
-            >
-              Edit Raw Text
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => previewBodyFileInputRef.current?.click()}
+                disabled={insertingPreviewImg}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors disabled:opacity-50"
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                {insertingPreviewImg ? 'Uploading...' : 'Insert Image'}
+              </button>
+              <button
+                onClick={() => setStep('write')}
+                className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 underline"
+              >
+                Edit Raw Text
+              </button>
+            </div>
           </div>
 
           {/* Title */}

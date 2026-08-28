@@ -59,13 +59,16 @@ const PesticideGroupPage = () => {
     resistance_mechanism: item.resistance?.mechanism_ar || item.resistance?.ar_mechanism,
     target_pests: item.target_pests || item.target_diseases || item.target_nematodes || item.target_weeds || [],
     spectrum_ar: item.spectrum_ar || item.ar_spectrum || '—',
-    activity_ar: item.activity_ar || item.ar_activity,
+    activity_ar: item.activity_ar || item.ar_activity || item.mode_of_action?.target_site || '',
     application: item.application || {},
     safety_notes: item.safety_notes_ar || item.ar_notes_safety,
     special_use: item.special_use_ar || item.ar_use_special,
     regulatory: item.regulatory_ar || item.ar_regulatory,
     isPublicHealth: category === 'publicHealth',
     target_crops: item.target_crops || [],
+    identification: item.identification || {},
+    mode_of_action: item.mode_of_action || {},
+    environmental_fate: item.environmental_fate || {},
   });
 
   const loadItems = useCallback(async (category, rawGroupCode, group) => {

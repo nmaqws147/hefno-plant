@@ -408,7 +408,7 @@ function FinalCTA() {
             <span className="block bg-gradient-to-r from-gold via-gold-light to-gold bg-clip-text text-transparent mt-1">مزرعتك؟</span>
           </h2>
           <p className="text-white/40 text-base lg:text-lg max-w-lg mx-auto mb-8 leading-relaxed">
-            انضم إلى HefnoPlant اليوم وابدأ رحلتك نحو زراعة أكثر ذكاءً وإنتاجية
+            سواء كنت طالب هندسة زراعية أو خريج حديثاً في بداية مسيرته — HefnoPlant أداتك لتطبيق المعرفة العلمية واتخاذ قرارات زراعية مدروسة
           </p>
           {!user ? (
             <button
