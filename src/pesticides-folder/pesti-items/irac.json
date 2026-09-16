@@ -8128,6 +8128,2845 @@
       ],
       "irac_rotation_advice": "فعال ضد الأكاروسات المقاومة",
       "irac_group_id": "irac-21a"
+    },
+    {
+      "id": "ph_ai_ph-001_001",
+      "name_ar": "تيمفوس",
+      "name_en": "تيمفوس",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-001_002",
+      "name_ar": "بيرميثرين",
+      "name_en": "بيرميثرين",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-001_003",
+      "name_ar": "Bacillus thuringiensis israelensis (Bti)",
+      "name_en": "Bacillus thuringiensis israelensis (Bti)",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Biopesticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-002_004",
+      "name_ar": "حمض البوريك",
+      "name_en": "حمض البوريك",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-003_006",
+      "name_ar": "ديكلورفوس DDVP",
+      "name_en": "ديكلورفوس DDVP",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-004_007",
+      "name_ar": "أميتراز",
+      "name_en": "أميتراز",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-004_008",
+      "name_ar": "Metarhizium anisopliae",
+      "name_en": "Metarhizium anisopliae",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Biopesticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-006_012",
+      "name_ar": "فوسفين PH3",
+      "name_en": "فوسفين PH3",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Fumigant + Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-006_013",
+      "name_ar": "كلوربيريفوس ميثيل",
+      "name_en": "كلوربيريفوس ميثيل",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-006_014",
+      "name_ar": "دياتومات الأرض Diatomite",
+      "name_en": "دياتومات الأرض Diatomite",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Other",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-006_015",
+      "name_ar": "Bt kurstaki",
+      "name_en": "Bt kurstaki",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Biopesticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-007_016",
+      "name_ar": "هيكسافلوميرون",
+      "name_en": "هيكسافلوميرون",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-008_017",
+      "name_ar": "ديميتيكون",
+      "name_en": "ديميتيكون",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Other",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    },
+    {
+      "id": "ph_ai_ph-008_018",
+      "name_ar": "كاربارييل",
+      "name_en": "كاربارييل",
+      "irac_group_id": "",
+      "irac_code": "",
+      "chemical_class_ar": "",
+      "chemical_class_en": "",
+      "systemic": false,
+      "type_ar": "Insecticide",
+      "application": {
+        "methods": [],
+        "timing": [],
+        "max_applications_per_season": null,
+        "application_notes": []
+      },
+      "resistance": {},
+      "rotation": {},
+      "target_pests": [],
+      "target_crops": [],
+      "spectrum_ar": "",
+      "activity_ar": "",
+      "special_use_ar": "",
+      "regulatory_ar": "",
+      "safety_notes_ar": "",
+      "identification": {
+        "cas_number": null,
+        "chemical_name": null,
+        "molecular_formula": null,
+        "molecular_weight": null
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": null,
+          "arabic": null
+        },
+        "target_site": null,
+        "mechanism": null,
+        "physiological_effect": null
+      },
+      "environmental_fate": {
+        "soil_persistence": null,
+        "degradation": null,
+        "mobility": null,
+        "water_risk": null,
+        "bioaccumulation": null
+      },
+      "references": [
+        {
+          "title": "Comprehensive Pest Control Database — Public Health section",
+          "organization": null,
+          "year": null,
+          "url": null,
+          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
+        }
+      ]
+    }
+  ],
+  "total_count": 126,
+  "rotation_programs": [
+    {
+      "id": "irot-001",
+      "name_arabic": "برنامج تناوب القطن — ديدان القطن",
+      "crop_arabic": "قطن",
+      "season_arabic": "يونيو–أكتوبر",
+      "target_pests_arabic": [
+        "دودة ورق القطن",
+        "دودة اللوز الأمريكية",
+        "دودة اللوز الصغرى",
+        "المن",
+        "الذبابة البيضاء",
+        "العنكبوت الأحمر"
+      ],
+      "target_pest_ids": [
+        "pest-08",
+        "pest-09",
+        "pest-10",
+        "pest-01",
+        "pest-02",
+        "pest-21"
+      ],
+      "rotation_summary_arabic": "11A → 28 → 3A → 5 → 4A",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-11a",
+          "example_active_ingredient_arabic": "Bt kurstaki أو Bta",
+          "example_active_ingredient_ids": [
+            "ins_ai_0041"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-041"
+          ],
+          "dose_note_arabic": "Bt 2 جم/لتر — يُرش على المساء",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند 2-3 مجاميع بيض / نبات أو أولى يرقات الجيل الأول",
+          "notes_arabic": "أساس البرنامج — آمن ومؤثر ضد اليرقات الصغيرة"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-28",
+          "example_active_ingredient_arabic": "كلوراثيانيليبرول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0059"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-059"
+          ],
+          "dose_note_arabic": "كلوراثيانيليبرول 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند ارتفاع الكثافة فوق العتبة الاقتصادية",
+          "notes_arabic": "28 — الأقوى ضد ديدان القطن — احفظه للضغط العالي"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-3a",
+          "example_active_ingredient_arabic": "لامبدا سيهالوثرين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0014"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-014"
+          ],
+          "dose_note_arabic": "لامبدا سيهالوثرين 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "بعد 14 يوم — تناوب",
+          "notes_arabic": "3A — صاعق سريع ضد اليرقات الكبيرة"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-5",
+          "example_active_ingredient_arabic": "سبينيتورام",
+          "example_active_ingredient_ids": [
+            "ins_ai_0031"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-031"
+          ],
+          "dose_note_arabic": "سبينيتورام 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "بعد 10-14 يوم — تناوب",
+          "notes_arabic": "5 — لا مقاومة متبادلة مع 3A أو 28"
+        },
+        {
+          "spray_number": 5,
+          "irac_group_id": "irac-4a",
+          "example_active_ingredient_arabic": "أسيتامبريد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0024"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-024"
+          ],
+          "dose_note_arabic": "أسيتامبريد 0.3 جم/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد الحشرات الماصة (المن، ذبابة بيضاء)",
+          "notes_arabic": "4A — جهازي ضد الحشرات الماصة — تناوب مع 28"
+        }
+      ],
+      "resistance_notes_arabic": "طفرة kdr في 3A منتشرة في مصر — تحقق من الفاعلية دورياً — 28 للضغط العالي فقط",
+      "general_notes_arabic": "رصد الكثافة أسبوعياً — استخدام الأعداء الطبيعية (Trichogramma) — الزراعة في التواريخ الموصى بها",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-002",
+      "name_arabic": "برنامج تناوب الطماطم — التوتا والعنكبوت الأحمر",
+      "crop_arabic": "طماطم",
+      "season_arabic": "طوال العام في البيوت المحمية",
+      "target_pests_arabic": [
+        "التوتا",
+        "دودة اللوز",
+        "المن",
+        "الذبابة البيضاء",
+        "التربس",
+        "العنكبوت الأحمر"
+      ],
+      "target_pest_ids": [
+        "pest-12",
+        "pest-09",
+        "pest-01",
+        "pest-02",
+        "pest-03",
+        "pest-21"
+      ],
+      "rotation_summary_arabic": "11A → 28 → 5 → 13 — للتوتا | 6 → 23 → 10 — للأكاروس",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-11a",
+          "example_active_ingredient_arabic": "Bt kurstaki",
+          "example_active_ingredient_ids": [
+            "ins_ai_0041"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-041"
+          ],
+          "dose_note_arabic": "Bt 2 جم/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "وقائياً كل 7-10 أيام ضد التوتا",
+          "notes_arabic": "أساس وقائي — آمن على الحشرات المفيدة"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-28",
+          "example_active_ingredient_arabic": "سايانترانيليبرول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0060"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-060"
+          ],
+          "dose_note_arabic": "سايانترانيليبرول 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند أولى أنفاق التوتا أو عتبة 1 نفق/ورقة",
+          "notes_arabic": "28 — الأقوى ضد التوتا + فعّال على التربس"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-5",
+          "example_active_ingredient_arabic": "سبينيتورام",
+          "example_active_ingredient_ids": [
+            "ins_ai_0031"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-031"
+          ],
+          "dose_note_arabic": "سبينيتورام 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "بعد 10-14 يوم — تناوب",
+          "notes_arabic": "5 — لا مقاومة متبادلة مع 28"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-13",
+          "example_active_ingredient_arabic": "كلورفينابير",
+          "example_active_ingredient_ids": [
+            "ins_ai_0044"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-044"
+          ],
+          "dose_note_arabic": "كلورفينابير 0.7 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "بعد 10-14 يوم",
+          "notes_arabic": "13 — لا مقاومة متبادلة — ضد التوتا المقاومة"
+        },
+        {
+          "spray_number": 5,
+          "irac_group_id": "irac-6",
+          "example_active_ingredient_arabic": "أبامكتين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0032"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-032"
+          ],
+          "dose_note_arabic": "أبامكتين 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد العنكبوت الأحمر عند عتبة 2-3 أكاروس/ورقة",
+          "notes_arabic": "6 — الأهم ضد الأكاروس"
+        },
+        {
+          "spray_number": 6,
+          "irac_group_id": "irac-23",
+          "example_active_ingredient_arabic": "سبيروميسيفن",
+          "example_active_ingredient_ids": [
+            "ins_ai_0058"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-058"
+          ],
+          "dose_note_arabic": "سبيروميسيفن 0.7 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب ضد الأكاروس بعد أبامكتين",
+          "notes_arabic": "23 — لا مقاومة متبادلة مع 6"
+        }
+      ],
+      "resistance_notes_arabic": "التوتا طورت مقاومة لـ 1A و3A في مصر — 28 و13 و5 الأهم الآن",
+      "general_notes_arabic": "الأعداء الطبيعية (Nesidiocoris, Macrolophus) أساسية في البيوت المحمية — لا تستخدم مبيدات تضر بها",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-003",
+      "name_arabic": "برنامج تناوب الخيار والقرعيات — أبيض ريشي وتربس وعنكبوت",
+      "crop_arabic": "خيار وقرعيات",
+      "season_arabic": "طوال العام في البيوت المحمية",
+      "target_pests_arabic": [
+        "الذبابة البيضاء",
+        "التربس",
+        "العنكبوت الأحمر",
+        "المن",
+        "الأكاروس العريض"
+      ],
+      "target_pest_ids": [
+        "pest-02",
+        "pest-03",
+        "pest-21",
+        "pest-01",
+        "pest-24"
+      ],
+      "rotation_summary_arabic": "7 → 4A → 28 → 5 (تربس) | 6 → 23 → 10 (أكاروس)",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-7",
+          "example_active_ingredient_arabic": "بيريبروكسيفن",
+          "example_active_ingredient_ids": [
+            "ins_ai_0035"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-035"
+          ],
+          "dose_note_arabic": "بيريبروكسيفن 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "وقائياً عند بدء الزراعة",
+          "notes_arabic": "7 — يُوقف تكاثر الذبابة البيضاء — وقائي ممتاز"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-4a",
+          "example_active_ingredient_arabic": "إيميداكلوبريد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0023"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-023"
+          ],
+          "dose_note_arabic": "إيميداكلوبريد 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند ظهور الذبابة البيضاء",
+          "notes_arabic": "4A — جهازي ضد الذبابة البيضاء — تحقق من حساسية السلالات"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-28",
+          "example_active_ingredient_arabic": "سايانترانيليبرول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0060"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-060"
+          ],
+          "dose_note_arabic": "سايانترانيليبرول 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب — بعد 14 يوم",
+          "notes_arabic": "28 — ضد الذبابة البيضاء + التربس + التوتا"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-5",
+          "example_active_ingredient_arabic": "سبينوساد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0030"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-030"
+          ],
+          "dose_note_arabic": "سبينوساد 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند ظهور التربس فوق العتبة",
+          "notes_arabic": "5 — الأفضل ضد التربس — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 5,
+          "irac_group_id": "irac-6",
+          "example_active_ingredient_arabic": "أبامكتين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0032"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-032"
+          ],
+          "dose_note_arabic": "أبامكتين 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد العنكبوت الأحمر عند العتبة",
+          "notes_arabic": "6 — نافذ ضد الأكاروس"
+        }
+      ],
+      "resistance_notes_arabic": "الذبابة البيضاء مقاومة للـ 4A في كثير من المناطق المصرية — ابدأ بـ 7 و28 و9C",
+      "general_notes_arabic": "الأكاروس المفترس Phytoseiulus persimilis فعّال جداً ضد العنكبوت الأحمر في البيوت المحمية",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-004",
+      "name_arabic": "برنامج تناوب الحبوب — المن ودودة الساق",
+      "crop_arabic": "قمح وشعير",
+      "season_arabic": "نوفمبر–أبريل",
+      "target_pests_arabic": [
+        "المن",
+        "دودة القلب",
+        "دودة القطن",
+        "الجراد"
+      ],
+      "target_pest_ids": [
+        "pest-01",
+        "pest-08",
+        "pest-09",
+        "pest-18"
+      ],
+      "rotation_summary_arabic": "1B (انتقائي) → 9C → 3A (ضغط عالٍ)",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-1b",
+          "example_active_ingredient_arabic": "بيريميكارب",
+          "example_active_ingredient_ids": [
+            "ins_ai_0011"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-011"
+          ],
+          "dose_note_arabic": "بيريميكارب 0.75 جم/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند وصول المن للعتبة (5 حشرات/ساق أو 25% نباتات مصابة)",
+          "notes_arabic": "انتقائي ضد المن فقط — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-4a",
+          "example_active_ingredient_arabic": "فلونيكاميد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0028"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-028"
+          ],
+          "dose_note_arabic": "فلونيكاميد 0.4 جم/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند تكرار الإصابة أو ظهور ديدان الساق",
+          "notes_arabic": "9C — لا مقاومة متبادلة مع 4A — ضد المن والنطاط"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-3a",
+          "example_active_ingredient_arabic": "ديلتامثرين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0015"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-015"
+          ],
+          "dose_note_arabic": "ديلتامثرين 0.4 مل/لتر أو طُعم مسموم",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد الجراد أو الديدان القارضة",
+          "notes_arabic": "3A — صاعق سريع ضد الجراد والديدان"
+        }
+      ],
+      "resistance_notes_arabic": "المن في الحبوب لا يزال حساساً للـ 1B — احفظ 4A و3A للضغط العالٍ",
+      "general_notes_arabic": "معاملة البذور بكلوثيانيدين + فلودايوكسونيل تُقلل الضغط المرضي الأولي بشكل كبير",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-005",
+      "name_arabic": "برنامج تناوب الحمضيات — أكاروس وحشرات قشرية",
+      "crop_arabic": "حمضيات",
+      "season_arabic": "مارس–أكتوبر",
+      "target_pests_arabic": [
+        "حشرة قشرية",
+        "بق دقيقي",
+        "بق أبيض",
+        "حافرة ورق حمضيات",
+        "أكاروس أحمر",
+        "أكاروس صدأ",
+        "نطاط ناقل HLB"
+      ],
+      "target_pest_ids": [
+        "pest-05",
+        "pest-06",
+        "pest-07",
+        "pest-14",
+        "pest-22",
+        "pest-25",
+        "pest-26"
+      ],
+      "rotation_summary_arabic": "7 → 21A → 6 → 23 (أكاروس+حشرات ماصة) | 4A صب جذري ضد HLB",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-7",
+          "example_active_ingredient_arabic": "بيريبروكسيفن",
+          "example_active_ingredient_ids": [
+            "ins_ai_0035"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-035"
+          ],
+          "dose_note_arabic": "بيريبروكسيفن 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "وقائياً عند بداية موسم النمو (مارس–أبريل)",
+          "notes_arabic": "7 — يُوقف تكاثر الحشرات القشرية والبق الدقيقي"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-21a",
+          "example_active_ingredient_arabic": "بيريداين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0053"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-053"
+          ],
+          "dose_note_arabic": "بيريداين 0.5 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند ظهور الأكاروس الأحمر فوق عتبة 2-3/ورقة",
+          "notes_arabic": "21A — ممتاز ضد أكاروس الحمضيات"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-6",
+          "example_active_ingredient_arabic": "أبامكتين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0032"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-032"
+          ],
+          "dose_note_arabic": "أبامكتين 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "بعد 21 يوم — تناوب ضد الأكاروس",
+          "notes_arabic": "6 — لا مقاومة متبادلة مع 21A"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-23",
+          "example_active_ingredient_arabic": "سبيروتيترامات",
+          "example_active_ingredient_ids": [
+            "ins_ai_0057"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-057"
+          ],
+          "dose_note_arabic": "سبيروتيترامات 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد الحشرات القشرية والبق الدقيقي",
+          "notes_arabic": "23 — جهازي ثنائي الاتجاه — الأفضل ضد البق الدقيقي"
+        },
+        {
+          "spray_number": 5,
+          "irac_group_id": "irac-4a",
+          "example_active_ingredient_arabic": "إيميداكلوبريد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0023"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-023"
+          ],
+          "dose_note_arabic": "إيميداكلوبريد 0.5 مل/لتر صب جذري",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد نطاط ناقل HLB (Diaphorina citri) عند الطرود",
+          "notes_arabic": "4A صب جذري — طويل الأمد ضد نطاط HLB"
+        }
+      ],
+      "resistance_notes_arabic": "لا تتجاوز رشتين من 21A في الموسم — تناوب مع 6 و23 و10",
+      "general_notes_arabic": "مكافحة نطاط HLB حساسة جداً — فور ظهور الطرود الخضراء — المصيدة الصفراء للرصد",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-006",
+      "name_arabic": "برنامج تناوب الفراولة — تربس وأكاروس وذبابة بيضاء",
+      "crop_arabic": "فراولة",
+      "season_arabic": "أكتوبر–مارس",
+      "target_pests_arabic": [
+        "التربس",
+        "الذبابة البيضاء",
+        "العنكبوت الأحمر",
+        "الأكاروس العريض",
+        "المن"
+      ],
+      "target_pest_ids": [
+        "pest-03",
+        "pest-02",
+        "pest-21",
+        "pest-24",
+        "pest-01"
+      ],
+      "rotation_summary_arabic": "5 → 28 (تربس) | 6 → 10 → 23 (أكاروس) | 4A/9C (ذبابة بيضاء)",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-5",
+          "example_active_ingredient_arabic": "سبينيتورام",
+          "example_active_ingredient_ids": [
+            "ins_ai_0031"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-031"
+          ],
+          "dose_note_arabic": "سبينيتورام 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "وقائياً كل 5-7 أيام ضد التربس",
+          "notes_arabic": "5 — الأفضل ضد التربس — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-28",
+          "example_active_ingredient_arabic": "سايانترانيليبرول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0060"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-060"
+          ],
+          "dose_note_arabic": "سايانترانيليبرول 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب ضد التربس — بعد 7-10 أيام",
+          "notes_arabic": "28 — ضد التربس + الذبابة البيضاء + التوتا"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-6",
+          "example_active_ingredient_arabic": "أبامكتين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0032"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-032"
+          ],
+          "dose_note_arabic": "أبامكتين 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد العنكبوت الأحمر والأكاروس العريض",
+          "notes_arabic": "6 — الأهم ضد الأكاروس"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-10",
+          "example_active_ingredient_arabic": "إيتوكسازول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0040"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-040"
+          ],
+          "dose_note_arabic": "إيتوكسازول 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب ضد الأكاروس",
+          "notes_arabic": "10 — لا مقاومة متبادلة مع 6"
+        }
+      ],
+      "resistance_notes_arabic": "التربس على الفراولة يُطور مقاومة للـ 3A و1A — 5 و28 الأهم",
+      "general_notes_arabic": "المفترس Neoseiulus cucumeris ضد التربس — Phytoseiulus persimilis ضد العنكبوت الأحمر",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-007",
+      "name_arabic": "برنامج تناوب العنب — تربس وعنكبوت وذبابة بيضاء",
+      "crop_arabic": "عنب",
+      "season_arabic": "مارس–سبتمبر",
+      "target_pests_arabic": [
+        "التربس",
+        "العنكبوت الأحمر",
+        "أكاروس الحمضيات",
+        "المن",
+        "نطاط الأوراق"
+      ],
+      "target_pest_ids": [
+        "pest-03",
+        "pest-21",
+        "pest-22",
+        "pest-01",
+        "pest-04"
+      ],
+      "rotation_summary_arabic": "23 (وقائي) → 5 (تربس) | 6 → 21A → 10 (أكاروس)",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-23",
+          "example_active_ingredient_arabic": "سبيروتيترامات",
+          "example_active_ingredient_ids": [
+            "ins_ai_0057"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-057"
+          ],
+          "dose_note_arabic": "سبيروتيترامات 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند بداية تفتح الأوراق — وقائياً",
+          "notes_arabic": "23 — جهازي ضد الأكاروس + المن + الذبابة البيضاء"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-5",
+          "example_active_ingredient_arabic": "سبينوساد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0030"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-030"
+          ],
+          "dose_note_arabic": "سبينوساد 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند ظهور التربس فوق العتبة",
+          "notes_arabic": "5 — الأفضل ضد التربس على العنب"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-6",
+          "example_active_ingredient_arabic": "أبامكتين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0032"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-032"
+          ],
+          "dose_note_arabic": "أبامكتين 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد الأكاروس الأحمر فوق العتبة",
+          "notes_arabic": "6 — نافذ ضد الأكاروس"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-21a",
+          "example_active_ingredient_arabic": "بيريداين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0053"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-053"
+          ],
+          "dose_note_arabic": "بيريداين 0.5 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب ضد الأكاروس",
+          "notes_arabic": "21A — تناوب مع 6"
+        }
+      ],
+      "resistance_notes_arabic": "لا تستخدم 3A وحده ضد التربس — مقاومة kdr منتشرة",
+      "general_notes_arabic": "المفترس Typhlodromus pyri وNeoseiulus californicus فعّالان ضد الأكاروس في العنب",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-008",
+      "name_arabic": "برنامج تناوب أشجار الفاكهة — عث وتربس وحشرات قشرية",
+      "crop_arabic": "تفاح وكمثرى وخوخ ومشمش",
+      "season_arabic": "مارس–سبتمبر",
+      "target_pests_arabic": [
+        "حشرة قشرية",
+        "بق دقيقي",
+        "دودة ثمار التفاح",
+        "عنكبوت أحمر",
+        "أكاروس البقعة الحمراء",
+        "ذبابة الفاكهة"
+      ],
+      "target_pest_ids": [
+        "pest-05",
+        "pest-06",
+        "pest-15",
+        "pest-21",
+        "pest-23",
+        "pest-17"
+      ],
+      "rotation_summary_arabic": "10 (وقائي) → 28 → 18A (دودة ثمار) | 21A → 23 → 6 (أكاروس)",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-10",
+          "example_active_ingredient_arabic": "كلوفينتيزين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0038"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-038"
+          ],
+          "dose_note_arabic": "كلوفينتيزين 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "بعد تفتح البراعم مباشرةً — وقائياً",
+          "notes_arabic": "10 — يمنع تضاعف الأكاروس من البداية"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-28",
+          "example_active_ingredient_arabic": "كلوراثيانيليبرول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0059"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-059"
+          ],
+          "dose_note_arabic": "كلوراثيانيليبرول 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد دودة ثمار التفاح عند أولى الأزهار",
+          "notes_arabic": "28 — الأقوى ضد دودة ثمار التفاح"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-18a",
+          "example_active_ingredient_arabic": "ميثوكسيفينوزيد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0050"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-050"
+          ],
+          "dose_note_arabic": "ميثوكسيفينوزيد 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب بعد 14-21 يوم",
+          "notes_arabic": "18A — لا مقاومة متبادلة مع 28 — آمن على الأعداء الطبيعية"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-21a",
+          "example_active_ingredient_arabic": "تيبوفنبيراد",
+          "example_active_ingredient_ids": [
+            "ins_ai_0055"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-055"
+          ],
+          "dose_note_arabic": "تيبوفنبيراد 0.7 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد الأكاروس فوق العتبة",
+          "notes_arabic": "21A — ممتاز ضد عناكب الفاكهة"
+        },
+        {
+          "spray_number": 5,
+          "irac_group_id": "irac-23",
+          "example_active_ingredient_arabic": "سبيروتيترامات",
+          "example_active_ingredient_ids": [
+            "ins_ai_0057"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-057"
+          ],
+          "dose_note_arabic": "سبيروتيترامات 0.4 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب ضد الأكاروس وللحشرات القشرية",
+          "notes_arabic": "23 — جهازي ثنائي الاتجاه — الأكاروس + البق الدقيقي"
+        }
+      ],
+      "resistance_notes_arabic": "لا تستخدم 3A وحده ضد دودة التفاح — مقاومة منتشرة — 28 و18A الأهم",
+      "general_notes_arabic": "المفترسات الطبيعية (Typhlodromus) مهمة جداً — لا تستخدم مبيدات تقضي عليها",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-009",
+      "name_arabic": "برنامج تناوب الفلفل — تربس وعنكبوت أبيض ريشي وذبابة بيضاء",
+      "crop_arabic": "فلفل",
+      "season_arabic": "طوال العام في البيوت المحمية",
+      "target_pests_arabic": [
+        "التربس",
+        "الأكاروس العريض",
+        "الذبابة البيضاء",
+        "المن",
+        "العنكبوت الأحمر"
+      ],
+      "target_pest_ids": [
+        "pest-03",
+        "pest-24",
+        "pest-02",
+        "pest-01",
+        "pest-21"
+      ],
+      "rotation_summary_arabic": "6 → 5 (تربس + أكاروس) | 28 → 9C → 7 (ذبابة بيضاء)",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-6",
+          "example_active_ingredient_arabic": "أبامكتين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0032"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-032"
+          ],
+          "dose_note_arabic": "أبامكتين 0.75 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "وقائياً كل 7 أيام ضد التربس والأكاروس",
+          "notes_arabic": "6 — ممتاز ضد الأكاروس العريض والتربس"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-5",
+          "example_active_ingredient_arabic": "سبينيتورام",
+          "example_active_ingredient_ids": [
+            "ins_ai_0031"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-031"
+          ],
+          "dose_note_arabic": "سبينيتورام 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب بعد 7-10 أيام",
+          "notes_arabic": "5 — ضد التربس — لا مقاومة متبادلة مع 6"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-28",
+          "example_active_ingredient_arabic": "سايانترانيليبرول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0060"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-060"
+          ],
+          "dose_note_arabic": "سايانترانيليبرول 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد الذبابة البيضاء والمن",
+          "notes_arabic": "28 — واسع الطيف — ضد الذبابة البيضاء والتربس"
+        },
+        {
+          "spray_number": 4,
+          "irac_group_id": "irac-9c",
+          "example_active_ingredient_arabic": "بيريميترازين",
+          "example_active_ingredient_ids": [
+            "ins_ai_0037"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-037"
+          ],
+          "dose_note_arabic": "بيريميترازين 0.4 جم/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "تناوب ضد الذبابة البيضاء",
+          "notes_arabic": "9C — لا مقاومة متبادلة مع 4A — آمن على الأعداء الطبيعية"
+        }
+      ],
+      "resistance_notes_arabic": "الأكاروس العريض حساس جداً لأبامكتين — لكن تناوب مع 5 و10 ضروري",
+      "general_notes_arabic": "المفترس Amblyseius cucumeris فعّال جداً ضد التربس والأكاروس العريض في الفلفل",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    },
+    {
+      "id": "irot-010",
+      "name_arabic": "برنامج تناوب الأرز — دودة الساق وموت الغمد",
+      "crop_arabic": "أرز",
+      "season_arabic": "يونيو–سبتمبر",
+      "target_pests_arabic": [
+        "دودة الساق",
+        "دودة القلب",
+        "الجراد"
+      ],
+      "target_pest_ids": [
+        "pest-08",
+        "pest-09",
+        "pest-18"
+      ],
+      "rotation_summary_arabic": "28 (بذور) → 5 (طرد) | 2B (جراد وضغط عالٍ)",
+      "sprays": [
+        {
+          "spray_number": 1,
+          "irac_group_id": "irac-28",
+          "example_active_ingredient_arabic": "كلوراثيانيليبرول",
+          "example_active_ingredient_ids": [
+            "ins_ai_0059"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-059"
+          ],
+          "dose_note_arabic": "كلوراثيانيليبرول معاملة بذور أو 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند الإشتال أو بدء التفريغ — وقائياً ضد دودة الساق",
+          "notes_arabic": "28 — الأقوى ضد دودة ساق الأرز"
+        },
+        {
+          "spray_number": 2,
+          "irac_group_id": "irac-5",
+          "example_active_ingredient_arabic": "سبينيتورام",
+          "example_active_ingredient_ids": [
+            "ins_ai_0031"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-031"
+          ],
+          "dose_note_arabic": "سبينيتورام 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "عند الطرد — الرشة الأهم",
+          "notes_arabic": "5 — تناوب مع 28 — لا مقاومة متبادلة"
+        },
+        {
+          "spray_number": 3,
+          "irac_group_id": "irac-2b",
+          "example_active_ingredient_arabic": "فيبرونيل",
+          "example_active_ingredient_ids": [
+            "ins_ai_0013"
+          ],
+          "example_active_ingredient_legacy_ids": [
+            "iai-013"
+          ],
+          "dose_note_arabic": "فيبرونيل 0.3 مل/لتر",
+          "mix_with_arabic": null,
+          "must_mix_with_id": null,
+          "timing_arabic": "ضد الجراد أو الضغط العالٍ",
+          "notes_arabic": "2B — الأقوى ضد الجراد وحشرات التربة"
+        }
+      ],
+      "resistance_notes_arabic": "Bt في الأرز أقل فاعلية ضد دودة الساق — 28 هو الحل الأمثل",
+      "general_notes_arabic": "معاملة بذور بكلوراثيانيليبرول تُوفر رشة كاملة — الأعداء الطبيعية مهمة في الأرز",
+      "source_file": "برامج_التناوب_للمبيدات_الحشرية_HefnoPlant.docx"
+    }
+  ],
+  "pests_reference": [
+    {
+      "id": "pest-01",
+      "english": null,
+      "arabic": "المن"
+    },
+    {
+      "id": "pest-02",
+      "english": null,
+      "arabic": "الذبابة البيضاء"
+    },
+    {
+      "id": "pest-03",
+      "english": null,
+      "arabic": "التربس"
+    },
+    {
+      "id": "pest-04",
+      "english": null,
+      "arabic": "نطاط الأوراق"
+    },
+    {
+      "id": "pest-05",
+      "english": null,
+      "arabic": "الحشرة القشرية"
+    },
+    {
+      "id": "pest-06",
+      "english": null,
+      "arabic": "البق الدقيقي"
+    },
+    {
+      "id": "pest-07",
+      "english": null,
+      "arabic": "البق القطني"
+    },
+    {
+      "id": "pest-08",
+      "english": null,
+      "arabic": "دودة ورق القطن"
+    },
+    {
+      "id": "pest-09",
+      "english": null,
+      "arabic": "دودة اللوز الأمريكية"
+    },
+    {
+      "id": "pest-10",
+      "english": null,
+      "arabic": "دودة اللوز الصغرى"
+    },
+    {
+      "id": "pest-11",
+      "english": null,
+      "arabic": "الدودة القارضة"
+    },
+    {
+      "id": "pest-12",
+      "english": null,
+      "arabic": "التوتا — حافرة أوراق الطماطم"
+    },
+    {
+      "id": "pest-13",
+      "english": null,
+      "arabic": "دودة الحشد الخريفية"
+    },
+    {
+      "id": "pest-14",
+      "english": null,
+      "arabic": "حافرة أوراق الحمضيات"
+    },
+    {
+      "id": "pest-15",
+      "english": null,
+      "arabic": "دودة ثمار التفاح"
+    },
+    {
+      "id": "pest-16",
+      "english": null,
+      "arabic": "صانع أنفاق الخضروات"
+    },
+    {
+      "id": "pest-17",
+      "english": null,
+      "arabic": "ذبابة ثمار الفاكهة"
+    },
+    {
+      "id": "pest-18",
+      "english": null,
+      "arabic": "الجراد الصحراوي"
+    },
+    {
+      "id": "pest-19",
+      "english": null,
+      "arabic": "النمل الأبيض"
+    },
+    {
+      "id": "pest-20",
+      "english": null,
+      "arabic": "ذبابة الزيتون"
+    },
+    {
+      "id": "pest-21",
+      "english": null,
+      "arabic": "العنكبوت الأحمر"
+    },
+    {
+      "id": "pest-22",
+      "english": null,
+      "arabic": "أكاروس الحمضيات الأحمر"
+    },
+    {
+      "id": "pest-23",
+      "english": null,
+      "arabic": "أكاروس البقعة الحمراء"
+    },
+    {
+      "id": "pest-24",
+      "english": null,
+      "arabic": "الأكاروس الأبيض الريشي"
+    },
+    {
+      "id": "pest-25",
+      "english": null,
+      "arabic": "أكاروس الصدأ"
+    },
+    {
+      "id": "pest-26",
+      "english": null,
+      "arabic": "نطاط الحمضيات ناقل HLB"
+    }
+  ],
+  "irac_groups_reference": [
+    {
+      "id": "irac-1a",
+      "code": "1A",
+      "name": {
+        "english": "AChE inhibitors — Organophosphates",
+        "arabic": "مثبطات AChE — أورجانوفوسفات"
+      },
+      "chemical_class": {
+        "english": "Organophosphate",
+        "arabic": "أورجانوفوسفات"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Irreversible AChE inhibition — cholinergic overstimulation",
+          "arabic": "تثبيط إنزيم أسيتيل كولينستيراز (AChE) بشكل لا عكسي — يمنع تكسير الأسيتيل كولين في التشابك العصبي — إثارة مفرطة وشلل"
+        },
+        "target_site": "Acetylcholinesterase (AChE)"
+      },
+      "target_organisms_arabic": [
+        "حشرات",
+        "أكاروس",
+        "ديدان"
+      ],
+      "spectrum_arabic": "واسع جداً — حشرات وأكاروس وديدان",
+      "activity_arabic": "ملامسي + معدي + تنفسي + جهازي (بعضها)",
+      "resistance_risk": {
+        "arabic": "عالٍ جداً",
+        "level": 4,
+        "color": "red"
+      },
+      "resistance_mechanism_arabic": "طفرات في جين AChE (A301S, G228S) + تضخيم إنزيمات الاستيراز + CYP450",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان كحد أقصى — تناوب مع 3A أو 4A أو 28 — المقاومة منتشرة",
+      "rotation_compatible_ids": [
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-6",
+        "irac-5",
+        "irac-2b"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-1a",
+        "irac-1b"
+      ],
+      "cross_resistance_note_arabic": "مقاومة متبادلة كاملة بين الأورجانوفوسفات — جزئية مع الكاربامات (1B)",
+      "importance_in_egypt_arabic": "عالية جداً — الأكثر استخداماً تاريخياً — المقاومة منتشرة",
+      "safety_notes_arabic": "سامة للثدييات والطيور والأسماك — تأكد من فترة ما قبل الحصاد",
+      "active_ingredient_count_reported": 12
+    },
+    {
+      "id": "irac-1b",
+      "code": "1B",
+      "name": {
+        "english": "AChE inhibitors — Carbamates",
+        "arabic": "مثبطات AChE — كاربامات"
+      },
+      "chemical_class": {
+        "english": "Carbamate",
+        "arabic": "كاربامات"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Reversible AChE inhibition",
+          "arabic": "تثبيط AChE بشكل عكسي مؤقت — نفس موقع الأورجانوفوسفات لكن الارتباط قابل للانعكاس"
+        },
+        "target_site": "Acetylcholinesterase (AChE)"
+      },
+      "target_organisms_arabic": [
+        "حشرات",
+        "ديدان"
+      ],
+      "spectrum_arabic": "واسع — حشرات وديدان",
+      "activity_arabic": "ملامسي + معدي + جهازي",
+      "resistance_risk": {
+        "arabic": "عالٍ جداً",
+        "level": 4,
+        "color": "red"
+      },
+      "resistance_mechanism_arabic": "طفرات في جين AChE + تضخيم إنزيمات استقلاب — مقاومة متبادلة جزئية مع 1A",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 3A أو 4A أو 28 — لا تناوب مع 1A",
+      "rotation_compatible_ids": [
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-6"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-1b",
+        "irac-1a"
+      ],
+      "cross_resistance_note_arabic": "مقاومة متبادلة كاملة بين الكاربامات — جزئية مع الأورجانوفوسفات",
+      "importance_in_egypt_arabic": "متوسطة — يتراجع استخدامها بسبب المقاومة والسمية",
+      "safety_notes_arabic": "سامة للثدييات — خطرة على النحل",
+      "active_ingredient_count_reported": 5
+    },
+    {
+      "id": "irac-2b",
+      "code": "2B",
+      "name": {
+        "english": "GABA-gated chloride channel antagonists — Fiproles",
+        "arabic": "مضادات قناة GABA كلوريد — فينيل بيرازول (فيبرولز)"
+      },
+      "chemical_class": {
+        "english": "Phenylpyrazole",
+        "arabic": "فينيل بيرازول"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "GABA-gated chloride channel blocking",
+          "arabic": "حجب قناة كلوريد المُنشَّطة بـ GABA في الجهاز العصبي — يمنع دخول أيونات الكلوريد — فرط إثارة وشلل"
+        },
+        "target_site": "GABA-gated chloride channel"
+      },
+      "target_organisms_arabic": [
+        "حشرات",
+        "أكاروس",
+        "نيماتودا"
+      ],
+      "spectrum_arabic": "واسع — ممتاز للتربة",
+      "activity_arabic": "ملامسي + معدي + جهازي + تربة",
+      "resistance_risk": {
+        "arabic": "متوسط إلى عالٍ",
+        "level": 3,
+        "color": "orange"
+      },
+      "resistance_mechanism_arabic": "طفرات في جين RDL (A302S) + تضخيم CYP450",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 4A أو 28 — لا مقاومة متبادلة مع 1A أو 3A",
+      "rotation_compatible_ids": [
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-6",
+        "irac-1a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-2b"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 1A أو 3A أو 4A",
+      "importance_in_egypt_arabic": "عالية جداً — ممتاز ضد القواطع والجراد وحشرات التربة",
+      "safety_notes_arabic": "خطير جداً على النحل وحشرات الماء",
+      "active_ingredient_count_reported": 2
+    },
+    {
+      "id": "irac-3a",
+      "code": "3A",
+      "name": {
+        "english": "Sodium channel modulators — Pyrethrins/Pyrethroids",
+        "arabic": "مُعدِّلات القناة الصودية — بيريثرويدات وبيريثرينات"
+      },
+      "chemical_class": {
+        "english": "Pyrethrin/Pyrethroid",
+        "arabic": "بيريثرين طبيعي وبيريثرويد صناعي"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Voltage-gated sodium channel modulation — prolonged opening",
+          "arabic": "تعديل القنوات الصودية المعتمدة على الجهد — يُطيل فتح القناة مما يُسبب إزالة استقطاب مستمر وشللاً"
+        },
+        "target_site": "Voltage-gated sodium channel (VGSC)"
+      },
+      "target_organisms_arabic": [
+        "حشرات",
+        "بعض الأكاروس"
+      ],
+      "spectrum_arabic": "واسع جداً — حشرات الورق والتربة والمخازن",
+      "activity_arabic": "ملامسي + تنفسي + طارد — فعل صاعق سريع",
+      "resistance_risk": {
+        "arabic": "عالٍ جداً",
+        "level": 4,
+        "color": "red"
+      },
+      "resistance_mechanism_arabic": "طفرة kdr في جين SCN (L1014F/S، M918T) + تضخيم CYP450",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 1A أو 4A أو 28 — المقاومة منتشرة جداً في مصر",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-4a",
+        "irac-28",
+        "irac-6",
+        "irac-2b"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-3a"
+      ],
+      "cross_resistance_note_arabic": "مقاومة متبادلة كاملة بين كل البيريثرويدات",
+      "importance_in_egypt_arabic": "عالية جداً — الأكثر استخداماً — المقاومة منتشرة على نطاق واسع",
+      "safety_notes_arabic": "خطير جداً على الأسماك والنحل",
+      "active_ingredient_count_reported": 14
+    },
+    {
+      "id": "irac-4a",
+      "code": "4A",
+      "name": {
+        "english": "nAChR competitive modulators — Neonicotinoids",
+        "arabic": "منشطات مستقبل nAChR — نيونيكوتينويدات"
+      },
+      "chemical_class": {
+        "english": "Neonicotinoid",
+        "arabic": "نيونيكوتينويد"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Nicotinic acetylcholine receptor (nAChR) agonist — persistent activation",
+          "arabic": "ارتباط تنافسي بمستقبلات nAChR النيكوتينية — يُنشّط المستقبل بشكل مستمر مما يُسبب إثارة عصبية لا توقف لها وشلل"
+        },
+        "target_site": "Nicotinic acetylcholine receptor (nAChR)"
+      },
+      "target_organisms_arabic": [
+        "حشرات ماصة",
+        "حشرات قارضة"
+      ],
+      "spectrum_arabic": "واسع — ممتاز ضد الحشرات الماصة — معاملة بذور فعّالة",
+      "activity_arabic": "جهازي — معدي — طويل الأمد",
+      "resistance_risk": {
+        "arabic": "عالٍ جداً",
+        "level": 4,
+        "color": "red"
+      },
+      "resistance_mechanism_arabic": "طفرات في nAChR (R81T, Y151S) + تضخيم CYP6CM1 — منتشرة في الذبابة البيضاء والمن في مصر",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 3A أو 28 أو 6 — المقاومة منتشرة في الذبابة البيضاء في مصر",
+      "rotation_compatible_ids": [
+        "irac-3a",
+        "irac-28",
+        "irac-6",
+        "irac-2b",
+        "irac-5",
+        "irac-9c"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-4a",
+        "irac-4c"
+      ],
+      "cross_resistance_note_arabic": "مقاومة متبادلة بين معظم النيونيكوتينويدات — سلفوكسافلور (4C) موقع مختلف جزئياً",
+      "importance_in_egypt_arabic": "عالية جداً — الأوسع استخداماً ضد الذبابة البيضاء والمن",
+      "safety_notes_arabic": "خطير جداً على النحل — لا تستخدم أثناء الإزهار",
+      "active_ingredient_count_reported": 7
+    },
+    {
+      "id": "irac-4c",
+      "code": "4C",
+      "name": {
+        "english": "nAChR modulators — Sulfoximines",
+        "arabic": "منشطات nAChR — سلفوكسيمينات"
+      },
+      "chemical_class": {
+        "english": "Sulfoximine",
+        "arabic": "سلفوكسيمين"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "nAChR agonist — sulfoximine binding site",
+          "arabic": "ناهض nAChR بموقع ارتباط يختلف نسبياً عن النيونيكوتينويدات"
+        },
+        "target_site": "nAChR — sulfoximine site"
+      },
+      "target_organisms_arabic": [
+        "حشرات ماصة"
+      ],
+      "spectrum_arabic": "متوسط — حشرات ماصة فقط",
+      "activity_arabic": "جهازي",
+      "resistance_risk": {
+        "arabic": "متوسط إلى عالٍ",
+        "level": 3,
+        "color": "orange"
+      },
+      "resistance_mechanism_arabic": "طفرات في nAChR — مقاومة متبادلة جزئية مع 4A",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 3A أو 28 أو 6",
+      "rotation_compatible_ids": [
+        "irac-3a",
+        "irac-28",
+        "irac-6",
+        "irac-2b",
+        "irac-9c"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-4a",
+        "irac-4c"
+      ],
+      "cross_resistance_note_arabic": "مقاومة متبادلة جزئية مع 4A — فعّال في بعض مناطق مقاومة النيونيكوتينويدات",
+      "importance_in_egypt_arabic": "متوسطة — بديل للنيونيكوتينويدات حيث انتشرت المقاومة",
+      "safety_notes_arabic": "خطير على النحل",
+      "active_ingredient_count_reported": 1
+    },
+    {
+      "id": "irac-5",
+      "code": "5",
+      "name": {
+        "english": "nAChR allosteric modulators — Spinosyns",
+        "arabic": "منشطات nAChR حورية — سبينوزينات"
+      },
+      "chemical_class": {
+        "english": "Spinosyn",
+        "arabic": "سبينوسين (ماكرولايد طبيعي)"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Allosteric nAChR activation + GABA effects",
+          "arabic": "تنشيط حورية لمستقبلات nAChR في موقع مختلف عن النيونيكوتينويدات + تأثير على GABA"
+        },
+        "target_site": "nAChR allosteric site + GABA channel"
+      },
+      "target_organisms_arabic": [
+        "حشرات قارضة",
+        "تربس",
+        "ذباب"
+      ],
+      "spectrum_arabic": "متوسط — ممتاز ضد التربس والقواطع والذباب",
+      "activity_arabic": "ملامسي + معدي + جزئياً نافذ",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "طفرات في nAChR α6 subunit (D271N)",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 1A أو 3A أو 28",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-22a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-5"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 1A أو 3A أو 4A أو 28",
+      "importance_in_egypt_arabic": "عالية — ممتاز ضد التربس — مُسموح في الزراعة العضوية",
+      "safety_notes_arabic": "آمن نسبياً على الثدييات — خطر معتدل على النحل الرطب",
+      "active_ingredient_count_reported": 2
+    },
+    {
+      "id": "irac-6",
+      "code": "6",
+      "name": {
+        "english": "Chloride channel activators — Avermectins/Milbemycins",
+        "arabic": "منشطات قناة كلوريد — أفرميكتين وميلبيمايسين"
+      },
+      "chemical_class": {
+        "english": "Avermectin/Milbemycin",
+        "arabic": "أفرميكتين — ماكرولايد طبيعي"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Glutamate-gated chloride channel (GluCl) activation",
+          "arabic": "تنشيط قنوات كلوريد مُنشَّطة بالغلوتامات (GluCl) — دخول مفرط لأيونات الكلوريد — شلل لا رجعة فيه"
+        },
+        "target_site": "Glutamate-gated chloride channel (GluCl)"
+      },
+      "target_organisms_arabic": [
+        "أكاروس",
+        "حشرات",
+        "نيماتودا"
+      ],
+      "spectrum_arabic": "واسع — أكاروس + حشرات (صانع أنفاق، تربس، أبيض ريشي)",
+      "activity_arabic": "نافذ + ملامسي + معدي",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "طفرات في GluCl (G314D) + CYP450 + ABC transporters",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 1A أو 3A أو 21A",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-21a",
+        "irac-23",
+        "irac-10"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-6"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 1A أو 3A أو 4A أو 21A",
+      "importance_in_egypt_arabic": "عالية جداً — أبامكتين من أهم مبيدات الأكاروس في مصر",
+      "safety_notes_arabic": "خطير جداً على الأسماك والكائنات المائية",
+      "active_ingredient_count_reported": 3
+    },
+    {
+      "id": "irac-7",
+      "code": "7",
+      "name": {
+        "english": "Juvenile hormone mimics — JHAs",
+        "arabic": "محاكيات هرمون الشباب — JHA"
+      },
+      "chemical_class": {
+        "english": "Juvenile hormone analogue (JHA)",
+        "arabic": "محاكي هرمون الشباب"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Juvenile hormone mimics — disruption of metamorphosis",
+          "arabic": "تقليد هرمون الشباب الحشري (JH) — يُعيق الانسلاخ الطبيعي ويمنع التحول الكامل للحشرة البالغة"
+        },
+        "target_site": "Juvenile hormone receptor (Met/Tai)"
+      },
+      "target_organisms_arabic": [
+        "حشرات كاملة التحول (Holometabola) فقط"
+      ],
+      "spectrum_arabic": "متوسط — حشرات كاملة التحول فقط",
+      "activity_arabic": "جهازي — منظم نمو — بطيء المفعول",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "تغيير في حساسية مستقبل JH — بطيء التطور",
+      "max_applications_per_season": 3,
+      "rotation_rule_arabic": "تناوب مع 1A أو 3A أو 4A — فعّال في مراحل اليرقات فقط",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-4a",
+        "irac-15"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-7"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع أي مجموعة أخرى",
+      "importance_in_egypt_arabic": "متوسطة — ضد الذبابة البيضاء والبق الدقيقي والقشري",
+      "safety_notes_arabic": "آمن نسبياً على الثدييات والطيور — لا يؤثر على الحشرات الكاملة",
+      "active_ingredient_count_reported": 2
+    },
+    {
+      "id": "irac-9c",
+      "code": "9C",
+      "name": {
+        "english": "Chordotonal organ modulators — Flonicamid/Pymetrozine",
+        "arabic": "مثبطات التغذية — فلونيكاميد وبيريميترازين"
+      },
+      "chemical_class": {
+        "english": "Pyridine carboxamide / Pyridine azomethine",
+        "arabic": "بيريدين كاربوكساميد / تيترازين بيريميدين"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Chordotonal organ modulation — feeding cessation",
+          "arabic": "تثبيط العضو الحبلي (Chordotonal organ) — يُسبب شللاً في التغذية خلال ساعات دون قتل فوري"
+        },
+        "target_site": "Chordotonal organ / TRPV channels"
+      },
+      "target_organisms_arabic": [
+        "حشرات ماصة فقط"
+      ],
+      "spectrum_arabic": "ضيق — حشرات ماصة فقط",
+      "activity_arabic": "جهازي — يوقف التغذية — بطيء",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "طفرات في TRPV channels — بطيءة التطور",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "تناوب مع 3A أو 4A أو 28 — بديل ممتاز للمن المقاوم للنيونيكوتينويدات",
+      "rotation_compatible_ids": [
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-6"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-9c"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 4A أو 3A أو 28 — فعّال ضد المن المقاوم",
+      "importance_in_egypt_arabic": "متوسطة — بديل ممتاز للمن والذبابة البيضاء المقاومة",
+      "safety_notes_arabic": "آمن جداً على الثدييات والنحل والأعداء الطبيعية",
+      "active_ingredient_count_reported": 2
+    },
+    {
+      "id": "irac-10",
+      "code": "10A/10B",
+      "name": {
+        "english": "Mite growth inhibitors — Clofentezine/Etoxazole",
+        "arabic": "مثبطات نمو الأكاروس — كلوفينتيزين وإيتوكسازول"
+      },
+      "chemical_class": {
+        "english": "Tetrazine/Oxazoline",
+        "arabic": "تيترازين / أوكسازولين"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Chitin synthesis inhibition in mite eggs and immature stages",
+          "arabic": "تثبيط تخليق الكيتين في أطوار البيض والحوريات للأكاروس — لا يؤثر على الأكاروس البالغة"
+        },
+        "target_site": "Chitin synthase (mite-specific)"
+      },
+      "target_organisms_arabic": [
+        "أكاروس فقط"
+      ],
+      "spectrum_arabic": "ضيق جداً — أكاروس فقط — يؤثر على البيض واليرقات فقط",
+      "activity_arabic": "ملامسي — طويل الأمد — لا يؤثر على الأكاروس البالغة",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "طفرات في كيتين سينثيز — بطيءة التطور",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 6 أو 21A أو 23",
+      "rotation_compatible_ids": [
+        "irac-6",
+        "irac-21a",
+        "irac-23",
+        "irac-25a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-10"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 6 أو 21A أو 23",
+      "importance_in_egypt_arabic": "عالية للأكاروس على الخضروات وأشجار الفاكهة",
+      "safety_notes_arabic": "آمن جداً على الثدييات والنحل — مثالي في برامج IPM",
+      "active_ingredient_count_reported": 3
+    },
+    {
+      "id": "irac-11a",
+      "code": "11A",
+      "name": {
+        "english": "Microbial disruptors — Bt",
+        "arabic": "مُعطِّلات الغشاء الهضمي — Bacillus thuringiensis"
+      },
+      "chemical_class": {
+        "english": "Bt – Cry proteins (delta-endotoxins)",
+        "arabic": "بكتيريا Bt — بروتين Cry"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Cry protein pore formation in midgut cells",
+          "arabic": "بروتينات Cry تُوثق بمستقبلات خاصة في الجهاز الهضمي وتُكوّن مسامات تُدمر خلايا الأمعاء — إسهال وشلل وموت"
+        },
+        "target_site": "Insect midgut epithelium — Cry protein receptors"
+      },
+      "target_organisms_arabic": [
+        "يرقات الحراشف",
+        "يرقات الديبتيرا",
+        "يرقات Coleoptera"
+      ],
+      "spectrum_arabic": "متوسط — يرقات الحشرات فقط",
+      "activity_arabic": "معدي فقط — يجب ابتلاعه",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "طفرات في مستقبلات Cry — بطيءة في الحقل",
+      "max_applications_per_season": 999,
+      "rotation_rule_arabic": "لا حد للتكرار — آمن للغاية — يُستخدم في أي مرحلة",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-5"
+      ],
+      "rotation_incompatible_ids": [],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع أي مبيد كيميائي",
+      "importance_in_egypt_arabic": "عالية — ممتاز ضد ديدان القطن والخضروات — أساس برامج IPM",
+      "safety_notes_arabic": "آمن تماماً على الثدييات والنحل والأعداء الطبيعية",
+      "active_ingredient_count_reported": 3
+    },
+    {
+      "id": "irac-13",
+      "code": "13",
+      "name": {
+        "english": "Uncouplers of oxidative phosphorylation — Chlorfenapyr",
+        "arabic": "مُقرِّنات أكسدة الفسفور — كلورفينابير"
+      },
+      "chemical_class": {
+        "english": "Halogenated pyrrole",
+        "arabic": "هالوألكيل بيرول"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Mitochondrial uncoupling — disruption of ATP synthesis",
+          "arabic": "فصل أكسدة الفسفور في الميتوكوندريا — يمنع تحويل طاقة الأكسدة إلى ATP — تجويع الخلايا من الطاقة"
+        },
+        "target_site": "Mitochondrial inner membrane — proton gradient"
+      },
+      "target_organisms_arabic": [
+        "حشرات",
+        "أكاروس"
+      ],
+      "spectrum_arabic": "واسع — حشرات وأكاروس",
+      "activity_arabic": "ملامسي + نافذ — بطيء 24-48 ساعة",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "تضخيم CYP450 — بطيء التطور",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 3A أو 6 — فعّال ضد الحشرات المقاومة",
+      "rotation_compatible_ids": [
+        "irac-3a",
+        "irac-4a",
+        "irac-6",
+        "irac-21a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-13"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 1A أو 3A أو 4A أو 28",
+      "importance_in_egypt_arabic": "متوسطة — فعّال ضد التوتا والحشرات المقاومة",
+      "safety_notes_arabic": "سامة متوسطة للثدييات — خطرة على الأسماك",
+      "active_ingredient_count_reported": 1
+    },
+    {
+      "id": "irac-15",
+      "code": "15",
+      "name": {
+        "english": "Chitin biosynthesis inhibitors type 0 — Benzoylureas",
+        "arabic": "مثبطات تخليق الكيتين — بنزويل يوريا"
+      },
+      "chemical_class": {
+        "english": "Benzoylurea",
+        "arabic": "بنزويل يوريا"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Chitin synthase inhibition type 0 — disruption of cuticle formation",
+          "arabic": "تثبيط تخليق الكيتين في جدار الجسم الخارجي — يمنع تكوين القشرة الجديدة أثناء الانسلاخ — موت الحشرة"
+        },
+        "target_site": "Chitin synthase — cuticle formation"
+      },
+      "target_organisms_arabic": [
+        "يرقات الحراشف",
+        "يرقات الديبتيرا"
+      ],
+      "spectrum_arabic": "متوسط — يرقات فقط — لا يؤثر على البالغات أو البيض",
+      "activity_arabic": "معدي + نافذ — بطيء 2-5 أيام",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "طفرات في كيتين سينثيز + تضخيم CYP450",
+      "max_applications_per_season": 3,
+      "rotation_rule_arabic": "تناوب مع 1A أو 3A أو 28 — آمن نسبياً وفعّال ضد الأطوار اليرقية",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-18a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-15"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 1A أو 3A أو 4A أو 28",
+      "importance_in_egypt_arabic": "عالية — ضد ديدان القطن والخضروات — آمن على النحل",
+      "safety_notes_arabic": "آمن جداً على الثدييات والنحل البالغ",
+      "active_ingredient_count_reported": 5
+    },
+    {
+      "id": "irac-18a",
+      "code": "18A",
+      "name": {
+        "english": "Ecdysone receptor agonists — Diacylhydrazines",
+        "arabic": "ناهضات مستقبل إيكديسون — داياسيل هيدرازين"
+      },
+      "chemical_class": {
+        "english": "Diacylhydrazine",
+        "arabic": "داياسيل هيدرازين"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Ecdysone receptor (EcR) agonist — premature moulting",
+          "arabic": "تقليد هرمون الانسلاخ (إيكديسون 20E) — يُنشّط مستقبل إيكديسون بشكل زائد مما يُسبب انسلاخاً مبكراً غير مكتمل وموت اليرقة"
+        },
+        "target_site": "Ecdysone receptor (EcR/USP complex)"
+      },
+      "target_organisms_arabic": [
+        "يرقات الحراشف (Lepidoptera) فقط"
+      ],
+      "spectrum_arabic": "ضيق — يرقات الحراشف فقط — انتقائي جداً",
+      "activity_arabic": "معدي + نافذ — بطيء",
+      "resistance_risk": {
+        "arabic": "منخفض",
+        "level": 1,
+        "color": "green"
+      },
+      "resistance_mechanism_arabic": "طفرات في مستقبل إيكديسون — بطيء جداً",
+      "max_applications_per_season": 3,
+      "rotation_rule_arabic": "تناوب مع 1A أو 28 أو 5 — متخصص ضد يرقات الحراشف",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-28",
+        "irac-5",
+        "irac-15"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-18a"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع أي مجموعة أخرى",
+      "importance_in_egypt_arabic": "متوسطة — بديل ممتاز حيث تراجعت فاعلية 28",
+      "safety_notes_arabic": "آمن جداً على الثدييات والطيور والنحل والحشرات المفيدة",
+      "active_ingredient_count_reported": 2
+    },
+    {
+      "id": "irac-21a",
+      "code": "21A",
+      "name": {
+        "english": "Mitochondrial complex I inhibitors — METI acaricides",
+        "arabic": "مثبطات مركب I سلسلة التنفس — METI أكاروسيدات"
+      },
+      "chemical_class": {
+        "english": "METI acaricides",
+        "arabic": "بيريدازينون، كيتوإينول"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "NADH-ubiquinone oxidoreductase (Complex I) inhibition",
+          "arabic": "تثبيط مركب I (NADH-ubiquinone oxidoreductase) في سلسلة نقل الإلكترون بالميتوكوندريا — يُوقف إنتاج ATP"
+        },
+        "target_site": "Mitochondrial complex I"
+      },
+      "target_organisms_arabic": [
+        "أكاروس"
+      ],
+      "spectrum_arabic": "ضيق — أكاروس فقط",
+      "activity_arabic": "ملامسي + نافذ — يؤثر على كل الأطوار",
+      "resistance_risk": {
+        "arabic": "متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "طفرات في مركب I + تضخيم CYP450",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 6 أو 10 أو 23",
+      "rotation_compatible_ids": [
+        "irac-6",
+        "irac-10",
+        "irac-23",
+        "irac-25a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-21a"
+      ],
+      "cross_resistance_note_arabic": "مقاومة متبادلة بين أعضاء 21A — لا مقاومة مع 6 أو 10",
+      "importance_in_egypt_arabic": "عالية — من أهم أكاروسيدات الخضروات وأشجار الفاكهة في مصر",
+      "safety_notes_arabic": "خطر متوسط على الثدييات — آمن على النحل نسبياً",
+      "active_ingredient_count_reported": 4
+    },
+    {
+      "id": "irac-22a",
+      "code": "22A",
+      "name": {
+        "english": "Voltage-dependent sodium channel blockers — Oxadiazines",
+        "arabic": "حاجبات القناة الصودية — إندوكساكارب"
+      },
+      "chemical_class": {
+        "english": "Oxadiazine",
+        "arabic": "أوكساديازين"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Voltage-gated sodium channel blocker — different site from pyrethroids",
+          "arabic": "حجب القنوات الصودية في أعصاب الحشرات — موقع ارتباط مختلف عن البيريثرويدات — شلل"
+        },
+        "target_site": "Voltage-gated sodium channel — blocker site"
+      },
+      "target_organisms_arabic": [
+        "يرقات الحراشف",
+        "حشرات قارضة"
+      ],
+      "spectrum_arabic": "متوسط — يرقات الحراشف والقواطع",
+      "activity_arabic": "معدي + نافذ",
+      "resistance_risk": {
+        "arabic": "منخفض إلى متوسط",
+        "level": 2,
+        "color": "yellow"
+      },
+      "resistance_mechanism_arabic": "تضخيم CYP450 — بطيء",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "تناوب مع 28 أو 1A أو 5 — فعّال ضد الحراشف المقاومة للبيريثرويدات",
+      "rotation_compatible_ids": [
+        "irac-28",
+        "irac-1a",
+        "irac-5",
+        "irac-4a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-22a"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع 3A رغم نفس الهدف — موقع ارتباط مختلف",
+      "importance_in_egypt_arabic": "متوسطة — ضد التوتا والحراشف المقاومة للبيريثرويدات",
+      "safety_notes_arabic": "آمن نسبياً على الثدييات والنحل",
+      "active_ingredient_count_reported": 1
+    },
+    {
+      "id": "irac-23",
+      "code": "23",
+      "name": {
+        "english": "Acetyl CoA carboxylase inhibitors — Spirotetramat group",
+        "arabic": "مثبطات أسيتيل CoA كاربوكسيليز — سبيروديكلوفن وسبيروتيترامات"
+      },
+      "chemical_class": {
+        "english": "Tetronic/Tetramic acid",
+        "arabic": "سبيرو كيتوإينول — تيتروميك وتيتراميك أسيد"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Acetyl CoA carboxylase (ACC) inhibition — lipid biosynthesis disruption",
+          "arabic": "تثبيط إنزيم أسيتيل CoA كاربوكسيليز (ACC) — يُوقف تخليق الأحماض الدهنية — تضور وموت"
+        },
+        "target_site": "Acetyl CoA carboxylase (ACC)"
+      },
+      "target_organisms_arabic": [
+        "أكاروس",
+        "حشرات ماصة"
+      ],
+      "spectrum_arabic": "متوسط — أكاروس + حشرات ماصة",
+      "activity_arabic": "ملامسي + جهازي ثنائي الاتجاه (سبيروتيترامات) — بطيء",
+      "resistance_risk": {
+        "arabic": "منخفض",
+        "level": 1,
+        "color": "green"
+      },
+      "resistance_mechanism_arabic": "لا حالات مقاومة موثقة واسعة — آلية فريدة",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 6 أو 21A أو 1A",
+      "rotation_compatible_ids": [
+        "irac-6",
+        "irac-21a",
+        "irac-1a",
+        "irac-10"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-23"
+      ],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع أي مجموعة — آلية فريدة",
+      "importance_in_egypt_arabic": "عالية — سبيروتيترامات ممتاز ضد الحشرات الماصة الصعبة",
+      "safety_notes_arabic": "آمن نسبياً على الثدييات والنحل",
+      "active_ingredient_count_reported": 2
+    },
+    {
+      "id": "irac-28",
+      "code": "28",
+      "name": {
+        "english": "Ryanodine receptor modulators — Diamides",
+        "arabic": "مُعدِّلات مستقبل الريانودين — دايامايد"
+      },
+      "chemical_class": {
+        "english": "Diamide (anthranilic/phthalic)",
+        "arabic": "أنثرانيليك دايامايد / فثالاميك دايامايد"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Ryanodine receptor (RyR) activation — uncontrolled calcium release — muscle paralysis",
+          "arabic": "تنشيط مستقبلات الريانودين في عضلات الحشرات — إطلاق مفرط لأيونات الكالسيوم — تقلصات عضلية وشلل وموت"
+        },
+        "target_site": "Ryanodine receptor (RyR)"
+      },
+      "target_organisms_arabic": [
+        "يرقات الحراشف",
+        "حشرات قارضة",
+        "بعض الحشرات الأخرى"
+      ],
+      "spectrum_arabic": "واسع — حراشف ممتاز — يرقات وبالغات",
+      "activity_arabic": "جهازي + معدي + نافذ — سريع المفعول",
+      "resistance_risk": {
+        "arabic": "متوسط إلى عالٍ",
+        "level": 3,
+        "color": "orange"
+      },
+      "resistance_mechanism_arabic": "طفرات في مستقبل الريانودين (G4946E, I4790M) — موثقة في Spodoptera — تراجع حساسية ملاحظ في مصر",
+      "max_applications_per_season": 2,
+      "rotation_rule_arabic": "رشتان — تناوب مع 1A أو 3A أو 5 أو 11A — المقاومة ناشئة في Spodoptera في مصر",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-5",
+        "irac-11a",
+        "irac-15",
+        "irac-18a",
+        "irac-22a"
+      ],
+      "rotation_incompatible_ids": [
+        "irac-28"
+      ],
+      "cross_resistance_note_arabic": "مقاومة متبادلة كاملة بين كلوراثيانيليبرول وسايانترانيليبرول — لا مقاومة مع باقي المجموعات",
+      "importance_in_egypt_arabic": "عالية جداً — من أهم مبيدات ديدان القطن واللوز والتوتا",
+      "safety_notes_arabic": "آمن نسبياً على الثدييات — خطر منخفض على النحل البالغ",
+      "active_ingredient_count_reported": 3
+    },
+    {
+      "id": "irac-un",
+      "code": "UN",
+      "name": {
+        "english": "Unknown MoA — Azadirachtin (Neem)",
+        "arabic": "غير مصنف — أزاديراكتين (زيت النيم)"
+      },
+      "chemical_class": {
+        "english": "Nortriterpenoid — botanical",
+        "arabic": "نورتريتيربينويد طبيعي"
+      },
+      "mode_of_action": {
+        "summary": {
+          "english": "Multiple modes — feeding deterrent, growth regulator",
+          "arabic": "آلية عمل متعددة غير محددة — مثبط تغذية + منظم نمو + مقلد JH"
+        },
+        "target_site": "Multiple unknown targets"
+      },
+      "target_organisms_arabic": [
+        "حشرات",
+        "أكاروس"
+      ],
+      "spectrum_arabic": "واسع — حشرات وأكاروس",
+      "activity_arabic": "طارد + مثبط تغذية + منظم نمو",
+      "resistance_risk": {
+        "arabic": "منخفض جداً",
+        "level": 1,
+        "color": "green"
+      },
+      "resistance_mechanism_arabic": "لا حالات مقاومة موثقة — آلية متعددة المواقع",
+      "max_applications_per_season": 999,
+      "rotation_rule_arabic": "يُستخدم في أي مرحلة — آمن للتكرار — مثالي في برامج IPM",
+      "rotation_compatible_ids": [
+        "irac-1a",
+        "irac-3a",
+        "irac-4a",
+        "irac-28",
+        "irac-11a"
+      ],
+      "rotation_incompatible_ids": [],
+      "cross_resistance_note_arabic": "لا مقاومة متبادلة مع أي مجموعة",
+      "importance_in_egypt_arabic": "متوسطة — الزراعة العضوية والمتكاملة",
+      "safety_notes_arabic": "آمن جداً على الثدييات والنحل والأعداء الطبيعية",
+      "active_ingredient_count_reported": 1
     }
   ]
 }
