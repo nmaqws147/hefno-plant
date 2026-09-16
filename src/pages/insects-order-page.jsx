@@ -12,13 +12,14 @@ const orderColors = {
   Hemiptera: { border: 'border-r-[3px] border-emerald-500', badge: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400', gradient: 'from-emerald-500 to-emerald-600', tabActive: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400' },
   Thysanoptera: { border: 'border-r-[3px] border-purple-500', badge: 'bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400', gradient: 'from-purple-500 to-purple-600', tabActive: 'bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-400' },
   Orthoptera: { border: 'border-r-[3px] border-amber-500', badge: 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400', gradient: 'from-amber-500 to-amber-600', tabActive: 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400' },
+  Isoptera: { border: 'border-r-[3px] border-amber-500', badge: 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400', gradient: 'from-amber-500 to-amber-600', tabActive: 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400' },
   Diptera: { border: 'border-r-[3px] border-blue-500', badge: 'bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400', gradient: 'from-blue-500 to-blue-600', tabActive: 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400' },
 };
 const defaultColor = { border: 'border-r-[3px] border-gray-500', badge: 'bg-gray-100 dark:bg-gray-900/40 text-gray-600 dark:text-gray-400', gradient: 'from-gray-500 to-gray-600', tabActive: 'bg-gray-50 dark:bg-gray-800/40 text-gray-700 dark:text-gray-400' };
 
 const orderEmojis = {
   Lepidoptera: '🦋', Coleoptera: '🐞', Hemiptera: '🦟',
-  Thysanoptera: '🐜', Orthoptera: '🦗', Diptera: '🪰',
+  Thysanoptera: '🐜', Orthoptera: '🦗', Isoptera: '🪳', Diptera: '🪰',
 };
 
 const getSeverityClass = (sev) => {

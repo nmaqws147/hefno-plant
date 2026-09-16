@@ -10,12 +10,13 @@ const orderColors = {
   Hemiptera: { border: 'border-emerald-500', badge: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400' },
   Thysanoptera: { border: 'border-purple-500', badge: 'bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400' },
   Orthoptera: { border: 'border-amber-500', badge: 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400' },
+  Isoptera: { border: 'border-amber-500', badge: 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400' },
   Diptera: { border: 'border-blue-500', badge: 'bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400' },
 };
 
 const orderEmojis = {
   Lepidoptera: '🦋', Coleoptera: '🐞', Hemiptera: '🦟',
-  Thysanoptera: '🐜', Orthoptera: '🦗', Diptera: '🪰',
+  Thysanoptera: '🐜', Orthoptera: '🦗', Isoptera: '🪳', Diptera: '🪰',
 };
 
 const InsectsPage = () => {
