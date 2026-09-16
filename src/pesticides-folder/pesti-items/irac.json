@@ -8132,18 +8132,23 @@
     {
       "id": "ph_ai_ph-001_001",
       "name_ar": "تيمفوس",
-      "name_en": "تيمفوس",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8154,53 +8159,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-001_002",
       "name_ar": "بيرميثرين",
-      "name_en": "بيرميثرين",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8211,37 +8191,7 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-001_003",
@@ -8252,12 +8202,17 @@
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Biopesticide",
+      "type_ar": "مبيد حيوي",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8268,53 +8223,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-002_004",
       "name_ar": "حمض البوريك",
-      "name_en": "حمض البوريك",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8325,53 +8255,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-003_006",
       "name_ar": "ديكلورفوس DDVP",
-      "name_en": "ديكلورفوس DDVP",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8382,53 +8287,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-004_007",
       "name_ar": "أميتراز",
-      "name_en": "أميتراز",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8439,37 +8319,7 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-004_008",
@@ -8480,12 +8330,17 @@
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Biopesticide",
+      "type_ar": "مبيد حيوي",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8496,53 +8351,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-006_012",
       "name_ar": "فوسفين PH3",
-      "name_en": "فوسفين PH3",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Fumigant + Insecticide",
+      "type_ar": "مبيد فرموني + مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8553,53 +8383,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-006_013",
       "name_ar": "كلوربيريفوس ميثيل",
-      "name_en": "كلوربيريفوس ميثيل",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8610,53 +8415,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-006_014",
       "name_ar": "دياتومات الأرض Diatomite",
-      "name_en": "دياتومات الأرض Diatomite",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Other",
+      "type_ar": "أخرى",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8667,37 +8447,7 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-006_015",
@@ -8708,12 +8458,17 @@
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Biopesticide",
+      "type_ar": "مبيد حيوي",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8724,53 +8479,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-007_016",
       "name_ar": "هيكسافلوميرون",
-      "name_en": "هيكسافلوميرون",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8781,53 +8511,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-008_017",
       "name_ar": "ديميتيكون",
-      "name_en": "ديميتيكون",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Other",
+      "type_ar": "أخرى",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8838,53 +8543,28 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     },
     {
       "id": "ph_ai_ph-008_018",
       "name_ar": "كاربارييل",
-      "name_en": "كاربارييل",
+      "name_en": "",
       "irac_group_id": "",
       "irac_code": "",
       "chemical_class_ar": "",
       "chemical_class_en": "",
       "systemic": false,
-      "type_ar": "Insecticide",
+      "type_ar": "مبيد حشري",
       "application": {
-        "methods": [],
-        "timing": [],
-        "max_applications_per_season": null,
-        "application_notes": []
+        "dose_spray_ar": null,
+        "dose_feddan_ar": null,
+        "dose_soil_ar": null,
+        "methods_ar": [],
+        "timing_ar": null,
+        "max_applications_season": null,
+        "interval_days": null,
+        "preharvest_interval_ar": null,
+        "water_volume_ar": null
       },
       "resistance": {},
       "rotation": {},
@@ -8895,37 +8575,7 @@
       "special_use_ar": "",
       "regulatory_ar": "",
       "safety_notes_ar": "",
-      "identification": {
-        "cas_number": null,
-        "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
-      },
-      "mode_of_action": {
-        "summary": {
-          "english": null,
-          "arabic": null
-        },
-        "target_site": null,
-        "mechanism": null,
-        "physiological_effect": null
-      },
-      "environmental_fate": {
-        "soil_persistence": null,
-        "degradation": null,
-        "mobility": null,
-        "water_risk": null,
-        "bioaccumulation": null
-      },
-      "references": [
-        {
-          "title": "Comprehensive Pest Control Database — Public Health section",
-          "organization": null,
-          "year": null,
-          "url": null,
-          "source_file": "قاعدة_بيانات_مكافحة_الآفات_الشاملة.docx"
-        }
-      ]
+      "references": ""
     }
   ],
   "total_count": 126,
