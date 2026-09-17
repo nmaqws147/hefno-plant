@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Chart, registerables } from 'chart.js';
 import {
-  BarChart3, Eye, Users, FileText, Zap, Scan,
+  BarChart3, Users, FileText, Zap, Scan,
   TrendingUp, UserCheck, Globe, PieChart,
   ThumbsUp, Settings, Layout, CalendarDays, RefreshCw,
   Loader2, AlertTriangle
@@ -266,7 +266,7 @@ const ActionStatsScreen = ({ inPanel = false }) => {
           <>
             {/* ─── Stat Cards ─── */}
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-              <StatCard icon={Eye} value={(data.totalViews || 0).toLocaleString()} label="إجمالي الزيارات" />
+              <StatCard icon={Search} value={(data.totalViews || 0).toLocaleString()} label="إجمالي الزيارات" />
               <StatCard icon={Users} value={(data.uniqueVisitors || 0).toLocaleString()} label="زوار فريدين" />
               <StatCard icon={FileText} value={Object.keys(data.pages || {}).length} label="صفحات نشطة" />
               <StatCard icon={Zap} value={totalActions.toLocaleString()} label="إجمالي التفاعلات" />

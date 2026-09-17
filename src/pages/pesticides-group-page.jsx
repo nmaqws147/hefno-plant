@@ -12,7 +12,6 @@ const categoryMeta = {
   herbicides: { Comp: Leaf, color: '#10b981', gradient: 'from-emerald-500 to-emerald-600', bg: 'bg-emerald-50 dark:bg-emerald-950/30' },
   nematicides: { Comp: Sprout, color: '#f59e0b', gradient: 'from-amber-500 to-amber-600', bg: 'bg-amber-50 dark:bg-amber-950/30' },
   bactericides: { Comp: FlaskConical, color: '#06b6d4', gradient: 'from-cyan-500 to-cyan-600', bg: 'bg-cyan-50 dark:bg-cyan-950/30' },
-  acaricides: { Comp: Search, color: '#6366f1', gradient: 'from-indigo-500 to-indigo-600', bg: 'bg-indigo-50 dark:bg-indigo-950/30' },
   publicHealth: { Comp: Hospital, color: '#8b5a2b', gradient: 'from-amber-600 to-amber-700', bg: 'bg-amber-50 dark:bg-amber-950/30' },
 };
 
@@ -42,10 +41,6 @@ const PesticideGroupPage = () => {
       case 'herbicides': return item.hrac_group_id || item.classification?.hrac_group?.code || '';
       case 'nematicides': return item.classification?.nematicide_group?.id || item.classification?.nematicide_group?.code || item.nematicide_group_id || item.nematicide_group?.code || '';
       case 'bactericides': return item.bactericide_group_id || '';
-      case 'acaricides': {
-          const iracCode = item.classification?.irac_group?.code || '';
-          return iracCode ? 'irac-' + iracCode.toLowerCase() : '';
-        }
       case 'publicHealth': return item.group_code || item.code || item.id || '';
       default: return item.group_code || item.code || item.id || '';
     }
@@ -75,7 +70,6 @@ const PesticideGroupPage = () => {
     special_use: item.special_use_ar || item.ar_use_special || item.additional_information?.ar_special_use,
     regulatory: item.regulatory_ar || item.ar_regulatory || item.additional_information?.ar_regulatory,
     isPublicHealth: category === 'publicHealth',
-    isAcaricide: category === 'acaricides',
     target_crops: item.target_crops || item.crops || [],
     identification: item.identification || {},
     mode_of_action: item.mode_of_action || {},
@@ -111,11 +105,6 @@ const PesticideGroupPage = () => {
         case 'bactericides': {
           const mod = await import('../pesticides-folder/pesti-items/bact.json');
           allItems = mod.default?.items || [];
-          break;
-        }
-        case 'acaricides': {
-          const mod = await import('../pesticides-folder/pesti-items/acaricides.json');
-          allItems = mod.default?.active_ingredients || mod.default?.items || [];
           break;
         }
         case 'publicHealth': {
@@ -248,8 +237,6 @@ const PesticideGroupPage = () => {
   const catMeta = categoryMeta[currentCategory] || categoryMeta.insecticides;
   const CatIcon = catMeta.Comp;
   const isPublicHealth = currentCategory === 'publicHealth';
-  const isAcaricide = currentCategory === 'acaricides';
-
   const modalTabs = [
     { id: 'info', label: 'معلومات' },
     { id: 'application', label: 'تطبيق' },
@@ -262,7 +249,6 @@ const PesticideGroupPage = () => {
     herbicides: 'مبيدات أعشاب',
     nematicides: 'مبيدات نيماتودا',
     bactericides: 'مبيدات بكتيرية',
-    acaricides: 'مبيدات أكارية',
     publicHealth: 'مبيدات صحة عامة',
   };
 

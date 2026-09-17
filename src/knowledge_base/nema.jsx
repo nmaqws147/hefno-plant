@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../component/SEO';
 import { AlertTriangle, Bug, ChevronLeft, ChevronRight, Clock, FlaskConical, Info, Layers, Search, Shield, Sprout, X } from 'lucide-react';
-import nemaData from '../disease-folder/nema.json';
+import diseasesData from '../disease-folder/nema.json';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -31,8 +31,8 @@ const NematodesPage = () => {
   const [showModal, setShowModal] = useState(false);
   const [activeTab, setActiveTab] = useState('description');
 
-  const data = nemaData || {};
-  const diseases = data.species || [];
+  const nemaGroup = diseasesData.groups?.find(g => g.group_name_en === 'Nematode Diseases');
+  const diseases = nemaGroup?.pathogens || [];
   const totalPages = Math.max(1, Math.ceil(diseases.length / ITEMS_PER_PAGE));
   const paginated = diseases.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
 
@@ -41,21 +41,13 @@ const NematodesPage = () => {
 
   const modalTabs = [
     { id: 'description', label: 'الوصف والأعراض' },
-    { id: 'cycle', label: 'دورة الحياة' },
+    { id: 'cycle', label: 'الدورة والظروف' },
     { id: 'management', label: 'المكافحة' },
   ];
 
   const getHostsPreview = (d) => {
-    if (d.host_plants_ar?.highly_susceptible_ar?.length > 0) return d.host_plants_ar.highly_susceptible_ar[0];
-    if (d.host_plants_ar?.moderately_susceptible_ar?.length > 0) return d.host_plants_ar.moderately_susceptible_ar[0];
+    if (d.hostPlants?.length > 0) return d.hostPlants[0];
     return 'متعدد العوائل';
-  };
-
-  const getSymptomsList = (d) => {
-    const list = [];
-    if (d.symptoms?.underground_ar) list.push(...d.symptoms.underground_ar);
-    if (d.symptoms?.aboveground_ar) list.push(...d.symptoms.aboveground_ar);
-    return list;
   };
 
   return (
@@ -103,18 +95,18 @@ const NematodesPage = () => {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="flex-1 min-w-0">
                   <h3 className="text-base font-bold text-gray-900 dark:text-white">{d.name_ar}</h3>
-                  <p className="text-[11px] italic text-gray-500">{d.name_scientific}</p>
+                  <p className="text-[11px] italic text-gray-500">{d.scientificName}</p>
                 </div>
-                <span className={`shrink-0 inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${getSeverityClass(d.danger_level)}`}>
-                  {getSeverityText(d.danger_level)}
+                <span className={`shrink-0 inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold ${getSeverityClass(d.severity)}`}>
+                  {getSeverityText(d.severity)}
                 </span>
               </div>
 
-              <p className="text-xs leading-relaxed line-clamp-2 text-gray-600 dark:text-gray-400 mb-3">{d.description_ar ? d.description_ar.slice(0, 100) + '...' : ''}</p>
+              <p className="text-xs leading-relaxed line-clamp-2 text-gray-600 dark:text-gray-400 mb-3">{d.fullDescription ? d.fullDescription.slice(0, 100) + '...' : ''}</p>
 
               <div className="flex items-center justify-between border-t border-gray-100 dark:border-gray-700/50 pt-3 mt-2">
                 <div className="flex flex-wrap gap-1">
-                  {d.feeding_type_ar && <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-[10px] text-gray-500">{d.feeding_type_ar?.split('—')[0]?.trim()}</span>}
+                  {d.family_ar && <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-[10px] text-gray-500">{d.family_ar?.split('—')[0]?.trim()}</span>}
                   <span className="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 rounded text-[10px] text-gray-500">{getHostsPreview(d)}</span>
                 </div>
                 <div className="flex items-center gap-1 text-xs font-medium text-amber-600 dark:text-amber-400">
@@ -172,7 +164,7 @@ const NematodesPage = () => {
                 </div>
                 <div className="flex-1">
                   <h2 className="text-base font-bold text-gray-900 dark:text-white">{selected.name_ar}</h2>
-                  <p className="text-[11px] italic text-gray-500 dark:text-gray-400">{selected.name_scientific}</p>
+                  <p className="text-[11px] italic text-gray-500 dark:text-gray-400">{selected.scientificName}</p>
                 </div>
                 <button
                   onClick={closeModal}
@@ -205,42 +197,33 @@ const NematodesPage = () => {
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div>
                           <span className="text-gray-500 dark:text-gray-400">مستوى الخطورة</span>
-                          <p className={`mt-0.5 inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${getSeverityClass(selected.danger_level)}`}>{getSeverityText(selected.danger_level)}</p>
+                          <p className={`mt-0.5 inline-block px-2 py-0.5 rounded-full text-[10px] font-bold ${getSeverityClass(selected.severity)}`}>{getSeverityText(selected.severity)}</p>
                         </div>
                         <div>
-                          <span className="text-gray-500 dark:text-gray-400">نوع التغذية</span>
-                          <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.feeding_type_ar?.split('—')[0]?.trim() || '-'}</p>
+                          <span className="text-gray-500 dark:text-gray-400">نوع المرض</span>
+                          <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.type || '-'}</p>
                         </div>
-                        <div className="col-span-2">
-                          <span className="text-gray-500 dark:text-gray-400">الانتشار في مصر</span>
-                          <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.prevalence_egypt || 'غير محدد'}</p>
-                        </div>
+                        {selected.family_ar && (
+                          <div className="col-span-2">
+                            <span className="text-gray-500 dark:text-gray-400">العائلة</span>
+                            <p className="font-bold text-gray-900 dark:text-white mt-0.5">{selected.family_ar}</p>
+                          </div>
+                        )}
                       </div>
                     </div>
 
-                    {selected.description_ar && (
+                    {selected.fullDescription && (
                       <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                         <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Info size={12} />الوصف</h3>
-                        <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-400">{selected.description_ar}</p>
+                        <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-400">{selected.fullDescription}</p>
                       </div>
                     )}
 
-                    {selected.common_species?.length > 0 && (
-                      <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
-                        <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300"><Layers size={12} />الأنواع الشائعة</h3>
-                        <div className="flex flex-wrap gap-1.5">
-                          {selected.common_species.map((s, i) => (
-                            <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{s}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {getSymptomsList(selected).length > 0 && (
+                    {selected.symptoms?.length > 0 && (
                       <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                         <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300"><AlertTriangle size={12} />الأعراض</h3>
                         <ul className="space-y-1.5">
-                          {getSymptomsList(selected).map((s, i) => (
+                          {selected.symptoms.map((s, i) => (
                             <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start gap-2">
                               <span className="text-amber-500 mt-0.5 shrink-0">•</span>
                               {s}
@@ -252,76 +235,28 @@ const NematodesPage = () => {
                   </>
                 )}
 
-                {activeTab === 'cycle' && selected.lifecycle && (
+                {activeTab === 'cycle' && (
                   <>
-                    <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
-                        <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Clock size={12} />دورة الحياة</h3>
-                      <div className="space-y-2">
-                        {selected.lifecycle.total_days_at_25c && (
-                          <div className="flex justify-between text-xs">
-                            <span className="text-gray-500 dark:text-gray-400">المدة الكاملة عند 25°م:</span>
-                            <span className="font-bold text-gray-900 dark:text-white">{selected.lifecycle.total_days_at_25c}</span>
-                          </div>
-                        )}
-                        {selected.lifecycle.generations_per_year && (
-                          <div className="flex justify-between text-xs">
-                            <span className="text-gray-500 dark:text-gray-400">الأجيال في السنة:</span>
-                            <span className="font-bold text-gray-900 dark:text-white">{selected.lifecycle.generations_per_year}</span>
-                          </div>
-                        )}
-                        {selected.lifecycle.optimal_temp_c && (
-                          <div className="flex justify-between text-xs">
-                            <span className="text-gray-500 dark:text-gray-400">درجة الحرارة المثلى:</span>
-                            <span className="font-bold text-gray-900 dark:text-white">{selected.lifecycle.optimal_temp_c}°م</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-
-                    {selected.lifecycle.stages_ar?.length > 0 && (
+                    {selected.infectionCycle && (
                       <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
-                        <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300"><Layers size={12} />مراحل دورة الحياة</h3>
-                        <div className="space-y-2">
-                          {selected.lifecycle.stages_ar.map((stage, i) => (
-                            <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
-                              <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-gray-900 dark:text-white">{stage.stage}</span>
-                                <span className="text-[10px] text-amber-600 dark:text-amber-400">{stage.duration_ar}</span>
-                              </div>
-                              {stage.notes_ar && <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{stage.notes_ar}</p>}
-                            </div>
-                          ))}
-                        </div>
+                        <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300"><Clock size={12} />دورة العدوى</h3>
+                        <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-400">{selected.infectionCycle}</p>
                       </div>
                     )}
-
-                    {selected.host_plants_ar && (
+                    {selected.favorableConditions && (
+                      <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
+                        <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300"><Search size={12} />الظروف الملائمة</h3>
+                        <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-400">{selected.favorableConditions}</p>
+                      </div>
+                    )}
+                    {selected.hostPlants?.length > 0 && (
                       <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                         <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300"><Sprout size={12} />العوائل النباتية</h3>
-                        {selected.host_plants_ar.highly_susceptible_ar?.length > 0 && (
-                          <div className="mb-2">
-                            <span className="text-[10px] font-bold text-red-600 dark:text-red-400">شديدة الحساسية: </span>
-                            <div className="flex flex-wrap gap-1 mt-1">
-                              {selected.host_plants_ar.highly_susceptible_ar.map((h, i) => (
-                                <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-0.5 text-[10px] text-gray-700 dark:text-gray-300">{h}</span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                    {selected.spread_methods_ar?.length > 0 && (
-                      <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
-                        <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300"><Search size={12} />طرق الانتشار</h3>
-                        <ul className="space-y-1">
-                          {selected.spread_methods_ar.map((m, i) => (
-                            <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start gap-2">
-                              <span className="text-amber-500 mt-0.5 shrink-0">•</span>
-                              {m}
-                            </li>
+                        <div className="flex flex-wrap gap-1.5">
+                          {selected.hostPlants.map((h, i) => (
+                            <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-0.5 text-[10px] text-gray-700 dark:text-gray-300">{h}</span>
                           ))}
-                        </ul>
+                        </div>
                       </div>
                     )}
                   </>
@@ -332,46 +267,43 @@ const NematodesPage = () => {
                     {selected.management && (
                       <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                         <h3 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300"><Shield size={12} />المكافحة</h3>
-                        {selected.management.cultural_ar?.length > 0 && (
+                        {selected.management.cultural?.length > 0 && (
                           <div className="mb-3">
                             <h4 className="text-[11px] font-bold text-gray-700 dark:text-gray-300 mb-1.5 flex items-center gap-1"><Bug size={11} />المكافحة الزراعية</h4>
-                            <div className="space-y-1.5">
-                              {selected.management.cultural_ar.map((item, i) => (
-                                <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
-                                  <div className="flex items-center justify-between">
-                                    <span className="text-[11px] font-bold text-gray-900 dark:text-white">{item.method_ar}</span>
-                                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${item.effectiveness === 'عالية' ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300' : 'bg-gray-100 dark:bg-gray-700 text-gray-500'}`}>{item.effectiveness}</span>
-                                  </div>
-                                  <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{item.details_ar}</p>
-                                </div>
+                            <ul className="space-y-1">
+                              {selected.management.cultural.map((item, i) => (
+                                <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                  <span className="text-amber-500 mt-0.5 shrink-0">•</span>
+                                  {item}
+                                </li>
                               ))}
-                            </div>
+                            </ul>
                           </div>
                         )}
-                        {selected.management.biological_ar?.length > 0 && (
+                        {selected.management.biological?.length > 0 && (
                           <div className="mb-3">
                             <h4 className="text-[11px] font-bold text-gray-700 dark:text-gray-300 mb-1.5 flex items-center gap-1"><FlaskConical size={11} />المكافحة الحيوية</h4>
-                            <div className="space-y-1.5">
-                              {selected.management.biological_ar.map((item, i) => (
-                                <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
-                                  <span className="text-[11px] font-bold text-gray-900 dark:text-white">{item.method_ar}</span>
-                                  <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{item.details_ar}</p>
-                                </div>
+                            <ul className="space-y-1">
+                              {selected.management.biological.map((item, i) => (
+                                <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                  <span className="text-amber-500 mt-0.5 shrink-0">•</span>
+                                  {item}
+                                </li>
                               ))}
-                            </div>
+                            </ul>
                           </div>
                         )}
-                        {selected.management.chemical_ar?.length > 0 && (
+                        {selected.management.chemical?.length > 0 && (
                           <div className="mb-3">
                             <h4 className="text-[11px] font-bold text-gray-700 dark:text-gray-300 mb-1.5 flex items-center gap-1"><FlaskConical size={11} />المكافحة الكيميائية</h4>
-                            <div className="space-y-1.5">
-                              {selected.management.chemical_ar.map((item, i) => (
-                                <div key={i} className="rounded-lg bg-white dark:bg-gray-700/50 p-2.5">
-                                  <span className="text-[11px] font-bold text-gray-900 dark:text-white">{item.method_ar}</span>
-                                  <p className="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">{item.details_ar}</p>
-                                </div>
+                            <ul className="space-y-1">
+                              {selected.management.chemical.map((item, i) => (
+                                <li key={i} className="text-xs text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                                  <span className="text-amber-500 mt-0.5 shrink-0">•</span>
+                                  {item}
+                                </li>
                               ))}
-                            </div>
+                            </ul>
                           </div>
                         )}
                       </div>
@@ -379,12 +311,12 @@ const NematodesPage = () => {
 
                     <div className="grid grid-cols-2 gap-3 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                       <div>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">طرق الانتشار</span>
-                        <p className="text-xs font-bold text-gray-900 dark:text-white mt-0.5">{selected.spread_methods_ar?.length || 0} طريقة</p>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">الفعالية</span>
+                        <p className="text-xs font-bold text-gray-900 dark:text-white mt-0.5">{selected.effectiveness || 'غير محدد'}</p>
                       </div>
                       <div>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">التربة المناسبة</span>
-                        <p className="text-xs font-bold text-gray-900 dark:text-white mt-0.5">{selected.soil_preferences_ar?.best_conditions_ar?.split('—')[0]?.trim() || 'متنوعة'}</p>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">الموسم</span>
+                        <p className="text-xs font-bold text-gray-900 dark:text-white mt-0.5">{selected.season || 'طوال العام'}</p>
                       </div>
                     </div>
                   </>

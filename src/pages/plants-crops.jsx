@@ -100,7 +100,7 @@ const PlantsPage = () => {
   useEffect(() => {
     setData(plantsData);
     if (plantsData?.groups?.length > 0) {
-      setActiveGroup(plantsData.groups[0].id);
+      setActiveGroup(plantsData.groups[0].group_id);
     }
   }, []);
 
@@ -116,7 +116,7 @@ const PlantsPage = () => {
 
   const getActiveGroupData = () => {
     if (!data?.groups) return null;
-    return data.groups.find(g => g.id === activeGroup);
+    return data.groups.find(g => g.group_id === activeGroup);
   };
 
   const activeGroupData = getActiveGroupData();
@@ -142,8 +142,8 @@ const PlantsPage = () => {
     );
   }
 
-  const total = data.metadata.total_plants;
-  const groupsCount = data.metadata.groups_count;
+  const total = data.database.total_plants;
+  const groupsCount = data.database.groups_count;
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300" dir="rtl">
@@ -166,8 +166,8 @@ const PlantsPage = () => {
               <Sprout size={28} />
             </div>
             <div>
-              <h1 className="text-2xl font-black text-gray-900 dark:text-white">{data.metadata.name_ar}</h1>
-              <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">{data.metadata.name_en}</p>
+              <h1 className="text-2xl font-black text-gray-900 dark:text-white">{data.database.name_ar}</h1>
+              <p className="mt-1 text-sm text-gray-400 dark:text-gray-500 italic">{data.database.name_en}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="inline-flex items-center gap-1.5 rounded-xl border border-emerald-100/40 dark:border-emerald-900/40 bg-emerald-50 dark:bg-emerald-950/40 px-3 py-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-400">
                   <Sprout size={14} />
@@ -184,22 +184,22 @@ const PlantsPage = () => {
         {/* Group Tabs */}
         <div className="mb-6 flex flex-wrap gap-2">
           {data.groups.map((group) => {
-            const GI = groupIcons[group.id] || Flower2;
-            const colors = groupColors[group.id] || groupColors['grp-field'];
+            const GI = groupIcons[group.group_id] || Flower2;
+            const colors = groupColors[group.group_id] || groupColors['grp-field'];
             return (
               <button
-                key={group.id}
-                onClick={() => setActiveGroup(group.id)}
+                key={group.group_id}
+                onClick={() => setActiveGroup(group.group_id)}
                 className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-bold transition-all ${
-                  activeGroup === group.id
+                  activeGroup === group.group_id
                     ? 'bg-emerald-500 text-white shadow-md shadow-emerald-200/50 dark:shadow-emerald-900/30'
                     : `${colors.bg} text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/50 hover:shadow-sm`
                 }`}
               >
                 <GI size={16} />
-                <span>{group.name_ar}</span>
+                <span>{group.group_name_ar}</span>
                 <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                  activeGroup === group.id
+                  activeGroup === group.group_id
                     ? 'bg-white/20 text-white'
                     : 'bg-white dark:bg-gray-700/50 text-gray-500 dark:text-gray-400'
                 }`}>
@@ -221,18 +221,11 @@ const PlantsPage = () => {
                   <GI size={18} />
                 </div>
                 <div>
-                  <h2 className={`text-base font-black ${colors.text}`}>{activeGroupData.name_ar}</h2>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">{activeGroupData.name_en}</p>
+                  <h2 className={`text-base font-black ${colors.text}`}>{activeGroupData.group_name_ar}</h2>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{activeGroupData.group_name_en}</p>
                 </div>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{activeGroupData.description_ar}</p>
-              {activeGroupData.sub_categories && (
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {activeGroupData.sub_categories.map((cat, idx) => (
-                    <span key={idx} className={`rounded-full px-2.5 py-1 text-[10px] font-bold ${colors.badge}`}>{cat}</span>
-                  ))}
-                </div>
-              )}
             </div>
           );
         })()}

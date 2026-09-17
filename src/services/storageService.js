@@ -24,7 +24,7 @@ export const uploadProfileImage = async (uid, base64DataUrl, onProgress) => {
 
   if (onProgress) onProgress(100);
 
-  const data = await res.json();
+  const data = await res.json().catch(() => ({}));
   return data.url;
 };
 

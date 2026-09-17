@@ -34,6 +34,14 @@
       "use": "@vercel/node"
     },
     {
+      "src": "api/send-otp.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/verify-otp.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "api/sitemap.js",
       "use": "@vercel/node"
     },

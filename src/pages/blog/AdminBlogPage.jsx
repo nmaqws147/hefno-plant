@@ -22,8 +22,12 @@ const AdminBlogPage = ({ inPanel = false }) => {
         ...options.headers,
       },
     });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Request failed');
+    if (!res.ok) {
+      let msg = 'Request failed';
+      try { const d = await res.json(); msg = d.error || msg; } catch {}
+      throw new Error(msg);
+    }
+    const data = await res.json().catch(() => ({}));
     return data;
   };
 

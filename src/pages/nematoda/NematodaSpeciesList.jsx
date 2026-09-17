@@ -35,15 +35,15 @@ export default function NematodaSpeciesList() {
 
   const groups = useMemo(() => getGroups('nema-grp'), []);
 
-  const itemsByGroup = useMemo(() => {
-    const map = {};
-    nemaData.items.forEach(item => {
-      const gid = item.nematicide_group_id;
-      if (!map[gid]) map[gid] = [];
-      map[gid].push(item);
-    });
-    return map;
-  }, []);
+   const itemsByGroup = useMemo(() => {
+     const map = {};
+     (nemaData.active_ingredients || nemaData.items || []).forEach(item => {
+       const gid = item.classification?.nematicide_group?.code;
+       if (!map[gid]) map[gid] = [];
+       map[gid].push(item);
+     });
+     return map;
+   }, []);
 
   const getRiskLevel = (risk) => {
     if (typeof risk === 'number') return risk;
@@ -206,7 +206,7 @@ export default function NematodaSpeciesList() {
               <Layers size={12} /> {groups.length} مجموعات
             </span>
             <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-200/70 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300">
-              <FlaskConical size={12} /> {nemaData.total_count} مادة فعالة
+              <FlaskConical size={12} /> {(nemaData.active_ingredients || nemaData.items || []).length} مادة فعالة
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
@@ -279,36 +279,36 @@ export default function NematodaSpeciesList() {
                         onClick={() => { setSelectedItem(item); setShowItemModal(true); setItemModalTab(0); }}
                         className="group cursor-pointer rounded-xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-3 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
                       >
-                        <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{item.name_ar}</h4>
-                        <p className="text-[10px] text-gray-400 dark:text-gray-500 mb-2">{item.name_en} — {item.type_ar}</p>
-                        <div className="space-y-1 text-[10px]">
-                          <div className="flex justify-between">
-                            <span className="text-gray-500 dark:text-gray-400">التركيب:</span>
-                            <span className="font-medium text-gray-700 dark:text-gray-300">{item.chemical_class_en || '—'}</span>
-                          </div>
-                          {item.application?.dose_feddan_ar && (
-                            <div className="flex justify-between">
-                              <span className="text-gray-500 dark:text-gray-400">الجرعة:</span>
-                              <span className="text-gray-700 dark:text-gray-300">{item.application.dose_feddan_ar}</span>
+                         <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1">{item.name?.arabic || item.id}</h4>
+                         <p className="text-[10px] text-gray-400 dark:text-gray-500 mb-2">{item.name?.english || ''} — {item.action_characteristics?.type_notes_arabic || ''}</p>
+                         <div className="space-y-1 text-[10px]">
+                           <div className="flex justify-between">
+                             <span className="text-gray-500 dark:text-gray-400">التركيب:</span>
+                             <span className="font-medium text-gray-700 dark:text-gray-300">{item.classification?.chemical_group?.english || '—'}</span>
+                           </div>
+                           {(item.application?.application_notes?.find(n => n.type === 'dose_per_feddan')?.value) && (
+                             <div className="flex justify-between">
+                               <span className="text-gray-500 dark:text-gray-400">الجرعة:</span>
+                               <span className="text-gray-700 dark:text-gray-300">{item.application.application_notes.find(n => n.type === 'dose_per_feddan').value}</span>
+                             </div>
+                           )}
+                           {(item.resistance_management?.risk?.arabic) && (
+                             <div className="flex justify-between">
+                               <span className="text-gray-500 dark:text-gray-400">مقاومة:</span>
+                               <span className="font-bold" style={{ color: getRiskColor(item.resistance_management.risk?.level || 2) }}>{getRiskText(item.resistance_management.risk?.arabic)}</span>
+                             </div>
+                           )}
+                         </div>
+                          {(item.targets?.nematodes || []).length > 0 && (
+                            <div className="mt-2 flex flex-wrap gap-1">
+                              {(item.targets?.nematodes || []).slice(0, 3).map((n, i) => (
+                                <span key={i} className="text-[9px] px-1.5 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400">{n.arabic}</span>
+                              ))}
+                              {(item.targets?.nematodes || []).length > 3 && (
+                                <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-gray-200 dark:bg-gray-600 text-gray-500">+{(item.targets?.nematodes || []).length - 3}</span>
+                              )}
                             </div>
                           )}
-                          {item.resistance?.risk_ar && (
-                            <div className="flex justify-between">
-                              <span className="text-gray-500 dark:text-gray-400">مقاومة:</span>
-                              <span className="font-bold" style={{ color: getRiskColor(item.resistance.risk_ar) }}>{getRiskText(item.resistance.risk_ar)}</span>
-                            </div>
-                          )}
-                        </div>
-                        {item.target_nematodes?.length > 0 && (
-                          <div className="mt-2 flex flex-wrap gap-1">
-                            {item.target_nematodes.slice(0, 3).map((n, i) => (
-                              <span key={i} className="text-[9px] px-1.5 py-0.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400">{n.name_ar}</span>
-                            ))}
-                            {item.target_nematodes.length > 3 && (
-                              <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-gray-200 dark:bg-gray-600 text-gray-500">+{item.target_nematodes.length - 3}</span>
-                            )}
-                          </div>
-                        )}
                       </div>
                     ))}
                   </div>
@@ -432,14 +432,14 @@ export default function NematodaSpeciesList() {
                 {/* Tab 2: Targets + Safety */}
                 {itemModalTab === 2 && (
                   <div className="space-y-4">
-                    {selectedItem.target_nematodes?.length > 0 && (
+                    {(selectedItem.targets?.nematodes || selectedItem.target_nematodes || []).length > 0 && (
                       <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                         <h4 className="mb-3 flex items-center gap-1.5 text-xs font-bold text-gray-700 dark:text-gray-300">
                           <Shield size={12} /> النيماتودا المستهدفة
                         </h4>
                         <div className="flex flex-wrap gap-1.5">
-                          {selectedItem.target_nematodes.map((n, i) => (
-                            <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{n.name_ar}</span>
+                          {(selectedItem.targets?.nematodes || selectedItem.target_nematodes || []).map((n, i) => (
+                            <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{n.arabic || n.name_ar}</span>
                           ))}
                         </div>
                       </div>

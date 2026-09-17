@@ -36,7 +36,10 @@ const BlogPostPage = () => {
 
   useEffect(() => {
     fetch(`/api/blog?slug=${encodeURIComponent(slug)}`)
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
       .then(data => {
         if (data.error) throw new Error(data.error);
         setPost(data.post);

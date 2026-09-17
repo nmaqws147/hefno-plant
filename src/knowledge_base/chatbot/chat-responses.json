@@ -1,14 +1,332 @@
 {
-  "metadata": {
-    "id": "hefnoplant_chatbot_kb",
-    "name_ar": "قاعدة معرفة المساعد الزراعي الذكي",
-    "name_en": "AI Agricultural Assistant Knowledge Base",
-    "version": "1.0.0",
-    "description_ar": "بيانات مهيكلة للرد السريع على استفسارات المزارعين — أمراض، مبيدات، آفات، تسميد، محاصيل",
-    "source": "HefnoPlant Agricultural Knowledge Base"
+  "database": {
+    "platform": "HefnoPlant",
+    "module": "ai_chatbot_master_orchestrator",
+    "name_arabic": "قاعدة المعرفة الرئيسية والموجِّه الذكي لشات HefnoPlant",
+    "version": "2.0.0",
+    "language": "ar",
+    "description_ar": "الملف المركزي (Master/Router) الذي يربط كل قواعد بيانات HefnoPlant الزراعية المتخصصة ببعضها البعض (مبيدات حشائش وحشرية وفطرية ونيماتودية، آفات حشرية وأكاروسية ونيماتودية وصحة عامة، برامج تسميد، جودة وسلامة غذاء)، بحيث يستطيع الشات الذكي الإجابة على أي سؤال زراعي شامل — من التشخيص الأولي بالأعراض وحتى التوصية الدقيقة بالمادة الفعالة والجرعة — عبر توجيه السؤال للقاعدة المتخصصة الصحيحة بدلًا من تكرار كل البيانات التفصيلية في ملف واحد ضخم.",
+    "scope": "التوجيه المعرفي الشامل (Knowledge Routing) عبر كل المجالات الزراعية المغطاة في منصة HefnoPlant.",
+    "architecture_note_ar": "هذا الملف لا يكرر التفاصيل الكاملة الموجودة في الملفات المتخصصة العشرة، بل يوفر: (1) فهرس بكل قاعدة بيانات وحجمها ومتى تُستخدم، (2) خريطة كلمات مفتاحية موسّعة لتوجيه الأسئلة، (3) موجّه تشخيصي بالأعراض يربط بين عدة قواعد بيانات لنفس العرض الواحد، (4) مرجع سريع للعناصر الغذائية ونقصها، (5) أمثلة مبيدات ومحاصيل وأمراض كمرجع أولي سريع مع روابط للملفات التفصيلية الكاملة.",
+    "total_knowledge_base_modules": 11,
+    "total_records_across_all_modules": 611,
+    "data_composition": {
+      "from_uploaded_file": "10 أمراض + 8 آفات + 5 أمثلة مبيدات + 5 محاصيل + 12 عنصر غذائي (البنية الأساسية والفكرة الأصلية لملف الشات)",
+      "compiled_by_ai_additions": [
+        "فهرس قواعد المعرفة الكامل (knowledge_base_modules) يربط بكل الملفات الـ11 المبنية فعليًا على المنصة بأحجامها الحقيقية",
+        "موجّه التشخيص بالأعراض (symptom_diagnosis_router) — 11 عرضًا شائعًا كل منها مرتبط بعدة أسباب محتملة عبر عدة قواعد بيانات مختلفة",
+        "خريطة كلمات مفتاحية موسّعة من 15 كلمة إلى أكثر من 60 كلمة تغطي كل المجالات الـ11",
+        "روابط تلقائية (full_profile_reference) من كل مرض وآفة ومادة فعالة في هذا الملف لمعرّفها الكامل في القاعدة المتخصصة"
+      ],
+      "major_update_v3": "أُضيفت وحدة معرفية جديدة كاملة kb_plant_diseases (190 مسببًا مرضيًا في 12 مجموعة) بعد رفع المستخدم لملف أمراض النبات الشامل — كانت هذه أكبر فجوة معلنة في نسخة الملف السابقة (v2) وتم سدها بالكامل. الملف المصدر لهذه الوحدة كان تالفًا بنيويًا (أقواس وفواصل JSON مفقودة في 9 من 12 مجموعة) وتم إصلاحه بالكامل مع تحقق 100% من مطابقة العدد النهائي (190/190) لما أعلنه فهرس الملف نفسه.",
+      "critical_fix": "الملف الأصلي كان يحتوي على أسماء تجارية فعلية لمبيدات (مثل: ريدوميل جولد، أكتارا، فيرتيميك/أجريميك، كونفيدور) في قسم pesticides_database — تم حذفها بالكامل والاستعاضة عنها بأسماء المواد الفعالة العلمية فقط (Metalaxyl-M+Mancozeb, Thiamethoxam, Abamectin, Imidacloprid)، اتساقًا مع سياسة 'المادة الفعالة أولًا' المُطبّقة في كل قواعد بيانات المنصة."
+    },
+    "known_gaps_ar": [
+      "crop_cross_reference يغطي 5 محاصيل فقط (طماطم، خيار، قمح، بطاطس، ذرة) من الملف الأصلي — يمكن توسيعه ليشمل كل الـ76 محصولًا المغطاة في hefnoplant_fertilization_programs.json",
+      "plant_diseases_reference هنا (10 أمراض) يبقى كمرجع سريع فقط تاريخي من ملف الشات الأصلي؛ المصدر الحقيقي والكامل الآن هو kb_plant_diseases (190 مسببًا) ويجب أن يوجَّه إليه الشات دائمًا للتفاصيل الكاملة"
+    ],
+    "commercial_names_note": "تم حذف كل الأسماء التجارية الموجودة في الملف الأصلي والاكتفاء بأسماء المواد الفعالة العلمية فقط، اتساقًا مع سياسة المنصة الكاملة.",
+    "source_files": [
+      "رد_شات_ai.docx"
+    ]
   },
-  "keywords_map": {
-    "مرض": "diseases",
+  "knowledge_base_modules": [
+    {
+      "module_id": "kb_herbicides",
+      "file_name": "hefnoplant_active_ingredients.json",
+      "scope_ar": "مبيدات الحشائش — مواد فعالة كاملة مصنفة حسب مجموعات HRAC",
+      "total_records": 59,
+      "key_sections": [
+        "active_ingredients",
+        "hrac_groups_reference",
+        "weeds_reference"
+      ],
+      "use_when_ar": "أي سؤال عن: اسم مبيد حشائش، مجموعة HRAC، حشيشة معينة، برنامج تناوب مبيدات حشائش، مقاومة الحشائش"
+    },
+    {
+      "module_id": "kb_insecticides_acaricides",
+      "file_name": "hefnoplant_insecticides_acaricides.json",
+      "scope_ar": "المبيدات الحشرية والأكاروسية — مواد فعالة كاملة مصنفة حسب مجموعات IRAC، مع برامج تناوب رش جاهزة",
+      "total_records": 77,
+      "key_sections": [
+        "active_ingredients",
+        "irac_groups_reference",
+        "pests_reference",
+        "rotation_programs"
+      ],
+      "use_when_ar": "أي سؤال عن: اسم مبيد حشري أو أكاروسي، مجموعة IRAC، جرعة مادة فعالة، برنامج تناوب رش، مقاومة حشرية"
+    },
+    {
+      "module_id": "kb_fungicides",
+      "file_name": "hefnoplant_fungicides.json",
+      "scope_ar": "المبيدات الفطرية — مواد فعالة كاملة مصنفة حسب مجموعات FRAC، مع علاقات كفاءة تفصيلية لكل مرض",
+      "total_records": 67,
+      "key_sections": [
+        "active_ingredients",
+        "frac_groups_reference",
+        "diseases_reference",
+        "rotation_programs"
+      ],
+      "use_when_ar": "أي سؤال عن: اسم مبيد فطري، مجموعة FRAC، مرض فطري معين وعلاجه، مقاومة فطرية، برنامج تناوب مبيدات فطرية"
+    },
+    {
+      "module_id": "kb_nematicides",
+      "file_name": "hefnoplant_nematicides.json",
+      "scope_ar": "المبيدات النيماتودية — مواد فعالة كيميائية وحيوية ونباتية، مصنفة حسب آلية العمل",
+      "total_records": 26,
+      "key_sections": [
+        "active_ingredients",
+        "nematicide_groups_reference",
+        "nematodes_reference"
+      ],
+      "use_when_ar": "أي سؤال عن: علاج نيماتودا، مبيد نيماتودي معين، مقاومة نيماتودية"
+    },
+    {
+      "module_id": "kb_insect_pests",
+      "file_name": "hefnoplant_insect_pests.json",
+      "scope_ar": "دليل الآفات الحشرية — 63 نوعًا في 7 رتب (حرشفية، نصفية، ثنائية، غمدية، متماثلة، هدبية، متساوية الأجنحة) بتفاصيل بيولوجية كاملة",
+      "total_records": 63,
+      "key_sections": [
+        "orders"
+      ],
+      "use_when_ar": "أي سؤال عن: تشخيص حشرة معينة، دورة حياة حشرة، أعراض إصابة حشرية، عدو حيوي لحشرة، متى تنشط حشرة معينة"
+    },
+    {
+      "module_id": "kb_mite_pests",
+      "file_name": "hefnoplant_mite_pests.json",
+      "scope_ar": "دليل آفات الأكاروس — 15 نوعًا في 5 عائلات (العناكب الحمراء، الصدأ والتغرن، الحلم، المسطحة، المخازن)",
+      "total_records": 15,
+      "key_sections": [
+        "orders"
+      ],
+      "use_when_ar": "أي سؤال عن: عنكبوت أحمر، أكاروس، حلم، تربس (تنبيه: التربس حشرة وليست أكاروسًا رغم الخلط الشائع)"
+    },
+    {
+      "module_id": "kb_nematode_pests",
+      "file_name": "hefnoplant_nematode_pests.json",
+      "scope_ar": "موسوعة النيماتودا — 11 نوعًا بتفاصيل بيولوجية ودورة حياة وتشخيص وإدارة متكاملة (IPM)، مع خطط IPM ومصفوفة حساسية المحاصيل",
+      "total_records": 11,
+      "key_sections": [
+        "species",
+        "diagnosis_guide",
+        "integrated_management_plan",
+        "crops_susceptibility_matrix"
+      ],
+      "use_when_ar": "أي سؤال عن: تشخيص نيماتودا، أعراضها، إدارتها المتكاملة، أي محصول حساس لأي نوع نيماتودا"
+    },
+    {
+      "module_id": "kb_public_health_pests",
+      "file_name": "hefnoplant_public_health_pests.json",
+      "scope_ar": "آفات الصحة العامة — 16 نوعًا (نواقل أمراض، قوارض، آفات منزلية ماصة للدماء، عناكب وعقارب سامة) مع خطط عمل منزلية DIY",
+      "total_records": 16,
+      "key_sections": [
+        "groups",
+        "home_diy_action_plans"
+      ],
+      "use_when_ar": "أي سؤال خارج نطاق المحاصيل الزراعية عن: بق فراش، ناموس، صراصير، فئران، عقارب — وليس آفات تصيب النبات"
+    },
+    {
+      "module_id": "kb_fertilization",
+      "file_name": "hefnoplant_fertilization_programs.json",
+      "scope_ar": "الأسمدة وبرامج التسميد — 45 سمادًا (كيميائي، عضوي، حيوي، صغرى، مركب) و76 برنامج تسميد مرحلي جاهز لـ76 محصولًا",
+      "total_records": 76,
+      "key_sections": [
+        "fertilizers_reference",
+        "crops_reference",
+        "fertilization_programs",
+        "calculator_guide"
+      ],
+      "use_when_ar": "أي سؤال عن: برنامج تسميد لمحصول، جرعة سماد معين، نقص عنصر غذائي وعلاجه، سماد مناسب لمرحلة نمو معينة"
+    },
+    {
+      "module_id": "kb_food_safety",
+      "file_name": "hefnoplant_food_safety_quality.json",
+      "scope_ar": "جودة وسلامة الغذاء — 11 معيارًا دوليًا ومحليًا (HACCP, ISO 22000, GMP...) مع متبقيات مبيدات، سموم فطرية، تصدير، تشريعات",
+      "total_records": 11,
+      "key_sections": [
+        "international_standards",
+        "pesticide_residues",
+        "export_requirements"
+      ],
+      "use_when_ar": "أي سؤال عن: شهادات جودة، متطلبات تصدير، فترة ما قبل الحصاد (PHI)، الحد الأقصى للمتبقيات (MRL)، معايير سلامة الغذاء"
+    },
+    {
+      "module_id": "kb_plant_diseases",
+      "file_name": "hefnoplant_plant_diseases.json",
+      "scope_ar": "موسوعة أمراض النبات الشاملة — 190 مسببًا مرضيًا واضطرابًا فسيولوجيًا عبر 12 مجموعة (فطريات بيضية/زيجية/أسكية/بازيدية، بكتيريا، فيروسات، نيماتودا مُمرضة، اضطرابات فسيولوجية، نباتات طفيلية، إضافات حرجة)",
+      "total_records": 190,
+      "key_sections": [
+        "groups"
+      ],
+      "use_when_ar": "أي سؤال عن: تشخيص مرض نباتي، اسم مرض معين وأعراضه، دورة عدوى، الفرق بين مرض فسيولوجي (نقص عنصر) ومرض حقيقي (فطر/بكتيريا/فيروس)، نبات طفيلي كالهالوك"
+    }
+  ],
+  "symptom_diagnosis_router": [
+    {
+      "symptom_ar": "اصفرار الأوراق (عام على كل النبات)",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "نقص النيتروجين",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "يبدأ من الأوراق القديمة السفلية أولًا، اصفرار متجانس"
+        },
+        {
+          "cause_ar": "ري زائد أو سوء صرف",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "اصفرار مصحوب بذبول رغم الري، تربة مشبعة بالماء"
+        },
+        {
+          "cause_ar": "إصابة بالذبابة البيضاء أو المن (نقل فيروس)",
+          "check_module": "kb_insect_pests",
+          "distinguishing_feature_ar": "وجود حشرات فعلية على السطح السفلي للأوراق، إفرازات عسلية لزجة"
+        },
+        {
+          "cause_ar": "نيماتودا تعقد الجذور",
+          "check_module": "kb_nematode_pests",
+          "distinguishing_feature_ar": "اصفرار تدريجي بطيء + ضعف نمو عام + عقد على الجذور عند الفحص"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "اصفرار بين عروق الأوراق مع بقاء العروق خضراء",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "نقص الحديد (على الأوراق الحديثة)",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "يظهر أولًا على القمم النامية والأوراق الحديثة، شائع في التربة الجيرية"
+        },
+        {
+          "cause_ar": "نقص المغنيسيوم (على الأوراق المسنة)",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "يظهر أولًا على الأوراق القديمة السفلية"
+        },
+        {
+          "cause_ar": "نقص المنجنيز أو الزنك",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "يحتاج تفريقًا دقيقًا، غالبًا يحتاج تحليل تربة أو أوراق"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "ذبول مفاجئ رغم الري الكافي",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "النمل الأبيض أو حشرة قارضة للجذور",
+          "check_module": "kb_insect_pests",
+          "distinguishing_feature_ar": "سهولة اقتلاع النبات، جذور متآكلة بالكامل"
+        },
+        {
+          "cause_ar": "نيماتودا اللثة (Belonolaimus) في التربة الرملية",
+          "check_module": "kb_nematode_pests",
+          "distinguishing_feature_ar": "تربة رملية خفيفة جدًا، نظام جذري قصير جدًا ومتقرح الأطراف"
+        },
+        {
+          "cause_ar": "ذبول فطري أو بكتيري وعائي (فيوزاريوم/ذبول بكتيري)",
+          "check_module": "kb_fungicides",
+          "distinguishing_feature_ar": "تلون بني داخلي في الأوعية الناقلة عند قطع الساق طوليًا"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "بقع بنية أو داكنة على الأوراق تتوسع بسرعة في الجو الرطب",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "مرض فطري (لفحة متأخرة أو مبكرة أو بياض زغبي)",
+          "check_module": "kb_plant_diseases",
+          "then_check_treatment": "kb_fungicides",
+          "distinguishing_feature_ar": "نمو فطري مرئي (أبيض/رمادي) على السطح السفلي للورقة، رائحة مميزة أحيانًا — راجع مجموعتي Oomycota وAscomycota في kb_plant_diseases للتشخيص الدقيق"
+        },
+        {
+          "cause_ar": "مرض بكتيري (ذبول أو تبقع بكتيري)",
+          "check_module": "kb_plant_diseases",
+          "distinguishing_feature_ar": "بقع مائية الشكل ذات هالة صفراء، قد تفرز سائلًا بكتيريًا لزجًا عند القطع — راجع مجموعة bacteria في kb_plant_diseases"
+        },
+        {
+          "cause_ar": "حرق كيميائي من رش زائد التركيز",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "حواف الأوراق محروقة بشكل حاد ومنتظم، يظهر فجأة بعد الرش مباشرة"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "أعراض فيروسية (تبرقش، تقزم عام، تشوه الأوراق)",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "إصابة فيروسية منقولة بحشرة ناقلة (من، ذبابة بيضاء، تربس)",
+          "check_module": "kb_plant_diseases",
+          "then_check_vector": "kb_insect_pests",
+          "distinguishing_feature_ar": "تبرقش أصفر-أخضر فسيفسائي على الأوراق، تقزم عام، لا يوجد علاج مباشر للفيروس نفسه — المكافحة تستهدف الحشرة الناقلة. راجع مجموعة viruses في kb_plant_diseases لتحديد الفيروس ونباته الناقل تحديدًا"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "نبات طفيلي ظاهر متصل بجذور أو ساق المحصول",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "الهالوك (حشيشة الذئب) أو الحامول",
+          "check_module": "kb_plant_diseases",
+          "distinguishing_feature_ar": "نبات بلا أوراق خضراء حقيقية أو خيوط صفراء/برتقالية ملتفة حول الساق — راجع مجموعة parasitic_plants في kb_plant_diseases، هذه ليست حشيشة عادية فمبيدات الحشائش التقليدية غالبًا غير فعالة"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "نسيج حريري أو شبكي دقيق على الأوراق أو الثمار",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "إصابة بالعنكبوت الأحمر (أكاروس)",
+          "check_module": "kb_mite_pests",
+          "distinguishing_feature_ar": "نقاط صفراء دقيقة (نمش) على الأوراق قبل ظهور النسيج، ينشط في الجو الحار الجاف"
+        },
+        {
+          "cause_ar": "دبابة النخيل (على عناقيد التمر تحديدًا)",
+          "check_module": "kb_mite_pests",
+          "distinguishing_feature_ar": "يظهر فقط على عناقيد ثمار النخيل في الصيف الحار"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "تعفن الطرف الزهري في ثمار الطماطم أو الفلفل",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "نقص الكالسيوم (غالبًا وظيفي بسبب عدم انتظام الري وليس نقصًا حقيقيًا في التربة)",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "بقعة سوداء غائرة في قاع الثمرة تحديدًا، باقي الثمرة سليمة"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "ثقوب دقيقة في الثمار مع مادة حريرية تسدها",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "دودة اللوز الوردية أو الأمريكية أو دودة ثمار الفاكهة",
+          "check_module": "kb_insect_pests",
+          "distinguishing_feature_ar": "وجود يرقة داخل الثمرة عند الفتح، الثقب صغير جدًا من الخارج"
+        }
+      ]
+    },
+    {
+      "symptom_ar": "نقص أو غياب المحصول رغم نمو خضري جيد",
+      "possible_causes_ar": [
+        {
+          "cause_ar": "نقص عنصر البورون وقت التزهير (ضعف عقد الثمار)",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "تساقط الأزهار بدون عقد، شائع في العنب والزيتون والقطن"
+        },
+        {
+          "cause_ar": "زيادة النيتروجين على حساب الإثمار",
+          "check_module": "kb_fertilization",
+          "distinguishing_feature_ar": "نمو خضري كثيف جدًا وداكن اللون مع قلة أو غياب الأزهار"
+        },
+        {
+          "cause_ar": "غياب أو ضعف التلقيح (نقص نحل أو حشرات ملقحة)",
+          "check_module": "kb_insect_pests",
+          "distinguishing_feature_ar": "أزهار طبيعية تتساقط دون عقد رغم عدم وجود آفات أو نقص غذائي واضح"
+        }
+      ]
+    }
+  ],
+  "keyword_routing_map": {
+    "مرض": "kb_plant_diseases",
     "مبيد": "pesticides_database",
     "آفة": "pests",
     "حشرة": "pests",
@@ -25,109 +343,57 @@
     "خيار": "crops_info.crop_002",
     "قمح": "crops_info.crop_003",
     "بطاطس": "crops_info.crop_004",
-    "ذرة": "crops_info.crop_005"
+    "ذرة": "crops_info.crop_005",
+    "حشيشة": "kb_herbicides",
+    "حشائش": "kb_herbicides",
+    "عشب ضار": "kb_herbicides",
+    "أكاروس": "kb_mite_pests",
+    "عنكبوت أحمر": "kb_mite_pests",
+    "حلم": "kb_mite_pests",
+    "تربس": "kb_insect_pests",
+    "من": "kb_insect_pests",
+    "ذبابة بيضاء": "kb_insect_pests",
+    "دودة": "kb_insect_pests",
+    "نيماتودا": "kb_nematode_pests",
+    "مبيد نيماتودي": "kb_nematicides",
+    "فطر": "kb_plant_diseases",
+    "لفحة": "kb_plant_diseases",
+    "بياض دقيقي": "kb_plant_diseases",
+    "بياض زغبي": "kb_plant_diseases",
+    "عفن": "kb_plant_diseases",
+    "صدأ": "kb_plant_diseases",
+    "أمراض": "kb_plant_diseases",
+    "ذبول": "kb_plant_diseases",
+    "فيروس": "kb_plant_diseases",
+    "بكتيريا": "kb_plant_diseases",
+    "تبقع": "kb_plant_diseases",
+    "هالوك": "kb_plant_diseases",
+    "حامول": "kb_plant_diseases",
+    "نبات طفيلي": "kb_plant_diseases",
+    "اضطراب فسيولوجي": "kb_plant_diseases",
+    "علاج مرض": "kb_fungicides",
+    "مبيد فطري": "kb_fungicides",
+    "بق فراش": "kb_public_health_pests",
+    "ناموس": "kb_public_health_pests",
+    "صرصار": "kb_public_health_pests",
+    "فار": "kb_public_health_pests",
+    "جرذ": "kb_public_health_pests",
+    "برنامج تسميد": "kb_fertilization",
+    "جرعة سماد": "kb_fertilization",
+    "تربة": "kb_fertilization",
+    "ايزو": "kb_food_safety",
+    "haccp": "kb_food_safety",
+    "هاسب": "kb_food_safety",
+    "تصدير": "kb_food_safety",
+    "متبقيات مبيدات": "kb_food_safety",
+    "شهادة جودة": "kb_food_safety",
+    "IRAC": "kb_insecticides_acaricides",
+    "FRAC": "kb_fungicides",
+    "HRAC": "kb_herbicides",
+    "مقاومة": "diagnosis_or_pesticide_group_context",
+    "تشخيص": "symptom_diagnosis_router"
   },
-  "pesticides_database": [
-    {
-      "id": "pst_001",
-      "trade_name_ar": "ريدوميل جولد",
-      "active_ingredient": "Metalaxyl-M + Mancozeb",
-      "registration_number": "مسجل",
-      "type": "مبيد فطري",
-      "mode_of_action": "مثبط تخليق RNA + تأثير متعدد المواقع",
-      "spectrum": "ضيق الطيف ضد الأوميسيتس (فيتوفثورا، بياض زغبي)",
-      "crops_registered": [
-        "طماطم",
-        "بطاطس",
-        "بصل",
-        "خيار",
-        "عنب"
-      ],
-      "dosage": "2.5 جم/لتر ماء",
-      "phi": 14,
-      "pre_harvest_interval_days": 14,
-      "safety_class": "Class III - ضعيف السمية",
-      "notes_ar": "يجب التناوب مع مبيدات أخرى لتجنب المقاومة"
-    },
-    {
-      "id": "pst_002",
-      "trade_name_ar": "أكتارا",
-      "active_ingredient": "Thiamethoxam",
-      "registration_number": "مسجل",
-      "type": "مبيد حشري",
-      "mode_of_action": "نيونيكوتينويد - مثبط مستقبلات الأسيتيل كولين",
-      "spectrum": "واسع الطيف - حشرات ماصة وقارضة",
-      "crops_registered": [
-        "طماطم",
-        "بطاطس",
-        "قطن",
-        "خضر"
-      ],
-      "dosage": "0.2 جم/لتر أو 100 جم/100 لتر",
-      "phi": 7,
-      "safety_class": "Class II",
-      "notes_ar": "ضار جداً للنحل - يُجنب الرش في وقت الإزهار ووجود النحل"
-    },
-    {
-      "id": "pst_003",
-      "trade_name_ar": "فيرتيميك / أجريميك",
-      "active_ingredient": "Abamectin 1.8%",
-      "registration_number": "مسجل",
-      "type": "مبيد حشري وأكاروسيدي",
-      "mode_of_action": "مثبط قنوات الكلوريد (GABA)",
-      "spectrum": "حلم وتربس ومن",
-      "crops_registered": [
-        "طماطم",
-        "خيار",
-        "فلفل",
-        "ورد",
-        "حمضيات"
-      ],
-      "dosage": "0.75 مل/لتر",
-      "phi": 7,
-      "safety_class": "Class Ib - سمية عالية",
-      "notes_ar": "سام جداً للأسماك والكائنات المائية - خطر على النحل"
-    },
-    {
-      "id": "pst_004",
-      "trade_name_ar": "كابتان",
-      "active_ingredient": "Captan 50%",
-      "registration_number": "مسجل",
-      "type": "مبيد فطري وقائي",
-      "mode_of_action": "تأثير متعدد المواقع",
-      "spectrum": "واسع الطيف ضد معظم الفطريات",
-      "crops_registered": [
-        "تفاح",
-        "كمثرى",
-        "فراولة",
-        "عنب"
-      ],
-      "dosage": "2-3 جم/لتر",
-      "phi": 7,
-      "safety_class": "Class III",
-      "notes_ar": "وقائي فقط - يُطبق قبل الإصابة"
-    },
-    {
-      "id": "pst_005",
-      "trade_name_ar": "كونفيدور",
-      "active_ingredient": "Imidacloprid 70% WG",
-      "registration_number": "مسجل",
-      "type": "مبيد حشري جهازي",
-      "mode_of_action": "نيونيكوتينويد",
-      "spectrum": "حشرات ماصة (من، ذباب أبيض، تربس)",
-      "crops_registered": [
-        "طماطم",
-        "بطاطس",
-        "قطن",
-        "حمضيات"
-      ],
-      "dosage": "0.5 جم/لتر رشاً أو 100 جم/فدان ري",
-      "phi": 21,
-      "safety_class": "Class II",
-      "notes_ar": "ضار للنحل - يُجنب الرش عند الإزهار"
-    }
-  ],
-  "diseases": [
+  "plant_diseases_reference": [
     {
       "id": "dis_001",
       "name_ar": "اللفحة المتأخرة",
@@ -152,7 +418,19 @@
           "dosage_per_feddan": "500 جم/فدان",
           "withdrawal_period": 14,
           "application_method": "رش على الأوراق",
-          "notes": "يجب الرش وقائياً قبل ظهور الأعراض"
+          "notes": "يجب الرش وقائياً قبل ظهور الأعراض",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Metalaxyl-M (Mefenoxam)",
+              "id": "ai_0038",
+              "source_database": "hefnoplant_fungicides.json"
+            },
+            {
+              "active_ingredient_english": "Mancozeb",
+              "id": "ai_0030",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "ديميثومورف + مانكوزيب",
@@ -162,7 +440,19 @@
           "dosage_per_feddan": "400 جم/فدان",
           "withdrawal_period": 7,
           "application_method": "رش على الأوراق",
-          "notes": "فعال في علاج الإصابات المبكرة"
+          "notes": "فعال في علاج الإصابات المبكرة",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Dimethomorph",
+              "id": "ai_0040",
+              "source_database": "hefnoplant_fungicides.json"
+            },
+            {
+              "active_ingredient_english": "Mancozeb",
+              "id": "ai_0030",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "فلوبيكوليد + بروباموكارب",
@@ -172,7 +462,8 @@
           "dosage_per_feddan": "300 مل/فدان",
           "withdrawal_period": 3,
           "application_method": "رش على الأوراق",
-          "notes": "فعال جداً ضد السلالات المقاومة"
+          "notes": "فعال جداً ضد السلالات المقاومة",
+          "active_ingredient_id_refs": []
         },
         {
           "name_ar": "مركبات النحاس (بوردو)",
@@ -182,7 +473,14 @@
           "dosage_per_feddan": "500 جم/فدان",
           "withdrawal_period": 7,
           "application_method": "رش على الأوراق",
-          "notes": "آمن للزراعة العضوية"
+          "notes": "آمن للزراعة العضوية",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Copper hydroxide / Copper oxychloride / Bordeaux mixture",
+              "id": "ai_0036",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         }
       ],
       "prevention_ar": "زراعة أصناف مقاومة، تهوية جيدة بين النباتات، تجنب الري بالرش، إزالة الأوراق السفلية، الرش الوقائي في المواسم الرطبة",
@@ -191,7 +489,13 @@
         "عفن أسود على الثمار",
         "رائحة كريهة",
         "انتشار سريع في الرطوبة"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "oomy-2",
+        "group_id": "oomycota",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_002",
@@ -220,7 +524,14 @@
           "dosage_per_feddan": "500-750 جم/فدان",
           "withdrawal_period": 1,
           "application_method": "رش أو تعفير",
-          "notes": "لا يُستخدم في درجات حرارة فوق 35°م"
+          "notes": "لا يُستخدم في درجات حرارة فوق 35°م",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Sulfur (elemental)",
+              "id": "ai_0035",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "مايكلوبوتانيل",
@@ -230,7 +541,14 @@
           "dosage_per_feddan": "100 مل/فدان",
           "withdrawal_period": 7,
           "application_method": "رش على الأوراق",
-          "notes": "فعال جداً ضد البياض الدقيقي"
+          "notes": "فعال جداً ضد البياض الدقيقي",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Myclobutanil",
+              "id": "ai_0006",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "تيبوكونازول",
@@ -240,7 +558,14 @@
           "dosage_per_feddan": "200 مل/فدان",
           "withdrawal_period": 14,
           "application_method": "رش على الأوراق",
-          "notes": "جهازي يُوزع داخل النبات"
+          "notes": "جهازي يُوزع داخل النبات",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Tebuconazole",
+              "id": "ai_0002",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "بيكاربونات البوتاسيوم",
@@ -250,7 +575,8 @@
           "dosage_per_feddan": "1 كجم/فدان",
           "withdrawal_period": 0,
           "application_method": "رش على الأوراق",
-          "notes": "مناسب للزراعة العضوية"
+          "notes": "مناسب للزراعة العضوية",
+          "active_ingredient_id_refs": []
         }
       ],
       "prevention_ar": "اختيار أصناف مقاومة، تهوية جيدة، تجنب الإفراط في التسميد الآزوتي، الرش الوقائي في بداية الموسم",
@@ -258,7 +584,13 @@
         "بودرة بيضاء على الأوراق",
         "تنتشر في الجو الجاف",
         "لا تحتاج رطوبة عالية"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "asco-1",
+        "group_id": "ascomycota",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_003",
@@ -285,7 +617,19 @@
           "dosage_per_liter": "2.5 جم/لتر",
           "dosage_per_feddan": "500 جم/فدان",
           "withdrawal_period": 14,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Metalaxyl-M (Mefenoxam)",
+              "id": "ai_0038",
+              "source_database": "hefnoplant_fungicides.json"
+            },
+            {
+              "active_ingredient_english": "Mancozeb",
+              "id": "ai_0030",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "فوسيتيل الألومنيوم",
@@ -294,7 +638,8 @@
           "dosage_per_liter": "2.5 جم/لتر",
           "dosage_per_feddan": "500 جم/فدان",
           "withdrawal_period": 7,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": []
         }
       ],
       "prevention_ar": "الري في الصباح لا المساء، تجنب الزراعة الكثيفة، إزالة بقايا النباتات",
@@ -302,7 +647,13 @@
         "بقع صفراء علوية مع نمو رمادي سفلي",
         "جو بارد رطب",
         "ينتشر بسرعة في الخريف"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "oomy-6",
+        "group_id": "oomycota",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_004",
@@ -327,7 +678,14 @@
           "dosage_per_liter": "2.5 جم/لتر",
           "dosage_per_feddan": "500 جم/فدان",
           "withdrawal_period": 5,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Mancozeb",
+              "id": "ai_0030",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "كلوروثالونيل",
@@ -336,7 +694,14 @@
           "dosage_per_liter": "2 مل/لتر",
           "dosage_per_feddan": "400 مل/فدان",
           "withdrawal_period": 7,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Chlorothalonil",
+              "id": "ai_0031",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "أزوكسيستروبين",
@@ -345,7 +710,14 @@
           "dosage_per_liter": "1 مل/لتر",
           "dosage_per_feddan": "200 مل/فدان",
           "withdrawal_period": 3,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Azoxystrobin",
+              "id": "ai_0015",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         }
       ],
       "prevention_ar": "إزالة الأوراق السفلية المصابة، تجنب الري بالرش، التسميد المتوازن",
@@ -353,7 +725,13 @@
         "بقع دائرية متحدة المركز",
         "تبدأ من الأوراق القديمة السفلية",
         "حلقات بنية داكنة"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "oomy-3",
+        "group_id": "oomycota",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_005",
@@ -380,7 +758,14 @@
           "dosage_per_liter": "1 جم/لتر",
           "dosage_per_feddan": "200 جم/فدان",
           "withdrawal_period": 3,
-          "application_method": "رش على الأوراق والثمار"
+          "application_method": "رش على الأوراق والثمار",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Fenhexamid",
+              "id": "ai_0050",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "بوسكاليد + كريسوكسيم ميثيل",
@@ -389,7 +774,19 @@
           "dosage_per_liter": "0.5 جم/لتر",
           "dosage_per_feddan": "100 جم/فدان",
           "withdrawal_period": 3,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Boscalid",
+              "id": "ai_0020",
+              "source_database": "hefnoplant_fungicides.json"
+            },
+            {
+              "active_ingredient_english": "Kresoxim-methyl",
+              "id": "ai_0018",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "بيكنيل",
@@ -398,7 +795,8 @@
           "dosage_per_liter": "1 مل/لتر",
           "dosage_per_feddan": "200 مل/فدان",
           "withdrawal_period": 7,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": []
         }
       ],
       "prevention_ar": "تهوية جيدة في الصوب، تجنب الإفراط في الري، إزالة الأجزاء الميتة فوراً، تقليل الرطوبة الليلية",
@@ -406,7 +804,13 @@
         "عفن رمادي كثيف وناعم",
         "جو بارد رطب",
         "ينتشر في الصوب والمخازن"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "asco-4",
+        "group_id": "ascomycota",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_006",
@@ -434,7 +838,8 @@
           "dosage_per_feddan": "1 كجم/فدان",
           "withdrawal_period": 0,
           "application_method": "رش في التربة أو معاملة جذور",
-          "notes": "وقائي فقط - يُستخدم قبل الزراعة"
+          "notes": "وقائي فقط - يُستخدم قبل الزراعة",
+          "active_ingredient_id_refs": []
         },
         {
           "name_ar": "ثيوفانات ميثيل",
@@ -443,7 +848,14 @@
           "dosage_per_liter": "1.5 جم/لتر",
           "dosage_per_feddan": "300 جم/فدان",
           "withdrawal_period": 7,
-          "application_method": "ري في منطقة الجذر"
+          "application_method": "ري في منطقة الجذر",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Thiophanate-methyl",
+              "id": "ai_0028",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         }
       ],
       "prevention_ar": "تعقيم التربة بالبخار أو الشمس (Solarization)، استخدام أصناف مقاومة، الدورة الزراعية (4-5 سنوات)، تجنب جرح الجذور",
@@ -451,7 +863,13 @@
         "ذبول في الحر",
         "لا يتحسن بالري",
         "اسمرار الأوعية الداخلية عند تقطيع الساق"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "asco-9",
+        "group_id": "ascomycota",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_007",
@@ -477,7 +895,8 @@
           "dosage_per_feddan": "100 مل/فدان",
           "withdrawal_period": 21,
           "application_method": "رش على الأوراق أو ري في التربة",
-          "notes": "لمكافحة الذباب الأبيض الناقل للفيروس"
+          "notes": "لمكافحة الذباب الأبيض الناقل للفيروس",
+          "active_ingredient_id_refs": []
         },
         {
           "name_ar": "أسيتاميبريد",
@@ -486,7 +905,8 @@
           "dosage_per_liter": "0.5 جم/لتر",
           "dosage_per_feddan": "100 جم/فدان",
           "withdrawal_period": 7,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": []
         }
       ],
       "prevention_ar": "زراعة أصناف مقاومة (مثل بريسيدنت، هزار F1)، شبك حشري 50 mesh على فتحات الصوب، لاصقات صفراء، مكافحة الذباب الأبيض بانتظام، إزالة النباتات المصابة",
@@ -495,7 +915,13 @@
         "اصفرار الحواف",
         "في وجود ذباب أبيض",
         "لا يُعالج - يُعزل"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "viru-3",
+        "group_id": "viruses",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_008",
@@ -519,7 +945,19 @@
           "dosage_per_liter": "1 مل/لتر",
           "dosage_per_feddan": "200 مل/فدان",
           "withdrawal_period": 35,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Tebuconazole",
+              "id": "ai_0002",
+              "source_database": "hefnoplant_fungicides.json"
+            },
+            {
+              "active_ingredient_english": "Trifloxystrobin",
+              "id": "ai_0016",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         },
         {
           "name_ar": "بروبيكونازول",
@@ -528,7 +966,14 @@
           "dosage_per_liter": "1 مل/لتر",
           "dosage_per_feddan": "200 مل/فدان",
           "withdrawal_period": 35,
-          "application_method": "رش على الأوراق"
+          "application_method": "رش على الأوراق",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Propiconazole",
+              "id": "ai_0001",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         }
       ],
       "prevention_ar": "زراعة أصناف مقاومة، مراقبة مبكرة، الرش الفوري عند ظهور أولى الأعراض",
@@ -536,7 +981,13 @@
         "خطوط صفراء في صفوف على القمح",
         "في الطقس البارد الرطب",
         "تنتشر بسرعة"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "basi-3",
+        "group_id": "basidiomycota",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_009",
@@ -564,7 +1015,8 @@
           "dosage_per_feddan": "N/A",
           "withdrawal_period": 0,
           "application_method": "N/A",
-          "notes": "الوقاية أهم من العلاج - تعقيم التربة والأدوات"
+          "notes": "الوقاية أهم من العلاج - تعقيم التربة والأدوات",
+          "active_ingredient_id_refs": []
         }
       ],
       "prevention_ar": "تعقيم التربة، الدورة الزراعية (4 سنوات بعيداً عن نفس العائل)، استخدام تقاوٍ خالية من البكتيريا، تعقيم أدوات الزراعة بالكلور",
@@ -572,7 +1024,13 @@
         "ذبول مفاجئ بدون اصفرار",
         "سائل أبيض عند قطع الساق",
         "لا يتحسن بالري"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "bact-1",
+        "group_id": "bacteria",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "dis_010",
@@ -596,7 +1054,14 @@
           "dosage_per_liter": "2.5 جم/لتر",
           "dosage_per_feddan": "N/A",
           "withdrawal_period": 0,
-          "application_method": "غمر أو رش على التقاوي قبل الزراعة"
+          "application_method": "غمر أو رش على التقاوي قبل الزراعة",
+          "active_ingredient_id_refs": [
+            {
+              "active_ingredient_english": "Mancozeb",
+              "id": "ai_0030",
+              "source_database": "hefnoplant_fungicides.json"
+            }
+          ]
         }
       ],
       "prevention_ar": "خفض pH التربة بالكبريت الزراعي، ري منتظم في طور التدريع، الدورة الزراعية، معاملة التقاوي قبل الزراعة",
@@ -604,10 +1069,16 @@
         "قروح بنية على سطح درنات البطاطس",
         "اللب سليم",
         "تربة قلوية جافة"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "bact-8",
+        "group_id": "bacteria",
+        "full_profile_database": "hefnoplant_plant_diseases.json"
+      },
+      "dataSource": "uploaded_file"
     }
   ],
-  "pests": [
+  "pest_quick_reference": [
     {
       "id": "pest_001",
       "name_ar": "المن",
@@ -679,7 +1150,12 @@
         "مجموعات صغيرة على القمم والبراعم",
         "تفرز مادة لزجة",
         "تتواجد مع النمل"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "hem-1",
+        "full_profile_database": "hefnoplant_insect_pests.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "pest_002",
@@ -748,7 +1224,8 @@
         "حشرات بيضاء صغيرة تطير",
         "على أسفل الأوراق",
         "تاج زجاجي"
-      ]
+      ],
+      "dataSource": "uploaded_file"
     },
     {
       "id": "pest_003",
@@ -821,7 +1298,8 @@
         "بقع فاتحة صغيرة على الأوراق",
         "شبكة حريرية دقيقة",
         "يزداد في الحر والجفاف"
-      ]
+      ],
+      "dataSource": "uploaded_file"
     },
     {
       "id": "pest_004",
@@ -882,7 +1360,8 @@
         "بقع فضية على الأوراق والثمار",
         "تشوه الأزهار",
         "تجدها في الأزهار عند فحصها"
-      ]
+      ],
+      "dataSource": "uploaded_file"
     },
     {
       "id": "pest_005",
@@ -926,7 +1405,8 @@
         "ثقوب صغيرة في لوز القطن",
         "يرقة وردية داخل اللوز",
         "يرقات بيضاء ثم وردية"
-      ]
+      ],
+      "dataSource": "uploaded_file"
     },
     {
       "id": "pest_006",
@@ -984,7 +1464,12 @@
         "حفر في كرنب الذرة",
         "شكل Y على رأس اليرقة",
         "نقطة سوداء مربعة في ذيلها"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "lep-3",
+        "full_profile_database": "hefnoplant_insect_pests.json"
+      },
+      "dataSource": "uploaded_file"
     },
     {
       "id": "pest_007",
@@ -1037,7 +1522,8 @@
         "ثمار بها ثقوب صغيرة",
         "يرقات بيضاء داخل الثمرة",
         "تعفن الثمار من الداخل"
-      ]
+      ],
+      "dataSource": "uploaded_file"
     },
     {
       "id": "pest_008",
@@ -1108,286 +1594,483 @@
         "عقد أو تضخمات على الجذور",
         "ذبول رغم الري",
         "تقزم وضعف عام غير مفسر"
-      ]
+      ],
+      "full_profile_reference": {
+        "full_profile_id": "nem-001",
+        "full_profile_database": "hefnoplant_nematode_pests.json"
+      },
+      "dataSource": "uploaded_file"
     }
   ],
-  "fertilization": {
-    "macro_elements": [
-      {
-        "id": "macro_001",
-        "element": "النيتروجين",
-        "symbol": "N",
-        "function_ar": "بناء البروتينات والكلوروفيل، تحفيز النمو الخضري",
-        "deficiency_symptoms_ar": "اصفرار عام يبدأ من الأوراق القديمة السفلية، ضعف النمو، أوراق صغيرة شاحبة",
-        "toxicity_symptoms_ar": "نمو خضري غزير على حساب الإزهار والإثمار، أوراق خضراء داكنة وهشة",
-        "sources": [
-          "يوريا 46%",
-          "نترات الأمونيوم 33%",
-          "سلفات الأمونيوم 21%",
-          "نترات الكالسيوم 15.5%"
-        ],
-        "best_applied": "مرحلة النمو الخضري",
-        "notes_ar": "ينقسم إلى دفعات عند تسميد الحقل - لا يُسمد دفعة واحدة"
+  "pesticide_examples_generic": [
+    {
+      "id": "pst_001",
+      "active_ingredient_arabic": "Metalaxyl-M + Mancozeb",
+      "active_ingredient_english": "Metalaxyl-M + Mancozeb",
+      "type": "مبيد فطري",
+      "mode_of_action_ar": "مثبط تخليق RNA + تأثير متعدد المواقع",
+      "spectrum_ar": "ضيق الطيف ضد الأوميسيتس (فيتوفثورا، بياض زغبي)",
+      "crops_registered": [
+        "طماطم",
+        "بطاطس",
+        "بصل",
+        "خيار",
+        "عنب"
+      ],
+      "dosage_ar": "2.5 جم/لتر ماء",
+      "phi_days": 14,
+      "safety_class": "Class III - ضعيف السمية",
+      "notes_ar": "يجب التناوب مع مبيدات أخرى لتجنب المقاومة",
+      "full_profile_reference": {
+        "id": "ai_0148",
+        "source_database": "hefnoplant_active_ingredients.json"
       },
-      {
-        "id": "macro_002",
-        "element": "الفوسفور",
-        "symbol": "P",
-        "function_ar": "تطوير الجذور، نضج البذور والثمار، نقل الطاقة (ATP)",
-        "deficiency_symptoms_ar": "لون أرجواني بنفسجي على أسفل الأوراق، ضعف الجذور، تأخر النضج",
-        "toxicity_symptoms_ar": "نادر - قد يسبب نقص الزنك والحديد والمنغنيز",
-        "sources": [
-          "سوبر فوسفات أحادي 20%",
-          "سوبر فوسفات ثلاثي 46%",
-          "DAP 18-46-0",
-          "MAP 12-61-0"
-        ],
-        "best_applied": "قبل الزراعة أو مع البذرة",
-        "notes_ar": "يثبت في التربة القلوية - الفوسفور العضوي أفضل امتصاصاً"
+      "dataSource": "compiled_by_ai_trade_names_removed"
+    },
+    {
+      "id": "pst_002",
+      "active_ingredient_arabic": "Thiamethoxam",
+      "active_ingredient_english": "Thiamethoxam",
+      "type": "مبيد حشري",
+      "mode_of_action_ar": "نيونيكوتينويد - مثبط مستقبلات الأسيتيل كولين",
+      "spectrum_ar": "واسع الطيف - حشرات ماصة وقارضة",
+      "crops_registered": [
+        "طماطم",
+        "بطاطس",
+        "قطن",
+        "خضر"
+      ],
+      "dosage_ar": "0.2 جم/لتر أو 100 جم/100 لتر",
+      "phi_days": 7,
+      "safety_class": "Class II",
+      "notes_ar": "ضار جداً للنحل - يُجنب الرش في وقت الإزهار ووجود النحل",
+      "full_profile_reference": {
+        "id": "ai_0084",
+        "source_database": "hefnoplant_active_ingredients.json"
       },
-      {
-        "id": "macro_003",
-        "element": "البوتاسيوم",
-        "symbol": "K",
-        "function_ar": "تنظيم فتح الثغور، جودة الثمار ولونها وصلابتها، مقاومة الأمراض والإجهادات",
-        "deficiency_symptoms_ar": "احتراق حواف الأوراق القديمة، ذبول جزئي في الحرارة، ثمار فاقدة الجودة",
-        "toxicity_symptoms_ar": "نادر - قد يتداخل مع امتصاص الكالسيوم والمغنسيوم",
-        "sources": [
-          "كلوريد البوتاسيوم 60%",
-          "سلفات البوتاسيوم 50%",
-          "نترات البوتاسيوم 13-0-46"
-        ],
-        "best_applied": "طور الإزهار والإثمار",
-        "notes_ar": "سلفات البوتاسيوم أفضل للمحاصيل الحساسة للكلوريد"
+      "dataSource": "compiled_by_ai_trade_names_removed"
+    },
+    {
+      "id": "pst_003",
+      "active_ingredient_arabic": "Abamectin 1.8",
+      "active_ingredient_english": "Abamectin 1.8%",
+      "type": "مبيد حشري وأكاروسيدي",
+      "mode_of_action_ar": "مثبط قنوات الكلوريد (GABA)",
+      "spectrum_ar": "حلم وتربس ومن",
+      "crops_registered": [
+        "طماطم",
+        "خيار",
+        "فلفل",
+        "ورد",
+        "حمضيات"
+      ],
+      "dosage_ar": "0.75 مل/لتر",
+      "phi_days": 7,
+      "safety_class": "Class Ib - سمية عالية",
+      "notes_ar": "سام جداً للأسماك والكائنات المائية - خطر على النحل",
+      "full_profile_reference": {
+        "id": "ai_0091",
+        "source_database": "hefnoplant_active_ingredients.json"
       },
-      {
-        "id": "macro_004",
-        "element": "الكالسيوم",
-        "symbol": "Ca",
-        "function_ar": "بناء جدار الخلية، نمو القمم الجذرية، استقرار الغشاء الخلوي",
-        "deficiency_symptoms_ar": "موت قمم النبات، تعفن طرف الزهري في الطماطم والفلفل، تشقق الثمار",
-        "toxicity_symptoms_ar": "نادر",
-        "sources": [
-          "نترات الكالسيوم 19-0-0+17Ca",
-          "كلوريد الكالسيوم",
-          "كبريتات الكالسيوم (جبس)"
-        ],
-        "best_applied": "طوال مراحل النمو مع التركيز في طور تكون الثمار",
-        "notes_ar": "لا ينتقل في النبات، يعتمد على التدفق الخشبي والنتح - الري المنتظم أساسي"
+      "dataSource": "compiled_by_ai_trade_names_removed"
+    },
+    {
+      "id": "pst_004",
+      "active_ingredient_arabic": "Captan 50",
+      "active_ingredient_english": "Captan 50%",
+      "type": "مبيد فطري وقائي",
+      "mode_of_action_ar": "تأثير متعدد المواقع",
+      "spectrum_ar": "واسع الطيف ضد معظم الفطريات",
+      "crops_registered": [
+        "تفاح",
+        "كمثرى",
+        "فراولة",
+        "عنب"
+      ],
+      "dosage_ar": "2-3 جم/لتر",
+      "phi_days": 7,
+      "safety_class": "Class III",
+      "notes_ar": "وقائي فقط - يُطبق قبل الإصابة",
+      "full_profile_reference": {
+        "id": "ai_0148",
+        "source_database": "hefnoplant_active_ingredients.json"
       },
-      {
-        "id": "macro_005",
-        "element": "المغنسيوم",
-        "symbol": "Mg",
-        "function_ar": "مركز جزيء الكلوروفيل، تنشيط إنزيمات كثيرة",
-        "deficiency_symptoms_ar": "اصفرار بين العروق في الأوراق القديمة مع بقاء العروق خضراء",
-        "toxicity_symptoms_ar": "نادر",
-        "sources": [
-          "سلفات المغنسيوم (ملح إبسوم) 9.9%Mg",
-          "نترات المغنسيوم"
-        ],
-        "best_applied": "طوال موسم النمو",
-        "notes_ar": "رش ورقي بـ 2-3% سلفات مغنسيوم فعال عند نقص شديد"
+      "dataSource": "compiled_by_ai_trade_names_removed"
+    },
+    {
+      "id": "pst_005",
+      "active_ingredient_arabic": "Imidacloprid 70",
+      "active_ingredient_english": "Imidacloprid 70% WG",
+      "type": "مبيد حشري جهازي",
+      "mode_of_action_ar": "نيونيكوتينويد",
+      "spectrum_ar": "حشرات ماصة (من، ذباب أبيض، تربس)",
+      "crops_registered": [
+        "طماطم",
+        "بطاطس",
+        "قطن",
+        "حمضيات"
+      ],
+      "dosage_ar": "0.5 جم/لتر رشاً أو 100 جم/فدان ري",
+      "phi_days": 21,
+      "safety_class": "Class II",
+      "notes_ar": "ضار للنحل - يُجنب الرش عند الإزهار",
+      "full_profile_reference": {
+        "id": "ai_0082",
+        "source_database": "hefnoplant_active_ingredients.json"
       },
-      {
-        "id": "macro_006",
-        "element": "الكبريت",
-        "symbol": "S",
-        "function_ar": "تكوين الأحماض الأمينية والبروتينات والفيتامينات",
-        "deficiency_symptoms_ar": "اصفرار الأوراق الحديثة (عكس النيتروجين)، تأخر النمو",
-        "toxicity_symptoms_ar": "نادر في الظروف الطبيعية",
-        "sources": [
-          "سلفات الأمونيوم 24%S",
-          "سلفات البوتاسيوم 18%S",
-          "كبريت زراعي 90%"
-        ],
-        "best_applied": "مع الأسمدة الأساسية",
-        "notes_ar": "ينخفض في الترب الرملية وعالية الإنتاجية"
-      }
-    ],
-    "micro_elements": [
-      {
-        "id": "micro_001",
-        "element": "الحديد",
-        "symbol": "Fe",
-        "function_ar": "تكوين الكلوروفيل، نقل الإلكترونات في التنفس والتمثيل الضوئي",
-        "deficiency_symptoms_ar": "كلوروزيس بين العروق في الأوراق الحديثة الصغيرة، الأوراق تصبح صفراء شاحبة مع عروق خضراء",
-        "favorable_for_deficiency": "تربة قلوية pH > 7.5، تربة مشبعة بالماء",
-        "sources": [
-          "EDDHA-Fe 6%",
-          "EDTA-Fe 13%",
-          "سلفات الحديد FeSO4"
-        ],
-        "dosage_ar": "EDDHA: 1-3 كجم/فدان في التربة، أو 1-2 جم/لتر رشاً",
-        "application_method": "في التربة القلوية يُفضل EDDHA (أكثر ثباتاً)",
-        "notes_ar": "EDDHA الأفضل في التربة القلوية المصرية"
-      },
-      {
-        "id": "micro_002",
-        "element": "الزنك",
-        "symbol": "Zn",
-        "function_ar": "تنشيط الإنزيمات، تخليق هرمون الأوكسين، تنظيم تعبير الجينات",
-        "deficiency_symptoms_ar": "تقزم وتصغر الأوراق، تقصير السلاميات، تشوه الأوراق وتموجها",
-        "favorable_for_deficiency": "تربة قلوية أو حامضية جداً، فوسفور زائد في التربة",
-        "sources": [
-          "سلفات الزنك ZnSO4 35%",
-          "كيلات الزنك EDTA-Zn"
-        ],
-        "dosage_ar": "سلفات الزنك: 1-2 جم/لتر رشاً، أو 5-10 كجم/فدان في التربة",
-        "application_method": "رش ورقي أو إضافة للتربة",
-        "notes_ar": "يُضاف مع الري أو رشاً على الأوراق"
-      },
-      {
-        "id": "micro_003",
-        "element": "المنغنيز",
-        "symbol": "Mn",
-        "function_ar": "التمثيل الضوئي (تكسير الماء)، تنشيط إنزيمات كثيرة",
-        "deficiency_symptoms_ar": "كلوروزيس بين العروق في الأوراق الحديثة مشابه لنقص الحديد، لكن بقع بنية صغيرة تظهر لاحقاً",
-        "favorable_for_deficiency": "تربة قلوية أو رملية جيدة الصرف",
-        "sources": [
-          "سلفات المنغنيز MnSO4 27%Mn",
-          "كيلات المنغنيز"
-        ],
-        "dosage_ar": "سلفات المنغنيز: 1-2 جم/لتر رشاً",
-        "application_method": "رش ورقي هو الأسرع فعلاً",
-        "notes_ar": "التفريق بين نقص Mn ونقص Fe: Mn يصيب أوراق حديثة مع بقع - Fe لا بقع"
-      },
-      {
-        "id": "micro_004",
-        "element": "البورون",
-        "symbol": "B",
-        "function_ar": "نمو الأنابيب حبوب اللقاح، بناء جدار الخلية، تكوين السكريات",
-        "deficiency_symptoms_ar": "موت القمم النامية، تشوه وتصلب الأوراق الحديثة، تفريع مفرط، تشقق وتشوه الثمار، فراغات في قلب اللفت والشمندر",
-        "favorable_for_deficiency": "تربة رملية، تربة جافة، تربة قلوية، وفرة الكالسيوم",
-        "sources": [
-          "حمض البوريك H3BO3 17%B",
-          "بوراكس Na2B4O7 11%B",
-          "سولوبور 17%B"
-        ],
-        "dosage_ar": "حمض البوريك: 0.5-1 جم/لتر رشاً، أو 1-2 كجم/فدان في التربة",
-        "application_method": "رش ورقي أو إضافة للري، هامش السمية ضيق - لا تزد الجرعة",
-        "notes_ar": "عنصر حرج جداً - نقصه ووفرته كلاهما ضار - الهامش الآمن ضيق"
-      },
-      {
-        "id": "micro_005",
-        "element": "النحاس",
-        "symbol": "Cu",
-        "function_ar": "التمثيل الضوئي، تنشيط الإنزيمات",
-        "deficiency_symptoms_ar": "ذبول وتجعد الأوراق الحديثة، لون أزرق أخضر مائل، جفاف القمم النامية",
-        "favorable_for_deficiency": "تربة عضوية، تربة حامضية رملية",
-        "sources": [
-          "سلفات النحاس CuSO4 25%Cu",
-          "كيلات النحاس EDTA-Cu"
-        ],
-        "dosage_ar": "سلفات النحاس: 0.5 جم/لتر رشاً",
-        "application_method": "رش ورقي",
-        "notes_ar": "مركبات النحاس مبيد فطري أيضاً"
-      },
-      {
-        "id": "micro_006",
-        "element": "الموليبدنيوم",
-        "symbol": "Mo",
-        "function_ar": "اختزال النترات، تثبيت النيتروجين في البقوليات",
-        "deficiency_symptoms_ar": "تشوه وتشعث الأوراق (Whiptail) في القرنبيط، اصفرار عام",
-        "favorable_for_deficiency": "تربة حامضية pH < 5.5",
-        "sources": [
-          "موليبدات الصوديوم",
-          "موليبدات الأمونيوم"
-        ],
-        "dosage_ar": "موليبدات الصوديوم: 0.1 جم/لتر رشاً",
-        "application_method": "رش ورقي أو معاملة بذور",
-        "notes_ar": "الكميات المطلوبة ضئيلة جداً - يكفي رشة واحدة غالباً"
-      }
-    ],
-    "fertilization_programs": [
-      {
-        "id": "prog_001",
-        "crop": "طماطم",
-        "total_season_npk": "200-80-250 كجم N-P2O5-K2O / هكتار",
-        "stages": [
-          {
-            "stage": "الشتل والجذرة (0-20 يوم)",
-            "npk_ratio": "10:52:10",
-            "focus": "الفوسفور لتطوير الجذور",
-            "dosage": "2-3 كجم/1000 لتر",
-            "additional": "هيوميك أسيد لتقوية الجذور"
-          },
-          {
-            "stage": "النمو الخضري (21-45 يوم)",
-            "npk_ratio": "20:10:20",
-            "focus": "الآزوت للنمو الخضري",
-            "dosage": "3-4 كجم/1000 لتر",
-            "additional": "كالسيوم ومغنسيوم"
-          },
-          {
-            "stage": "الإزهار (46-70 يوم)",
-            "npk_ratio": "12:6:36",
-            "focus": "تقليل الآزوت، رفع البوتاسيوم",
-            "dosage": "3-4 كجم/1000 لتر",
-            "additional": "بورون 300 جم/فدان رشاً لتحسين الإخصاب"
-          },
-          {
-            "stage": "عقد وتضخم الثمار (71-100 يوم)",
-            "npk_ratio": "8:8:40",
-            "focus": "البوتاسيوم وكالسيوم لجودة الثمار",
-            "dosage": "4-5 كجم/1000 لتر",
-            "additional": "كالسيوم لمنع تعفن الطرف الزهري"
-          }
-        ]
-      },
-      {
-        "id": "prog_002",
-        "crop": "خيار",
-        "total_season_npk": "150-60-200 كجم N-P2O5-K2O / هكتار",
-        "stages": [
-          {
-            "stage": "الإنبات والشتل (0-15 يوم)",
-            "npk_ratio": "10:52:10",
-            "focus": "الفوسفور",
-            "dosage": "2 كجم/1000 لتر"
-          },
-          {
-            "stage": "النمو الخضري (16-35 يوم)",
-            "npk_ratio": "20:10:20",
-            "focus": "الآزوت والبوتاسيوم",
-            "dosage": "3 كجم/1000 لتر"
-          },
-          {
-            "stage": "الإثمار والحصاد (36+ يوم)",
-            "npk_ratio": "15:5:30",
-            "focus": "بوتاسيوم لصلابة الثمار",
-            "dosage": "4 كجم/1000 لتر"
-          }
-        ]
-      },
-      {
-        "id": "prog_003",
-        "crop": "قمح",
-        "total_season_npk": "90-30-0 كجم N-P2O5 / فدان",
-        "stages": [
-          {
-            "stage": "قبل الزراعة",
-            "npk_ratio": "0:100:0",
-            "focus": "فوسفور للإنبات",
-            "dosage": "150 كجم سوبر فوسفات/فدان"
-          },
-          {
-            "stage": "التفريع (الرية الثانية)",
-            "npk_ratio": "100:0:0",
-            "focus": "آزوت للتفريع",
-            "dosage": "75 كجم يوريا/فدان"
-          },
-          {
-            "stage": "الإطالة",
-            "npk_ratio": "100:0:0",
-            "focus": "آزوت للإطالة والسنبلة",
-            "dosage": "75 كجم يوريا/فدان"
-          }
-        ]
-      }
-    ]
-  },
-  "crops_info": [
+      "dataSource": "compiled_by_ai_trade_names_removed"
+    }
+  ],
+  "nutrient_deficiency_diagnosis": [
+    {
+      "id": "macro_001",
+      "element": "النيتروجين",
+      "symbol": "N",
+      "function_ar": "بناء البروتينات والكلوروفيل، تحفيز النمو الخضري",
+      "deficiency_symptoms_ar": "اصفرار عام يبدأ من الأوراق القديمة السفلية، ضعف النمو، أوراق صغيرة شاحبة",
+      "toxicity_symptoms_ar": "نمو خضري غزير على حساب الإزهار والإثمار، أوراق خضراء داكنة وهشة",
+      "sources": [
+        "يوريا 46%",
+        "نترات الأمونيوم 33%",
+        "سلفات الأمونيوم 21%",
+        "نترات الكالسيوم 15.5%"
+      ],
+      "best_applied": "مرحلة النمو الخضري",
+      "notes_ar": "ينقسم إلى دفعات عند تسميد الحقل - لا يُسمد دفعة واحدة",
+      "category": "عنصر كبير (Macronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-001",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-002",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-002",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "macro_002",
+      "element": "الفوسفور",
+      "symbol": "P",
+      "function_ar": "تطوير الجذور، نضج البذور والثمار، نقل الطاقة (ATP)",
+      "deficiency_symptoms_ar": "لون أرجواني بنفسجي على أسفل الأوراق، ضعف الجذور، تأخر النضج",
+      "toxicity_symptoms_ar": "نادر - قد يسبب نقص الزنك والحديد والمنغنيز",
+      "sources": [
+        "سوبر فوسفات أحادي 20%",
+        "سوبر فوسفات ثلاثي 46%",
+        "DAP 18-46-0",
+        "MAP 12-61-0"
+      ],
+      "best_applied": "قبل الزراعة أو مع البذرة",
+      "notes_ar": "يثبت في التربة القلوية - الفوسفور العضوي أفضل امتصاصاً",
+      "category": "عنصر كبير (Macronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-009",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-009",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-010",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-011",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "macro_003",
+      "element": "البوتاسيوم",
+      "symbol": "K",
+      "function_ar": "تنظيم فتح الثغور، جودة الثمار ولونها وصلابتها، مقاومة الأمراض والإجهادات",
+      "deficiency_symptoms_ar": "احتراق حواف الأوراق القديمة، ذبول جزئي في الحرارة، ثمار فاقدة الجودة",
+      "toxicity_symptoms_ar": "نادر - قد يتداخل مع امتصاص الكالسيوم والمغنسيوم",
+      "sources": [
+        "كلوريد البوتاسيوم 60%",
+        "سلفات البوتاسيوم 50%",
+        "نترات البوتاسيوم 13-0-46"
+      ],
+      "best_applied": "طور الإزهار والإثمار",
+      "notes_ar": "سلفات البوتاسيوم أفضل للمحاصيل الحساسة للكلوريد",
+      "category": "عنصر كبير (Macronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-015",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-002",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "macro_004",
+      "element": "الكالسيوم",
+      "symbol": "Ca",
+      "function_ar": "بناء جدار الخلية، نمو القمم الجذرية، استقرار الغشاء الخلوي",
+      "deficiency_symptoms_ar": "موت قمم النبات، تعفن طرف الزهري في الطماطم والفلفل، تشقق الثمار",
+      "toxicity_symptoms_ar": "نادر",
+      "sources": [
+        "نترات الكالسيوم 19-0-0+17Ca",
+        "كلوريد الكالسيوم",
+        "كبريتات الكالسيوم (جبس)"
+      ],
+      "best_applied": "طوال مراحل النمو مع التركيز في طور تكون الثمار",
+      "notes_ar": "لا ينتقل في النبات، يعتمد على التدفق الخشبي والنتح - الري المنتظم أساسي",
+      "category": "عنصر كبير (Macronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-002",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-015",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-018",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "macro_005",
+      "element": "المغنسيوم",
+      "symbol": "Mg",
+      "function_ar": "مركز جزيء الكلوروفيل، تنشيط إنزيمات كثيرة",
+      "deficiency_symptoms_ar": "اصفرار بين العروق في الأوراق القديمة مع بقاء العروق خضراء",
+      "toxicity_symptoms_ar": "نادر",
+      "sources": [
+        "سلفات المغنسيوم (ملح إبسوم) 9.9%Mg",
+        "نترات المغنسيوم"
+      ],
+      "best_applied": "طوال موسم النمو",
+      "notes_ar": "رش ورقي بـ 2-3% سلفات مغنسيوم فعال عند نقص شديد",
+      "category": "عنصر كبير (Macronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-002",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "macro_006",
+      "element": "الكبريت",
+      "symbol": "S",
+      "function_ar": "تكوين الأحماض الأمينية والبروتينات والفيتامينات",
+      "deficiency_symptoms_ar": "اصفرار الأوراق الحديثة (عكس النيتروجين)، تأخر النمو",
+      "toxicity_symptoms_ar": "نادر في الظروف الطبيعية",
+      "sources": [
+        "سلفات الأمونيوم 24%S",
+        "سلفات البوتاسيوم 18%S",
+        "كبريت زراعي 90%"
+      ],
+      "best_applied": "مع الأسمدة الأساسية",
+      "notes_ar": "ينخفض في الترب الرملية وعالية الإنتاجية",
+      "category": "عنصر كبير (Macronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-018",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "micro_001",
+      "element": "الحديد",
+      "symbol": "Fe",
+      "function_ar": "تكوين الكلوروفيل، نقل الإلكترونات في التنفس والتمثيل الضوئي",
+      "deficiency_symptoms_ar": "كلوروزيس بين العروق في الأوراق الحديثة الصغيرة، الأوراق تصبح صفراء شاحبة مع عروق خضراء",
+      "favorable_for_deficiency": "تربة قلوية pH > 7.5، تربة مشبعة بالماء",
+      "sources": [
+        "EDDHA-Fe 6%",
+        "EDTA-Fe 13%",
+        "سلفات الحديد FeSO4"
+      ],
+      "dosage_ar": "EDDHA: 1-3 كجم/فدان في التربة، أو 1-2 جم/لتر رشاً",
+      "application_method": "في التربة القلوية يُفضل EDDHA (أكثر ثباتاً)",
+      "notes_ar": "EDDHA الأفضل في التربة القلوية المصرية",
+      "category": "عنصر صغير (Micronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "micro_002",
+      "element": "الزنك",
+      "symbol": "Zn",
+      "function_ar": "تنشيط الإنزيمات، تخليق هرمون الأوكسين، تنظيم تعبير الجينات",
+      "deficiency_symptoms_ar": "تقزم وتصغر الأوراق، تقصير السلاميات، تشوه الأوراق وتموجها",
+      "favorable_for_deficiency": "تربة قلوية أو حامضية جداً، فوسفور زائد في التربة",
+      "sources": [
+        "سلفات الزنك ZnSO4 35%",
+        "كيلات الزنك EDTA-Zn"
+      ],
+      "dosage_ar": "سلفات الزنك: 1-2 جم/لتر رشاً، أو 5-10 كجم/فدان في التربة",
+      "application_method": "رش ورقي أو إضافة للتربة",
+      "notes_ar": "يُضاف مع الري أو رشاً على الأوراق",
+      "category": "عنصر صغير (Micronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-036",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "micro_003",
+      "element": "المنغنيز",
+      "symbol": "Mn",
+      "function_ar": "التمثيل الضوئي (تكسير الماء)، تنشيط إنزيمات كثيرة",
+      "deficiency_symptoms_ar": "كلوروزيس بين العروق في الأوراق الحديثة مشابه لنقص الحديد، لكن بقع بنية صغيرة تظهر لاحقاً",
+      "favorable_for_deficiency": "تربة قلوية أو رملية جيدة الصرف",
+      "sources": [
+        "سلفات المنغنيز MnSO4 27%Mn",
+        "كيلات المنغنيز"
+      ],
+      "dosage_ar": "سلفات المنغنيز: 1-2 جم/لتر رشاً",
+      "application_method": "رش ورقي هو الأسرع فعلاً",
+      "notes_ar": "التفريق بين نقص Mn ونقص Fe: Mn يصيب أوراق حديثة مع بقع - Fe لا بقع",
+      "category": "عنصر صغير (Micronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-036",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "micro_004",
+      "element": "البورون",
+      "symbol": "B",
+      "function_ar": "نمو الأنابيب حبوب اللقاح، بناء جدار الخلية، تكوين السكريات",
+      "deficiency_symptoms_ar": "موت القمم النامية، تشوه وتصلب الأوراق الحديثة، تفريع مفرط، تشقق وتشوه الثمار، فراغات في قلب اللفت والشمندر",
+      "favorable_for_deficiency": "تربة رملية، تربة جافة، تربة قلوية، وفرة الكالسيوم",
+      "sources": [
+        "حمض البوريك H3BO3 17%B",
+        "بوراكس Na2B4O7 11%B",
+        "سولوبور 17%B"
+      ],
+      "dosage_ar": "حمض البوريك: 0.5-1 جم/لتر رشاً، أو 1-2 كجم/فدان في التربة",
+      "application_method": "رش ورقي أو إضافة للري، هامش السمية ضيق - لا تزد الجرعة",
+      "notes_ar": "عنصر حرج جداً - نقصه ووفرته كلاهما ضار - الهامش الآمن ضيق",
+      "category": "عنصر صغير (Micronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-037",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "micro_005",
+      "element": "النحاس",
+      "symbol": "Cu",
+      "function_ar": "التمثيل الضوئي، تنشيط الإنزيمات",
+      "deficiency_symptoms_ar": "ذبول وتجعد الأوراق الحديثة، لون أزرق أخضر مائل، جفاف القمم النامية",
+      "favorable_for_deficiency": "تربة عضوية، تربة حامضية رملية",
+      "sources": [
+        "سلفات النحاس CuSO4 25%Cu",
+        "كيلات النحاس EDTA-Cu"
+      ],
+      "dosage_ar": "سلفات النحاس: 0.5 جم/لتر رشاً",
+      "application_method": "رش ورقي",
+      "notes_ar": "مركبات النحاس مبيد فطري أيضاً",
+      "category": "عنصر صغير (Micronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-003",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-036",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    },
+    {
+      "id": "micro_006",
+      "element": "الموليبدنيوم",
+      "symbol": "Mo",
+      "function_ar": "اختزال النترات، تثبيت النيتروجين في البقوليات",
+      "deficiency_symptoms_ar": "تشوه وتشعث الأوراق (Whiptail) في القرنبيط، اصفرار عام",
+      "favorable_for_deficiency": "تربة حامضية pH < 5.5",
+      "sources": [
+        "موليبدات الصوديوم",
+        "موليبدات الأمونيوم"
+      ],
+      "dosage_ar": "موليبدات الصوديوم: 0.1 جم/لتر رشاً",
+      "application_method": "رش ورقي أو معاملة بذور",
+      "notes_ar": "الكميات المطلوبة ضئيلة جداً - يكفي رشة واحدة غالباً",
+      "category": "عنصر صغير (Micronutrient)",
+      "source_fertilizer_refs": [
+        {
+          "id": "fert-040",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        },
+        {
+          "id": "fert-040",
+          "source_database": "hefnoplant_fertilization_programs.json"
+        }
+      ],
+      "dataSource": "uploaded_file"
+    }
+  ],
+  "crop_cross_reference": [
     {
       "id": "crop_001",
       "name_ar": "طماطم",
@@ -1419,7 +2102,8 @@
         "مغنسيوم",
         "بورون"
       ],
-      "tips_ar": "الكالسيوم مهم جداً لمنع تعفن الطرف الزهري، ري منتظم ضروري، تجنب البلل الورقي"
+      "tips_ar": "الكالسيوم مهم جداً لمنع تعفن الطرف الزهري، ري منتظم ضروري، تجنب البلل الورقي",
+      "dataSource": "uploaded_file"
     },
     {
       "id": "crop_002",
@@ -1450,7 +2134,8 @@
         "كالسيوم",
         "مغنسيوم"
       ],
-      "tips_ar": "الحصاد المنتظم يزيد الإنتاج - لا تترك الثمار تكبر جداً"
+      "tips_ar": "الحصاد المنتظم يزيد الإنتاج - لا تترك الثمار تكبر جداً",
+      "dataSource": "uploaded_file"
     },
     {
       "id": "crop_003",
@@ -1480,7 +2165,8 @@
         "فوسفور",
         "كبريت"
       ],
-      "tips_ar": "موعد الزراعة أهم عامل للإنتاج - أصناف مقاومة للصدأ متوفرة"
+      "tips_ar": "موعد الزراعة أهم عامل للإنتاج - أصناف مقاومة للصدأ متوفرة",
+      "dataSource": "uploaded_file"
     },
     {
       "id": "crop_004",
@@ -1510,7 +2196,8 @@
         "نيتروجين",
         "مغنسيوم"
       ],
-      "tips_ar": "الري المنتظم خلال التدريع يمنع الجرب، الكالسيوم يحسن جودة الدرنات"
+      "tips_ar": "الري المنتظم خلال التدريع يمنع الجرب، الكالسيوم يحسن جودة الدرنات",
+      "dataSource": "uploaded_file"
     },
     {
       "id": "crop_005",
@@ -1539,7 +2226,44 @@
         "فوسفور",
         "زنك"
       ],
-      "tips_ar": "دودة الحشد تحتاج مراقبة مبكرة جداً - الزنك ضروري للذرة في التربة المصرية"
+      "tips_ar": "دودة الحشد تحتاج مراقبة مبكرة جداً - الزنك ضروري للذرة في التربة المصرية",
+      "dataSource": "uploaded_file"
     }
-  ]
+  ],
+  "ai_chat_behavior": {
+    "greetings_ar": [
+      "أهلاً وسهلاً! أنا مساعدك الزراعي الذكي في HefnoPlant. كيف يمكنني مساعدتك اليوم؟",
+      "مرحباً بك في HefnoPlant! اسألني أي سؤال زراعي وسأساعدك بأفضل الإجابات العلمية.",
+      "أهلاً! أنا هنا لمساعدتك في كل ما يخص المحاصيل والأمراض والآفات والتسميد."
+    ],
+    "not_found_response_ar": "عذراً، لم أجد معلومات كافية عن هذا الموضوع في قاعدة بياناتي حالياً. يمكنك التواصل مع فريق HefnoPlant للحصول على مساعدة متخصصة.",
+    "escalation_rule_ar": "إذا كان السؤال متعلقًا بحالة تسمم بشري أو طوارئ صحية (لدغة عقرب، لدغة ثعبان، استنشاق مبيد)، يجب توجيه المستخدم فورًا لأقرب مستشفى أو خط الطوارئ ولا يُكتفى بإجابة نصية فقط — راجع قسم egypt_contacts في kb_food_safety وqسم personalProtection في kb_public_health_pests.",
+    "response_guidelines_ar": [
+      "ابدأ دائمًا بتحديد الوحدة المعرفية (module) الأنسب من keyword_routing_map أو symptom_diagnosis_router قبل الإجابة",
+      "عند سؤال تشخيصي غامض (مثل 'أوراقي اصفرت')، استخدم symptom_diagnosis_router أولًا لعرض كل الاحتمالات، ثم اسأل المستخدم سؤالًا توضيحيًا واحدًا لتضييق التشخيص (هل يوجد حشرات ظاهرة؟ هل الاصفرار على كل الورقة أم بين العروق فقط؟)",
+      "عند ذكر اسم مادة فعالة، اربطها دائمًا بمعرّفها الكامل (full_profile_reference) في قاعدة البيانات المتخصصة للحصول على الجرعة والتفاصيل الكاملة بدلًا من الاكتفاء بالملخص هنا",
+      "لا تذكر أبدًا أسماء تجارية لمنتجات مبيدات — استخدم اسم المادة الفعالة العلمي فقط دائمًا",
+      "عند سؤال عن محصول معين، تحقق من crop_cross_reference أولًا لعرض ملخص شامل (الأمراض والآفات الشائعة والاحتياج الغذائي) قبل الدخول لتفاصيل قاعدة بيانات واحدة",
+      "اذكر دائمًا فترة ما قبل الحصاد (PHI) عند التوصية بأي مبيد كيميائي"
+    ],
+    "sample_questions_ar": [
+      "أوراق الطماطم بتاعتي اصفرت، إيه المشكلة؟",
+      "إيه أعراض اللفحة المتأخرة في البطاطس؟",
+      "إيه أفضل مبيد للمن على الخيار؟",
+      "عندي نقص حديد في النباتات - إيه العلاج؟",
+      "إزاي أعمل برنامج تسميد للطماطم؟",
+      "أعراض الذباب الأبيض على الطماطم إيه؟",
+      "إيه جرعة الكبريت الميكروني للبياض الدقيقي؟",
+      "إزاي أعالج نيماتودا الجذور في التربة؟",
+      "إيه الفرق بين IRAC وFRAC وHRAC؟",
+      "عايز شهادة GlobalGAP لمزرعتي، أبدأ منين؟",
+      "إيه الحد الأقصى المسموح لمتبقيات المبيدات في الطماطم المصدرة لأوروبا؟",
+      "عندي نمل أبيض في جذور نخلة، أعمل إيه؟",
+      "إيه أفضل مبيد نيماتودي حيوي آمن للزراعة العضوية؟",
+      "أوراق نباتي فيها نسيج حريري دقيق، إيه المشكلة؟",
+      "إيه الفرق بين البياض الدقيقي والبياض الزغبي؟",
+      "نبتة الطماطم عندي فيها ذبول مفاجئ وبقطع الساق لقيت لون بني جوه، إيه ده؟",
+      "عندي نبات غريب لونه أصفر برتقالي ملفوف حوالين نبات الفول، إيه ده وأعمل إيه؟"
+    ]
+  }
 }

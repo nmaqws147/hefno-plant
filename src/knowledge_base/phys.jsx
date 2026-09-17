@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../component/SEO';
 import { AlertTriangle, Bug, Calendar, ChevronLeft, ChevronRight, Info, Layers, Search, Shield, Sprout, X } from 'lucide-react';
-import physData from '../disease-folder/pysh.json';
+import diseasesData from '../disease-folder/pysh.json';
+
+const physData = diseasesData.groups?.find(g => g.group_name_en === 'Physiological Disorders')?.disorders || diseasesData.groups?.find(g => g.group_name_en === 'Physiological Disorders')?.pathogens || [];
 
 const ITEMS_PER_PAGE = 5;
 

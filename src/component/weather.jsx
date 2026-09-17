@@ -4,8 +4,8 @@ import SEO from './SEO';
 import { makeBreadcrumbs, makeWebApp } from './structuredData';
 import {
   MapPin, Clock, RefreshCw, CloudSun, CloudRain, Wind,
-  Droplets, Eye, Sun, Gauge,
-  Info, X, ChevronLeft, Search, Check, Sprout, CalendarDays,
+  Droplets, Search, Sun, Gauge,
+  Info, X, ChevronLeft, Check, Sprout, CalendarDays,
   AlertTriangle, Ban, Lightbulb, Leaf, Moon, Wheat, Cloud,
   Edit
 } from 'lucide-react';
@@ -52,7 +52,7 @@ const WeatherScreen = ({ id }) => {
   useEffect(() => {
     const savedCrops = localStorage.getItem('userCrops');
     if (savedCrops) {
-      setUserCrops(JSON.parse(savedCrops));
+      try { setUserCrops(JSON.parse(savedCrops)); } catch {}
     }
   }, []);
 
@@ -602,7 +602,7 @@ const WeatherScreen = ({ id }) => {
               </div>
             )}
             <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
-              <Eye size={14} className="text-blue-500 shrink-0" />
+              <Search size={14} className="text-blue-500 shrink-0" />
               <div className="min-w-0">
                 <div className="text-[10px] text-gray-400">الرؤية</div>
                 <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw?.visibility != null ? `${cw.visibility} كم` : '—'} · {cw?.visibility == null ? '—' : cw.visibility > 10 ? 'واضحة جداً' : cw.visibility > 5 ? 'متوسطة' : 'محدودة'}</div>
@@ -675,7 +675,7 @@ const WeatherScreen = ({ id }) => {
             )}
             <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl">
               <div className="size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center shrink-0">
-                <Eye size={18} className="text-blue-500" />
+                <Search size={18} className="text-blue-500" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[11px] font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide">الرؤية</div>

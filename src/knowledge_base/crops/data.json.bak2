@@ -1,37 +1,34 @@
 {
-  "database": {
-    "platform": "HefnoPlant",
-    "module": "crops_master_database",
-    "name_arabic": "قاعدة بيانات المحاصيل الزراعية الشاملة",
-    "version": "2.0.0",
-    "language": "ar",
-    "description_ar": "قاعدة بيانات شاملة لكل المحاصيل الزراعية في مصر (حقلية، خضر، فاكهة، زينة، طبية وعطرية) — 76 محصولًا بتفاصيل كاملة: المواسم، متطلبات التربة والري، الاحتياج الغذائي (N-P-K)، الأسمدة الموصى بها، الآفات والأمراض الشائعة، القيمة الغذائية، المناطق الجغرافية بمصر، الأهمية الاقتصادية، والقابلية للتصدير. كل محصول مربوط تلقائيًا ببرنامج التسميد الكامل الخاص به وبالملفات التفصيلية لآفاته وأمراضه.",
-    "scope": "كل فئات المحاصيل الزراعية في مصر: حقلية، خضروات، فاكهة، نباتات زينة، ونباتات طبية وعطرية.",
-    "total_groups": 5,
-    "total_crops": 76,
-    "data_composition": {
-      "from_uploaded_file": 41,
-      "compiled_by_ai_enriched": 35,
-      "note": "41 محصولًا من الملف الأصلي (قاعدة_بيانات_النباتات_والمحاصيل.docx) محفوظة بكامل تفاصيلها الغنية (19 حقلًا لكل محصول). 35 محصولًا إضافيًا كانت موجودة فقط كمراجع مختصرة (اسم + تصنيف) في ملف برامج التسميد المرفوع — تم إثراؤها هنا بملفات تعريف متوسطة العمق وواقعية (مواسم، تربة، ري، تسميد N-P-K، آفات وأمراض شائعة، أهمية اقتصادية) بناءً على طلب صريح من المستخدم بعدم الاكتفاء بالملفات الناقصة."
-    },
-    "cross_referencing_ar": "كل محصول مربوط تلقائيًا بـ: (1) برنامج التسميد الكامل الخاص به في hefnoplant_fertilization_programs.json عبر fertilization_program_reference، (2) الملف التفصيلي الكامل لكل آفة أو مرض مذكور في pests_and_diseases_ar عبر full_profile_reference (يشير لأحد: hefnoplant_insect_pests.json أو hefnoplant_mite_pests.json أو hefnoplant_nematode_pests.json أو hefnoplant_plant_diseases.json).",
-    "cross_reference_stats": {
-      "pest_disease_links_full_profiles": "42/107",
-      "pest_disease_links_enriched_profiles": "44/74",
-      "crops_with_fertilization_program": 76
-    },
-    "commercial_names_note": "لا توجد أسماء تجارية في هذا الملف — كل التوصيات بالمادة الفعالة أو اسم السماد العلمي/التجاري العام (وليس أسماء شركات) فقط.",
-    "source_files": [
-      "قاعدة_بيانات_النباتات_والمحاصيل.docx",
-      "hefnoplant_fertilization_programs.json"
-    ]
+  "metadata": {
+    "id": "hefnoplant_plants_db",
+    "name_ar": "قاعدة بيانات النباتات والمحاصيل",
+    "name_en": "HefnoPlant — Plants & Crops Database",
+    "version": "1.0.0",
+    "sources": [
+      "وزارة الزراعة واستصلاح الأراضي المصرية",
+      "مركز البحوث الزراعية — مصر",
+      "FAO — Food and Agriculture Organization",
+      "IPNI — International Plant Nutrition Institute",
+      "الجهاز المركزي للتعبئة العامة والإحصاء — مصر 2024"
+    ],
+    "groups_count": 5,
+    "total_plants": 41,
+    "last_updated": "2024"
   },
   "groups": [
     {
-      "group_id": "grp-field",
-      "group_name_ar": "المحاصيل الحقلية",
-      "group_name_en": "Field Crops",
+      "id": "grp-field",
+      "name_ar": "المحاصيل الحقلية",
+      "name_en": "Field Crops",
       "description_ar": "المحاصيل الرئيسية التي تُزرع على نطاق واسع في الأراضي الزراعية المصرية وتُشكل العمود الفقري للاقتصاد الزراعي",
+      "sub_categories": [
+        "حبوب",
+        "بقوليات",
+        "محاصيل زيتية",
+        "محاصيل سكرية",
+        "محاصيل ألياف"
+      ],
+      "plants_count": 12,
       "plants": [
         {
           "id": "plant-001",
@@ -134,12 +131,7 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "متوسطة"
             },
             {
               "name_ar": "حشرة سونة القمح",
@@ -149,11 +141,7 @@
             {
               "name_ar": "الحفار",
               "type": "حشرة",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "col-4",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -186,12 +174,7 @@
           ],
           "economic_importance_ar": "محصول استراتيجي — يغطي 60% من احتياج مصر من القمح",
           "organic_suitable": false,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-001",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-002",
@@ -286,11 +269,7 @@
             {
               "name_ar": "دودة الحشد الخريفية",
               "type": "حشرة",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "lep-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "لفحة الذرة",
@@ -331,12 +310,7 @@
           ],
           "economic_importance_ar": "غذاء — علف — صناعة نشا وزيت",
           "organic_suitable": false,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-004",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-003",
@@ -426,12 +400,7 @@
             {
               "name_ar": "اللفحة البكتيرية",
               "type": "مرض بكتيري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "add-9",
-                "group_id": "critical_additions",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "مرض الأورزا — البلاست",
@@ -475,12 +444,7 @@
           ],
           "economic_importance_ar": "غذاء رئيسي — محصول استراتيجي — مُقيَّدة مساحته لأسباب مائية",
           "organic_suitable": false,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-011",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-004",
@@ -577,20 +541,12 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "ذبابة البيضاء",
               "type": "حشرة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "hem-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "عفن الجذر",
@@ -620,12 +576,7 @@
           ],
           "economic_importance_ar": "محصول تصديري استراتيجي — صناعة النسيج — الزيت",
           "organic_suitable": false,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-012",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-005",
@@ -721,22 +672,12 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "الصدأ",
               "type": "مرض فطري",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-11",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -770,12 +711,7 @@
           ],
           "economic_importance_ar": "غذاء شعبي رئيسي — يُثري التربة بالنيتروجين للمحصول التالي",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-008",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-006",
@@ -873,11 +809,7 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "الديدان الخيطية",
@@ -914,12 +846,7 @@
           ],
           "economic_importance_ar": "مُكوِّن صناعة السكر — بديل استراتيجي لقصب السكر في الأراضي الجديدة",
           "organic_suitable": false,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-013",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-021",
@@ -1001,12 +928,7 @@
             {
               "name_ar": "ذبول الفيوزاريوم",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "asco-9",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "حشرة الجاسيد",
@@ -1042,12 +964,7 @@
           ],
           "economic_importance_ar": "زيت — طحينة — حلاوة — تصدير",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-014",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-022",
@@ -1131,12 +1048,7 @@
             {
               "name_ar": "صدأ الفول السوداني",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "basi-14",
-                "group_id": "basidiomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "الأفلاتوكسين (تلوث فطري)",
@@ -1172,12 +1084,7 @@
           ],
           "economic_importance_ar": "زيت نباتي — زبدة الفول السوداني — علف — تصنيع",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-015",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-023",
@@ -1269,11 +1176,7 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية"
             }
           ],
           "nutritional_value_per_100g": {
@@ -1304,12 +1207,7 @@
           ],
           "economic_importance_ar": "غذاء — تصدير طازج ومجفف",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-016",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-024",
@@ -1390,11 +1288,7 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -1425,12 +1319,7 @@
           ],
           "economic_importance_ar": "غذاء محلي — استيراد يُكمل الاحتياج",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-017",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-025",
@@ -1540,12 +1429,7 @@
           ],
           "economic_importance_ar": "غذاء — تصنيع حمص وفلافل",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-018",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-026",
@@ -1645,12 +1529,7 @@
             {
               "name_ar": "اللفحة البكتيرية",
               "type": "مرض بكتيري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "add-9",
-                "group_id": "critical_additions",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "مرض التخطط",
@@ -1686,427 +1565,23 @@
           ],
           "economic_importance_ar": "صناعة السكر — كحول — علف من مخلفات العصير",
           "organic_suitable": false,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-019",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "شعير",
-          "name_en": "Barley",
-          "name_scientific": "Hordeum vulgare",
-          "category": "محاصيل حقلية — حبوب",
-          "description_ar": "من أقدم محاصيل الحبوب زراعة، أكثر تحملًا للملوحة والجفاف من القمح، يُزرع في الأراضي الحدية وشبه الصحراوية بمصر وكعلف حيواني رئيسي.",
-          "seasons": {
-            "planting_season_ar": "نوفمبر-ديسمبر",
-            "harvest_season_ar": "إبريل-مايو",
-            "growth_duration_days": "120-140",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية",
-              "طينية خفيفة",
-              "أراضي ملحية معتدلة"
-            ],
-            "ph_range": "6.0-8.5",
-            "salinity_tolerance_ar": "عالي جدًا — من أكثر الحبوب تحملًا للملوحة",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1600-2200",
-            "critical_stages_ar": [
-              "الإنبات",
-              "الاستطالة",
-              "طرد السنابل",
-              "امتلاء الحبوب"
-            ],
-            "method_ar": "غمر أو رش"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "45-60",
-            "total_p_kg_per_feddan": "15-22",
-            "total_k_kg_per_feddan": "0-24",
-            "n_split_ar": "دفعتان: أساسي + تكبير عند الاستطالة"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "تربس القمح",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "thy-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "صدأ الخطوط الأصفر",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "basi-3",
-                "group_id": "basidiomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            },
-            {
-              "name_ar": "الذبول الفيوزاري",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الوادي الجديد",
-            "مطروح",
-            "سيناء",
-            "الأراضي الملحية بالدلتا الشمالية"
-          ],
-          "economic_importance_ar": "محصول علف أساسي ومكوّن رئيسي في صناعة الشعير للتخمير، ويُزرع كخيار أخير في الأراضي التي لا يناسبها القمح.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (سوق محلي وعلفي بالأساس)",
-          "id": "plant-042",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-020",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "برسيم مصري",
-          "name_en": "Egyptian Clover (Berseem)",
-          "name_scientific": "Trifolium alexandrinum",
-          "category": "محاصيل حقلية — علفية بقولية",
-          "description_ar": "المحصول العلفي الأول في مصر شتاءً، بقولي يُثبّت النيتروجين الجوي ويحسّن خصوبة التربة للمحصول التالي، يُحش عدة حشات خلال الموسم.",
-          "seasons": {
-            "planting_season_ar": "أكتوبر-نوفمبر",
-            "harvest_season_ar": "حشات متعددة ديسمبر-مايو",
-            "growth_duration_days": "دائم التجديد حتى 5-6 حشات",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طينية",
-              "طينية طميية"
-            ],
-            "ph_range": "6.5-7.5",
-            "salinity_tolerance_ar": "منخفض-متوسط",
-            "drainage_ar": "جيد، لا يتحمل الغدق"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "2500-3500 (موسم كامل)",
-            "critical_stages_ar": [
-              "بعد كل حشة مباشرة"
-            ],
-            "method_ar": "غمر"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "0-15 (بادئ فقط، النبات يثبت نيتروجينه)",
-            "total_p_kg_per_feddan": "22-30",
-            "total_k_kg_per_feddan": "0-24",
-            "n_split_ar": "دفعة بادئة صغيرة فقط قبل التلقيح البكتيري الفعّال"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن الأسود للفول",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-13",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "دودة ورق القطن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "lep-2",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "جميع محافظات الوجه البحري والقبلي"
-          ],
-          "economic_importance_ar": "العمود الفقري لتغذية الماشية والجاموس في مصر شتاءً، ويحسّن التربة للمحصول الصيفي التالي (قطن أو ذرة) بتثبيت النيتروجين.",
-          "organic_suitable": true,
-          "export_potential": "لا يُصدَّر (استهلاك علفي محلي بالكامل)",
-          "id": "plant-043",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-021",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "عباد الشمس",
-          "name_en": "Sunflower",
-          "name_scientific": "Helianthus annuus",
-          "category": "محاصيل حقلية — زيتية",
-          "description_ar": "محصول زيتي صيفي متوسع الزراعة في مصر لتقليل فجوة الزيوت المستوردة، يتحمل الجفاف النسبي جيدًا مقارنة بمحاصيل زيتية أخرى.",
-          "seasons": {
-            "planting_season_ar": "مارس-مايو",
-            "harvest_season_ar": "يوليو-سبتمبر",
-            "growth_duration_days": "90-120",
-            "season_type_ar": "صيفي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية",
-              "طينية طميية"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "2000-2500",
-            "critical_stages_ar": [
-              "الإنبات",
-              "تكوين الطبق الزهري",
-              "الإزهار",
-              "امتلاء البذور"
-            ],
-            "method_ar": "غمر أو تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "60-80",
-            "total_p_kg_per_feddan": "22-30",
-            "total_k_kg_per_feddan": "24-48",
-            "n_split_ar": "أساسي + تكبير عند 40-50 يومًا"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "دودة ورق القطن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "lep-2",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "الطيور (عصافير)",
-              "type": "آفة فقارية"
-            },
-            {
-              "name_ar": "عفن الرمادي",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الدلتا",
-            "الفيوم",
-            "أراضي الاستصلاح الجديد"
-          ],
-          "economic_importance_ar": "مصدر رئيسي لزيت الطعام محليًا، ويدخل في صناعة الأعلاف (كسب عباد الشمس) كمنتج ثانوي.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (يُوجَّه أساسًا للاستهلاك المحلي وصناعة الزيوت)",
-          "id": "plant-044",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-022",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "لوبيا",
-          "name_en": "Cowpea",
-          "name_scientific": "Vigna unguiculata",
-          "category": "محاصيل حقلية — بقولية",
-          "description_ar": "بقولية صيفية متعددة الاستخدام (بذور جافة أو قرون خضراء للاستهلاك الطازج)، متحملة للحرارة والجفاف النسبي أكثر من الفول والفاصوليا.",
-          "seasons": {
-            "planting_season_ar": "مارس-يونيو",
-            "harvest_season_ar": "يونيو-سبتمبر",
-            "growth_duration_days": "60-90",
-            "season_type_ar": "صيفي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية",
-              "طميية"
-            ],
-            "ph_range": "5.5-7.0",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1500-2000",
-            "critical_stages_ar": [
-              "الإنبات",
-              "التزهير",
-              "امتلاء القرون"
-            ],
-            "method_ar": "غمر أو تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "15-25 (بادئ)",
-            "total_p_kg_per_feddan": "22-30",
-            "total_k_kg_per_feddan": "24",
-            "n_split_ar": "دفعة بادئة فقط — بقولية تثبت نيتروجينها"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن الأسود للفول",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-13",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "دودة اللوز الأمريكية",
-              "type": "حشرة"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الصعيد",
-            "النوبارية",
-            "الأراضي الجديدة"
-          ],
-          "economic_importance_ar": "مصدر بروتين نباتي رخيص، ويُستخدم كعلف أخضر وسماد أخضر أحيانًا لتحسين التربة.",
-          "organic_suitable": true,
-          "export_potential": "متوسط (القرون الخضراء الطازجة لبعض أسواق الخليج)",
-          "id": "plant-045",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-023",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "كتان",
-          "name_en": "Flax",
-          "name_scientific": "Linum usitatissimum",
-          "category": "محاصيل حقلية — ألياف وزيتية",
-          "description_ar": "محصول مزدوج الغرض (ألياف للنسيج + بذور زيتية غنية بالأوميجا-3)، له تاريخ زراعي طويل في مصر القديمة، تراجعت مساحته حديثًا لصالح محاصيل أخرى.",
-          "seasons": {
-            "planting_season_ar": "أكتوبر-نوفمبر",
-            "harvest_season_ar": "مارس-إبريل",
-            "growth_duration_days": "150-160",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طينية",
-              "طينية طميية خصبة"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1800-2200",
-            "critical_stages_ar": [
-              "الإنبات",
-              "الاستطالة",
-              "التزهير"
-            ],
-            "method_ar": "غمر"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "30-45",
-            "total_p_kg_per_feddan": "15-22",
-            "total_k_kg_per_feddan": "0-24",
-            "n_split_ar": "أساسي + تكبير خفيف"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "الذبول الفيوزاري",
-              "type": "مرض فطري"
-            },
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "محافظات الوجه البحري تقليديًا (مساحة محدودة حاليًا)"
-          ],
-          "economic_importance_ar": "بذوره غذاء صحي متنامي الطلب عالميًا (أوميجا-3)، وأليافه تُستخدم في صناعات نسيجية متخصصة عالية القيمة.",
-          "organic_suitable": true,
-          "export_potential": "متوسط-مرتفع (بذور الكتان كسلعة صحية عالمية)",
-          "id": "plant-046",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-024",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "برسيم حجازي",
-          "name_en": "Alfalfa",
-          "name_scientific": "Medicago sativa",
-          "category": "محاصيل حقلية — علفية بقولية معمرة",
-          "description_ar": "محصول علفي معمر (يبقى في الأرض 3-5 سنوات) بعكس البرسيم المصري الحولي، أعلى قيمة غذائية بروتينية، يُحش عدة مرات على مدار العام.",
-          "seasons": {
-            "planting_season_ar": "زراعة مرة واحدة تدوم سنوات — الأنسب سبتمبر-أكتوبر أو مارس",
-            "harvest_season_ar": "حشات متكررة كل 25-30 يومًا طوال العام تقريبًا",
-            "growth_duration_days": "معمر 3-5 سنوات",
-            "season_type_ar": "معمر — نشاط طوال العام مع تباطؤ شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية عميقة جيدة الصرف"
-            ],
-            "ph_range": "6.5-7.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "ممتاز — حساس جدًا لارتفاع منسوب الماء الأرضي"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "4000-5000 سنويًا",
-            "critical_stages_ar": [
-              "بعد كل حشة"
-            ],
-            "method_ar": "غمر أو رش محوري"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "0-10 (بادئ فقط)",
-            "total_p_kg_per_feddan": "30-45 (سنويًا، يُفضَّل قبل الزراعة بكثافة لجذوره العميقة المعمرة)",
-            "total_k_kg_per_feddan": "48-72",
-            "n_split_ar": "لا يحتاج تسميدًا نيتروجينيًا منتظمًا — بقولية معمرة قوية التثبيت"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "نيماتودا تعقد الجذور",
-              "type": "نيماتودا",
-              "full_profile_reference": {
-                "full_profile_id": "nem-001",
-                "source_database": "hefnoplant_nematode_pests.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الوادي الجديد",
-            "النوبارية",
-            "مزارع الألبان الكبرى"
-          ],
-          "economic_importance_ar": "علف فائق الجودة لألبان الأبقار عالية الإنتاجية، ويحسّن بنية التربة بجذوره العميقة على مدى سنوات الزراعة.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (استهلاك علفي محلي)",
-          "id": "plant-047",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-025",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         }
-      ],
-      "plants_count": 18
+      ]
     },
     {
-      "group_id": "grp-vegetables",
-      "group_name_ar": "الخضروات",
-      "group_name_en": "Vegetables",
+      "id": "grp-vegetables",
+      "name_ar": "الخضروات",
+      "name_en": "Vegetables",
       "description_ar": "محاصيل الخضروات المصرية الرئيسية للاستهلاك المحلي والتصدير — تشمل الخضروات الورقية والثمرية والجذرية والبصلية",
+      "sub_categories": [
+        "خضروات ثمرية",
+        "خضروات ورقية",
+        "خضروات جذرية",
+        "خضروات بصلية",
+        "خضروات قرعية"
+      ],
+      "plants_count": 11,
       "plants": [
         {
           "id": "plant-007",
@@ -2220,20 +1695,12 @@
             {
               "name_ar": "الذبابة البيضاء",
               "type": "حشرة",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "hem-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "العنكبوت الأحمر",
               "type": "حشرة دقيقة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "اللفحة المبكرة والمتأخرة",
@@ -2279,12 +1746,7 @@
           ],
           "economic_importance_ar": "تصدير طازج وتصنيع — صلصة — معجون — طازج",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-002",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-008",
@@ -2385,12 +1847,7 @@
             {
               "name_ar": "اللفحة المتأخرة",
               "type": "مرض فطري",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-2",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "الجرب العادي",
@@ -2440,12 +1897,7 @@
           ],
           "economic_importance_ar": "تصدير — تصنيع شيبس — استهلاك طازج",
           "organic_suitable": false,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-003",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-009",
@@ -2585,12 +2037,7 @@
           ],
           "economic_importance_ar": "تصدير رئيسي — المملكة العربية السعودية وأوروبا أكبر الأسواق",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-005",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-010",
@@ -2689,21 +2136,12 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "العنكبوت الأحمر",
               "type": "حشرة دقيقة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "ذبابة الأوراق",
@@ -2740,12 +2178,7 @@
           ],
           "economic_importance_ar": "تصدير طازج للخليج وأوروبا — زراعة محمية",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-010",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-011",
@@ -2834,11 +2267,7 @@
             {
               "name_ar": "العنكبوت الأحمر",
               "type": "حشرة دقيقة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "فيروس الموزايك",
@@ -2881,12 +2310,7 @@
           ],
           "economic_importance_ar": "تصدير طازج ومجفف وبابريكا",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-026",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-027",
@@ -2975,12 +2399,7 @@
             {
               "name_ar": "البياض الزغبي",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-6",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "حشرة الحفّار",
@@ -3013,12 +2432,7 @@
           ],
           "economic_importance_ar": "تصدير لأوروبا — استهلاك طازج",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-027",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-028",
@@ -3104,21 +2518,12 @@
             {
               "name_ar": "البياض الزغبي",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-6",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -3147,12 +2552,7 @@
           ],
           "economic_importance_ar": "طازج — مجمد — تصدير",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-028",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-029",
@@ -3270,12 +2670,7 @@
           ],
           "economic_importance_ar": "غذاء شعبي أساسي — تجفيف وتصنيع",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-029",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-030",
@@ -3370,21 +2765,12 @@
             {
               "name_ar": "العنكبوت الأحمر",
               "type": "حشرة دقيقة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "ذبول الفيوزاريوم",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "asco-9",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             }
           ],
           "nutritional_value_per_100g": {
@@ -3413,12 +2799,7 @@
           ],
           "economic_importance_ar": "استهلاك محلي — تصدير محدود",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-030",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-031",
@@ -3541,12 +2922,7 @@
           ],
           "economic_importance_ar": "طازج — تصنيع عصائر — تصدير",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-031",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-032",
@@ -3636,12 +3012,7 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "ذبابة الأوراق",
@@ -3674,761 +3045,23 @@
           ],
           "economic_importance_ar": "استهلاك طازج — تصدير",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-032",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "ثوم",
-          "name_en": "Garlic",
-          "name_scientific": "Allium sativum",
-          "category": "خضروات بصلية",
-          "description_ar": "محصول تصديري مهم لمصر (من أكبر مصدري الثوم عالميًا)، شتوي طويل الموسم، يحتاج فترة برودة كافية لتكوين الفصوص.",
-          "seasons": {
-            "planting_season_ar": "أغسطس-أكتوبر",
-            "harvest_season_ar": "مارس-مايو",
-            "growth_duration_days": "150-210",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية خفيفة",
-              "رملية طميية جيدة الصرف"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض-متوسط",
-            "drainage_ar": "ممتاز — يتعفن في التربة الرطبة"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1800-2200",
-            "critical_stages_ar": [
-              "الإنبات",
-              "تكوين الفصوص",
-              "قبل الحصاد بـ3 أسابيع (وقف الري)"
-            ],
-            "method_ar": "تنقيط أو رش"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "60-80",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "48-60",
-            "n_split_ar": "يُوقف قبل التقفيل بشهر لتحسين قابلية التخزين"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "ذبابة البصل",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "العفن الأبيض",
-              "type": "مرض فطري"
-            },
-            {
-              "name_ar": "التربس",
-              "type": "حشرة"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "أسيوط",
-            "المنيا",
-            "الفيوم",
-            "الوادي الجديد"
-          ],
-          "economic_importance_ar": "من أهم محاصيل مصر التصديرية، بصلة معمرة تخزينية القيمة تدخل في كل المطابخ.",
-          "organic_suitable": true,
-          "export_potential": "مرتفع جدًا (مصر من كبار مصدري الثوم عالميًا)",
-          "id": "plant-048",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-033",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "بطاطا حلوة",
-          "name_en": "Sweet Potato",
-          "name_scientific": "Ipomoea batatas",
-          "category": "خضروات درنية",
-          "description_ar": "محصول درني صيفي متزايد الأهمية غذائيًا (غني بفيتامين A)، أقل احتياجًا للمدخلات من البطاطس العادية ومقاوم نسبيًا للأمراض.",
-          "seasons": {
-            "planting_season_ar": "مارس-يونيو (شتلات خضرية)",
-            "harvest_season_ar": "يوليو-نوفمبر",
-            "growth_duration_days": "100-150",
-            "season_type_ar": "صيفي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية خفيفة"
-            ],
-            "ph_range": "5.5-6.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "2000-2500",
-            "critical_stages_ar": [
-              "بعد الشتل",
-              "تكوين الدرنات"
-            ],
-            "method_ar": "تنقيط أو غمر خفيف"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "40-60 (باعتدال — الإفراط يقلل الدرنات لصالح النمو الخضري)",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "60-90 (عنصر أساسي لجودة الدرنة)",
-            "n_split_ar": "معتدل ومبكر فقط"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "سوسة البطاطا الحلوة",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "نيماتودا تعقد الجذور",
-              "type": "نيماتودا",
-              "full_profile_reference": {
-                "full_profile_id": "nem-001",
-                "source_database": "hefnoplant_nematode_pests.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الشرقية",
-            "الدقهلية",
-            "أراضي الاستصلاح الرملية"
-          ],
-          "economic_importance_ar": "محصول أمن غذائي واعد، مقاوم للجفاف نسبيًا مقارنة بالبطاطس، وطلب تصديري متنامٍ.",
-          "organic_suitable": true,
-          "export_potential": "متوسط ومتنامٍ (أوروبا وأسواق الخليج)",
-          "id": "plant-049",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-034",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "فاصوليا خضراء",
-          "name_en": "Green Beans (Snap Beans)",
-          "name_scientific": "Phaseolus vulgaris",
-          "category": "خضروات قرنية",
-          "description_ar": "محصول تصديري رئيسي لمصر لأوروبا، دورة نمو قصيرة، حساس جدًا للصقيع والحرارة الشديدة معًا فيحتاج توقيتًا دقيقًا.",
-          "seasons": {
-            "planting_season_ar": "فبراير-مارس (نيلي) وأغسطس-سبتمبر (خريفي)",
-            "harvest_season_ar": "إبريل-مايو وأكتوبر-نوفمبر",
-            "growth_duration_days": "55-65",
-            "season_type_ar": "صيفي مبكر وخريفي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية خفيفة جيدة الصرف"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض — حساس جدًا للملوحة",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1200-1600 (موسم قصير)",
-            "critical_stages_ar": [
-              "الإنبات",
-              "التزهير",
-              "امتلاء القرون"
-            ],
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "20-30 (بادئ)",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "48-60",
-            "n_split_ar": "دفعة بادئة خفيفة فقط — بقولية"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "الذبابة البيضاء",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "أنثراكنوز الفاصوليا",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "النوبارية",
-            "الإسماعيلية",
-            "أراضي الاستصلاح المصدّرة"
-          ],
-          "economic_importance_ar": "من أهم الخضروات التصديرية المصرية الطازجة لأوروبا خارج موسم الإنتاج الأوروبي.",
-          "organic_suitable": true,
-          "export_potential": "مرتفع جدًا (تصدير طازج رئيسي لأوروبا)",
-          "id": "plant-050",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-035",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "بازلاء",
-          "name_en": "Green Peas",
-          "name_scientific": "Pisum sativum",
-          "category": "خضروات قرنية",
-          "description_ar": "بقولية شتوية تُستهلك طازجة أو مجمدة أو مصنعة، تفضل الطقس البارد المعتدل وتتضرر من الحرارة المبكرة.",
-          "seasons": {
-            "planting_season_ar": "أكتوبر-نوفمبر",
-            "harvest_season_ar": "يناير-مارس",
-            "growth_duration_days": "75-90",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية خفيفة"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "منخفض-متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1400-1800",
-            "critical_stages_ar": [
-              "الإنبات",
-              "التزهير",
-              "امتلاء القرون"
-            ],
-            "method_ar": "غمر أو تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "15-25 (بادئ)",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "24-48",
-            "n_split_ar": "دفعة بادئة فقط"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "البياض الدقيقي",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الدلتا",
-            "الفيوم",
-            "بني سويف"
-          ],
-          "economic_importance_ar": "خضار شتوي شائع للاستهلاك الطازج والتجميد والتصنيع الغذائي (كونسروة).",
-          "organic_suitable": true,
-          "export_potential": "متوسط (مجمدة أساسًا)",
-          "id": "plant-051",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-036",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "ملفوف",
-          "name_en": "Cabbage",
-          "name_scientific": "Brassica oleracea var. capitata",
-          "category": "خضروات ورقية صليبية",
-          "description_ar": "من أهم الخضروات الشتوية الشعبية في مصر، سهل الزراعة نسبيًا لكنه عرضة لآفات الصليبيات الشرسة (فراشة الملفوف).",
-          "seasons": {
-            "planting_season_ar": "أغسطس-أكتوبر (شتلًا)",
-            "harvest_season_ar": "نوفمبر-فبراير",
-            "growth_duration_days": "70-100",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طينية طميية خصبة"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1800-2200",
-            "critical_stages_ar": [
-              "بعد الشتل",
-              "تكوين الرأس"
-            ],
-            "method_ar": "غمر أو تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "80-100",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "48-72",
-            "n_split_ar": "أساسي + تكبيرتان خلال النمو الخضري"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "فراشة الملفوف",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "lep-14",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "العفن الطري البكتيري",
-              "type": "مرض بكتيري",
-              "full_profile_reference": {
-                "full_profile_id": "bact-2",
-                "group_id": "bacteria",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "جميع محافظات الدلتا والوجه القبلي"
-          ],
-          "economic_importance_ar": "خضار شتوي أساسي رخيص التكلفة وشائع الاستهلاك محليًا.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (سوق محلي بالأساس)",
-          "id": "plant-052",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-037",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "قرنبيط",
-          "name_en": "Cauliflower",
-          "name_scientific": "Brassica oleracea var. botrytis",
-          "category": "خضروات صليبية",
-          "description_ar": "أكثر حساسية من الملفوف لدرجة الحرارة (يحتاج طقسًا باردًا معتدلًا مستقرًا لتكوين رأس جيد الجودة دون تلوّن أو تفرّق).",
-          "seasons": {
-            "planting_season_ar": "أغسطس-سبتمبر (شتلًا)",
-            "harvest_season_ar": "نوفمبر-يناير",
-            "growth_duration_days": "80-100",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طينية طميية خصبة"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض-متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1800-2200",
-            "critical_stages_ar": [
-              "بعد الشتل",
-              "تكوين الرأس الزهري"
-            ],
-            "method_ar": "غمر أو تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "90-110",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "48-72",
-            "n_split_ar": "أساسي + تكبيرتان"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "فراشة الملفوف",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "lep-14",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "نقص البورون (تسبب سويقات جوفاء)",
-              "type": "اضطراب فسيولوجي"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الدلتا",
-            "الجيزة"
-          ],
-          "economic_importance_ar": "خضار شتوي متوسط الطلب، يحتاج مهارة زراعية أعلى من الملفوف للحصول على جودة تصديرية.",
-          "organic_suitable": true,
-          "export_potential": "منخفض-متوسط",
-          "id": "plant-053",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-038",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "بروكلي",
-          "name_en": "Broccoli",
-          "name_scientific": "Brassica oleracea var. italica",
-          "category": "خضروات صليبية",
-          "description_ar": "متزايد الطلب في مصر لقيمته الغذائية العالية ووعيه الصحي المتنامي، دورة نمو أقصر من القرنبيط ويتحمل تفاوت الحرارة بشكل أفضل قليلًا.",
-          "seasons": {
-            "planting_season_ar": "أغسطس-أكتوبر (شتلًا)",
-            "harvest_season_ar": "أكتوبر-يناير",
-            "growth_duration_days": "60-80",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طينية طميية خصبة"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1700-2000",
-            "critical_stages_ar": [
-              "بعد الشتل",
-              "تكوين الرأس"
-            ],
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "80-100",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "48-60",
-            "n_split_ar": "أساسي + تكبير"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "فراشة الملفوف",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "lep-14",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الدلتا",
-            "أراضي الاستصلاح المصدّرة"
-          ],
-          "economic_importance_ar": "طلب متنامٍ محليًا وتصديريًا لسمعته الصحية العالية (مضادات أكسدة، فيتامين C وK).",
-          "organic_suitable": true,
-          "export_potential": "متوسط ومتنامٍ",
-          "id": "plant-054",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-039",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "بطيخ",
-          "name_en": "Watermelon",
-          "name_scientific": "Citrullus lanatus",
-          "category": "خضروات قرعية (فاكهية الاستخدام)",
-          "description_ar": "محصول صيفي شعبي جدًا في مصر، يحتاج مساحة زراعة كبيرة نسبيًا ومياهًا وفيرة في مراحل تكوين الثمار.",
-          "seasons": {
-            "planting_season_ar": "فبراير-إبريل",
-            "harvest_season_ar": "مايو-يوليو",
-            "growth_duration_days": "80-100",
-            "season_type_ar": "صيفي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية خفيفة"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "2500-3500",
-            "critical_stages_ar": [
-              "الإنبات",
-              "امتداد السيقان",
-              "تكوين الثمار",
-              "قبل الحصاد بأسبوع (تقليل الري لرفع السكريات)"
-            ],
-            "method_ar": "تنقيط أو غمر"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "60-90",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "72-100 (أساسي لحلاوة الثمرة)",
-            "n_split_ar": "أساسي + تكبير عند التزهير، يُخفَّض عند تكوين الثمار لصالح K"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "الذبابة البيضاء",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "البياض الزغبي على القرعيات",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-7",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الشرقية",
-            "الدلتا",
-            "أراضي الاستصلاح الجديدة"
-          ],
-          "economic_importance_ar": "فاكهة صيفية شعبية عالية الاستهلاك المحلي، وتصدير موسمي محدود لبعض الأسواق العربية.",
-          "organic_suitable": true,
-          "export_potential": "منخفض-متوسط (إقليمي بالأساس)",
-          "id": "plant-055",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-040",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "شمام",
-          "name_en": "Melon (Cantaloupe)",
-          "name_scientific": "Cucumis melo",
-          "category": "خضروات قرعية (فاكهية الاستخدام)",
-          "description_ar": "قرعية صيفية قريبة من البطيخ في احتياجاتها، حساس جدًا لتوقيت الحصاد لتحديد قمة النضج والحلاوة.",
-          "seasons": {
-            "planting_season_ar": "فبراير-إبريل",
-            "harvest_season_ar": "مايو-يوليو",
-            "growth_duration_days": "75-90",
-            "season_type_ar": "صيفي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "2200-3000",
-            "critical_stages_ar": [
-              "الإنبات",
-              "التزهير",
-              "تكوين الثمار"
-            ],
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "60-80",
-            "total_p_kg_per_feddan": "30-45",
-            "total_k_kg_per_feddan": "60-90",
-            "n_split_ar": "أساسي + تكبير، يُخفَّض قرب النضج"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "الذبابة البيضاء",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "البياض الدقيقي",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الشرقية",
-            "الإسماعيلية",
-            "أراضي الاستصلاح"
-          ],
-          "economic_importance_ar": "فاكهة صيفية عالية الطلب محليًا وتصدير موسمي جيد لبعض أسواق الخليج وأوروبا.",
-          "organic_suitable": true,
-          "export_potential": "متوسط",
-          "id": "plant-056",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-041",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "بامية",
-          "name_en": "Okra",
-          "name_scientific": "Abelmoschus esculentus",
-          "category": "خضروات ثمرية",
-          "description_ar": "محصول صيفي شعبي جدًا في المطبخ المصري، متحمل جيدًا للحرارة العالية، ويحتاج قطفًا متكررًا (كل يومين تقريبًا) للحفاظ على طراوة القرون.",
-          "seasons": {
-            "planting_season_ar": "مارس-يوليو",
-            "harvest_season_ar": "مايو-أكتوبر",
-            "growth_duration_days": "55-65 (بداية القطف)",
-            "season_type_ar": "صيفي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية",
-              "رملية طميية"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1800-2400",
-            "critical_stages_ar": [
-              "الإنبات",
-              "التزهير",
-              "فترة القطف المستمر"
-            ],
-            "method_ar": "غمر أو تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "50-70",
-            "total_p_kg_per_feddan": "22-30",
-            "total_k_kg_per_feddan": "36-48",
-            "n_split_ar": "أساسي + تكبير خلال فترة القطف الممتدة"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "دودة اللوز الوردية",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "lep-13",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "العنكبوت الأحمر",
-              "type": "أكاروس",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
-            },
-            {
-              "name_ar": "نيماتودا تعقد الجذور",
-              "type": "نيماتودا",
-              "full_profile_reference": {
-                "full_profile_id": "nem-001",
-                "source_database": "hefnoplant_nematode_pests.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "جميع محافظات مصر تقريبًا"
-          ],
-          "economic_importance_ar": "من أكثر الخضروات الصيفية استهلاكًا محليًا، ودورها كعائل بديل لدودة اللوز الوردية يجعله مهمًا في برامج مكافحة آفات القطن.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (استهلاك محلي أساسًا، تصدير محدود مجمدة)",
-          "id": "plant-057",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-042",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "فجل",
-          "name_en": "Radish",
-          "name_scientific": "Raphanus sativus",
-          "category": "خضروات جذرية صليبية",
-          "description_ar": "أسرع الخضروات الجذرية نموًا (جاهز للحصاد خلال 3-4 أسابيع فقط)، يُزرع على مدار العام تقريبًا في مصر مع تفضيل الطقس البارد لتحسين الطعم.",
-          "seasons": {
-            "planting_season_ar": "طوال العام تقريبًا، الأفضل سبتمبر-مارس",
-            "harvest_season_ar": "بعد 25-35 يومًا من الزراعة",
-            "growth_duration_days": "25-35",
-            "season_type_ar": "شتوي بالأساس، ممكن صيفًا مع رعاية أعلى"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية خفيفة تسمح بتمدد الجذر"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "600-900 (موسم قصير جدًا)",
-            "critical_stages_ar": [
-              "الإنبات",
-              "تكوين الجذر"
-            ],
-            "method_ar": "رش أو غمر خفيف متكرر"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "30-40",
-            "total_p_kg_per_feddan": "15-22",
-            "total_k_kg_per_feddan": "24-36",
-            "n_split_ar": "دفعة أساسية واحدة كافية لقصر الموسم"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "ذبابة الجذور",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "البياض الزغبي",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-6",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "جميع المحافظات (زراعة منتشرة وسريعة الدورة)"
-          ],
-          "economic_importance_ar": "محصول سريع العائد يناسب الدورات الزراعية القصيرة بين محاصيل رئيسية، طلب محلي ثابت.",
-          "organic_suitable": true,
-          "export_potential": "منخفض جدًا (سوق محلي بحت)",
-          "id": "plant-058",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-043",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         }
-      ],
-      "plants_count": 22
+      ]
     },
     {
-      "group_id": "grp-fruits",
-      "group_name_ar": "الفواكه",
-      "group_name_en": "Fruits",
+      "id": "grp-fruits",
+      "name_ar": "الفواكه",
+      "name_en": "Fruits",
       "description_ar": "الفواكه المصرية الرئيسية تشمل الفواكه الاستوائية وشبه الاستوائية والحمضيات والعنب والفراولة",
+      "sub_categories": [
+        "حمضيات",
+        "استوائية وشبه استوائية",
+        "عنبيات",
+        "توتيات",
+        "تفاحيات"
+      ],
+      "plants_count": 7,
       "plants": [
         {
           "id": "plant-012",
@@ -4589,12 +3222,7 @@
           ],
           "economic_importance_ar": "التصدير للمملكة وأوروبا — أهم محصول فاكهة تصديري",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-009",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-013",
@@ -4733,12 +3361,7 @@
           ],
           "economic_importance_ar": "تصدير — طازج ومصنع — عصير ومربى",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-076",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-014",
@@ -4842,21 +3465,12 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "العنكبوت الأحمر",
               "type": "حشرة دقيقة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
+              "severity": "عالية"
             }
           ],
           "nutritional_value_per_100g": {
@@ -4888,12 +3502,7 @@
           ],
           "economic_importance_ar": "تصدير لأوروبا — عصائر — مصنع",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-006",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-015",
@@ -4990,12 +3599,7 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "العفن الأسود Botrytis",
@@ -5040,12 +3644,7 @@
           ],
           "economic_importance_ar": "طازج — زبيب — عصير — تصدير",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-044",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-033",
@@ -5166,12 +3765,7 @@
           ],
           "economic_importance_ar": "طازج — عصير — طب — تصدير متنامٍ",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-045",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-034",
@@ -5290,12 +3884,7 @@
           ],
           "economic_importance_ar": "طازج — مجفف — تصدير",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-046",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-035",
@@ -5423,447 +4012,22 @@
           ],
           "economic_importance_ar": "استهلاك محلي ضخم — تصدير متنامٍ",
           "organic_suitable": false,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-007",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "خوخ",
-          "name_en": "Peach",
-          "name_scientific": "Prunus persica",
-          "category": "فاكهة متساقطة الأوراق",
-          "description_ar": "من أهم فاكهة اللوزيات في مصر، يحتاج ساعات برودة شتوية كافية لكسر السكون، حساس لتوقيت الإزهار المبكر عند دفء الشتاء غير الكافي.",
-          "seasons": {
-            "planting_season_ar": "غراسة شتوية (شجرة معمرة)",
-            "harvest_season_ar": "مايو-أغسطس حسب الصنف",
-            "growth_duration_days": "معمرة، إثمار من العام 3",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية عميقة جيدة الصرف"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض-متوسط",
-            "drainage_ar": "ممتاز — حساس جدًا لاختناق الجذور"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "3500-4500 سنويًا",
-            "critical_stages_ar": [
-              "الإزهار",
-              "عقد الثمار",
-              "تكبير الثمار قبل النضج"
-            ],
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "80-120 (للأشجار المثمرة)",
-            "total_p_kg_per_feddan": "40-60",
-            "total_k_kg_per_feddan": "80-120",
-            "n_split_ar": "بعد الحصاد وقبل التزهير، يُخفَّض أثناء نضج الثمار"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "ذبابة البحر المتوسط للفاكهة",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "dip-11",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "دودة ثمار الفاكهة",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "تجعد أوراق الخوخ",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "النوبارية",
-            "الفيوم",
-            "أراضي الاستصلاح الجديدة ذات الشتاء الأكثر برودة"
-          ],
-          "economic_importance_ar": "فاكهة صيفية عالية القيمة السوقية، وتحتاج اختيار أصناف منخفضة احتياج البرودة (Low-chill) لتناسب دفء شتاء مصر.",
-          "organic_suitable": true,
-          "export_potential": "متوسط",
-          "id": "plant-059",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-047",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "مشمش",
-          "name_en": "Apricot",
-          "name_scientific": "Prunus armeniaca",
-          "category": "فاكهة متساقطة الأوراق",
-          "description_ar": "من فاكهة اللوزيات المبكرة الإثمار في الموسم، إزهاره مبكر جدًا فيعرّضه لمخاطر الصقيع المتأخر في بعض السنوات.",
-          "seasons": {
-            "planting_season_ar": "غراسة شتوية (شجرة معمرة)",
-            "harvest_season_ar": "مايو-يونيو",
-            "growth_duration_days": "معمرة، إثمار من العام 3-4",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية جيدة الصرف"
-            ],
-            "ph_range": "6.5-7.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "3000-4000 سنويًا",
-            "critical_stages_ar": [
-              "الإزهار",
-              "عقد الثمار"
-            ],
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "70-100",
-            "total_p_kg_per_feddan": "35-50",
-            "total_k_kg_per_feddan": "70-100",
-            "n_split_ar": "بعد الحصاد وقبل التزهير"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "ذبابة البحر المتوسط للفاكهة",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "dip-11",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "عفن الرمادي",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "النوبارية",
-            "الفيوم",
-            "شمال سيناء"
-          ],
-          "economic_importance_ar": "فاكهة موسمية قصيرة العمر التخزيني، عالية الطلب طازجة ومجففة (قمر الدين المصري الشهير مصنوع منها).",
-          "organic_suitable": true,
-          "export_potential": "منخفض-متوسط (قصر فترة الصلاحية يحد التصدير الطازج)",
-          "id": "plant-060",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-048",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "تفاح",
-          "name_en": "Apple",
-          "name_scientific": "Malus domestica",
-          "category": "فاكهة متساقطة الأوراق",
-          "description_ar": "من أكثر فاكهة اللوزيات احتياجًا لساعات البرودة الشتوية، لذلك تُزرع في مصر بأصناف منخفضة الاحتياج البارد (Low-chill) بمناطق محدودة أكثر برودة نسبيًا.",
-          "seasons": {
-            "planting_season_ar": "غراسة شتوية (شجرة معمرة)",
-            "harvest_season_ar": "يونيو-سبتمبر حسب الصنف",
-            "growth_duration_days": "معمرة، إثمار من العام 3-4",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية عميقة"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "3500-4500 سنويًا",
-            "critical_stages_ar": [
-              "الإزهار",
-              "تكبير الثمار"
-            ],
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "80-110",
-            "total_p_kg_per_feddan": "40-55",
-            "total_k_kg_per_feddan": "90-130 (أساسي لجودة وتخزين الثمرة)",
-            "n_split_ar": "بعد الحصاد وأول الربيع"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "دودة ثمار الفاكهة",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "العنكبوت الأحمر الأوروبي",
-              "type": "أكاروس",
-              "full_profile_reference": {
-                "full_profile_id": "mite-4",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
-            },
-            {
-              "name_ar": "صدأ التفاح",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "مناطق محدودة أكثر برودة (سيناء المرتفعة، بعض مناطق الوادي الجديد بأصناف خاصة)"
-          ],
-          "economic_importance_ar": "زراعته في مصر محدودة نسبيًا مقارنة بالمناطق المعتدلة عالميًا؛ الغالبية العظمى من استهلاك مصر للتفاح مستوردة.",
-          "organic_suitable": true,
-          "export_potential": "منخفض جدًا (الإنتاج المحلي محدود ولا يغطي حتى الاستهلاك المحلي)",
-          "id": "plant-061",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-049",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "كمثرى",
-          "name_en": "Pear",
-          "name_scientific": "Pyrus communis",
-          "category": "فاكهة متساقطة الأوراق",
-          "description_ar": "مشابهة للتفاح في احتياجاتها المناخية (تحتاج برودة شتوية)، زراعتها في مصر محدودة جدًا وتعتمد على أصناف منخفضة الاحتياج البارد.",
-          "seasons": {
-            "planting_season_ar": "غراسة شتوية (شجرة معمرة)",
-            "harvest_season_ar": "يوليو-سبتمبر",
-            "growth_duration_days": "معمرة، إثمار من العام 4-5",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية عميقة جيدة الصرف"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "3500-4500 سنويًا",
-            "critical_stages_ar": [
-              "الإزهار",
-              "تكبير الثمار"
-            ],
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "70-100",
-            "total_p_kg_per_feddan": "35-50",
-            "total_k_kg_per_feddan": "80-110",
-            "n_split_ar": "بعد الحصاد وأول الربيع"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "دودة ثمار الفاكهة",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "اللفحة النارية البكتيرية",
-              "type": "مرض بكتيري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "مناطق محدودة أكثر برودة (مشابهة للتفاح)"
-          ],
-          "economic_importance_ar": "زراعة محدودة جدًا في مصر؛ معظم استهلاك السوق المحلي من الكمثرى مستورد.",
-          "organic_suitable": true,
-          "export_potential": "منخفض جدًا (لا يوجد فائض تصديري)",
-          "id": "plant-062",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-050",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "جوافة",
-          "name_en": "Guava",
-          "name_scientific": "Psidium guajava",
-          "category": "فاكهة استوائية وشبه استوائية",
-          "description_ar": "فاكهة شعبية جدًا في مصر، شجرة قوية النمو متحملة نسبيًا لتنوع أنواع التربة، تُثمر مرتين سنويًا (صيفي وشتوي) في بعض المناطق.",
-          "seasons": {
-            "planting_season_ar": "غراسة (شجرة معمرة)، ممكن على مدار العام مع الري الجيد",
-            "harvest_season_ar": "أغسطس-نوفمبر (الموسم الرئيسي) ومارس-مايو (موسم ثانٍ في بعض المناطق)",
-            "growth_duration_days": "معمرة، إثمار من العام 2-3",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية",
-              "طينية طميية"
-            ],
-            "ph_range": "5.5-7.5",
-            "salinity_tolerance_ar": "متوسط-عالي نسبيًا",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "3000-4000 سنويًا",
-            "critical_stages_ar": [
-              "الإزهار",
-              "عقد وتكبير الثمار"
-            ],
-            "method_ar": "غمر أو تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "70-100",
-            "total_p_kg_per_feddan": "35-50",
-            "total_k_kg_per_feddan": "70-100",
-            "n_split_ar": "دفعتان رئيسيتان قبل كل موسم إزهار"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "ذبابة البحر المتوسط للفاكهة",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "dip-11",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "دودة ثمار الفاكهة",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "عفن الرمادي",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "جميع المحافظات تقريبًا (شجرة منزلية وتجارية شائعة جدًا)"
-          ],
-          "economic_importance_ar": "فاكهة شعبية رخيصة نسبيًا وعالية الإنتاجية، استهلاك محلي كثيف طازجة وفي العصائر.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (استهلاك محلي كثيف يستوعب معظم الإنتاج)",
-          "id": "plant-063",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-051",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "نبق",
-          "name_en": "Sidr (Jujube)",
-          "name_scientific": "Ziziphus spina-christi",
-          "category": "فاكهة بلدية متحملة للجفاف",
-          "description_ar": "شجرة بلدية شديدة التحمل للجفاف والملوحة والحرارة، تُزرع غالبًا بأقل رعاية في الأراضي الهامشية، ثمارها وأوراقها لهما استخدامات غذائية وتقليدية.",
-          "seasons": {
-            "planting_season_ar": "غراسة (شجرة معمرة شديدة التحمل)",
-            "harvest_season_ar": "سبتمبر-نوفمبر",
-            "growth_duration_days": "معمرة، إثمار من العام 3-4",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "أي نوع تربة تقريبًا حتى الفقيرة والملحية"
-            ],
-            "ph_range": "6.0-8.5",
-            "salinity_tolerance_ar": "عالي جدًا",
-            "drainage_ar": "غير حساس نسبيًا"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1500-2500 سنويًا (منخفض جدًا مقارنة بفاكهة أخرى)",
-            "critical_stages_ar": [
-              "السنوات الأولى بعد الغرس فقط"
-            ],
-            "method_ar": "غمر متباعد أو بعل جزئي بعد التأسيس"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "20-40 (حاجة منخفضة جدًا)",
-            "total_p_kg_per_feddan": "15-20",
-            "total_k_kg_per_feddan": "20-30",
-            "n_split_ar": "دفعة سنوية بسيطة كافية"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "ذبابة الفاكهة",
-              "type": "حشرة"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "سيناء",
-            "الصحراء الغربية",
-            "الأراضي الهامشية الجافة عمومًا"
-          ],
-          "economic_importance_ar": "شجرة بيئية واقتصادية متينة للمناطق الجافة الهامشية التي لا تناسبها معظم أشجار الفاكهة الأخرى، وذات مكانة تراثية وثقافية.",
-          "organic_suitable": true,
-          "export_potential": "منخفض جدًا (سوق محلي وتقليدي بحت)",
-          "id": "plant-064",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-052",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "توت شامي",
-          "name_en": "Mulberry",
-          "name_scientific": "Morus alba",
-          "category": "فاكهة بلدية",
-          "description_ar": "شجرة معمرة سريعة النمو، ثمارها موسمية قصيرة العمر التخزيني جدًا (تُستهلك طازجة محليًا فور القطف)، وأوراقها تُستخدم تقليديًا في تربية دودة القز.",
-          "seasons": {
-            "planting_season_ar": "غراسة (شجرة معمرة)",
-            "harvest_season_ar": "إبريل-مايو",
-            "growth_duration_days": "معمرة، إثمار من العام 2-3",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "أي تربة جيدة الصرف تقريبًا"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "متوسط-عالي",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "2500-3500 سنويًا",
-            "critical_stages_ar": [
-              "الإزهار",
-              "تكوين الثمار"
-            ],
-            "method_ar": "غمر"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "50-70",
-            "total_p_kg_per_feddan": "25-35",
-            "total_k_kg_per_feddan": "40-60",
-            "n_split_ar": "دفعة شتوية قبل التزهير"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "ذبابة الفاكهة",
-              "type": "حشرة"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "منتشرة كشجرة زينة ومنزلية في كل محافظات مصر تقريبًا"
-          ],
-          "economic_importance_ar": "زراعة محدودة تجاريًا لقصر فترة صلاحية الثمرة الشديد، لكنها شائعة كشجرة منزلية وحدائق.",
-          "organic_suitable": true,
-          "export_potential": "منعدم تقريبًا (لا تتحمل النقل لقصر عمرها بعد القطف)",
-          "id": "plant-065",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-053",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         }
-      ],
-      "plants_count": 14
+      ]
     },
     {
-      "group_id": "grp-ornamental",
-      "group_name_ar": "نباتات الزينة",
-      "group_name_en": "Ornamental Plants",
+      "id": "grp-ornamental",
+      "name_ar": "نباتات الزينة",
+      "name_en": "Ornamental Plants",
       "description_ar": "نباتات تُزرع لجمالها وزخرفتها سواء للزراعة الداخلية أو الحدائق العامة والمنازل",
+      "sub_categories": [
+        "نباتات داخلية",
+        "زهور حولية",
+        "شجيرات زينة",
+        "نخيل وأشجار زينة"
+      ],
+      "plants_count": 5,
       "plants": [
         {
           "id": "plant-016",
@@ -5957,12 +4121,7 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "العفن الرمادي",
@@ -5972,20 +4131,12 @@
             {
               "name_ar": "العنكبوت الأحمر",
               "type": "حشرة دقيقة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية"
             }
           ],
           "nutritional_value_per_100g": null,
@@ -6009,12 +4160,7 @@
           ],
           "economic_importance_ar": "تصدير للخليج وأوروبا — صناعة عطور — زينة",
           "organic_suitable": false,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-065",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-017",
@@ -6090,11 +4236,7 @@
             {
               "name_ar": "سوسة النخيل الحمراء",
               "type": "حشرة",
-              "severity": "عالية جداً",
-              "full_profile_reference": {
-                "full_profile_id": "col-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "عالية جداً"
             },
             {
               "name_ar": "حشرة الرافعة",
@@ -6119,12 +4261,7 @@
           ],
           "economic_importance_ar": "تنسيق حدائق — تشجير شوارع — منتجعات سياحية",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-066",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-036",
@@ -6214,11 +4351,7 @@
             {
               "name_ar": "العنكبوت الأحمر",
               "type": "حشرة دقيقة",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": null,
@@ -6241,12 +4374,7 @@
           ],
           "economic_importance_ar": "صناعة عطور — تصدير أزهار مقطرة — زينة",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-067",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-037",
@@ -6320,11 +4448,7 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "منخفضة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "منخفضة"
             },
             {
               "name_ar": "التبقع الورقي",
@@ -6351,12 +4475,7 @@
           ],
           "economic_importance_ar": "تنسيق حدائق — مناطق سياحية — شوارع",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-068",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         },
         {
           "id": "plant-038",
@@ -6435,21 +4554,12 @@
             {
               "name_ar": "البياض الدقيقي",
               "type": "مرض فطري",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "متوسطة"
             },
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": null,
@@ -6472,305 +4582,21 @@
           ],
           "economic_importance_ar": "زينة داخلية — هدايا — تصدير محدود",
           "organic_suitable": true,
-          "export_potential": false,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-069",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "فيكس (نبات داخلي)",
-          "name_en": "Ficus",
-          "name_scientific": "Ficus elastica / Ficus benjamina",
-          "category": "نباتات زينة داخلية",
-          "description_ar": "من أكثر نباتات الزينة الداخلية شيوعًا لسهولة العناية وتحمّله لظروف الإضاءة المنخفضة نسبيًا داخل المنازل والمكاتب.",
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "بيئة زراعية خفيفة جيدة الصرف (بيتموس + بيرلايت)"
-            ],
-            "ph_range": "6.0-7.0",
-            "drainage_ar": "ممتاز — حساس لتعفن الجذور من الري الزائد"
-          },
-          "irrigation": {
-            "critical_stages_ar": [
-              "الري عند جفاف السطح العلوي للتربة فقط — يتحمل الجفاف أفضل من الغدق"
-            ],
-            "method_ar": "ري يدوي منتظم"
-          },
-          "nutrition": {
-            "n_split_ar": "سماد نباتات داخلية متوازن (NPK متساوٍ تقريبًا) كل 3-4 أسابيع في موسم النمو (ربيع-صيف)، يُوقف شتاءً"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "الحشرة القشرية",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "البق الدقيقي",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-8",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            }
-          ],
-          "economic_importance_ar": "من أوسع نباتات الديكور الداخلي انتشارًا تجاريًا في محلات الزينة والمشاتل.",
-          "organic_suitable": true,
-          "export_potential": "غير مطبق (نبات زينة استهلاك محلي/زخرفي)",
-          "id": "plant-066",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-070",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "ديفنباخيا",
-          "name_en": "Dieffenbachia",
-          "name_scientific": "Dieffenbachia seguine",
-          "category": "نباتات زينة داخلية",
-          "description_ar": "نبات ورقي داخلي شهير بأوراقه المرقطة الجذابة، يحتاج رطوبة معتدلة وإضاءة غير مباشرة، **سام عند البلع** فيجب توخي الحذر مع الأطفال والحيوانات الأليفة.",
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "بيئة زراعية غنية جيدة الصرف"
-            ],
-            "ph_range": "5.5-6.5",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "critical_stages_ar": [
-              "ري منتظم مع تجنب تشبع التربة"
-            ],
-            "method_ar": "ري يدوي"
-          },
-          "nutrition": {
-            "n_split_ar": "سماد نباتات ورقية داخلية كل 4 أسابيع في موسم النمو"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "البق الدقيقي",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-8",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "العنكبوت الأحمر",
-              "type": "أكاروس",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
-            }
-          ],
-          "economic_importance_ar": "نبات زينة داخلي تجاري شائع في المكاتب والمنازل.",
-          "safety_warning_ar": "سام عند المضغ أو البلع (يحتوي بلورات أكسالات الكالسيوم) — يسبب تهيجًا شديدًا للفم والحلق، يُبعد عن متناول الأطفال الصغار والحيوانات الأليفة",
-          "organic_suitable": true,
-          "export_potential": "غير مطبق",
-          "id": "plant-067",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-071",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "كروتون",
-          "name_en": "Croton",
-          "name_scientific": "Codiaeum variegatum",
-          "category": "نباتات زينة (داخلية وخارجية)",
-          "description_ar": "نبات زينة شهير بألوان أوراقه الزاهية المتعددة (أصفر، أحمر، برتقالي)، يحتاج إضاءة قوية (حتى شمس مباشرة جزئية) للحفاظ على حدة ألوانه.",
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية جيدة الصرف غنية بالمادة العضوية"
-            ],
-            "ph_range": "6.0-6.5",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "critical_stages_ar": [
-              "ري منتظم، حساس لجفاف التربة الكامل"
-            ],
-            "method_ar": "ري يدوي أو تنقيط للزراعات الخارجية"
-          },
-          "nutrition": {
-            "n_split_ar": "سماد متوازن كل 3-4 أسابيع في الصيف، يُقلَّل شتاءً"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "الحشرة القشرية",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "العنكبوت الأحمر",
-              "type": "أكاروس",
-              "full_profile_reference": {
-                "full_profile_id": "mite-1",
-                "source_database": "hefnoplant_mite_pests.json"
-              }
-            }
-          ],
-          "economic_importance_ar": "نبات زينة تجاري شائع جدًا في تنسيق الحدائق والمداخل لألوانه الزاهية على مدار العام.",
-          "organic_suitable": true,
-          "export_potential": "غير مطبق",
-          "id": "plant-068",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-072",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "صبار",
-          "name_en": "Cactus",
-          "name_scientific": "Cactaceae spp.",
-          "category": "نباتات زينة صحراوية",
-          "description_ar": "عائلة نباتية واسعة شديدة التحمل للجفاف، الأنسب لمناخ مصر الجاف والمساحات الخارجية قليلة الري، تحتاج بيئة زراعية سريعة الصرف جدًا لتجنب تعفن الجذور.",
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية خالصة أو خلطة صبار تجارية سريعة الصرف جدًا"
-            ],
-            "ph_range": "6.0-7.5",
-            "drainage_ar": "ممتاز جدًا — أهم عامل نجاح على الإطلاق"
-          },
-          "irrigation": {
-            "critical_stages_ar": [
-              "ري نادر جدًا — كل 2-4 أسابيع صيفًا، وشبه معدوم شتاءً"
-            ],
-            "method_ar": "ري يدوي متباعد جدًا"
-          },
-          "nutrition": {
-            "n_split_ar": "سماد صبار متخصص منخفض النيتروجين مرتين فقط سنويًا (ربيع وأوائل صيف)"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "البق الدقيقي",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-8",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "عفن الجذور (من الري الزائد)",
-              "type": "مرض فطري"
-            }
-          ],
-          "economic_importance_ar": "نبات زينة اقتصادي منخفض التكلفة التشغيلية (مياه وصيانة)، متزايد الشعبية في تنسيق الحدائق الصحراوية بمصر.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (بعض الأنواع النادرة تُصدَّر لهواة التجميع)",
-          "id": "plant-069",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-073",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "نجيل الزينة",
-          "name_en": "Ornamental Turf Grass",
-          "name_scientific": "Cynodon dactylon / Paspalum spp.",
-          "category": "نجيل ومسطحات خضراء",
-          "description_ar": "المسطحات الخضراء المستخدمة في الحدائق والملاعب، تحتاج صيانة دورية (جز، تسميد، مكافحة حشائش) أعلى من معظم نباتات الزينة الأخرى للحفاظ على مظهرها الكثيف الموحد.",
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية جيدة التهوية"
-            ],
-            "ph_range": "6.0-7.0",
-            "drainage_ar": "جيد — يتأثر بتجمع المياه لفترات طويلة"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "3000-5000 سنويًا حسب المناخ والنوع",
-            "critical_stages_ar": [
-              "الصيف الحار يحتاج ريًا متكررًا"
-            ],
-            "method_ar": "رش (رشاشات) — الأنسب لتغطية منتظمة"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "150-250 سنويًا (احتياج عالٍ نسبيًا للحفاظ على الكثافة واللون)",
-            "n_split_ar": "دفعات شهرية صغيرة متكررة طوال موسم النمو"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "دودة الحشد الخريفية",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "lep-3",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "حشائش عريضة الأوراق منافسة",
-              "type": "حشيشة"
-            }
-          ],
-          "economic_importance_ar": "عنصر أساسي في تنسيق الحدائق العامة والخاصة والملاعب الرياضية، سوق صيانة حدائق مستمر ومتنامٍ.",
-          "organic_suitable": true,
-          "export_potential": "غير مطبق",
-          "id": "plant-070",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-074",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "أوركيد",
-          "name_en": "Orchid",
-          "name_scientific": "Orchidaceae spp. (Phalaenopsis)",
-          "category": "نباتات زينة مزهرة فاخرة",
-          "description_ar": "من أرقى نباتات الزينة المزهرة وأكثرها طلبًا كهدايا، يحتاج شروط زراعة دقيقة جدًا (رطوبة، إضاءة غير مباشرة، بيئة زراعية خاصة) تختلف جوهريًا عن نباتات الزينة العادية.",
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "لحاء أشجار خاص أو ألياف جوز الهند — لا يُزرع في تربة عادية إطلاقًا"
-            ],
-            "ph_range": "5.5-6.5",
-            "drainage_ar": "فائق — الجذور الهوائية تحتاج تهوية كاملة"
-          },
-          "irrigation": {
-            "critical_stages_ar": [
-              "ري بالغمر الخفيف أو الرش أسبوعيًا مع جفاف كامل بين الريّات"
-            ],
-            "method_ar": "غمر خفيف متباعد أو رش ضبابي"
-          },
-          "nutrition": {
-            "n_split_ar": "سماد أوركيد متخصص مخفف جدًا (ربع التركيز العادي) أسبوعيًا في موسم النمو"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "الحشرة القشرية",
-              "type": "حشرة"
-            },
-            {
-              "name_ar": "عفن الجذور",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-4",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "economic_importance_ar": "سوق متنامٍ جدًا في مصر كهدايا فاخرة ونباتات ديكور راقٍ، هامش ربح تجاري مرتفع نسبيًا للمشاتل المتخصصة.",
-          "organic_suitable": true,
-          "export_potential": "منخفض (إنتاج محلي محدود التخصص، لا يزال معظم السوق يعتمد على الاستيراد)",
-          "id": "plant-071",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-075",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": false
         }
-      ],
-      "plants_count": 11
+      ]
     },
     {
-      "group_id": "grp-medicinal",
-      "group_name_ar": "النباتات الطبية والعطرية",
-      "group_name_en": "Medicinal & Aromatic Plants",
+      "id": "grp-medicinal",
+      "name_ar": "النباتات الطبية والعطرية",
+      "name_en": "Medicinal & Aromatic Plants",
       "description_ar": "نباتات ذات قيمة طبية وعطرية — مصر من أكبر المنتجين والمصدرين للنباتات الطبية والعطرية عالمياً",
+      "sub_categories": [
+        "أعشاب طبية",
+        "نباتات عطرية",
+        "توابل"
+      ],
+      "plants_count": 6,
       "plants": [
         {
           "id": "plant-018",
@@ -6858,11 +4684,7 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -6892,12 +4714,7 @@
           ],
           "economic_importance_ar": "تصدير — تحضير أدوية — صناعة عطور وتوابل",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-054",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-019",
@@ -7023,12 +4840,7 @@
           ],
           "economic_importance_ar": "تصدير زيت عطري — صناعة أدوية — مشروبات — صناعة غذائية",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-055",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-020",
@@ -7116,11 +4928,7 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "منخفضة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "منخفضة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -7150,12 +4958,7 @@
           ],
           "economic_importance_ar": "تصدير أزهار مجففة وزيت عطري — صناعة أدوية وعطور ومستحضرات تجميل",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-056",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-039",
@@ -7243,11 +5046,7 @@
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "منخفضة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "منخفضة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -7277,12 +5076,7 @@
           ],
           "economic_importance_ar": "تصدير — طب — تصنيع أغذية وأدوية",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-057",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-040",
@@ -7402,12 +5196,7 @@
           ],
           "economic_importance_ar": "تصدير — طب — صناعات غذائية وعطور",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-058",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         },
         {
           "id": "plant-041",
@@ -7492,21 +5281,12 @@
             {
               "name_ar": "البياض الزغبي",
               "type": "مرض فطري",
-              "severity": "عالية",
-              "full_profile_reference": {
-                "full_profile_id": "oomy-6",
-                "group_id": "oomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
+              "severity": "عالية"
             },
             {
               "name_ar": "المن",
               "type": "حشرة",
-              "severity": "متوسطة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
+              "severity": "متوسطة"
             }
           ],
           "nutritional_value_per_100g": {
@@ -7537,282 +5317,9 @@
           ],
           "economic_importance_ar": "تصدير طازج لأوروبا — زيت عطري — مستحضرات تجميل",
           "organic_suitable": true,
-          "export_potential": true,
-          "dataSource": "uploaded_file",
-          "fertilization_program_reference": {
-            "program_id": "prog-059",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "زعتر",
-          "name_en": "Thyme",
-          "name_scientific": "Thymus vulgaris",
-          "category": "نباتات طبية وعطرية",
-          "description_ar": "عشب عطري معمر منخفض النمو، مكوّن أساسي في خلطة الزعتر المصرية الشهيرة، متحمل جيدًا للجفاف بعد التأسيس.",
-          "seasons": {
-            "planting_season_ar": "فبراير-إبريل أو سبتمبر-أكتوبر",
-            "harvest_season_ar": "حشات متعددة على مدار العام بعد التأسيس",
-            "season_type_ar": "معمر"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية جيدة الصرف"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "متوسط-عالي",
-            "drainage_ar": "ممتاز"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1200-1800 سنويًا (منخفض نسبيًا بعد التأسيس)",
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "30-45 (احتياج منخفض — الإفراط يقلل تركيز الزيوت العطرية)",
-            "n_split_ar": "دفعات خفيفة بعد كل حشة"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            }
-          ],
-          "economic_importance_ar": "من أهم الأعشاب العطرية المصدّرة لمصر (طازجة ومجففة ومستخلص زيت عطري)، طلب عالمي قوي ومستمر.",
-          "organic_suitable": true,
-          "export_potential": "مرتفع جدًا (طازج ومجفف وزيت عطري)",
-          "id": "plant-072",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-060",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "مردقوش",
-          "name_en": "Marjoram",
-          "name_scientific": "Origanum majorana",
-          "category": "نباتات طبية وعطرية",
-          "description_ar": "عشب عطري شهير كمشروب أعشاب شعبي في مصر، قريب من الزعتر في احتياجاته لكن أكثر حساسية قليلًا للبرودة الشديدة.",
-          "seasons": {
-            "planting_season_ar": "مارس-إبريل",
-            "harvest_season_ar": "حشات متعددة صيفًا وخريفًا",
-            "season_type_ar": "معمر شبه مقاوم للشتاء"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية طميية جيدة الصرف"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1400-2000 سنويًا",
-            "method_ar": "تنقيط أو رش"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "35-50",
-            "n_split_ar": "دفعات خفيفة بعد كل حشة"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "البياض الدقيقي",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "economic_importance_ar": "من أعشاب الشاي الشعبية الأساسية في مصر، وله سوق تصديري كأعشاب مجففة.",
-          "organic_suitable": true,
-          "export_potential": "متوسط-مرتفع",
-          "id": "plant-073",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-061",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "كزبرة",
-          "name_en": "Coriander",
-          "name_scientific": "Coriandrum sativum",
-          "category": "نباتات طبية وعطرية (توابل)",
-          "description_ar": "عشب حولي سريع النمو يُستخدم طازجًا (الأوراق) أو كتوابل جافة (البذور)، دورة حياة قصيرة جدًا للأوراق الطازجة.",
-          "seasons": {
-            "planting_season_ar": "طوال العام تقريبًا للأوراق، أكتوبر-نوفمبر للبذور",
-            "harvest_season_ar": "25-35 يومًا للأوراق، 90-100 يومًا للبذور الجافة",
-            "growth_duration_days": "25-100 حسب الغرض",
-            "season_type_ar": "شتوي بالأساس للبذور، طوال العام للأوراق"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية خفيفة"
-            ],
-            "ph_range": "6.0-7.0",
-            "salinity_tolerance_ar": "منخفض-متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "700-1000 (موسم قصير للأوراق)",
-            "method_ar": "رش أو غمر خفيف"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "30-40",
-            "n_split_ar": "دفعة أساسية واحدة تكفي للموسم القصير"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "البياض الدقيقي",
-              "type": "مرض فطري",
-              "full_profile_reference": {
-                "full_profile_id": "asco-1",
-                "group_id": "ascomycota",
-                "source_database": "hefnoplant_plant_diseases.json"
-              }
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "جميع محافظات مصر"
-          ],
-          "economic_importance_ar": "من أكثر الأعشاب استهلاكًا يوميًا في المطبخ المصري طازجة، وبذورها (الكسبرة) توابل أساسية وأحد أهم صادرات مصر من التوابل عالميًا.",
-          "organic_suitable": true,
-          "export_potential": "مرتفع جدًا (بذور الكزبرة الجافة — مصر من كبار المصدرين عالميًا)",
-          "id": "plant-074",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-062",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "يانسون",
-          "name_en": "Anise",
-          "name_scientific": "Pimpinella anisum",
-          "category": "نباتات طبية وعطرية (بذور)",
-          "description_ar": "عشب حولي يُزرع أساسًا لبذوره العطرية المستخدمة كمشروب أعشاب شهير ومهدئ شعبي، موسم نمو أطول نسبيًا من الكزبرة.",
-          "seasons": {
-            "planting_season_ar": "أكتوبر-نوفمبر",
-            "harvest_season_ar": "إبريل-مايو",
-            "growth_duration_days": "150-180",
-            "season_type_ar": "شتوي"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "طميية خفيفة خصبة"
-            ],
-            "ph_range": "6.0-7.5",
-            "salinity_tolerance_ar": "منخفض-متوسط",
-            "drainage_ar": "جيد"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1600-2000",
-            "method_ar": "غمر أو رش"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "40-55",
-            "n_split_ar": "أساسي + تكبير خفيف عند الاستطالة"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "المن",
-              "type": "حشرة",
-              "full_profile_reference": {
-                "full_profile_id": "hem-1",
-                "source_database": "hefnoplant_insect_pests.json"
-              }
-            },
-            {
-              "name_ar": "الذبول الفيوزاري",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الصعيد",
-            "الفيوم",
-            "بني سويف"
-          ],
-          "economic_importance_ar": "من أهم محاصيل التوابل والأعشاب التصديرية المصرية التقليدية، طلب عالمي ثابت لبذوره.",
-          "organic_suitable": true,
-          "export_potential": "مرتفع (بذور جافة — سوق تصديري تقليدي راسخ لمصر)",
-          "id": "plant-075",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-063",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
-        },
-        {
-          "name_ar": "خزامى",
-          "name_en": "Lavender",
-          "name_scientific": "Lavandula angustifolia",
-          "category": "نباتات طبية وعطرية (زيوت)",
-          "description_ar": "شجيرة عطرية معمرة تُزرع أساسًا لاستخلاص الزيت العطري الشهير المستخدم في العطور ومستحضرات التجميل والعلاج بالروائح (Aromatherapy)، زراعتها التجارية الواسعة في مصر أحدث نسبيًا من الزعتر والكزبرة.",
-          "seasons": {
-            "planting_season_ar": "فبراير-مارس أو سبتمبر-أكتوبر",
-            "harvest_season_ar": "حشات الإزهار مايو-يوليو",
-            "season_type_ar": "معمر (3-5 سنوات إنتاجية)"
-          },
-          "soil_requirements": {
-            "preferred_types_ar": [
-              "رملية خفيفة جيدة الصرف جدًا"
-            ],
-            "ph_range": "6.5-7.5",
-            "salinity_tolerance_ar": "متوسط",
-            "drainage_ar": "ممتاز — حساس جدًا لتعفن الجذور من الرطوبة الزائدة"
-          },
-          "irrigation": {
-            "total_water_m3_per_feddan": "1200-1800 سنويًا (منخفض بعد التأسيس، نبات متحمل للجفاف)",
-            "method_ar": "تنقيط"
-          },
-          "nutrition": {
-            "total_n_kg_per_feddan": "25-35 (احتياج منخفض جدًا — الإفراط يقلل تركيز الزيت العطري)",
-            "n_split_ar": "دفعة خفيفة واحدة أو دفعتين سنويًا فقط"
-          },
-          "pests_and_diseases_ar": [
-            {
-              "name_ar": "عفن الجذور (من الري الزائد)",
-              "type": "مرض فطري"
-            }
-          ],
-          "geographic_regions_egypt_ar": [
-            "الفيوم",
-            "أراضي الاستصلاح الجديدة ذات المناخ الجاف المناسب"
-          ],
-          "economic_importance_ar": "محصول زيوت عطرية عالي القيمة المضافة، طلب عالمي متنامٍ في صناعات العطور والتجميل الطبيعية.",
-          "organic_suitable": true,
-          "export_potential": "مرتفع (زيت عطري مستخلص — قيمة تصديرية عالية للوحدة)",
-          "id": "plant-076",
-          "dataSource": "compiled_by_ai",
-          "fertilization_program_reference": {
-            "program_id": "prog-064",
-            "source_database": "hefnoplant_fertilization_programs.json"
-          }
+          "export_potential": true
         }
-      ],
-      "plants_count": 11
+      ]
     }
   ]
 }

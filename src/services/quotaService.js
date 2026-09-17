@@ -11,6 +11,6 @@ export async function checkQuota(featureId, { guestId, authToken, increment } = 
     body: JSON.stringify({ featureId, increment }),
   });
 
-  const data = await res.json();
+  const data = await res.json().catch(() => ({}));
   return { ...data, allowed: res.ok };
 }

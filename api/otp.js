@@ -59,6 +59,7 @@ const FORGOT_HOURLY_TTL = 3600;
 const FORGOT_HOURLY_LIMIT = 5;
 
 async function handleForgotPassword(req, res) {
+  if (!req.body) return res.status(400).json({ success: false, message: 'البريد الإلكتروني غير صالح' });
   const { email } = req.body;
   if (!email || !VALID_EMAIL.test(email)) {
     return res.status(400).json({ success: false, message: 'البريد الإلكتروني غير صالح' });
@@ -96,19 +97,25 @@ async function handleForgotPassword(req, res) {
 }
 
 async function handleSend(req, res) {
+  if (!req.body) return res.status(400).json({ success: false, message: 'البريد الإلكتروني غير صالح' });
   const { email } = req.body;
   if (!email || !VALID_EMAIL.test(email)) return res.status(400).json({ success: false, message: 'البريد الإلكتروني غير صالح' });
   const normalizedEmail = email.toLowerCase().trim();
   const remaining = await redis.ttl(`otp_cooldown:${normalizedEmail}`);
   if (remaining > 0) return res.status(429).json({ success: false, message: `انتظر ${remaining} ثانية قبل طلب رمز جديد` });
   const otp = Math.floor(100000 + Math.random() * 900000).toString();
-  await sendEmail(normalizedEmail, 'رمز التحقق - Hefno-Plant', buildOtpEmail(otp));
+  try {
+    await sendEmail(normalizedEmail, 'رمز التحقق - Hefno-Plant', buildOtpEmail(otp));
+  } catch (err) {
+    log('send_email_failed', { to: normalizedEmail, error: err.message });
+  }
   await redis.set(`otp:${normalizedEmail}`, otp, { ex: OTP_TTL });
   await redis.set(`otp_cooldown:${normalizedEmail}`, '1', { ex: COOLDOWN_TTL });
   return res.status(200).json({ success: true });
 }
 
 async function handleVerify(req, res) {
+  if (!req.body) return res.status(400).json({ success: false, message: 'البريد الإلكتروني ورمز التحقق مطلوبان' });
   const { email, otp } = req.body;
   if (!email || !otp) return res.status(400).json({ success: false, message: 'البريد الإلكتروني ورمز التحقق مطلوبان' });
   const normalizedEmail = email.toLowerCase().trim();

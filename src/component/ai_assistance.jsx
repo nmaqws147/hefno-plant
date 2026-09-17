@@ -85,15 +85,13 @@ const UserMsgAvatar = () => (
 const AIAssistant = () => {
   const { trackAction } = useTracking();
   const [messages, setMessages] = useState(() => {
-    const saved = localStorage.getItem('aiChatHistory');
-    return saved ? JSON.parse(saved) : [];
+    try { return JSON.parse(localStorage.getItem('aiChatHistory')) || []; } catch { return []; }
   });
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showTyping, setShowTyping] = useState(false);
   const [conversationHistory, setConversationHistory] = useState(() => {
-    const saved = localStorage.getItem('aiConversationHistory');
-    return saved ? JSON.parse(saved) : [];
+    try { return JSON.parse(localStorage.getItem('aiConversationHistory')) || []; } catch { return []; }
   });
   const [selectedCategory, setSelectedCategory] = useState('diseases');
   const [isListening, setIsListening] = useState(false);
@@ -104,8 +102,7 @@ const AIAssistant = () => {
     return true;
   });
   const [savedChats, setSavedChats] = useState(() => {
-    const saved = localStorage.getItem('aiSavedChats');
-    return saved ? JSON.parse(saved) : [];
+    try { return JSON.parse(localStorage.getItem('aiSavedChats')) || []; } catch { return []; }
   });
   const [currentChatId, setCurrentChatId] = useState(() => {
     const saved = localStorage.getItem('aiCurrentChatId');

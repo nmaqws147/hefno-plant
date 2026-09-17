@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   Users, Search, ChevronDown, ChevronUp,
-  Eye, Pencil, Trash2, MoreVertical, RefreshCw, X, AlertTriangle,
+  Pencil, Trash2, MoreVertical, RefreshCw, X, AlertTriangle,
   Phone, CalendarDays, Activity, BadgeCheck, UserPlus, Crown,
 } from 'lucide-react';
 import { toast } from 'sonner';
@@ -504,7 +504,7 @@ const UsersPanel = ({ inPanel = false }) => {
                               onClick={() => { setOpenMenu(null); handleView(u); }}
                               className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-700"
                             >
-                              <Eye className="w-4 h-4" />
+                              <Search className="w-4 h-4" />
                               عرض
                             </button>
                             <button

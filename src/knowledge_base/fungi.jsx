@@ -1,7 +1,30 @@
 import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import SEO from '../component/SEO';
-import pathogensData from '../disease-folder/fungi.json';
+import diseasesData from '../disease-folder/fungi.json';
+
+const fungiGroupKeys = {
+  'Oomycota': 'oomy',
+  'Zygomycota': 'zygo',
+  'Ascomycota': 'asco',
+  'Basidiomycota': 'basi',
+};
+
+const pathogensData = {};
+diseasesData.groups?.forEach(g => {
+  const key = fungiGroupKeys[g.group_name_en];
+  if (key) {
+    pathogensData[key] = g.pathogens || [];
+    pathogensData[key + 'Pro'] = {
+      group_ar: g.group_name_ar,
+      group_en: g.group_name_en,
+      pathogens_count: g.count || g.pathogens?.length || 0,
+      group_description: g.description_ar || '',
+      causalAgents: '',
+      distinguishing_features: [],
+    };
+  }
+});
 
 const classConfig = {
   oomy: {

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { Eye, Trash2, Clock, Leaf, Search, AlertTriangle } from 'lucide-react';
+import { Trash2, Clock, Leaf, Search, AlertTriangle } from 'lucide-react';
 import { getHealthStatusClass } from './DiagnosisUtils';
 
 function HistoryItem({ diagnosis, onView, onDelete }) {
@@ -35,7 +35,7 @@ function HistoryItem({ diagnosis, onView, onDelete }) {
       </div>
       <div className="flex gap-1.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
         <button onClick={() => onView(diagnosis)} className="size-8 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all grid place-items-center">
-          <Eye size={14} />
+          <Search size={14} />
         </button>
         <button onClick={() => onDelete(diagnosis.id)} className="size-8 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-500 hover:bg-red-500 hover:text-white transition-all grid place-items-center">
           <Trash2 size={14} />

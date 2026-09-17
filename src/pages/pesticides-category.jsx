@@ -198,7 +198,7 @@ const PesticidesCategoryPage = () => {
               </div>
 
               <p className="mb-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2">
-                {group.MoA_ar?.substring(0, 100)}...
+                {typeof group.MoA_ar === 'string' ? group.MoA_ar?.substring(0, 100) : group.MoA_ar?.summary?.arabic || group.MoA_ar || '—'}
               </p>
 
               {group.application_method_ar && (

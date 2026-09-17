@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../../component/SEO';
 import { ChevronRight, ChevronLeft, X, Bug, AlertTriangle, Shield, Calendar, Info, Clock, FlaskConical, Sprout, Heart, Layers } from 'lucide-react';
-import pathogensData from '../../disease-folder/fungi.json';
+import diseasesData from '../../disease-folder/fungi.json';
+
+const pathogensData = { oomy: diseasesData.groups?.find(g => g.group_name_en === 'Oomycota')?.pathogens || [] };
 
 const ITEMS_PER_PAGE = 5;
 

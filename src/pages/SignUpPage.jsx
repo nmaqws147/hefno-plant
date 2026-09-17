@@ -115,13 +115,17 @@ const SignUpPage = () => {
 
   const sendOtp = useCallback(async (emailAddr) => {
     setOtpError('');
-    const res = await fetch('/api/send-otp', {
+    const res = await fetch('/api/otp/send', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: emailAddr }),
     });
-    const data = await res.json();
-    if (!data.success) throw new Error(data.message || 'فشل إرسال رمز التحقق');
+    if (!res.ok) {
+      console.error('send-otp failed:', res.status, res.statusText);
+      throw new Error('حدث خطأ في الاتصال بالخادم — حاول مرة أخرى');
+    }
+    const data = await res.json().catch(() => null);
+    if (!data || !data.success) throw new Error(data?.message || 'فشل إرسال رمز التحقق');
   }, []);
 
   useEffect(() => {
@@ -174,13 +178,17 @@ const SignUpPage = () => {
     setOtpLoading(true);
     setOtpError('');
     try {
-      const res = await fetch('/api/verify-otp', {
+      const res = await fetch('/api/otp/verify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: sentEmail, otp: code }),
       });
-      const data = await res.json();
-      if (!data.success) throw new Error(data.message || 'رمز التحقق غير صحيح');
+      if (!res.ok) {
+        console.error('verify-otp failed:', res.status, res.statusText);
+        throw new Error('حدث خطأ في الاتصال بالخادم — حاول مرة أخرى');
+      }
+      const data = await res.json().catch(() => null);
+      if (!data || !data.success) throw new Error(data?.message || 'رمز التحقق غير صحيح');
       await signup(email, password, fullName.trim(), phoneNumber.trim(), specialization);
       navigate('/pricing');
     } catch (err) {

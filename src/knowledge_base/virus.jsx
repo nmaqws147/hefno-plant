@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SEO from '../component/SEO';
 import { AlertTriangle, Bug, ChevronLeft, ChevronRight, Clock, FlaskConical, Info, Search, Shield, X } from 'lucide-react';
-import viruses from '../disease-folder/viruses.json';
+import diseasesData from '../disease-folder/viruses.json';
+
+const viruses = diseasesData.groups?.find(g => g.group_name_en === 'Viral Diseases')?.pathogens || [];
 
 const ITEMS_PER_PAGE = 5;
 

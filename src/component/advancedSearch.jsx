@@ -28,7 +28,7 @@ const AdvancedSearch = ({
   useEffect(() => {
     const saved = localStorage.getItem('searchHistory');
     if (saved) {
-      setSearchHistory(JSON.parse(saved).slice(0, 5));
+      try { setSearchHistory(JSON.parse(saved).slice(0, 5)); } catch {}
     }
   }, []);
 
