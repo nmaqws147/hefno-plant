@@ -868,9 +868,9 @@ const PesticideGroupPage = () => {
                         <div className="space-y-1.5">
                           {selectedItem.disease_efficacy.slice(0, 8).map((de, i) => (
                             <div key={i} className="flex items-center justify-between text-[11px]">
-                              <span className="text-indigo-700 dark:text-indigo-300">{de.disease_ar || de.disease || ''}</span>
-                              {de.efficacy_ar && (
-                                <span className="text-indigo-500 dark:text-indigo-400">{de.efficacy_ar}</span>
+                              <span className="text-indigo-700 dark:text-indigo-300">{de.disease_name_arabic || de.disease_ar || de.disease || ''}</span>
+                              {(de.efficacy_arabic || de.efficacy_ar) && (
+                                <span className="text-indigo-500 dark:text-indigo-400">{de.efficacy_arabic || de.efficacy_ar}</span>
                               )}
                             </div>
                           ))}
