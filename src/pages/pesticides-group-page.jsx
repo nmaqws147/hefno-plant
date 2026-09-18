@@ -753,9 +753,9 @@ const PesticideGroupPage = () => {
                         <h4 className="mb-2 text-xs font-bold text-teal-700 dark:text-teal-300">ملاحظات التطبيق</h4>
                         <div className="space-y-1.5">
                           {selectedItem.application.application_notes.map((note, i) => (
-                            <div key={i} className="flex items-start gap-2 text-xs">
+                            <div key={i} className="flex items-center gap-2 text-xs">
                               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
-                              <span className="text-teal-700 dark:text-teal-300">{typeof note === 'string' ? note : note.arabic || note.text || ''}</span>
+                              <span className="text-teal-700 dark:text-teal-300">{note.value || note.arabic || note.text || ''}</span>
                             </div>
                           ))}
                         </div>
