@@ -2063,10 +2063,10 @@
         "preferred_name": "Chlorpyrifos"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "2921-88-2",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C9H11Cl3NO3PS",
+        "molecular_weight": "350.57"
       },
       "classification": {
         "pesticide_type": [
@@ -2368,10 +2368,10 @@
         "preferred_name": "Dimethoate"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "60-51-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C5H12NO3PS2",
+        "molecular_weight": "229.26"
       },
       "classification": {
         "pesticide_type": [
@@ -2626,10 +2626,10 @@
         "preferred_name": "Malathion"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "121-75-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C10H19O6PS2",
+        "molecular_weight": "330.36"
       },
       "classification": {
         "pesticide_type": [
@@ -2902,10 +2902,10 @@
         "preferred_name": "Profenofos"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "41198-08-7",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C11H15BrClO3PS",
+        "molecular_weight": "373.63"
       },
       "classification": {
         "pesticide_type": [
@@ -3161,10 +3161,10 @@
         "preferred_name": "Acephate"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "30560-19-1",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C4H10NO3PS",
+        "molecular_weight": "183.17"
       },
       "classification": {
         "pesticide_type": [
@@ -3418,10 +3418,10 @@
         "preferred_name": "Methidathion"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "950-37-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C6H11N2O4PS3",
+        "molecular_weight": "302.30"
       },
       "classification": {
         "pesticide_type": [
@@ -3676,10 +3676,10 @@
         "preferred_name": "Oxydemeton-methyl"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "301-12-2",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C6H15O4PS2",
+        "molecular_weight": "246.30"
       },
       "classification": {
         "pesticide_type": [
@@ -3917,10 +3917,10 @@
         "preferred_name": "Ethion"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "563-12-2",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C9H22O4P2S4",
+        "molecular_weight": "384.48"
       },
       "classification": {
         "pesticide_type": [
@@ -4180,10 +4180,10 @@
         "preferred_name": "Carbosulfan"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "55285-14-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C20H32N2O3S",
+        "molecular_weight": "380.55"
       },
       "classification": {
         "pesticide_type": [
@@ -4443,10 +4443,10 @@
         "preferred_name": "Methomyl"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "16752-77-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C5H10N2O2S",
+        "molecular_weight": "162.20"
       },
       "classification": {
         "pesticide_type": [
@@ -4707,10 +4707,10 @@
         "preferred_name": "Pirimicarb"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "23103-98-2",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C11H18N4O2",
+        "molecular_weight": "238.29"
       },
       "classification": {
         "pesticide_type": [
@@ -4942,10 +4942,10 @@
         "preferred_name": "Thiodicarb"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "59669-26-0",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C10H18N4O4S3",
+        "molecular_weight": "354.45"
       },
       "classification": {
         "pesticide_type": [
@@ -5181,10 +5181,10 @@
         "preferred_name": "Fipronil"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "120068-37-3",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C12H4Cl2F6N4OS",
+        "molecular_weight": "437.15"
       },
       "classification": {
         "pesticide_type": [
@@ -5479,10 +5479,10 @@
         "preferred_name": "Lambda-cyhalothrin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "91465-08-6",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C23H19ClF3NO3",
+        "molecular_weight": "449.85"
       },
       "classification": {
         "pesticide_type": [
@@ -5752,10 +5752,10 @@
         "preferred_name": "Deltamethrin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "52918-63-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C22H19Br2NO3",
+        "molecular_weight": "505.21"
       },
       "classification": {
         "pesticide_type": [
@@ -6060,10 +6060,10 @@
         "preferred_name": "Cypermethrin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "52315-07-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C22H19Cl2NO3",
+        "molecular_weight": "416.30"
       },
       "classification": {
         "pesticide_type": [
@@ -6342,10 +6342,10 @@
         "preferred_name": "Alpha-cypermethrin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "67375-30-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C22H19Cl2NO3",
+        "molecular_weight": "416.30"
       },
       "classification": {
         "pesticide_type": [
@@ -6587,10 +6587,10 @@
         "preferred_name": "Bifenthrin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "82657-04-3",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C23H22ClF3O2",
+        "molecular_weight": "422.87"
       },
       "classification": {
         "pesticide_type": [
@@ -6843,10 +6843,10 @@
         "preferred_name": "Zeta-cypermethrin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "1315501-18-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C22H19Cl2NO3",
+        "molecular_weight": "416.30"
       },
       "classification": {
         "pesticide_type": [
@@ -7094,10 +7094,10 @@
         "preferred_name": "Fenvalerate"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "51630-58-3",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C25H22ClNO3",
+        "molecular_weight": "419.91"
       },
       "classification": {
         "pesticide_type": [
@@ -7329,10 +7329,10 @@
         "preferred_name": "Beta-cyfluthrin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "68359-37-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C22H18Cl2FNO3",
+        "molecular_weight": "434.29"
       },
       "classification": {
         "pesticide_type": [
@@ -7575,10 +7575,10 @@
         "preferred_name": "Tau-fluvalinate"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "102851-06-9",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C26H22ClF3N2O3",
+        "molecular_weight": "502.91"
       },
       "classification": {
         "pesticide_type": [
@@ -7811,10 +7811,10 @@
         "preferred_name": "Imidacloprid"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "105827-78-9",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C9H10ClN5O2",
+        "molecular_weight": "255.66"
       },
       "classification": {
         "pesticide_type": [
@@ -8122,10 +8122,10 @@
         "preferred_name": "Acetamiprid"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "135410-20-7",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C10H11ClN4",
+        "molecular_weight": "222.68"
       },
       "classification": {
         "pesticide_type": [
@@ -8389,10 +8389,10 @@
         "preferred_name": "Thiamethoxam"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "153719-23-4",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C8H10ClN5O3S",
+        "molecular_weight": "291.71"
       },
       "classification": {
         "pesticide_type": [
@@ -8664,10 +8664,10 @@
         "preferred_name": "Clothianidin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "210880-82-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C6H8ClN5O2S",
+        "molecular_weight": "249.67"
       },
       "classification": {
         "pesticide_type": [
@@ -8914,10 +8914,10 @@
         "preferred_name": "Dinotefuran"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "165252-70-0",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C7H14N4O3",
+        "molecular_weight": "202.21"
       },
       "classification": {
         "pesticide_type": [
@@ -9165,10 +9165,10 @@
         "preferred_name": "Flonicamid"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "158062-67-0",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C9H6F3N3O",
+        "molecular_weight": "229.16"
       },
       "classification": {
         "pesticide_type": [
@@ -9415,10 +9415,10 @@
         "preferred_name": "Sulfoxaflor"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "946578-00-3",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C10H10F3N3OS",
+        "molecular_weight": "277.27"
       },
       "classification": {
         "pesticide_type": [
@@ -9661,10 +9661,10 @@
         "preferred_name": "Spinosad"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "168316-95-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C41H65NO10",
+        "molecular_weight": "731.96"
       },
       "classification": {
         "pesticide_type": [
@@ -9944,10 +9944,10 @@
         "preferred_name": "Spinetoram"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "935545-74-7",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C42H69NO10",
+        "molecular_weight": "748.00"
       },
       "classification": {
         "pesticide_type": [
@@ -10204,10 +10204,10 @@
         "preferred_name": "Abamectin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "71751-41-2",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C48H74O14",
+        "molecular_weight": "873.10"
       },
       "classification": {
         "pesticide_type": [
@@ -10481,10 +10481,10 @@
         "preferred_name": "Emamectin benzoate"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "155569-91-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C49H77NO13",
+        "molecular_weight": "888.11"
       },
       "classification": {
         "pesticide_type": [
@@ -10746,10 +10746,10 @@
         "preferred_name": "Milbemectin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "51596-10-2",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C32H46O8",
+        "molecular_weight": "558.70"
       },
       "classification": {
         "pesticide_type": [
@@ -10986,10 +10986,10 @@
         "preferred_name": "Pyriproxyfen"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "95737-68-1",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C20H19NO3",
+        "molecular_weight": "321.37"
       },
       "classification": {
         "pesticide_type": [
@@ -11230,10 +11230,10 @@
         "preferred_name": "Fenoxycarb"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "72490-01-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C18H23NO4",
+        "molecular_weight": "321.38"
       },
       "classification": {
         "pesticide_type": [
@@ -11462,10 +11462,10 @@
         "preferred_name": "Pymetrozine"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "123312-89-0",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C10H11N5O",
+        "molecular_weight": "217.23"
       },
       "classification": {
         "pesticide_type": [
@@ -11704,10 +11704,10 @@
         "preferred_name": "Clofentezine"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "74115-24-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C14H8Cl2N4",
+        "molecular_weight": "303.15"
       },
       "classification": {
         "pesticide_type": [
@@ -11943,10 +11943,10 @@
         "preferred_name": "Hexythiazox"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "78587-05-0",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C17H21ClN2O2S",
+        "molecular_weight": "352.88"
       },
       "classification": {
         "pesticide_type": [
@@ -12187,10 +12187,10 @@
         "preferred_name": "Etoxazole"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "153033-91-1",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C21H23F2NO2",
+        "molecular_weight": "359.41"
       },
       "classification": {
         "pesticide_type": [
@@ -13196,10 +13196,10 @@
         "preferred_name": "Chlorfenapyr"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "122453-73-0",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C15H11BrClF3N2O",
+        "molecular_weight": "407.61"
       },
       "classification": {
         "pesticide_type": [
@@ -13447,10 +13447,10 @@
         "preferred_name": "Diflubenzuron"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "35367-38-5",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C14H9ClF2N2O2",
+        "molecular_weight": "310.68"
       },
       "classification": {
         "pesticide_type": [
@@ -13702,10 +13702,10 @@
         "preferred_name": "Lufenuron"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "103055-07-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C17H8Cl2F8N2O3",
+        "molecular_weight": "511.15"
       },
       "classification": {
         "pesticide_type": [
@@ -13947,10 +13947,10 @@
         "preferred_name": "Novaluron"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "116714-46-6",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C17H9ClF8N2O4",
+        "molecular_weight": "492.70"
       },
       "classification": {
         "pesticide_type": [
@@ -14190,10 +14190,10 @@
         "preferred_name": "Buprofezin"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "69327-76-0",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C16H23N3OS",
+        "molecular_weight": "305.44"
       },
       "classification": {
         "pesticide_type": [
@@ -14435,10 +14435,10 @@
         "preferred_name": "Flufenoxuron"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "101463-69-8",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C21H11ClF6N2O3",
+        "molecular_weight": "488.77"
       },
       "classification": {
         "pesticide_type": [
@@ -14680,10 +14680,10 @@
         "preferred_name": "Methoxyfenozide"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "161050-58-4",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C22H28N2O3",
+        "molecular_weight": "368.47"
       },
       "classification": {
         "pesticide_type": [
@@ -14933,10 +14933,10 @@
         "preferred_name": "Chromafenozide"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "143807-66-3",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C24H30N2O3",
+        "molecular_weight": "394.51"
       },
       "classification": {
         "pesticide_type": [
@@ -15161,10 +15161,10 @@
         "preferred_name": "Fenbutatin oxide"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "13356-08-6",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C60H78OSn2",
+        "molecular_weight": "1052.70"
       },
       "classification": {
         "pesticide_type": [
@@ -15405,10 +15405,10 @@
         "preferred_name": "Pyridaben"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "96489-71-3",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C19H25ClN2OS",
+        "molecular_weight": "364.93"
       },
       "classification": {
         "pesticide_type": [
@@ -15654,10 +15654,10 @@
         "preferred_name": "Fenpyroximate"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "111812-58-9",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C24H27N3O4",
+        "molecular_weight": "421.50"
       },
       "classification": {
         "pesticide_type": [
@@ -15888,10 +15888,10 @@
         "preferred_name": "Tebufenpyrad"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "119168-77-3",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C18H24ClN3O",
+        "molecular_weight": "333.86"
       },
       "classification": {
         "pesticide_type": [
@@ -16137,10 +16137,10 @@
         "preferred_name": "Indoxacarb"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "173584-44-6",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C22H17ClF3N3O7",
+        "molecular_weight": "527.80"
       },
       "classification": {
         "pesticide_type": [
@@ -16396,10 +16396,10 @@
         "preferred_name": "Spirotetramat"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "203313-25-1",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C21H27NO5",
+        "molecular_weight": "373.45"
       },
       "classification": {
         "pesticide_type": [
@@ -16655,10 +16655,10 @@
         "preferred_name": "Spiromesifen"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "283594-90-1",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C23H30O4",
+        "molecular_weight": "370.48"
       },
       "classification": {
         "pesticide_type": [
@@ -16903,10 +16903,10 @@
         "preferred_name": "Chlorantraniliprole"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "500008-45-7",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C18H14BrCl2N5O2",
+        "molecular_weight": "483.15"
       },
       "classification": {
         "pesticide_type": [
@@ -17198,10 +17198,10 @@
         "preferred_name": "Cyantraniliprole"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "736994-63-1",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C19H14BrClN6O2",
+        "molecular_weight": "473.72"
       },
       "classification": {
         "pesticide_type": [
@@ -17482,10 +17482,10 @@
         "preferred_name": "Flubendiamide"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "272451-65-7",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C23H22F7IN2O4S",
+        "molecular_weight": "682.37"
       },
       "classification": {
         "pesticide_type": [
@@ -17739,10 +17739,10 @@
         "preferred_name": "Azadirachtin (Neem)"
       },
       "identification": {
-        "cas_number": null,
+        "cas_number": "11141-17-6",
         "chemical_name": null,
-        "molecular_formula": null,
-        "molecular_weight": null
+        "molecular_formula": "C35H44O16",
+        "molecular_weight": "720.70"
       },
       "classification": {
         "pesticide_type": [
