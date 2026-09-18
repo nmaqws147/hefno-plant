@@ -1,4 +1,3 @@
-
 const fs = require('fs');
 const path = require('path');
 const { checkQuota } = require('./_lib/checkQuota');
@@ -618,15 +617,18 @@ module.exports = async function handler(req, res) {
 
         const duration = Date.now() - startTime;
 
+        // FIXED: was referencing an undefined `rateLimit` variable, which threw
+        // a ReferenceError on every successful reply and made the whole request
+        // fail with a 500 even though the AI had already answered correctly.
+        // Now uses the `quota` object returned by checkQuota() above.
         return res.status(200).json({ 
             reply: formatResponse(aiText), 
             requestId: requestId,
             speed: `${duration}ms`,
             category: category || 'general',
-            rateLimit: {
-                remaining: rateLimit.remaining,
-                limit: rateLimit.limit,
-                resetInHours: Math.ceil(rateLimit.reset / 3600)
+            quota: {
+                remaining: quota.remaining,
+                limit: quota.limit,
             }
         });
 
