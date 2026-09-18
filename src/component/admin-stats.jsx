@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Chart, registerables } from 'chart.js';
 import {
-  BarChart3, Users, FileText, Zap, Scan,
+  BarChart3, Users, FileText, Zap, Scan, Search,
   TrendingUp, UserCheck, Globe, PieChart,
   ThumbsUp, Settings, Layout, CalendarDays, RefreshCw,
   Loader2, AlertTriangle
@@ -142,10 +142,9 @@ const ActionStatsScreen = ({ inPanel = false }) => {
         data: { labels: dailyDates.map(d => d.slice(5)), datasets: [{ label: 'زوار فريدين', data: dailyUniques, backgroundColor: '#f39c12', borderRadius: 8 }] },
         options: opts,
       });
+    });
 
-      });
-
-      return () => { cancelAnimationFrame(frame); Object.values(chartsRef.current).forEach(ch => { if (ch) ch.destroy(); }); };
+    return () => { cancelAnimationFrame(frame); Object.values(chartsRef.current).forEach(ch => { if (ch) ch.destroy(); }); };
   }, [data, loading]);
 
   const popularPages = data ? Object.entries(data.pages || {}).sort((a, b) => b[1] - a[1]).slice(0, 8) : [];
