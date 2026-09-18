@@ -37,7 +37,7 @@ const PesticideGroupPage = () => {
     if (!item) return '';
     switch (category) {
       case 'fungicides': return item.classification?.frac_group?.id || item.classification?.frac_group?.code || item.frac_group_id || item.frac_code || '';
-      case 'insecticides': return item.irac_group_id || '';
+      case 'insecticides': return item.classification?.irac_group?.code || item.classification?.irac_group?.id || item.irac_group_id || '';
       case 'herbicides': return item.hrac_group_id || item.classification?.hrac_group?.code || '';
       case 'nematicides': return item.classification?.nematicide_group?.id || item.classification?.nematicide_group?.code || item.nematicide_group_id || item.nematicide_group?.code || '';
       case 'bactericides': return item.bactericide_group_id || '';
@@ -50,7 +50,7 @@ const PesticideGroupPage = () => {
     ...item,
     name_ar: item.name_ar || item.name?.arabic || item.ar_name || item.name || 'غير معروف',
     name_en: item.name_en || item.name?.english || item.ar_name || item.name || '',
-    type_ar: item.type_ar || item.ar_type || (item.systemic ? 'جهازي' : 'ملامسي'),
+    type_ar: item.type_ar || item.ar_type || (item.action_characteristics?.systemic || item.systemic ? 'جهازي' : 'ملامسي'),
     chemical_class_ar: item.chemical_class_ar || item.classification?.chemical_group?.arabic || '—',
     frac_group_id: item.classification?.frac_group?.id || item.frac_group_id || group?.id,
     frac_code: item.classification?.frac_group?.code || item.frac_code || group?.code,
@@ -59,18 +59,18 @@ const PesticideGroupPage = () => {
     irac_code: item.classification?.irac_group?.code || item.irac_code || group?.code,
     group_code_display: extractGroupCode(item, category) || group?.code,
     group_name_ar: item.group_name_ar || group?.name_ar || group?.ar_name,
-    resistance_risk: item.resistance?.risk_ar || item.resistance_management?.risk_ar || item.resistance_risk,
-    resistance_risk_level: item.resistance?.risk_level || item.resistance_management?.resistance_risk_level,
-    resistance_mechanism: item.resistance?.mechanism_ar || item.resistance_management?.mechanism_ar || item.resistance?.ar_mechanism,
+    resistance_risk: item.resistance_management?.risk?.arabic || item.resistance?.risk_ar || item.resistance_management?.risk_ar || item.resistance_risk,
+    resistance_risk_level: item.resistance_management?.risk?.level || item.resistance?.risk_level || item.resistance_management?.resistance_risk_level,
+    resistance_mechanism: item.resistance_management?.mechanism?.arabic || item.resistance?.mechanism_ar || item.resistance_management?.mechanism_ar || item.resistance?.ar_mechanism,
     target_pests: (item.targets?.mites?.length > 0 ? item.targets.mites : item.targets?.insects?.length > 0 ? item.targets.insects : item.targets?.weeds?.length > 0 ? item.targets.weeds : []) || item.target_pests || item.target_diseases || item.target_nematodes || item.target_weeds || [],
-    spectrum_ar: item.spectrum_ar || item.ar_spectrum || item.action_characteristics?.spectrum_ar || '—',
-    activity_ar: item.activity_ar || item.ar_activity || item.mode_of_action?.target_site || item.action_characteristics?.activity_ar || '',
+    spectrum_ar: item.additional_information?.spectrum_arabic || item.spectrum_ar || item.ar_spectrum || item.action_characteristics?.spectrum_ar || '—',
+    activity_ar: item.mode_of_action?.target_site || item.activity_ar || item.ar_activity || item.action_characteristics?.activity_ar || '',
     application: item.application || {},
-    safety_notes: item.safety_notes_ar || item.ar_notes_safety || item.safety?.ar_safety_notes,
-    special_use: item.special_use_ar || item.ar_use_special || item.additional_information?.ar_special_use,
-    regulatory: item.regulatory_ar || item.ar_regulatory || item.additional_information?.ar_regulatory,
+    safety_notes: item.safety?.safety_notes_ar || item.safety_notes_ar || item.ar_notes_safety || item.safety?.ar_safety_notes,
+    special_use: item.additional_information?.special_use_arabic || item.special_use_ar || item.ar_use_special || item.additional_information?.ar_special_use,
+    regulatory: item.additional_information?.regulatory_status_arabic || item.regulatory_ar || item.ar_regulatory || item.additional_information?.ar_regulatory,
     isPublicHealth: category === 'publicHealth',
-    target_crops: item.target_crops || item.crops || [],
+    target_crops: (item.crops || item.target_crops || []).map(c => typeof c === 'string' ? c : c.arabic || c.english || ''),
     identification: item.identification || {},
     mode_of_action: item.mode_of_action || {},
     environmental_fate: item.environmental_fate || {},
@@ -89,7 +89,7 @@ const PesticideGroupPage = () => {
         }
         case 'insecticides': {
           const mod = await import('../pesticides-folder/pesti-items/irac.json');
-          allItems = mod.default?.items || [];
+          allItems = mod.default?.active_ingredients || mod.default?.items || [];
           break;
         }
         case 'herbicides': {
@@ -127,9 +127,10 @@ const PesticideGroupPage = () => {
         }
         default: break;
       }
+      const targets = [group?.id, group?.code, group?.irac_code, group?.frac_code].filter(Boolean).map(normalizeGroupCode);
       const filtered = allItems.filter(item => {
         const itemCode = extractGroupCode(item, category);
-        return normalizeGroupCode(itemCode) === targetCode;
+        return targets.includes(normalizeGroupCode(itemCode));
       });
       const normalizedItems = filtered.map(item => normalizeItem(item, category, group));
       setItems(normalizedItems);

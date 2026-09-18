@@ -3,33 +3,26 @@ import fracData from './pesti-items/frac.json';
 import hracData from './pesti-items/hrac.json';
 import nemaData from './pesti-items/nema.json';
 import bactData from './pesti-items/bact.json';
-import acarData from './pesti-items/acaricides.json';
 
 const sources = {
-  'irac-grp': iracData.items || [],
   'frac-grp': null,
   'hrac-grp': hracData.items || [],
   'nema-grp': null,
   'bact-grp': bactData.items || [],
-  'acar-grp': null,
 };
 
 const groupIdKeys = {
-  'irac-grp': 'irac_group_id',
   'frac-grp': 'id',
   'hrac-grp': 'hrac_group_id',
   'nema-grp': 'id',
   'bact-grp': 'bactericide_group_id',
-  'acar-grp': 'id',
 };
 
 const codeKeys = {
-  'irac-grp': 'irac_code',
   'frac-grp': 'code',
   'hrac-grp': 'hrac_code',
   'nema-grp': 'code',
   'bact-grp': 'group_code',
-  'acar-grp': 'code',
 };
 
 const buildFracGroups = () => {
@@ -110,9 +103,9 @@ const buildNemaGroups = () => {
   return Object.values(groupMap);
 };
 
-const buildIracGroups = () => {
-  const iracGroups = acarData.irac_groups_reference || [];
-  const activeIngredients = acarData.active_ingredients || [];
+const buildIracGroups = (data) => {
+  const iracGroups = data.irac_groups_reference || [];
+  const activeIngredients = data.active_ingredients || [];
 
   // Build lookup by code and id
   const iracGroupMap = {};
@@ -157,6 +150,9 @@ const buildIracGroups = () => {
 };
 
 export const getGroups = (key) => {
+  if (key === 'irac-grp') {
+    return buildIracGroups(iracData);
+  }
   if (key === 'frac-grp') {
     return buildFracGroups();
   }
@@ -164,7 +160,7 @@ export const getGroups = (key) => {
     return buildNemaGroups();
   }
   if (key === 'acar-grp') {
-    return buildIracGroups();
+    return buildIracGroups(iracData);
   }
 
   const items = sources[key];
