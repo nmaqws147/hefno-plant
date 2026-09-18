@@ -62,7 +62,17 @@ const PesticideGroupPage = () => {
     resistance_risk: item.resistance_management?.risk?.arabic || item.resistance?.risk_ar || item.resistance_management?.risk_ar || item.resistance_risk,
     resistance_risk_level: item.resistance_management?.risk?.level || item.resistance?.risk_level || item.resistance_management?.resistance_risk_level,
     resistance_mechanism: item.resistance_management?.mechanism?.arabic || item.resistance?.mechanism_ar || item.resistance_management?.mechanism_ar || item.resistance?.ar_mechanism,
-    target_pests: (item.targets?.mites?.length > 0 ? item.targets.mites : item.targets?.insects?.length > 0 ? item.targets.insects : item.targets?.weeds?.length > 0 ? item.targets.weeds : []) || item.target_pests || item.target_diseases || item.target_nematodes || item.target_weeds || [],
+    target_pests: [
+      ...(item.targets?.insects || []),
+      ...(item.targets?.mites || []),
+      ...(item.targets?.other_targets || []),
+      ...(item.targets?.weeds || []),
+      ...(item.targets?.nematodes || []),
+    ].map(t => ({ ...t, ar_name: t.ar_name || t.arabic || t.name_ar || '', name_ar: t.name_ar || t.arabic || t.ar_name || '' }))
+     .concat(
+       (item.target_pests || item.target_diseases || item.target_nematodes || item.target_weeds || [])
+         .map(t => typeof t === 'string' ? { ar_name: t, name_ar: t } : { ...t, ar_name: t.ar_name || t.arabic || t.name_ar || '', name_ar: t.name_ar || t.arabic || t.ar_name || '' })
+     ),
     spectrum_ar: item.additional_information?.spectrum_arabic || item.spectrum_ar || item.ar_spectrum || item.action_characteristics?.spectrum_ar || '—',
     activity_ar: item.mode_of_action?.target_site || item.activity_ar || item.ar_activity || item.action_characteristics?.activity_ar || '',
     application: item.application || {},
@@ -308,24 +318,49 @@ const PesticideGroupPage = () => {
             عن هذه المجموعة
           </h3>
           <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            {typeof currentGroup.MoA_ar === 'string' ? currentGroup.MoA_ar : currentGroup.MoA_ar?.summary?.arabic || currentGroup.MoA_ar?.target_site || 'لا يوجد وصف متاح'}
+            {typeof currentGroup.MoA_ar === 'string' ? currentGroup.MoA_ar : 'لا يوجد وصف متاح'}
           </p>
+          {currentGroup.target_organisms_ar && currentGroup.target_organisms_ar.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {currentGroup.target_organisms_ar.map((t, i) => (
+                <span key={i} className="rounded-full bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-1 text-[10px] font-bold text-red-700 dark:text-red-400">{t}</span>
+              ))}
+            </div>
+          )}
+          {currentGroup.importance_egypt && (
+            <div className="mt-3 flex items-start gap-2 text-xs text-amber-600 dark:text-amber-400">
+              <Star size={12} className="mt-0.5 shrink-0" />
+              <span>{currentGroup.importance_egypt}</span>
+            </div>
+          )}
+          {currentGroup.cross_resistance_ar && (
+            <div className="mt-2 flex items-start gap-2 text-xs text-purple-600 dark:text-purple-400">
+              <RefreshCw size={12} className="mt-0.5 shrink-0" />
+              <span>مقاومة متبادلة: {currentGroup.cross_resistance_ar}</span>
+            </div>
+          )}
           {isPublicHealth && (
             <div className="mt-3 flex items-start gap-2 rounded-xl bg-blue-50 dark:bg-blue-900/20 p-3 text-xs text-blue-700 dark:text-blue-300">
               <Hospital size={14} className="mt-0.5 shrink-0" />
               <span>مبيدات الصحة العامة - تستخدم لمكافحة ناقلات الأمراض (البعوض، الذباب، الصراصير، القوارض)</span>
             </div>
           )}
-          {currentGroup.ar_rule_rotation && (
+          {currentGroup.rotation_rule_ar && (
             <div className="mt-3 flex items-start gap-2 text-xs text-gray-500 dark:text-gray-400">
               <RefreshCw size={12} className="mt-0.5 shrink-0" />
-              <span>{currentGroup.ar_rule_rotation}</span>
+              <span>{currentGroup.rotation_rule_ar}</span>
             </div>
           )}
-          {currentGroup.ar_spectrum && (
+          {currentGroup.spectrum_ar && (
             <div className="mt-2 flex items-start gap-2 text-xs text-gray-500 dark:text-gray-400">
               <Shield size={12} className="mt-0.5 shrink-0" />
-              <span>{currentGroup.ar_spectrum}</span>
+              <span>{currentGroup.spectrum_ar}</span>
+            </div>
+          )}
+          {currentGroup.safety_class_ar && (
+            <div className="mt-2 flex items-start gap-2 text-xs text-red-500 dark:text-red-400">
+              <AlertTriangle size={12} className="mt-0.5 shrink-0" />
+              <span>{currentGroup.safety_class_ar}</span>
             </div>
           )}
         </div>
@@ -587,6 +622,23 @@ const PesticideGroupPage = () => {
                       </div>
                     </div>
 
+                    {selectedItem.identification && Object.keys(selectedItem.identification).length > 0 && (
+                      <div className="rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-4">
+                        <h4 className="mb-2 text-xs font-bold text-blue-700 dark:text-blue-300">التعريف الكيميائي</h4>
+                        <div className="space-y-1">
+                          {selectedItem.identification.cas_number && (
+                            <div className="text-[10px] text-blue-600 dark:text-blue-400">CAS: {selectedItem.identification.cas_number}</div>
+                          )}
+                          {selectedItem.identification.molecular_formula && (
+                            <div className="text-[10px] text-blue-600 dark:text-blue-400">الصيغة الجزيئية: {selectedItem.identification.molecular_formula}</div>
+                          )}
+                          {selectedItem.identification.molecular_weight && (
+                            <div className="text-[10px] text-blue-600 dark:text-blue-400">الكتلة المولية: {selectedItem.identification.molecular_weight} g/mol</div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
                     {selectedItem.special_use && (
                       <div className="rounded-xl border border-amber-200/60 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300">
@@ -619,16 +671,22 @@ const PesticideGroupPage = () => {
                           معلومات التطبيق
                         </h4>
                         <div className="space-y-2">
-                          {selectedItem.application.dose_feddan_ar && (
-                            <div className="flex justify-between text-xs">
-                              <span className="text-gray-500 dark:text-gray-400">الجرعة للفدان:</span>
-                              <span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.dose_feddan_ar}</span>
+                          {selectedItem.application.methods && selectedItem.application.methods.length > 0 && (
+                            <div className="text-xs">
+                              <span className="text-gray-500 dark:text-gray-400">طريقة التطبيق: </span>
+                              <span className="text-gray-900 dark:text-white">{selectedItem.application.methods.map(m => m.arabic || m).join('، ')}</span>
                             </div>
                           )}
-                          {selectedItem.application.dose_spray_ar && (
+                          {selectedItem.application.timing && selectedItem.application.timing.length > 0 && (
+                            <div className="text-xs">
+                              <span className="text-gray-500 dark:text-gray-400">توقيت التطبيق: </span>
+                              <span className="text-gray-900 dark:text-white">{selectedItem.application.timing.map(t => t.arabic || t).join('، ')}</span>
+                            </div>
+                          )}
+                          {selectedItem.application.max_applications_per_season && (
                             <div className="flex justify-between text-xs">
-                              <span className="text-gray-500 dark:text-gray-400">الجرعة للرش:</span>
-                              <span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.dose_spray_ar}</span>
+                              <span className="text-gray-500 dark:text-gray-400">الحد الأقصى للرشات:</span>
+                              <span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.max_applications_per_season} رشات/موسم</span>
                             </div>
                           )}
                           {selectedItem.application.methods_ar && selectedItem.application.methods_ar.length > 0 && (
@@ -637,16 +695,16 @@ const PesticideGroupPage = () => {
                               <span className="text-gray-900 dark:text-white">{selectedItem.application.methods_ar.join('، ')}</span>
                             </div>
                           )}
+                          {selectedItem.application.dose_feddan_ar && (
+                            <div className="flex justify-between text-xs">
+                              <span className="text-gray-500 dark:text-gray-400">الجرعة للفدان:</span>
+                              <span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.dose_feddan_ar}</span>
+                            </div>
+                          )}
                           {selectedItem.application.timing_ar && (
                             <div className="flex justify-between text-xs">
                               <span className="text-gray-500 dark:text-gray-400">توقيت التطبيق:</span>
                               <span className="text-gray-900 dark:text-white">{selectedItem.application.timing_ar}</span>
-                            </div>
-                          )}
-                          {selectedItem.application.preharvest_interval_ar && (
-                            <div className="flex justify-between text-xs">
-                              <span className="text-gray-500 dark:text-gray-400">فترة التحريم:</span>
-                              <span className="text-gray-900 dark:text-white">{selectedItem.application.preharvest_interval_ar}</span>
                             </div>
                           )}
                           {selectedItem.application.max_applications_season && (
@@ -655,6 +713,17 @@ const PesticideGroupPage = () => {
                               <span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.max_applications_season} رشات/موسم</span>
                             </div>
                           )}
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedItem.residues?.phi?.length > 0 && (
+                      <div className="rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 p-4">
+                        <h4 className="mb-2 text-xs font-bold text-purple-700 dark:text-purple-300">فترة ما قبل الحصاد (PHI)</h4>
+                        <div className="flex flex-wrap gap-1.5">
+                          {selectedItem.residues.phi.map((p, i) => (
+                            <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2 py-0.5 text-[10px] text-gray-700 dark:text-gray-300">{p}</span>
+                          ))}
                         </div>
                       </div>
                     )}
