@@ -622,23 +622,6 @@ const PesticideGroupPage = () => {
                       </div>
                     </div>
 
-                    {selectedItem.identification && Object.keys(selectedItem.identification).length > 0 && (
-                      <div className="rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-4">
-                        <h4 className="mb-2 text-xs font-bold text-blue-700 dark:text-blue-300">التعريف الكيميائي</h4>
-                        <div className="space-y-1">
-                          {selectedItem.identification.cas_number && (
-                            <div className="text-[10px] text-blue-600 dark:text-blue-400">CAS: {selectedItem.identification.cas_number}</div>
-                          )}
-                          {selectedItem.identification.molecular_formula && (
-                            <div className="text-[10px] text-blue-600 dark:text-blue-400">الصيغة الجزيئية: {selectedItem.identification.molecular_formula}</div>
-                          )}
-                          {selectedItem.identification.molecular_weight && (
-                            <div className="text-[10px] text-blue-600 dark:text-blue-400">الكتلة المولية: {selectedItem.identification.molecular_weight} g/mol</div>
-                          )}
-                        </div>
-                      </div>
-                    )}
-
                     {selectedItem.special_use && (
                       <div className="rounded-xl border border-amber-200/60 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300">
