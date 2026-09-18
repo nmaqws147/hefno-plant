@@ -29,24 +29,37 @@ const buildFracGroups = () => {
   const fracGroups = fracData.frac_groups_reference || [];
   const activeIngredients = fracData.active_ingredients || [];
 
+  const codeToId = {};
+  fracGroups.forEach(g => { codeToId[g.code] = g.id; });
+
   const groupMap = {};
 
   fracGroups.forEach(g => {
     groupMap[g.id] = {
       id: g.id,
       code: g.code || '',
-      name_ar: g.name?.arabic || g.name_en || g.chemical_class?.arabic || '',
-      name_en: g.name?.english || g.name_en || g.chemical_class?.english || '',
+      subgroup: g.subgroup || '',
+      letter: g.letter || '',
+      name_ar: g.name?.arabic || '',
+      name_en: g.name?.english || '',
       chemical_class_ar: g.chemical_class?.arabic || '',
       chemical_class_en: g.chemical_class?.english || '',
-      irac_code: undefined,
-      resistance_risk_level: g.resistance_risk,
-      resistance_risk_ar: g.resistance_mechanism_ar,
-      resistance_mechanism_ar: g.resistance_mechanism_ar,
-      rotation_rule_ar: g.rotation_rule_arabic,
-      MoA_ar: g.mode_of_action,
-      application_method_ar: g.mode_of_action,
-      spectrum_ar: g.spectrum_arabic,
+      MoA_ar: g.mode_of_action?.summary?.arabic || '',
+      MoA_en: g.mode_of_action?.summary?.english || '',
+      target_site: g.mode_of_action?.target_site || '',
+      systemic: g.systemic || false,
+      spectrum_ar: g.spectrum_arabic || '',
+      activity_ar: g.activity_arabic || '',
+      target_oomycetes: g.target_oomycetes || false,
+      resistance_risk_level: g.resistance_risk?.level,
+      resistance_risk_ar: g.resistance_risk?.arabic || '',
+      resistance_risk_color: g.resistance_risk?.color || '',
+      resistance_mechanism_ar: g.resistance_mechanism_arabic || '',
+      rotation_rule_ar: g.rotation_rule_arabic || '',
+      rotation_compatible_ids: g.rotation_compatible_ids || [],
+      rotation_incompatible_ids: g.rotation_incompatible_ids || [],
+      cross_resistance_ar: g.cross_resistance_note_arabic || '',
+      importance_egypt: g.importance_in_egypt_arabic || '',
       max_applications_season: g.max_applications_per_season,
       safety_class_ar: '',
       ai_count: 0,
@@ -56,7 +69,7 @@ const buildFracGroups = () => {
 
   activeIngredients.forEach(ai => {
     const fracGroup = ai.classification?.frac_group || {};
-    const gid = fracGroup.id || fracGroup.code;
+    const gid = fracGroup.id || codeToId[fracGroup.code];
     if (!gid || !groupMap[gid]) return;
     groupMap[gid].ai_count++;
   });
@@ -107,7 +120,6 @@ const buildIracGroups = (data) => {
   const iracGroups = data.irac_groups_reference || [];
   const activeIngredients = data.active_ingredients || [];
 
-  // Build lookup by code and id
   const iracGroupMap = {};
   iracGroups.forEach(g => {
     iracGroupMap[g.code] = g;
@@ -202,4 +214,11 @@ export const getGroups = (key) => {
   });
 
   return Object.values(groupMap);
+};
+
+export const getFracCodeToIdMap = () => {
+  const map = {};
+  const groups = fracData.frac_groups_reference || [];
+  groups.forEach(g => { map[g.code] = g.id; });
+  return map;
 };

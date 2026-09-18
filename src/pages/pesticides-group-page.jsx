@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Search, X, FlaskConical, AlertTriangle, Droplets, Shield, BookOpen, Bug, Leaf, Sprout, Wheat, ClipboardList, Star, Hospital, ChevronLeft, ChevronRight, RefreshCw } from 'lucide-react';
 import SEO from '../component/SEO';
 import { makeBreadcrumbs } from '../component/structuredData';
+import { getGroups, getFracCodeToIdMap } from '../pesticides-folder/buildGroups';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -33,10 +34,17 @@ const PesticideGroupPage = () => {
   const [modalTab, setModalTab] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
+  const fracCodeToId = useMemo(() => getFracCodeToIdMap(), []);
+
   const extractGroupCode = (item, category) => {
     if (!item) return '';
     switch (category) {
-      case 'fungicides': return item.classification?.frac_group?.id || item.classification?.frac_group?.code || item.frac_group_id || item.frac_code || '';
+      case 'fungicides': {
+        const fg = item.classification?.frac_group;
+        if (fg?.id) return fg.id;
+        if (fg?.code && fracCodeToId[fg.code]) return fracCodeToId[fg.code];
+        return fg?.code || item.frac_group_id || item.frac_code || '';
+      }
       case 'insecticides': return item.classification?.irac_group?.code || item.classification?.irac_group?.id || item.irac_group_id || '';
       case 'herbicides': return item.hrac_group_id || item.classification?.hrac_group?.code || '';
       case 'nematicides': return item.classification?.nematicide_group?.id || item.classification?.nematicide_group?.code || item.nematicide_group_id || item.nematicide_group?.code || '';
@@ -50,9 +58,9 @@ const PesticideGroupPage = () => {
     ...item,
     name_ar: item.name_ar || item.name?.arabic || item.ar_name || item.name || 'غير معروف',
     name_en: item.name_en || item.name?.english || item.ar_name || item.name || '',
-    type_ar: item.type_ar || item.ar_type || (item.action_characteristics?.systemic || item.systemic ? 'جهازي' : 'ملامسي'),
+    type_ar: item.type_ar || item.ar_type || (item.action_characteristics?.systemic ? 'جهازي' : item.action_characteristics?.uptake_arabic || 'ملامسي'),
     chemical_class_ar: item.chemical_class_ar || item.classification?.chemical_group?.arabic || '—',
-    frac_group_id: item.classification?.frac_group?.id || item.frac_group_id || group?.id,
+    frac_group_id: item.classification?.frac_group?.id || fracCodeToId[item.classification?.frac_group?.code] || item.frac_group_id || group?.id,
     frac_code: item.classification?.frac_group?.code || item.frac_code || group?.code,
     nematicide_group_id: item.classification?.nematicide_group?.id || item.classification?.nematicide_group?.code || item.nematicide_group_id || group?.id,
     irac_group_id: item.classification?.irac_group?.code || item.classification?.irac_group?.id || item.irac_group_id || group?.id,
@@ -63,6 +71,7 @@ const PesticideGroupPage = () => {
     resistance_risk_level: item.resistance_management?.risk?.level || item.resistance?.risk_level || item.resistance_management?.resistance_risk_level,
     resistance_mechanism: item.resistance_management?.mechanism?.arabic || item.resistance?.mechanism_ar || item.resistance_management?.mechanism_ar || item.resistance?.ar_mechanism,
     target_pests: [
+      ...(item.targets?.fungal_diseases || []),
       ...(item.targets?.insects || []),
       ...(item.targets?.mites || []),
       ...(item.targets?.other_targets || []),
@@ -74,16 +83,22 @@ const PesticideGroupPage = () => {
          .map(t => typeof t === 'string' ? { ar_name: t, name_ar: t } : { ...t, ar_name: t.ar_name || t.arabic || t.name_ar || '', name_ar: t.name_ar || t.arabic || t.ar_name || '' })
      ),
     spectrum_ar: item.additional_information?.spectrum_arabic || item.spectrum_ar || item.ar_spectrum || item.action_characteristics?.spectrum_ar || '—',
-    activity_ar: item.mode_of_action?.target_site || item.activity_ar || item.ar_activity || item.action_characteristics?.activity_ar || '',
+    activity_ar: item.action_characteristics?.activity_notes_arabic || item.mode_of_action?.target_site || item.activity_ar || item.ar_activity || '',
     application: item.application || {},
     safety_notes: item.safety?.safety_notes_ar || item.safety_notes_ar || item.ar_notes_safety || item.safety?.ar_safety_notes,
-    special_use: item.additional_information?.special_use_arabic || item.special_use_ar || item.ar_use_special || item.additional_information?.ar_special_use,
+    special_use: item.additional_information?.special_use_arabic || item.special_use || item.special_use_ar || item.ar_use_special || item.additional_information?.ar_special_use,
     regulatory: item.additional_information?.regulatory_status_arabic || item.regulatory_ar || item.ar_regulatory || item.additional_information?.ar_regulatory,
     isPublicHealth: category === 'publicHealth',
     target_crops: (item.crops || item.target_crops || []).map(c => typeof c === 'string' ? c : c.arabic || c.english || ''),
     identification: item.identification || {},
     mode_of_action: item.mode_of_action || {},
     environmental_fate: item.environmental_fate || {},
+    disease_efficacy: item.disease_efficacy_relationships || [],
+    rotation_compatible: item.resistance_management?.rotation_compatible_frac_ids || [],
+    rotation_incompatible: item.resistance_management?.rotation_incompatible_frac_ids || [],
+    cross_resistance: item.resistance_management?.cross_resistance || {},
+    systemic: item.action_characteristics?.systemic,
+    uptake_ar: item.action_characteristics?.uptake_arabic || '',
   });
 
   const loadItems = useCallback(async (category, rawGroupCode, group) => {
@@ -355,6 +370,24 @@ const PesticideGroupPage = () => {
             <div className="mt-2 flex items-start gap-2 text-xs text-gray-500 dark:text-gray-400">
               <Shield size={12} className="mt-0.5 shrink-0" />
               <span>{currentGroup.spectrum_ar}</span>
+            </div>
+          )}
+          {currentGroup.activity_ar && (
+            <div className="mt-2 flex items-start gap-2 text-xs text-gray-500 dark:text-gray-400">
+              <Sprout size={12} className="mt-0.5 shrink-0" />
+              <span>النشاط: {currentGroup.activity_ar}</span>
+            </div>
+          )}
+          {currentGroup.systemic !== undefined && currentGroup.systemic !== null && (
+            <div className="mt-2 flex items-start gap-2 text-xs text-gray-500 dark:text-gray-400">
+              <Droplets size={12} className="mt-0.5 shrink-0" />
+              <span>{currentGroup.systemic ? 'جهازي (نظامي)' : 'ملامسي (接触)'}</span>
+            </div>
+          )}
+          {currentGroup.target_oomycetes && (
+            <div className="mt-2 flex items-start gap-2 text-xs text-purple-600 dark:text-purple-400">
+              <Bug size={12} className="mt-0.5 shrink-0" />
+              <span>فعال ضد الأولميتات (Oomycetes)</span>
             </div>
           )}
           {currentGroup.safety_class_ar && (
@@ -715,6 +748,27 @@ const PesticideGroupPage = () => {
                       </div>
                     )}
 
+                    {selectedItem.application?.application_notes && selectedItem.application.application_notes.length > 0 && (
+                      <div className="rounded-xl bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 p-4">
+                        <h4 className="mb-2 text-xs font-bold text-teal-700 dark:text-teal-300">ملاحظات التطبيق</h4>
+                        <div className="space-y-1.5">
+                          {selectedItem.application.application_notes.map((note, i) => (
+                            <div key={i} className="flex items-start gap-2 text-xs">
+                              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+                              <span className="text-teal-700 dark:text-teal-300">{typeof note === 'string' ? note : note.arabic || note.text || ''}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {selectedItem.application?.pre_harvest_interval && (
+                      <div className="rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 p-4">
+                        <h4 className="mb-2 text-xs font-bold text-purple-700 dark:text-purple-300">فترة ما قبل الحصاد</h4>
+                        <span className="text-xs text-purple-600 dark:text-purple-400">{selectedItem.application.pre_harvest_interval}</span>
+                      </div>
+                    )}
+
                     {selectedItem.residues?.phi?.length > 0 && (
                       <div className="rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 p-4">
                         <h4 className="mb-2 text-xs font-bold text-purple-700 dark:text-purple-300">فترة ما قبل الحصاد (PHI)</h4>
@@ -743,6 +797,12 @@ const PesticideGroupPage = () => {
                             <div className="text-xs">
                               <span className="text-gray-500 dark:text-gray-400">آلية المقاومة: </span>
                               <span className="text-amber-700 dark:text-amber-400">{selectedItem.resistance_mechanism}</span>
+                            </div>
+                          )}
+                          {selectedItem.cross_resistance && Object.keys(selectedItem.cross_resistance).length > 0 && (
+                            <div className="text-xs">
+                              <span className="text-gray-500 dark:text-gray-400">مقاومة متبادلة: </span>
+                              <span className="text-purple-700 dark:text-purple-400">{selectedItem.cross_resistance.note_arabic || selectedItem.cross_resistance.note || ''}</span>
                             </div>
                           )}
                         </div>
@@ -799,6 +859,22 @@ const PesticideGroupPage = () => {
                           تحذيرات السلامة
                         </h4>
                         <p className="text-xs leading-relaxed text-red-600 dark:text-red-400">{selectedItem.safety_notes}</p>
+                      </div>
+                    )}
+
+                    {selectedItem.disease_efficacy && selectedItem.disease_efficacy.length > 0 && (
+                      <div className="rounded-xl bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 p-4">
+                        <h4 className="mb-2 text-xs font-bold text-indigo-700 dark:text-indigo-300">فعالية المبيد ضد الأمراض</h4>
+                        <div className="space-y-1.5">
+                          {selectedItem.disease_efficacy.slice(0, 8).map((de, i) => (
+                            <div key={i} className="flex items-center justify-between text-[11px]">
+                              <span className="text-indigo-700 dark:text-indigo-300">{de.disease_ar || de.disease || ''}</span>
+                              {de.efficacy_ar && (
+                                <span className="text-indigo-500 dark:text-indigo-400">{de.efficacy_ar}</span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     )}
                   </div>
