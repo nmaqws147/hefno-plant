@@ -73,7 +73,8 @@
         },
         "effectiveness": "85-95%",
         "season": "مارس-نوفمبر مع ذروة في يوليو-سبتمبر",
-        "resistanceRisk": "عالي — ضرورة التناوب بين مجموعات المبيدات المختلفة"
+        "resistanceRisk": "عالي — ضرورة التناوب بين مجموعات المبيدات المختلفة",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-2",
@@ -131,7 +132,8 @@
         },
         "effectiveness": "82-92%",
         "season": "إبريل-أكتوبر",
-        "resistanceRisk": "عالي جدًا — مقاومة موثقة للبيريثرويدات في مصر"
+        "resistanceRisk": "عالي جدًا — مقاومة موثقة للبيريثرويدات في مصر",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-3",
@@ -195,7 +197,8 @@
         },
         "effectiveness": "80-92%",
         "season": "مايو-أكتوبر مع ذروة في يونيو-أغسطس",
-        "resistanceRisk": "متوسط-عالي — خطر المقاومة في تصاعد عالميًا"
+        "resistanceRisk": "متوسط-عالي — خطر المقاومة في تصاعد عالميًا",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-4",
@@ -259,7 +262,8 @@
         },
         "effectiveness": "83-93%",
         "season": "مارس-نوفمبر",
-        "resistanceRisk": "عالي — موثقة مقاومة للبيريثرويدات والأوبي في مصر"
+        "resistanceRisk": "عالي — موثقة مقاومة للبيريثرويدات والأوبي في مصر",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-5",
@@ -318,7 +322,8 @@
         },
         "effectiveness": "80-90%",
         "season": "طوال العام في المخازن، مارس-يونيو في الحقل",
-        "resistanceRisk": "متوسط"
+        "resistanceRisk": "متوسط",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-6",
@@ -375,7 +380,8 @@
         },
         "effectiveness": "78-88%",
         "season": "مايو-سبتمبر",
-        "resistanceRisk": "منخفض-متوسط"
+        "resistanceRisk": "منخفض-متوسط",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-7",
@@ -428,7 +434,8 @@
         },
         "effectiveness": "85-95%",
         "season": "فبراير-مايو",
-        "resistanceRisk": "منخفض"
+        "resistanceRisk": "منخفض",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-8",
@@ -478,7 +485,8 @@
         },
         "effectiveness": "80-90%",
         "season": "مايو-أغسطس",
-        "resistanceRisk": "منخفض-متوسط"
+        "resistanceRisk": "منخفض-متوسط",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-9",
@@ -532,7 +540,8 @@
         },
         "effectiveness": "83-92%",
         "season": "يونيو-أكتوبر",
-        "resistanceRisk": "متوسط"
+        "resistanceRisk": "متوسط",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-10",
@@ -578,7 +587,8 @@
         },
         "effectiveness": "82-91%",
         "season": "يونيو-أكتوبر",
-        "resistanceRisk": "متوسط"
+        "resistanceRisk": "متوسط",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-11",
@@ -627,7 +637,8 @@
         },
         "effectiveness": "80-88%",
         "season": "الربيع والصيف",
-        "resistanceRisk": "منخفض"
+        "resistanceRisk": "منخفض",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-12",
@@ -684,7 +695,8 @@
         },
         "effectiveness": "78-88%",
         "season": "مارس-نوفمبر مع ذروة في إبريل-مايو",
-        "resistanceRisk": "منخفض-متوسط"
+        "resistanceRisk": "منخفض-متوسط",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "lep-13",
@@ -737,7 +749,8 @@
         },
         "effectiveness": "80-92%",
         "season": "يونيو-أكتوبر مع ذروة عند تكوّن اللوز",
-        "resistanceRisk": "عالي — سجلت مقاومة موثقة لعدة مجموعات، ضرورة التناوب الصارم"
+        "resistanceRisk": "عالي — سجلت مقاومة موثقة لعدة مجموعات، ضرورة التناوب الصارم",
+        "dataSource": "compiled_by_ai"
       },
       {
         "id": "lep-14",
@@ -795,7 +808,8 @@
         },
         "effectiveness": "65-85% (متغيرة بشدة بسبب المقاومة المكتسبة)",
         "season": "طوال العام مع ذروة في الخريف والشتاء الدافئ",
-        "resistanceRisk": "عالي جدًا — من أكثر الحشرات اكتسابًا للمقاومة عالميًا، يُمنع تكرار نفس المجموعة الكيميائية في رشتين متتاليتين"
+        "resistanceRisk": "عالي جدًا — من أكثر الحشرات اكتسابًا للمقاومة عالميًا، يُمنع تكرار نفس المجموعة الكيميائية في رشتين متتاليتين",
+        "dataSource": "compiled_by_ai"
       }
     ]
   },
@@ -879,7 +893,8 @@
           "فيروس موزاييك البطاطس PVY",
           "فيروس تجعد الأوراق PLRV",
           "فيروس موزاييك الفول FMV"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-2",
@@ -947,7 +962,8 @@
           "فيروس موزاييك الخيار CMV",
           "فيروس تجعد أوراق القرع WMV",
           "فيروس موزاييك الكوسة ZYMV"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-3",
@@ -1019,7 +1035,8 @@
           "فيروس تجعد أوراق الطماطم TYLCV (خطر جدًا)",
           "فيروس موزاييك الكوسة",
           "فيروس موزاييك الفلفل"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-4",
@@ -1082,7 +1099,8 @@
         "virusesTransmitted": [
           "فيروس ورقة الموز BSV",
           "فيروس تجعد الكاسافا"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-5",
@@ -1133,7 +1151,8 @@
         "effectiveness": "80-90%",
         "season": "طوال العام مع ذروة في الصيف",
         "resistanceRisk": "منخفض-متوسط",
-        "virusesTransmitted": []
+        "virusesTransmitted": [],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-6",
@@ -1186,7 +1205,8 @@
         "effectiveness": "82-92%",
         "season": "أغسطس-أكتوبر (طور تفتح اللوز)",
         "resistanceRisk": "منخفض",
-        "virusesTransmitted": []
+        "virusesTransmitted": [],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-8",
@@ -1242,7 +1262,8 @@
         "resistanceRisk": "عالي",
         "virusesTransmitted": [
           "فيروس تشلل الخس LCV"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-9",
@@ -1302,7 +1323,8 @@
         "virusesTransmitted": [
           "فيروس موزاييك الفول BMV",
           "فيروس موزاييك الخيار CMV"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-10",
@@ -1357,7 +1379,8 @@
         "effectiveness": "78-90%",
         "season": "طوال العام مع ذروتين: مارس-مايو وأغسطس-أكتوبر",
         "resistanceRisk": "منخفض-متوسط",
-        "virusesTransmitted": []
+        "virusesTransmitted": [],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-12",
@@ -1412,7 +1435,8 @@
         "resistanceRisk": "منخفض",
         "virusesTransmitted": [
           "فيروس تريستيزا الحمضيات CTV (خطر تاريخي جداً)"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-13",
@@ -1472,7 +1496,8 @@
         "virusesTransmitted": [
           "فيروس موزاييك الفول (BYMV)",
           "فيروسات الاصفرار في البنجر السكري"
-        ]
+        ],
+        "dataSource": "compiled_by_ai"
       },
       {
         "id": "hem-14",
@@ -1524,7 +1549,8 @@
         "effectiveness": "المكافحة الكيميائية تقلل الأعداد لكنها لا تستأصل المرض بعد دخوله",
         "season": "نشاط طوال العام في المناخات الدافئة",
         "resistanceRisk": "غير موثق بعد محليًا — الأولوية القصوى هي منع دخول الحشرة والمرض أصلًا",
-        "quarantineStatus": "آفة حجر زراعي دولية شديدة الخطورة — تحت الرصد والمراقبة المشددة في مصر ولم يُؤكد استيطانها بعد"
+        "quarantineStatus": "آفة حجر زراعي دولية شديدة الخطورة — تحت الرصد والمراقبة المشددة في مصر ولم يُؤكد استيطانها بعد",
+        "dataSource": "compiled_by_ai"
       }
     ]
   },
@@ -1594,7 +1620,8 @@
         "effectiveness": "80-92%",
         "season": "مايو-أغسطس مع ذروة يونيو-يوليو",
         "resistanceRisk": "منخفض-متوسط",
-        "quarantineStatus": "آفة حجرية — مقيدة التصدير في كثير من الدول"
+        "quarantineStatus": "آفة حجرية — مقيدة التصدير في كثير من الدول",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-2",
@@ -1660,7 +1687,8 @@
         "effectiveness": "82-94%",
         "season": "طوال العام مع ذُرى موسمية حسب كل محصول",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "آفة حجرية A1 — ممنوعة في كثير من الأسواق"
+        "quarantineStatus": "آفة حجرية A1 — ممنوعة في كثير من الأسواق",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-3",
@@ -1719,7 +1747,8 @@
         "effectiveness": "78-90%",
         "season": "مايو-سبتمبر مع ذروة في يونيو-أغسطس",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "آفة حجرية A2 في الاتحاد الأوروبي"
+        "quarantineStatus": "آفة حجرية A2 في الاتحاد الأوروبي",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-4",
@@ -1782,7 +1811,8 @@
         "effectiveness": "78-92%",
         "season": "طوال العام في البيوت المحمية، إبريل-أكتوبر في الحقل",
         "resistanceRisk": "عالي جدًا — مقاومة واسعة للأوبي والبيريثرويدات",
-        "quarantineStatus": "آفة حجرية في بعض الدول"
+        "quarantineStatus": "آفة حجرية في بعض الدول",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-5",
@@ -1836,7 +1866,8 @@
         "effectiveness": "78-90%",
         "season": "طوال العام في البيوت المحمية",
         "resistanceRisk": "عالي",
-        "quarantineStatus": "آفة حجرية في بعض الدول"
+        "quarantineStatus": "آفة حجرية في بعض الدول",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-6",
@@ -1896,7 +1927,8 @@
         "effectiveness": "80-90%",
         "season": "طوال العام في البيوت المحمية",
         "resistanceRisk": "منخفض-متوسط",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-7",
@@ -1955,7 +1987,8 @@
         "effectiveness": "78-88%",
         "season": "أكتوبر-إبريل مع ذروة نوفمبر-فبراير",
         "resistanceRisk": "منخفض-متوسط",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-8",
@@ -2011,7 +2044,8 @@
         "effectiveness": "75-88%",
         "season": "الربيع والخريف",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-9",
@@ -2067,7 +2101,8 @@
         "effectiveness": "80-93%",
         "season": "أغسطس-نوفمبر مع ذروة سبتمبر-أكتوبر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "آفة حجرية في بعض الدول المستوردة"
+        "quarantineStatus": "آفة حجرية في بعض الدول المستوردة",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-10",
@@ -2125,7 +2160,8 @@
         "effectiveness": "78-90%",
         "season": "مايو-أغسطس مع ذروة في يونيو",
         "resistanceRisk": "منخفض-متوسط",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "dip-11",
@@ -2184,7 +2220,8 @@
         "effectiveness": "75-90% (أعلى عند الدمج بين المصائد والطعوم والصرف الصحي البستاني)",
         "season": "من يونيو حتى نوفمبر مع تفاوت حسب نوع الفاكهة المضيفة",
         "resistanceRisk": "متوسط",
-        "quarantineStatus": "آفة حجر زراعي مقيّدة للتصدير في عدة أسواق"
+        "quarantineStatus": "آفة حجر زراعي مقيّدة للتصدير في عدة أسواق",
+        "dataSource": "compiled_by_ai"
       }
     ]
   },
@@ -2255,7 +2292,8 @@
         "effectiveness": "70-88% (صعبة المكافحة بسبب الإصابة الداخلية)",
         "season": "طوال العام مع ذروة في مارس-أكتوبر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "آفة حجرية — مراقبة دولية مشددة"
+        "quarantineStatus": "آفة حجرية — مراقبة دولية مشددة",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-2",
@@ -2316,7 +2354,8 @@
         "effectiveness": "90-98% بالتبخير الصحيح",
         "season": "طوال العام في المخازن",
         "resistanceRisk": "عالي — مقاومة للفوسفين موثقة في مصر",
-        "quarantineStatus": "آفة مخازن — خاضعة لرقابة وزارة التموين"
+        "quarantineStatus": "آفة مخازن — خاضعة لرقابة وزارة التموين",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-3",
@@ -2373,7 +2412,8 @@
         "effectiveness": "92-98% بالتبخير الصحيح",
         "season": "طوال العام في المخازن",
         "resistanceRisk": "متوسط-عالي",
-        "quarantineStatus": "آفة مخازن مراقبة"
+        "quarantineStatus": "آفة مخازن مراقبة",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-4",
@@ -2427,7 +2467,8 @@
         "effectiveness": "72-83%",
         "season": "مايو-سبتمبر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-5",
@@ -2487,7 +2528,8 @@
         "effectiveness": "90-97%",
         "season": "طوال العام في المخازن، يوليو-سبتمبر في الحقل",
         "resistanceRisk": "متوسط",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-6",
@@ -2546,7 +2588,8 @@
         "effectiveness": "68-82% (صعبة المكافحة بسبب طول دورة الحياة)",
         "season": "الربيع والخريف أكثر نشاطاً",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-7",
@@ -2597,7 +2640,8 @@
         "effectiveness": "75-88%",
         "season": "مايو-سبتمبر",
         "resistanceRisk": "عالي للدورة الزراعية وبعض المبيدات",
-        "quarantineStatus": "آفة حجرية في الاتحاد الأوروبي"
+        "quarantineStatus": "آفة حجرية في الاتحاد الأوروبي",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-8",
@@ -2649,7 +2693,8 @@
         "effectiveness": "78-88%",
         "season": "مارس-أكتوبر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-9",
@@ -2700,7 +2745,8 @@
         "effectiveness": "85-95% بالبرامج الوطنية",
         "season": "يونيو-أكتوبر",
         "resistanceRisk": "متوسط",
-        "quarantineStatus": "آفة حجرية A1 — ممنوع دخولها مصر"
+        "quarantineStatus": "آفة حجرية A1 — ممنوع دخولها مصر",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-10",
@@ -2754,7 +2800,8 @@
         "effectiveness": "90-97%",
         "season": "طوال العام",
         "resistanceRisk": "عالي — مقاومة للفوسفين موثقة",
-        "quarantineStatus": "آفة مخازن مراقبة"
+        "quarantineStatus": "آفة مخازن مراقبة",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "col-11",
@@ -2807,7 +2854,8 @@
         "effectiveness": "90-97% (بالتبخير الصحيح)، لكن صعوبة الاستئصال الكامل بسبب مقاومة اليرقات الساكنة",
         "season": "طوال العام في المخازن، دون ارتباط مباشر بفصول الحقل",
         "resistanceRisk": "عالي — مقاومة موثقة لغاز الفوسفين في بعض السلالات، ضرورة الالتزام بجرعات وفترات التبخير الموصى بها",
-        "quarantineStatus": "آفة حجر زراعي دولية من أخطر آفات الحبوب المخزنة عالميًا"
+        "quarantineStatus": "آفة حجر زراعي دولية من أخطر آفات الحبوب المخزنة عالميًا",
+        "dataSource": "compiled_by_ai"
       },
       {
         "id": "col-12",
@@ -2856,7 +2904,8 @@
         },
         "effectiveness": "65-85% حسب مدى تقدم الإصابة عند اكتشافها",
         "season": "نشاط الحشرة الكاملة بين مارس ونوفمبر",
-        "resistanceRisk": "غير موثق بشكل كبير — التحدي الأساسي هو صعوبة الاكتشاف المبكر"
+        "resistanceRisk": "غير موثق بشكل كبير — التحدي الأساسي هو صعوبة الاكتشاف المبكر",
+        "dataSource": "compiled_by_ai"
       }
     ]
   },
@@ -2932,7 +2981,8 @@
         "effectiveness": "85-97% مع التدخل الجوي المبكر",
         "season": "دوري وغير منتظم — يعتمد على أحوال الطقس في مناطق التكاثر بشمال أفريقيا والجزيرة العربية",
         "resistanceRisk": "منخفض — التناوب البيئي الطبيعي يمنع تراكم المقاومة",
-        "quarantineStatus": "آفة طوارئ دولية — منظمة الأغذية FAO تتابعها باستمرار"
+        "quarantineStatus": "آفة طوارئ دولية — منظمة الأغذية FAO تتابعها باستمرار",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "ort-2",
@@ -2990,7 +3040,8 @@
         "effectiveness": "83-95%",
         "season": "متذبذب — تفشيات دورية كل 10-15 سنة في مصر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "آفة طوارئ دولية FAO"
+        "quarantineStatus": "آفة طوارئ دولية FAO",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "ort-3",
@@ -3047,7 +3098,8 @@
         "effectiveness": "78-88%",
         "season": "مايو-أكتوبر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "ort-4",
@@ -3104,7 +3156,8 @@
         "effectiveness": "80-90%",
         "season": "إبريل-أغسطس",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "ort-5",
@@ -3161,7 +3214,8 @@
         "effectiveness": "75-88%",
         "season": "مارس-نوفمبر مع ذروة مايو-يوليو",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "ort-6",
@@ -3215,7 +3269,8 @@
         "effectiveness": "72-85%",
         "season": "يوليو-أكتوبر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "ort-7",
@@ -3269,7 +3324,8 @@
         "effectiveness": "82-93%",
         "season": "مارس-يوليو",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "آفة حجرية إقليمية في بعض الدول"
+        "quarantineStatus": "آفة حجرية إقليمية في بعض الدول",
+        "dataSource": "uploaded_file"
       },
       {
         "id": "ort-8",
@@ -3323,7 +3379,8 @@
         "effectiveness": "75-87%",
         "season": "مارس-أكتوبر",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": "لا يوجد"
+        "quarantineStatus": "لا يوجد",
+        "dataSource": "uploaded_file"
       }
     ]
   },
@@ -3400,7 +3457,8 @@
         "virusesTransmitted": [
           "فيروس ذبول الطماطم TSWV (خطر جداً)",
           "فيروس النخر المبرقش للفول سوداني PBNV"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "hem-11",
@@ -3466,7 +3524,8 @@
         "virusesTransmitted": [
           "TSWV (خطر جدًا)",
           "INSV فيروس النخر الجزئي للنبات"
-        ]
+        ],
+        "dataSource": "uploaded_file"
       },
       {
         "id": "thy-3",
@@ -3519,7 +3578,8 @@
         },
         "effectiveness": "75-88%",
         "season": "مارس-مايو مع ذروة عند طرد السنابل",
-        "resistanceRisk": "منخفض-متوسط"
+        "resistanceRisk": "منخفض-متوسط",
+        "dataSource": "compiled_by_ai"
       },
       {
         "id": "thy-4",
@@ -3572,7 +3632,8 @@
         },
         "effectiveness": "70-85%",
         "season": "مارس-يونيو (فترة عقد الثمار)",
-        "resistanceRisk": "متوسط"
+        "resistanceRisk": "متوسط",
+        "dataSource": "compiled_by_ai"
       }
     ]
   },
@@ -3639,7 +3700,8 @@
         "effectiveness": "70-90% حسب حجم المستعمرة وطريقة المعاملة",
         "season": "نشاط طوال العام، ذروة في الصيف والخريف الدافئ الرطب",
         "resistanceRisk": "منخفض — لكن يصعب الوصول للمستعمرة الملكية بالكامل",
-        "quarantineStatus": null
+        "quarantineStatus": null,
+        "dataSource": "compiled_by_ai"
       },
       {
         "id": "iso-2",
@@ -3691,7 +3753,8 @@
         "effectiveness": "60-80% حسب مدى انتشار الإصابة داخل الخشب",
         "season": "نشاط طوال العام دون تأثر كبير بالفصول",
         "resistanceRisk": "منخفض",
-        "quarantineStatus": null
+        "quarantineStatus": null,
+        "dataSource": "compiled_by_ai"
       }
     ]
   }

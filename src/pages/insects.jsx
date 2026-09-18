@@ -90,7 +90,7 @@ const InsectsPage = () => {
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-xl border border-amber-100/40 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/40 px-3 py-1.5 text-xs font-bold text-amber-700 dark:text-amber-400">
                   <Bug size={14} />
-                  60+ نوع
+                  63+ نوع
                 </span>
               </div>
             </div>
