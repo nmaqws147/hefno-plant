@@ -3,12 +3,15 @@ import SEO from '../component/SEO';
 import { ChevronRight, ChevronLeft, Bug, Layers } from 'lucide-react';
 
 const categories = [
-  { id: 'bacteria', nameAr: 'بكتيريا', nameEn: 'Bacterial Diseases', symbol: '🦠', desc: 'الأمراض البكتيرية تسببها بكتيريا ممرضة للنبات، وتؤدي إلى أعراض مثل الذبول والتبقع والانحلال', color: 'emerald', count: 28 },
-  { id: 'viruses', nameAr: 'فيروسات', nameEn: 'Viral Diseases', symbol: '🧬', desc: 'الأمراض الفيروسية تسببها فيروسات تغزو الخلايا النباتية وتؤثر على نموها وإنتاجها', color: 'purple', count: 28 },
+  { id: 'bacteria', nameAr: 'بكتيريا', nameEn: 'Bacterial Diseases', symbol: '🦠', desc: 'الأمراض البكتيرية تسببها بكتيريا ممرضة للنبات، وتؤدي إلى أعراض مثل الذبول والتبقع والانحلال', color: 'emerald', count: 18 },
+  { id: 'viruses', nameAr: 'فيروسات', nameEn: 'Viral Diseases', symbol: '🧬', desc: 'الأمراض الفيروسية تسببها فيروسات تغزو الخلايا النباتية وتؤثر على نموها وإنتاجها', color: 'purple', count: 20 },
   { id: 'nematodes', nameAr: 'نيماتودا', nameEn: 'Nematode Diseases', symbol: '🪱', desc: 'الأمراض النيماتودية تسببها ديدان نيماتودية مجهرية تهاجم جذور النباتات وتؤثر على امتصاصها', color: 'amber', count: 14 },
   { id: 'parasitic_plants', nameAr: 'طفيليات', nameEn: 'Parasitic Plants', symbol: '🧫', desc: 'النباتات المتطفلة تنمو على حساب النباتات الأخرى وتمتص غذاءها منها مما يضعفها', color: 'red', count: 10 },
-  { id: 'physiological_disorders', nameAr: 'فسيولوجية', nameEn: 'Physiological Disorders', symbol: '🍃', desc: 'الاضطرابات الفسيولوجية تنتج عن ظروف بيئية غير مناسبة وليس عن مسببات مرضية حية', color: 'teal', count: 25 },
-  { id: 'fungi', nameAr: 'فطريات', nameEn: 'Fungal Diseases', symbol: '🍄', desc: 'الأمراض الفطرية تسببها فطريات ممرضة للنبات وتشمل البياض الدقيقي والصدأ وأعفان الجذور', color: 'orange', count: 90 },
+  { id: 'physiological_disorders', nameAr: 'فسيولوجية', nameEn: 'Physiological Disorders', symbol: '🍃', desc: 'الاضطرابات الفسيولوجية تنتج عن ظروف بيئية غير مناسبة وليس عن مسببات مرضية حية', color: 'teal', count: 20 },
+  { id: 'fungi', nameAr: 'فطريات', nameEn: 'Fungal Diseases', symbol: '🍄', desc: 'الأمراض الفطرية تسببها فطريات ممرضة للنبات وتشمل البياض الدقيقي والصدأ وأعفان الجذور', color: 'orange', count: 58 },
+  { id: 'critical-additions', nameAr: 'إضافات حرجة', nameEn: 'Critical Additions', symbol: '🚨', desc: 'مسببات مرضية جديدة أو متزايدة الأهمية تتطلب مراقبة وإدارة خاصة', color: 'rose', count: 20 },
+  { id: 'plasmodiophoromycota', nameAr: 'بلازموديوفورومايكوتا', nameEn: 'Plasmodiophoromycota', symbol: '🔬', desc: 'فطريات بسيطة النواة تنتشر في البيئات المائية والرطبة وتسبب أمراضًا خطيرة', color: 'cyan', count: 5 },
+  { id: 'final-additions', nameAr: 'الإضافات النهائية', nameEn: 'Final Additions', symbol: '🧬', desc: 'بقية المسببات المرضية المكملة لقاعدة البيانات الشاملة', color: 'violet', count: 25 },
 ];
 
 const categoryColors = {
@@ -18,6 +21,9 @@ const categoryColors = {
   red: { bg: 'bg-red-50 dark:bg-red-950/30', text: 'text-red-700 dark:text-red-400', border: 'border-red-500', gradient: 'from-red-500 to-red-600', badge: 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400' },
   teal: { bg: 'bg-teal-50 dark:bg-teal-950/30', text: 'text-teal-700 dark:text-teal-400', border: 'border-teal-500', gradient: 'from-teal-500 to-teal-600', badge: 'bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400' },
   orange: { bg: 'bg-orange-50 dark:bg-orange-950/30', text: 'text-orange-700 dark:text-orange-400', border: 'border-orange-500', gradient: 'from-orange-500 to-orange-600', badge: 'bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400' },
+  rose: { bg: 'bg-rose-50 dark:bg-rose-950/30', text: 'text-rose-700 dark:text-rose-400', border: 'border-rose-500', gradient: 'from-rose-500 to-rose-600', badge: 'bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400' },
+  cyan: { bg: 'bg-cyan-50 dark:bg-cyan-950/30', text: 'text-cyan-700 dark:text-cyan-400', border: 'border-cyan-500', gradient: 'from-cyan-500 to-cyan-600', badge: 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400' },
+  violet: { bg: 'bg-violet-50 dark:bg-violet-950/30', text: 'text-violet-700 dark:text-violet-400', border: 'border-violet-500', gradient: 'from-violet-500 to-violet-600', badge: 'bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-400' },
 };
 
 const DiseasesPage = () => {

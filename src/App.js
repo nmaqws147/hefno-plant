@@ -50,6 +50,9 @@ const NematodesDiseasesPage = lazy(() => import('./knowledge_base/nema'));
 const ParasiticPlantsPage = lazy(() => import('./knowledge_base/para'));
 const PhysiologicalDisordersPage = lazy(() => import('./knowledge_base/phys'));
 const FungalClassificationPage = lazy(() => import('./knowledge_base/fungi'));
+const CriticalAdditionsPage = lazy(() => import('./knowledge_base/critical'));
+const PlasmodiophoromycotaPage = lazy(() => import('./knowledge_base/plasmo'));
+const FinalAdditionsPage = lazy(() => import('./knowledge_base/final'));
 
 const FoodSafetyPage = lazy(() => import('./knowledge_base/food-safety/food-safety'));
 const HoneyBeesPage = lazy(() => import('./knowledge_base/honey-bees/honey-bees'));
@@ -208,6 +211,9 @@ const AppContent = () => {
               <Route path="diseases/fungi/zygo" element={<ZygomycotaDiseasesPage />} />
               <Route path="diseases/fungi/asco" element={<AscomycotaDiseasesPage />} />
               <Route path="diseases/fungi/basi" element={<BasidiomycotaDiseasesPage />} />
+              <Route path="diseases/critical-additions" element={<CriticalAdditionsPage />} />
+              <Route path="diseases/plasmodiophoromycota" element={<PlasmodiophoromycotaPage />} />
+              <Route path="diseases/final-additions" element={<FinalAdditionsPage />} />
 
               {/* الحشرات */}
               <Route path="insects" element={<InsectsPageNew />} />
