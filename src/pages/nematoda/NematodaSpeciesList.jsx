@@ -335,8 +335,8 @@ export default function NematodaSpeciesList() {
                   <FlaskConical size={20} />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-base font-bold text-gray-900 dark:text-white">{selectedItem.name_ar}</h2>
-                  <p className="text-[10px] text-gray-500 dark:text-gray-400">{selectedItem.name_en} — {selectedItem.type_ar}</p>
+                  <h2 className="text-base font-bold text-gray-900 dark:text-white">{selectedItem.name?.arabic || selectedItem.name_ar || selectedItem.id}</h2>
+                  <p className="text-[10px] text-gray-500 dark:text-gray-400">{selectedItem.name?.english || selectedItem.name_en || ''} — {selectedItem.action_characteristics?.type_notes_arabic || selectedItem.type_ar || ''}</p>
                 </div>
                 <button onClick={() => setShowItemModal(false)} className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-gray-400 transition-all hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-500">
                   <X size={16} />
@@ -363,40 +363,40 @@ export default function NematodaSpeciesList() {
                       <div className="space-y-3">
                         <div className="flex justify-between text-xs">
                           <span className="text-gray-500 dark:text-gray-400">المجموعة الكيميائية:</span>
-                          <span className="font-bold text-gray-900 dark:text-white">{selectedItem.chemical_class_en || '—'}</span>
+                          <span className="font-bold text-gray-900 dark:text-white">{selectedItem.classification?.chemical_group?.english || selectedItem.chemical_class_en || '—'}</span>
                         </div>
                         <div className="flex justify-between text-xs">
                           <span className="text-gray-500 dark:text-gray-400">نوع المادة:</span>
-                          <span className="font-bold text-gray-900 dark:text-white">{selectedItem.type_ar}</span>
+                          <span className="font-bold text-gray-900 dark:text-white">{selectedItem.action_characteristics?.type_notes_arabic || selectedItem.type_ar || ''}</span>
                         </div>
                         <div className="flex justify-between text-xs">
                           <span className="text-gray-500 dark:text-gray-400">التأثير:</span>
-                          <span className="font-bold text-gray-900 dark:text-white">{selectedItem.systemic ? 'جهازي' : 'ملامسي'}</span>
+                          <span className="font-bold text-gray-900 dark:text-white">{selectedItem.action_characteristics?.systemic || selectedItem.systemic ? 'جهازي' : 'ملامسي'}</span>
                         </div>
-                        {selectedItem.activity_ar && (
+                        {(selectedItem.action_characteristics?.activity_notes_arabic || selectedItem.activity_ar) && (
                           <div className="flex justify-between text-xs">
                             <span className="text-gray-500 dark:text-gray-400">آلية التأثير:</span>
-                            <span className="font-bold text-gray-900 dark:text-white">{selectedItem.activity_ar}</span>
+                            <span className="font-bold text-gray-900 dark:text-white">{selectedItem.action_characteristics?.activity_notes_arabic || selectedItem.activity_ar}</span>
                           </div>
                         )}
                       </div>
                     </div>
-                    {selectedItem.special_use_ar && (
+                    {selectedItem.additional_information?.special_use_arabic || selectedItem.special_use_ar ? (
                       <div className="rounded-xl border border-amber-200/60 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300">
                           <Star size={12} /> استخدامات خاصة
                         </h4>
-                        <p className="text-xs leading-relaxed text-amber-600 dark:text-amber-400">{selectedItem.special_use_ar}</p>
+                        <p className="text-xs leading-relaxed text-amber-600 dark:text-amber-400">{selectedItem.additional_information?.special_use_arabic || selectedItem.special_use_ar}</p>
                       </div>
-                    )}
-                    {selectedItem.regulatory_ar && (
+                    ) : null}
+                    {selectedItem.additional_information?.regulatory_status_arabic || selectedItem.regulatory_ar ? (
                       <div className="rounded-xl border border-blue-200/60 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-950/20 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-blue-700 dark:text-blue-300">
                           <ClipboardList size={12} /> معلومات تنظيمية
                         </h4>
-                        <p className="text-xs leading-relaxed text-blue-600 dark:text-blue-400">{selectedItem.regulatory_ar}</p>
+                        <p className="text-xs leading-relaxed text-blue-600 dark:text-blue-400">{selectedItem.additional_information?.regulatory_status_arabic || selectedItem.regulatory_ar}</p>
                       </div>
-                    )}
+                    ) : null}
                   </div>
                 )}
                 {/* Tab 1: Application + Resistance */}
@@ -408,15 +408,19 @@ export default function NematodaSpeciesList() {
                           <Droplets size={12} /> معلومات التطبيق
                         </h4>
                         <div className="space-y-2">
-                          {selectedItem.application.dose_feddan_ar && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">الجرعة:</span><span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.dose_feddan_ar}</span></div>}
-                          {selectedItem.application.timing_ar && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">التوقيت:</span><span className="text-gray-900 dark:text-white">{selectedItem.application.timing_ar}</span></div>}
-                          {selectedItem.application.methods_ar?.length > 0 && <div className="text-xs"><span className="text-gray-500 dark:text-gray-400">طريقة التطبيق: </span><span className="text-gray-900 dark:text-white">{selectedItem.application.methods_ar.join('، ')}</span></div>}
-                          {selectedItem.application.preharvest_interval_ar && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">فترة التحريم:</span><span className="text-gray-900 dark:text-white">{selectedItem.application.preharvest_interval_ar}</span></div>}
-                          {selectedItem.application.max_applications_season && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">الحد الأقصى:</span><span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.max_applications_season} رشات/موسم</span></div>}
+                          {selectedItem.application.application_notes?.find(n => n.type === 'dose_per_feddan')?.value && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">الجرعة:</span><span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.application_notes.find(n => n.type === 'dose_per_feddan').value}</span></div>}
+                          {!selectedItem.application.application_notes && selectedItem.application.dose_feddan_ar && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">الجرعة:</span><span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.dose_feddan_ar}</span></div>}
+                          {selectedItem.application.timing?.[0]?.arabic && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">التوقيت:</span><span className="text-gray-900 dark:text-white">{selectedItem.application.timing[0].arabic}</span></div>}
+                          {!selectedItem.application.timing && selectedItem.application.timing_ar && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">التوقيت:</span><span className="text-gray-900 dark:text-white">{selectedItem.application.timing_ar}</span></div>}
+                          {selectedItem.application.methods?.length > 0 && <div className="text-xs"><span className="text-gray-500 dark:text-gray-400">طريقة التطبيق: </span><span className="text-gray-900 dark:text-white">{selectedItem.application.methods.map(m => m.arabic || m).filter(Boolean).join('، ')}</span></div>}
+                          {!selectedItem.application.methods && selectedItem.application.methods_ar?.length > 0 && <div className="text-xs"><span className="text-gray-500 dark:text-gray-400">طريقة التطبيق: </span><span className="text-gray-900 dark:text-white">{selectedItem.application.methods_ar.join('، ')}</span></div>}
+                          {selectedItem.application.application_notes?.find(n => n.type === 'preharvest_interval')?.value && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">فترة التحريم:</span><span className="text-gray-900 dark:text-white">{selectedItem.application.application_notes.find(n => n.type === 'preharvest_interval').value}</span></div>}
+                          {!selectedItem.application.application_notes && selectedItem.application.preharvest_interval_ar && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">فترة التحريم:</span><span className="text-gray-900 dark:text-white">{selectedItem.application.preharvest_interval_ar}</span></div>}
+                          {(selectedItem.application.max_applications_per_season || selectedItem.application.max_applications_season) && <div className="flex justify-between text-xs"><span className="text-gray-500 dark:text-gray-400">الحد الأقصى:</span><span className="font-bold text-gray-900 dark:text-white">{selectedItem.application.max_applications_per_season || selectedItem.application.max_applications_season} رشات/موسم</span></div>}
                         </div>
                       </div>
                     )}
-                    {selectedItem.resistance && (
+                    {(selectedItem.resistance_management || selectedItem.resistance) && (
                       <div className="rounded-xl border border-amber-200/60 dark:border-amber-900/40 bg-amber-50 dark:bg-amber-950/20 p-4">
                         <h4 className="mb-3 flex items-center gap-1.5 text-xs font-bold text-amber-700 dark:text-amber-300">
                           <AlertTriangle size={12} /> معلومات المقاومة
@@ -424,12 +428,12 @@ export default function NematodaSpeciesList() {
                         <div className="space-y-2">
                           <div className="flex justify-between text-xs">
                             <span className="text-gray-500 dark:text-gray-400">مخاطر المقاومة:</span>
-                            <span className="font-bold" style={{ color: getRiskColor(selectedItem.resistance.risk_ar) }}>{getRiskText(selectedItem.resistance.risk_ar)}</span>
+                            <span className="font-bold" style={{ color: getRiskColor((selectedItem.resistance_management?.risk?.level) || (selectedItem.resistance?.risk_ar) || 2) }}>{getRiskText(selectedItem.resistance_management?.risk?.arabic || selectedItem.resistance?.risk_ar)}</span>
                           </div>
-                          {selectedItem.resistance.mechanism_ar && (
+                          {(selectedItem.resistance_management?.mechanism?.arabic || selectedItem.resistance?.mechanism_ar) && (
                             <div className="text-xs">
                               <span className="text-gray-500 dark:text-gray-400">آلية المقاومة: </span>
-                              <span className="text-amber-700 dark:text-amber-400">{selectedItem.resistance.mechanism_ar}</span>
+                              <span className="text-amber-700 dark:text-amber-400">{selectedItem.resistance_management?.mechanism?.arabic || selectedItem.resistance?.mechanism_ar}</span>
                             </div>
                           )}
                         </div>
@@ -452,24 +456,24 @@ export default function NematodaSpeciesList() {
                         </div>
                       </div>
                     )}
-                    {selectedItem.target_crops?.length > 0 && (
+                    {(selectedItem.crops || selectedItem.target_crops || []).length > 0 && (
                       <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                         <h4 className="mb-3 flex items-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400">
                           <Wheat size={12} /> المحاصيل
                         </h4>
                         <div className="flex flex-wrap gap-1.5">
-                          {selectedItem.target_crops.map((c, i) => (
-                            <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{c}</span>
+                          {(selectedItem.crops || selectedItem.target_crops || []).map((c, i) => (
+                            <span key={i} className="rounded-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 px-2.5 py-1 text-[10px] text-gray-700 dark:text-gray-300">{typeof c === 'string' ? c : c.arabic || c.english || ''}</span>
                           ))}
                         </div>
                       </div>
                     )}
-                    {selectedItem.safety_notes_ar && (
+                    {(selectedItem.safety?.safety_notes_ar || selectedItem.safety_notes_ar) && (
                       <div className="rounded-xl border border-red-200/60 dark:border-red-900/40 bg-red-50 dark:bg-red-950/20 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-red-700 dark:text-red-300">
                           <AlertTriangle size={12} /> تحذيرات السلامة
                         </h4>
-                        <p className="text-xs leading-relaxed text-red-600 dark:text-red-400">{selectedItem.safety_notes_ar}</p>
+                        <p className="text-xs leading-relaxed text-red-600 dark:text-red-400">{selectedItem.safety?.safety_notes_ar || selectedItem.safety_notes_ar}</p>
                       </div>
                     )}
                   </div>

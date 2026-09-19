@@ -356,12 +356,12 @@ export default function NematodaSpeciesDetail() {
                         <p className="text-xs leading-relaxed text-amber-600 dark:text-amber-400">{selectedItem.additional_information.special_use_arabic}</p>
                       </div>
                     )}
-                    {selectedItem.regulatory_ar && (
+                    {(selectedItem.additional_information?.regulatory_status_arabic || selectedItem.regulatory_ar) && (
                       <div className="rounded-xl border border-blue-200/60 dark:border-blue-900/40 bg-blue-50 dark:bg-blue-950/20 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-blue-700 dark:text-blue-300">
                           <ClipboardList size={12} /> معلومات تنظيمية
                         </h4>
-                        <p className="text-xs leading-relaxed text-blue-600 dark:text-blue-400">{selectedItem.regulatory_ar}</p>
+                        <p className="text-xs leading-relaxed text-blue-600 dark:text-blue-400">{selectedItem.additional_information?.regulatory_status_arabic || selectedItem.regulatory_ar}</p>
                       </div>
                     )}
                   </div>
