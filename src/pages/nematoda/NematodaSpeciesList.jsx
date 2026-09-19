@@ -35,15 +35,23 @@ export default function NematodaSpeciesList() {
 
   const groups = useMemo(() => getGroups('nema-grp'), []);
 
+  const codeToGroupId = useMemo(() => {
+    const map = {};
+    groups.forEach(g => { if (g.code) map[g.code] = g.id; });
+    return map;
+  }, [groups]);
+
    const itemsByGroup = useMemo(() => {
      const map = {};
      (nemaData.active_ingredients || nemaData.items || []).forEach(item => {
-       const gid = item.classification?.nematicide_group?.code;
+       const code = item.classification?.nematicide_group?.code;
+       const gid = codeToGroupId[code] || code;
+       if (!gid) return;
        if (!map[gid]) map[gid] = [];
        map[gid].push(item);
      });
      return map;
-   }, []);
+   }, [codeToGroupId]);
 
   const getRiskLevel = (risk) => {
     if (typeof risk === 'number') return risk;

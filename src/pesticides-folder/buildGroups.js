@@ -81,6 +81,9 @@ const buildNemaGroups = () => {
   const nemaGroups = nemaData.nematicide_groups_reference || [];
   const activeIngredients = nemaData.active_ingredients || [];
 
+  const codeToId = {};
+  nemaGroups.forEach(g => { codeToId[g.code] = g.id; });
+
   const groupMap = {};
 
   nemaGroups.forEach(g => {
@@ -92,15 +95,18 @@ const buildNemaGroups = () => {
       chemical_class_ar: g.chemical_class?.arabic || '',
       chemical_class_en: g.chemical_class?.english || '',
       irac_code: undefined,
-      resistance_risk_level: g.resistance_risk,
-      resistance_risk_ar: g.resistance_mechanism_arabic,
-      resistance_mechanism_ar: g.resistance_mechanism_arabic,
-      rotation_rule_ar: g.rotation_rule_arabic,
-      MoA_ar: g.mode_of_action,
-      application_method_ar: g.application_method_arabic,
-      spectrum_ar: g.spectrum_arabic,
+      resistance_risk_level: g.resistance_risk?.level,
+      resistance_risk_ar: g.resistance_risk?.arabic || '',
+      resistance_risk_color: g.resistance_risk?.color || '',
+      resistance_mechanism_ar: g.resistance_mechanism_arabic || '',
+      rotation_rule_ar: g.rotation_rule_arabic || '',
+      MoA_ar: g.mode_of_action?.summary?.arabic || '',
+      target_site: g.mode_of_action?.target_site || '',
+      application_method_ar: g.application_method_arabic || '',
+      spectrum_ar: g.spectrum_arabic || '',
+      importance_egypt: g.importance_in_egypt_arabic || '',
+      safety_class_ar: g.safety_class_arabic || '',
       max_applications_season: g.max_applications_per_season,
-      safety_class_ar: g.safety_class_arabic,
       ai_count: 0,
       group_data: g,
     };
@@ -108,7 +114,7 @@ const buildNemaGroups = () => {
 
   activeIngredients.forEach(ai => {
     const nemaGroup = ai.classification?.nematicide_group || {};
-    const gid = nemaGroup.id || nemaGroup.code;
+    const gid = nemaGroup.id || codeToId[nemaGroup.code] || nemaGroup.code;
     if (!gid || !groupMap[gid]) return;
     groupMap[gid].ai_count++;
   });
