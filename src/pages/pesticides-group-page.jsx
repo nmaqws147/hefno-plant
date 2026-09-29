@@ -4,6 +4,8 @@ import { ArrowLeft, Search, X, FlaskConical, AlertTriangle, Droplets, Shield, Bo
 import SEO from '../component/SEO';
 import { makeBreadcrumbs } from '../component/structuredData';
 import { getGroups, getFracCodeToIdMap } from '../pesticides-folder/buildGroups';
+import { normalizeHracItem } from '../pesticides-folder/herbicideFields';
+import WeedEfficacyTable from '../component/WeedEfficacyTable';
 
 const ITEMS_PER_PAGE = 5;
 
@@ -19,6 +21,17 @@ const categoryMeta = {
 const normalizeGroupCode = (code) => {
   if (!code) return '';
   return String(code).trim().toUpperCase();
+};
+
+const dedupeTargetPests = (list) => {
+  const seen = new Set();
+  return list.filter(t => {
+    const key = t.ar_name || t.name_ar || '';
+    if (!key) return true;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 };
 
 const PesticideGroupPage = () => {
@@ -70,7 +83,7 @@ const PesticideGroupPage = () => {
     resistance_risk: item.resistance_management?.risk?.arabic || item.resistance?.risk_ar || item.resistance_management?.risk_ar || item.resistance_risk,
     resistance_risk_level: item.resistance_management?.risk?.level || item.resistance?.risk_level || item.resistance_management?.resistance_risk_level,
     resistance_mechanism: item.resistance_management?.mechanism?.arabic || item.resistance?.mechanism_ar || item.resistance_management?.mechanism_ar || item.resistance?.ar_mechanism,
-    target_pests: [
+    target_pests: dedupeTargetPests([
       ...(item.targets?.fungal_diseases || []),
       ...(item.targets?.insects || []),
       ...(item.targets?.mites || []),
@@ -81,9 +94,9 @@ const PesticideGroupPage = () => {
      .concat(
        (item.target_pests || item.target_diseases || item.target_nematodes || item.target_weeds || [])
          .map(t => typeof t === 'string' ? { ar_name: t, name_ar: t } : { ...t, ar_name: t.ar_name || t.arabic || t.name_ar || '', name_ar: t.name_ar || t.arabic || t.ar_name || '' })
-     ),
+     )),
     spectrum_ar: item.additional_information?.spectrum_arabic || item.spectrum_ar || item.ar_spectrum || item.action_characteristics?.spectrum_ar || '—',
-    activity_ar: item.action_characteristics?.activity_notes_arabic || item.mode_of_action?.target_site || item.activity_ar || item.ar_activity || '',
+    activity_ar: item.additional_information?.activity_type_arabic || item.action_characteristics?.activity_notes_arabic || item.mode_of_action?.target_site || item.activity_ar || item.ar_activity || '',
     application: item.application || {},
     safety_notes: item.safety?.safety_notes_ar || item.safety_notes_ar || item.ar_notes_safety || item.safety?.ar_safety_notes,
     special_use: item.additional_information?.special_use_arabic || item.special_use || item.special_use_ar || item.ar_use_special || item.additional_information?.ar_special_use,
@@ -94,8 +107,8 @@ const PesticideGroupPage = () => {
     mode_of_action: item.mode_of_action || {},
     environmental_fate: item.environmental_fate || {},
     disease_efficacy: item.disease_efficacy_relationships || [],
-    rotation_compatible: item.resistance_management?.rotation_compatible_frac_ids || [],
-    rotation_incompatible: item.resistance_management?.rotation_incompatible_frac_ids || [],
+    rotation_compatible: item.resistance_management?.rotation_compatible_frac_ids || item.resistance_management?.rotation_compatible_hrac_ids || [],
+    rotation_incompatible: item.resistance_management?.rotation_incompatible_frac_ids || item.resistance_management?.rotation_incompatible_hrac_ids || [],
     cross_resistance: item.resistance_management?.cross_resistance || {},
     systemic: item.action_characteristics?.systemic,
     uptake_ar: item.action_characteristics?.uptake_arabic || '',
@@ -119,7 +132,8 @@ const PesticideGroupPage = () => {
         }
         case 'herbicides': {
           const mod = await import('../pesticides-folder/pesti-items/hrac.json');
-          allItems = mod.default?.items || [];
+          const rawItems = mod.default?.active_ingredients || mod.default?.items || [];
+          allItems = rawItems.map(item => normalizeHracItem(item));
           break;
         }
         case 'nematicides': {
@@ -152,7 +166,7 @@ const PesticideGroupPage = () => {
         }
         default: break;
       }
-      const targets = [group?.id, group?.code, group?.irac_code, group?.frac_code].filter(Boolean).map(normalizeGroupCode);
+      const targets = [group?.id, group?.code, group?.irac_code, group?.frac_code, group?.hrac_code].filter(Boolean).map(normalizeGroupCode);
       const filtered = allItems.filter(item => {
         const itemCode = extractGroupCode(item, category);
         return targets.includes(normalizeGroupCode(itemCode));
@@ -263,10 +277,15 @@ const PesticideGroupPage = () => {
   const catMeta = categoryMeta[currentCategory] || categoryMeta.insecticides;
   const CatIcon = catMeta.Comp;
   const isPublicHealth = currentCategory === 'publicHealth';
+  const herbicideHasEfficacy = currentCategory === 'herbicides'
+    && Array.isArray(selectedItem?.weed_efficacy)
+    && selectedItem.weed_efficacy.length > 0;
+
   const modalTabs = [
     { id: 'info', label: 'معلومات' },
     { id: 'application', label: 'تطبيق' },
     { id: 'targets', label: 'أهداف وسلامة' },
+    ...(herbicideHasEfficacy ? [{ id: 'efficacy', label: 'الفعالية ضد الحشائش' }] : []),
   ];
 
   const categoryNames = {
@@ -340,6 +359,22 @@ const PesticideGroupPage = () => {
               {currentGroup.target_organisms_ar.map((t, i) => (
                 <span key={i} className="rounded-full bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 px-3 py-1 text-[10px] font-bold text-red-700 dark:text-red-400">{t}</span>
               ))}
+            </div>
+          )}
+          {currentCategory === 'herbicides' && currentGroup.target_weeds_ar?.length > 0 && (
+            <div className="mt-3">
+              <p className="mb-1.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">الحشائش المستهدفة:</p>
+              <div className="flex flex-wrap gap-1.5">
+                {currentGroup.target_weeds_ar.map((weed, i) => (
+                  <span key={i} className="rounded-full bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 px-2.5 py-1 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">{weed}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {currentCategory === 'herbicides' && currentGroup.selectivity_ar && (
+            <div className="mt-3 flex items-start gap-2 text-xs text-emerald-600 dark:text-emerald-400">
+              <Sprout size={12} className="mt-0.5 shrink-0" />
+              <span>الانتقائية: {currentGroup.selectivity_ar}</span>
             </div>
           )}
           {currentGroup.importance_egypt && (
@@ -509,6 +544,22 @@ const PesticideGroupPage = () => {
                 </div>
               )}
 
+              {currentCategory === 'herbicides' && item.efficacy_summary?.total > 0 && (
+                <div className="mb-2 flex flex-wrap items-center gap-1.5">
+                  <span className="rounded-full bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 px-2 py-0.5 text-[9px] font-bold text-emerald-700 dark:text-emerald-400">
+                    {item.efficacy_summary.total} حشيشة
+                  </span>
+                  <span className="rounded-full bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-800 px-2 py-0.5 text-[9px] font-bold text-sky-700 dark:text-sky-300">
+                    أقصى فعالية {item.efficacy_summary.maxLevel}/5
+                  </span>
+                  {item.efficacy_summary.warnings > 0 && (
+                    <span className="rounded-full bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 px-2 py-0.5 text-[9px] font-bold text-red-700 dark:text-red-400">
+                      {item.efficacy_summary.warnings} تحذير
+                    </span>
+                  )}
+                </div>
+              )}
+
               <div className="mt-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3">
                 <span className="flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
                   عرض التفاصيل
@@ -632,6 +683,22 @@ const PesticideGroupPage = () => {
                 {/* Tab 0: Info */}
                 {modalTab === 0 && (
                   <div className="space-y-4">
+                    {selectedItem.mode_of_action?.summary?.arabic && (
+                      <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-900/40 p-4">
+                        <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                          <BookOpen size={12} />
+                          آلية التأثير
+                        </h4>
+                        <p className="text-xs leading-relaxed text-gray-700 dark:text-gray-300">
+                          {selectedItem.mode_of_action.summary.arabic}
+                        </p>
+                        {selectedItem.mode_of_action.target_site && (
+                          <p className="mt-1.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                            موقع التأثير: {selectedItem.mode_of_action.target_site}
+                          </p>
+                        )}
+                      </div>
+                    )}
                     <div className="rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100/60 dark:border-gray-700/30 p-4">
                       <div className="space-y-3">
                         <div className="flex justify-between text-xs">
@@ -802,10 +869,33 @@ const PesticideGroupPage = () => {
                           {selectedItem.cross_resistance && Object.keys(selectedItem.cross_resistance).length > 0 && (
                             <div className="text-xs">
                               <span className="text-gray-500 dark:text-gray-400">مقاومة متبادلة: </span>
-                              <span className="text-purple-700 dark:text-purple-400">{selectedItem.cross_resistance.note_arabic || selectedItem.cross_resistance.note || ''}</span>
+                              <span className="text-purple-700 dark:text-purple-400">{selectedItem.cross_resistance.notes_ar || selectedItem.cross_resistance.note_arabic || selectedItem.cross_resistance.note || ''}</span>
                             </div>
                           )}
                         </div>
+                      </div>
+                    )}
+                    {selectedItem.rotation_notes?.length > 0 && (
+                      <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-900/40 p-4">
+                        <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                          <RefreshCw size={12} />
+                          قاعدة التناوب
+                        </h4>
+                        <div className="space-y-1.5">
+                          {selectedItem.rotation_notes.map((note, i) => (
+                            <p key={i} className="text-xs leading-relaxed text-gray-700 dark:text-gray-300">{note}</p>
+                          ))}
+                        </div>
+                        {selectedItem.rotation_compatible?.length > 0 && (
+                          <p className="mt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                            مجموعات متوافقة: {selectedItem.rotation_compatible.join('، ')}
+                          </p>
+                        )}
+                        {selectedItem.resistance_reported_in?.length > 0 && (
+                          <p className="mt-1 text-[10px] text-red-600 dark:text-red-400">
+                            مقاومة مُبلَّغ عنها في: {selectedItem.resistance_reported_in.join('، ')}
+                          </p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -878,6 +968,11 @@ const PesticideGroupPage = () => {
                       </div>
                     )}
                   </div>
+                )}
+
+                {/* Tab 3: Weed efficacy (herbicides only) */}
+                {modalTab === 3 && herbicideHasEfficacy && (
+                  <WeedEfficacyTable rows={selectedItem.weed_efficacy} />
                 )}
               </div>
             </div>
