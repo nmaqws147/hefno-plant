@@ -19,7 +19,7 @@
     ]
   },
   "groups": [
-    {
+    {ى
       "group_id": "oomycota",
       "group_name_ar": "فطريات بيضية",
       "group_name_en": "Oomycota",

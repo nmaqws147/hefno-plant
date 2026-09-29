@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, useRef } from 'react';
 import useTracking from '../hooks/useTracking';
 import SEO from './SEO';
 import { makeBreadcrumbs, makeWebApp } from './structuredData';
@@ -10,15 +10,371 @@ import {
   Edit
 } from 'lucide-react';
 
-const availableCrops = [
+// Constants
+const AVAILABLE_CROPS = [
   'قمح', 'شعير', 'ذرة', 'أرز', 'طماطم', 'بطاطس', 'فلفل', 'خيار',
   'باذنجان', 'كوسة', 'فراولة', 'عنب', 'تفاح', 'كمثرى', 'خوخ',
   'مشمش', 'حمضيات', 'زيتون', 'بصل', 'ثوم', 'فول', 'فاصوليا'
 ];
 
+const DEFAULT_LOCATION = {
+  lat: 24.7136,
+  lon: 46.6753,
+  name: "الرياض",
+  country: "SA",
+  isCurrentLocation: false
+};
+
+const GEOLOCATION_OPTIONS = {
+  enableHighAccuracy: true,
+  timeout: 15000,
+  maximumAge: 0
+};
+
+// Skeleton Component
+const SkeletonLine = ({ w = '60%', h = '14px', className = '' }) => (
+  <div className={`skeleton-shimmer rounded-lg ${className}`} style={{ width: w, height: h }} />
+);
+
+const SkeletonCircle = ({ size = '36px' }) => (
+  <div className="skeleton-shimmer rounded-full shrink-0" style={{ width: size, height: size }} />
+);
+
+// Weather Icon Component
+const WeatherIcon = ({ icon, size = 20, className = '' }) => {
+  const icons = {
+    'sun': <Sun size={size} className={`text-amber-500 ${className}`} />,
+    'cloud-sun': <CloudSun size={size} className={`text-amber-400 ${className}`} />,
+    'cloud': <Cloud size={size} className={`text-gray-400 ${className}`} />,
+    'cloud-rain': <CloudRain size={size} className={`text-blue-500 ${className}`} />
+  };
+  return icons[icon] || icons['cloud-sun'];
+};
+
+// Alert Color Helper
+const getAlertColor = (severity) => {
+  const colors = {
+    critical: { bg: 'bg-red-50 dark:bg-red-900/15', border: 'border-red-200 dark:border-red-800', text: 'text-red-600 dark:text-red-400', pill: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400' },
+    high: { bg: 'bg-amber-50 dark:bg-amber-900/15', border: 'border-amber-200 dark:border-amber-800', text: 'text-amber-600 dark:text-amber-400', pill: 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400' },
+    medium: { bg: 'bg-yellow-50 dark:bg-yellow-900/15', border: 'border-yellow-200 dark:border-yellow-800', text: 'text-yellow-600 dark:text-yellow-400', pill: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400' },
+    info: { bg: 'bg-blue-50 dark:bg-blue-900/15', border: 'border-blue-200 dark:border-blue-800', text: 'text-blue-600 dark:text-blue-400', pill: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' },
+    low: { bg: 'bg-green-50 dark:bg-green-900/15', border: 'border-green-200 dark:border-green-800', text: 'text-green-600 dark:text-green-400', pill: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' }
+  };
+  return colors[severity] || colors.low;
+};
+
+const getAlertIcon = (riskLevel) => {
+  if (riskLevel === 'critical') return Ban;
+  if (riskLevel === 'high') return AlertTriangle;
+  if (riskLevel === 'medium') return Info;
+  return Check;
+};
+
+const getStatusText = (status) => {
+  const statusMap = {
+    critical: 'تحذير عاجل',
+    warning: 'تنبيه مهم',
+    moderate: 'ملاحظة',
+    default: 'مناسب'
+  };
+  return statusMap[status] || statusMap.default;
+};
+
+// Loading Screen Component
+const LoadingScreen = ({ id }) => (
+  <div className="h-screen overflow-hidden bg-white dark:bg-gray-900 flex flex-col" id={id} dir="rtl">
+    <style>{`
+      @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+      .skeleton-shimmer { position: relative; overflow: hidden; background: #e5e7eb; }
+      .dark .skeleton-shimmer { background: #374151; }
+      .skeleton-shimmer::after {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
+        animation: shimmer 1.5s infinite;
+      }
+      .dark .skeleton-shimmer::after { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
+    `}</style>
+    <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6 flex-1 overflow-y-auto">
+      {/* Location bar skeleton */}
+      <div className="flex items-center justify-between gap-4 p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl">
+        <div className="flex items-center gap-3">
+          <SkeletonCircle size="36px" />
+          <div className="space-y-2">
+            <SkeletonLine w="120px" h="16px" />
+            <SkeletonLine w="80px" h="11px" />
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <SkeletonLine w="60px" h="11px" />
+          <SkeletonLine w="70px" h="32px" className="rounded-xl" />
+        </div>
+      </div>
+
+      <div className="md:grid md:grid-cols-2 lg:grid-cols-[1.5fr_1fr] gap-3 md:gap-6">
+        {/* Hero skeleton */}
+        <div className="p-3 sm:p-5 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-3 sm:space-y-4">
+          <div className="flex items-start justify-between">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <SkeletonCircle size="36px" />
+              <div className="space-y-2">
+                <SkeletonLine w="100px" h="14px" />
+                <SkeletonLine w="70px" h="11px" />
+              </div>
+            </div>
+            <div className="space-y-2 text-left">
+              <SkeletonLine w="60px" h="36px" />
+              <SkeletonLine w="90px" h="12px" />
+            </div>
+          </div>
+          <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50 space-y-2">
+            <SkeletonLine w="80px" h="12px" />
+            <SkeletonLine w="100%" h="36px" className="rounded-xl" />
+            <SkeletonLine w="90%" h="36px" className="rounded-xl" />
+          </div>
+          <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50">
+            <div className="flex items-center justify-between mb-3">
+              <SkeletonLine w="100px" h="12px" />
+              <SkeletonLine w="50px" h="22px" className="rounded-lg" />
+            </div>
+            <div className="flex gap-2">
+              <SkeletonLine w="80px" h="32px" className="rounded-lg" />
+              <SkeletonLine w="70px" h="32px" className="rounded-lg" />
+              <SkeletonLine w="90px" h="32px" className="rounded-lg" />
+            </div>
+          </div>
+        </div>
+
+        {/* Sidebar skeleton - mobile */}
+        <div className="md:hidden grid grid-cols-2 gap-2">
+          {[1, 2, 3, 4, 5].map(i => (
+            <div key={i} className="flex items-center gap-2 p-2.5 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-xl">
+              <SkeletonCircle size="28px" />
+              <div className="space-y-1.5 flex-1 min-w-0">
+                <SkeletonLine w="40px" h="10px" />
+                <SkeletonLine w="60px" h="14px" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Sidebar skeleton - desktop */}
+        <div className="hidden md:block space-y-3">
+          {[1, 2, 3, 4, 5].map(i => (
+            <div key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl">
+              <SkeletonCircle size="40px" />
+              <div className="space-y-2 flex-1">
+                <SkeletonLine w="50px" h="11px" />
+                <SkeletonLine w="70px" h="16px" />
+                <SkeletonLine w="60px" h="11px" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Hourly skeleton */}
+      <div className="p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-2 sm:space-y-3">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-2.5">
+            <SkeletonCircle size="28px" />
+            <div className="space-y-1">
+              <SkeletonLine w="90px" h="14px" />
+              <SkeletonLine w="70px" h="11px" />
+            </div>
+          </div>
+          <SkeletonLine w="60px" h="22px" className="rounded-full" />
+        </div>
+        <div className="flex gap-0 overflow-hidden">
+          {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+            <div key={i} className="flex flex-col items-center gap-2 py-2.5 sm:py-3 px-2 sm:px-3 min-w-[56px] sm:min-w-[72px]">
+              <SkeletonLine w="28px" h="11px" />
+              <SkeletonCircle size="20px" />
+              <SkeletonLine w="20px" h="16px" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Weekly skeleton */}
+      <div className="p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-2 sm:space-y-3">
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          <SkeletonCircle size="28px" />
+          <SkeletonLine w="110px" h="14px" />
+          <SkeletonLine w="50px" h="22px" className="rounded-full" />
+        </div>
+        <div className="flex gap-2 overflow-hidden">
+          {[1, 2, 3, 4, 5, 6, 7].map(i => (
+            <div key={i} className="flex flex-col items-center gap-2 py-2.5 sm:py-3 px-3 sm:px-4 min-w-[68px] sm:min-w-[88px]">
+              <SkeletonLine w="35px" h="12px" />
+              <SkeletonCircle size="22px" />
+              <SkeletonLine w="32px" h="11px" />
+              <SkeletonLine w="40px" h="16px" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Error Screen Component
+const ErrorScreen = ({ id, error, onRetry, title = "عذراً، حدث خطأ", icon: ErrorIcon = AlertTriangle }) => (
+  <div className="h-screen overflow-hidden bg-white dark:bg-gray-900 flex items-center justify-center px-4" id={id}>
+    <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-8 max-w-md w-full text-center space-y-4">
+      <div className="size-16 rounded-2xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 grid place-items-center mx-auto">
+        <ErrorIcon size={28} className="text-red-500" />
+      </div>
+      <h3 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h3>
+      <p className="text-sm text-gray-500 dark:text-gray-400">{error}</p>
+      <button
+        onClick={onRetry}
+        className="px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-bold hover:brightness-110 transition-all shadow-md"
+      >
+        إعادة المحاولة
+      </button>
+    </div>
+  </div>
+);
+
+// Crops Modal Component
+const CropsModal = ({ isOpen, onClose, onSave, draftCrops, setDraftCrops, cropSearch, setCropSearch }) => {
+  const filteredCrops = useMemo(() => {
+    if (!cropSearch) return AVAILABLE_CROPS;
+    return AVAILABLE_CROPS.filter(crop => crop.includes(cropSearch));
+  }, [cropSearch]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 z-50 grid place-items-center bg-black/50 backdrop-blur-sm p-4"
+      onClick={onClose}
+    >
+      <div
+        className="w-full max-w-lg max-h-[82vh] flex flex-col bg-white dark:bg-gray-900 border border-gray-200/60 dark:border-gray-700/50 shadow-xl rounded-2xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between gap-4 p-5 pb-3 shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="size-10 rounded-xl bg-gradient-to-br from-emerald-400 to-primary grid place-items-center shadow-md">
+              <Sprout size={18} className="text-white" />
+            </div>
+            <div>
+              <h3 className="text-sm font-bold text-gray-900 dark:text-white">اختر محاصيلك</h3>
+              <p className="text-[11px] text-gray-500 dark:text-gray-400">
+                {draftCrops.length > 0
+                  ? `${draftCrops.length} من ${AVAILABLE_CROPS.length} محصول`
+                  : 'اختر المحاصيل التي تزرعها للحصول على تحذيرات مخصصة'}
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={onClose}
+            className="size-9 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 grid place-items-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all shrink-0"
+            aria-label="إغلاق"
+          >
+            <X size={16} />
+          </button>
+        </div>
+
+        <div className="relative mx-5 mb-3">
+          <Search size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+          <input
+            type="text"
+            placeholder="ابحث عن محصول..."
+            value={cropSearch}
+            onChange={(e) => setCropSearch(e.target.value)}
+            className="w-full py-2 pr-9 pl-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+            aria-label="بحث عن محصول"
+          />
+          {cropSearch && (
+            <button
+              onClick={() => setCropSearch('')}
+              className="absolute left-2 top-1/2 -translate-y-1/2 size-5 rounded grid place-items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+              aria-label="مسح البحث"
+            >
+              <X size={12} />
+            </button>
+          )}
+        </div>
+
+        <div className="flex-1 overflow-y-auto px-5 pb-2 min-h-0 scrollbar-thin" role="group" aria-label="قائمة المحاصيل">
+          {filteredCrops.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-10 text-gray-400 dark:text-gray-500 gap-3">
+              <Search size={28} />
+              <p className="text-sm text-gray-500 dark:text-gray-400">لا توجد نتائج لـ "{cropSearch}"</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {filteredCrops.map((crop) => {
+                const isSelected = draftCrops.includes(crop);
+                return (
+                  <button
+                    key={crop}
+                    onClick={() => {
+                      setDraftCrops(
+                        isSelected
+                          ? draftCrops.filter(c => c !== crop)
+                          : [...draftCrops, crop]
+                      );
+                    }}
+                    className={`flex items-center gap-2 px-3 py-2.5 rounded-xl cursor-pointer text-sm font-medium transition-all border text-right ${
+                      isSelected
+                        ? 'bg-green-50 dark:bg-green-900/15 border-green-300 dark:border-green-700 text-gray-900 dark:text-white'
+                        : 'bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700/50 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-primary'
+                    }`}
+                    role="checkbox"
+                    aria-checked={isSelected}
+                  >
+                    <div className={`size-4 rounded border-2 grid place-items-center shrink-0 transition-all ${isSelected ? 'bg-green-500 border-green-500 text-white shadow-sm' : 'border-gray-400 dark:border-gray-500'}`}>
+                      {isSelected && <Check size={10} strokeWidth={3} />}
+                    </div>
+                    <span className="flex-1 min-w-0 truncate">{crop}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <div className="p-4 pt-3 border-t border-gray-100 dark:border-gray-700/50 flex items-center justify-between gap-2 shrink-0">
+          <div className="flex items-center gap-2">
+            {draftCrops.length > 0 && (
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-500 text-white">{draftCrops.length}</span>
+            )}
+            <span className="text-xs text-gray-500 dark:text-gray-400">
+              {draftCrops.length > 0 ? `${draftCrops.length} محصول` : 'لم يتم اختيار أي محصول'}
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onClose}
+              className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
+            >
+              إلغاء
+            </button>
+            <button
+              onClick={() => {
+                onSave(draftCrops);
+                onClose();
+              }}
+              className="px-4 py-2 rounded-xl bg-primary text-white text-xs font-bold hover:brightness-110 transition-all shadow-sm"
+            >
+              حفظ
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Main Weather Screen Component
 const WeatherScreen = ({ id }) => {
   const { trackAction } = useTracking();
+  const abortControllerRef = useRef(null);
 
+  // State management
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -33,6 +389,7 @@ const WeatherScreen = ({ id }) => {
   const [draftCrops, setDraftCrops] = useState([]);
   const [showAllAlerts, setShowAllAlerts] = useState(false);
 
+  // Track weather data loading
   useEffect(() => {
     if (weatherData) {
       trackAction('weather_loaded');
@@ -42,38 +399,140 @@ const WeatherScreen = ({ id }) => {
     }
   }, [weatherData, trackAction]);
 
-  const filteredCrops = useMemo(() => {
-    if (!cropSearch) return availableCrops;
-    return availableCrops.filter(crop =>
-      crop.includes(cropSearch)
-    );
-  }, [cropSearch, availableCrops]);
-
+  // Load user crops from localStorage
   useEffect(() => {
     const savedCrops = localStorage.getItem('userCrops');
     if (savedCrops) {
-      try { setUserCrops(JSON.parse(savedCrops)); } catch {}
+      try {
+        setUserCrops(JSON.parse(savedCrops));
+      } catch (err) {
+        console.error('Failed to parse saved crops:', err);
+      }
     }
   }, []);
 
-  const saveUserCrops = (crops) => {
+  // Memoized function to save crops
+  const saveUserCrops = useCallback((crops) => {
     setUserCrops(crops);
     localStorage.setItem('userCrops', JSON.stringify(crops));
-    if (location) {
-      fetchWeatherData(crops);
-    }
-  };
-
-  const setDefaultLocation = useCallback(() => {
-    setLocation({
-      lat: 24.7136,
-      lon: 46.6753,
-      name: "الرياض",
-      country: "SA",
-      isCurrentLocation: false
-    });
   }, []);
 
+  // Set default location
+  const setDefaultLocation = useCallback(() => {
+    setLocation(DEFAULT_LOCATION);
+  }, []);
+
+  // Fetch weather data with proper error handling
+  const fetchWeatherData = useCallback(async (crops = userCrops) => {
+    if (!location) return;
+
+    // Cancel previous request if pending
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+    abortControllerRef.current = new AbortController();
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      let url = `/api/weather?mode=current&lat=${location.lat}&lon=${location.lon}`;
+      if (crops.length > 0) url += `&crops=${crops.join(',')}`;
+
+      const response = await fetch(url, {
+        signal: abortControllerRef.current.signal
+      });
+
+      if (!response.ok) {
+        throw new Error('خطأ في تحميل بيانات الطقس');
+      }
+
+      const data = await response.json();
+      setWeatherData(data);
+      setLastUpdate(new Date());
+      setError(null);
+    } catch (err) {
+      if (err.name !== 'AbortError') {
+        setError('فشل تحميل بيانات الطقس. حاول مرة أخرى.');
+        console.error('Weather fetch error:', err);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [location, userCrops]);
+
+  // Geolocation callback
+  const handleGeolocationSuccess = useCallback(async (position) => {
+    const { latitude, longitude } = position.coords;
+    try {
+      const geoResponse = await fetch(
+        `/api/weather?mode=reverse&lat=${latitude}&lon=${longitude}`
+      );
+
+      if (geoResponse.ok) {
+        const geoData = await geoResponse.json();
+        if (geoData && geoData.length > 0) {
+          const cityInfo = geoData[0];
+          const cityName = cityInfo.local_names?.ar || cityInfo.name || 'موقعك الحالي';
+          setLocation({
+            lat: latitude,
+            lon: longitude,
+            name: cityName,
+            country: cityInfo.country || '',
+            isCurrentLocation: true
+          });
+        } else {
+          setLocation({
+            lat: latitude,
+            lon: longitude,
+            name: 'موقعك الحالي',
+            country: '',
+            isCurrentLocation: true
+          });
+        }
+      } else {
+        setLocation({
+          lat: latitude,
+          lon: longitude,
+          name: 'موقعك الحالي',
+          country: '',
+          isCurrentLocation: true
+        });
+      }
+    } catch (geoError) {
+      console.error('Geolocation reverse error:', geoError);
+      setLocation({
+        lat: latitude,
+        lon: longitude,
+        name: 'موقعك الحالي',
+        country: '',
+        isCurrentLocation: true
+      });
+    } finally {
+      setLocationLoading(false);
+    }
+  }, []);
+
+  // Geolocation error handler
+  const handleGeolocationError = useCallback((error) => {
+    setLocationLoading(false);
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        setPermissionDenied(true);
+        break;
+      case error.POSITION_UNAVAILABLE:
+        setLocationError('معلومات الموقع غير متاحة حالياً');
+        break;
+      case error.TIMEOUT:
+        setLocationError('انتهت مهلة طلب الموقع. حاول مرة أخرى.');
+        break;
+      default:
+        setLocationError('حدث خطأ غير معروف');
+    }
+    setDefaultLocation();
+  }, [setDefaultLocation]);
+
+  // Check permission and get location
   const checkPermissionAndGetLocation = useCallback(() => {
     setLocationLoading(true);
     setLocationError(null);
@@ -87,104 +546,46 @@ const WeatherScreen = ({ id }) => {
     }
 
     navigator.geolocation.getCurrentPosition(
-      async (position) => {
-        const { latitude, longitude } = position.coords;
-        try {
-          const geoResponse = await fetch(
-            `/api/weather?mode=reverse&lat=${latitude}&lon=${longitude}`
-          );
-          if (geoResponse.ok) {
-            const geoData = await geoResponse.json();
-            if (geoData && geoData.length > 0) {
-              const cityInfo = geoData[0];
-              const cityName = cityInfo.local_names?.ar || cityInfo.name || 'موقعك الحالي';
-              setLocation({
-                lat: latitude, lon: longitude,
-                name: cityName,
-                country: cityInfo.country || '',
-                isCurrentLocation: true
-              });
-            } else {
-              setLocation({ lat: latitude, lon: longitude, name: 'موقعك الحالي', country: '', isCurrentLocation: true });
-            }
-          } else {
-            setLocation({ lat: latitude, lon: longitude, name: 'موقعك الحالي', country: '', isCurrentLocation: true });
-          }
-        } catch (geoError) {
-          setLocation({ lat: latitude, lon: longitude, name: 'موقعك الحالي', country: '', isCurrentLocation: true });
-        } finally {
-          setLocationLoading(false);
-        }
-      },
-      (error) => {
-        setLocationLoading(false);
-        switch (error.code) {
-          case error.PERMISSION_DENIED: setPermissionDenied(true); break;
-          case error.POSITION_UNAVAILABLE: setLocationError('معلومات الموقع غير متاحة حالياً'); break;
-          case error.TIMEOUT: setLocationError('انتهت مهلة طلب الموقع. حاول مرة أخرى.'); break;
-          default: setLocationError('حدث خطأ غير معروف'); break;
-        }
-        setDefaultLocation();
-      },
-      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+      handleGeolocationSuccess,
+      handleGeolocationError,
+      GEOLOCATION_OPTIONS
     );
-  }, [setDefaultLocation]);
+  }, [handleGeolocationSuccess, handleGeolocationError, setDefaultLocation]);
 
-  const fetchWeatherData = useCallback(async (crops = userCrops) => {
-    if (!location) return;
-    setLoading(true);
-    try {
-      let url = `/api/weather?mode=current&lat=${location.lat}&lon=${location.lon}`;
-      if (crops.length > 0) url += `&crops=${crops.join(',')}`;
-      const response = await fetch(url);
-      if (!response.ok) throw new Error('خطأ في تحميل بيانات الطقس');
-      const data = await response.json();
-      setWeatherData(data);
-      setLastUpdate(new Date());
-      setError(null);
-    } catch (err) {
-      setError('فشل تحميل بيانات الطقس. حاول مرة أخرى.');
-    } finally {
-      setLoading(false);
-    }
-  }, [location, userCrops]);
-
-  const getAlertIcon = (riskLevel) => {
-    if (riskLevel === 'critical') return Ban;
-    if (riskLevel === 'high') return AlertTriangle;
-    if (riskLevel === 'medium') return Info;
-    return Check;
-  };
-
-  const getGeneralStatusText = (status) => {
-    switch (status) {
-      case 'critical': return 'تحذير عاجل';
-      case 'warning': return 'تنبيه مهم';
-      case 'moderate': return 'ملاحظة';
-      default: return 'مناسب';
-    }
-  };
-
+  // Initialize geolocation on mount
   useEffect(() => {
     checkPermissionAndGetLocation();
   }, [checkPermissionAndGetLocation]);
 
+  // Fetch weather when location changes
   useEffect(() => {
     if (location) {
-      fetchWeatherData();
+      fetchWeatherData(userCrops);
     }
-  }, [location, fetchWeatherData]);
+  }, [location]); // Only depend on location, not fetchWeatherData
 
+  // Cleanup abort controller on unmount
+  useEffect(() => {
+    return () => {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, []);
+
+  // Calculate hourly forecast
   const hourlyData = useMemo(() => {
     if (!weatherData?.current_weather) return [];
     const now = new Date();
     const base = weatherData.current_weather;
+
     return Array.from({ length: 12 }, (_, i) => {
       const h = new Date(now);
       h.setHours((now.getHours() + i) % 24);
       const hour = h.getHours();
-      const t = base.temperature + (Math.sin((i / 12) * Math.PI * 2) * 4);
-      const r = (base.humidity || 50) + (Math.cos(i * 0.8) * 12) + (i > 5 ? -8 : 5);
+      const t = base.temperature + Math.sin((i / 12) * Math.PI * 2) * 4;
+      const r = (base.humidity || 50) + Math.cos(i * 0.8) * 12 + (i > 5 ? -8 : 5);
+
       return {
         hour,
         label: i === 0 ? 'الآن' : `${hour}:00`,
@@ -195,11 +596,13 @@ const WeatherScreen = ({ id }) => {
     });
   }, [weatherData]);
 
+  // Calculate weekly forecast
   const weeklyData = useMemo(() => {
     if (!weatherData?.forecast?.today) return [];
     const today = weatherData.forecast.today;
     const dayNames = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
     const now = new Date();
+
     return Array.from({ length: 7 }, (_, i) => {
       const d = new Date(now);
       d.setDate(now.getDate() + i);
@@ -209,6 +612,7 @@ const WeatherScreen = ({ id }) => {
       const rainP = today.rain_probability + Math.sin(i * 1.1) * 10;
       const icon = rainP > 50 ? 'cloud-rain' : maxT > 35 ? 'sun' : maxT > 25 ? 'cloud-sun' : 'cloud';
       const condition = rainP > 50 ? 'ممطر' : maxT > 35 ? 'مشمس' : maxT > 25 ? 'غائم جزئياً' : 'مشمس';
+
       return {
         day: label,
         icon,
@@ -220,235 +624,69 @@ const WeatherScreen = ({ id }) => {
     });
   }, [weatherData]);
 
-  const getWeatherIcon = (icon, size, className) => {
-    const icons = {
-      'sun': <Sun size={size || 20} className={`text-amber-500 ${className || ''}`} />,
-      'cloud-sun': <CloudSun size={size || 20} className={`text-amber-400 ${className || ''}`} />,
-      'cloud': <Cloud size={size || 20} className={`text-gray-400 ${className || ''}`} />,
-      'cloud-rain': <CloudRain size={size || 20} className={`text-blue-500 ${className || ''}`} />
-    };
-    return icons[icon] || icons['cloud-sun'];
-  };
+  // Determine hero weather icon
+  const heroIcon = useMemo(() => {
+    const desc = weatherData?.current_weather?.description || '';
+    if (desc.includes('مطر')) return 'cloud-rain';
+    if (desc.includes('غائم')) return 'cloud';
+    if (desc.includes('مشمس') || desc.includes('صافي')) return 'sun';
+    return 'cloud-sun';
+  }, [weatherData]);
 
-  const alertColor = (severity) => {
-    switch (severity) {
-      case 'critical': return { bg: 'bg-red-50 dark:bg-red-900/15', border: 'border-red-200 dark:border-red-800', text: 'text-red-600 dark:text-red-400', pill: 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400' };
-      case 'high': return { bg: 'bg-amber-50 dark:bg-amber-900/15', border: 'border-amber-200 dark:border-amber-800', text: 'text-amber-600 dark:text-amber-400', pill: 'bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400' };
-      case 'medium': return { bg: 'bg-yellow-50 dark:bg-yellow-900/15', border: 'border-yellow-200 dark:border-yellow-800', text: 'text-yellow-600 dark:text-yellow-400', pill: 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400' };
-      case 'info': return { bg: 'bg-blue-50 dark:bg-blue-900/15', border: 'border-blue-200 dark:border-blue-800', text: 'text-blue-600 dark:text-blue-400', pill: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400' };
-      default: return { bg: 'bg-green-50 dark:bg-green-900/15', border: 'border-green-200 dark:border-green-800', text: 'text-green-600 dark:text-green-400', pill: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' };
-    }
-  };
-
-  const SkeletonLine = ({ w = '60%', h = '14px', className = '' }) => (
-    <div className={`skeleton-shimmer rounded-lg ${className}`} style={{ width: w, height: h }} />
-  );
-  const SkeletonCircle = ({ size = '36px' }) => (
-    <div className="skeleton-shimmer rounded-full shrink-0" style={{ width: size, height: size }} />
-  );
-
+  // Render states
   if (locationLoading || loading) {
-    return (
-      <div className="h-screen overflow-hidden bg-white dark:bg-gray-900 flex flex-col" id={id} dir="rtl">
-        <style>{`
-          @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-          .skeleton-shimmer { position: relative; overflow: hidden; background: #e5e7eb; }
-          .dark .skeleton-shimmer { background: #374151; }
-          .skeleton-shimmer::after {
-            content: ''; position: absolute; inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
-            animation: shimmer 1.5s infinite;
-          }
-          .dark .skeleton-shimmer::after { background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
-        `}</style>
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6 flex-1 overflow-y-auto">
-          {/* Location bar skeleton */}
-          <div className="flex items-center justify-between gap-4 p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl">
-            <div className="flex items-center gap-3">
-              <SkeletonCircle size="36px" />
-              <div className="space-y-2">
-                <SkeletonLine w="120px" h="16px" />
-                <SkeletonLine w="80px" h="11px" />
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <SkeletonLine w="60px" h="11px" />
-              <SkeletonLine w="70px" h="32px" className="rounded-xl" />
-            </div>
-          </div>
-
-          <div className="md:grid md:grid-cols-2 lg:grid-cols-[1.5fr_1fr] gap-3 md:gap-6">
-            {/* Hero skeleton */}
-            <div className="p-3 sm:p-5 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-3 sm:space-y-4">
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <SkeletonCircle size="36px" />
-                  <div className="space-y-2">
-                    <SkeletonLine w="100px" h="14px" />
-                    <SkeletonLine w="70px" h="11px" />
-                  </div>
-                </div>
-                <div className="space-y-2 text-left">
-                  <SkeletonLine w="60px" h="36px" />
-                  <SkeletonLine w="90px" h="12px" />
-                </div>
-              </div>
-              <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50 space-y-2">
-                <SkeletonLine w="80px" h="12px" />
-                <SkeletonLine w="100%" h="36px" className="rounded-xl" />
-                <SkeletonLine w="90%" h="36px" className="rounded-xl" />
-              </div>
-              <div className="pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50">
-                <div className="flex items-center justify-between mb-3">
-                  <SkeletonLine w="100px" h="12px" />
-                  <SkeletonLine w="50px" h="22px" className="rounded-lg" />
-                </div>
-                <div className="flex gap-2">
-                  <SkeletonLine w="80px" h="32px" className="rounded-lg" />
-                  <SkeletonLine w="70px" h="32px" className="rounded-lg" />
-                  <SkeletonLine w="90px" h="32px" className="rounded-lg" />
-                </div>
-              </div>
-            </div>
-
-            {/* Sidebar skeleton - mobile */}
-            <div className="md:hidden grid grid-cols-2 gap-2">
-              {[1,2,3,4,5].map(i => (
-                <div key={i} className="flex items-center gap-2 p-2.5 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-xl">
-                  <SkeletonCircle size="28px" />
-                  <div className="space-y-1.5 flex-1 min-w-0">
-                    <SkeletonLine w="40px" h="10px" />
-                    <SkeletonLine w="60px" h="14px" />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Sidebar skeleton - desktop */}
-            <div className="hidden md:block space-y-3">
-              {[1,2,3,4,5].map(i => (
-                <div key={i} className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl">
-                  <SkeletonCircle size="40px" />
-                  <div className="space-y-2 flex-1">
-                    <SkeletonLine w="50px" h="11px" />
-                    <SkeletonLine w="70px" h="16px" />
-                    <SkeletonLine w="60px" h="11px" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Hourly skeleton */}
-          <div className="p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-2 sm:space-y-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 sm:gap-2.5">
-                <SkeletonCircle size="28px" />
-                <div className="space-y-1">
-                  <SkeletonLine w="90px" h="14px" />
-                  <SkeletonLine w="70px" h="11px" />
-                </div>
-              </div>
-              <SkeletonLine w="60px" h="22px" className="rounded-full" />
-            </div>
-            <div className="flex gap-0 overflow-hidden">
-              {[1,2,3,4,5,6,7,8].map(i => (
-                  <div key={i} className="flex flex-col items-center gap-2 py-2.5 sm:py-3 px-2 sm:px-3 min-w-[56px] sm:min-w-[72px]">
-                  <SkeletonLine w="28px" h="11px" />
-                  <SkeletonCircle size="20px" />
-                  <SkeletonLine w="20px" h="16px" />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Weekly skeleton */}
-          <div className="p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 rounded-2xl space-y-2 sm:space-y-3">
-            <div className="flex items-center gap-2 sm:gap-2.5">
-              <SkeletonCircle size="28px" />
-              <SkeletonLine w="110px" h="14px" />
-              <SkeletonLine w="50px" h="22px" className="rounded-full" />
-            </div>
-            <div className="flex gap-2 overflow-hidden">
-              {[1,2,3,4,5,6,7].map(i => (
-                  <div key={i} className="flex flex-col items-center gap-2 py-2.5 sm:py-3 px-3 sm:px-4 min-w-[68px] sm:min-w-[88px]">
-                  <SkeletonLine w="35px" h="12px" />
-                  <SkeletonCircle size="22px" />
-                  <SkeletonLine w="32px" h="11px" />
-                  <SkeletonLine w="40px" h="16px" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    return <LoadingScreen id={id} />;
   }
 
   if (permissionDenied) {
     return (
-      <div className="h-screen overflow-hidden bg-white dark:bg-gray-900 flex items-center justify-center px-4" id={id}>
-        <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-8 max-w-md w-full text-center space-y-4">
-          <div className="size-16 rounded-2xl bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 grid place-items-center mx-auto">
-            <MapPin size={28} className="text-amber-500" />
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white">تعذر الوصول إلى موقعك</h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">لم نتمكن من تحديد موقعك. سيتم عرض طقس الرياض كموقع افتراضي.</p>
-          <div className="flex gap-2 justify-center pt-2">
-            <button onClick={checkPermissionAndGetLocation} className="px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-bold hover:brightness-110 transition-all shadow-md">
-              إعادة المحاولة
-            </button>
-            <button onClick={setDefaultLocation} className="px-5 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 text-sm font-bold text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all">
-              استخدام الموقع الافتراضي
-            </button>
-          </div>
-        </div>
-      </div>
+      <ErrorScreen
+        id={id}
+        icon={MapPin}
+        title="تعذر الوصول إلى موقعك"
+        error="لم نتمكن من تحديد موقعك. سيتم عرض طقس الرياض كموقع افتراضي."
+        onRetry={checkPermissionAndGetLocation}
+      />
     );
   }
 
   if (locationError || (error && !weatherData)) {
     return (
-      <div className="h-screen overflow-hidden bg-white dark:bg-gray-900 flex items-center justify-center px-4" id={id}>
-        <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-8 max-w-md w-full text-center space-y-4">
-          <div className="size-16 rounded-2xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 grid place-items-center mx-auto">
-            <AlertTriangle size={28} className="text-red-500" />
-          </div>
-          <h3 className="text-lg font-bold text-gray-900 dark:text-white">عذراً، حدث خطأ</h3>
-          <p className="text-sm text-gray-500 dark:text-gray-400">{locationError || error}</p>
-          <button onClick={checkPermissionAndGetLocation} className="px-5 py-2.5 rounded-xl bg-primary text-white text-sm font-bold hover:brightness-110 transition-all shadow-md">
-            إعادة المحاولة
-          </button>
-        </div>
-      </div>
+      <ErrorScreen
+        id={id}
+        error={locationError || error}
+        onRetry={checkPermissionAndGetLocation}
+      />
     );
   }
 
   const cw = weatherData?.current_weather;
   const fc = weatherData?.forecast?.today;
 
-  const heroIcon = cw?.description?.includes('مطر') ? 'cloud-rain'
-    : cw?.description?.includes('غائم') ? 'cloud'
-    : cw?.description?.includes('مشمس') || cw?.description?.includes('صافي') ? 'sun'
-    : 'cloud-sun';
-
   return (
     <div className="h-screen overflow-hidden bg-white dark:bg-gray-900 flex flex-col" id={id} dir="rtl">
       <style>{`
-        .scrollbar-none::-webkit-scrollbar{display:none}
-        .scrollbar-none{-ms-overflow-style:none;scrollbar-width:none}
-        .scrollbar-thin::-webkit-scrollbar{width:4px}
-        .scrollbar-thin::-webkit-scrollbar-track{background:transparent}
-        .scrollbar-thin::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:2px}
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+        .scrollbar-thin::-webkit-scrollbar { width: 4px; }
+        .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+        .scrollbar-thin::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 2px; }
         .fade-in { animation: fadeIn 0.4s ease-out both; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         .scroll-fade-r { mask-image: linear-gradient(to left, transparent, black 20px, black calc(100% - 20px), transparent); -webkit-mask-image: linear-gradient(to left, transparent, black 20px, black calc(100% - 20px), transparent); }
       `}</style>
-      <SEO title="الطقس الزراعي" description="توقعات الطقس الزراعي اليومية — درجة الحرارة، الرطوبة، سرعة الرياح، ومؤشرات مناسبة للزراعة." url="/weather" keywords="طقس زراعي, حالة الطقس للمزارعين, درجة الحرارة للمحاصيل, رطوبة التربة, الطقس المناسب للزراعة" breadcrumbs={makeBreadcrumbs('/weather')} jsonLd={makeWebApp('الطقس الزراعي', '/weather', 'توقعات الطقس الزراعي اليومية مع مؤشرات مناسبة للزراعة')} />
+
+      <SEO
+        title="الطقس الزراعي"
+        description="توقعات الطقس الزراعي اليومية — درجة الحرارة، الرطوبة، سرعة الرياح، ومؤشرات مناسبة للزراعة."
+        url="/weather"
+        keywords="طقس زراعي, حالة الطقس للمزارعين, درجة الحرارة للمحاصيل, رطوبة التربة, الطقس المناسب للزراعة"
+        breadcrumbs={makeBreadcrumbs('/weather')}
+        jsonLd={makeWebApp('الطقس الزراعي', '/weather', 'توقعات الطقس الزراعي اليومية مع مؤشرات مناسبة للزراعة')}
+      />
 
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6 flex-1 overflow-y-auto">
-
-        {/* ─── Location Bar ─── */}
+        {/* Location Bar */}
         <div className="sticky top-0 z-10 flex items-center justify-between gap-4 flex-wrap p-3 sm:p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl fade-in" style={{ animationDelay: '0s' }}>
           <div className="flex items-center gap-3">
             <div className="size-9 sm:size-11 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 grid place-items-center">
@@ -468,31 +706,38 @@ const WeatherScreen = ({ id }) => {
               <Clock size={11} className="inline ml-1 -mt-0.5" />
               {lastUpdate ? lastUpdate.toLocaleTimeString('ar-SA') : '—'}
             </span>
-            <button onClick={() => fetchWeatherData()} className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all">
+            <button
+              onClick={() => fetchWeatherData(userCrops)}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+            >
               <RefreshCw size={13} />
               تحديث
             </button>
           </div>
         </div>
 
-        {/* ─── Main Content ─── */}
+        {/* Main Content Grid */}
         <div className="md:grid md:grid-cols-2 lg:grid-cols-[1.5fr_1fr] gap-3 md:gap-6">
-
-          {/* ─── Hero Card ─── */}
+          {/* Hero Card */}
           <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-3 sm:p-4 lg:p-5 fade-in" style={{ animationDelay: '0.1s' }}>
             <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between gap-3 xs:gap-4">
               <div className="flex items-center gap-2 sm:gap-3">
-                {getWeatherIcon(heroIcon, 36)}
+                <WeatherIcon icon={heroIcon} size={36} />
                 <div>
                   <div className="text-sm sm:text-base font-medium text-gray-900 dark:text-white">{cw?.description || '—'}</div>
                   {weatherData?.general_status && (
                     <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-1 mt-0.5">
                       {(() => {
-                        const StatIcon = status => status === 'critical' ? Ban : status === 'warning' ? AlertTriangle : status === 'moderate' ? Info : Check;
-                        const IconComp = StatIcon(weatherData.general_status);
-                        return <IconComp size={11} />;
+                        const StatusIcon = weatherData.general_status === 'critical'
+                          ? Ban
+                          : weatherData.general_status === 'warning'
+                          ? AlertTriangle
+                          : weatherData.general_status === 'moderate'
+                          ? Info
+                          : Check;
+                        return <StatusIcon size={11} />;
                       })()}
-                      {getGeneralStatusText(weatherData.general_status)}
+                      {getStatusText(weatherData.general_status)}
                     </span>
                   )}
                 </div>
@@ -504,13 +749,18 @@ const WeatherScreen = ({ id }) => {
                 </span>
                 {fc && (
                   <div className="flex gap-2 mt-1 justify-end text-xs font-medium text-gray-500 dark:text-gray-400">
-                    <span className="flex items-center gap-1"><Sun size={11} className="text-amber-500" /> H: {Math.round(fc.max_temp)}°</span>
-                    <span className="flex items-center gap-1"><Moon size={11} className="text-slate-500" /> L: {Math.round(fc.min_temp)}°</span>
+                    <span className="flex items-center gap-1">
+                      <Sun size={11} className="text-amber-500" /> H: {Math.round(fc.max_temp)}°
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Moon size={11} className="text-slate-500" /> L: {Math.round(fc.min_temp)}°
+                    </span>
                   </div>
                 )}
               </div>
             </div>
 
+            {/* Farming Tips */}
             {weatherData?.farming_tips && weatherData.farming_tips.length > 0 && (
               <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50">
                 <div className="flex items-center gap-2 mb-2">
@@ -528,49 +778,75 @@ const WeatherScreen = ({ id }) => {
               </div>
             )}
 
+            {/* Favorite Crops */}
             <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100 dark:border-gray-700/50">
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <Wheat size={14} className="text-amber-500" />
                   <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">المحاصيل المفضلة</span>
                 </div>
-                <button onClick={() => { setDraftCrops(userCrops); setShowCropsModal(true); }} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-200 transition-all" title="تعديل المحاصيل">
+                <button
+                  onClick={() => {
+                    setDraftCrops(userCrops);
+                    setShowCropsModal(true);
+                  }}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-medium text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-200 transition-all"
+                  title="تعديل المحاصيل"
+                >
                   <Edit size={12} />
                   تعديل
                 </button>
               </div>
               {userCrops.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-1.5">
-                  {userCrops.map((crop, idx) => (
-                    <div key={idx} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/30 min-w-0">
-                      <Sprout size={12} className="text-primary" />
-                      <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{crop}</span>
-                      {(() => {
-                        const suit = weatherData?.crop_suitability?.find(s => s.crop === crop);
-                        return suit
-                          ? <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${suit.suitable ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20' : 'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20'}`} title={suit.reason}>{suit.suitable ? 'مناسب' : 'غير مناسب'}</span>
-                          : <span className="text-[10px] font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700/30 px-1.5 py-0.5 rounded">{'—'}</span>;
-                      })()}
-                    </div>
-                  ))}
+                  {userCrops.map((crop, idx) => {
+                    const suit = weatherData?.crop_suitability?.find(s => s.crop === crop);
+                    return (
+                      <div key={idx} className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/30 min-w-0">
+                        <Sprout size={12} className="text-primary" />
+                        <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{crop}</span>
+                        {suit ? (
+                          <span
+                            className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${suit.suitable
+                              ? 'text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20'
+                              : 'text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-900/20'
+                            }`}
+                            title={suit.reason}
+                          >
+                            {suit.suitable ? 'مناسب' : 'غير مناسب'}
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-medium text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700/30 px-1.5 py-0.5 rounded">—</span>
+                        )}
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
-                <button onClick={() => { setDraftCrops(userCrops); setShowCropsModal(true); }} className="w-full py-2 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 text-xs font-medium text-gray-400 dark:text-gray-500 hover:border-primary hover:text-primary transition-all">
+                <button
+                  onClick={() => {
+                    setDraftCrops(userCrops);
+                    setShowCropsModal(true);
+                  }}
+                  className="w-full py-2 rounded-xl border border-dashed border-gray-300 dark:border-gray-600 text-xs font-medium text-gray-400 dark:text-gray-500 hover:border-primary hover:text-primary transition-all"
+                >
                   + اختر محاصيلك
                 </button>
               )}
             </div>
           </div>
 
-          {/* ─── Details Sidebar ─── */}
-          {/* Mobile: compact 2-col stat badges */}
+          {/* Details Sidebar */}
+          {/* Mobile Sidebar */}
           <div className="md:hidden grid grid-cols-2 gap-2 fade-in" style={{ animationDelay: '0.2s' }}>
             {cw?.humidity !== undefined && (
               <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
                 <Droplets size={14} className="text-blue-500 shrink-0" />
                 <div className="min-w-0">
                   <div className="text-[10px] text-gray-400">الرطوبة</div>
-                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw.humidity}% · {cw.humidity > 70 ? 'مرتفعة' : cw.humidity > 40 ? 'متوسطة' : 'منخفضة'}</div>
+                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">
+                    {cw.humidity}% · {cw.humidity > 70 ? 'مرتفعة' : cw.humidity > 40 ? 'متوسطة' : 'منخفضة'}
+                  </div>
                 </div>
               </div>
             )}
@@ -579,7 +855,9 @@ const WeatherScreen = ({ id }) => {
                 <Wind size={14} className="text-gray-500 shrink-0" />
                 <div className="min-w-0">
                   <div className="text-[10px] text-gray-400">الرياح</div>
-                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw.wind_speed} كم/س · {cw.wind_speed > 30 ? 'قوية' : cw.wind_speed > 15 ? 'متوسطة' : 'خفيفة'}</div>
+                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">
+                    {cw.wind_speed} كم/س · {cw.wind_speed > 30 ? 'قوية' : cw.wind_speed > 15 ? 'متوسطة' : 'خفيفة'}
+                  </div>
                 </div>
               </div>
             )}
@@ -597,7 +875,9 @@ const WeatherScreen = ({ id }) => {
                 <CloudRain size={14} className="text-blue-500 shrink-0" />
                 <div className="min-w-0">
                   <div className="text-[10px] text-gray-400">الأمطار</div>
-                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{fc.rain_probability}% · {fc.rain_probability > 70 ? 'مرتفع' : fc.rain_probability > 30 ? 'متوسط' : 'منخفض'}</div>
+                  <div className="text-xs font-bold text-gray-900 dark:text-white truncate">
+                    {fc.rain_probability}% · {fc.rain_probability > 70 ? 'مرتفع' : fc.rain_probability > 30 ? 'متوسط' : 'منخفض'}
+                  </div>
                 </div>
               </div>
             )}
@@ -605,19 +885,23 @@ const WeatherScreen = ({ id }) => {
               <Search size={14} className="text-blue-500 shrink-0" />
               <div className="min-w-0">
                 <div className="text-[10px] text-gray-400">الرؤية</div>
-                <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw?.visibility != null ? `${cw.visibility} كم` : '—'} · {cw?.visibility == null ? '—' : cw.visibility > 10 ? 'واضحة جداً' : cw.visibility > 5 ? 'متوسطة' : 'محدودة'}</div>
+                <div className="text-xs font-bold text-gray-900 dark:text-white truncate">
+                  {cw?.visibility != null ? `${cw.visibility} كم` : '—'} · {cw?.visibility == null ? '—' : cw.visibility > 10 ? 'واضحة جداً' : cw.visibility > 5 ? 'متوسطة' : 'محدودة'}
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-2 p-2.5 rounded-xl bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 min-w-0">
               <Sun size={14} className="text-amber-500 shrink-0" />
               <div className="min-w-0">
                 <div className="text-[10px] text-gray-400">UV</div>
-                <div className="text-xs font-bold text-gray-900 dark:text-white truncate">{cw?.uv_index != null ? `${cw.uv_index}/11` : '—'} · {cw?.uv_index == null ? '—' : cw.uv_index > 7 ? 'مرتفع جداً' : cw.uv_index > 4 ? 'مرتفع' : 'منخفض'}</div>
+                <div className="text-xs font-bold text-gray-900 dark:text-white truncate">
+                  {cw?.uv_index != null ? `${cw.uv_index}/11` : '—'} · {cw?.uv_index == null ? '—' : cw.uv_index > 7 ? 'مرتفع جداً' : cw.uv_index > 4 ? 'مرتفع' : 'منخفض'}
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Desktop: original sidebar cards */}
+          {/* Desktop Sidebar */}
           <div className="hidden md:block space-y-3 fade-in" style={{ animationDelay: '0.2s' }}>
             {cw?.humidity !== undefined && (
               <div className="flex items-center gap-3 p-4 bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl">
@@ -691,7 +975,9 @@ const WeatherScreen = ({ id }) => {
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-[11px] font-medium text-gray-400 dark:text-gray-500 uppercase tracking-wide">الأشعة فوق البنفسجية</div>
-                <div className="text-base font-bold text-gray-900 dark:text-white">{cw?.uv_index != null ? cw.uv_index : '—'} <span className="text-[10px] font-normal text-gray-400">/11</span></div>
+                <div className="text-base font-bold text-gray-900 dark:text-white">
+                  {cw?.uv_index != null ? cw.uv_index : '—'} <span className="text-[10px] font-normal text-gray-400">/11</span>
+                </div>
                 <div className="text-[11px] text-gray-500 dark:text-gray-400">
                   {cw?.uv_index == null ? 'غير متوفر' : cw.uv_index > 7 ? 'مرتفع جداً' : cw.uv_index > 4 ? 'مرتفع' : 'منخفض'}
                 </div>
@@ -700,7 +986,7 @@ const WeatherScreen = ({ id }) => {
           </div>
         </div>
 
-        {/* ─── Hourly Forecast ─── */}
+        {/* Hourly Forecast */}
         {hourlyData.length > 0 && (
           <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-3 sm:p-4 min-w-0 fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="flex items-center justify-between mb-2 sm:mb-3">
@@ -718,13 +1004,23 @@ const WeatherScreen = ({ id }) => {
             <div className="md:overflow-x-auto md:scrollbar-none md:scroll-fade-r">
               <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-6 gap-2 md:flex md:gap-0 md:min-w-max">
                 {hourlyData.map((h, i) => (
-                  <div key={i} className={`flex flex-col items-center gap-1.5 py-2 sm:py-3 px-2 md:min-w-[72px] rounded-xl transition-colors ${i === 0 ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30' : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'}`}>
-                    <span className={`text-[10px] sm:text-[11px] font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-400 dark:text-gray-500'}`}>{h.label}</span>
-                    {getWeatherIcon(h.icon, 20)}
+                  <div
+                    key={i}
+                    className={`flex flex-col items-center gap-1.5 py-2 sm:py-3 px-2 md:min-w-[72px] rounded-xl transition-colors ${
+                      i === 0
+                        ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30'
+                        : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                    }`}
+                  >
+                    <span className={`text-[10px] sm:text-[11px] font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-400 dark:text-gray-500'}`}>
+                      {h.label}
+                    </span>
+                    <WeatherIcon icon={h.icon} size={20} />
                     <span className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">{h.temp}°</span>
                     {h.rain > 15 && (
                       <span className="text-[9px] text-blue-500 flex items-center gap-0.5">
-                        <CloudRain size={9} />{h.rain}%
+                        <CloudRain size={9} />
+                        {h.rain}%
                       </span>
                     )}
                   </div>
@@ -734,7 +1030,7 @@ const WeatherScreen = ({ id }) => {
           </div>
         )}
 
-        {/* ─── 7-Day Forecast ─── */}
+        {/* 7-Day Forecast */}
         {weeklyData.length > 0 && (
           <div className="bg-white dark:bg-gray-800/80 border border-gray-200/60 dark:border-gray-700/50 shadow-sm rounded-2xl p-3 sm:p-4 min-w-0 fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="flex items-center mb-2 sm:mb-3">
@@ -749,11 +1045,21 @@ const WeatherScreen = ({ id }) => {
             <div className="md:overflow-x-auto md:scrollbar-none md:scroll-fade-r">
               <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 gap-2 md:flex md:gap-2 md:min-w-max md:justify-between">
                 {weeklyData.map((d, i) => (
-                  <div key={i} className={`flex flex-col items-center gap-2 py-2.5 sm:py-3 px-3 sm:px-4 md:min-w-[88px] rounded-xl transition-colors ${i === 0 ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30' : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'}`}>
-                    <span className={`text-[11px] sm:text-xs font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-700 dark:text-gray-300'}`}>{d.day}</span>
-                    {getWeatherIcon(d.icon, 22)}
+                  <div
+                    key={i}
+                    className={`flex flex-col items-center gap-2 py-2.5 sm:py-3 px-3 sm:px-4 md:min-w-[88px] rounded-xl transition-colors ${
+                      i === 0
+                        ? 'bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800/30'
+                        : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                    }`}
+                  >
+                    <span className={`text-[11px] sm:text-xs font-semibold ${i === 0 ? 'text-blue-500' : 'text-gray-700 dark:text-gray-300'}`}>
+                      {d.day}
+                    </span>
+                    <WeatherIcon icon={d.icon} size={22} />
                     <div className="flex items-center gap-1 text-[10px] text-blue-500 font-medium">
-                      <CloudRain size={9} /><span>{d.rain}%</span>
+                      <CloudRain size={9} />
+                      <span>{d.rain}%</span>
                     </div>
                     <div className="flex gap-1.5 items-center">
                       <span className="text-xs sm:text-sm font-bold text-gray-900 dark:text-white">{d.high}°</span>
@@ -766,7 +1072,7 @@ const WeatherScreen = ({ id }) => {
           </div>
         )}
 
-        {/* ─── Alerts & Recommendations ─── */}
+        {/* Alerts & Recommendations */}
         <div className="space-y-6 fade-in" style={{ animationDelay: '0.5s' }}>
           {weatherData?.alerts && weatherData.alerts.length > 0 && (
             <div>
@@ -784,30 +1090,65 @@ const WeatherScreen = ({ id }) => {
                     </p>
                   </div>
                 </div>
-                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-50 dark:bg-red-900/20 text-red-500">{weatherData.alerts.length}</span>
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-50 dark:bg-red-900/20 text-red-500">
+                  {weatherData.alerts.length}
+                </span>
               </div>
               <div className="space-y-2">
                 {(showAllAlerts ? weatherData.alerts : weatherData.alerts.slice(0, 3)).map((alert, idx) => {
-                  const severityKey = alert.risk_level === 'critical' ? 'critical'
-                    : alert.risk_level === 'high' ? 'high'
-                    : alert.risk_level === 'medium' ? 'medium' : 'low';
+                  const severity = alert.risk_level === 'critical'
+                    ? 'critical'
+                    : alert.risk_level === 'high'
+                    ? 'high'
+                    : alert.risk_level === 'medium'
+                    ? 'medium'
+                    : 'low';
                   const AlertIcon = getAlertIcon(alert.risk_level);
-                  const ac = alertColor(severityKey);
+                  const ac = getAlertColor(severity);
+
                   return (
                     <div key={idx} className={`${ac.bg} ${ac.border} border rounded-2xl overflow-hidden flex items-start gap-3 transition-all`}>
-                      <div className={`w-1 self-stretch shrink-0 ${severityKey === 'critical' ? 'bg-red-500' : severityKey === 'high' ? 'bg-amber-500' : severityKey === 'medium' ? 'bg-yellow-500' : 'bg-green-500'}`} />
-                      <div className={`size-9 rounded-lg grid place-items-center shrink-0 mt-3 ${alertColor(severityKey).bg}`}>
+                      <div
+                        className={`w-1 self-stretch shrink-0 ${
+                          severity === 'critical'
+                            ? 'bg-red-500'
+                            : severity === 'high'
+                            ? 'bg-amber-500'
+                            : severity === 'medium'
+                            ? 'bg-yellow-500'
+                            : 'bg-green-500'
+                        }`}
+                      />
+                      <div className={`size-9 rounded-lg grid place-items-center shrink-0 mt-3 ${ac.bg}`}>
                         <AlertIcon size={16} className={ac.text} />
                       </div>
                       <div className="flex-1 min-w-0 py-3 pl-3">
                         <div className="flex items-center gap-2 flex-wrap mb-1">
-                          <span className="text-sm font-bold text-gray-900 dark:text-white">{alert.category_ar || 'تنبيه'}</span>
+                          <span className="text-sm font-bold text-gray-900 dark:text-white">
+                            {alert.category_ar || 'تنبيه'}
+                          </span>
                           <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full inline-flex items-center gap-1 ${ac.pill}`}>
-                            <span className={`size-1.5 rounded-full inline-block ${severityKey === 'critical' ? 'bg-red-500 animate-pulse' : severityKey === 'high' ? 'bg-amber-500 animate-pulse' : severityKey === 'medium' ? 'bg-yellow-500' : 'bg-green-500'}`} />
-                            {alert.risk_level === 'critical' ? 'عاجل' : alert.risk_level === 'high' ? 'هام' : 'تنبيه'}
+                            <span
+                              className={`size-1.5 rounded-full inline-block ${
+                                severity === 'critical'
+                                  ? 'bg-red-500 animate-pulse'
+                                  : severity === 'high'
+                                  ? 'bg-amber-500 animate-pulse'
+                                  : severity === 'medium'
+                                  ? 'bg-yellow-500'
+                                  : 'bg-green-500'
+                              }`}
+                            />
+                            {alert.risk_level === 'critical'
+                              ? 'عاجل'
+                              : alert.risk_level === 'high'
+                              ? 'هام'
+                              : 'تنبيه'}
                           </span>
                         </div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{alert.alert_ar}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                          {alert.alert_ar}
+                        </p>
                         {alert.recommendations && alert.recommendations.length > 0 && (
                           <div className="mt-2 p-2.5 rounded-lg bg-white dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700/30 text-xs text-gray-500 dark:text-gray-400 flex items-start gap-2">
                             <Lightbulb size={13} className="text-amber-500 shrink-0 mt-0.5" />
@@ -850,19 +1191,35 @@ const WeatherScreen = ({ id }) => {
               </div>
               <div className="space-y-2">
                 {weatherData.recommendations.map((rec, idx) => {
-                  const recPriority = rec.priority || 'info';
-                  const ic = alertColor(recPriority);
+                  const priority = rec.priority || 'info';
+                  const ic = getAlertColor(priority);
                   const iconMap = { critical: Ban, high: AlertTriangle, info: Lightbulb };
-                  const RecIcon = iconMap[recPriority] || Lightbulb;
+                  const RecIcon = iconMap[priority] || Lightbulb;
+
                   return (
-                    <div key={idx} className={`${ic.bg} ${ic.border} border border-dashed rounded-2xl overflow-hidden flex items-start gap-3 transition-all`}>
-                      <div className={`w-1 self-stretch shrink-0 border-r-2 border-dashed ${recPriority === 'critical' ? 'border-red-500' : recPriority === 'high' ? 'border-amber-500' : 'border-blue-500'}`} />
+                    <div
+                      key={idx}
+                      className={`${ic.bg} ${ic.border} border border-dashed rounded-2xl overflow-hidden flex items-start gap-3 transition-all`}
+                    >
+                      <div
+                        className={`w-1 self-stretch shrink-0 border-r-2 border-dashed ${
+                          priority === 'critical'
+                            ? 'border-red-500'
+                            : priority === 'high'
+                            ? 'border-amber-500'
+                            : 'border-blue-500'
+                        }`}
+                      />
                       <div className={`size-9 rounded-lg grid place-items-center shrink-0 mt-3 ${ic.bg}`}>
                         <RecIcon size={16} className={ic.text} />
                       </div>
                       <div className="flex-1 min-w-0 py-3 pl-3">
-                        <div className="text-sm font-bold text-gray-900 dark:text-white mb-1">{rec.title}</div>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{rec.message}</p>
+                        <div className="text-sm font-bold text-gray-900 dark:text-white mb-1">
+                          {rec.title}
+                        </div>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                          {rec.message}
+                        </p>
                       </div>
                     </div>
                   );
@@ -872,7 +1229,7 @@ const WeatherScreen = ({ id }) => {
           )}
         </div>
 
-        {/* ─── Footer ─── */}
+        {/* Footer */}
         <footer className="flex items-center justify-between gap-4 px-1 pt-4 border-t border-gray-100 dark:border-gray-700/50">
           <div className="flex items-center gap-3 text-[10px] text-gray-400 dark:text-gray-500">
             <span className="flex items-center gap-1">
@@ -880,7 +1237,11 @@ const WeatherScreen = ({ id }) => {
               {lastUpdate ? lastUpdate.toLocaleTimeString('ar-SA') : '—'}
             </span>
             {lastUpdate && (
-              <span className={`size-1.5 rounded-full ${Date.now() - lastUpdate.getTime() > 600000 ? 'bg-amber-500' : 'bg-green-500'}`} />
+              <span
+                className={`size-1.5 rounded-full ${
+                  Date.now() - lastUpdate.getTime() > 600000 ? 'bg-amber-500' : 'bg-green-500'
+                }`}
+              />
             )}
             {lastUpdate && Date.now() - lastUpdate.getTime() > 600000 && (
               <span className="text-amber-500">قديم</span>
@@ -890,125 +1251,16 @@ const WeatherScreen = ({ id }) => {
         </footer>
       </div>
 
-      {/* ─── Crops Modal ─── */}
-      {/* ─── Crops Modal ─── */}
-      {showCropsModal && (
-        <div
-          className="fixed inset-0 z-50 grid place-items-center bg-black/50 backdrop-blur-sm p-4"
-          onClick={() => { setShowCropsModal(false); }}
-        >
-          <div
-            className="w-full max-w-lg max-h-[82vh] flex flex-col bg-white dark:bg-gray-900 border border-gray-200/60 dark:border-gray-700/50 shadow-xl rounded-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between gap-4 p-5 pb-3 shrink-0">
-              <div className="flex items-center gap-3">
-                <div className="size-10 rounded-xl bg-gradient-to-br from-emerald-400 to-primary grid place-items-center shadow-md">
-                  <Sprout size={18} className="text-white" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">اختر محاصيلك</h3>
-                  <p className="text-[11px] text-gray-500 dark:text-gray-400">
-                    {draftCrops.length > 0
-                      ? `${draftCrops.length} من ${availableCrops.length} محصول`
-                      : 'اختر المحاصيل التي تزرعها للحصول على تحذيرات مخصصة'}
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => { setShowCropsModal(false); }}
-                className="size-9 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 grid place-items-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all shrink-0"
-                aria-label="إغلاق"
-              >
-                <X size={16} />
-              </button>
-            </div>
-
-            <div className="relative mx-5 mb-3">
-              <Search size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
-              <input
-                type="text"
-                placeholder="ابحث عن محصول..."
-                value={cropSearch}
-                onChange={(e) => setCropSearch(e.target.value)}
-                className="w-full py-2 pr-9 pl-3 rounded-xl bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                aria-label="بحث عن محصول"
-              />
-              {cropSearch && (
-                <button onClick={() => setCropSearch('')} className="absolute left-2 top-1/2 -translate-y-1/2 size-5 rounded grid place-items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all" aria-label="مسح البحث">
-                  <X size={12} />
-                </button>
-              )}
-            </div>
-
-            <div className="flex-1 overflow-y-auto px-5 pb-2 min-h-0 scrollbar-thin" role="group" aria-label="قائمة المحاصيل">
-              {filteredCrops.length === 0 ? (
-                <div className="flex flex-col items-center justify-center py-10 text-gray-400 dark:text-gray-500 gap-3">
-                  <Search size={28} />
-                  <p className="text-sm text-gray-500 dark:text-gray-400">لا توجد نتائج لـ "{cropSearch}"</p>
-                </div>
-              ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                  {filteredCrops.map((crop) => {
-                    const isSelected = draftCrops.includes(crop);
-                    return (
-                      <button
-                        key={crop}
-                        onClick={() => {
-                          if (isSelected) {
-                            setDraftCrops(draftCrops.filter(c => c !== crop));
-                          } else {
-                            setDraftCrops([...draftCrops, crop]);
-                          }
-                        }}
-                        className={`flex items-center gap-2 px-3 py-2.5 rounded-xl cursor-pointer text-sm font-medium transition-all border text-right ${
-                          isSelected
-                            ? 'bg-green-50 dark:bg-green-900/15 border-green-300 dark:border-green-700 text-gray-900 dark:text-white'
-                            : 'bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700/50 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-primary'
-                        }`}
-                        role="checkbox"
-                        aria-checked={isSelected}
-                      >
-                        <div className={`size-4 rounded border-2 grid place-items-center shrink-0 transition-all ${isSelected ? 'bg-green-500 border-green-500 text-white shadow-sm' : 'border-gray-400 dark:border-gray-500'}`}>
-                          {isSelected && <Check size={10} strokeWidth={3} />}
-                        </div>
-                        <span className="flex-1 min-w-0 truncate">{crop}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-
-            <div className="p-4 pt-3 border-t border-gray-100 dark:border-gray-700/50 flex items-center justify-between gap-2 shrink-0">
-              <div className="flex items-center gap-2">
-                {draftCrops.length > 0 && (
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-green-500 text-white">{draftCrops.length}</span>
-                )}
-                <span className="text-xs text-gray-500 dark:text-gray-400">
-                  {draftCrops.length > 0
-                    ? `${draftCrops.length} محصول`
-                    : 'لم يتم اختيار أي محصول'}
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => { setShowCropsModal(false); }}
-                  className="px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all"
-                >
-                  إلغاء
-                </button>
-                <button
-                  onClick={() => { saveUserCrops(draftCrops); setShowCropsModal(false); }}
-                  className="px-4 py-2 rounded-xl bg-primary text-white text-xs font-bold hover:brightness-110 transition-all shadow-sm"
-                >
-                  حفظ
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Crops Modal */}
+      <CropsModal
+        isOpen={showCropsModal}
+        onClose={() => setShowCropsModal(false)}
+        onSave={saveUserCrops}
+        draftCrops={draftCrops}
+        setDraftCrops={setDraftCrops}
+        cropSearch={cropSearch}
+        setCropSearch={setCropSearch}
+      />
     </div>
   );
 };

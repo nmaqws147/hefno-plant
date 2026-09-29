@@ -1,4 +1,3 @@
-
 const { checkQuota } = require('./_lib/checkQuota');
 
 const API_KEYS = [
@@ -12,21 +11,16 @@ if (API_KEYS.length === 0 && FALLBACK_KEY) {
   API_KEYS.push(FALLBACK_KEY);
 }
 
+// FIXED: "gemini-3.5-flash" is not a real Google model name — it always
+// returned 404, so this model entry could never succeed. Replaced with a
+// real, current Gemini model. Also kept as `priority: 1` / first-tried so it
+// stays the "Primary Engine".
 const MODELS = [
-  {
-    name: "Backup Engine",
-    provider: "gemini",
-    url: "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=",
-    modelId: "gemini-2.5-flash",
-    timeout: 40000,
-    priority: 2,
-    supportsJsonMode: true
-  },
   {
     name: "Primary Engine",
     provider: "gemini",
-    url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=",
-    modelId: "gemini-3.5-flash",
+    url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=",
+    modelId: "gemini-2.0-flash",
     timeout: 35000,
     priority: 1,
     supportsJsonMode: true,
@@ -71,6 +65,15 @@ const MODELS = [
       },
       required: ["plantName", "healthStatus", "mainProblems", "problemType", "diseaseName", "symptoms", "severity", "treatment"]
     }
+  },
+  {
+    name: "Backup Engine",
+    provider: "gemini",
+    url: "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=",
+    modelId: "gemini-2.5-flash",
+    timeout: 40000,
+    priority: 2,
+    supportsJsonMode: true
   },
   {
     name: "Double Backup Engine",
@@ -123,7 +126,7 @@ const PROMPT = `أنت خبير عالمي متخصص في تشخيص أمراض
 async function callGeminiSingle(modelConfig, apiKey, base64Image, retries = 1) {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), modelConfig.timeout);
-  
+
   const generationConfig = {
     temperature: 0.1,
     maxOutputTokens: 3000
@@ -133,7 +136,7 @@ async function callGeminiSingle(modelConfig, apiKey, base64Image, retries = 1) {
     generationConfig.responseMimeType = "application/json";
     generationConfig.responseSchema = modelConfig.responseSchema;
   }
-  
+
   const requestBody = {
     contents: [{
       parts: [
@@ -143,86 +146,100 @@ async function callGeminiSingle(modelConfig, apiKey, base64Image, retries = 1) {
     }],
     generationConfig: generationConfig
   };
-  
+
   try {
     const fullUrl = `${modelConfig.url}${apiKey}`;
-    
+
     const response = await fetch(fullUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
       signal: controller.signal
     });
-    
+
     clearTimeout(timeoutId);
-    
+
     if (response.status === 429 && retries > 0) {
       await new Promise(resolve => setTimeout(resolve, 2000));
       return callGeminiSingle(modelConfig, apiKey, base64Image, retries - 1);
     }
-    
+
     if (response.status === 503 || response.status === 500) {
       return { success: false, error: `Service Unavailable (${response.status})` };
     }
-    
+
     if (!response.ok) {
+      // Log the response body on failure so bad model names / bad keys are
+      // visible in Vercel's Runtime Logs instead of disappearing silently.
+      let bodyText = '';
+      try { bodyText = await response.text(); } catch (_) {}
+      console.error(`[${modelConfig.name}] HTTP ${response.status}: ${bodyText.slice(0, 300)}`);
       return { success: false, error: `HTTP ${response.status}` };
     }
-    
+
     const data = await response.json();
     let text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    
+
     if (!text) {
       return { success: false, error: "Empty response" };
     }
-    
+
     text = text.replace(/```json/gi, '').replace(/```/g, '').trim();
 
     const jsonMatch = text.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       return { success: false, error: "No JSON found" };
     }
-    
+
     try {
       const result = JSON.parse(jsonMatch[0]);
       return { success: true, result };
     } catch (parseError) {
       return { success: false, error: "JSON Parse Error" };
     }
-    
+
   } catch (error) {
     clearTimeout(timeoutId);
-    
+
     if (error.name === 'AbortError') {
       return { success: false, error: "Timeout" };
     }
-    
+
     if (retries > 0 && !error.message.includes('Timeout')) {
       await new Promise(resolve => setTimeout(resolve, 2000));
       return callGeminiSingle(modelConfig, apiKey, base64Image, retries - 1);
     }
-    
+
     return { success: false, error: error.message };
   }
 }
 
 async function tryAllModels(base64Image) {
+  // FIXED: if no API keys are configured at all, fail loudly in the logs
+  // instead of silently returning SERVER_OVERLOAD with zero attempts made.
+  if (API_KEYS.length === 0) {
+    console.error("❌ No Gemini API keys configured. Set IMAGE_AI1, IMAGE_AI2, IMAGE_AI3, AI_MODEL_3_FLASH_KEY, or GEMINI_API_KEY in Vercel Environment Variables.");
+    return { success: false, errorType: "NO_API_KEY" };
+  }
+
   for (let i = 0; i < API_KEYS.length; i++) {
     const apiKey = API_KEYS[i].trim();
-    
+
     for (const model of MODELS) {
       const result = await callGeminiSingle(model, apiKey, base64Image, 0);
-      
+
       if (result.success) {
         return { ...result, usedModel: model.name };
       }
-      
+
+      console.error(`[key #${i + 1}] [${model.name}] failed: ${result.error}`);
+
       if (result.error && result.error.includes('429')) {
-        break; 
+        break;
       }
     }
   }
-  
+
   return { success: false, errorType: "SERVER_OVERLOAD" };
 }
 
@@ -242,7 +259,7 @@ module.exports = async function handler(req, res) {
 
     const imageSize = Buffer.byteLength(base64Image, 'base64');
     const maxSize = 3 * 1024 * 1024;
-    
+
     if (imageSize > maxSize) {
       return res.status(400).json({
         error: "حجم الملف كبير جداً",
@@ -281,7 +298,7 @@ module.exports = async function handler(req, res) {
     }
 
     const aiResult = await tryAllModels(base64Image);
-    
+
     if (!aiResult.success) {
       if (userId) {
         const { refundDiagnosis } = require('./_lib/diagnosisQuotaService');
@@ -328,7 +345,7 @@ module.exports = async function handler(req, res) {
 
   } catch (err) {
     console.error("Critical System Failure:", err.message);
-    
+
     return res.status(500).json({
       error: "خطأ في خادم التحليل الرئيسي",
       message: "نواجه صعوبة مؤقتة، برجاء إعادة المحاولة لاحقاً."
