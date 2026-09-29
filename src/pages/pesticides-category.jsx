@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import SEO from '../component/SEO';
 import { makeBreadcrumbs } from '../component/structuredData';
-import { Search, X, FlaskConical, Bug, Leaf, Sprout, Shield, AlertTriangle, Droplets, BarChart3, Hospital, ChevronRight, FolderOpen, RefreshCw } from 'lucide-react';
+import { Search, X, FlaskConical, Bug, Leaf, Sprout, Shield, AlertTriangle, Droplets, BarChart3, Hospital, ChevronLeft, ChevronRight, FolderOpen, RefreshCw } from 'lucide-react';
 import publicHealthData from '../pesticides-folder/pesti-items/phg.json';
 import { getGroups } from '../pesticides-folder/buildGroups';
 
@@ -170,10 +170,18 @@ const PesticidesCategoryPage = () => {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filteredGroups.map((group, idx) => (
+            (() => {
+              const isEmptyGroup = categoryId === 'herbicides' && !group.ai_count && !group.active_ingredients?.length;
+              return (
             <div
               key={group.id || idx}
-              onClick={() => handleGroupClick(group)}
-              className="group cursor-pointer rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              onClick={isEmptyGroup ? undefined : () => handleGroupClick(group)}
+              aria-disabled={isEmptyGroup}
+              className={`group rounded-2xl border border-gray-200/60 dark:border-gray-700/50 bg-white dark:bg-gray-800/80 p-4 shadow-sm transition-all ${
+                isEmptyGroup
+                  ? 'cursor-not-allowed opacity-60'
+                  : 'cursor-pointer hover:-translate-y-1 hover:shadow-md'
+              }`}
             >
               <div className="mb-3 flex items-center justify-between">
                 <span
@@ -189,13 +197,27 @@ const PesticidesCategoryPage = () => {
                 />
               </div>
 
-              <h4 className="text-base font-bold text-gray-900 dark:text-white">{group.chemical_class_en || group.name_en || group.name_ar}</h4>
-              <p className="mb-3 text-[11px] text-gray-500 dark:text-gray-400">{group.name_ar}</p>
+              {categoryId === 'herbicides' ? (
+                <>
+                  <h4 className="line-clamp-2 text-base font-bold text-gray-900 dark:text-white">{group.name_ar}</h4>
+                  <p className="mb-3 line-clamp-1 text-[11px] italic text-gray-500 dark:text-gray-400">{group.name_en}</p>
 
-              <div className="mb-2 text-xs text-gray-500 dark:text-gray-400">
-                <span className="font-bold text-gray-700 dark:text-gray-300">المجموعة الكيميائية:</span>{' '}
-                {group.chemical_class_en || group.chemical_class_ar || '—'}
-              </div>
+                  <div className="mb-2 text-xs text-gray-500 dark:text-gray-400">
+                    <span className="font-bold text-gray-700 dark:text-gray-300">الفئة الكيميائية:</span>{' '}
+                    {group.chemical_class_ar || group.chemical_class_en || '—'}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h4 className="text-base font-bold text-gray-900 dark:text-white">{group.chemical_class_en || group.name_en || group.name_ar}</h4>
+                  <p className="mb-3 text-[11px] text-gray-500 dark:text-gray-400">{group.name_ar}</p>
+
+                  <div className="mb-2 text-xs text-gray-500 dark:text-gray-400">
+                    <span className="font-bold text-gray-700 dark:text-gray-300">المجموعة الكيميائية:</span>{' '}
+                    {group.chemical_class_en || group.chemical_class_ar || '—'}
+                  </div>
+                </>
+              )}
 
               <p className="mb-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-2">
                 {typeof group.MoA_ar === 'string' ? group.MoA_ar?.substring(0, 100) : group.MoA_ar?.summary?.arabic || group.MoA_ar || '—'}
@@ -212,6 +234,20 @@ const PesticidesCategoryPage = () => {
                 <div className="mb-2 text-[11px] text-gray-500 dark:text-gray-400">
                   <Shield size={12} className="ml-1 inline" />
                   {group.spectrum_ar}
+                </div>
+              )}
+
+              {categoryId === 'herbicides' && group.target_weeds_ar?.length > 0 && (
+                <div className="mb-2">
+                  <span className="text-[10px] font-bold text-gray-500 dark:text-gray-400">الحشائش المستهدفة:</span>
+                  <div className="mt-1 flex flex-wrap gap-1">
+                    {group.target_weeds_ar.slice(0, 3).map((weed, i) => (
+                      <span key={i} className="rounded-full bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 px-2 py-0.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">{weed}</span>
+                    ))}
+                    {group.target_weeds_ar.length > 3 && (
+                      <span className="rounded-full bg-emerald-100 dark:bg-emerald-900/40 px-2 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">+{group.target_weeds_ar.length - 3}</span>
+                    )}
+                  </div>
                 </div>
               )}
 
@@ -267,14 +303,22 @@ const PesticidesCategoryPage = () => {
               <div className="mt-3 flex items-center justify-between border-t border-gray-100 dark:border-gray-700 pt-3">
                 <span className="flex items-center gap-1.5 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
                   <FlaskConical size={12} />
-                  {group.ai_count || group.active_ingredients?.length || 'متعدد'} مادة فعالة
+                  {group.ai_count || group.active_ingredients?.length || (isEmptyGroup ? '0' : 'متعدد')} مادة فعالة
                 </span>
-                <span className="flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
-                  عرض المواد
-                  <ChevronRight size={12} />
-                </span>
+                {!isEmptyGroup ? (
+                  <span className="flex items-center gap-1 text-[11px] font-bold text-emerald-600 dark:text-emerald-400">
+                    عرض المواد
+                    {categoryId === 'herbicides' ? <ChevronLeft size={12} /> : <ChevronRight size={12} />}
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1 text-[11px] font-bold text-gray-400 dark:text-gray-500">
+                    لا توجد مواد مسجلة
+                  </span>
+                )}
               </div>
             </div>
+              );
+            })()
           ))}
         </div>
 
