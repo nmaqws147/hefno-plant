@@ -44,6 +44,6 @@ describe('WeedEfficacyTable', () => {
 
   it('renders null for empty rows', () => {
     const { container } = render(<WeedEfficacyTable rows={[]} />);
-    expect(container.firstChild).toBeNull();
+    expect(container).toBeEmptyDOMElement();
   });
 });
