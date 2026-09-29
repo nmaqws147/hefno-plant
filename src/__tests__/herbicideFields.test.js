@@ -107,6 +107,12 @@ describe('herbicideFields edge cases', () => {
     });
   });
 
+  it('returns a zeroed summary for null rows', () => {
+    expect(summarizeEfficacy(null)).toEqual({
+      total: 0, warnings: 0, maxLevel: 0, topWeed: '',
+    });
+  });
+
   it('ignores null efficacy levels when picking the max level and top weed', () => {
     const summary = summarizeEfficacy([
       { weed_name_arabic: 'أ', efficacy_level: null, resistance_warning: false },

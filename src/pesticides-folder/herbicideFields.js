@@ -32,6 +32,7 @@ export const getPrimaryDose = (item) => {
 };
 
 export const summarizeEfficacy = (rows = []) => {
+  rows = rows || [];
   let maxLevel = 0;
   rows.forEach(row => {
     if ((row.efficacy_level || 0) > maxLevel) maxLevel = row.efficacy_level;
