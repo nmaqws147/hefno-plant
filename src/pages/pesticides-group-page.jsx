@@ -401,7 +401,7 @@ const PesticideGroupPage = () => {
               <span>{currentGroup.rotation_rule_ar}</span>
             </div>
           )}
-          {currentGroup.spectrum_ar && (
+          {currentCategory !== 'herbicides' && currentGroup.spectrum_ar && (
             <div className="mt-2 flex items-start gap-2 text-xs text-gray-500 dark:text-gray-400">
               <Shield size={12} className="mt-0.5 shrink-0" />
               <span>{currentGroup.spectrum_ar}</span>
@@ -888,7 +888,7 @@ const PesticideGroupPage = () => {
                         </div>
                         {selectedItem.rotation_compatible?.length > 0 && (
                           <p className="mt-2 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                            مجموعات متوافقة: {selectedItem.rotation_compatible.join('، ')}
+                            مجموعات متوافقة: {selectedItem.rotation_compatible.map(id => (id.startsWith('hrac-') ? id.slice(5).toUpperCase() : id)).join('، ')}
                           </p>
                         )}
                         {selectedItem.resistance_reported_in?.length > 0 && (

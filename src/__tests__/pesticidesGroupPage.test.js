@@ -122,4 +122,26 @@ describe('pesticides group page (HRAC wiring)', () => {
     expect(screen.queryByRole('button', { name: 'الفعالية ضد الحشائش' })).not.toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'أهداف وسلامة' })).toBeInTheDocument();
   });
+
+  it('renders the selectivity sentence exactly once in the group card', async () => {
+    renderGroupPage('herbicides', hracGroup('A'));
+    await screen.findByText('Clethodim');
+
+    const descCard = screen.getByText('عن هذه المجموعة').closest('div');
+    const selectivity = 'انتقائي جداً — ضد الحشائش الضيقة فقط — آمن على الشتلة العريضة في معظم الحالات';
+    const occurrences = descCard.textContent.split(selectivity).length - 1;
+
+    expect(occurrences).toBe(1);
+  });
+
+  it('shows HRAC letter codes instead of internal ids in the rotation line', async () => {
+    renderGroupPage('herbicides', hracGroup('A'));
+    const cardName = await screen.findByText('Clethodim');
+    fireEvent.click(cardName);
+    fireEvent.click(screen.getByRole('button', { name: 'تطبيق' }));
+
+    const rotationLine = screen.getByText(/مجموعات متوافقة/);
+    expect(rotationLine).toHaveTextContent(/مجموعات متوافقة: B، K3، N/);
+    expect(rotationLine).not.toHaveTextContent('hrac-');
+  });
 });
