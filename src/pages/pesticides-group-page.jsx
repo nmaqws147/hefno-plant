@@ -4,7 +4,7 @@ import { ArrowLeft, Search, X, FlaskConical, AlertTriangle, Droplets, Shield, Bo
 import SEO from '../component/SEO';
 import { makeBreadcrumbs } from '../component/structuredData';
 import { getGroups, getFracCodeToIdMap } from '../pesticides-folder/buildGroups';
-import { normalizeHracItem } from '../pesticides-folder/herbicideFields';
+import { normalizeHracItem, getApplicationNotes } from '../pesticides-folder/herbicideFields';
 import WeedEfficacyTable from '../component/WeedEfficacyTable';
 
 const ITEMS_PER_PAGE = 5;
@@ -280,6 +280,10 @@ const PesticideGroupPage = () => {
   const herbicideHasEfficacy = currentCategory === 'herbicides'
     && Array.isArray(selectedItem?.weed_efficacy)
     && selectedItem.weed_efficacy.length > 0;
+
+  const labeledApplicationNotes = currentCategory === 'herbicides' && selectedItem
+    ? getApplicationNotes(selectedItem)
+    : null;
 
   const modalTabs = [
     { id: 'info', label: 'معلومات' },
@@ -819,12 +823,20 @@ const PesticideGroupPage = () => {
                       <div className="rounded-xl bg-teal-50 dark:bg-teal-900/20 border border-teal-200 dark:border-teal-800 p-4">
                         <h4 className="mb-2 text-xs font-bold text-teal-700 dark:text-teal-300">ملاحظات التطبيق</h4>
                         <div className="space-y-1.5">
-                          {selectedItem.application.application_notes.map((note, i) => (
-                            <div key={i} className="flex items-center gap-2 text-xs">
-                              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
-                              <span className="text-teal-700 dark:text-teal-300">{note.value || note.arabic || note.text || ''}</span>
-                            </div>
-                          ))}
+                          {labeledApplicationNotes
+                            ? labeledApplicationNotes.map((note, i) => (
+                                <div key={i} className="flex items-center gap-2 text-xs">
+                                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+                                  <span className="font-bold text-teal-700 dark:text-teal-300">{note.label}</span>
+                                  <span className="text-teal-700 dark:text-teal-300">{note.value}</span>
+                                </div>
+                              ))
+                            : selectedItem.application.application_notes.map((note, i) => (
+                                <div key={i} className="flex items-center gap-2 text-xs">
+                                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+                                  <span className="text-teal-700 dark:text-teal-300">{note.value || note.arabic || note.text || ''}</span>
+                                </div>
+                              ))}
                         </div>
                       </div>
                     )}

@@ -144,4 +144,27 @@ describe('pesticides group page (HRAC wiring)', () => {
     expect(rotationLine).toHaveTextContent(/مجموعات متوافقة: B، K3، N/);
     expect(rotationLine).not.toHaveTextContent('hrac-');
   });
+
+  it('renders labeled application notes in the application tab', async () => {
+    renderGroupPage('herbicides', hracGroup('A'));
+    const cardName = await screen.findByText('Clethodim');
+    fireEvent.click(cardName);
+    fireEvent.click(screen.getByRole('button', { name: 'تطبيق' }));
+
+    expect(screen.getByText('الجرعة ما بعد الإنبات')).toBeInTheDocument();
+    expect(screen.getByText('ملاحظات التطبيق').parentElement).toHaveTextContent('الجرعة ما بعد الإنبات');
+  });
+
+  it('shows the pre-harvest label only for an AI that carries a PHI note', async () => {
+    const first = renderGroupPage('herbicides', hracGroup('A'));
+    fireEvent.click(await screen.findByText('Fluazifop-P-butyl'));
+    fireEvent.click(screen.getByRole('button', { name: 'تطبيق' }));
+    expect(screen.getByText('فترة ما قبل الحصاد')).toBeInTheDocument();
+    first.unmount();
+
+    renderGroupPage('herbicides', hracGroup('A'));
+    fireEvent.click(await screen.findByText('Clethodim'));
+    fireEvent.click(screen.getByRole('button', { name: 'تطبيق' }));
+    expect(screen.queryByText('فترة ما قبل الحصاد')).not.toBeInTheDocument();
+  });
 });
