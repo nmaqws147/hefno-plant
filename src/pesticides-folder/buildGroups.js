@@ -6,21 +6,18 @@ import bactData from './pesti-items/bact.json';
 
 const sources = {
   'frac-grp': null,
-  'hrac-grp': hracData.items || [],
   'nema-grp': null,
   'bact-grp': bactData.items || [],
 };
 
 const groupIdKeys = {
   'frac-grp': 'id',
-  'hrac-grp': 'hrac_group_id',
   'nema-grp': 'id',
   'bact-grp': 'bactericide_group_id',
 };
 
 const codeKeys = {
   'frac-grp': 'code',
-  'hrac-grp': 'hrac_code',
   'nema-grp': 'code',
   'bact-grp': 'group_code',
 };
@@ -171,9 +168,62 @@ const buildIracGroups = (data) => {
   return Object.values(groupMap);
 };
 
+const buildHracGroups = () => {
+  const hracGroups = hracData.hrac_groups_reference || [];
+  const activeIngredients = hracData.active_ingredients || [];
+
+  const codeToId = {};
+  hracGroups.forEach(g => { codeToId[g.code] = g.id; });
+
+  const groupMap = {};
+
+  hracGroups.forEach(g => {
+    groupMap[g.id] = {
+      id: g.id,
+      code: g.code || '',
+      name_ar: g.name?.arabic || g.name?.english || '',
+      name_en: g.name?.english || g.name?.arabic || '',
+      chemical_class_ar: g.chemical_class?.arabic || '',
+      chemical_class_en: g.chemical_class?.english || '',
+      hrac_code: g.code || '',
+      MoA_ar: g.mode_of_action?.summary?.arabic || '',
+      MoA_en: g.mode_of_action?.summary?.english || '',
+      target_site: g.mode_of_action?.target_site || '',
+      systemic: g.systemic,
+      target_weeds_ar: g.target_weeds_arabic || [],
+      selectivity_ar: g.selectivity_arabic || '',
+      spectrum_ar: g.selectivity_arabic || '',
+      resistance_risk_level: g.resistance_risk?.level,
+      resistance_risk_ar: g.resistance_risk?.arabic || '',
+      resistance_risk_color: g.resistance_risk?.color || '',
+      resistance_mechanism_ar: g.resistance_mechanism_arabic || '',
+      rotation_rule_ar: g.rotation_rule_arabic || '',
+      rotation_compatible_ids: g.rotation_compatible_ids || [],
+      rotation_incompatible_ids: g.rotation_incompatible_ids || [],
+      cross_resistance_ar: g.cross_resistance_note_arabic || '',
+      importance_egypt: g.importance_in_egypt_arabic || '',
+      max_applications_season: g.max_applications_per_season,
+      ai_count: 0,
+      group_data: g,
+    };
+  });
+
+  activeIngredients.forEach(ai => {
+    const hracGroup = ai.classification?.hrac_group || {};
+    const gid = hracGroup.id || codeToId[hracGroup.code];
+    if (!gid || !groupMap[gid]) return;
+    groupMap[gid].ai_count++;
+  });
+
+  return Object.values(groupMap);
+};
+
 export const getGroups = (key) => {
   if (key === 'irac-grp') {
     return buildIracGroups(iracData);
+  }
+  if (key === 'hrac-grp') {
+    return buildHracGroups();
   }
   if (key === 'frac-grp') {
     return buildFracGroups();

@@ -38,9 +38,43 @@ describe('pesticidesGroups', () => {
   });
 
   describe('HRAC groups (herbicides)', () => {
-    it('should return groups from items', () => {
+    it('should return 16 groups with ai_count totaling 59', () => {
       const groups = getGroups('hrac-grp');
-      expect(groups.length).toBeGreaterThan(0);
+      expect(groups.length).toBe(16);
+
+      const totalAiCount = groups.reduce((sum, g) => sum + g.ai_count, 0);
+      expect(totalAiCount).toBe(59);
+    });
+
+    it('should contain all HRAC letter codes', () => {
+      const codes = getGroups('hrac-grp').map(g => g.code);
+      ['A', 'B', 'C1', 'C2', 'D', 'E', 'F1', 'F2', 'G', 'H', 'K1', 'K3', 'L', 'N', 'O', 'Z']
+        .forEach(code => expect(codes).toContain(code));
+    });
+
+    it('groups L and Z have zero active ingredients', () => {
+      const groups = getGroups('hrac-grp');
+      expect(groups.find(g => g.code === 'L').ai_count).toBe(0);
+      expect(groups.find(g => g.code === 'Z').ai_count).toBe(0);
+    });
+
+    it('each group should have required fields', () => {
+      getGroups('hrac-grp').forEach(group => {
+        expect(group.id).toBeTruthy();
+        expect(group.code).toBeTruthy();
+        expect(group.name_ar).toBeTruthy();
+        expect(group.MoA_ar).toBeTruthy();
+        expect(typeof group.ai_count).toBe('number');
+      });
+    });
+
+    it('group A exposes selectivity, target weeds and systemic flag', () => {
+      const a = getGroups('hrac-grp').find(g => g.code === 'A');
+      expect(a.ai_count).toBe(8);
+      expect(a.systemic).toBe(true);
+      expect(a.selectivity_ar).toContain('انتقائي');
+      expect(a.target_weeds_ar.length).toBeGreaterThan(0);
+      expect(a.rotation_compatible_ids).toContain('hrac-b');
     });
   });
 
