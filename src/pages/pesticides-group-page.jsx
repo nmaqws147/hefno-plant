@@ -217,8 +217,8 @@ const PesticideGroupPage = () => {
   const getRiskLevel = (risk) => {
     if (typeof risk === 'number') return risk;
     const r = String(risk || '').toLowerCase();
-    if (r.includes('عالي جدا') || r.includes('very high')) return 4;
-    if (r.includes('عالي') || r.includes('high')) return 3;
+    if (r.includes('عالي جدا') || r.includes('عالٍ جدا') || r.includes('very high')) return 4;
+    if (r.includes('عالي') || r.includes('عالٍ') || r.includes('high')) return 3;
     if (r.includes('متوسط') || r.includes('medium')) return 2;
     if (r.includes('منخفض') || r.includes('low')) return 1;
     return 2;
@@ -234,8 +234,8 @@ const PesticideGroupPage = () => {
 
   const getRiskText = (risk) => {
     const r = String(risk || '').toLowerCase();
-    if (r.includes('عالي جدا') || r.includes('very high')) return 'شديد جداً';
-    if (r.includes('عالي') || r.includes('high')) return 'شديد';
+    if (r.includes('عالي جدا') || r.includes('عالٍ جدا') || r.includes('very high')) return 'شديد جداً';
+    if (r.includes('عالي') || r.includes('عالٍ') || r.includes('high')) return 'شديد';
     if (r.includes('متوسط') || r.includes('medium')) return 'متوسط';
     if (r.includes('منخفض') || r.includes('low')) return 'منخفض';
     return 'متوسط';
@@ -329,8 +329,17 @@ const PesticideGroupPage = () => {
               <CatIcon size={24} />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-gray-900 dark:text-white">{currentGroup.chemical_class_en || currentGroup.name_ar || currentGroup.ar_name}</h1>
-              <p className="text-xs text-gray-500 dark:text-gray-400">{currentGroup.name_en || currentGroup.chemical_class_ar}</p>
+              {currentCategory === 'herbicides' ? (
+                <>
+                  <h1 className="text-xl font-bold text-gray-900 dark:text-white">{currentGroup.name_ar || currentGroup.chemical_class_ar || currentGroup.ar_name}</h1>
+                  <p className="text-xs italic text-gray-500 dark:text-gray-400">{currentGroup.name_en || currentGroup.chemical_class_en}</p>
+                </>
+              ) : (
+                <>
+                  <h1 className="text-xl font-bold text-gray-900 dark:text-white">{currentGroup.chemical_class_en || currentGroup.name_ar || currentGroup.ar_name}</h1>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">{currentGroup.name_en || currentGroup.chemical_class_ar}</p>
+                </>
+              )}
               <div className="mt-2 flex flex-wrap gap-2">
                 <span
                   className="rounded-full px-3 py-1 text-[11px] font-bold"
@@ -339,7 +348,9 @@ const PesticideGroupPage = () => {
                   {currentGroup.code || currentGroup.id}
                 </span>
                 <span className="rounded-full bg-gray-100 dark:bg-gray-700 px-3 py-1 text-[11px] text-gray-600 dark:text-gray-300">
-                  {currentGroup.chemical_class_en || currentGroup.chemical_class_ar || 'Pesticide'}
+                  {currentCategory === 'herbicides'
+                    ? (currentGroup.chemical_class_ar || currentGroup.chemical_class_en || 'Pesticide')
+                    : (currentGroup.chemical_class_en || currentGroup.chemical_class_ar || 'Pesticide')}
                 </span>
                 <span className="rounded-full bg-gray-100 dark:bg-gray-700 px-3 py-1 text-[11px] text-gray-600 dark:text-gray-300">
                   {items.length} مادة فعالة
@@ -687,7 +698,7 @@ const PesticideGroupPage = () => {
                 {/* Tab 0: Info */}
                 {modalTab === 0 && (
                   <div className="space-y-4">
-                    {selectedItem.mode_of_action?.summary?.arabic && (
+                    {currentCategory === 'herbicides' && selectedItem.mode_of_action?.summary?.arabic && (
                       <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-900/40 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300">
                           <BookOpen size={12} />
@@ -887,7 +898,7 @@ const PesticideGroupPage = () => {
                         </div>
                       </div>
                     )}
-                    {selectedItem.rotation_notes?.length > 0 && (
+                    {currentCategory === 'herbicides' && selectedItem.rotation_notes?.length > 0 && (
                       <div className="rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-900/40 p-4">
                         <h4 className="mb-2 flex items-center gap-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300">
                           <RefreshCw size={12} />

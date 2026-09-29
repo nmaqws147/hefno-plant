@@ -155,6 +155,52 @@ describe('pesticides group page (HRAC wiring)', () => {
     expect(screen.getByText('ملاحظات التطبيق').parentElement).toHaveTextContent('الجرعة ما بعد الإنبات');
   });
 
+  it('keeps the HRAC-only modal boxes out of a FRAC fungicide modal', async () => {
+    const group = getGroups('frac-grp').find(g => g.code === '3');
+    renderGroupPage('fungicides', group);
+
+    const cardName = await screen.findByText('Tebuconazole');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Triazoles, Imidazoles, Pyrimidines');
+
+    fireEvent.click(cardName);
+    expect(screen.queryByText('آلية التأثير')).not.toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'تطبيق' }));
+    expect(screen.queryByText('قاعدة التناوب')).not.toBeInTheDocument();
+    expect(within(document.querySelector('.fixed.inset-0')).getByRole('button', { name: 'أهداف وسلامة' })).toBeInTheDocument();
+  });
+
+  it('shows the level-4 red resistance risk for a group-B herbicide AI', async () => {
+    const group = getGroups('hrac-grp').find(g => g.code === 'B');
+    renderGroupPage('herbicides', group);
+
+    const cardName = await screen.findByText('Metsulfuron-methyl');
+    const card = cardName.closest('.cursor-pointer');
+    const cardRisk = within(card).getByText('مخاطر المقاومة:').nextElementSibling;
+    expect(cardRisk).toHaveTextContent('شديد جداً');
+    expect(cardRisk).toHaveStyle('color: rgb(220, 38, 38)');
+
+    fireEvent.click(cardName);
+    const modal = document.querySelector('.fixed.inset-0');
+    fireEvent.click(within(modal).getByRole('button', { name: 'تطبيق' }));
+    const modalRisk = within(modal).getByText('مخاطر المقاومة:').nextElementSibling;
+    expect(modalRisk).toHaveTextContent('شديد جداً');
+    expect(modalRisk).toHaveStyle('color: rgb(220, 38, 38)');
+  });
+
+  it('renders an Arabic-first header for herbicide groups', async () => {
+    const group = getGroups('hrac-grp').find(g => g.code === 'A');
+    renderGroupPage('herbicides', group);
+
+    await screen.findByText('Clethodim');
+    const h1 = screen.getByRole('heading', { level: 1 });
+    expect(h1).toHaveTextContent('مثبطات إنزيم ACCase — أريلوكسي فينوكسي بروبيونات وسيكلوهيكساندايون');
+    expect(
+      screen.getByText('ACCase inhibitors — Aryloxyphenoxypropionates (FOPs) & Cyclohexanediones (DIMs)')
+    ).toBeInTheDocument();
+    expect(h1.textContent).not.toMatch(/ACCase inhibitors/);
+  });
+
   it('shows the pre-harvest label only for an AI that carries a PHI note', async () => {
     const first = renderGroupPage('herbicides', hracGroup('A'));
     fireEvent.click(await screen.findByText('Fluazifop-P-butyl'));
